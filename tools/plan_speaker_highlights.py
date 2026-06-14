@@ -15,7 +15,7 @@ import re
 import sys
 import time
 from pathlib import Path
-from typing import Any, List
+from typing import Any, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -33,6 +33,8 @@ HOST_OUTRO_PATTERNS = [
     r"亚洲市场",
     r"开盘情况",
 ]
+SHORT_CLIP_EXPAND_MIN_RATIO = 0.75
+SHORT_CLIP_EXPAND_MAX_DEFICIT = 10.0
 
 
 def ask_deepseek(api_key: str, system_prompt: str, user_prompt: str, temperature: float = 0.3) -> dict:
@@ -187,7 +189,7 @@ Important:
     clips = result.get("clips", [])
 
     if not clips:
-        raise SystemExit("DeepSeek returned no clips")
+        print("DeepSeek returned no clips; building transcript fallback clip", flush=True)
 
     clips = postprocess_clips(
         clips,
@@ -198,7 +200,21 @@ Important:
         args.max_clips,
     )
     if not clips:
-        raise SystemExit("All generated clips failed the speaker-content quality gate")
+        print("All generated clips failed the speaker-content quality gate", flush=True)
+        fallback_clip = build_transcript_fallback_clip(
+            segments,
+            args.speaker,
+            args.speaker_context,
+            args.segment_start,
+            args.segment_end,
+            args.min_seconds,
+            args.max_seconds,
+        )
+        if fallback_clip:
+            clips = [fallback_clip]
+            print("Using transcript fallback clip", flush=True)
+        else:
+            raise SystemExit("All generated clips failed the speaker-content quality gate")
 
     # Write output
     payload = {
@@ -247,8 +263,17 @@ def postprocess_clips(
 
         duration = end - start
         if min_seconds > 0 and duration < min_seconds:
-            print(f"Skipping clip {idx}: too short ({duration:.1f}s < {min_seconds}s)", flush=True)
-            continue
+            expanded = expand_short_clip(start, end, segment_start, segment_end, min_seconds, max_seconds)
+            if expanded is None:
+                print(f"Skipping clip {idx}: too short ({duration:.1f}s < {min_seconds}s)", flush=True)
+                continue
+            start, end = expanded
+            expanded_duration = end - start
+            print(
+                f"Extending clip {idx}: {duration:.1f}s -> {expanded_duration:.1f}s",
+                flush=True,
+            )
+            duration = expanded_duration
         if max_seconds > 0 and duration > max_seconds:
             print(f"Skipping clip {idx}: too long ({duration:.1f}s > {max_seconds}s)", flush=True)
             continue
@@ -289,6 +314,148 @@ def postprocess_clips(
     return cleaned
 
 
+def expand_short_clip(
+    start: float,
+    end: float,
+    segment_start: float,
+    segment_end: float,
+    min_seconds: int,
+    max_seconds: int,
+) -> Optional[Tuple[float, float]]:
+    """Expand near-miss DeepSeek clips to the configured minimum duration."""
+    duration = end - start
+    if min_seconds <= 0 or duration >= min_seconds:
+        return start, end
+
+    deficit = min_seconds - duration
+    if duration < min_seconds * SHORT_CLIP_EXPAND_MIN_RATIO or deficit > SHORT_CLIP_EXPAND_MAX_DEFICIT:
+        return None
+    if segment_end - segment_start < min_seconds:
+        return None
+    if max_seconds > 0 and min_seconds > max_seconds:
+        return None
+
+    target = float(min_seconds)
+    new_start = max(segment_start, start - deficit / 2)
+    new_end = min(segment_end, end + deficit / 2)
+
+    if new_end - new_start < target and new_start <= segment_start:
+        new_end = min(segment_end, new_start + target)
+    if new_end - new_start < target and new_end >= segment_end:
+        new_start = max(segment_start, new_end - target)
+
+    if new_end - new_start < target:
+        return None
+    return new_start, new_end
+
+
+def build_transcript_fallback_clip(
+    segments: list[dict[str, Any]],
+    speaker: str,
+    speaker_context: str,
+    segment_start: float,
+    segment_end: float,
+    min_seconds: int,
+    max_seconds: int,
+) -> Optional[dict[str, Any]]:
+    useful_segments = fallback_segments(segments, segment_start, segment_end, min_seconds)
+    if not useful_segments:
+        return None
+
+    available_start = useful_segments[0]["start"]
+    available_end = useful_segments[-1]["end"]
+    available_duration = available_end - available_start
+    if min_seconds > 0 and available_duration < min_seconds:
+        return None
+
+    clip_start = available_start
+    clip_end = available_end
+    if max_seconds > 0 and clip_end - clip_start > max_seconds:
+        clip_end = clip_start + max_seconds
+
+    subtitles: list[dict[str, Any]] = []
+    for segment in useful_segments:
+        sub_start = max(clip_start, float(segment["start"]))
+        sub_end = min(clip_end, float(segment["end"]))
+        if sub_end <= sub_start:
+            continue
+        text = clean_segment_text(str(segment.get("text", "")))
+        if not text:
+            continue
+        subtitles.append({
+            "index": len(subtitles) + 1,
+            "start": sub_start,
+            "end": sub_end,
+            "relative_start": sub_start - clip_start,
+            "relative_end": sub_end - clip_start,
+            "en": text,
+            "zh": text,
+            "zh_highlights": [],
+            "en_highlights": [],
+        })
+
+    if not subtitles:
+        return None
+
+    context_line = compact_title_line(speaker_context or "Bloomberg interview", 18)
+    title_lines = [
+        compact_title_line(speaker, 16),
+        context_line,
+        "核心观点速览",
+    ]
+    return {
+        "start": clip_start,
+        "end": clip_end,
+        "speaker": speaker,
+        "title": f"{speaker}: 核心观点速览",
+        "title_lines": title_lines,
+        "title_highlights": ["核心观点"],
+        "subtitles": subtitles,
+        "fallback": True,
+    }
+
+
+def fallback_segments(
+    segments: list[dict[str, Any]],
+    segment_start: float,
+    segment_end: float,
+    min_seconds: int,
+) -> list[dict[str, Any]]:
+    useful: list[dict[str, Any]] = []
+    for segment in segments:
+        try:
+            start = max(segment_start, float(segment["start"]))
+            end = min(segment_end, float(segment["end"]))
+        except (KeyError, TypeError, ValueError):
+            continue
+        if end <= start:
+            continue
+        text = clean_segment_text(str(segment.get("text", "")))
+        if not text:
+            continue
+        if contains_host_outro_or_market_text(text):
+            if useful and useful[-1]["end"] - useful[0]["start"] >= min_seconds:
+                break
+            continue
+        normalized = dict(segment)
+        normalized["start"] = start
+        normalized["end"] = end
+        normalized["text"] = text
+        useful.append(normalized)
+    return useful
+
+
+def clean_segment_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def compact_title_line(text: str, max_chars: int) -> str:
+    cleaned = clean_segment_text(text)
+    if len(cleaned) <= max_chars:
+        return cleaned
+    return cleaned[: max_chars - 3].rstrip() + "..."
+
+
 def is_host_outro_or_market_recap(clip: dict[str, Any]) -> bool:
     pieces = [
         str(clip.get("title", "")),
@@ -298,7 +465,11 @@ def is_host_outro_or_market_recap(clip: dict[str, Any]) -> bool:
         pieces.append(str(sub.get("en", "")))
         pieces.append(str(sub.get("zh", "")))
     combined = "\n".join(pieces)
-    return any(re.search(pattern, combined, flags=re.IGNORECASE) for pattern in HOST_OUTRO_PATTERNS)
+    return contains_host_outro_or_market_text(combined)
+
+
+def contains_host_outro_or_market_text(text: str) -> bool:
+    return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in HOST_OUTRO_PATTERNS)
 
 
 if __name__ == "__main__":
