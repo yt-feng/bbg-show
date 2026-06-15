@@ -462,6 +462,18 @@ def draw_wrapped_text_with_highlights(
         draw_line_segments(draw, line, line_x, current_y, font, color, ranges)
         current_y += measured_line_height(measure_draw, text_line, font) + line_spacing
 
+
+def draw_title_backdrop(img: Image.Image) -> None:
+    """Darken the title area so white/yellow text remains legible over bright footage."""
+    width, _height = img.size
+    shade = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shade)
+    draw.rectangle((0, 218, width, 704), fill=(0, 0, 0, 142))
+    draw.rectangle((0, 520, width, 704), fill=(0, 0, 0, 42))
+    shade = shade.filter(ImageFilter.GaussianBlur(radius=1.2))
+    img.alpha_composite(shade)
+
+
 def render_static_overlay(job: dict) -> Image.Image:
     """Render static overlay: title + watermark + CTA."""
     width = job["width"]
@@ -475,29 +487,32 @@ def render_static_overlay(job: dict) -> Image.Image:
     cta = job.get("cta", "更多宏观信息，关注公众号KC桌面")
 
     # Draw title
+    if title_lines or title:
+        draw_title_backdrop(img)
+
     if len(title_lines) >= 3:
         # Keep each logical title line in its own box. If generated title lines
         # are too long, shrink before wrapping so adjacent boxes never collide.
         draw_wrapped_text_with_highlights(
             img, title_lines[0],
-            x=28, y=250, max_width=1024, max_height=150,
-            max_font=122, min_font=44,
+            x=26, y=238, max_width=1028, max_height=172,
+            max_font=138, min_font=54,
             line_spacing=0,
             highlights=title_highlights,
             max_lines=1,
         )
         draw_wrapped_text_with_highlights(
             img, title_lines[1],
-            x=36, y=408, max_width=1008, max_height=132,
-            max_font=112, min_font=40,
+            x=42, y=416, max_width=996, max_height=120,
+            max_font=104, min_font=40,
             line_spacing=0,
             highlights=title_highlights,
             max_lines=1,
         )
         draw_wrapped_text_with_highlights(
             img, title_lines[2],
-            x=36, y=544, max_width=1008, max_height=132,
-            max_font=104, min_font=38,
+            x=42, y=548, max_width=996, max_height=116,
+            max_font=96, min_font=38,
             line_spacing=0,
             highlights=title_highlights,
             max_lines=1,

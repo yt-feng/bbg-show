@@ -22,6 +22,22 @@ from plan_speaker_full import (  # noqa: E402
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
 
 
+TITLE_BADGE_PATTERNS = [
+    re.compile(r"[【\[]\s*(?:彭博社?|Bloomberg)?\s*独家\s*[】\]]\s*", re.IGNORECASE),
+    re.compile(r"^(?:彭博社?|Bloomberg)?\s*独家\s*[：:｜|\-、\s]*", re.IGNORECASE),
+    re.compile(r"\bBloomberg\s+Exclusive\b\s*[：:｜|\-、\s]*", re.IGNORECASE),
+    re.compile(r"彭博社?独家\s*[：:｜|\-、\s]*"),
+]
+
+
+def strip_title_badges(text: str) -> str:
+    value = clean_text(text)
+    for pattern in TITLE_BADGE_PATTERNS:
+        value = pattern.sub("", value)
+    value = value.replace("【】", "").replace("[]", "")
+    return clean_text(value.strip(" ：:｜|-、"))
+
+
 def transcript_sample(transcript: Path, limit: int = 3000) -> str:
     data = json.loads(transcript.read_text(encoding="utf-8"))
     lines: list[str] = []
@@ -56,7 +72,8 @@ def generate_title(source_title: str, source_url: str, sample: str) -> dict[str,
     system_prompt = (
         "You are a Chinese finance short-video title editor. Return strict JSON only. "
         "Write concise Simplified Chinese titles suitable for a vertical Bloomberg news clip. "
-        "Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed."
+        "Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed. "
+        "Never use source badges such as 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive."
     )
     user_prompt = f"""Bloomberg source title:
 {source_title}
@@ -76,10 +93,11 @@ Return JSON:
 
 Rules:
 - title_lines must contain exactly 3 short display lines.
-- Line 1 should identify Bloomberg/人物/机构 if useful.
+- Line 1 should name the main actor, institution, or event. Do not use source labels.
 - Line 2 should name the event or asset/topic.
 - Line 3 should be a hook or concrete angle.
 - title_highlights must be exact substrings from the joined title_lines.
+- Never write 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive.
 - Do not add markdown.
 """
     result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.2)
@@ -87,10 +105,16 @@ Rules:
     title = clean_text(str(result.get("title", "")))
     if not isinstance(lines, list) or len(lines) != 3:
         lines = fallback_title_lines(source_title)
-    lines = [safe_zh(clean_text(str(line)))[:24] for line in lines]
+    fallback_lines = fallback_title_lines(source_title)
+    lines = [
+        safe_zh(strip_title_badges(str(line)))[:24] or fallback_lines[index]
+        for index, line in enumerate(lines)
+    ]
     if not title:
         title = "：".join(line for line in lines if line)
-    title = safe_zh(title)
+    title = safe_zh(strip_title_badges(title))
+    if not title:
+        title = "：".join(line for line in lines if line)
     joined = "".join(lines)
     highlights = normalize_highlights(result.get("title_highlights"), joined, limit=3)
     if not highlights:
