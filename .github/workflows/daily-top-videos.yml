@@ -89,6 +89,7 @@ jobs:
       - name: Scrape Bloomberg Top Videos
         env:
           PYTHONUNBUFFERED: "1"
+          BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
         run: |
           mkdir -p work/top-videos
           python tools/scrape_top_videos.py \

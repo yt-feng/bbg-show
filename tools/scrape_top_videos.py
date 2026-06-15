@@ -21,7 +21,17 @@ from urllib.parse import quote, urljoin, urlsplit, urlunsplit
 from urllib.request import urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from download_bloomberg_video import FetchError, fetch_text_direct, safe_file_part  # noqa: E402
+from download_bloomberg_video import (  # noqa: E402
+    DEFAULT_PROXY_CACHE,
+    DEFAULT_PROXY_TEST_URL,
+    DEFAULT_SUBSCRIPTION,
+    DEFAULT_SUBSCRIPTION_URL_FILE,
+    FetchError,
+    build_proxy_fetcher,
+    ensure_subscription,
+    fetch_text_direct,
+    safe_file_part,
+)
 
 
 DEFAULT_URL = "https://www.bloomberg.com/videos"
@@ -345,6 +355,22 @@ def normalize_browser_links(items: list[dict[str, Any]], max_videos: int) -> lis
     return links
 
 
+def fetch_text_proxy(url: str, work_dir: Path) -> str:
+    args = argparse.Namespace(
+        subscription=DEFAULT_SUBSCRIPTION,
+        subscription_url="",
+        subscription_url_file=DEFAULT_SUBSCRIPTION_URL_FILE,
+        refresh_subscription=False,
+        proxy_cache=DEFAULT_PROXY_CACHE,
+        proxy_test_url=DEFAULT_PROXY_TEST_URL,
+        google_doh=True,
+        url=url,
+    )
+    subscription = ensure_subscription(args)
+    fetcher, _proxy = build_proxy_fetcher(args, subscription, work_dir)
+    return fetcher(url, "top_videos_page", timeout=120)
+
+
 def scrape(
     url: str,
     xpath: str,
@@ -352,6 +378,7 @@ def scrape(
     method: str,
     wait_seconds: int,
     direct_skip_leading: int,
+    work_dir: Path,
 ) -> tuple[str, list[dict[str, str]]]:
     errors: list[str] = []
     if method in {"auto", "direct"}:
@@ -363,6 +390,16 @@ def scrape(
             errors.append("direct fetch returned no video links")
         except FetchError as exc:
             errors.append(f"direct failed: {exc}")
+
+    if method in {"auto", "proxy"}:
+        try:
+            text = fetch_text_proxy(url, work_dir)
+            links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
+            if links:
+                return "proxy", links
+            errors.append("proxy fetch returned no video links")
+        except (Exception, SystemExit) as exc:
+            errors.append(f"proxy failed: {exc}")
 
     if method in {"auto", "chrome"}:
         try:
@@ -381,8 +418,9 @@ def main() -> None:
     parser.add_argument("--url", default=DEFAULT_URL)
     parser.add_argument("--xpath", default=TOP_VIDEOS_XPATH)
     parser.add_argument("--max-videos", type=int, default=9)
-    parser.add_argument("--method", choices=("auto", "direct", "chrome"), default="auto")
+    parser.add_argument("--method", choices=("auto", "direct", "proxy", "chrome"), default="auto")
     parser.add_argument("--wait-seconds", type=int, default=8)
+    parser.add_argument("--work-dir", type=Path, default=Path("work/top-videos/scrape"))
     parser.add_argument(
         "--direct-skip-leading",
         type=int,
@@ -399,6 +437,7 @@ def main() -> None:
         args.method,
         args.wait_seconds,
         args.direct_skip_leading,
+        args.work_dir,
     )
     payload = {
         "source_url": args.url,
