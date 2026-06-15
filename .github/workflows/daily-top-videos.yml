@@ -204,6 +204,8 @@ jobs:
             --download-backend auto \
             --workers 32 \
             --threads 2 \
+            --max-clip-seconds 90 \
+            --clean-output-dir \
             --no-copy-manifest
 
       - name: Upload top video output

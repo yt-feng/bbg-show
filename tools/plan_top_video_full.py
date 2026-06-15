@@ -51,6 +51,47 @@ def transcript_sample(transcript: Path, limit: int = 3000) -> str:
     return "\n".join(lines)[:limit]
 
 
+def choose_clip_range(
+    transcript: Path,
+    segment_start: float,
+    segment_end: float,
+    max_clip_seconds: float,
+) -> tuple[float, float]:
+    if max_clip_seconds <= 0 or segment_end - segment_start <= max_clip_seconds:
+        return segment_start, segment_end
+
+    target_end = segment_start + max_clip_seconds
+    data = json.loads(transcript.read_text(encoding="utf-8"))
+    segments = [
+        seg for seg in data.get("segments", [])
+        if float(seg.get("end", 0)) > segment_start and float(seg.get("start", 0)) < target_end
+    ]
+    if not segments:
+        return segment_start, min(segment_end, target_end)
+
+    latest_end = segment_start
+    sentence_end = segment_start
+    preferred_floor = max(segment_start + 60.0, target_end - 12.0)
+    for seg in segments:
+        raw_end = float(seg.get("end", 0))
+        end = min(target_end, raw_end)
+        if end <= segment_start:
+            continue
+        latest_end = max(latest_end, end)
+        text = clean_text(str(seg.get("text", "")))
+        if (
+            raw_end <= target_end
+            and end >= preferred_floor
+            and text.endswith((".", "?", "!", "。", "？", "！"))
+        ):
+            sentence_end = max(sentence_end, end)
+
+    clip_end = sentence_end if sentence_end > segment_start else latest_end
+    if clip_end <= segment_start:
+        clip_end = min(segment_end, target_end)
+    return segment_start, min(segment_end, target_end, clip_end)
+
+
 def fallback_title_lines(source_title: str) -> list[str]:
     title = clean_text(source_title) or "Bloomberg Top Video"
     words = title.split()
@@ -127,10 +168,23 @@ Rules:
 
 
 def build_plan(args: argparse.Namespace) -> dict[str, Any]:
-    units = load_transcript_units(
+    clip_start, clip_end = choose_clip_range(
         args.transcript,
         args.segment_start,
         args.segment_end,
+        args.max_clip_seconds,
+    )
+    if clip_end < args.segment_end:
+        print(
+            f"Clipping top video plan to {clip_end - clip_start:.1f}s "
+            f"from source segment {args.segment_end - args.segment_start:.1f}s",
+            flush=True,
+        )
+
+    units = load_transcript_units(
+        args.transcript,
+        clip_start,
+        clip_end,
         min_seconds=args.subtitle_min_seconds,
         max_seconds=args.subtitle_max_seconds,
         max_chars=args.subtitle_max_chars,
@@ -155,8 +209,8 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
             "index": unit.index,
             "start": unit.start,
             "end": unit.end,
-            "relative_start": unit.start - args.segment_start,
-            "relative_end": unit.end - args.segment_start,
+            "relative_start": unit.start - clip_start,
+            "relative_end": unit.end - clip_start,
             "en": en,
             "zh": zh,
             "zh_highlights": normalize_highlights(item.get("zh_highlights"), zh),
@@ -169,12 +223,13 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
         "speaker": args.speaker,
         "speaker_context": args.source_title,
         "source_transcript": str(args.transcript),
-        "segment_range": [args.segment_start, args.segment_end],
-        "duration": args.segment_end - args.segment_start,
+        "source_segment_range": [args.segment_start, args.segment_end],
+        "segment_range": [clip_start, clip_end],
+        "duration": clip_end - clip_start,
         "clips": [
             {
-                "start": args.segment_start,
-                "end": args.segment_end,
+                "start": clip_start,
+                "end": clip_end,
                 "speaker": args.speaker,
                 "title": title_info["title"],
                 "title_lines": title_info["title_lines"],
@@ -193,6 +248,7 @@ def main() -> None:
     parser.add_argument("--speaker", default="Bloomberg")
     parser.add_argument("--segment-start", type=float, default=0.0)
     parser.add_argument("--segment-end", type=float, required=True)
+    parser.add_argument("--max-clip-seconds", type=float, default=90.0)
     parser.add_argument("--subtitle-min-seconds", type=float, default=3.0)
     parser.add_argument("--subtitle-max-seconds", type=float, default=7.5)
     parser.add_argument("--subtitle-max-chars", type=int, default=220)

@@ -126,7 +126,11 @@ def process_one(
         "--force",
     ])
 
-    print(f"[top-video {index:02d}] Planning translated full-video clip with DeepSeek", flush=True)
+    print(
+        f"[top-video {index:02d}] Planning translated clip "
+        f"(max {args.max_clip_seconds:.0f}s) with DeepSeek",
+        flush=True,
+    )
     run([
         sys.executable,
         str(TOOLS / "plan_top_video_full.py"),
@@ -135,6 +139,7 @@ def process_one(
         "--source-title", title,
         "--segment-start", "0",
         "--segment-end", f"{duration:.2f}",
+        "--max-clip-seconds", f"{args.max_clip_seconds:.2f}",
         "--out", str(plan_path),
     ])
 
@@ -163,6 +168,7 @@ def process_one(
         "title": title,
         "slug": slug,
         "duration": round(duration, 2),
+        "max_clip_seconds": args.max_clip_seconds,
         "video_file": str(video_path),
         "transcript": str(transcript_path),
         "highlight_plan": "highlight_plan.json",
@@ -190,11 +196,16 @@ def main() -> None:
     parser.add_argument("--threads", type=int, default=2)
     parser.add_argument("--whisper-model", default="base")
     parser.add_argument("--min-video-seconds", type=float, default=15.0)
+    parser.add_argument("--max-clip-seconds", type=float, default=90.0)
     parser.add_argument("--no-copy-manifest", action="store_true")
+    parser.add_argument("--clean-output-dir", action="store_true")
     args = parser.parse_args()
 
     run_date = args.run_date.strip() or run_date_default()
     output_dir = args.out_root / run_date
+    if args.clean_output_dir and output_dir.exists():
+        print(f"Cleaning output directory before processing: {output_dir}", flush=True)
+        shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     args.work_root.mkdir(parents=True, exist_ok=True)
     (args.work_root / "output_dir.txt").write_text(str(output_dir) + "\n", encoding="utf-8")
