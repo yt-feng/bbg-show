@@ -28,6 +28,7 @@ from download_bloomberg_video import (  # noqa: E402
     DEFAULT_SUBSCRIPTION_URL_FILE,
     FetchError,
     build_proxy_fetcher,
+    bloomberg_brp_url,
     ensure_subscription,
     fetch_text_direct,
     safe_file_part,
@@ -37,6 +38,10 @@ from download_bloomberg_video import (  # noqa: E402
 DEFAULT_URL = "https://www.bloomberg.com/videos"
 TOP_VIDEOS_XPATH = "/html/body/div[2]/div/div[2]/div[3]/main/section/section[1]/div"
 VIDEO_PATH_RE = re.compile(r"/news/videos/\d{4}-\d{2}-\d{2}/[^\"'<>\s?#]+", re.IGNORECASE)
+
+
+def log(message: str) -> None:
+    print(f"[top-videos] {message}", flush=True)
 
 
 def chrome_binary() -> str | None:
@@ -383,32 +388,60 @@ def scrape(
     errors: list[str] = []
     if method in {"auto", "direct"}:
         try:
+            log(f"Trying direct page fetch: {url}")
             text = fetch_text_direct(url, timeout=90)
             links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
             if links:
+                log(f"Direct page fetch found {len(links)} video link(s)")
                 return "direct", links
             errors.append("direct fetch returned no video links")
+            log("Direct page fetch returned no video links")
         except FetchError as exc:
             errors.append(f"direct failed: {exc}")
+            log(f"Direct page fetch failed: {exc}")
+
+    if method in {"auto", "brp"}:
+        brp_url = bloomberg_brp_url(url)
+        if brp_url != url:
+            try:
+                log(f"Trying BRP background page fetch: {brp_url}")
+                text = fetch_text_direct(brp_url, timeout=45)
+                links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
+                if links:
+                    log(f"BRP background page fetch found {len(links)} video link(s)")
+                    return "brp", links
+                errors.append("brp fetch returned no video links")
+                log("BRP background page fetch returned no video links")
+            except FetchError as exc:
+                errors.append(f"brp failed: {exc}")
+                log(f"BRP background page fetch failed: {exc}")
 
     if method in {"auto", "proxy"}:
         try:
+            log("Trying proxy page fetch fallback")
             text = fetch_text_proxy(url, work_dir)
             links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
             if links:
+                log(f"Proxy page fetch found {len(links)} video link(s)")
                 return "proxy", links
             errors.append("proxy fetch returned no video links")
+            log("Proxy page fetch returned no video links")
         except (Exception, SystemExit) as exc:
             errors.append(f"proxy failed: {exc}")
+            log(f"Proxy page fetch failed: {exc}")
 
     if method in {"auto", "chrome"}:
         try:
+            log("Trying headless Chrome XPath fallback")
             links = extract_links_with_headless_chrome(url, xpath, max_videos, wait_seconds)
             if links:
+                log(f"Headless Chrome found {len(links)} video link(s)")
                 return "chrome", links
             errors.append("headless Chrome returned no video links")
+            log("Headless Chrome returned no video links")
         except Exception as exc:  # noqa: BLE001 - surface all scrape diagnostics
             errors.append(f"chrome failed: {exc}")
+            log(f"Headless Chrome failed: {exc}")
 
     raise SystemExit("Could not scrape Top Videos links: " + " | ".join(errors))
 
@@ -418,7 +451,7 @@ def main() -> None:
     parser.add_argument("--url", default=DEFAULT_URL)
     parser.add_argument("--xpath", default=TOP_VIDEOS_XPATH)
     parser.add_argument("--max-videos", type=int, default=9)
-    parser.add_argument("--method", choices=("auto", "direct", "proxy", "chrome"), default="auto")
+    parser.add_argument("--method", choices=("auto", "direct", "brp", "proxy", "chrome"), default="auto")
     parser.add_argument("--wait-seconds", type=int, default=8)
     parser.add_argument("--work-dir", type=Path, default=Path("work/top-videos/scrape"))
     parser.add_argument(

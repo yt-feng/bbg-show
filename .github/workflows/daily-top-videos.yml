@@ -40,22 +40,111 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  top-videos:
-    name: Scrape → Download → Render → Commit
+  scrape:
+    name: Scrape Top Videos
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 20
+    outputs:
+      run_date: ${{ steps.resolve.outputs.run_date }}
+      max_videos: ${{ steps.resolve.outputs.max_videos }}
+      video_count: ${{ steps.scrape.outputs.video_count }}
+      matrix: ${{ steps.matrix.outputs.matrix }}
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       RUN_DATE_INPUT: ${{ github.event.inputs.run_date || '' }}
       PAGE_URL: ${{ github.event.inputs.page_url || 'https://www.bloomberg.com/videos' }}
-      MAX_VIDEOS: ${{ github.event.inputs.max_videos || '9' }}
+      MAX_VIDEOS_INPUT: ${{ github.event.inputs.max_videos || '9' }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Resolve run settings
+        id: resolve
+        run: |
+          if [ -n "$RUN_DATE_INPUT" ]; then
+            RUN_DATE="$RUN_DATE_INPUT"
+          else
+            RUN_DATE=$(TZ=Asia/Shanghai date +%F)
+          fi
+
+          MAX_VIDEOS="$MAX_VIDEOS_INPUT"
+          if [ -z "$MAX_VIDEOS" ]; then
+            MAX_VIDEOS=9
+          fi
+          if [ "$MAX_VIDEOS" -lt 1 ]; then
+            MAX_VIDEOS=1
+          fi
+          if [ "$MAX_VIDEOS" -gt 9 ]; then
+            MAX_VIDEOS=9
+          fi
+
+          echo "RUN_DATE=$RUN_DATE" >> "$GITHUB_ENV"
+          echo "MAX_VIDEOS=$MAX_VIDEOS" >> "$GITHUB_ENV"
+          echo "run_date=$RUN_DATE" >> "$GITHUB_OUTPUT"
+          echo "max_videos=$MAX_VIDEOS" >> "$GITHUB_OUTPUT"
+          echo "RUN_DATE=$RUN_DATE"
+          echo "MAX_VIDEOS=$MAX_VIDEOS"
+
+      - name: Scrape Bloomberg Top Videos
+        id: scrape
+        env:
+          PYTHONUNBUFFERED: "1"
+          BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
+        run: |
+          mkdir -p work/top-videos
+          python tools/scrape_top_videos.py \
+            --url "$PAGE_URL" \
+            --max-videos "$MAX_VIDEOS" \
+            --method auto \
+            --out work/top-videos/top_videos.json
+
+          VIDEO_COUNT=$(python -c 'import json; print(json.load(open("work/top-videos/top_videos.json"))["count"])')
+          echo "video_count=$VIDEO_COUNT" >> "$GITHUB_OUTPUT"
+          echo "VIDEO_COUNT=$VIDEO_COUNT"
+
+      - name: Build processing matrix
+        id: matrix
+        env:
+          VIDEO_COUNT: ${{ steps.scrape.outputs.video_count }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+
+          count = int(os.environ["VIDEO_COUNT"])
+          max_videos = int(os.environ["MAX_VIDEOS"])
+          indexes = list(range(1, min(count, max_videos) + 1))
+          print("matrix=" + json.dumps({"index": indexes}, separators=(",", ":")))
+          print("indexes=" + ",".join(str(index) for index in indexes))
+          PY
+
+      - name: Upload scrape manifest
+        uses: actions/upload-artifact@v5
+        with:
+          name: top-videos-manifest
+          path: work/top-videos/top_videos.json
+          if-no-files-found: error
+          retention-days: 7
+
+  process:
+    name: Process Top Video ${{ matrix.index }}
+    needs: scrape
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix: ${{ fromJSON(needs.scrape.outputs.matrix) }}
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      RUN_DATE: ${{ needs.scrape.outputs.run_date }}
+      MAX_VIDEOS: ${{ needs.scrape.outputs.max_videos }}
       FONT_PRESET: ${{ github.event.inputs.font_preset || 'noto-serif-sc' }}
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -76,29 +165,28 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install faster-whisper Pillow
 
-      - name: Resolve run date
-        run: |
-          if [ -n "$RUN_DATE_INPUT" ]; then
-            RUN_DATE="$RUN_DATE_INPUT"
-          else
-            RUN_DATE=$(TZ=Asia/Shanghai date +%F)
-          fi
-          echo "RUN_DATE=$RUN_DATE" >> "$GITHUB_ENV"
-          echo "RUN_DATE=$RUN_DATE"
+      - name: Download scrape manifest
+        uses: actions/download-artifact@v5
+        with:
+          name: top-videos-manifest
+          path: work/top-videos
 
-      - name: Scrape Bloomberg Top Videos
+      - name: Show selected video
         env:
-          PYTHONUNBUFFERED: "1"
-          BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
+          VIDEO_INDEX: ${{ matrix.index }}
         run: |
-          mkdir -p work/top-videos
-          python tools/scrape_top_videos.py \
-            --url "$PAGE_URL" \
-            --max-videos "$MAX_VIDEOS" \
-            --method auto \
-            --out work/top-videos/top_videos.json
+          python - <<'PY'
+          import json
+          import os
 
-      - name: Process Top Videos
+          index = int(os.environ["VIDEO_INDEX"])
+          payload = json.load(open("work/top-videos/top_videos.json", encoding="utf-8"))
+          video = payload["videos"][index - 1]
+          print(f"Processing Top Video {index}: {video.get('title', '')}")
+          print(video.get("url", ""))
+          PY
+
+      - name: Download, transcribe, plan, and render
         env:
           PYTHONUNBUFFERED: "1"
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -110,23 +198,103 @@ jobs:
             --manifest work/top-videos/top_videos.json \
             --run-date "$RUN_DATE" \
             --max-videos "$MAX_VIDEOS" \
+            --video-index "${{ matrix.index }}" \
             --out-root rendered-clips/top-videos \
             --work-root work/top-videos \
             --download-backend auto \
             --workers 32 \
-            --threads 2
+            --threads 2 \
+            --no-copy-manifest
+
+      - name: Upload top video output
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: top-video-${{ needs.scrape.outputs.run_date }}-${{ matrix.index }}
+          path: rendered-clips/top-videos/${{ needs.scrape.outputs.run_date }}/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  collect:
+    name: Collect and Commit Top Videos
+    needs:
+      - scrape
+      - process
+    if: ${{ always() && needs.scrape.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      RUN_DATE: ${{ needs.scrape.outputs.run_date }}
+      OUTPUT_DIR: rendered-clips/top-videos/${{ needs.scrape.outputs.run_date }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Download scrape manifest
+        uses: actions/download-artifact@v5
+        with:
+          name: top-videos-manifest
+          path: work/top-videos
+
+      - name: Reset output directory
+        run: |
+          rm -rf "$OUTPUT_DIR"
+          mkdir -p "$OUTPUT_DIR"
+          cp work/top-videos/top_videos.json "$OUTPUT_DIR/top_videos.json"
+
+      - name: Download rendered top video artifacts
+        uses: actions/download-artifact@v5
+        with:
+          pattern: top-video-${{ needs.scrape.outputs.run_date }}-*
+          path: ${{ env.OUTPUT_DIR }}
+          merge-multiple: true
+
+      - name: Build summary
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          output_dir = Path(os.environ["OUTPUT_DIR"])
+          summaries = sorted(output_dir.glob("summary_*.json"))
+          videos = []
+          for path in summaries:
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              videos.extend(payload.get("videos", []))
+
+          videos.sort(key=lambda item: int(item.get("index", 0)))
+          mp4s = sorted(str(path.relative_to(output_dir)) for path in output_dir.rglob("*.mp4"))
+          summary = {
+              "run_date": os.environ["RUN_DATE"],
+              "output_dir": str(output_dir),
+              "total": len(videos),
+              "succeeded": sum(1 for item in videos if item.get("status") == "success"),
+              "failed": sum(1 for item in videos if item.get("status") == "failed"),
+              "rendered_mp4_count": len(mp4s),
+              "rendered_mp4_files": mp4s,
+              "videos": videos,
+          }
+          (output_dir / "summary.json").write_text(
+              json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
 
       - name: Verify rendered clips
         run: |
-          OUTPUT_DIR=$(cat work/top-videos/output_dir.txt)
-          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l)
+          CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l | tr -d ' ')
           echo "Rendered MP4 count: $CLIP_COUNT"
           if [ "$CLIP_COUNT" -lt 1 ]; then
             echo "No rendered top video clips produced" >&2
             exit 1
           fi
-          find "$OUTPUT_DIR" -maxdepth 2 -type f -print -exec ls -lh {} \;
+          find "$OUTPUT_DIR" -maxdepth 3 -type f -print -exec ls -lh {} \;
 
       - name: Commit rendered clips to main
         run: |

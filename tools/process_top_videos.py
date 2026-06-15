@@ -8,6 +8,7 @@ import json
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -27,7 +28,10 @@ def run_date_default() -> str:
 
 def run(command: list[str], env: dict[str, str] | None = None) -> None:
     print("+ " + " ".join(command), flush=True)
+    started = time.monotonic()
     subprocess.run(command, check=True, env=env)
+    elapsed = time.monotonic() - started
+    print(f"Finished in {elapsed:.1f}s: {' '.join(command[:2])}", flush=True)
 
 
 def ffprobe_duration(path: Path) -> float:
@@ -92,6 +96,7 @@ def process_one(
     print(f"\n=== Top video {index}: {title} ===", flush=True)
     print(url, flush=True)
 
+    print(f"[top-video {index:02d}] Downloading source video", flush=True)
     run([
         sys.executable,
         str(TOOLS / "download_bloomberg_video.py"),
@@ -108,7 +113,9 @@ def process_one(
     duration = ffprobe_duration(video_path)
     if duration < args.min_video_seconds:
         raise RuntimeError(f"Downloaded video is too short: {duration:.1f}s")
+    print(f"[top-video {index:02d}] Downloaded {duration:.1f}s source: {video_path}", flush=True)
 
+    print(f"[top-video {index:02d}] Transcribing source video", flush=True)
     run([
         sys.executable,
         str(TOOLS / "transcribe_video.py"),
@@ -119,6 +126,7 @@ def process_one(
         "--force",
     ])
 
+    print(f"[top-video {index:02d}] Planning translated full-video clip with DeepSeek", flush=True)
     run([
         sys.executable,
         str(TOOLS / "plan_top_video_full.py"),
@@ -130,6 +138,7 @@ def process_one(
         "--out", str(plan_path),
     ])
 
+    print(f"[top-video {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():
         shutil.rmtree(render_dir)
     render_dir.mkdir(parents=True, exist_ok=True)
@@ -173,6 +182,7 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--run-date", default="", help="YYYY-MM-DD, defaults to today in Asia/Shanghai.")
     parser.add_argument("--max-videos", type=int, default=9)
+    parser.add_argument("--video-index", type=int, default=0, help="Process only this 1-based manifest index.")
     parser.add_argument("--out-root", type=Path, default=ROOT / "rendered-clips" / "top-videos")
     parser.add_argument("--work-root", type=Path, default=ROOT / "work" / "top-videos")
     parser.add_argument("--download-backend", choices=("auto", "yt-dlp", "custom"), default="auto")
@@ -180,6 +190,7 @@ def main() -> None:
     parser.add_argument("--threads", type=int, default=2)
     parser.add_argument("--whisper-model", default="base")
     parser.add_argument("--min-video-seconds", type=float, default=15.0)
+    parser.add_argument("--no-copy-manifest", action="store_true")
     args = parser.parse_args()
 
     run_date = args.run_date.strip() or run_date_default()
@@ -189,10 +200,17 @@ def main() -> None:
     (args.work_root / "output_dir.txt").write_text(str(output_dir) + "\n", encoding="utf-8")
 
     videos = load_manifest(args.manifest, args.max_videos)
-    shutil.copy2(args.manifest, output_dir / "top_videos.json")
+    if args.video_index:
+        if args.video_index < 1 or args.video_index > len(videos):
+            raise SystemExit(f"--video-index {args.video_index} out of range; manifest has {len(videos)} video(s)")
+        selected_videos = [(args.video_index, videos[args.video_index - 1])]
+    else:
+        selected_videos = list(enumerate(videos, start=1))
+    if not args.no_copy_manifest:
+        shutil.copy2(args.manifest, output_dir / "top_videos.json")
 
     results: list[dict[str, Any]] = []
-    for index, item in enumerate(videos, start=1):
+    for index, item in selected_videos:
         try:
             result = process_one(item, index, args, output_dir)
         except Exception as exc:  # noqa: BLE001 - keep the daily batch moving
@@ -210,12 +228,14 @@ def main() -> None:
         "run_date": run_date,
         "source_manifest": str(args.manifest),
         "output_dir": str(output_dir),
+        "video_index": args.video_index or None,
         "total": len(results),
         "succeeded": sum(1 for item in results if item.get("status") == "success"),
         "failed": sum(1 for item in results if item.get("status") == "failed"),
         "videos": results,
     }
-    (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    summary_name = f"summary_{args.video_index:02d}.json" if args.video_index else "summary.json"
+    (output_dir / summary_name).write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
     if summary["succeeded"] < 1:
         raise SystemExit("No Bloomberg Top Videos were processed successfully")
