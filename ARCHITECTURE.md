@@ -118,6 +118,20 @@ https://www.bloomberg.com/news/videos/YYYY-MM-DD/the-china-show-M-D-YYYY-video
   - Supports optional `--min-clips` and `--max-clips` constraints for daily automation.
   - Enforces clip duration bounds during post-processing and rejects host outros or market recaps.
 
+- `tools/scrape_top_videos.py`
+  - Extracts Bloomberg Top Videos links from `https://www.bloomberg.com/videos`.
+  - Uses the Top Videos carousel XPath when running through headless Chrome and falls back to direct HTML link extraction when available.
+  - Writes `work/top-videos/top_videos.json` for daily batch processing.
+
+- `tools/plan_top_video_full.py`
+  - Builds a one-clip KC Desktop plan for a single short Bloomberg video.
+  - Uses DeepSeek to generate Chinese title lines and subtitle translations from the transcript.
+
+- `tools/process_top_videos.py`
+  - Iterates through `top_videos.json`.
+  - Downloads each Bloomberg video with the normal downloader, transcribes it, plans one full-video vertical clip, renders it, and writes per-video metadata.
+  - Continues past individual video failures and fails the run only if no Top Videos render successfully.
+
 - `tools/render_clips_linux.py`
   - Renders the final KC Desktop vertical clips on GitHub Actions.
   - Uses Pillow overlay PNGs plus `ffmpeg`, avoiding platform-specific macOS text APIs.

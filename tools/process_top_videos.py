@@ -1,0 +1,225 @@
+#!/usr/bin/env python3
+"""Download, transcribe, plan, and render Bloomberg Top Videos."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
+
+
+ROOT = Path(__file__).resolve().parents[1]
+TOOLS = Path(__file__).resolve().parent
+
+
+def run_date_default() -> str:
+    return datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+
+
+def run(command: list[str], env: dict[str, str] | None = None) -> None:
+    print("+ " + " ".join(command), flush=True)
+    subprocess.run(command, check=True, env=env)
+
+
+def ffprobe_duration(path: Path) -> float:
+    proc = subprocess.run(
+        [
+            "ffprobe",
+            "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(path),
+        ],
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    return float(proc.stdout.strip())
+
+
+def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    videos = data.get("videos", [])
+    if not isinstance(videos, list) or not videos:
+        raise SystemExit(f"No videos found in manifest: {path}")
+    normalized: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for item in videos:
+        if not isinstance(item, dict):
+            continue
+        url = str(item.get("url", "")).strip()
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        normalized.append({
+            "url": url,
+            "title": str(item.get("title", "")).strip() or slug_from_url(url).replace("_", " ").title(),
+            "slug": str(item.get("slug", "")).strip() or slug_from_url(url),
+        })
+        if len(normalized) >= max_videos:
+            break
+    if not normalized:
+        raise SystemExit(f"No valid video URLs found in manifest: {path}")
+    return normalized
+
+
+def process_one(
+    item: dict[str, str],
+    index: int,
+    args: argparse.Namespace,
+    output_dir: Path,
+) -> dict[str, Any]:
+    url = item["url"]
+    title = item["title"]
+    slug = safe_file_part(item.get("slug") or slug_from_url(url))
+    label = f"{index:02d}_{slug}"
+    work_dir = args.work_root / label
+    video_path = work_dir / f"{label}.mp4"
+    transcript_path = work_dir / "transcript.json"
+    plan_path = work_dir / "highlight_plan.json"
+    render_dir = output_dir / label
+
+    work_dir.mkdir(parents=True, exist_ok=True)
+    print(f"\n=== Top video {index}: {title} ===", flush=True)
+    print(url, flush=True)
+
+    run([
+        sys.executable,
+        str(TOOLS / "download_bloomberg_video.py"),
+        "--url", url,
+        "--download-backend", args.download_backend,
+        "--yt-dlp-proxy-mode", "auto",
+        "--output", str(video_path),
+        "--work-dir", str(work_dir / "download"),
+        "--workers", str(args.workers),
+        "--no-strategy-cache",
+        "--force",
+    ])
+
+    duration = ffprobe_duration(video_path)
+    if duration < args.min_video_seconds:
+        raise RuntimeError(f"Downloaded video is too short: {duration:.1f}s")
+
+    run([
+        sys.executable,
+        str(TOOLS / "transcribe_video.py"),
+        "--video", str(video_path),
+        "--out", str(transcript_path),
+        "--model", args.whisper_model,
+        "--language", "en",
+        "--force",
+    ])
+
+    run([
+        sys.executable,
+        str(TOOLS / "plan_top_video_full.py"),
+        "--transcript", str(transcript_path),
+        "--source-url", url,
+        "--source-title", title,
+        "--segment-start", "0",
+        "--segment-end", f"{duration:.2f}",
+        "--out", str(plan_path),
+    ])
+
+    if render_dir.exists():
+        shutil.rmtree(render_dir)
+    render_dir.mkdir(parents=True, exist_ok=True)
+    run([
+        sys.executable,
+        str(TOOLS / "render_clips_linux.py"),
+        "--source", str(video_path),
+        "--plan", str(plan_path),
+        "--out-dir", str(render_dir),
+        "--work-dir", str(work_dir / "render"),
+        "--threads", str(args.threads),
+        "--force",
+    ])
+
+    rendered = sorted(path for path in render_dir.glob("*.mp4"))
+    if not rendered:
+        raise RuntimeError("Renderer produced no MP4 files")
+
+    metadata = {
+        "index": index,
+        "url": url,
+        "title": title,
+        "slug": slug,
+        "duration": round(duration, 2),
+        "video_file": str(video_path),
+        "transcript": str(transcript_path),
+        "highlight_plan": "highlight_plan.json",
+        "rendered_files": [path.name for path in rendered],
+    }
+    (render_dir / "video.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    shutil.copy2(plan_path, render_dir / "highlight_plan.json")
+    return {
+        "status": "success",
+        **metadata,
+        "output_dir": str(render_dir),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--run-date", default="", help="YYYY-MM-DD, defaults to today in Asia/Shanghai.")
+    parser.add_argument("--max-videos", type=int, default=9)
+    parser.add_argument("--out-root", type=Path, default=ROOT / "rendered-clips" / "top-videos")
+    parser.add_argument("--work-root", type=Path, default=ROOT / "work" / "top-videos")
+    parser.add_argument("--download-backend", choices=("auto", "yt-dlp", "custom"), default="auto")
+    parser.add_argument("--workers", type=int, default=32)
+    parser.add_argument("--threads", type=int, default=2)
+    parser.add_argument("--whisper-model", default="base")
+    parser.add_argument("--min-video-seconds", type=float, default=15.0)
+    args = parser.parse_args()
+
+    run_date = args.run_date.strip() or run_date_default()
+    output_dir = args.out_root / run_date
+    output_dir.mkdir(parents=True, exist_ok=True)
+    args.work_root.mkdir(parents=True, exist_ok=True)
+    (args.work_root / "output_dir.txt").write_text(str(output_dir) + "\n", encoding="utf-8")
+
+    videos = load_manifest(args.manifest, args.max_videos)
+    shutil.copy2(args.manifest, output_dir / "top_videos.json")
+
+    results: list[dict[str, Any]] = []
+    for index, item in enumerate(videos, start=1):
+        try:
+            result = process_one(item, index, args, output_dir)
+        except Exception as exc:  # noqa: BLE001 - keep the daily batch moving
+            print(f"FAILED top video {index}: {exc}", flush=True)
+            result = {
+                "status": "failed",
+                "index": index,
+                "url": item.get("url", ""),
+                "title": item.get("title", ""),
+                "error": str(exc),
+            }
+        results.append(result)
+
+    summary = {
+        "run_date": run_date,
+        "source_manifest": str(args.manifest),
+        "output_dir": str(output_dir),
+        "total": len(results),
+        "succeeded": sum(1 for item in results if item.get("status") == "success"),
+        "failed": sum(1 for item in results if item.get("status") == "failed"),
+        "videos": results,
+    }
+    (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
+    if summary["succeeded"] < 1:
+        raise SystemExit("No Bloomberg Top Videos were processed successfully")
+
+
+if __name__ == "__main__":
+    main()

@@ -84,3 +84,17 @@ Manual dispatch accepts optional `show_date`, `show_type`, `url`,
 defaults to `auto`, which uses China Show for Monday-Friday show dates and
 Bloomberg Weekend for Saturday-Sunday show dates. The default font preset is
 `noto-serif-sc`.
+
+## Daily Bloomberg Top Videos
+
+`.github/workflows/daily-top-videos.yml` runs at 06:00 Beijing time every day.
+It opens `https://www.bloomberg.com/videos`, extracts the current Top Videos
+carousel links, downloads each video, transcribes it, renders a KC Desktop
+formatted vertical clip for each source video, and commits generated files to:
+
+```text
+rendered-clips/top-videos/YYYY-MM-DD/
+```
+
+Manual dispatch accepts optional `run_date`, `page_url`, `max_videos`, and
+`font_preset` inputs. `run_date` defaults to today in `Asia/Shanghai`.
