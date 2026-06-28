@@ -570,7 +570,8 @@ Rules:
 - subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.
 - Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.
 - Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.
-- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after "KC评论：".
+- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after "KC评论：", hard limit 28 Chinese characters.
+- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.
 - For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.
 - Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
@@ -646,7 +647,7 @@ def normalize_comment_payload(
     prefix = "KC评论："
     if len(comment) > len(prefix) + body_max_chars:
         body = comment[len(prefix):] if comment.startswith(prefix) else comment
-        comment = prefix + body[:body_max_chars].rstrip(" ，,。；;、｜|-")
+        comment = prefix + truncate_comment_body(body, body_max_chars)
 
     if isinstance(raw_highlights, list):
         raw_highlights = [apply_entity_replacements(str(item), entity_guide) for item in raw_highlights]
@@ -656,6 +657,19 @@ def normalize_comment_payload(
         if body:
             highlights = [body[: min(8, len(body))]]
     return comment, highlights[:2]
+
+
+def truncate_comment_body(body: str, max_chars: int) -> str:
+    body = body.strip(" ，,。；;、｜|-")
+    if len(body) <= max_chars:
+        return body
+    clipped = body[:max_chars].rstrip(" ，,。；;、｜|-")
+    min_keep = max(8, max_chars // 2)
+    for marker in ("，", "；", "。", "、", ",", ";"):
+        idx = clipped.rfind(marker)
+        if idx >= min_keep:
+            return clipped[:idx].rstrip(" ，,。；;、｜|-")
+    return clipped
 
 
 def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> tuple[str, list[str]]:
@@ -729,7 +743,7 @@ def normalize_subtitle_comments(
             item.get("comment_highlights", item.get("highlights")),
             fallback_subtitle_comment(clip, by_index[idx]),
             entity_guide,
-            body_max_chars=26,
+            body_max_chars=34,
         )
         normalized.append({
             "subtitle_index": idx,

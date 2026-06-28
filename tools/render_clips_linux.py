@@ -223,7 +223,7 @@ def subtitle_comment_map(clip: dict[str, Any]) -> dict[int, tuple[str, list[str]
             idx = int(item.get("subtitle_index", item.get("index", 0)))
         except (TypeError, ValueError):
             continue
-        comment = normalize_kc_comment(str(item.get("comment", "")), body_max_chars=26)
+        comment = normalize_kc_comment(str(item.get("comment", "")), body_max_chars=34)
         if not comment:
             continue
         highlights = item.get("comment_highlights", item.get("highlights", []))
@@ -250,15 +250,15 @@ def subtitle_comment_for_overlay(
         for raw in raw_highlights:
             key = safe_zh_text(str(raw))[:10].strip()
             if key:
-                return normalize_kc_comment(f"KC评论：盯住{key}这个信号", 26), [key]
+                return normalize_kc_comment(f"KC评论：盯住{key}这个信号", 34), [key]
 
     zh = safe_zh_text(str(subtitle.get("zh_filtered") or subtitle.get("zh") or ""))
     if zh:
         phrase = zh[:12].rstrip(" ，,。；;、")
         if phrase:
-            return normalize_kc_comment(f"KC评论：{phrase}是关键信号", 26), [phrase[:8]]
+            return normalize_kc_comment(f"KC评论：{phrase}是关键信号", 34), [phrase[:8]]
 
-    clip_comment = normalize_kc_comment(str(clip.get("comment", "")), body_max_chars=26)
+    clip_comment = normalize_kc_comment(str(clip.get("comment", "")), body_max_chars=34)
     if clip_comment:
         body = clip_comment.removeprefix("KC评论：")
         return clip_comment, [body[:8]] if body else []
@@ -275,8 +275,21 @@ def normalize_kc_comment(comment: str, body_max_chars: int) -> str:
     prefix = "KC评论："
     body = value[len(prefix):] if value.startswith(prefix) else value
     if len(body) > body_max_chars:
-        value = prefix + body[:body_max_chars].rstrip(" ，,。；;、｜|-")
+        value = prefix + truncate_comment_body(body, body_max_chars)
     return value
+
+
+def truncate_comment_body(body: str, max_chars: int) -> str:
+    body = body.strip(" ，,。；;、｜|-")
+    if len(body) <= max_chars:
+        return body
+    clipped = body[:max_chars].rstrip(" ，,。；;、｜|-")
+    min_keep = max(8, max_chars // 2)
+    for marker in ("，", "；", "。", "、", ",", ";"):
+        idx = clipped.rfind(marker)
+        if idx >= min_keep:
+            return clipped[:idx].rstrip(" ，,。；;、｜|-")
+    return clipped
 
 
 def relative_times(clip: dict[str, Any], subtitle: dict[str, Any]) -> tuple[float, float]:
