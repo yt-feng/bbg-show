@@ -143,6 +143,13 @@ def process_one(
         "--out", str(plan_path),
     ])
 
+    print(f"[top-video {index:02d}] Refining title with DeepSeek", flush=True)
+    run([
+        sys.executable,
+        str(TOOLS / "refine_clip_titles.py"),
+        "--plan", str(plan_path),
+    ])
+
     print(f"[top-video {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():
         shutil.rmtree(render_dir)
@@ -162,10 +169,14 @@ def process_one(
     if not rendered:
         raise RuntimeError("Renderer produced no MP4 files")
 
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    first_clip = next(iter(plan.get("clips", [])), {})
+    refined_title = str(first_clip.get("title", "")).strip()
     metadata = {
         "index": index,
         "url": url,
-        "title": title,
+        "title": refined_title or title,
+        "source_title": title,
         "slug": slug,
         "duration": round(duration, 2),
         "max_clip_seconds": args.max_clip_seconds,

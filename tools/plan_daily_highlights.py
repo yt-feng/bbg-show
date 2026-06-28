@@ -29,6 +29,7 @@ def main() -> None:
     parser.add_argument("--max-seconds", type=int, default=150)
     parser.add_argument("--min-clips", type=int, default=3)
     parser.add_argument("--max-clips", type=int, default=5)
+    parser.add_argument("--skip-title-refine", action="store_true")
     args = parser.parse_args()
 
     speakers_data = json.loads(args.speakers.read_text(encoding="utf-8"))
@@ -97,6 +98,10 @@ def main() -> None:
     }
     args.combined_plan.parent.mkdir(parents=True, exist_ok=True)
     args.combined_plan.write_text(json.dumps(combined, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if not args.skip_title_refine:
+        refiner = Path(__file__).with_name("refine_clip_titles.py")
+        print("Refining combined clip titles with DeepSeek", flush=True)
+        subprocess.run([sys.executable, str(refiner), "--plan", str(args.combined_plan)], check=True)
     print(f"Wrote combined plan: {args.combined_plan} ({len(combined_clips)} clips)", flush=True)
 
 

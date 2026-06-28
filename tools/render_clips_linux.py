@@ -152,8 +152,10 @@ def render_overlay_images(
             "title": safe_zh_text(str(clip.get("title", ""))),
             "titleLines": [safe_zh_text(line) for line in title_lines_for_clip(clip)],
             "titleHighlights": [safe_zh_text(str(item)) for item in clip.get("title_highlights", [])],
+            "comment": safe_zh_text(str(clip.get("comment", ""))),
+            "commentHighlights": [safe_zh_text(str(item)) for item in clip.get("comment_highlights", [])],
             "watermark": "KC桌面",
-            "cta": "更多宏观信息，关注公众号KC桌面",
+            "cta": "关注「KC桌面」，追踪国际热点",
         }
     ]
 

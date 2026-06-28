@@ -484,7 +484,9 @@ def render_static_overlay(job: dict) -> Image.Image:
     title_lines = [l for l in (job.get("titleLines") or []) if l.strip()]
     title_highlights = job.get("titleHighlights") or []
     watermark = job.get("watermark", "KC桌面")
-    cta = job.get("cta", "更多宏观信息，关注公众号KC桌面")
+    cta = job.get("cta", "关注「KC桌面」，追踪国际热点")
+    comment = job.get("comment", "")
+    comment_highlights = ["KC评论"] + [item for item in (job.get("commentHighlights") or []) if item]
 
     # Draw title
     if title_lines or title:
@@ -550,6 +552,26 @@ def render_static_overlay(job: dict) -> Image.Image:
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.65, shadow_blur=5.0,
     )
+
+    if comment:
+        draw = ImageDraw.Draw(img)
+        draw.rounded_rectangle(
+            (46, 1500, width - 46, 1574),
+            radius=22,
+            fill=(0, 0, 0, 116),
+            outline=(255, 209, 51, 72),
+            width=2,
+        )
+        draw_wrapped_text_with_highlights(
+            img, comment,
+            x=78, y=1516, max_width=width - 156, max_height=44,
+            max_font=30, min_font=22,
+            color=(244, 244, 244, 248),
+            highlights=comment_highlights,
+            bold=True, shadow=True, align="left", line_spacing=4,
+            shadow_alpha=0.72, shadow_blur=3.5,
+            max_lines=2,
+        )
 
     # CTA above watermark
     draw_wrapped_text_with_highlights(
