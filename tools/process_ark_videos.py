@@ -13,11 +13,25 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
+from download_bloomberg_video import (  # noqa: E402
+    BROWSER_UA,
+    DEFAULT_PROXY_CACHE,
+    DEFAULT_PROXY_TEST_URL,
+    DEFAULT_SUBSCRIPTION,
+    DEFAULT_SUBSCRIPTION_URL_FILE,
+    LocalProxyServer,
+    cached_proxy,
+    ensure_subscription,
+    safe_file_part,
+    scan_working_proxy,
+    slug_from_url,
+)
+import proxy_hls_downloader as hls_downloader  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,6 +75,39 @@ def ytdlp_command() -> list[str]:
     if binary:
         return [binary]
     return [sys.executable, "-m", "yt_dlp"]
+
+
+def proxy_args(args: argparse.Namespace, source_url: str) -> argparse.Namespace:
+    return SimpleNamespace(
+        subscription=args.proxy_subscription,
+        subscription_url=args.proxy_subscription_url,
+        subscription_url_file=args.proxy_subscription_url_file,
+        refresh_subscription=args.refresh_proxy_subscription,
+        proxy_cache=args.proxy_cache,
+        proxy_test_url=args.proxy_test_url,
+        google_doh=args.google_doh,
+        url=source_url,
+    )
+
+
+def working_proxy(args: argparse.Namespace, source_url: str, work_dir: Path) -> str | None:
+    if args.yt_dlp_proxy_mode == "never":
+        return None
+
+    proxy_ns = proxy_args(args, source_url)
+    proxy = cached_proxy(proxy_ns, work_dir)
+    if proxy:
+        return proxy
+
+    try:
+        subscription = ensure_subscription(proxy_ns)
+        return scan_working_proxy(proxy_ns, subscription, work_dir)
+    except SystemExit as exc:
+        message = str(exc) or exc.__class__.__name__
+        print(f"[ark] Proxy setup unavailable: {message}", flush=True)
+        if args.yt_dlp_proxy_mode == "always":
+            raise
+    return None
 
 
 def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
@@ -192,41 +239,74 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
     }
 
 
-def download_video(source_url: str, output: Path, work_dir: Path) -> None:
+def download_video(source_url: str, output: Path, work_dir: Path, args: argparse.Namespace) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     attempts = [
-        [],
-        ["--extractor-args", "youtube:player_client=web_embedded,default"],
-        ["--extractor-args", "youtube:player_client=android,web"],
-        ["--extractor-args", "youtube:player_client=tv,web"],
+        ("default", []),
+        ("web-embedded", ["--extractor-args", "youtube:player_client=web_embedded,default"]),
+        ("android-web", ["--extractor-args", "youtube:player_client=android,web"]),
+        ("tv-web", ["--extractor-args", "youtube:player_client=tv,web"]),
     ]
     errors: list[str] = []
-    for attempt_index, extra_args in enumerate(attempts, start=1):
-        command = [
-            *ytdlp_command(),
-            "--no-playlist",
-            "--retries", "5",
-            "--fragment-retries", "5",
-            "--merge-output-format", "mp4",
-            "-f", "bv*[height<=1080]+ba/b[height<=1080]/best[height<=1080]/best",
-            "-S", "res:1080,ext:mp4:m4a",
-            "--force-overwrites",
-            "--newline",
-            *extra_args,
-            "-o", str(output),
-            source_url,
-        ]
-        (work_dir / f"yt_dlp_download_command_{attempt_index}.json").write_text(
-            json.dumps(command, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
+    proxy: str | None = None
+    proxy_ready = False
+    modes = ["direct"] if args.yt_dlp_proxy_mode == "never" else ["direct", "proxy"]
+    if args.yt_dlp_proxy_mode == "always":
+        modes = ["proxy"]
+
+    for mode in modes:
+        local_proxy_context = None
+        local_proxy_url = ""
+        if mode == "proxy":
+            if not proxy_ready:
+                proxy = working_proxy(args, source_url, work_dir)
+                proxy_ready = True
+            if not proxy:
+                errors.append("proxy unavailable")
+                continue
+            scheme = hls_downloader.proxy_scheme(proxy)
+            if scheme not in {"http", "https"}:
+                errors.append(f"proxy scheme {scheme or 'unknown'} is not usable with yt-dlp")
+                continue
+            local_proxy_context = LocalProxyServer(proxy, google_doh=args.google_doh)
+            local_proxy_url = local_proxy_context.__enter__()
+            print("[ark] Retrying yt-dlp download through cached/scanned proxy", flush=True)
+
         try:
-            run(command)
-            return
-        except subprocess.CalledProcessError as exc:
-            errors.append(f"attempt {attempt_index} exit {exc.returncode}: {' '.join(extra_args) or 'default'}")
-            if output.exists():
-                output.unlink()
+            for attempt_index, (attempt_name, extra_args) in enumerate(attempts, start=1):
+                command = [
+                    *ytdlp_command(),
+                    "--no-playlist",
+                    "--retries", "5",
+                    "--fragment-retries", "5",
+                    "--merge-output-format", "mp4",
+                    "--user-agent", BROWSER_UA,
+                    "--referer", "https://www.youtube.com/",
+                    "-f", "bv*[height<=1080]+ba/b[height<=1080]/best[height<=1080]/best",
+                    "-S", "res:1080,ext:mp4:m4a",
+                    "--force-overwrites",
+                    "--newline",
+                    *extra_args,
+                    "-o", str(output),
+                    source_url,
+                ]
+                if local_proxy_url:
+                    command = [*command[:-1], "--proxy", local_proxy_url, command[-1]]
+                command_index = f"{mode}_{attempt_index}"
+                (work_dir / f"yt_dlp_download_command_{command_index}.json").write_text(
+                    json.dumps(command, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                try:
+                    run(command)
+                    return
+                except subprocess.CalledProcessError as exc:
+                    errors.append(f"{mode} {attempt_name} exit {exc.returncode}")
+                    if output.exists():
+                        output.unlink()
+        finally:
+            if local_proxy_context:
+                local_proxy_context.__exit__(None, None, None)
     raise RuntimeError("yt-dlp download failed after fallback attempts: " + "; ".join(errors))
 
 
@@ -301,7 +381,7 @@ def process_one(
     print(url, flush=True)
 
     selected_source = resolve_youtube_url(item, work_dir, args.search_results)
-    download_video(selected_source["url"], video_path, work_dir)
+    download_video(selected_source["url"], video_path, work_dir, args)
 
     duration = ffprobe_duration(video_path)
     if duration < args.min_video_seconds:
@@ -407,6 +487,14 @@ def main() -> None:
     parser.add_argument("--whisper-model", default="base")
     parser.add_argument("--min-video-seconds", type=float, default=30.0)
     parser.add_argument("--max-clip-seconds", type=float, default=110.0)
+    parser.add_argument("--yt-dlp-proxy-mode", choices=("auto", "never", "always"), default="auto")
+    parser.add_argument("--proxy-subscription", type=Path, default=DEFAULT_SUBSCRIPTION)
+    parser.add_argument("--proxy-subscription-url", default="")
+    parser.add_argument("--proxy-subscription-url-file", type=Path, default=DEFAULT_SUBSCRIPTION_URL_FILE)
+    parser.add_argument("--refresh-proxy-subscription", action="store_true")
+    parser.add_argument("--proxy-cache", type=Path, default=DEFAULT_PROXY_CACHE)
+    parser.add_argument("--proxy-test-url", default=DEFAULT_PROXY_TEST_URL)
+    parser.add_argument("--google-doh", action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args()
 
     if args.max_videos < 1:

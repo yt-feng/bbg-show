@@ -146,6 +146,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
         run: |
           python tools/process_ark_videos.py \
@@ -156,6 +157,7 @@ jobs:
             --work-root work/ark-invest \
             --state "$STATE_FILE" \
             --threads 2 \
+            --yt-dlp-proxy-mode auto \
             --max-clip-seconds 110
 
       - name: Verify rendered ARK clips
