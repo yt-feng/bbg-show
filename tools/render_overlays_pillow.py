@@ -485,8 +485,6 @@ def render_static_overlay(job: dict) -> Image.Image:
     title_highlights = job.get("titleHighlights") or []
     watermark = job.get("watermark", "KC桌面")
     cta = job.get("cta", "关注「KC桌面」，追踪国际热点")
-    comment = job.get("comment", "")
-    comment_highlights = ["KC评论"] + [item for item in (job.get("commentHighlights") or []) if item]
 
     # Draw title
     if title_lines or title:
@@ -546,43 +544,57 @@ def render_static_overlay(job: dict) -> Image.Image:
     # Watermark at bottom
     draw_wrapped_text_with_highlights(
         img, watermark,
-        x=0, y=1668, max_width=width, max_height=72,
-        max_font=58, min_font=58,
+        x=0, y=1818, max_width=width, max_height=66,
+        max_font=54, min_font=54,
         color=(209, 209, 209, 240),  # white 82% with 94% alpha
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.65, shadow_blur=5.0,
     )
 
-    if comment:
-        draw = ImageDraw.Draw(img)
-        draw.rounded_rectangle(
-            (46, 1500, width - 46, 1574),
-            radius=22,
-            fill=(0, 0, 0, 116),
-            outline=(255, 209, 51, 72),
-            width=2,
-        )
-        draw_wrapped_text_with_highlights(
-            img, comment,
-            x=78, y=1516, max_width=width - 156, max_height=44,
-            max_font=30, min_font=22,
-            color=(244, 244, 244, 248),
-            highlights=comment_highlights,
-            bold=True, shadow=True, align="left", line_spacing=4,
-            shadow_alpha=0.72, shadow_blur=3.5,
-            max_lines=2,
-        )
-
     # CTA above watermark
     draw_wrapped_text_with_highlights(
         img, cta,
-        x=44, y=1586, max_width=width - 88, max_height=52,
-        max_font=34, min_font=34,
+        x=44, y=1728, max_width=width - 88, max_height=50,
+        max_font=32, min_font=32,
         color=(224, 224, 224, 245),  # white 88% with 96% alpha
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.70, shadow_blur=4.0,
     )
 
+    return img
+
+
+def render_comment_overlay(job: dict) -> Image.Image:
+    """Render dynamic KC commentary for one subtitle time window."""
+    width = job["width"]
+    height = job["height"]
+    img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+
+    comment = job.get("comment", "")
+    if not comment:
+        return img
+
+    comment_highlights = ["KC评论"] + [item for item in (job.get("commentHighlights") or []) if item]
+    draw = ImageDraw.Draw(img)
+    box_top = 8
+    box_bottom = min(height - 10, 92)
+    draw.rounded_rectangle(
+        (46, box_top, width - 46, box_bottom),
+        radius=22,
+        fill=(0, 0, 0, 122),
+        outline=(255, 209, 51, 72),
+        width=2,
+    )
+    draw_wrapped_text_with_highlights(
+        img, comment,
+        x=78, y=box_top + 16, max_width=width - 156, max_height=box_bottom - box_top - 26,
+        max_font=30, min_font=22,
+        color=(244, 244, 244, 248),
+        highlights=comment_highlights,
+        bold=True, shadow=True, align="left", line_spacing=6,
+        shadow_alpha=0.72, shadow_blur=3.5,
+        max_lines=2,
+    )
     return img
 
 
@@ -636,6 +648,8 @@ def main() -> None:
             img = render_static_overlay(job)
         elif kind == "subtitle":
             img = render_subtitle_overlay(job)
+        elif kind == "comment":
+            img = render_comment_overlay(job)
         else:
             print(f"Unknown job kind: {kind}", file=sys.stderr)
             continue

@@ -23,7 +23,7 @@ from plan_speaker_highlights import ask_deepseek  # noqa: E402
 TITLE_LINE_LIMITS = (14, 16, 18)
 TITLE_MAX_CHARS = 36
 DEFAULT_BATCH_SIZE = 8
-DEFAULT_MAX_SUBTITLES = 10
+DEFAULT_MAX_SUBTITLES = 24
 DEFAULT_LOOKUP_MAX_QUERIES = 8
 DEFAULT_LOOKUP_RESULTS_PER_QUERY = 3
 PUBLIC_SEARCH_URL = "https://lite.duckduckgo.com/lite/"
@@ -168,13 +168,28 @@ def clip_duration(clip: dict[str, Any]) -> float:
         return 0.0
 
 
-def subtitle_sample(clip: dict[str, Any], max_subtitles: int) -> list[dict[str, str]]:
-    sample: list[dict[str, str]] = []
-    for subtitle in clip.get("subtitles", [])[:max_subtitles]:
+def subtitle_sample(clip: dict[str, Any], max_subtitles: int) -> list[dict[str, Any]]:
+    sample: list[dict[str, Any]] = []
+    for fallback_index, subtitle in enumerate(clip.get("subtitles", [])[:max_subtitles], start=1):
         zh = clean_text(str(subtitle.get("zh", "")))
         en = clean_text(str(subtitle.get("en", "")))
         if zh or en:
-            sample.append({"zh": zh[:180], "en": en[:240]})
+            try:
+                subtitle_index = int(subtitle.get("index", fallback_index))
+            except (TypeError, ValueError):
+                subtitle_index = fallback_index
+            item: dict[str, Any] = {
+                "index": subtitle_index,
+                "zh": zh[:180],
+                "en": en[:240],
+            }
+            for key in ("relative_start", "relative_end"):
+                if key in subtitle:
+                    try:
+                        item[key] = round(float(subtitle[key]), 1)
+                    except (TypeError, ValueError):
+                        pass
+            sample.append(item)
     return sample
 
 
@@ -515,7 +530,14 @@ Return JSON:
       "title_lines": ["第一行", "第二行", "第三行"],
       "title_highlights": ["关键词1", "关键词2"],
       "comment": "KC评论：一句话解释为什么值得关注",
-      "comment_highlights": ["关键词1"]
+      "comment_highlights": ["关键词1"],
+      "subtitle_comments": [
+        {{
+          "subtitle_index": 1,
+          "comment": "KC评论：基于这句字幕的短评",
+          "comment_highlights": ["关键词1"]
+        }}
+      ]
     }}
   ]
 }}
@@ -545,6 +567,11 @@ Rules:
 - comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.
 - comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.
 - Do not repeat the title verbatim in comment.
+- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.
+- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.
+- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.
+- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after "KC评论：".
+- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.
 - Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
 - Do not use financial-advice wording.
@@ -597,22 +624,30 @@ def fallback_lines(clip: dict[str, Any], entity_guide: dict[str, Any] | None = N
     ]
 
 
-def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> tuple[str, list[str]]:
-    comment = apply_entity_replacements(str(raw.get("comment", "")), entity_guide)
+def normalize_comment_payload(
+    raw_comment: Any,
+    raw_highlights: Any,
+    fallback_comment: str,
+    entity_guide: dict[str, Any],
+    *,
+    body_max_chars: int,
+) -> tuple[str, list[str]]:
+    comment = apply_entity_replacements(str(raw_comment or ""), entity_guide)
     comment = safe_zh(to_simplified_common(strip_title_badges(comment)))
     comment = re.sub(r"\s+", "", comment)
     comment = comment.strip(" ，,。；;、｜|-")
     if comment and not comment.startswith("KC评论："):
         comment = "KC评论：" + comment.removeprefix("KC评论:").removeprefix("KC点评：").removeprefix("点评：")
     if not comment:
-        title = compact_title(str(clip.get("title", "")))
-        comment = f"KC评论：这条线索值得继续跟踪" if not title else f"KC评论：{title[:14]}背后有新信号"
-    if len(comment) > 42:
-        prefix = "KC评论："
-        body = comment[len(prefix):] if comment.startswith(prefix) else comment
-        comment = prefix + body[:34].rstrip(" ，,。；;、｜|-")
+        comment = fallback_comment
+    if comment and not comment.startswith("KC评论："):
+        comment = "KC评论：" + comment.removeprefix("KC评论:").removeprefix("KC点评：").removeprefix("点评：")
 
-    raw_highlights = raw.get("comment_highlights")
+    prefix = "KC评论："
+    if len(comment) > len(prefix) + body_max_chars:
+        body = comment[len(prefix):] if comment.startswith(prefix) else comment
+        comment = prefix + body[:body_max_chars].rstrip(" ，,。；;、｜|-")
+
     if isinstance(raw_highlights, list):
         raw_highlights = [apply_entity_replacements(str(item), entity_guide) for item in raw_highlights]
     highlights = normalize_highlights(raw_highlights, comment, limit=2)
@@ -621,6 +656,90 @@ def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: d
         if body:
             highlights = [body[: min(8, len(body))]]
     return comment, highlights[:2]
+
+
+def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> tuple[str, list[str]]:
+    title = compact_title(str(clip.get("title", "")))
+    fallback = f"KC评论：这条线索值得继续跟踪" if not title else f"KC评论：{title[:14]}背后有新信号"
+    return normalize_comment_payload(
+        raw.get("comment", ""),
+        raw.get("comment_highlights"),
+        fallback,
+        entity_guide,
+        body_max_chars=34,
+    )
+
+
+def subtitle_index(subtitle: dict[str, Any], fallback: int) -> int:
+    try:
+        return int(subtitle.get("index", fallback))
+    except (TypeError, ValueError):
+        return fallback
+
+
+def fallback_subtitle_comment(clip: dict[str, Any], subtitle: dict[str, Any]) -> str:
+    raw_highlights = subtitle.get("zh_highlights")
+    if isinstance(raw_highlights, list):
+        for raw in raw_highlights:
+            key = compact_text(str(raw), 10)
+            if key:
+                return f"KC评论：盯住{key}这个信号"
+
+    zh = clean_text(str(subtitle.get("zh_filtered") or subtitle.get("zh") or ""))
+    if zh:
+        phrase = compact_text(zh, 12)
+        if phrase:
+            return f"KC评论：{phrase}是关键信号"
+
+    title = compact_title(str(clip.get("title", "")))
+    return f"KC评论：{title[:12]}这里有新信号" if title else "KC评论：这句是判断关键"
+
+
+def normalize_subtitle_comments(
+    raw: dict[str, Any],
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any],
+) -> list[dict[str, Any]]:
+    raw_items = raw.get("subtitle_comments")
+    if not isinstance(raw_items, list):
+        return []
+
+    subtitles = clip.get("subtitles", [])
+    if not isinstance(subtitles, list) or not subtitles:
+        return []
+
+    by_index: dict[int, dict[str, Any]] = {}
+    for fallback, subtitle in enumerate(subtitles, start=1):
+        if isinstance(subtitle, dict):
+            by_index[subtitle_index(subtitle, fallback)] = subtitle
+
+    normalized: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for item in raw_items:
+        if not isinstance(item, dict):
+            continue
+        try:
+            idx = int(item.get("subtitle_index", item.get("index", 0)))
+        except (TypeError, ValueError):
+            continue
+        if idx in seen or idx not in by_index:
+            continue
+        comment, highlights = normalize_comment_payload(
+            item.get("comment", ""),
+            item.get("comment_highlights", item.get("highlights")),
+            fallback_subtitle_comment(clip, by_index[idx]),
+            entity_guide,
+            body_max_chars=26,
+        )
+        normalized.append({
+            "subtitle_index": idx,
+            "comment": comment,
+            "comment_highlights": highlights,
+        })
+        seen.add(idx)
+
+    normalized.sort(key=lambda item: int(item["subtitle_index"]))
+    return normalized
 
 
 def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> dict[str, Any] | None:
@@ -655,6 +774,7 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         "title_highlights": highlights[:3],
         "comment": comment,
         "comment_highlights": comment_highlights,
+        "subtitle_comments": normalize_subtitle_comments(raw, clip, entity_guide),
     }
 
 
@@ -766,11 +886,13 @@ def apply_refinements(
         clip.setdefault("original_title_lines", clip.get("title_lines", []))
         clip.setdefault("original_title_highlights", clip.get("title_highlights", []))
         clip.setdefault("original_comment", clip.get("comment", ""))
+        clip.setdefault("original_subtitle_comments", clip.get("subtitle_comments", []))
         clip["title"] = refined["title"]
         clip["title_lines"] = refined["title_lines"]
         clip["title_highlights"] = refined["title_highlights"]
         clip["comment"] = refined["comment"]
         clip["comment_highlights"] = refined["comment_highlights"]
+        clip["subtitle_comments"] = refined["subtitle_comments"]
         clip["title_refined"] = True
         clip["title_refine_style"] = style
 

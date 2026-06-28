@@ -19,9 +19,12 @@ OUT_W = 1080
 OUT_H = 1920
 CAPTION_W = 1080
 CAPTION_H = 430
+COMMENT_W = 1080
+COMMENT_H = 112
 MAIN_Y = 690
 PANEL_Y = 1110
 CAPTION_Y = 1125
+COMMENT_Y = 1588
 SOURCE_TOP_CROP = 130
 SOURCE_BOTTOM_CROP = 210
 BG_DEDUPE_FILTER = "eq=brightness=-0.28:contrast=1.02:saturation=0.62:gamma=1.002,noise=alls=0.8:allf=t+u"
@@ -34,6 +37,7 @@ AUDIO_DEDUPE_FILTER = (
 CHUNKED_SUBTITLE_THRESHOLD = 24
 CHUNKED_SUBTITLES_PER_PIECE = 8
 MIN_PIECE_SECONDS = 0.001
+TimedOverlay = tuple[Path, float, float, int]
 SENSITIVE_ZH_TERMS = [
     "投资",
     "革命",
@@ -95,12 +99,14 @@ def main() -> None:
         clip_dir.mkdir(parents=True, exist_ok=True)
 
         # Generate overlay PNGs
-        static_png, subtitle_pngs = render_overlay_images(renderer, clip_dir, clip)
+        static_png, timed_overlays = render_overlay_images(renderer, clip_dir, clip)
 
         duration = duration_of(clip)
+        subtitle_count = sum(1 for item in timed_overlays if item[3] == CAPTION_Y)
+        comment_count = sum(1 for item in timed_overlays if item[3] == COMMENT_Y)
         print(
             f"[{one_based}/{len(clips)}] Rendering: {clip.get('title', '')} "
-            f"({duration:.1f}s, {len(subtitle_pngs)} subtitles)",
+            f"({duration:.1f}s, {subtitle_count} subtitles, {comment_count} comments)",
             flush=True,
         )
 
@@ -109,7 +115,7 @@ def main() -> None:
             source=args.source,
             clip=clip,
             static_png=static_png,
-            subtitle_pngs=subtitle_pngs,
+            timed_overlays=timed_overlays,
             output=output,
             threads=args.threads,
         )
@@ -140,7 +146,7 @@ def render_overlay_images(
     renderer: Path,
     clip_dir: Path,
     clip: dict[str, Any],
-) -> tuple[Path, list[tuple[Path, float, float]]]:
+) -> tuple[Path, list[TimedOverlay]]:
     """Generate overlay PNGs using the Pillow renderer."""
     static_png = clip_dir / "static.png"
     jobs: list[dict[str, Any]] = [
@@ -152,20 +158,20 @@ def render_overlay_images(
             "title": safe_zh_text(str(clip.get("title", ""))),
             "titleLines": [safe_zh_text(line) for line in title_lines_for_clip(clip)],
             "titleHighlights": [safe_zh_text(str(item)) for item in clip.get("title_highlights", [])],
-            "comment": safe_zh_text(str(clip.get("comment", ""))),
-            "commentHighlights": [safe_zh_text(str(item)) for item in clip.get("comment_highlights", [])],
             "watermark": "KC桌面",
             "cta": "关注「KC桌面」，追踪国际热点",
         }
     ]
 
-    subtitle_pngs: list[tuple[Path, float, float]] = []
-    for subtitle in clip.get("subtitles", []):
+    timed_overlays: list[TimedOverlay] = []
+    comment_by_index = subtitle_comment_map(clip)
+    for fallback_index, subtitle in enumerate(clip.get("subtitles", []), start=1):
         start, end = relative_times(clip, subtitle)
         if end <= start:
             continue
+        index = subtitle_index(subtitle, fallback_index)
         zh_source = subtitle.get("zh_filtered") or subtitle.get("zh", "")
-        png = clip_dir / f"sub_{int(subtitle.get('index', len(subtitle_pngs) + 1)):03d}.png"
+        png = clip_dir / f"sub_{index:03d}.png"
         jobs.append({
             "kind": "subtitle",
             "output": str(png),
@@ -176,12 +182,101 @@ def render_overlay_images(
             "zhHighlights": [safe_zh_text(str(item)) for item in subtitle.get("zh_highlights", [])],
             "enHighlights": subtitle.get("en_highlights", []),
         })
-        subtitle_pngs.append((png, start, end))
+        timed_overlays.append((png, start, end, CAPTION_Y))
+
+        comment, comment_highlights = subtitle_comment_for_overlay(clip, subtitle, index, comment_by_index)
+        if comment:
+            comment_png = clip_dir / f"comment_{index:03d}.png"
+            jobs.append({
+                "kind": "comment",
+                "output": str(comment_png),
+                "width": COMMENT_W,
+                "height": COMMENT_H,
+                "comment": comment,
+                "commentHighlights": comment_highlights,
+            })
+            timed_overlays.append((comment_png, start, end, COMMENT_Y))
 
     batch_path = clip_dir / "overlay_batch.json"
     batch_path.write_text(json.dumps({"jobs": jobs}, ensure_ascii=False, indent=2), encoding="utf-8")
     subprocess.run([sys.executable, str(renderer), str(batch_path)], check=True)
-    return static_png, subtitle_pngs
+    return static_png, timed_overlays
+
+
+def subtitle_index(subtitle: dict[str, Any], fallback: int) -> int:
+    try:
+        return int(subtitle.get("index", fallback))
+    except (TypeError, ValueError):
+        return fallback
+
+
+def subtitle_comment_map(clip: dict[str, Any]) -> dict[int, tuple[str, list[str]]]:
+    raw_items = clip.get("subtitle_comments", [])
+    if not isinstance(raw_items, list):
+        return {}
+
+    mapped: dict[int, tuple[str, list[str]]] = {}
+    for item in raw_items:
+        if not isinstance(item, dict):
+            continue
+        try:
+            idx = int(item.get("subtitle_index", item.get("index", 0)))
+        except (TypeError, ValueError):
+            continue
+        comment = normalize_kc_comment(str(item.get("comment", "")), body_max_chars=26)
+        if not comment:
+            continue
+        highlights = item.get("comment_highlights", item.get("highlights", []))
+        if not isinstance(highlights, list):
+            highlights = []
+        mapped[idx] = (
+            safe_zh_text(comment),
+            [safe_zh_text(str(highlight)) for highlight in highlights if str(highlight).strip()],
+        )
+    return mapped
+
+
+def subtitle_comment_for_overlay(
+    clip: dict[str, Any],
+    subtitle: dict[str, Any],
+    index: int,
+    comment_by_index: dict[int, tuple[str, list[str]]],
+) -> tuple[str, list[str]]:
+    if index in comment_by_index:
+        return comment_by_index[index]
+
+    raw_highlights = subtitle.get("zh_highlights")
+    if isinstance(raw_highlights, list):
+        for raw in raw_highlights:
+            key = safe_zh_text(str(raw))[:10].strip()
+            if key:
+                return normalize_kc_comment(f"KC评论：盯住{key}这个信号", 26), [key]
+
+    zh = safe_zh_text(str(subtitle.get("zh_filtered") or subtitle.get("zh") or ""))
+    if zh:
+        phrase = zh[:12].rstrip(" ，,。；;、")
+        if phrase:
+            return normalize_kc_comment(f"KC评论：{phrase}是关键信号", 26), [phrase[:8]]
+
+    clip_comment = normalize_kc_comment(str(clip.get("comment", "")), body_max_chars=26)
+    if clip_comment:
+        body = clip_comment.removeprefix("KC评论：")
+        return clip_comment, [body[:8]] if body else []
+    return "", []
+
+
+def normalize_kc_comment(comment: str, body_max_chars: int) -> str:
+    value = safe_zh_text(comment)
+    value = re.sub(r"\s+", "", value).strip(" ，,。；;、｜|-")
+    if not value:
+        return ""
+    if not value.startswith("KC评论："):
+        value = "KC评论：" + value.removeprefix("KC评论:").removeprefix("KC点评：").removeprefix("点评：")
+    prefix = "KC评论："
+    body = value[len(prefix):] if value.startswith(prefix) else value
+    if len(body) > body_max_chars:
+        value = prefix + body[:body_max_chars].rstrip(" ，,。；;、｜|-")
+    return value
 
 
 def relative_times(clip: dict[str, Any], subtitle: dict[str, Any]) -> tuple[float, float]:
@@ -200,20 +295,20 @@ def render_clip(
     source: Path,
     clip: dict[str, Any],
     static_png: Path,
-    subtitle_pngs: list[tuple[Path, float, float]],
+    timed_overlays: list[TimedOverlay],
     output: Path,
     threads: int,
 ) -> None:
-    if len(subtitle_pngs) > CHUNKED_SUBTITLE_THRESHOLD:
+    if len(timed_overlays) > CHUNKED_SUBTITLE_THRESHOLD:
         print(
-            f"  Using chunked renderer for {len(subtitle_pngs)} subtitle overlays",
+            f"  Using chunked renderer for {len(timed_overlays)} timed overlays",
             flush=True,
         )
         render_clip_chunked(
             source=source,
             clip=clip,
             static_png=static_png,
-            subtitle_pngs=subtitle_pngs,
+            timed_overlays=timed_overlays,
             output=output,
             threads=threads,
         )
@@ -223,7 +318,7 @@ def render_clip(
         source=source,
         clip=clip,
         static_png=static_png,
-        subtitle_pngs=subtitle_pngs,
+        timed_overlays=timed_overlays,
         output=output,
         threads=threads,
     )
@@ -235,17 +330,17 @@ def render_clip_chunked(
     source: Path,
     clip: dict[str, Any],
     static_png: Path,
-    subtitle_pngs: list[tuple[Path, float, float]],
+    timed_overlays: list[TimedOverlay],
     output: Path,
     threads: int,
 ) -> None:
     duration = duration_of(clip)
     piece_dir = static_png.parent / "pieces"
     piece_dir.mkdir(parents=True, exist_ok=True)
-    pieces = build_render_pieces(duration, subtitle_pngs)
+    pieces = build_render_pieces(duration, timed_overlays)
 
     segment_paths: list[Path] = []
-    for idx, (start, end, piece_subtitles) in enumerate(pieces, start=1):
+    for idx, (start, end, piece_overlays) in enumerate(pieces, start=1):
         piece_duration = end - start
         if piece_duration < MIN_PIECE_SECONDS:
             continue
@@ -254,7 +349,7 @@ def render_clip_chunked(
             source=source,
             clip=clip,
             static_png=static_png,
-            subtitles=piece_subtitles,
+            timed_overlays=piece_overlays,
             piece_start=start,
             piece_duration=piece_duration,
             output=segment_path,
@@ -262,7 +357,7 @@ def render_clip_chunked(
         )
         print(
             f"    part {idx:04d}: {start:.2f}-{end:.2f}s "
-            f"{len(piece_subtitles)} subtitle overlays",
+            f"{len(piece_overlays)} timed overlays",
             flush=True,
         )
         subprocess.run(command, check=True)
@@ -312,23 +407,23 @@ def render_clip_chunked(
 
 def build_render_pieces(
     duration: float,
-    subtitle_pngs: list[tuple[Path, float, float]],
-) -> list[tuple[float, float, list[tuple[Path, float, float]]]]:
-    pieces: list[tuple[float, float, list[tuple[Path, float, float]]]] = []
+    timed_overlays: list[TimedOverlay],
+) -> list[tuple[float, float, list[TimedOverlay]]]:
+    pieces: list[tuple[float, float, list[TimedOverlay]]] = []
     cursor = 0.0
-    subtitles: list[tuple[Path, float, float]] = []
-    for png, raw_start, raw_end in sorted(subtitle_pngs, key=lambda item: (item[1], item[2])):
+    overlays: list[TimedOverlay] = []
+    for png, raw_start, raw_end, y in sorted(timed_overlays, key=lambda item: (item[1], item[2], item[3])):
         start = max(0.0, min(duration, raw_start))
         end = max(0.0, min(duration, raw_end))
         if end > start:
-            subtitles.append((png, start, end))
+            overlays.append((png, start, end, y))
 
-    if not subtitles:
+    if not overlays:
         return [(0.0, duration, [])]
 
-    for offset in range(0, len(subtitles), CHUNKED_SUBTITLES_PER_PIECE):
-        group = subtitles[offset:offset + CHUNKED_SUBTITLES_PER_PIECE]
-        next_group = subtitles[offset + CHUNKED_SUBTITLES_PER_PIECE:offset + CHUNKED_SUBTITLES_PER_PIECE + 1]
+    for offset in range(0, len(overlays), CHUNKED_SUBTITLES_PER_PIECE):
+        group = overlays[offset:offset + CHUNKED_SUBTITLES_PER_PIECE]
+        next_group = overlays[offset + CHUNKED_SUBTITLES_PER_PIECE:offset + CHUNKED_SUBTITLES_PER_PIECE + 1]
         start = cursor
         if next_group:
             end = max(group[-1][2], next_group[0][1])
@@ -349,7 +444,7 @@ def build_video_piece_command(
     source: Path,
     clip: dict[str, Any],
     static_png: Path,
-    subtitles: list[tuple[Path, float, float]],
+    timed_overlays: list[TimedOverlay],
     piece_start: float,
     piece_duration: float,
     output: Path,
@@ -359,10 +454,10 @@ def build_video_piece_command(
         "-loop", "1", "-framerate", "30000/1001",
         "-t", f"{piece_duration:.3f}", "-i", str(static_png),
     ]
-    for subtitle_png, _, _ in subtitles:
+    for overlay_png, _, _, _ in timed_overlays:
         image_inputs.extend([
             "-loop", "1", "-framerate", "30000/1001",
-            "-t", f"{piece_duration:.3f}", "-i", str(subtitle_png),
+            "-t", f"{piece_duration:.3f}", "-i", str(overlay_png),
         ])
 
     return [
@@ -377,7 +472,7 @@ def build_video_piece_command(
         "-filter_complex", build_video_piece_filter(
             piece_start=piece_start,
             piece_duration=piece_duration,
-            subtitles=subtitles,
+            timed_overlays=timed_overlays,
         ),
         "-map", "[vout]",
         "-an",
@@ -392,7 +487,7 @@ def build_video_piece_filter(
     *,
     piece_start: float,
     piece_duration: float,
-    subtitles: list[tuple[Path, float, float]],
+    timed_overlays: list[TimedOverlay],
 ) -> str:
     parts = [
         "[0:v]setpts=PTS-STARTPTS,split=2[bgsrc][mainsrc]",
@@ -413,14 +508,14 @@ def build_video_piece_filter(
     ]
 
     previous = "v1"
-    for input_idx, (_, start, end) in enumerate(subtitles, start=2):
+    for input_idx, (_, start, end, y) in enumerate(timed_overlays, start=2):
         local_start = max(0.0, start - piece_start)
         local_end = min(piece_duration, end - piece_start)
         if local_end <= local_start:
             continue
         label = f"v{input_idx}"
         expr = f"between(t\\,{local_start:.3f}\\,{local_end:.3f})"
-        parts.append(f"[{previous}][{input_idx}:v]overlay=0:{CAPTION_Y}:format=auto:enable={expr}[{label}]")
+        parts.append(f"[{previous}][{input_idx}:v]overlay=0:{y}:format=auto:enable={expr}[{label}]")
         previous = label
 
     parts.append(f"[{previous}]format=yuv420p[vout]")
@@ -432,16 +527,16 @@ def build_ffmpeg_command(
     source: Path,
     clip: dict[str, Any],
     static_png: Path,
-    subtitle_pngs: list[tuple[Path, float, float]],
+    timed_overlays: list[TimedOverlay],
     output: Path,
     threads: int,
 ) -> list[str]:
     duration = duration_of(clip)
     image_inputs: list[str] = []
-    for png in [static_png] + [item[0] for item in subtitle_pngs]:
+    for png in [static_png] + [item[0] for item in timed_overlays]:
         image_inputs.extend(["-loop", "1", "-framerate", "30000/1001", "-t", f"{duration:.3f}", "-i", str(png)])
 
-    filter_complex = build_filter_complex(duration, subtitle_pngs)
+    filter_complex = build_filter_complex(duration, timed_overlays)
     return [
         "ffmpeg",
         "-hide_banner", "-y", "-nostdin", "-loglevel", "error", "-nostats",
@@ -463,7 +558,7 @@ def build_ffmpeg_command(
     ]
 
 
-def build_filter_complex(duration: float, subtitle_pngs: list[tuple[Path, float, float]]) -> str:
+def build_filter_complex(duration: float, timed_overlays: list[TimedOverlay]) -> str:
     parts = [
         "[0:v]setpts=PTS-STARTPTS,split=2[bgsrc][mainsrc]",
         (
@@ -483,10 +578,10 @@ def build_filter_complex(duration: float, subtitle_pngs: list[tuple[Path, float,
     ]
 
     previous = "v1"
-    for idx, (_, start, end) in enumerate(subtitle_pngs, start=2):
+    for idx, (_, start, end, y) in enumerate(timed_overlays, start=2):
         label = f"v{idx}"
         expr = f"between(t\\,{start:.3f}\\,{end:.3f})"
-        parts.append(f"[{previous}][{idx}:v]overlay=0:{CAPTION_Y}:format=auto:enable={expr}[{label}]")
+        parts.append(f"[{previous}][{idx}:v]overlay=0:{y}:format=auto:enable={expr}[{label}]")
         previous = label
 
     parts.append(f"[{previous}]format=yuv420p[vout]")
