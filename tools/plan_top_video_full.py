@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a one-clip bilingual plan for a Bloomberg Top Video."""
+"""Build a one-clip bilingual plan for a finance/news source video."""
 
 from __future__ import annotations
 
@@ -92,31 +92,35 @@ def choose_clip_range(
     return segment_start, min(segment_end, target_end, clip_end)
 
 
-def fallback_title_lines(source_title: str) -> list[str]:
-    title = clean_text(source_title) or "Bloomberg Top Video"
+def fallback_title_lines(source_title: str, source_label: str = "Bloomberg Top") -> list[str]:
+    label = clean_text(source_label) or "Bloomberg Top"
+    title = clean_text(source_title) or f"{label} Video"
     words = title.split()
     if len(words) >= 6:
         midpoint = max(2, len(words) // 2)
         return [
-            "Bloomberg Top",
+            label[:24],
             " ".join(words[:midpoint])[:22],
             " ".join(words[midpoint:])[:22],
         ]
-    return ["Bloomberg Top", title[:22], "今日热点"]
+    return [label[:24], title[:22], "今日热点"]
 
 
-def generate_title(source_title: str, source_url: str, sample: str) -> dict[str, Any]:
+def generate_title(source_title: str, source_url: str, source_label: str, sample: str) -> dict[str, Any]:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
         raise SystemExit("DEEPSEEK_API_KEY is required")
 
     system_prompt = (
         "You are a Chinese finance short-video title editor. Return strict JSON only. "
-        "Write concise Simplified Chinese titles suitable for a vertical Bloomberg news clip. "
+        "Write concise Simplified Chinese titles suitable for a vertical finance/news clip. "
         "Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed. "
         "Never use source badges such as 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive."
     )
-    user_prompt = f"""Bloomberg source title:
+    user_prompt = f"""Source label:
+{source_label}
+
+Source title:
 {source_title}
 
 Source URL:
@@ -145,8 +149,8 @@ Rules:
     lines = result.get("title_lines")
     title = clean_text(str(result.get("title", "")))
     if not isinstance(lines, list) or len(lines) != 3:
-        lines = fallback_title_lines(source_title)
-    fallback_lines = fallback_title_lines(source_title)
+        lines = fallback_title_lines(source_title, source_label)
+    fallback_lines = fallback_title_lines(source_title, source_label)
     lines = [
         safe_zh(strip_title_badges(str(line)))[:24] or fallback_lines[index]
         for index, line in enumerate(lines)
@@ -190,7 +194,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
         max_chars=args.subtitle_max_chars,
     )
     print(f"Built {len(units)} subtitle units", flush=True)
-    title_info = generate_title(args.source_title, args.source_url, transcript_sample(args.transcript))
+    title_info = generate_title(args.source_title, args.source_url, args.source_label, transcript_sample(args.transcript))
     translations = translate_units(
         units,
         args.speaker,
@@ -245,6 +249,7 @@ def main() -> None:
     parser.add_argument("--transcript", type=Path, required=True)
     parser.add_argument("--source-url", required=True)
     parser.add_argument("--source-title", required=True)
+    parser.add_argument("--source-label", default="Bloomberg Top")
     parser.add_argument("--speaker", default="Bloomberg")
     parser.add_argument("--segment-start", type=float, default=0.0)
     parser.add_argument("--segment-end", type=float, required=True)
