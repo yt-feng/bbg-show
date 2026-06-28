@@ -148,6 +148,7 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
         *ytdlp_command(),
         "--dump-json",
         "--skip-download",
+        "--flat-playlist",
         "--no-warnings",
         "--no-playlist",
         search_url,
@@ -169,6 +170,8 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
         encoding="utf-8",
     )
     webpage_url = clean_text(str(selected.get("webpage_url") or selected.get("url") or ""))
+    if selected.get("ie_key") == "Youtube" and webpage_url and not webpage_url.startswith("http"):
+        webpage_url = f"https://www.youtube.com/watch?v={webpage_url}"
     if not webpage_url:
         raise RuntimeError("Selected yt-dlp candidate had no URL")
     print(
@@ -191,24 +194,40 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
 
 def download_video(source_url: str, output: Path, work_dir: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
-    command = [
-        *ytdlp_command(),
-        "--no-playlist",
-        "--retries", "5",
-        "--fragment-retries", "5",
-        "--merge-output-format", "mp4",
-        "-f", "bv*[height<=1080]+ba/b[height<=1080]/best[height<=1080]/best",
-        "-S", "res:1080,ext:mp4:m4a",
-        "--force-overwrites",
-        "--newline",
-        "-o", str(output),
-        source_url,
+    attempts = [
+        [],
+        ["--extractor-args", "youtube:player_client=web_embedded,default"],
+        ["--extractor-args", "youtube:player_client=android,web"],
+        ["--extractor-args", "youtube:player_client=tv,web"],
     ]
-    (work_dir / "yt_dlp_download_command.json").write_text(
-        json.dumps(command, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    run(command)
+    errors: list[str] = []
+    for attempt_index, extra_args in enumerate(attempts, start=1):
+        command = [
+            *ytdlp_command(),
+            "--no-playlist",
+            "--retries", "5",
+            "--fragment-retries", "5",
+            "--merge-output-format", "mp4",
+            "-f", "bv*[height<=1080]+ba/b[height<=1080]/best[height<=1080]/best",
+            "-S", "res:1080,ext:mp4:m4a",
+            "--force-overwrites",
+            "--newline",
+            *extra_args,
+            "-o", str(output),
+            source_url,
+        ]
+        (work_dir / f"yt_dlp_download_command_{attempt_index}.json").write_text(
+            json.dumps(command, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        try:
+            run(command)
+            return
+        except subprocess.CalledProcessError as exc:
+            errors.append(f"attempt {attempt_index} exit {exc.returncode}: {' '.join(extra_args) or 'default'}")
+            if output.exists():
+                output.unlink()
+    raise RuntimeError("yt-dlp download failed after fallback attempts: " + "; ".join(errors))
 
 
 def load_state(path: Path) -> dict[str, Any]:
