@@ -21,6 +21,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 WHITE = (255, 255, 255, 255)
 YELLOW = (255, 209, 51, 255)
 SHADOW_COLOR = (0, 0, 0, 199)  # ~78% alpha
+DEFAULT_DISCLAIMER = "仅作观点与信息分享，不构成任何投资建议。"
 
 FontSpec = Tuple[str, int]
 
@@ -475,7 +476,7 @@ def draw_title_backdrop(img: Image.Image) -> None:
 
 
 def render_static_overlay(job: dict) -> Image.Image:
-    """Render static overlay: title + watermark + CTA."""
+    """Render static overlay: title + watermark + CTA + disclaimer."""
     width = job["width"]
     height = job["height"]
     img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
@@ -485,6 +486,7 @@ def render_static_overlay(job: dict) -> Image.Image:
     title_highlights = job.get("titleHighlights") or []
     watermark = job.get("watermark", "KC桌面")
     cta = job.get("cta", "关注「KC桌面」，追踪国际热点")
+    disclaimer = job.get("disclaimer", DEFAULT_DISCLAIMER)
 
     # Draw title
     if title_lines or title:
@@ -559,6 +561,17 @@ def render_static_overlay(job: dict) -> Image.Image:
         color=(224, 224, 224, 245),  # white 88% with 96% alpha
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.70, shadow_blur=4.0,
+    )
+
+    # Small legal footer at the very bottom of every rendered clip.
+    draw_wrapped_text_with_highlights(
+        img, disclaimer,
+        x=44, y=1888, max_width=width - 88, max_height=24,
+        max_font=20, min_font=18,
+        color=(190, 190, 190, 214),  # muted white, deliberately below CTA emphasis
+        bold=False, shadow=True, line_spacing=0,
+        shadow_alpha=0.60, shadow_blur=3.0,
+        max_lines=1,
     )
 
     return img

@@ -37,6 +37,7 @@ AUDIO_DEDUPE_FILTER = (
 CHUNKED_SUBTITLE_THRESHOLD = 24
 CHUNKED_SUBTITLES_PER_PIECE = 8
 MIN_PIECE_SECONDS = 0.001
+DISCLAIMER_TEXT = "仅作观点与信息分享，不构成任何投资建议。"
 TimedOverlay = tuple[Path, float, float, int]
 SENSITIVE_ZH_TERMS = [
     "投资",
@@ -160,6 +161,7 @@ def render_overlay_images(
             "titleHighlights": [safe_zh_text(str(item)) for item in clip.get("title_highlights", [])],
             "watermark": "KC桌面",
             "cta": "关注「KC桌面」，追踪国际热点",
+            "disclaimer": DISCLAIMER_TEXT,
         }
     ]
 
