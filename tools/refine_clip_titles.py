@@ -20,12 +20,27 @@ from plan_speaker_full import clean_text, normalize_highlights, safe_zh  # noqa:
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
 
 
-TITLE_LINE_LIMITS = (14, 16, 18)
+TITLE_LINE_LIMITS = (10, 12, 14)
 TITLE_MAX_CHARS = 36
 DEFAULT_BATCH_SIZE = 8
 DEFAULT_MAX_SUBTITLES = 24
 DEFAULT_LOOKUP_MAX_QUERIES = 8
 DEFAULT_LOOKUP_RESULTS_PER_QUERY = 3
+CHINA_CONTEXT_RE = re.compile(
+    r"(中国|中资|中企|中概|内地|国内|人民币|楼市|房价|房地产|地产|A股|港股|"
+    r"China|Chinese|Hong Kong|renminbi|yuan|property|housing|real estate)",
+    re.IGNORECASE,
+)
+CHINA_NEGATIVE_FRAMING_REPLACEMENTS = (
+    (re.compile(r"(?:外资|资金|资本)(?:正)?(?:集体)?逃离(中国资产|中国市场|A股|港股|中概股?)"), r"\1再定价"),
+    (re.compile(r"(?:唱衰|看空)(中国(?:资产|市场|经济)?)"), r"\1信心修复"),
+    (re.compile(r"(?:崩溃|崩盘|塌了|垮了)"), "承压"),
+    (re.compile(r"(?:完了|没救了?|不行了?|药丸)"), "承压"),
+    (re.compile(r"(?:被抛弃|被放弃|遭抛弃)"), "被重新定价"),
+    (re.compile(r"(?:外资逃离|资金逃离|集体逃离)"), "资金再配置"),
+    (re.compile(r"(?:惨败|失败|输麻了)"), "遇挑战"),
+    (re.compile(r"(?:很惨|太惨|惨了)"), "承压"),
+)
 PUBLIC_SEARCH_URL = "https://lite.duckduckgo.com/lite/"
 PUBLIC_SEARCH_USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -166,6 +181,28 @@ def clip_duration(clip: dict[str, Any]) -> float:
         return round(float(clip.get("end", 0)) - float(clip.get("start", 0)), 1)
     except (TypeError, ValueError):
         return 0.0
+
+
+def is_china_related_clip(clip: dict[str, Any]) -> bool:
+    fields = [
+        str(clip.get("title", "")),
+        str(clip.get("speaker_context", "")),
+        str(clip.get("source_title", "")),
+    ]
+    for subtitle in clip.get("subtitles", [])[:8]:
+        if isinstance(subtitle, dict):
+            fields.append(str(subtitle.get("zh", "")))
+            fields.append(str(subtitle.get("en", "")))
+    return bool(CHINA_CONTEXT_RE.search(" ".join(fields)))
+
+
+def china_safe_title_text(text: str, clip: dict[str, Any]) -> str:
+    if not text or not is_china_related_clip(clip):
+        return text
+    value = text
+    for pattern, replacement in CHINA_NEGATIVE_FRAMING_REPLACEMENTS:
+        value = pattern.sub(replacement, value)
+    return value
 
 
 def subtitle_sample(clip: dict[str, Any], max_subtitles: int) -> list[dict[str, Any]]:
@@ -497,9 +534,12 @@ def system_prompt() -> str:
     return (
         "You are the chief Chinese title editor for finance/news short videos. "
         "Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate "
-        "for a China audience while staying factual. Use credible hooks: big-name institutions, "
+        "for a China audience while staying factual. Think in cover-copy blocks, not article headlines. "
+        "Use credible hooks: big-name institutions, "
         "recognizable people, contrarian tension, surprising consequence, concrete catalyst, "
-        "numbers, and curiosity gaps. Never invent facts or names. Treat public lookup snippets "
+        "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
+        "Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. "
+        "Never invent facts or names. Treat public lookup snippets "
         "as the source of truth for person and institution names."
     )
 
@@ -545,10 +585,20 @@ Return JSON:
 Title strategy:
 - Style: {style}
 - Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。
-- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn.
-- Make the viewer ask "why?" or "really?" without cheap exaggeration.
-- Strong patterns: "高盛：楼市真触底了？", "美联储这句话不寻常", "马斯克押错了吗？", "摩根士丹利：最坏时刻过去？"
+- Use compact authority labels when factual: "高盛王逸", "野村辜朝明", "中金Kevin". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.
+- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.
+- Make the viewer ask "why?" or "really?" without cheap exaggeration. A good third line is often a sharp question or pressure point.
+- Strong three-line reference formats. Use their structure, not their facts unless supported:
+  1. ["高盛王逸", "4万亿城市更新", "会托住楼市吗"] with highlights ["4万亿"]
+  2. ["解读腾讯", "AI路径", "关键分叉在哪"] with highlights ["腾讯", "AI"]
+  3. ["野村辜朝明", "日本央行", "为何被逼到墙角"] with highlights ["辜朝明", "被逼到墙角"]
+  4. ["中金Kevin", "低估值可能是价值陷阱", "等待政策转向消费"] with highlights ["低估值", "价值陷阱", "政策转向消费"]
+- More strong patterns: "高盛：楼市真触底了？", "美联储这句话不寻常", "马斯克押错了吗？", "摩根士丹利：最坏时刻过去？"
 - Weak patterns to avoid: flat summaries, "今日热点", "核心观点速览", "值得关注", "震惊", "必看", "速看", clickbait with no factual basis.
+- Avoid newspaper-style verbs when a short noun phrase works: prefer "腾讯AI路径" over "腾讯正在探索AI业务路径"; prefer "日本央行" over "关于日本央行的讨论".
+- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.
+- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or "can X support Y?".
+- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer "楼市承压，政策如何托底？" over "中国楼市完了？".
 - Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.
 
 Rules:
@@ -556,13 +606,14 @@ Rules:
 - First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.
 - Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.
 - If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.
-- title should be short and sharp, ideally 12-26 Chinese characters.
+- title should be short and sharp, ideally 10-24 Chinese characters.
 - title_lines must contain exactly 3 non-empty short display lines:
-  line 1 = the strongest actor / institution / person,
-  line 2 = the concrete topic or event,
-  line 3 = the hook, tension, question, or consequence.
-- Keep each title line concise enough for a large 9:16 video overlay.
-- title_highlights must be exact substrings from the joined title_lines.
+  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,
+  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,
+  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.
+- Keep each title line as a punchy block, not a full sentence. No filler like "关于", "表示", "认为", "指出" unless needed for facts.
+- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, "低估值", "价值陷阱", "政策转向", "被逼到墙角".
+- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as "政策转向", "消费", "产业升级", "托底", "修复", "低估值", "4万亿".
 - comment must start with "KC评论：" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.
 - comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.
 - comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.
@@ -604,14 +655,22 @@ def fallback_lines(clip: dict[str, Any], entity_guide: dict[str, Any] | None = N
     lines = clip.get("title_lines")
     if isinstance(lines, list):
         cleaned = [
-            compact_text(apply_entity_replacements(str(line), entity_guide or {}), TITLE_LINE_LIMITS[min(idx, 2)])
+            compact_text(
+                china_safe_title_text(apply_entity_replacements(str(line), entity_guide or {}), clip),
+                TITLE_LINE_LIMITS[min(idx, 2)],
+            )
             for idx, line in enumerate(lines[:3])
         ]
         if len(cleaned) == 3 and all(cleaned):
             return cleaned
 
-    speaker = compact_text(apply_entity_replacements(str(clip.get("speaker", "")), entity_guide or {}), TITLE_LINE_LIMITS[0])
-    title = compact_title(apply_entity_replacements(str(clip.get("title", "")), entity_guide or {}))
+    speaker = compact_text(
+        china_safe_title_text(apply_entity_replacements(str(clip.get("speaker", "")), entity_guide or {}), clip),
+        TITLE_LINE_LIMITS[0],
+    )
+    title = compact_title(
+        china_safe_title_text(apply_entity_replacements(str(clip.get("title", "")), entity_guide or {}), clip)
+    )
     if "：" in title:
         left, right = title.split("：", 1)
     elif ":" in title:
@@ -619,8 +678,8 @@ def fallback_lines(clip: dict[str, Any], entity_guide: dict[str, Any] | None = N
     else:
         left, right = speaker or "Bloomberg", title
     return [
-        compact_text(left or speaker or "Bloomberg", TITLE_LINE_LIMITS[0]),
-        compact_text(right or title or "市场焦点", TITLE_LINE_LIMITS[1]),
+        compact_text(china_safe_title_text(left or speaker or "Bloomberg", clip), TITLE_LINE_LIMITS[0]),
+        compact_text(china_safe_title_text(right or title or "市场焦点", clip), TITLE_LINE_LIMITS[1]),
         "关键转折来了",
     ]
 
@@ -763,13 +822,16 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         raw_lines = fallback
 
     lines = [
-        compact_text(apply_entity_replacements(str(raw_lines[idx]), entity_guide), TITLE_LINE_LIMITS[idx]) or fallback[idx]
+        compact_text(
+            china_safe_title_text(apply_entity_replacements(str(raw_lines[idx]), entity_guide), clip),
+            TITLE_LINE_LIMITS[idx],
+        ) or fallback[idx]
         for idx in range(3)
     ]
     if not all(lines):
         return None
 
-    title = compact_title(apply_entity_replacements(str(raw.get("title", "")), entity_guide))
+    title = compact_title(china_safe_title_text(apply_entity_replacements(str(raw.get("title", "")), entity_guide), clip))
     if not title:
         title = f"{lines[0]}：{lines[1]}，{lines[2]}"
 
