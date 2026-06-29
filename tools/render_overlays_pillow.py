@@ -21,7 +21,14 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 WHITE = (255, 255, 255, 255)
 YELLOW = (255, 209, 51, 255)
 SHADOW_COLOR = (0, 0, 0, 199)  # ~78% alpha
-DEFAULT_DISCLAIMER = "仅作观点与信息分享，不构成任何投资建议。"
+DEFAULT_DISCLAIMER = (
+    "免责声明：本内容仅作观点与信息分享，不构成投资、保险、理财、股票、基金等建议，"
+    "市场有风险，投资需谨慎；亦不构成任何证券或金融工具买卖的出价、征价或招揽。"
+    "评级、目标价、估值、盈利预测等分析判断，不构成对具体证券/金融工具在具体价位、"
+    "具体时点、具体市场表现的投资建议，亦不构成针对任何人的具体投资操作意见。"
+    "请结合自身情况独立评估、审慎决策并自行承担风险；本账号不保证资料的准确性、"
+    "可靠性、时效性及完整性，亦不构成任何合同或承诺的基础。"
+)
 
 FontSpec = Tuple[str, int]
 
@@ -546,8 +553,8 @@ def render_static_overlay(job: dict) -> Image.Image:
     # Watermark at bottom
     draw_wrapped_text_with_highlights(
         img, watermark,
-        x=0, y=1818, max_width=width, max_height=66,
-        max_font=54, min_font=54,
+        x=0, y=1766, max_width=width, max_height=58,
+        max_font=48, min_font=48,
         color=(209, 209, 209, 240),  # white 82% with 94% alpha
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.65, shadow_blur=5.0,
@@ -556,8 +563,8 @@ def render_static_overlay(job: dict) -> Image.Image:
     # CTA above watermark
     draw_wrapped_text_with_highlights(
         img, cta,
-        x=44, y=1728, max_width=width - 88, max_height=50,
-        max_font=32, min_font=32,
+        x=44, y=1708, max_width=width - 88, max_height=42,
+        max_font=28, min_font=28,
         color=(224, 224, 224, 245),  # white 88% with 96% alpha
         bold=True, shadow=True, line_spacing=0,
         shadow_alpha=0.70, shadow_blur=4.0,
@@ -566,12 +573,12 @@ def render_static_overlay(job: dict) -> Image.Image:
     # Small legal footer at the very bottom of every rendered clip.
     draw_wrapped_text_with_highlights(
         img, disclaimer,
-        x=44, y=1888, max_width=width - 88, max_height=24,
-        max_font=20, min_font=18,
+        x=36, y=1840, max_width=width - 72, max_height=72,
+        max_font=12, min_font=8,
         color=(190, 190, 190, 214),  # muted white, deliberately below CTA emphasis
-        bold=False, shadow=True, line_spacing=0,
-        shadow_alpha=0.60, shadow_blur=3.0,
-        max_lines=1,
+        bold=False, shadow=True, line_spacing=2,
+        shadow_alpha=0.56, shadow_blur=2.4,
+        max_lines=4,
     )
 
     return img

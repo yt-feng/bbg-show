@@ -37,7 +37,14 @@ AUDIO_DEDUPE_FILTER = (
 CHUNKED_SUBTITLE_THRESHOLD = 24
 CHUNKED_SUBTITLES_PER_PIECE = 8
 MIN_PIECE_SECONDS = 0.001
-DISCLAIMER_TEXT = "仅作观点与信息分享，不构成任何投资建议。"
+DISCLAIMER_TEXT = (
+    "免责声明：本内容仅作观点与信息分享，不构成投资、保险、理财、股票、基金等建议，"
+    "市场有风险，投资需谨慎；亦不构成任何证券或金融工具买卖的出价、征价或招揽。"
+    "评级、目标价、估值、盈利预测等分析判断，不构成对具体证券/金融工具在具体价位、"
+    "具体时点、具体市场表现的投资建议，亦不构成针对任何人的具体投资操作意见。"
+    "请结合自身情况独立评估、审慎决策并自行承担风险；本账号不保证资料的准确性、"
+    "可靠性、时效性及完整性，亦不构成任何合同或承诺的基础。"
+)
 TimedOverlay = tuple[Path, float, float, int]
 SENSITIVE_ZH_TERMS = [
     "投资",
