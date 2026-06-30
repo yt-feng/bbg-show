@@ -193,12 +193,14 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
+          VIDEO_INDEX: ${{ matrix.index }}
         run: |
+          set +e
           python tools/process_top_videos.py \
             --manifest work/top-videos/top_videos.json \
             --run-date "$RUN_DATE" \
             --max-videos "$MAX_VIDEOS" \
-            --video-index "${{ matrix.index }}" \
+            --video-index "$VIDEO_INDEX" \
             --out-root rendered-clips/top-videos \
             --work-root work/top-videos \
             --download-backend auto \
@@ -207,6 +209,60 @@ jobs:
             --max-clip-seconds 90 \
             --clean-output-dir \
             --no-copy-manifest
+          STATUS=$?
+          set -e
+
+          SUMMARY_PATH=$(printf "rendered-clips/top-videos/%s/summary_%02d.json" "$RUN_DATE" "$VIDEO_INDEX")
+          if [ "$STATUS" -ne 0 ]; then
+            echo "::warning::Top Video ${VIDEO_INDEX} failed with exit code ${STATUS}; batch failure threshold is evaluated in the collect job."
+            if [ ! -f "$SUMMARY_PATH" ]; then
+              WRITE_FALLBACK_SUMMARY=1
+            fi
+          fi
+          export WRITE_FALLBACK_SUMMARY="${WRITE_FALLBACK_SUMMARY:-0}"
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          if os.environ.get("WRITE_FALLBACK_SUMMARY") != "1":
+              raise SystemExit(0)
+
+          run_date = os.environ["RUN_DATE"]
+          index = int(os.environ["VIDEO_INDEX"])
+          output_dir = Path("rendered-clips/top-videos") / run_date
+          output_dir.mkdir(parents=True, exist_ok=True)
+          video = {}
+          manifest_path = Path("work/top-videos/top_videos.json")
+          if manifest_path.exists():
+              payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+              videos = payload.get("videos", [])
+              if 1 <= index <= len(videos) and isinstance(videos[index - 1], dict):
+                  video = videos[index - 1]
+          summary = {
+              "run_date": run_date,
+              "source_manifest": str(manifest_path),
+              "output_dir": str(output_dir),
+              "video_index": index,
+              "total": 1,
+              "succeeded": 0,
+              "failed": 1,
+              "videos": [
+                  {
+                      "status": "failed",
+                      "index": index,
+                      "url": str(video.get("url", "")),
+                      "title": str(video.get("title", "")),
+                      "error": "process_top_videos.py exited before writing a summary",
+                  }
+              ],
+          }
+          (output_dir / f"summary_{index:02d}.json").write_text(
+              json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
 
       - name: Upload top video output
         if: ${{ always() }}
@@ -229,6 +285,9 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       RUN_DATE: ${{ needs.scrape.outputs.run_date }}
       OUTPUT_DIR: rendered-clips/top-videos/${{ needs.scrape.outputs.run_date }}
+      VIDEO_COUNT: ${{ needs.scrape.outputs.video_count }}
+      MAX_VIDEOS: ${{ needs.scrape.outputs.max_videos }}
+      MAX_FAILURE_RATE: "0.30"
 
     steps:
       - name: Check out repository
@@ -269,7 +328,37 @@ jobs:
               payload = json.loads(path.read_text(encoding="utf-8"))
               videos.extend(payload.get("videos", []))
 
-          videos.sort(key=lambda item: int(item.get("index", 0)))
+          expected_total = min(int(os.environ["VIDEO_COUNT"]), int(os.environ["MAX_VIDEOS"]))
+          manifest_path = output_dir / "top_videos.json"
+          manifest_videos = []
+          if manifest_path.exists():
+              manifest_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+              raw_videos = manifest_payload.get("videos", [])
+              if isinstance(raw_videos, list):
+                  manifest_videos = raw_videos
+
+          by_index = {}
+          for item in videos:
+              try:
+                  index = int(item.get("index", 0))
+              except (TypeError, ValueError):
+                  continue
+              if index:
+                  by_index[index] = item
+
+          for index in range(1, expected_total + 1):
+              if index in by_index:
+                  continue
+              video = manifest_videos[index - 1] if index <= len(manifest_videos) and isinstance(manifest_videos[index - 1], dict) else {}
+              by_index[index] = {
+                  "status": "failed",
+                  "index": index,
+                  "url": str(video.get("url", "")),
+                  "title": str(video.get("title", "")),
+                  "error": "No process summary artifact was uploaded for this video.",
+              }
+
+          videos = [by_index[index] for index in sorted(by_index)]
           mp4s = sorted(str(path.relative_to(output_dir)) for path in output_dir.rglob("*.mp4"))
           summary = {
               "run_date": os.environ["RUN_DATE"],
@@ -286,6 +375,39 @@ jobs:
               encoding="utf-8",
           )
           print(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Evaluate batch failure rate
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          summary_path = Path(os.environ["OUTPUT_DIR"]) / "summary.json"
+          summary = json.loads(summary_path.read_text(encoding="utf-8"))
+          total = int(summary.get("total") or 0)
+          succeeded = int(summary.get("succeeded") or 0)
+          failed = int(summary.get("failed") or 0)
+          threshold = float(os.environ.get("MAX_FAILURE_RATE", "0.30"))
+          failure_rate = (failed / total) if total else 1.0
+          print(
+              f"Top video batch: total={total}, succeeded={succeeded}, "
+              f"failed={failed}, failure_rate={failure_rate:.1%}, threshold={threshold:.0%}"
+          )
+          if total < 1:
+              raise SystemExit("No top video processing summaries were collected.")
+          if succeeded < 1:
+              raise SystemExit("No top videos were processed successfully.")
+          if failure_rate >= threshold:
+              raise SystemExit(
+                  f"Top video failure rate {failure_rate:.1%} is at or above threshold {threshold:.0%}."
+              )
+          if failed:
+              print(
+                  f"::warning::{failed}/{total} top videos failed "
+                  f"({failure_rate:.1%}), below threshold {threshold:.0%}; keeping workflow green."
+              )
           PY
 
       - name: Verify rendered clips
