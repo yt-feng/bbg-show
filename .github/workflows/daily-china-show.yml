@@ -7,6 +7,8 @@ on:
     - cron: "0 19 * * 1-5"
     # Sunday-Monday Beijing runs clip the previous day's Bloomberg Weekend.
     - cron: "0 19 * * 6,0"
+    # Backup run for delayed Bloomberg publishes: 07:30 Asia/Shanghai = 23:30 UTC.
+    - cron: "30 23 * * *"
   workflow_dispatch:
     inputs:
       show_date:
@@ -81,20 +83,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Cache Whisper model
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface/hub/models--Systran--faster-whisper-base
-          key: whisper-model-base
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-cjk fonts-wqy-zenhei fonts-wqy-microhei
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-          python -m pip install faster-whisper Pillow
-
       - name: Resolve Bloomberg show URL
         run: |
           mkdir -p work/daily
@@ -105,21 +93,62 @@ jobs:
             --github-env "$GITHUB_ENV" \
             --metadata work/daily/show.json
 
+      - name: Check existing rendered show clips
+        id: existing_clips
+        run: |
+          if [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Rendered clips already exist in $OUTPUT_DIR; skipping duplicate run."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "No rendered clips found in $OUTPUT_DIR; continuing."
+          fi
+
+      - name: Cache Whisper model
+        if: steps.existing_clips.outputs.skip != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub/models--Systran--faster-whisper-base
+          key: whisper-model-base
+
+      - name: Install dependencies
+        if: steps.existing_clips.outputs.skip != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk fonts-wqy-zenhei fonts-wqy-microhei
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install faster-whisper Pillow
+
       - name: Download Bloomberg video
+        if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
         run: |
-          python tools/download_bloomberg_video.py \
-            --url "$SHOW_URL" \
-            --download-backend auto \
-            --yt-dlp-proxy-mode auto \
-            --output-dir downloads \
-            --work-dir work/download \
-            --workers 32 \
-            --no-strategy-cache
+          for attempt in 1 2 3; do
+            echo "Download attempt $attempt/3"
+            if python tools/download_bloomberg_video.py \
+              --url "$SHOW_URL" \
+              --download-backend auto \
+              --yt-dlp-proxy-mode auto \
+              --output-dir downloads \
+              --work-dir work/download \
+              --workers 32 \
+              --no-strategy-cache; then
+              exit 0
+            fi
+            status=$?
+            if [ "$attempt" -eq 3 ]; then
+              exit "$status"
+            fi
+            sleep_seconds=$((attempt * 600))
+            echo "Bloomberg source not ready yet; retrying in ${sleep_seconds}s."
+            sleep "$sleep_seconds"
+          done
 
       - name: Identify video file
+        if: steps.existing_clips.outputs.skip != 'true'
         run: |
           VIDEO_FILE=$(find downloads -type f -name '*.mp4' | head -1)
           if [ -z "$VIDEO_FILE" ]; then
@@ -131,6 +160,7 @@ jobs:
           ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$VIDEO_FILE"
 
       - name: Transcribe full show
+        if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -143,6 +173,7 @@ jobs:
             --force
 
       - name: Select keynote speakers
+        if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -154,6 +185,7 @@ jobs:
             --max-speakers "$MAX_SPEAKERS"
 
       - name: Plan speaker highlights
+        if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -169,6 +201,7 @@ jobs:
             --max-clips "$CLIPS_PER_SPEAKER"
 
       - name: Render KC Desktop clips
+        if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
@@ -184,6 +217,7 @@ jobs:
             --force
 
       - name: Copy metadata
+        if: steps.existing_clips.outputs.skip != 'true'
         run: |
           cp work/daily/show.json "$OUTPUT_DIR/show.json"
           cp work/daily/speakers.json "$OUTPUT_DIR/speakers.json"
@@ -191,6 +225,7 @@ jobs:
           find "$OUTPUT_DIR" -maxdepth 1 -type f -print -exec ls -lh {} \;
 
       - name: Verify rendered clips
+        if: steps.existing_clips.outputs.skip != 'true'
         run: |
           CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l)
           echo "Rendered MP4 count: $CLIP_COUNT"
@@ -200,10 +235,12 @@ jobs:
           fi
 
       - name: Clean rendered clips older than 72 hours
+        if: steps.existing_clips.outputs.skip != 'true'
         run: |
           python3 tools/cleanup_rendered_clips.py --retention-hours 72
 
       - name: Commit rendered clips to main
+        if: steps.existing_clips.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

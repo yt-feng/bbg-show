@@ -598,6 +598,7 @@ def extract_asset_ids(probe: dict) -> list[str]:
 
     patterns = [
         re.compile(rf"(?:assetId|assetID|asset_id)[^0-9a-fA-F]{{0,80}}({UUID_RE})", re.IGNORECASE),
+        re.compile(rf"(?:parsely-post-id|resourceId|bmmrId|bmmpId|compressed_id)[^0-9a-fA-F]{{0,80}}({UUID_RE})", re.IGNORECASE),
         re.compile(rf"media-manifest[^\s'\"<>]*?({UUID_RE})\.m3u8", re.IGNORECASE),
         re.compile(rf"/(?:LOOP|HD|SD|LIVE|VOD)[^\s'\"<>]*?({UUID_RE})\.m3u8", re.IGNORECASE),
         re.compile(rf"[?&]id=({UUID_RE})", re.IGNORECASE),
@@ -625,6 +626,22 @@ def extract_url_bound_asset_ids(probe: dict, page_url: str) -> list[str]:
 
     object_pattern = re.compile(r"\{[^{}]{0,2600}\}", re.DOTALL)
     asset_pattern = re.compile(rf'assetI[Dd]"\s*:\s*"({UUID_RE})"', re.IGNORECASE)
+    resource_pattern = re.compile(
+        rf'"(?:resourceId|bmmrId|bmmpId|compressed_id|id)"\s*:\s*"({UUID_RE})"',
+        re.IGNORECASE,
+    )
+    parsely_meta_pattern = re.compile(
+        rf'<meta[^>]+name=["\']parsely-link["\'][^>]+content=["\'][^"\']*{re.escape(target_path)}["\'][^>]*>'
+        rf'.{{0,2600}}?'
+        rf'<meta[^>]+name=["\']parsely-post-id["\'][^>]+content=["\']({UUID_RE})["\']',
+        re.IGNORECASE | re.DOTALL,
+    )
+    reverse_parsely_meta_pattern = re.compile(
+        rf'<meta[^>]+name=["\']parsely-post-id["\'][^>]+content=["\']({UUID_RE})["\'][^>]*>'
+        rf'.{{0,2600}}?'
+        rf'<meta[^>]+name=["\']parsely-link["\'][^>]+content=["\'][^"\']*{re.escape(target_path)}["\']',
+        re.IGNORECASE | re.DOTALL,
+    )
     page_id_pattern = re.compile(
         rf'pageId"\s*:\s*"({UUID_RE})".{{0,1200}}"name"\s*:\s*"parsely-link"\s*,\s*"content"\s*:\s*"[^"]*{re.escape(target_path)}"',
         re.IGNORECASE | re.DOTALL,
@@ -634,6 +651,9 @@ def extract_url_bound_asset_ids(probe: dict, page_url: str) -> list[str]:
         text = normalize_embedded_script_text(text)
         if target_path not in text:
             continue
+        for pattern in (parsely_meta_pattern, reverse_parsely_meta_pattern):
+            for match in pattern.finditer(text):
+                add(match.group(1))
         for object_match in object_pattern.finditer(text):
             item = object_match.group(0)
             if target_path not in item:
@@ -641,6 +661,9 @@ def extract_url_bound_asset_ids(probe: dict, page_url: str) -> list[str]:
             asset_match = asset_pattern.search(item)
             if asset_match:
                 add(asset_match.group(1))
+            resource_match = resource_pattern.search(item)
+            if resource_match:
+                add(resource_match.group(1))
         for match in page_id_pattern.finditer(text):
             add(match.group(1))
     return found
