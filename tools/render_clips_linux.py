@@ -14,6 +14,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from wording_guard import sanitize_zh_wording  # noqa: E402
+
 
 OUT_W = 1080
 OUT_H = 1920
@@ -683,7 +686,7 @@ def split_title_topic(topic: str) -> list[str]:
         return ["市场已提前定价", topic.removeprefix("市场已提前定价").strip()]
 
     candidates = []
-    for marker in ["危机", "预期", "央行", "回调后", "估值", "可能是", "已提前", "城市更新", "房价"]:
+    for marker in ["预期", "央行", "回调后", "估值", "可能是", "已提前", "城市更新", "房价"]:
         idx = topic.find(marker)
         if idx > 0:
             candidates.append(idx + len(marker))
@@ -703,7 +706,7 @@ def split_title_topic(topic: str) -> list[str]:
 
 
 def output_name(index: int, clip: dict[str, Any]) -> str:
-    title = str(clip.get("title", f"clip_{index:02d}"))
+    title = safe_zh_text(str(clip.get("title", f"clip_{index:02d}")))
     title = title.replace("：", "_").replace(":", "_")
     title = title.replace("（", "(").replace("）", ")")
     title = re.sub(r"\((\d+)/(\d+)\)", r"_\1-\2", title)
@@ -726,7 +729,7 @@ def filter_sensitive_zh(text: str) -> str:
 def paraphrase_sensitive_zh(text: str) -> str:
     for old, new in PARAPHRASE_ZH_TERMS:
         text = text.replace(old, new)
-    return text
+    return sanitize_zh_wording(text)
 
 
 def safe_zh_text(text: str) -> str:

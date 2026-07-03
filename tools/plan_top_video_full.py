@@ -20,6 +20,7 @@ from plan_speaker_full import (  # noqa: E402
     translate_units,
 )
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
+from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording  # noqa: E402
 
 
 TITLE_BADGE_PATTERNS = [
@@ -115,7 +116,8 @@ def generate_title(source_title: str, source_url: str, source_label: str, sample
         "You are a Chinese finance short-video title editor. Return strict JSON only. "
         "Write concise Simplified Chinese titles suitable for a vertical finance/news clip. "
         "Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed. "
-        "Never use source badges such as 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive."
+        "Never use source badges such as 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive. "
+        + WORDING_GUARD_PROMPT
     )
     user_prompt = f"""Source label:
 {source_label}
@@ -143,6 +145,9 @@ Rules:
 - Line 3 should be a hook or concrete angle.
 - title_highlights must be exact substrings from the joined title_lines.
 - Never write 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive.
+- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃 in Chinese titles.
+- Prefer softer market wording such as 流动性变化、政策信号、需求变化、信心修复、估值重估、周期压力.
+- For China-related topics, keep pressure factual but word it as market/policy/liquidity changes, not China decline.
 - Do not add markdown.
 """
     result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.2)
@@ -221,7 +226,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
             "en_highlights": normalize_highlights(item.get("en_highlights"), en),
         })
 
-    return {
+    plan = {
         "source_url": args.source_url,
         "source_title": args.source_title,
         "speaker": args.speaker,
@@ -242,6 +247,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
             }
         ],
     }
+    return sanitize_plan_wording(plan)
 
 
 def main() -> None:

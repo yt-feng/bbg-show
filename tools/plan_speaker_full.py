@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from plan_speaker_highlights import ask_deepseek
+from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording, sanitize_zh_wording
 
 
 SENSITIVE_REPLACEMENTS = [
@@ -44,7 +45,7 @@ def safe_zh(text: str) -> str:
     text = clean_text(text)
     for old, new in SENSITIVE_REPLACEMENTS:
         text = text.replace(old, new)
-    return text
+    return sanitize_zh_wording(text)
 
 
 def load_transcript_units(
@@ -104,7 +105,8 @@ def translate_batch(api_key: str, units: list[SubtitleUnit], speaker: str, conte
     system_prompt = (
         "You translate English interview subtitles into natural, concise Simplified Chinese for a finance short video. "
         "Return strict JSON only. Preserve meaning, avoid over-literal wording, and keep each Chinese subtitle readable. "
-        "Avoid sensitive Chinese words by rephrasing 投资/股票/A股/港股 as 市场参与者/权益资产/内地市场/香港市场 when needed."
+        "Avoid sensitive Chinese words by rephrasing 投资/股票/A股/港股 as 市场参与者/权益资产/内地市场/香港市场 when needed. "
+        + WORDING_GUARD_PROMPT
     )
     payload = [
         {"index": unit.index, "start": unit.start, "end": unit.end, "en": unit.en}
@@ -227,7 +229,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
 
     title_lines = [args.title_line1, args.title_line2, args.title_line3]
     title = args.title or f"{args.title_line1}：{args.title_line2}"
-    return {
+    plan = {
         "speaker": args.speaker,
         "speaker_context": args.speaker_context,
         "source_transcript": str(args.transcript),
@@ -245,6 +247,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
             }
         ],
     }
+    return sanitize_plan_wording(plan)
 
 
 def main() -> None:

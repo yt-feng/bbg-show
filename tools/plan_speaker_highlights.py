@@ -19,6 +19,8 @@ from typing import Any, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording
+
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 HOST_OUTRO_PATTERNS = [
@@ -120,7 +122,8 @@ def main() -> None:
         "You are a senior Chinese short-video editor. Your task is to split an interview segment "
         "into short clips and provide bilingual subtitles with keyword highlights. "
         "Return strict JSON only. All Chinese text must avoid sensitive words: "
-        "replace 投资 with ** or rephrase, replace 股票/A股/港股 with 权益资产/内地市场/香港市场."
+        "replace 投资 with ** or rephrase, replace 股票/A股/港股 with 权益资产/内地市场/香港市场. "
+        + WORDING_GUARD_PROMPT
     )
 
     user_prompt = f"""Speaker: {args.speaker}
@@ -182,6 +185,9 @@ Important:
 - Do not reuse the same subtitle text in multiple clips unless it genuinely appears twice in the source transcript.
 - Chinese titles must have hook/conflict angle, not flat descriptions
 - Avoid: 投资, 股票, A股, 港股, 美股 in Chinese text
+- Never use hard crisis/doom wording in Chinese title/subtitle/comment fields: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
+- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
+- If the segment is China-related and negative, word the Chinese subtitles around pressure, policy response, demand repair, liquidity change, or confidence repair. Do not make China itself sound hopeless or ridiculed.
 """
 
     print("Requesting clip plan from DeepSeek...", flush=True)
@@ -217,14 +223,14 @@ Important:
             raise SystemExit("All generated clips failed the speaker-content quality gate")
 
     # Write output
-    payload = {
+    payload = sanitize_plan_wording({
         "speaker": args.speaker,
         "speaker_context": args.speaker_context,
         "source_transcript": str(args.transcript),
         "segment_range": [args.segment_start, args.segment_end],
         "duration": segment_duration,
         "clips": clips,
-    }
+    })
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote plan: {args.out} ({len(clips)} clips)", flush=True)

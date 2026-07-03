@@ -18,6 +18,7 @@ from urllib.request import Request, urlopen
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from plan_speaker_full import clean_text, normalize_highlights, safe_zh  # noqa: E402
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
+from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording, sanitize_zh_wording  # noqa: E402
 
 
 TITLE_LINE_LIMITS = (10, 12, 14)
@@ -155,6 +156,7 @@ def strip_title_badges(text: str) -> str:
 
 def compact_text(text: str, max_chars: int) -> str:
     value = safe_zh(to_simplified_common(strip_title_badges(text)))
+    value = sanitize_zh_wording(value, for_title=True)
     value = value.replace("：", "").replace(":", "")
     value = re.sub(r"^(?:标题|观点|看点|结论)\s*[：:]\s*", "", value)
     value = value.strip(" ，,。；;、｜|-")
@@ -165,6 +167,7 @@ def compact_text(text: str, max_chars: int) -> str:
 
 def compact_title(text: str) -> str:
     value = safe_zh(to_simplified_common(strip_title_badges(text)))
+    value = sanitize_zh_wording(value, for_title=True)
     value = re.sub(r"\s+", "", value)
     value = value.strip(" ，,。；;、｜|-")
     if len(value) <= TITLE_MAX_CHARS:
@@ -196,13 +199,29 @@ def is_china_related_clip(clip: dict[str, Any]) -> bool:
     return bool(CHINA_CONTEXT_RE.search(" ".join(fields)))
 
 
+def clip_wording_context(clip: dict[str, Any]) -> str:
+    fields = [
+        str(clip.get("title", "")),
+        str(clip.get("speaker", "")),
+        str(clip.get("speaker_context", "")),
+        str(clip.get("source_title", "")),
+        " ".join(str(item) for item in clip.get("title_lines", []) if item),
+    ]
+    for subtitle in clip.get("subtitles", [])[:12]:
+        if isinstance(subtitle, dict):
+            fields.append(str(subtitle.get("zh", "")))
+            fields.append(str(subtitle.get("en", "")))
+    return " ".join(fields)
+
+
 def china_safe_title_text(text: str, clip: dict[str, Any]) -> str:
-    if not text or not is_china_related_clip(clip):
+    if not text:
         return text
     value = text
-    for pattern, replacement in CHINA_NEGATIVE_FRAMING_REPLACEMENTS:
-        value = pattern.sub(replacement, value)
-    return value
+    if is_china_related_clip(clip):
+        for pattern, replacement in CHINA_NEGATIVE_FRAMING_REPLACEMENTS:
+            value = pattern.sub(replacement, value)
+    return sanitize_zh_wording(value, context=clip_wording_context(clip), for_title=True)
 
 
 def subtitle_sample(clip: dict[str, Any], max_subtitles: int) -> list[dict[str, Any]]:
@@ -539,8 +558,10 @@ def system_prompt() -> str:
         "recognizable people, contrarian tension, surprising consequence, concrete catalyst, "
         "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
         "Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. "
+        "Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. "
         "Never invent facts or names. Treat public lookup snippets "
-        "as the source of truth for person and institution names."
+        "as the source of truth for person and institution names. "
+        + WORDING_GUARD_PROMPT
     )
 
 
@@ -628,6 +649,9 @@ Rules:
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
 - Do not use financial-advice wording.
 - Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.
+- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.
+- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
+- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.
 - Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.
 """
 
@@ -971,6 +995,8 @@ def apply_refinements(
         clip["subtitle_comments"] = refined["subtitle_comments"]
         clip["title_refined"] = True
         clip["title_refine_style"] = style
+
+    sanitize_plan_wording(plan)
 
     plan["title_refine"] = {
         "provider": "deepseek",
