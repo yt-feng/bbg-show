@@ -222,6 +222,9 @@ jobs:
           cp work/daily/show.json "$OUTPUT_DIR/show.json"
           cp work/daily/speakers.json "$OUTPUT_DIR/speakers.json"
           cp work/daily/highlight_plan.json "$OUTPUT_DIR/highlight_plan.json"
+          if [ -f work/daily/title_refine_log.json ]; then
+            cp work/daily/title_refine_log.json "$OUTPUT_DIR/title_refine_log.json"
+          fi
           find "$OUTPUT_DIR" -maxdepth 1 -type f -print -exec ls -lh {} \;
 
       - name: Verify rendered clips

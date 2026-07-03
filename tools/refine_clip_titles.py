@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import html as html_lib
 import json
 import os
@@ -27,6 +28,36 @@ DEFAULT_BATCH_SIZE = 8
 DEFAULT_MAX_SUBTITLES = 24
 DEFAULT_LOOKUP_MAX_QUERIES = 8
 DEFAULT_LOOKUP_RESULTS_PER_QUERY = 3
+TITLE_QUALITY_MIN_SCORE = 65
+TITLE_DATA_LESSONS = {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+        "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+        "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+        "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+        "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+        "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+    ],
+    "avoid_patterns": [
+        "过长的新闻句，尤其是 24 字以上还塞多个从句",
+        "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+        "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+        "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+        "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+    ],
+}
+TITLE_BIG_ANCHOR_RE = re.compile(
+    r"(高盛|摩根士丹利|摩根大通|美联储|野村|中金|美银|花旗|贝莱德|桥水|富达|瀚亚|"
+    r"CLSA|中银|特朗普|马斯克|黄仁勋|鲍威尔|巴菲特|辜朝明|洪灏|邢自强|王逸|Kevin|"
+    r"腾讯|阿里|英伟达|苹果|微软|OpenAI|ARK|木头姐|Cathie)",
+    re.IGNORECASE,
+)
+TITLE_NUMBER_RE = re.compile(r"(\d|万亿|万|亿|%|美元|基点|BP|bp|PMI|CPI|PCE)", re.IGNORECASE)
+TITLE_HOOK_RE = re.compile(
+    r"(吗|为何|为什么|怎么|会不会|能否|是否|真相|反转|意外|被逼|墙角|陷阱|托底|"
+    r"转向|拐点|分歧|重估|关键|信号|底|加码|掩盖|冰火两重天|低估值)"
+)
+TITLE_FLAT_RE = re.compile(r"(市场机会|市场影响|策略前瞻|成焦点|长期催化剂|短期压力|值得关注)$")
 CHINA_CONTEXT_RE = re.compile(
     r"(中国|中资|中企|中概|内地|国内|人民币|楼市|房价|房地产|地产|A股|港股|"
     r"China|Chinese|Hong Kong|renminbi|yuan|property|housing|real estate)",
@@ -222,6 +253,70 @@ def china_safe_title_text(text: str, clip: dict[str, Any]) -> str:
         for pattern, replacement in CHINA_NEGATIVE_FRAMING_REPLACEMENTS:
             value = pattern.sub(replacement, value)
     return sanitize_zh_wording(value, context=clip_wording_context(clip), for_title=True)
+
+
+def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[str, Any]:
+    lines = refined.get("title_lines", [])
+    if not isinstance(lines, list):
+        lines = []
+    joined = "".join(str(line) for line in lines)
+    title = str(refined.get("title", "")) or joined
+    text = f"{title}{joined}"
+
+    score = 50
+    strengths: list[str] = []
+    fixes: list[str] = []
+
+    if TITLE_BIG_ANCHOR_RE.search(text):
+        score += 18
+        strengths.append("has_authority_anchor")
+    else:
+        fixes.append("add_institution_or_person_anchor")
+
+    if TITLE_NUMBER_RE.search(text):
+        score += 12
+        strengths.append("has_number_or_data")
+    else:
+        fixes.append("add_number_asset_or_specific_topic_if_supported")
+
+    if TITLE_HOOK_RE.search(text):
+        score += 18
+        strengths.append("has_hook_tension")
+    else:
+        fixes.append("add_question_or_tension_line")
+
+    if is_china_related_clip(clip):
+        score += 8
+        strengths.append("china_related_interest")
+
+    if any(len(str(line)) > TITLE_LINE_LIMITS[min(idx, 2)] for idx, line in enumerate(lines[:3])):
+        score -= 8
+        fixes.append("tighten_display_lines")
+
+    if len(title) > TITLE_MAX_CHARS:
+        score -= 10
+        fixes.append("shorten_full_title")
+
+    if TITLE_FLAT_RE.search(title) or TITLE_FLAT_RE.search(joined):
+        score -= 14
+        fixes.append("replace_flat_summary_with_tension")
+
+    if re.search(r"(今日热点|核心观点速览|值得关注|速看|必看|震惊)", text):
+        score -= 16
+        fixes.append("remove_generic_clickbait_or_filler")
+
+    guarded = sanitize_zh_wording(text, context=clip_wording_context(clip), for_title=True)
+    if guarded != text:
+        score -= 12
+        fixes.append("wording_guard_changed_title")
+
+    score = max(0, min(100, score))
+    return {
+        "score": score,
+        "pass": score >= TITLE_QUALITY_MIN_SCORE,
+        "strengths": strengths,
+        "fixes": list(dict.fromkeys(fixes)),
+    }
 
 
 def subtitle_sample(clip: dict[str, Any], max_subtitles: int) -> list[dict[str, Any]]:
@@ -554,6 +649,7 @@ def system_prompt() -> str:
         "You are the chief Chinese title editor for finance/news short videos. "
         "Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate "
         "for a China audience while staying factual. Think in cover-copy blocks, not article headlines. "
+        "Use a constrained template first, then fill it with facts; do not freestyle long sentences. "
         "Use credible hooks: big-name institutions, "
         "recognizable people, contrarian tension, surprising consequence, concrete catalyst, "
         "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
@@ -587,11 +683,18 @@ Return JSON:
   "clips": [
     {{
       "index": 1,
+      "formula_id": "authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence",
       "title": "完整中文标题",
       "title_lines": ["第一行", "第二行", "第三行"],
       "title_highlights": ["关键词1", "关键词2"],
       "comment": "KC评论：一句话解释为什么值得关注",
       "comment_highlights": ["关键词1"],
+      "quality_check": {{
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      }},
       "subtitle_comments": [
         {{
           "subtitle_index": 1,
@@ -605,6 +708,15 @@ Return JSON:
 
 Title strategy:
 - Style: {style}
+- Data-backed lessons from past KC Desktop posts:
+{json.dumps(TITLE_DATA_LESSONS, ensure_ascii=False, indent=2)}
+- Choose exactly one formula_id for each clip:
+  authority_number_question = "高盛王逸 / 4万亿城市更新 / 会托住楼市吗"
+  authority_pressure = "野村辜朝明 / 日本央行 / 为何被逼到墙角"
+  contrarian_condition = "中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费"
+  data_policy_signal = "6月PMI / 积极信号 / 政策会加码吗"
+  big_name_consequence = "黄仁勋 / AI人才 / 中国优势被低估？"
+- If none fits, use the closest formula and make line 3 a sharp question.
 - Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。
 - Use compact authority labels when factual: "高盛王逸", "野村辜朝明", "中金Kevin". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.
 - Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.
@@ -653,6 +765,7 @@ Rules:
 - Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
 - For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.
 - Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.
+- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.
 """
 
 
@@ -868,14 +981,18 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         highlights = [line for line in lines[1:] if line][:2]
     comment, comment_highlights = normalize_comment(raw, clip, entity_guide)
 
-    return {
+    refined = {
         "title": title,
         "title_lines": lines,
         "title_highlights": highlights[:3],
         "comment": comment,
         "comment_highlights": comment_highlights,
         "subtitle_comments": normalize_subtitle_comments(raw, clip, entity_guide),
+        "formula_id": clean_text(str(raw.get("formula_id", "")))[:48],
+        "quality_check": raw.get("quality_check") if isinstance(raw.get("quality_check"), dict) else {},
     }
+    refined["title_quality_audit"] = title_quality_audit(refined, clip)
+    return refined
 
 
 def refine_batch(
@@ -888,15 +1005,18 @@ def refine_batch(
     max_subtitles: int,
     public_lookup: list[dict[str, Any]],
     entity_guide: dict[str, Any],
+    log_events: list[dict[str, Any]] | None = None,
 ) -> dict[int, dict[str, Any]]:
     briefs = [
         clip_brief(plan, clips[index - 1], index, max_subtitles)
         for index in indexes
     ]
+    system_text = system_prompt()
+    prompt_text = user_prompt(briefs, style, public_lookup, entity_guide)
     result = ask_deepseek(
         api_key,
-        system_prompt(),
-        user_prompt(briefs, style, public_lookup, entity_guide),
+        system_text,
+        prompt_text,
         temperature=0.45,
     )
     parsed = parse_items(result)
@@ -909,6 +1029,28 @@ def refine_batch(
         refined = normalize_item(item, clips[index - 1], entity_guide)
         if refined:
             normalized[index] = refined
+
+    if log_events is not None:
+        log_events.append({
+            "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "indexes": indexes,
+            "briefs": briefs,
+            "system_prompt": system_text,
+            "user_prompt": prompt_text,
+            "raw_result": result,
+            "parsed_indexes": sorted(parsed),
+            "normalized": {
+                str(index): {
+                    "title": item.get("title"),
+                    "title_lines": item.get("title_lines"),
+                    "formula_id": item.get("formula_id"),
+                    "quality_check": item.get("quality_check"),
+                    "title_quality_audit": item.get("title_quality_audit"),
+                    "comment": item.get("comment"),
+                }
+                for index, item in normalized.items()
+            },
+        })
     return normalized
 
 
@@ -921,6 +1063,7 @@ def refine_titles(
     max_subtitles: int,
     public_lookup: list[dict[str, Any]],
     entity_guide: dict[str, Any],
+    log_events: list[dict[str, Any]] | None = None,
 ) -> dict[int, dict[str, Any]]:
     clips = plan.get("clips", [])
     if not isinstance(clips, list) or not clips:
@@ -946,6 +1089,7 @@ def refine_titles(
                 max_subtitles=max_subtitles,
                 public_lookup=public_lookup,
                 entity_guide=entity_guide,
+                log_events=log_events,
             )
         )
 
@@ -962,6 +1106,7 @@ def refine_titles(
                 max_subtitles=max_subtitles,
                 public_lookup=public_lookup,
                 entity_guide=entity_guide,
+                log_events=log_events,
             )
         )
 
@@ -993,6 +1138,9 @@ def apply_refinements(
         clip["comment"] = refined["comment"]
         clip["comment_highlights"] = refined["comment_highlights"]
         clip["subtitle_comments"] = refined["subtitle_comments"]
+        clip["title_formula_id"] = refined.get("formula_id", "")
+        clip["title_quality_audit"] = refined.get("title_quality_audit", {})
+        clip["title_model_quality_check"] = refined.get("quality_check", {})
         clip["title_refined"] = True
         clip["title_refine_style"] = style
 
@@ -1005,7 +1153,58 @@ def apply_refinements(
         "clip_count": len(refinements),
         "entity_translation_guide": entity_guide,
         "public_lookup": public_lookup,
+        "data_driven_lessons": TITLE_DATA_LESSONS,
+        "quality_min_score": TITLE_QUALITY_MIN_SCORE,
+        "quality_audit": [
+            {
+                "index": index,
+                "title": clips[index - 1].get("title", ""),
+                **(clips[index - 1].get("title_quality_audit") or {}),
+            }
+            for index in sorted(refinements)
+        ],
     }
+
+
+def default_log_path(plan_path: Path) -> Path:
+    return plan_path.with_name("title_refine_log.json")
+
+
+def write_refine_log(
+    path: Path,
+    *,
+    plan_path: Path,
+    style: str,
+    public_lookup: list[dict[str, Any]],
+    entity_guide: dict[str, Any],
+    refinements: dict[int, dict[str, Any]],
+    log_events: list[dict[str, Any]],
+) -> None:
+    payload = {
+        "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "plan_path": str(plan_path),
+        "style": style,
+        "provider": "deepseek",
+        "model": "deepseek-chat",
+        "data_driven_lessons": TITLE_DATA_LESSONS,
+        "quality_min_score": TITLE_QUALITY_MIN_SCORE,
+        "public_lookup_count": len(public_lookup),
+        "entity_translation_guide": entity_guide,
+        "refined_titles": {
+            str(index): {
+                "title": item.get("title"),
+                "title_lines": item.get("title_lines"),
+                "formula_id": item.get("formula_id"),
+                "quality_check": item.get("quality_check"),
+                "title_quality_audit": item.get("title_quality_audit"),
+                "comment": item.get("comment"),
+            }
+            for index, item in sorted(refinements.items())
+        },
+        "events": log_events,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -1017,6 +1216,7 @@ def main() -> None:
     parser.add_argument("--lookup-max-queries", type=int, default=DEFAULT_LOOKUP_MAX_QUERIES)
     parser.add_argument("--lookup-results-per-query", type=int, default=DEFAULT_LOOKUP_RESULTS_PER_QUERY)
     parser.add_argument("--no-public-lookup", action="store_true")
+    parser.add_argument("--log-path", type=Path, default=None, help="Write DeepSeek title-refine prompts/results to this JSON file.")
     args = parser.parse_args()
 
     if args.batch_size < 1:
@@ -1046,6 +1246,7 @@ def main() -> None:
 
     entity_guide = build_entity_translation_guide(api_key, briefs, lookup)
 
+    log_events: list[dict[str, Any]] = []
     refinements = refine_titles(
         plan,
         api_key=api_key,
@@ -1054,9 +1255,21 @@ def main() -> None:
         max_subtitles=args.max_subtitles,
         public_lookup=lookup,
         entity_guide=entity_guide,
+        log_events=log_events,
     )
     apply_refinements(plan, refinements, args.style, lookup, entity_guide)
+    log_path = args.log_path or default_log_path(args.plan)
+    plan["title_refine"]["log_file"] = str(log_path)
     args.plan.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_refine_log(
+        log_path,
+        plan_path=args.plan,
+        style=args.style,
+        public_lookup=lookup,
+        entity_guide=entity_guide,
+        refinements=refinements,
+        log_events=log_events,
+    )
 
     for index in sorted(refinements):
         refined = refinements[index]
@@ -1065,6 +1278,7 @@ def main() -> None:
             flush=True,
         )
     print(f"Wrote refined titles: {args.plan}", flush=True)
+    print(f"Wrote title refine log: {log_path}", flush=True)
 
 
 if __name__ == "__main__":

@@ -467,6 +467,9 @@ def process_one(
     }
     (render_dir / "video.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(plan_path, render_dir / "highlight_plan.json")
+    title_log = plan_path.with_name("title_refine_log.json")
+    if title_log.exists():
+        shutil.copy2(title_log, render_dir / "title_refine_log.json")
     return {
         "status": "success",
         **metadata,
