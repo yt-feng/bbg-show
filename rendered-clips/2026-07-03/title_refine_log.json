@@ -1,0 +1,691 @@
+{
+  "timestamp_utc": "2026-07-03T20:29:50.720103+00:00",
+  "plan_path": "work/daily/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 0,
+  "entity_translation_guide": {
+    "entities": [],
+    "notes": [
+      "No public lookup snippets were available."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "GlobalX策略师：中国科技被低估，IPO催化价值重估？",
+      "title_lines": [
+        "Global X策略",
+        "中国科技被低估",
+        "IPO催化价值重估？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 76,
+        "pass": true,
+        "strengths": [
+          "has_hook_tension",
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported"
+        ]
+      },
+      "comment": "KC评论：IPO和芯片巨头上市或成市场重新定价的催化剂，关注估值修复机会"
+    },
+    "2": {
+      "title": "GlobalX策略师：中国科技盈利超预期是关键催化剂？",
+      "title_lines": [
+        "Global X策略",
+        "中国科技盈利超预期",
+        "是关键催化剂？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 76,
+        "pass": true,
+        "strengths": [
+          "has_hook_tension",
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported"
+        ]
+      },
+      "comment": "KC评论：持续超预期盈利或让市场重新配置中国科技，类似九年前行情"
+    },
+    "3": {
+      "title": "GlobalX策略师：AI基建需求强劲，中国科技估值仍低？",
+      "title_lines": [
+        "Global X策略",
+        "AI基建需求强劲",
+        "中国科技估值仍低？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 58,
+        "pass": false,
+        "strengths": [
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：市场增长超100%但估值个位数，长期结构性机会值得关注"
+    },
+    "4": {
+      "title": "GlobalX策略师：AI交易扩散，关注基建能源商品？",
+      "title_lines": [
+        "Global X策略",
+        "AI交易扩散",
+        "关注基建能源商品？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 58,
+        "pass": false,
+        "strengths": [
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：AI背后卖铲人——数据中心、电缆、能源，衍生机会不容忽视"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-03T20:29:50.714733+00:00",
+      "indexes": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 78.0,
+          "speaker": "Billy Lung",
+          "speaker_context": "Investment Strategist at Global X in Sydney",
+          "source_title": "",
+          "show_date": "2026-07-03",
+          "current_title": "Global X策略师Billy Lung：中国科技资产被低估，IPO催化价值重估",
+          "current_title_lines": [
+            "Global X策略师Billy Lung",
+            "中国科技资产被低估",
+            "IPO催化价值重估"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "目前这并不那么重要。我们更关注增长预期和2027年的前景。回到你提到的观点，中国资产被忽视且定价偏低。",
+              "en": "No matter you know doesn't matter that much right now so that's one thing we're looking much more for now in terms of expectations in terms of growth and what 2027 will look like but I think going back to your point about you know China bei",
+              "relative_start": 0.0,
+              "relative_end": 12.0
+            },
+            {
+              "index": 2,
+              "zh": "这实际上是资本市场活动不足的体现。因此，我很兴奋地看到昨晚的消息——某公司融资，估值接近150-180亿美元。",
+              "en": "I think it's actually a matter of a function of the lack of capital markets a lot of capital market activity which is why I think I'm quite excited to see a you know the obviously the overnight news about clean raising money and having a va",
+              "relative_start": 12.0,
+              "relative_end": 26.0
+            },
+            {
+              "index": 3,
+              "zh": "我们可能还会看到中国主要芯片公司上市。我认为这些是强有力的催化剂，让市场意识到价值尚未充分实现。",
+              "en": "We're also going to see potentially chip major chip companies in China listing as well and I think these are actually very strong catalyst for the market to actually go hey we haven't seen much realization of value.",
+              "relative_start": 26.0,
+              "relative_end": 38.0
+            },
+            {
+              "index": 4,
+              "zh": "我们之前不知道基准在哪里，现在越来越多的估值成为基准，让全球投资者意识到中国可能存在定价偏低。",
+              "en": "We don't know where the benchmark or where the actual market was and now we're actually seeing more and more of these valuation being a benchmark and providing global investors to know hey there might be a potential under pricing in China.",
+              "relative_start": 38.0,
+              "relative_end": 50.0
+            },
+            {
+              "index": 5,
+              "zh": "回到你的观点，这正是Global X在澳大利亚推出中国科技ETF（代码DRGN）的原因。",
+              "en": "And going back to your point this is exactly why global X in Australia launched the global X tech China tech ETF or ticker code DRGN or Dragon.",
+              "relative_start": 50.0,
+              "relative_end": 58.0
+            },
+            {
+              "index": 6,
+              "zh": "因为我们相信这个市场有强劲的价值和增长，不仅未来五年，甚至可能持续数十年。",
+              "en": "It's because we do believe that there is very strong value and very strong growth in this market going for not just in the next five years but potentially decades.",
+              "relative_start": 58.0,
+              "relative_end": 66.0
+            },
+            {
+              "index": 7,
+              "zh": "那么，什么能触发转折点，让人们重新关注中国科技领域？是盈利吗？你认为催化剂是什么？",
+              "en": "What what could spark that tipping point then for people to tilt more back into this this this this realm right of China tech is it going to be earnings I mean what what do you think is going to be that catalyst.",
+              "relative_start": 66.0,
+              "relative_end": 78.0
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "duration_seconds": 45.0,
+          "speaker": "Billy Lung",
+          "speaker_context": "Investment Strategist at Global X in Sydney",
+          "source_title": "",
+          "show_date": "2026-07-03",
+          "current_title": "Global X策略师Billy Lung：中国科技公司持续超预期盈利是关键催化剂",
+          "current_title_lines": [
+            "Global X策略师Billy Lung",
+            "中国科技公司持续超预期盈利",
+            "是关键催化剂"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "是的，好问题。我认为我提到的资本市场活动——越来越多的IPO和融资——会让市场了解这些中国资产的真实价值。",
+              "en": "Yeah no that's exactly good point so I think a what I mentioned capital market activity the more and more IPOs the more and more fund raising that would give the overall market an understanding of what the true value of these Chinese invest",
+              "relative_start": 0.0,
+              "relative_end": 12.0
+            },
+            {
+              "index": 2,
+              "zh": "第二，大型语言模型如Pool和MiniMax等不断发布数据，这些都是积极的。最后一块拼图是：中国科技公司能否持续超预期？",
+              "en": "Number two is obviously there's still a lot of data points that are coming out of in a major large language model such as the pool and also mini max all of these are going to be positive as well and exactly you're right you've on that I thi",
+              "relative_start": 12.0,
+              "relative_end": 28.0
+            },
+            {
+              "index": 3,
+              "zh": "持续超预期盈利或持续实现盈利。大约九年前，我们看到类似情况——它们持续超预期，市场才意识到并重新配置。",
+              "en": "Consistently beat earnings or consistently delivered earnings and this is something that we saw probably in a video doing very something similar probably nine years ago when they consistently beat expectations in delivered earnings and that",
+              "relative_start": 28.0,
+              "relative_end": 45.0
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "duration_seconds": 46.0,
+          "speaker": "Billy Lung",
+          "speaker_context": "Investment Strategist at Global X in Sydney",
+          "source_title": "",
+          "show_date": "2026-07-03",
+          "current_title": "Global X策略师Billy Lung：AI基建需求强劲，中国科技估值仍具吸引力",
+          "current_title_lines": [
+            "Global X策略师Billy Lung",
+            "AI基建需求强劲",
+            "中国科技估值仍具吸引力"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "你的观察很对。即使看美国指数或费城半导体指数，过去12个月成交量几乎翻倍。我认为这是杠杆产品（如2倍、3倍单股ETF）推动的。",
+              "en": "You're correct to say that that's a good observation I mean even we just look at the U.S. stocks index or the philly philly philly semi index in terms of turnover it's nearly doubled in the past 12 months and I think that is a function of l",
+              "relative_start": 0.0,
+              "relative_end": 19.0
+            },
+            {
+              "index": 2,
+              "zh": "但重要的是，指数水平确实有流动性驱动的强势，同时我们看到的潜在市场增长超过100%，明年可能30%-40%，但估值仍在个位数。",
+              "en": "But I think it's also important to know that yes there is a lot of liquidity driven strength in terms of where the index levels are but at the same time we are looking at a potential market which is growing at over 100% and potentially 30% ",
+              "relative_start": 19.0,
+              "relative_end": 35.0
+            },
+            {
+              "index": 3,
+              "zh": "所以，目前更多是市场动态或技术面因素，但从长期结构性增长和估值看，我们并不认为这是大问题。",
+              "en": "So I think in terms of you know like you mentioned it is very much market dynamics or market technicals right now but in terms of the long term structural growth valuation we don't see this as a very big issue right now.",
+              "relative_start": 35.0,
+              "relative_end": 46.0
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "duration_seconds": 60.9,
+          "speaker": "Billy Lung",
+          "speaker_context": "Investment Strategist at Global X in Sydney",
+          "source_title": "",
+          "show_date": "2026-07-03",
+          "current_title": "Global X策略师Billy Lung：AI交易扩散，关注基建、能源和商品",
+          "current_title_lines": [
+            "Global X策略师Billy Lung",
+            "AI交易扩散",
+            "关注基建、能源和商品"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我认为AI交易已经扩散。虽然半导体驱动，但人们忽视的是AI背后的“卖铲人”——不仅是存储和GPU，还有基础设施。",
+              "en": "Well I think you know I think AI trades really really got breath now everyone I think yes you know AI trade have been driven by semiconductors I think a lot of things that people haven't been looking at is actually the peaks and shovels tha",
+              "relative_start": 0.0,
+              "relative_end": 19.9
+            },
+            {
+              "index": 2,
+              "zh": "建设数据中心的公司需要大量互联电缆、电源设备、冷却设备、光缆等，这些在中国市场非常强劲。我们关注这些“卖铲人”中的赢家。",
+              "en": "You know what are the companies that are actually building the data centers you know this actually requires a lot of interconnect cables power equipment power cooling equipment optical cables which again is a very strong market in China rig",
+              "relative_start": 19.9,
+              "relative_end": 39.9
+            },
+            {
+              "index": 3,
+              "zh": "第三层是能源和商品，比如数据中心用的铜线。我们也在关注能源是否由可再生能源（如铀）提供。这些都是AI交易的衍生机会。",
+              "en": "And I guess the third sort of layer things to look at is what are the energy and also commodities that go behind it when all the copper wire that goes into data center again something that we've been looking at very very strongly and even w",
+              "relative_start": 39.9,
+              "relative_end": 60.9
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 78.0,\n    \"speaker\": \"Billy Lung\",\n    \"speaker_context\": \"Investment Strategist at Global X in Sydney\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-03\",\n    \"current_title\": \"Global X策略师Billy Lung：中国科技资产被低估，IPO催化价值重估\",\n    \"current_title_lines\": [\n      \"Global X策略师Billy Lung\",\n      \"中国科技资产被低估\",\n      \"IPO催化价值重估\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"目前这并不那么重要。我们更关注增长预期和2027年的前景。回到你提到的观点，中国资产被忽视且定价偏低。\",\n        \"en\": \"No matter you know doesn't matter that much right now so that's one thing we're looking much more for now in terms of expectations in terms of growth and what 2027 will look like but I think going back to your point about you know China bei\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 12.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这实际上是资本市场活动不足的体现。因此，我很兴奋地看到昨晚的消息——某公司融资，估值接近150-180亿美元。\",\n        \"en\": \"I think it's actually a matter of a function of the lack of capital markets a lot of capital market activity which is why I think I'm quite excited to see a you know the obviously the overnight news about clean raising money and having a va\",\n        \"relative_start\": 12.0,\n        \"relative_end\": 26.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们可能还会看到中国主要芯片公司上市。我认为这些是强有力的催化剂，让市场意识到价值尚未充分实现。\",\n        \"en\": \"We're also going to see potentially chip major chip companies in China listing as well and I think these are actually very strong catalyst for the market to actually go hey we haven't seen much realization of value.\",\n        \"relative_start\": 26.0,\n        \"relative_end\": 38.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我们之前不知道基准在哪里，现在越来越多的估值成为基准，让全球投资者意识到中国可能存在定价偏低。\",\n        \"en\": \"We don't know where the benchmark or where the actual market was and now we're actually seeing more and more of these valuation being a benchmark and providing global investors to know hey there might be a potential under pricing in China.\",\n        \"relative_start\": 38.0,\n        \"relative_end\": 50.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"回到你的观点，这正是Global X在澳大利亚推出中国科技ETF（代码DRGN）的原因。\",\n        \"en\": \"And going back to your point this is exactly why global X in Australia launched the global X tech China tech ETF or ticker code DRGN or Dragon.\",\n        \"relative_start\": 50.0,\n        \"relative_end\": 58.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因为我们相信这个市场有强劲的价值和增长，不仅未来五年，甚至可能持续数十年。\",\n        \"en\": \"It's because we do believe that there is very strong value and very strong growth in this market going for not just in the next five years but potentially decades.\",\n        \"relative_start\": 58.0,\n        \"relative_end\": 66.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"那么，什么能触发转折点，让人们重新关注中国科技领域？是盈利吗？你认为催化剂是什么？\",\n        \"en\": \"What what could spark that tipping point then for people to tilt more back into this this this this realm right of China tech is it going to be earnings I mean what what do you think is going to be that catalyst.\",\n        \"relative_start\": 66.0,\n        \"relative_end\": 78.0\n      }\n    ]\n  },\n  {\n    \"index\": 2,\n    \"duration_seconds\": 45.0,\n    \"speaker\": \"Billy Lung\",\n    \"speaker_context\": \"Investment Strategist at Global X in Sydney\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-03\",\n    \"current_title\": \"Global X策略师Billy Lung：中国科技公司持续超预期盈利是关键催化剂\",\n    \"current_title_lines\": [\n      \"Global X策略师Billy Lung\",\n      \"中国科技公司持续超预期盈利\",\n      \"是关键催化剂\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"是的，好问题。我认为我提到的资本市场活动——越来越多的IPO和融资——会让市场了解这些中国资产的真实价值。\",\n        \"en\": \"Yeah no that's exactly good point so I think a what I mentioned capital market activity the more and more IPOs the more and more fund raising that would give the overall market an understanding of what the true value of these Chinese invest\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 12.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"第二，大型语言模型如Pool和MiniMax等不断发布数据，这些都是积极的。最后一块拼图是：中国科技公司能否持续超预期？\",\n        \"en\": \"Number two is obviously there's still a lot of data points that are coming out of in a major large language model such as the pool and also mini max all of these are going to be positive as well and exactly you're right you've on that I thi\",\n        \"relative_start\": 12.0,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"持续超预期盈利或持续实现盈利。大约九年前，我们看到类似情况——它们持续超预期，市场才意识到并重新配置。\",\n        \"en\": \"Consistently beat earnings or consistently delivered earnings and this is something that we saw probably in a video doing very something similar probably nine years ago when they consistently beat expectations in delivered earnings and that\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 45.0\n      }\n    ]\n  },\n  {\n    \"index\": 3,\n    \"duration_seconds\": 46.0,\n    \"speaker\": \"Billy Lung\",\n    \"speaker_context\": \"Investment Strategist at Global X in Sydney\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-03\",\n    \"current_title\": \"Global X策略师Billy Lung：AI基建需求强劲，中国科技估值仍具吸引力\",\n    \"current_title_lines\": [\n      \"Global X策略师Billy Lung\",\n      \"AI基建需求强劲\",\n      \"中国科技估值仍具吸引力\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"你的观察很对。即使看美国指数或费城半导体指数，过去12个月成交量几乎翻倍。我认为这是杠杆产品（如2倍、3倍单股ETF）推动的。\",\n        \"en\": \"You're correct to say that that's a good observation I mean even we just look at the U.S. stocks index or the philly philly philly semi index in terms of turnover it's nearly doubled in the past 12 months and I think that is a function of l\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但重要的是，指数水平确实有流动性驱动的强势，同时我们看到的潜在市场增长超过100%，明年可能30%-40%，但估值仍在个位数。\",\n        \"en\": \"But I think it's also important to know that yes there is a lot of liquidity driven strength in terms of where the index levels are but at the same time we are looking at a potential market which is growing at over 100% and potentially 30% \",\n        \"relative_start\": 19.0,\n        \"relative_end\": 35.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以，目前更多是市场动态或技术面因素，但从长期结构性增长和估值看，我们并不认为这是大问题。\",\n        \"en\": \"So I think in terms of you know like you mentioned it is very much market dynamics or market technicals right now but in terms of the long term structural growth valuation we don't see this as a very big issue right now.\",\n        \"relative_start\": 35.0,\n        \"relative_end\": 46.0\n      }\n    ]\n  },\n  {\n    \"index\": 4,\n    \"duration_seconds\": 60.9,\n    \"speaker\": \"Billy Lung\",\n    \"speaker_context\": \"Investment Strategist at Global X in Sydney\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-03\",\n    \"current_title\": \"Global X策略师Billy Lung：AI交易扩散，关注基建、能源和商品\",\n    \"current_title_lines\": [\n      \"Global X策略师Billy Lung\",\n      \"AI交易扩散\",\n      \"关注基建、能源和商品\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我认为AI交易已经扩散。虽然半导体驱动，但人们忽视的是AI背后的“卖铲人”——不仅是存储和GPU，还有基础设施。\",\n        \"en\": \"Well I think you know I think AI trades really really got breath now everyone I think yes you know AI trade have been driven by semiconductors I think a lot of things that people haven't been looking at is actually the peaks and shovels tha\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 19.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"建设数据中心的公司需要大量互联电缆、电源设备、冷却设备、光缆等，这些在中国市场非常强劲。我们关注这些“卖铲人”中的赢家。\",\n        \"en\": \"You know what are the companies that are actually building the data centers you know this actually requires a lot of interconnect cables power equipment power cooling equipment optical cables which again is a very strong market in China rig\",\n        \"relative_start\": 19.9,\n        \"relative_end\": 39.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"第三层是能源和商品，比如数据中心用的铜线。我们也在关注能源是否由可再生能源（如铀）提供。这些都是AI交易的衍生机会。\",\n        \"en\": \"And I guess the third sort of layer things to look at is what are the energy and also commodities that go behind it when all the copper wire that goes into data center again something that we've been looking at very very strongly and even w\",\n        \"relative_start\": 39.9,\n        \"relative_end\": 60.9\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[]\n\nEntity translation guide:\n{\n  \"entities\": [],\n  \"notes\": [\n    \"No public lookup snippets were available.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_number_question",
+            "title": "Global X策略师：中国科技被低估，IPO催化价值重估？",
+            "title_lines": [
+              "Global X策略师",
+              "中国科技被低估",
+              "IPO催化价值重估？"
+            ],
+            "title_highlights": [
+              "Global X",
+              "被低估",
+              "IPO",
+              "价值重估"
+            ],
+            "comment": "KC评论：IPO和芯片巨头上市或成市场重新定价的催化剂，关注估值修复机会。",
+            "comment_highlights": [
+              "IPO",
+              "估值修复"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：增长预期和2027年前景才是焦点。",
+                "comment_highlights": [
+                  "增长预期"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：某公司融资估值近150-180亿美元，信号积极。",
+                "comment_highlights": [
+                  "融资估值"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：芯片巨头上市或成强催化剂，价值待释放。",
+                "comment_highlights": [
+                  "芯片巨头上市"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：更多估值基准让全球投资者看到中国定价偏低。",
+                "comment_highlights": [
+                  "定价偏低"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：Global X在澳洲推出中国科技ETF，代码DRGN。",
+                "comment_highlights": [
+                  "DRGN"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：市场价值增长或持续数十年，不止五年。",
+                "comment_highlights": [
+                  "价值增长"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：盈利还是其他因素？什么能触发转折点？",
+                "comment_highlights": [
+                  "转折点"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "formula_id": "authority_number_question",
+            "title": "Global X策略师：中国科技盈利超预期是关键催化剂？",
+            "title_lines": [
+              "Global X策略师",
+              "中国科技盈利超预期",
+              "是关键催化剂？"
+            ],
+            "title_highlights": [
+              "盈利超预期",
+              "催化剂"
+            ],
+            "comment": "KC评论：持续超预期盈利或让市场重新配置中国科技，类似九年前行情。",
+            "comment_highlights": [
+              "持续超预期",
+              "重新配置"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：IPO和融资活动揭示中国资产真实价值。",
+                "comment_highlights": [
+                  "真实价值"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：大模型数据积极，盈利超预期是关键拼图。",
+                "comment_highlights": [
+                  "盈利超预期"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：九年前类似情况，持续超预期后市场重新配置。",
+                "comment_highlights": [
+                  "重新配置"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "formula_id": "authority_number_question",
+            "title": "Global X策略师：AI基建需求强劲，中国科技估值仍低？",
+            "title_lines": [
+              "Global X策略师",
+              "AI基建需求强劲",
+              "中国科技估值仍低？"
+            ],
+            "title_highlights": [
+              "AI基建",
+              "估值仍低"
+            ],
+            "comment": "KC评论：市场增长超100%但估值个位数，长期结构性机会值得关注。",
+            "comment_highlights": [
+              "增长超100%",
+              "估值个位数"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：成交量翻倍，杠杆产品推波助澜。",
+                "comment_highlights": [
+                  "成交量翻倍"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：市场增长超100%，明年30-40%，估值仍在个位数。",
+                "comment_highlights": [
+                  "增长超100%",
+                  "估值个位数"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：长期结构性增长和估值不是大问题。",
+                "comment_highlights": [
+                  "结构性增长"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "formula_id": "authority_number_question",
+            "title": "Global X策略师：AI交易扩散，关注基建能源商品？",
+            "title_lines": [
+              "Global X策略师",
+              "AI交易扩散",
+              "关注基建能源商品？"
+            ],
+            "title_highlights": [
+              "AI交易扩散",
+              "基建",
+              "能源",
+              "商品"
+            ],
+            "comment": "KC评论：AI背后卖铲人——数据中心、电缆、能源，衍生机会不容忽视。",
+            "comment_highlights": [
+              "卖铲人",
+              "衍生机会"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：AI交易扩散，卖铲人不止半导体。",
+                "comment_highlights": [
+                  "卖铲人"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：数据中心需要电缆、电源、冷却设备，中国市场强劲。",
+                "comment_highlights": [
+                  "数据中心"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：铜线、可再生能源，AI交易的第三层机会。",
+                "comment_highlights": [
+                  "铜线",
+                  "可再生能源"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "normalized": {
+        "1": {
+          "title": "GlobalX策略师：中国科技被低估，IPO催化价值重估？",
+          "title_lines": [
+            "Global X策略",
+            "中国科技被低估",
+            "IPO催化价值重估？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 76,
+            "pass": true,
+            "strengths": [
+              "has_hook_tension",
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported"
+            ]
+          },
+          "comment": "KC评论：IPO和芯片巨头上市或成市场重新定价的催化剂，关注估值修复机会"
+        },
+        "2": {
+          "title": "GlobalX策略师：中国科技盈利超预期是关键催化剂？",
+          "title_lines": [
+            "Global X策略",
+            "中国科技盈利超预期",
+            "是关键催化剂？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 76,
+            "pass": true,
+            "strengths": [
+              "has_hook_tension",
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported"
+            ]
+          },
+          "comment": "KC评论：持续超预期盈利或让市场重新配置中国科技，类似九年前行情"
+        },
+        "3": {
+          "title": "GlobalX策略师：AI基建需求强劲，中国科技估值仍低？",
+          "title_lines": [
+            "Global X策略",
+            "AI基建需求强劲",
+            "中国科技估值仍低？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 58,
+            "pass": false,
+            "strengths": [
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：市场增长超100%但估值个位数，长期结构性机会值得关注"
+        },
+        "4": {
+          "title": "GlobalX策略师：AI交易扩散，关注基建能源商品？",
+          "title_lines": [
+            "Global X策略",
+            "AI交易扩散",
+            "关注基建能源商品？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 58,
+            "pass": false,
+            "strengths": [
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：AI背后卖铲人——数据中心、电缆、能源，衍生机会不容忽视"
+        }
+      }
+    }
+  ]
+}
