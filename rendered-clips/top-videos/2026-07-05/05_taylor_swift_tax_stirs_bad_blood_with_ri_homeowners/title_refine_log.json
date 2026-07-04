@@ -1,0 +1,448 @@
+{
+  "timestamp_utc": "2026-07-04T23:11:28.126520+00:00",
+  "plan_path": "work/top-videos/05_taylor_swift_tax_stirs_bad_blood_with_ri_homeowners/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "彭博社",
+          "彭博新闻社"
+        ],
+        "confidence": "high",
+        "evidence": "Official Chinese website bloombergchina.com uses '彭博'."
+      },
+      {
+        "source_text": "Taylor Swift",
+        "entity_type": "person",
+        "preferred_en": "Taylor Swift",
+        "preferred_zh": "泰勒·斯威夫特",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly used Chinese name in media."
+      },
+      {
+        "source_text": "Rhode Island",
+        "entity_type": "place",
+        "preferred_en": "Rhode Island",
+        "preferred_zh": "罗德岛",
+        "aliases": [
+          "罗德岛州"
+        ],
+        "confidence": "high",
+        "evidence": "Standard Chinese translation for the U.S. state."
+      },
+      {
+        "source_text": "Taylor Swift Tax",
+        "entity_type": "event",
+        "preferred_en": "Taylor Swift Tax",
+        "preferred_zh": "泰勒·斯威夫特税",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Used in the source title and subtitles."
+      },
+      {
+        "source_text": "Businessweek Daily",
+        "entity_type": "other",
+        "preferred_en": "Businessweek Daily",
+        "preferred_zh": "商业周刊每日",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Bloomberg Businessweek is known as '彭博商业周刊', but 'Daily' suggests a daily segment."
+      },
+      {
+        "source_text": "Greg Ryan",
+        "entity_type": "person",
+        "preferred_en": "Greg Ryan",
+        "preferred_zh": "格雷格·瑞安",
+        "aliases": [
+          "格雷格"
+        ],
+        "confidence": "medium",
+        "evidence": "Subtitles use '格雷格' as first name; full name from Bloomberg article."
+      },
+      {
+        "source_text": "Watch Hill",
+        "entity_type": "place",
+        "preferred_en": "Watch Hill",
+        "preferred_zh": "沃奇希尔",
+        "aliases": [
+          "沃奇山"
+        ],
+        "confidence": "medium",
+        "evidence": "Common translation for the Rhode Island location."
+      },
+      {
+        "source_text": "Holiday House",
+        "entity_type": "other",
+        "preferred_en": "Holiday House",
+        "preferred_zh": "假日别墅",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "Mentioned in snippet as Taylor Swift's mansion; translation is generic."
+      }
+    ],
+    "notes": [
+      "The current title uses '泰勒·斯威夫特税' which matches the established translation.",
+      "Bloomberg is consistently translated as '彭博' in official Chinese materials.",
+      "Greg Ryan's full Chinese name is inferred; only '格雷格' appears in subtitles."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "泰勒·斯威夫特税罗德岛度假屋主税单涨50%？",
+      "title_lines": [
+        "泰勒·斯威夫特税",
+        "罗德岛度假屋主",
+        "税单涨50%？"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 70,
+        "pass": true,
+        "strengths": [
+          "has_number_or_data",
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：名人税名下的政策意外，中产房主才是主要承受者"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-04T23:11:28.118439+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 7:46 ‘Taylor Swift Tax’ Stirs Bad Blood With Rhode Island Homeowners Businessweek Daily",
+          "source_title": "Duration: 7:46 ‘Taylor Swift Tax’ Stirs Bad Blood With Rhode Island Homeowners Businessweek Daily",
+          "show_date": "",
+          "current_title": "泰勒·斯威夫特税引争议 罗德岛度假屋主不满 豪宅税冲击中产",
+          "current_title_lines": [
+            "泰勒·斯威夫特税",
+            "罗德岛度假屋主不满",
+            "豪宅税冲击中产"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "格雷格，欢迎来到节目。这是彭博终端上阅读量最高的报道，原因很充分。",
+              "en": "Greg, good to have you on the program. This is a most read story on the Bloomberg terminal and for very good reason.",
+              "relative_start": 0.2,
+              "relative_end": 5.9
+            },
+            {
+              "index": 2,
+              "zh": "不仅标题惊人，整个故事都令人惊叹。",
+              "en": "It's not just the headline that is amazing. The entire story is amazing.",
+              "relative_start": 5.9,
+              "relative_end": 9.5
+            },
+            {
+              "index": 3,
+              "zh": "泰勒·斯威夫特税，与罗德岛房主关系紧张。",
+              "en": "Taylor Swift-Taxters, bad blood with Rhode Island homeowners.",
+              "relative_start": 9.5,
+              "relative_end": 13.5
+            },
+            {
+              "index": 4,
+              "zh": "所谓的泰勒·斯威夫特税是什么？这是罗德岛对价值超过100万美元的第二套住房征收的年度财产税。",
+              "en": "What is the so-called Taylor Swift-Tax? So the tax is an annual property tax on second homes",
+              "relative_start": 13.5,
+              "relative_end": 21.6
+            },
+            {
+              "index": 5,
+              "zh": "税率为0.5个百分点。",
+              "en": "in Rhode Island that are valued over $1 million. It's half a percentage point.",
+              "relative_start": 21.6,
+              "relative_end": 25.6
+            },
+            {
+              "index": 6,
+              "zh": "去年作为州预算的一部分通过，旨在筹集资金在罗德岛建造更多经济适用房。",
+              "en": "And it was past last year as part of the state budget. The purpose is to raise money to build more affordable housing in Rhode Island.",
+              "relative_start": 25.6,
+              "relative_end": 32.7
+            },
+            {
+              "index": 7,
+              "zh": "这看起来金额相对较小，我提到这一点是因为泰勒·斯威夫特的例子。",
+              "en": "It seems like a relatively small amount. And the reason I bring that up is just for the Taylor Swift example.",
+              "relative_start": 32.7,
+              "relative_end": 40.1
+            },
+            {
+              "index": 8,
+              "zh": "她拥有一栋12700平方英尺的豪宅。",
+              "en": "She has a 12,700 square foot mansion.",
+              "relative_start": 40.1,
+              "relative_end": 43.7
+            },
+            {
+              "index": 9,
+              "zh": "评估价值为2800万美元。",
+              "en": "It's assessed at $28 million.",
+              "relative_start": 43.7,
+              "relative_end": 46.8
+            },
+            {
+              "index": 10,
+              "zh": "这意味着额外税单约13.6万美元。",
+              "en": "So that means an extra tax bill of about $136,000.",
+              "relative_start": 46.8,
+              "relative_end": 51.0
+            },
+            {
+              "index": 11,
+              "zh": "考虑到房产价值，这对她来说不算多。",
+              "en": "That's not that much for her, given the value of the home.",
+              "relative_start": 51.0,
+              "relative_end": 55.0
+            },
+            {
+              "index": 12,
+              "zh": "这对那些收入和名气较低的人有何影响？",
+              "en": "How is it affecting those people at the lower end of the income and fame spectrum?",
+              "relative_start": 55.0,
+              "relative_end": 61.8
+            },
+            {
+              "index": 13,
+              "zh": "有趣的是，抗议并非来自泰勒豪宅的邻居。",
+              "en": "Yeah, it's interesting. I mean, the lattice protests here are not coming from those who own mega mansions next to Taylor's and in Watch Hill.",
+              "relative_start": 61.8,
+              "relative_end": 69.6
+            },
+            {
+              "index": 14,
+              "zh": "而是来自那些世代拥有普通房产的房主。",
+              "en": "It's really coming from these homeowners who've had modest properties, modification homes in their family for generations, often three or four generations,",
+              "relative_start": 69.6,
+              "relative_end": 80.6
+            },
+            {
+              "index": 15,
+              "zh": "他们的房产税将因泰勒·斯威夫特税而上涨50%以上。",
+              "en": "who are going to be seeing their tax bills going up by 50% or more with this Taylor Swift tax.",
+              "relative_start": 80.6,
+              "relative_end": 86.8
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:46 ‘Taylor Swift Tax’ Stirs Bad Blood With Rhode Island Homeowners Businessweek Daily\",\n    \"source_title\": \"Duration: 7:46 ‘Taylor Swift Tax’ Stirs Bad Blood With Rhode Island Homeowners Businessweek Daily\",\n    \"show_date\": \"\",\n    \"current_title\": \"泰勒·斯威夫特税引争议 罗德岛度假屋主不满 豪宅税冲击中产\",\n    \"current_title_lines\": [\n      \"泰勒·斯威夫特税\",\n      \"罗德岛度假屋主不满\",\n      \"豪宅税冲击中产\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"格雷格，欢迎来到节目。这是彭博终端上阅读量最高的报道，原因很充分。\",\n        \"en\": \"Greg, good to have you on the program. This is a most read story on the Bloomberg terminal and for very good reason.\",\n        \"relative_start\": 0.2,\n        \"relative_end\": 5.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"不仅标题惊人，整个故事都令人惊叹。\",\n        \"en\": \"It's not just the headline that is amazing. The entire story is amazing.\",\n        \"relative_start\": 5.9,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"泰勒·斯威夫特税，与罗德岛房主关系紧张。\",\n        \"en\": \"Taylor Swift-Taxters, bad blood with Rhode Island homeowners.\",\n        \"relative_start\": 9.5,\n        \"relative_end\": 13.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所谓的泰勒·斯威夫特税是什么？这是罗德岛对价值超过100万美元的第二套住房征收的年度财产税。\",\n        \"en\": \"What is the so-called Taylor Swift-Tax? So the tax is an annual property tax on second homes\",\n        \"relative_start\": 13.5,\n        \"relative_end\": 21.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"税率为0.5个百分点。\",\n        \"en\": \"in Rhode Island that are valued over $1 million. It's half a percentage point.\",\n        \"relative_start\": 21.6,\n        \"relative_end\": 25.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"去年作为州预算的一部分通过，旨在筹集资金在罗德岛建造更多经济适用房。\",\n        \"en\": \"And it was past last year as part of the state budget. The purpose is to raise money to build more affordable housing in Rhode Island.\",\n        \"relative_start\": 25.6,\n        \"relative_end\": 32.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这看起来金额相对较小，我提到这一点是因为泰勒·斯威夫特的例子。\",\n        \"en\": \"It seems like a relatively small amount. And the reason I bring that up is just for the Taylor Swift example.\",\n        \"relative_start\": 32.7,\n        \"relative_end\": 40.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"她拥有一栋12700平方英尺的豪宅。\",\n        \"en\": \"She has a 12,700 square foot mansion.\",\n        \"relative_start\": 40.1,\n        \"relative_end\": 43.7\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"评估价值为2800万美元。\",\n        \"en\": \"It's assessed at $28 million.\",\n        \"relative_start\": 43.7,\n        \"relative_end\": 46.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"这意味着额外税单约13.6万美元。\",\n        \"en\": \"So that means an extra tax bill of about $136,000.\",\n        \"relative_start\": 46.8,\n        \"relative_end\": 51.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"考虑到房产价值，这对她来说不算多。\",\n        \"en\": \"That's not that much for her, given the value of the home.\",\n        \"relative_start\": 51.0,\n        \"relative_end\": 55.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这对那些收入和名气较低的人有何影响？\",\n        \"en\": \"How is it affecting those people at the lower end of the income and fame spectrum?\",\n        \"relative_start\": 55.0,\n        \"relative_end\": 61.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"有趣的是，抗议并非来自泰勒豪宅的邻居。\",\n        \"en\": \"Yeah, it's interesting. I mean, the lattice protests here are not coming from those who own mega mansions next to Taylor's and in Watch Hill.\",\n        \"relative_start\": 61.8,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"而是来自那些世代拥有普通房产的房主。\",\n        \"en\": \"It's really coming from these homeowners who've had modest properties, modification homes in their family for generations, often three or four generations,\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 80.6\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"他们的房产税将因泰勒·斯威夫特税而上涨50%以上。\",\n        \"en\": \"who are going to be seeing their tax bills going up by 50% or more with this Taylor Swift tax.\",\n        \"relative_start\": 80.6,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 7:46 ‘Taylor Swift Tax’ Stirs Bad Blood With Rhode Island Homeowners Businessweek Daily Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"'Taylor Swift Tax' Stirs Bad Blood With Rhode Island Homeowners\",\n        \"snippet\": \"Rhode Island's new tax on second homes is nicknamed for its most famous part-time resident, music superstar Taylor Swift , but the levy will also squeeze owners of saltbox houses on the coast ...\",\n        \"url\": \"www.bloomberg.com/news/articles/2026-07-01/-taylor-swift-tax-stirs-bad-blood-with-rhode-island-homeowners\"\n      },\n      {\n        \"title\": \"'Taylor Swift Tax' Stirs Bad Blood With Rhode Island Homeowners\",\n        \"snippet\": \"Bloomberg News Boston money and power reporter Greg Ryan said that a Rhode Island tax increase on second homes is not just impacting the wealthiest residents like Taylor Swift , but that many ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-02/-taylor-swift-tax-stirs-bad-blood-with-ri-homeowners-video\"\n      },\n      {\n        \"title\": \"'Taylor Swift Tax' Stirs Bad Blood With Rhode Island Homeowners\",\n        \"snippet\": \"Rhode Island's new tax on second homes is nicknamed for its most famous part-time resident, music superstar Taylor Swift , but the levy will also squeeze owners of saltbox houses on the coast that are much less grand than the singer's Holiday House mansion.\",\n        \"url\": \"news.bloombergtax.com/daily-tax-report/taylor-swift-tax-stirs-bad-blood-with-rhode-island-homeowners\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"Bloomberg and Huatai Securities: Navigating change in China's financial ...\",\n        \"snippet\": \"This year marks major milestones for two key players in China's financial landscape: Bloomberg celebrates 30+ years in mainland China, while Huatai Securities marks 10 years since its Hong Kong ...\",\n        \"url\": \"www.bloomberg.com/professional/insights/financial-services/bloomberg-and-huatai-securities-navigating-change-in-chinas-financial-markets/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [\n        \"彭博社\",\n        \"彭博新闻社\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Official Chinese website bloombergchina.com uses '彭博'.\"\n    },\n    {\n      \"source_text\": \"Taylor Swift\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Taylor Swift\",\n      \"preferred_zh\": \"泰勒·斯威夫特\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly used Chinese name in media.\"\n    },\n    {\n      \"source_text\": \"Rhode Island\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Rhode Island\",\n      \"preferred_zh\": \"罗德岛\",\n      \"aliases\": [\n        \"罗德岛州\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese translation for the U.S. state.\"\n    },\n    {\n      \"source_text\": \"Taylor Swift Tax\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Taylor Swift Tax\",\n      \"preferred_zh\": \"泰勒·斯威夫特税\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Used in the source title and subtitles.\"\n    },\n    {\n      \"source_text\": \"Businessweek Daily\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Businessweek Daily\",\n      \"preferred_zh\": \"商业周刊每日\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Bloomberg Businessweek is known as '彭博商业周刊', but 'Daily' suggests a daily segment.\"\n    },\n    {\n      \"source_text\": \"Greg Ryan\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Greg Ryan\",\n      \"preferred_zh\": \"格雷格·瑞安\",\n      \"aliases\": [\n        \"格雷格\"\n      ],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Subtitles use '格雷格' as first name; full name from Bloomberg article.\"\n    },\n    {\n      \"source_text\": \"Watch Hill\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Watch Hill\",\n      \"preferred_zh\": \"沃奇希尔\",\n      \"aliases\": [\n        \"沃奇山\"\n      ],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Common translation for the Rhode Island location.\"\n    },\n    {\n      \"source_text\": \"Holiday House\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Holiday House\",\n      \"preferred_zh\": \"假日别墅\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Mentioned in snippet as Taylor Swift's mansion; translation is generic.\"\n    }\n  ],\n  \"notes\": [\n    \"The current title uses '泰勒·斯威夫特税' which matches the established translation.\",\n    \"Bloomberg is consistently translated as '彭博' in official Chinese materials.\",\n    \"Greg Ryan's full Chinese name is inferred; only '格雷格' appears in subtitles.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "泰勒·斯威夫特税 罗德岛度假屋主 税单涨50%？",
+            "title_lines": [
+              "泰勒·斯威夫特税",
+              "罗德岛度假屋主",
+              "税单涨50%？"
+            ],
+            "title_highlights": [
+              "泰勒·斯威夫特",
+              "税单涨50%"
+            ],
+            "comment": "KC评论：名人税名下的政策意外，中产房主才是主要承受者。",
+            "comment_highlights": [
+              "中产房主"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：彭博最热报道，标题就够抓人。",
+                "comment_highlights": [
+                  "彭博"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：故事本身比标题更令人惊叹。",
+                "comment_highlights": [
+                  "故事"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：泰勒·斯威夫特税，与房主关系紧张。",
+                "comment_highlights": [
+                  "泰勒·斯威夫特税"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：针对百万美元以上第二套房的年度财产税。",
+                "comment_highlights": [
+                  "百万美元"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：税率0.5个百分点，看似不高。",
+                "comment_highlights": [
+                  "0.5个百分点"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：目的是筹集资金建经济适用房。",
+                "comment_highlights": [
+                  "经济适用房"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：泰勒的案例说明金额相对较小。",
+                "comment_highlights": [
+                  "泰勒"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：她拥有一栋12700平方英尺的豪宅。",
+                "comment_highlights": [
+                  "12700平方英尺"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：评估价值2800万美元。",
+                "comment_highlights": [
+                  "2800万美元"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：额外税单约13.6万美元。",
+                "comment_highlights": [
+                  "13.6万美元"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：对她来说不算多。",
+                "comment_highlights": [
+                  "不算多"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：对收入和名气较低的人影响更大。",
+                "comment_highlights": [
+                  "影响更大"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：抗议并非来自泰勒豪宅的邻居。",
+                "comment_highlights": [
+                  "抗议"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：而是来自世代拥有普通房产的房主。",
+                "comment_highlights": [
+                  "普通房产"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：他们的房产税将上涨50%以上。",
+                "comment_highlights": [
+                  "上涨50%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "泰勒·斯威夫特税罗德岛度假屋主税单涨50%？",
+          "title_lines": [
+            "泰勒·斯威夫特税",
+            "罗德岛度假屋主",
+            "税单涨50%？"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 70,
+            "pass": true,
+            "strengths": [
+              "has_number_or_data",
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：名人税名下的政策意外，中产房主才是主要承受者"
+        }
+      }
+    }
+  ]
+}

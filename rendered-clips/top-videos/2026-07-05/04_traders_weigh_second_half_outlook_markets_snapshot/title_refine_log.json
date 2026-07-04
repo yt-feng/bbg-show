@@ -1,0 +1,434 @@
+{
+  "timestamp_utc": "2026-07-04T23:10:18.363114+00:00",
+  "plan_path": "work/top-videos/04_traders_weigh_second_half_outlook_markets_snapshot/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "彭博社"
+        ],
+        "confidence": "high",
+        "evidence": "Official Bloomberg China website uses '彭博'."
+      },
+      {
+        "source_text": "The Opening Trade",
+        "entity_type": "event",
+        "preferred_en": "The Opening Trade",
+        "preferred_zh": "开盘交易",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Common translation for Bloomberg segment; no official Chinese title found."
+      },
+      {
+        "source_text": "Traders Weigh Second Half Outlook: Markets Snapshot",
+        "entity_type": "event",
+        "preferred_en": "Traders Weigh Second Half Outlook: Markets Snapshot",
+        "preferred_zh": "交易员展望下半年市场快照",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Current title uses '交易员展望下半年'; 'Markets Snapshot' commonly translated as '市场快照'."
+      },
+      {
+        "source_text": "Memory chips",
+        "entity_type": "other",
+        "preferred_en": "Memory chips",
+        "preferred_zh": "存储芯片",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation in Chinese financial media."
+      },
+      {
+        "source_text": "AI",
+        "entity_type": "other",
+        "preferred_en": "Artificial Intelligence",
+        "preferred_zh": "人工智能",
+        "aliases": [
+          "AI"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly translated as '人工智能' or abbreviated as 'AI'."
+      },
+      {
+        "source_text": "healthcare",
+        "entity_type": "other",
+        "preferred_en": "Healthcare",
+        "preferred_zh": "医疗保健",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "staples",
+        "entity_type": "other",
+        "preferred_en": "Consumer Staples",
+        "preferred_zh": "必需消费品",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard financial term translation."
+      },
+      {
+        "source_text": "tech stocks",
+        "entity_type": "other",
+        "preferred_en": "Technology stocks",
+        "preferred_zh": "科技股",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "financials",
+        "entity_type": "other",
+        "preferred_en": "Financial sector",
+        "preferred_zh": "金融板块",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "European equities",
+        "entity_type": "other",
+        "preferred_en": "European equities",
+        "preferred_zh": "欧洲市场",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      }
+    ],
+    "notes": [
+      "Most entities are generic financial terms with well-established Chinese translations.",
+      "Bloomberg is confirmed as '彭博' via official site.",
+      "No specific person names or unique company names appear in the clip."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "彭博交易员：科技之外还有价值？",
+      "title_lines": [
+        "彭博交易员",
+        "科技之外还有价值",
+        "下半年如何布局？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 50,
+        "pass": false,
+        "strengths": [],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：市场广度扩大，医疗保健和金融板块估值处于历史低位"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-04T23:10:18.346087+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:10 Traders Weigh Second Half Outlook: Markets Snapshot The Opening Trade",
+          "source_title": "Duration: 2:10 Traders Weigh Second Half Outlook: Markets Snapshot The Opening Trade",
+          "show_date": "",
+          "current_title": "交易员展望下半年：市场广度扩大 科技之外寻价值",
+          "current_title_lines": [
+            "交易员展望下半年",
+            "市场广度扩大 科技之外寻价值",
+            "欧洲短期窗口 盈利支撑涨势"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "上半年已结束，下半年即将开启。",
+              "en": "We've finished the first half of the year. We're on to the second half, it seems.",
+              "relative_start": 0.0,
+              "relative_end": 4.0
+            },
+            {
+              "index": 2,
+              "zh": "存储芯片及相关交易无疑是上半年的主导。",
+              "en": "Memory chips and the memory trades certainly seem to be a really dominant trade in the first half of the year.",
+              "relative_start": 4.0,
+              "relative_end": 10.0
+            },
+            {
+              "index": 3,
+              "zh": "进入下半年如何布局？市场存在巨大波动，但基本被忽视。",
+              "en": "How will we set up then going into the second? We have a huge sway in the market, actually, which would have been pretty much ignored.",
+              "relative_start": 10.0,
+              "relative_end": 16.0
+            },
+            {
+              "index": 4,
+              "zh": "除了AI，医疗保健、必需消费品等板块估值处于历史低位。",
+              "en": "I mean, we can talk about the AI lose, but actually beyond that, there's lots of sectors where there'd be things like healthcare, where there'd be things like staples,",
+              "relative_start": 16.0,
+              "relative_end": 24.0
+            },
+            {
+              "index": 5,
+              "zh": "若科技股动能稍减，其他板块是否有价值？",
+              "en": "which are trading at sort of valuations you haven't seen for a very long time. So, you know, at this point, if you get a little bit of that momentum coming out of those tech stocks, is there no value elsewhere or nothing in the public areas",
+              "relative_start": 24.0,
+              "relative_end": 32.0
+            },
+            {
+              "index": 6,
+              "zh": "保持科技股的市场权重配置，同时关注其他受益板块。",
+              "en": "It's still good to be exposed to tech about at the market weight of tech, and to look maybe to give more emphasis to other sectors",
+              "relative_start": 32.0,
+              "relative_end": 44.0
+            },
+            {
+              "index": 7,
+              "zh": "例如，我们对金融板块很感兴趣。",
+              "en": "that are indirectly benefiting as well. We've been, for example, very interested in the financials.",
+              "relative_start": 44.0,
+              "relative_end": 50.0
+            },
+            {
+              "index": 8,
+              "zh": "总体而言，我们期待市场进一步扩散。",
+              "en": "In general, we are looking for a little bit of a broadening here.",
+              "relative_start": 50.0,
+              "relative_end": 54.0
+            },
+            {
+              "index": 9,
+              "zh": "波动性和不确定性依然存在。",
+              "en": "Volatility is still there, an uncertainty is still there.",
+              "relative_start": 54.0,
+              "relative_end": 58.0
+            },
+            {
+              "index": 10,
+              "zh": "在此环境下，保持灵活，避免大方向押注。",
+              "en": "And in this environment, for me, it makes sense to be quite nimble, and also not to take big paths either way,",
+              "relative_start": 58.0,
+              "relative_end": 66.0
+            },
+            {
+              "index": 11,
+              "zh": "但当市场给你机会时，只要盈利持续向好并扩大范围，我认为下半年将继续上涨。",
+              "en": "but when the market throws your opportunity. As long as the earnings continue to be good, and to broaden out, I think we'll get continued gains through the second half.",
+              "relative_start": 66.0,
+              "relative_end": 76.0
+            },
+            {
+              "index": 12,
+              "zh": "尽管估值偏高，即使考虑最坏情况，这轮反弹可能还有一年时间才会出现转折。",
+              "en": "Even though valuations are stretched, even if you take kind of the worst case scenarios, this rally could still have another year to run before you then saw a turnover.",
+              "relative_start": 76.0,
+              "relative_end": 84.0
+            },
+            {
+              "index": 13,
+              "zh": "现在是欧洲市场延续当前动能的时候吗？",
+              "en": "Is this the moment for European equities to continue to build on an momentum that we've seen?",
+              "relative_start": 84.0,
+              "relative_end": 88.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:10 Traders Weigh Second Half Outlook: Markets Snapshot The Opening Trade\",\n    \"source_title\": \"Duration: 2:10 Traders Weigh Second Half Outlook: Markets Snapshot The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"交易员展望下半年：市场广度扩大 科技之外寻价值\",\n    \"current_title_lines\": [\n      \"交易员展望下半年\",\n      \"市场广度扩大 科技之外寻价值\",\n      \"欧洲短期窗口 盈利支撑涨势\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"上半年已结束，下半年即将开启。\",\n        \"en\": \"We've finished the first half of the year. We're on to the second half, it seems.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"存储芯片及相关交易无疑是上半年的主导。\",\n        \"en\": \"Memory chips and the memory trades certainly seem to be a really dominant trade in the first half of the year.\",\n        \"relative_start\": 4.0,\n        \"relative_end\": 10.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"进入下半年如何布局？市场存在巨大波动，但基本被忽视。\",\n        \"en\": \"How will we set up then going into the second? We have a huge sway in the market, actually, which would have been pretty much ignored.\",\n        \"relative_start\": 10.0,\n        \"relative_end\": 16.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"除了AI，医疗保健、必需消费品等板块估值处于历史低位。\",\n        \"en\": \"I mean, we can talk about the AI lose, but actually beyond that, there's lots of sectors where there'd be things like healthcare, where there'd be things like staples,\",\n        \"relative_start\": 16.0,\n        \"relative_end\": 24.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"若科技股动能稍减，其他板块是否有价值？\",\n        \"en\": \"which are trading at sort of valuations you haven't seen for a very long time. So, you know, at this point, if you get a little bit of that momentum coming out of those tech stocks, is there no value elsewhere or nothing in the public areas\",\n        \"relative_start\": 24.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"保持科技股的市场权重配置，同时关注其他受益板块。\",\n        \"en\": \"It's still good to be exposed to tech about at the market weight of tech, and to look maybe to give more emphasis to other sectors\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 44.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"例如，我们对金融板块很感兴趣。\",\n        \"en\": \"that are indirectly benefiting as well. We've been, for example, very interested in the financials.\",\n        \"relative_start\": 44.0,\n        \"relative_end\": 50.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"总体而言，我们期待市场进一步扩散。\",\n        \"en\": \"In general, we are looking for a little bit of a broadening here.\",\n        \"relative_start\": 50.0,\n        \"relative_end\": 54.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"波动性和不确定性依然存在。\",\n        \"en\": \"Volatility is still there, an uncertainty is still there.\",\n        \"relative_start\": 54.0,\n        \"relative_end\": 58.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"在此环境下，保持灵活，避免大方向押注。\",\n        \"en\": \"And in this environment, for me, it makes sense to be quite nimble, and also not to take big paths either way,\",\n        \"relative_start\": 58.0,\n        \"relative_end\": 66.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但当市场给你机会时，只要盈利持续向好并扩大范围，我认为下半年将继续上涨。\",\n        \"en\": \"but when the market throws your opportunity. As long as the earnings continue to be good, and to broaden out, I think we'll get continued gains through the second half.\",\n        \"relative_start\": 66.0,\n        \"relative_end\": 76.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"尽管估值偏高，即使考虑最坏情况，这轮反弹可能还有一年时间才会出现转折。\",\n        \"en\": \"Even though valuations are stretched, even if you take kind of the worst case scenarios, this rally could still have another year to run before you then saw a turnover.\",\n        \"relative_start\": 76.0,\n        \"relative_end\": 84.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"现在是欧洲市场延续当前动能的时候吗？\",\n        \"en\": \"Is this the moment for European equities to continue to build on an momentum that we've seen?\",\n        \"relative_start\": 84.0,\n        \"relative_end\": 88.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 2:10 Traders Weigh Second Half Outlook: Markets Snapshot The Opening Trade Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"The Opening Trade - YouTube\",\n        \"snippet\": \"Traders Weigh Second Half Outlook : Markets Snapshot Bloomberg Television 744 views • 21 hours ago 1:35:08\",\n        \"url\": \"www.youtube.com/playlist?list=PLGaYlBJIOoa-i5qOieIb8AlAQPqGJ4z1c\"\n      },\n      {\n        \"title\": \"Bloomberg Television - YouTube\",\n        \"snippet\": \"Traders Weigh Second Half Outlook : Markets Snapshot 668 views • 15 hours ago 46:22\",\n        \"url\": \"www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/videos\"\n      },\n      {\n        \"title\": \"Traders weigh second half outlook: Markets snapshot\",\n        \"snippet\": \"The first half of 2026 saw a bumper earnings season and global equity benchmarks soar to new highs, driven by a enthusiasm around the AI trade . Businesses, investors and central banks now turn ...\",\n        \"url\": \"www.msn.com/en-gb/money/video/traders-weigh-second-half-outlook-markets-snapshot/vi-AA276ZwH\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"Bloomberg and Huatai Securities: Navigating change in China's financial ...\",\n        \"snippet\": \"This year marks major milestones for two key players in China's financial landscape: Bloomberg celebrates 30+ years in mainland China, while Huatai Securities marks 10 years since its Hong Kong ...\",\n        \"url\": \"www.bloomberg.com/professional/insights/financial-services/bloomberg-and-huatai-securities-navigating-change-in-chinas-financial-markets/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [\n        \"彭博社\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Official Bloomberg China website uses '彭博'.\"\n    },\n    {\n      \"source_text\": \"The Opening Trade\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"The Opening Trade\",\n      \"preferred_zh\": \"开盘交易\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Common translation for Bloomberg segment; no official Chinese title found.\"\n    },\n    {\n      \"source_text\": \"Traders Weigh Second Half Outlook: Markets Snapshot\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Traders Weigh Second Half Outlook: Markets Snapshot\",\n      \"preferred_zh\": \"交易员展望下半年市场快照\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Current title uses '交易员展望下半年'; 'Markets Snapshot' commonly translated as '市场快照'.\"\n    },\n    {\n      \"source_text\": \"Memory chips\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Memory chips\",\n      \"preferred_zh\": \"存储芯片\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation in Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"AI\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Artificial Intelligence\",\n      \"preferred_zh\": \"人工智能\",\n      \"aliases\": [\n        \"AI\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly translated as '人工智能' or abbreviated as 'AI'.\"\n    },\n    {\n      \"source_text\": \"healthcare\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Healthcare\",\n      \"preferred_zh\": \"医疗保健\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"staples\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Consumer Staples\",\n      \"preferred_zh\": \"必需消费品\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term translation.\"\n    },\n    {\n      \"source_text\": \"tech stocks\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Technology stocks\",\n      \"preferred_zh\": \"科技股\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"financials\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Financial sector\",\n      \"preferred_zh\": \"金融板块\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"European equities\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"European equities\",\n      \"preferred_zh\": \"欧洲市场\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    }\n  ],\n  \"notes\": [\n    \"Most entities are generic financial terms with well-established Chinese translations.\",\n    \"Bloomberg is confirmed as '彭博' via official site.\",\n    \"No specific person names or unique company names appear in the clip.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_number_question",
+            "title": "彭博交易员：科技之外还有价值？",
+            "title_lines": [
+              "彭博交易员",
+              "科技之外还有价值",
+              "下半年如何布局？"
+            ],
+            "title_highlights": [
+              "彭博",
+              "科技",
+              "价值"
+            ],
+            "comment": "KC评论：市场广度扩大，医疗保健和金融板块估值处于历史低位。",
+            "comment_highlights": [
+              "市场广度",
+              "医疗保健",
+              "金融板块"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：上半年结束，下半年交易员怎么看？",
+                "comment_highlights": [
+                  "上半年"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：存储芯片主导上半年，AI交易火热。",
+                "comment_highlights": [
+                  "存储芯片",
+                  "AI"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：市场波动大但被忽视，下半年如何应对？",
+                "comment_highlights": [
+                  "市场波动"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：医疗保健和必需消费品估值处于历史低位。",
+                "comment_highlights": [
+                  "医疗保健",
+                  "必需消费品"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：科技股动能若减弱，其他板块有机会。",
+                "comment_highlights": [
+                  "科技股"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：保持科技股配置，同时关注其他受益板块。",
+                "comment_highlights": [
+                  "科技股"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：金融板块被看好，间接受益于AI。",
+                "comment_highlights": [
+                  "金融板块"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：市场有望进一步扩散，不局限于科技。",
+                "comment_highlights": [
+                  "市场扩散"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：波动性和不确定性依然存在，需保持灵活。",
+                "comment_highlights": [
+                  "波动性"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：避免大方向押注，灵活应对市场变化。",
+                "comment_highlights": [
+                  "灵活应对"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：盈利持续向好且扩大，下半年有望继续上涨。",
+                "comment_highlights": [
+                  "盈利"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：估值偏高但反弹可能还有一年时间。",
+                "comment_highlights": [
+                  "估值偏高"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：欧洲市场能否延续当前动能？",
+                "comment_highlights": [
+                  "欧洲市场"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "彭博交易员：科技之外还有价值？",
+          "title_lines": [
+            "彭博交易员",
+            "科技之外还有价值",
+            "下半年如何布局？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 50,
+            "pass": false,
+            "strengths": [],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：市场广度扩大，医疗保健和金融板块估值处于历史低位"
+        }
+      }
+    }
+  ]
+}
