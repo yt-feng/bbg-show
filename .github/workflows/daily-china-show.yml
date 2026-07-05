@@ -96,7 +96,10 @@ jobs:
       - name: Check existing rendered show clips
         id: existing_clips
         run: |
-          if [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
+          if [ "${SKIP_SHOW:-false}" = "true" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "${SHOW_SKIP_REASON:-No Bloomberg show selected; skipping.}"
+          elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Rendered clips already exist in $OUTPUT_DIR; skipping duplicate run."
           else
@@ -142,7 +145,11 @@ jobs:
             if [ "$attempt" -eq 3 ]; then
               exit "$status"
             fi
-            sleep_seconds=$((attempt * 600))
+            if [ "$SHOW_TYPE" = "weekend" ] && [ "$SHOW_RESOLUTION_SOURCE" != "explicit" ]; then
+              sleep_seconds=$((attempt * 60))
+            else
+              sleep_seconds=$((attempt * 600))
+            fi
             echo "Bloomberg source not ready yet; retrying in ${sleep_seconds}s."
             sleep "$sleep_seconds"
           done
