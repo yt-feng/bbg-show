@@ -1,0 +1,405 @@
+{
+  "timestamp_utc": "2026-07-06T23:21:54.203372+00:00",
+  "plan_path": "work/top-videos/05_trump_says_generous_donors_help_fund_trump_accounts/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg L.P.",
+        "preferred_zh": "彭博有限合伙企业",
+        "aliases": [
+          "彭博",
+          "Bloomberg"
+        ],
+        "confidence": "high",
+        "evidence": "Wikipedia and official site use '彭博有限合伙企业' and '彭博'."
+      },
+      {
+        "source_text": "Trump accounts",
+        "entity_type": "event",
+        "preferred_en": "Trump Accounts",
+        "preferred_zh": "特朗普账户",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "CNBC and Bloomberg articles use 'Trump accounts' and Chinese subtitles use '特朗普账户'."
+      },
+      {
+        "source_text": "Michael and Susan Dell",
+        "entity_type": "person",
+        "preferred_en": "Michael Dell and Susan Dell",
+        "preferred_zh": "迈克尔·戴尔和苏珊·戴尔",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly known names; Michael Dell is founder of Dell Technologies."
+      },
+      {
+        "source_text": "Brad Gerstner",
+        "entity_type": "person",
+        "preferred_en": "Brad Gerstner",
+        "preferred_zh": "布拉德·格斯特纳",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Transliteration from subtitles; no official Chinese name found in snippets."
+      },
+      {
+        "source_text": "Dell",
+        "entity_type": "company",
+        "preferred_en": "Dell Technologies",
+        "preferred_zh": "戴尔科技",
+        "aliases": [
+          "戴尔"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '戴尔' in Chinese."
+      },
+      {
+        "source_text": "Ray Dalio",
+        "entity_type": "person",
+        "preferred_en": "Ray Dalio",
+        "preferred_zh": "瑞·达利欧",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Bloomberg article mentions 'Dalio' and his Chinese name is well-known."
+      },
+      {
+        "source_text": "Bridgewater Associates",
+        "entity_type": "organization",
+        "preferred_en": "Bridgewater Associates",
+        "preferred_zh": "桥水基金",
+        "aliases": [
+          "桥水联合基金"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '桥水基金' in Chinese financial media."
+      },
+      {
+        "source_text": "Scott Bessent",
+        "entity_type": "person",
+        "preferred_en": "Scott Bessent",
+        "preferred_zh": "斯科特·贝森特",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Transliteration; no official Chinese name found in snippets."
+      },
+      {
+        "source_text": "BlackRock",
+        "entity_type": "company",
+        "preferred_en": "BlackRock",
+        "preferred_zh": "贝莱德",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly known as '贝莱德' in Chinese."
+      },
+      {
+        "source_text": "BNY",
+        "entity_type": "company",
+        "preferred_en": "BNY Mellon",
+        "preferred_zh": "纽约梅隆银行",
+        "aliases": [
+          "BNY"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '纽约梅隆银行' in Chinese."
+      },
+      {
+        "source_text": "Great Big Beautiful Bill",
+        "entity_type": "event",
+        "preferred_en": "Great Big Beautiful Bill",
+        "preferred_zh": "伟大美丽法案",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "No official Chinese name found; literal translation from subtitles."
+      }
+    ],
+    "notes": [
+      "The entity 'Trump accounts' is a specific program; Chinese subtitles use '特朗普账户' consistently.",
+      "Some names like Brad Gerstner and Scott Bessent lack official Chinese translations; transliterations are used with medium confidence.",
+      "The 'Great Big Beautiful Bill' is a colloquial name; no established Chinese name exists."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "特朗普：捐赠者助力儿童账户",
+      "title_lines": [
+        "特朗普",
+        "捐赠者助力儿童账户",
+        "戴尔科技等慷慨解囊"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 68,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor"
+        ],
+        "fixes": [
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：特朗普亲自感谢捐赠者，儿童账户资金规模引关注"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-06T23:21:54.192976+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:50 Trump Says Generous Donors Help Fund Trump Accounts",
+          "source_title": "Duration: 1:50 Trump Says Generous Donors Help Fund Trump Accounts",
+          "show_date": "",
+          "current_title": "特朗普：捐赠者助力特朗普账户资金",
+          "current_title_lines": [
+            "特朗普",
+            "捐赠者助力特朗普账户资金",
+            "称戴尔等慷慨解囊"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "7月4日周六，政府向超过50万美国儿童的特朗普账户存入每人1000美元的一次性种子资金。",
+              "en": "On Saturday, July 4th, our administration deposited one-time seed contributions of $1,000 each",
+              "relative_start": 0.0,
+              "relative_end": 8.0
+            },
+            {
+              "index": 2,
+              "zh": "这数量很大，还有数百万儿童将从迈克尔和苏珊·戴尔等慷慨捐赠者那里获得更多捐款。",
+              "en": "into the Trump accounts of over 500,000 American children. It's a lot. And millions more will be",
+              "relative_start": 8.0,
+              "relative_end": 16.5
+            },
+            {
+              "index": 3,
+              "zh": "他们非常了不起，去戴尔买台电脑吧——他可不是为了这个才捐的，但我打赌他的生意更大了。",
+              "en": "getting additional contributions from generous donors like, as I mentioned, Michael and Susan Dell. They are truly incredible. Go out and buy a Dell computer. He's not doing it for that.",
+              "relative_start": 17.2,
+              "relative_end": 28.7
+            },
+            {
+              "index": 4,
+              "zh": "我儿子就喜欢他们的笔记本，他们得说我要戴尔，我们总得把钱赚回来。",
+              "en": "But I'll bet his business, Brad, has gotten even bigger. I have a son that loves their laptop.",
+              "relative_start": 29.4,
+              "relative_end": 37.0
+            },
+            {
+              "index": 5,
+              "zh": "然后我再要600亿到500亿，重新开始整个过程。",
+              "en": "They have to tell you, no, I want a Dell. We're going to get him that money back one way or the other.",
+              "relative_start": 37.8,
+              "relative_end": 42.4
+            },
+            {
+              "index": 6,
+              "zh": "不，他一开始就做出了不可思议的产品，布拉德·格斯特纳一直在推动这事。",
+              "en": "And then I'll ask for another $6 billion to 50. We'll start the whole process all over again.",
+              "relative_start": 43.5,
+              "relative_end": 48.2
+            },
+            {
+              "index": 7,
+              "zh": "他非常成功，虽不如戴尔家族出名，但投入了巨额资金。",
+              "en": "No, he makes an incredible product and right from the beginning. And Brad Gerstner has been pushing this. So he's a very successful man. Not quite as famous as the Dell family, right? It's Michael,",
+              "relative_start": 48.2,
+              "relative_end": 61.1
+            },
+            {
+              "index": 8,
+              "zh": "我要感谢迈克尔和所有已联系我的公司，他们投入了很多钱。",
+              "en": "but he's an amazingly successful guy. And he's put up a tremendous amount of money. And again, I want to thank Michael and all of the companies that have already called me and they're putting up",
+              "relative_start": 61.1,
+              "relative_end": 74.0
+            },
+            {
+              "index": 9,
+              "zh": "这不是我的主意，是一群人通过了法案，这一切才成为可能。",
+              "en": "a lot of money. This is nothing. This is not me. And put the name on. It was not my idea. That was a whole group of people that passed legislation because this is all made possible only by the passage",
+              "relative_start": 74.0,
+              "relative_end": 85.7
+            },
+            {
+              "index": 10,
+              "zh": "我知道这事会发生，但之前并不知情。",
+              "en": "of the Great Big Beautiful Bill. And I knew that this was happening, but I didn't know.",
+              "relative_start": 85.7,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:50 Trump Says Generous Donors Help Fund Trump Accounts\",\n    \"source_title\": \"Duration: 1:50 Trump Says Generous Donors Help Fund Trump Accounts\",\n    \"show_date\": \"\",\n    \"current_title\": \"特朗普：捐赠者助力特朗普账户资金\",\n    \"current_title_lines\": [\n      \"特朗普\",\n      \"捐赠者助力特朗普账户资金\",\n      \"称戴尔等慷慨解囊\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"7月4日周六，政府向超过50万美国儿童的特朗普账户存入每人1000美元的一次性种子资金。\",\n        \"en\": \"On Saturday, July 4th, our administration deposited one-time seed contributions of $1,000 each\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这数量很大，还有数百万儿童将从迈克尔和苏珊·戴尔等慷慨捐赠者那里获得更多捐款。\",\n        \"en\": \"into the Trump accounts of over 500,000 American children. It's a lot. And millions more will be\",\n        \"relative_start\": 8.0,\n        \"relative_end\": 16.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"他们非常了不起，去戴尔买台电脑吧——他可不是为了这个才捐的，但我打赌他的生意更大了。\",\n        \"en\": \"getting additional contributions from generous donors like, as I mentioned, Michael and Susan Dell. They are truly incredible. Go out and buy a Dell computer. He's not doing it for that.\",\n        \"relative_start\": 17.2,\n        \"relative_end\": 28.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我儿子就喜欢他们的笔记本，他们得说我要戴尔，我们总得把钱赚回来。\",\n        \"en\": \"But I'll bet his business, Brad, has gotten even bigger. I have a son that loves their laptop.\",\n        \"relative_start\": 29.4,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"然后我再要600亿到500亿，重新开始整个过程。\",\n        \"en\": \"They have to tell you, no, I want a Dell. We're going to get him that money back one way or the other.\",\n        \"relative_start\": 37.8,\n        \"relative_end\": 42.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"不，他一开始就做出了不可思议的产品，布拉德·格斯特纳一直在推动这事。\",\n        \"en\": \"And then I'll ask for another $6 billion to 50. We'll start the whole process all over again.\",\n        \"relative_start\": 43.5,\n        \"relative_end\": 48.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他非常成功，虽不如戴尔家族出名，但投入了巨额资金。\",\n        \"en\": \"No, he makes an incredible product and right from the beginning. And Brad Gerstner has been pushing this. So he's a very successful man. Not quite as famous as the Dell family, right? It's Michael,\",\n        \"relative_start\": 48.2,\n        \"relative_end\": 61.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我要感谢迈克尔和所有已联系我的公司，他们投入了很多钱。\",\n        \"en\": \"but he's an amazingly successful guy. And he's put up a tremendous amount of money. And again, I want to thank Michael and all of the companies that have already called me and they're putting up\",\n        \"relative_start\": 61.1,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这不是我的主意，是一群人通过了法案，这一切才成为可能。\",\n        \"en\": \"a lot of money. This is nothing. This is not me. And put the name on. It was not my idea. That was a whole group of people that passed legislation because this is all made possible only by the passage\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 85.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我知道这事会发生，但之前并不知情。\",\n        \"en\": \"of the Great Big Beautiful Bill. And I knew that this was happening, but I didn't know.\",\n        \"relative_start\": 85.7,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 1:50 Trump Says Generous Donors Help Fund Trump Accounts Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Trump accounts get more donor funding from Dalio, BlackRock, BNY - CNBC\",\n        \"snippet\": \"On Wednesday, the White House announced additional details about Trump accounts , a new type of savings account for kids.\",\n        \"url\": \"www.cnbc.com/2025/12/17/trump-accounts-dalio-blackrock-bny.html\"\n      },\n      {\n        \"title\": \"List of Entities Providing Contributions to Trump Accounts for Kids\",\n        \"snippet\": \"An anonymous donor has pledged $3.5 million to help San Francisco families take advantage of President Donald Trump's new investment accounts for U.S. children.\",\n        \"url\": \"www.atr.org/trumpaccounts/\"\n      },\n      {\n        \"title\": \"Dalio to Announce Contribution to Trump Accounts, Bessent Says\",\n        \"snippet\": \"Bridgewater Associates founder Ray Dalio will announce a \\\" generous contribution\\\" to fund Trump Accounts for children in Connecticut, Treasury Secretary Scott Bessent said. \\\"The president is calling on our nation's business leaders and philanthropic organizations to help us make America great again by securing the financial future of America's children,\\\" Bessent said Wednesday. NOTE ...\",\n        \"url\": \"news.bloombergtax.com/daily-tax-report/dalio-to-announce-contribution-to-trump-accounts-bessent-says\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"彭博有限合夥企業 - 维基百科，自由的百科全书\",\n        \"snippet\": \"彭博有限合夥企業 ... 位于伦敦的彭博新闻演播厅 彭博有限合伙企业 （英語： Bloomberg L.P.）是 美國 的跨國大眾 傳播媒體 公司，提供新聞、全球商業和金融數據服務。 集團總部位於 紐約市 的 莱辛顿大道731号。 彭博於全球176個地點擁有超過19,000名員工。 [7]\",\n        \"url\": \"zh.wikipedia.org/wiki/彭博有限合夥企業\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg L.P.\",\n      \"preferred_zh\": \"彭博有限合伙企业\",\n      \"aliases\": [\n        \"彭博\",\n        \"Bloomberg\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Wikipedia and official site use '彭博有限合伙企业' and '彭博'.\"\n    },\n    {\n      \"source_text\": \"Trump accounts\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Trump Accounts\",\n      \"preferred_zh\": \"特朗普账户\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"CNBC and Bloomberg articles use 'Trump accounts' and Chinese subtitles use '特朗普账户'.\"\n    },\n    {\n      \"source_text\": \"Michael and Susan Dell\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Michael Dell and Susan Dell\",\n      \"preferred_zh\": \"迈克尔·戴尔和苏珊·戴尔\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known names; Michael Dell is founder of Dell Technologies.\"\n    },\n    {\n      \"source_text\": \"Brad Gerstner\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Brad Gerstner\",\n      \"preferred_zh\": \"布拉德·格斯特纳\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Transliteration from subtitles; no official Chinese name found in snippets.\"\n    },\n    {\n      \"source_text\": \"Dell\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Dell Technologies\",\n      \"preferred_zh\": \"戴尔科技\",\n      \"aliases\": [\n        \"戴尔\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '戴尔' in Chinese.\"\n    },\n    {\n      \"source_text\": \"Ray Dalio\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Ray Dalio\",\n      \"preferred_zh\": \"瑞·达利欧\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bloomberg article mentions 'Dalio' and his Chinese name is well-known.\"\n    },\n    {\n      \"source_text\": \"Bridgewater Associates\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bridgewater Associates\",\n      \"preferred_zh\": \"桥水基金\",\n      \"aliases\": [\n        \"桥水联合基金\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '桥水基金' in Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"Scott Bessent\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Scott Bessent\",\n      \"preferred_zh\": \"斯科特·贝森特\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Transliteration; no official Chinese name found in snippets.\"\n    },\n    {\n      \"source_text\": \"BlackRock\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"BlackRock\",\n      \"preferred_zh\": \"贝莱德\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '贝莱德' in Chinese.\"\n    },\n    {\n      \"source_text\": \"BNY\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"BNY Mellon\",\n      \"preferred_zh\": \"纽约梅隆银行\",\n      \"aliases\": [\n        \"BNY\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '纽约梅隆银行' in Chinese.\"\n    },\n    {\n      \"source_text\": \"Great Big Beautiful Bill\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Great Big Beautiful Bill\",\n      \"preferred_zh\": \"伟大美丽法案\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"No official Chinese name found; literal translation from subtitles.\"\n    }\n  ],\n  \"notes\": [\n    \"The entity 'Trump accounts' is a specific program; Chinese subtitles use '特朗普账户' consistently.\",\n    \"Some names like Brad Gerstner and Scott Bessent lack official Chinese translations; transliterations are used with medium confidence.\",\n    \"The 'Great Big Beautiful Bill' is a colloquial name; no established Chinese name exists.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "特朗普：捐赠者助力儿童账户",
+            "title_lines": [
+              "特朗普",
+              "捐赠者助力儿童账户",
+              "戴尔等慷慨解囊"
+            ],
+            "title_highlights": [
+              "特朗普",
+              "捐赠者",
+              "戴尔"
+            ],
+            "comment": "KC评论：特朗普亲自感谢捐赠者，儿童账户资金规模引关注。",
+            "comment_highlights": [
+              "特朗普",
+              "儿童账户"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：政府为超50万儿童存入1000美元种子资金",
+                "comment_highlights": [
+                  "1000美元"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：戴尔夫妇等捐赠者将追加捐款",
+                "comment_highlights": [
+                  "戴尔"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：特朗普推销戴尔电脑，称其生意更大了",
+                "comment_highlights": [
+                  "戴尔"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：特朗普调侃儿子喜欢戴尔笔记本",
+                "comment_highlights": [
+                  "戴尔"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：特朗普称将再要500亿重新开始",
+                "comment_highlights": [
+                  "500亿"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：特朗普称赞格斯特纳推动此事",
+                "comment_highlights": [
+                  "格斯特纳"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：格斯特纳虽不如戴尔出名但投入巨资",
+                "comment_highlights": [
+                  "格斯特纳"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：特朗普感谢已联系的公司投入资金",
+                "comment_highlights": [
+                  "资金"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：特朗普称法案通过使一切成为可能",
+                "comment_highlights": [
+                  "法案"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：特朗普表示知道此事但之前不知详情",
+                "comment_highlights": [
+                  "特朗普"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "特朗普：捐赠者助力儿童账户",
+          "title_lines": [
+            "特朗普",
+            "捐赠者助力儿童账户",
+            "戴尔科技等慷慨解囊"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 68,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor"
+            ],
+            "fixes": [
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：特朗普亲自感谢捐赠者，儿童账户资金规模引关注"
+        }
+      }
+    }
+  ]
+}

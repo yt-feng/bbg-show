@@ -1,0 +1,418 @@
+{
+  "timestamp_utc": "2026-07-06T23:28:43.164246+00:00",
+  "plan_path": "work/top-videos/08_apple_broadcom_extend_chip_deal_to_2031/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "彭博社"
+        ],
+        "confidence": "high",
+        "evidence": "Official Bloomberg China site uses '彭博'."
+      },
+      {
+        "source_text": "Apple",
+        "entity_type": "company",
+        "preferred_en": "Apple Inc.",
+        "preferred_zh": "苹果公司",
+        "aliases": [
+          "苹果"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '苹果' in Chinese media."
+      },
+      {
+        "source_text": "Broadcom",
+        "entity_type": "company",
+        "preferred_en": "Broadcom Inc.",
+        "preferred_zh": "博通公司",
+        "aliases": [
+          "博通"
+        ],
+        "confidence": "high",
+        "evidence": "Chinese media consistently uses '博通'."
+      },
+      {
+        "source_text": "Apple, Broadcom Extend Chip Deal to 2031",
+        "entity_type": "event",
+        "preferred_en": "Apple, Broadcom Extend Chip Deal to 2031",
+        "preferred_zh": "苹果与博通延长芯片合作至2031年",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Current title in Chinese matches this translation."
+      },
+      {
+        "source_text": "AI server chip",
+        "entity_type": "other",
+        "preferred_en": "AI server chip",
+        "preferred_zh": "AI服务器芯片",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common term in Chinese tech news."
+      },
+      {
+        "source_text": "ASIC chip",
+        "entity_type": "other",
+        "preferred_en": "ASIC chip",
+        "preferred_zh": "ASIC芯片",
+        "aliases": [
+          "专用集成电路芯片"
+        ],
+        "confidence": "high",
+        "evidence": "ASIC is commonly used as is in Chinese."
+      },
+      {
+        "source_text": "Baltra",
+        "entity_type": "other",
+        "preferred_en": "Baltra",
+        "preferred_zh": "Baltra",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "Internal code name, no established Chinese translation found."
+      },
+      {
+        "source_text": "M2 processor",
+        "entity_type": "other",
+        "preferred_en": "M2 processor",
+        "preferred_zh": "M2处理器",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard term in Chinese tech media."
+      },
+      {
+        "source_text": "M5 Ultra",
+        "entity_type": "other",
+        "preferred_en": "M5 Ultra",
+        "preferred_zh": "M5 Ultra",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Apple chip naming is kept in English in Chinese."
+      },
+      {
+        "source_text": "GPU",
+        "entity_type": "other",
+        "preferred_en": "GPU",
+        "preferred_zh": "GPU",
+        "aliases": [
+          "图形处理器"
+        ],
+        "confidence": "high",
+        "evidence": "GPU is commonly used in Chinese."
+      },
+      {
+        "source_text": "CPU",
+        "entity_type": "other",
+        "preferred_en": "CPU",
+        "preferred_zh": "CPU",
+        "aliases": [
+          "中央处理器"
+        ],
+        "confidence": "high",
+        "evidence": "CPU is commonly used in Chinese."
+      },
+      {
+        "source_text": "Apple intelligence servers",
+        "entity_type": "other",
+        "preferred_en": "Apple Intelligence servers",
+        "preferred_zh": "苹果智能服务器",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Translation from subtitle context."
+      },
+      {
+        "source_text": "Bloomberg's Consumer Tech and Apple managed to get us a mark gum",
+        "entity_type": "other",
+        "preferred_en": "Mark Gurman",
+        "preferred_zh": "马克·古尔曼",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Mark Gurman is a Bloomberg reporter; Chinese name from common usage."
+      }
+    ],
+    "notes": [
+      "The entity 'mark gum' in subtitles is likely a mis-transcription of 'Mark Gurman'.",
+      "Internal code name 'Baltra' has no official Chinese translation; keep as is.",
+      "All company names have high confidence based on public snippets."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "苹果公司博通公司合作延长至2031年，AI服务器芯片成焦点",
+      "title_lines": [
+        "苹果公司与博通公司",
+        "合作延长至2031年",
+        "AI服务器芯片成焦点"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 66,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data"
+        ],
+        "fixes": [
+          "add_question_or_tension_line",
+          "replace_flat_summary_with_tension"
+        ]
+      },
+      "comment": "KC评论：苹果公司首款AI服务器芯片代号Baltra"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-06T23:28:43.148807+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:23 Apple, Broadcom Extend Chip Deal to 2031",
+          "source_title": "Duration: 2:23 Apple, Broadcom Extend Chip Deal to 2031",
+          "show_date": "",
+          "current_title": "苹果与博通延长芯片合作至2031年，AI服务器芯片成焦点",
+          "current_title_lines": [
+            "苹果与博通",
+            "延长芯片合作至2031年",
+            "AI服务器芯片成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "头条新闻：博通不仅是领涨股，也是最大新闻的中心。该公司宣布与苹果达成新协议，股价上涨。",
+              "en": "Our top story is Broadcom Broadcom isn't just leading the rally, it's also at the center of the biggest news item. The stock is higher after announcing a new agreement with Apple that",
+              "relative_start": 0.0,
+              "relative_end": 10.7
+            },
+            {
+              "index": 2,
+              "zh": "该协议将合作延长至2031年，博通将为多代苹果产品开发定制芯片。",
+              "en": "extends the partnership through 2031 Broadcom will develop custom chips for multiple generations of Apple products. Bloomberg's Consumer Tech and Apple managed to get us a mark gum and also here",
+              "relative_start": 10.7,
+              "relative_end": 21.9
+            },
+            {
+              "index": 3,
+              "zh": "苹果与博通有历史性合作关系。这可能与AI服务器有关，多代产品意味着什么？",
+              "en": "in New York City, super interesting. There is a historic relationship with Apple and Broadcom we can get to. To me reading your report this might be AI server related, what do we think multiple generations",
+              "relative_start": 21.9,
+              "relative_end": 33.0
+            },
+            {
+              "index": 4,
+              "zh": "苹果的合作伙伴发布新闻稿时通常很模糊，但据我所知，这是针对苹果正在开发的新服务器芯片。",
+              "en": "of products means? You know when partners to Apple put out these press releases there is vague as possible, they're not going to come out and say what it is but what I'm telling you is that this",
+              "relative_start": 33.0,
+              "relative_end": 42.2
+            },
+            {
+              "index": 5,
+              "zh": "他们使用博通技术，这种ASIC芯片是单一用途的，专门用于AI处理。",
+              "en": "is specifically for a new server chip that Apple is developing, they're using some Broadcom technology, this is called ASIC chips, an ASIC chip silicon, it's single-purpose silicon right, you're not going to",
+              "relative_start": 42.2,
+              "relative_end": 54.9
+            },
+            {
+              "index": 6,
+              "zh": "这款芯片最早明年推出，内部代号Baltra，是苹果首款服务器专用芯片。",
+              "en": "need that for anything really other than a singular functionality which is processing for AI and so they're going to be rolling out this chip as early as next year, it's called Baltra within Apple,",
+              "relative_start": 54.9,
+              "relative_end": 65.8
+            },
+            {
+              "index": 7,
+              "zh": "目前苹果智能服务器使用M2处理器，而新芯片将是M5 Ultra版本，性能更强。",
+              "en": "it's their first server specific chip. Right now for the Apple intelligence servers they use M2 processors, those were made for Max, this is going to be a version of the M5 Ultra which is going",
+              "relative_start": 65.8,
+              "relative_end": 78.7
+            },
+            {
+              "index": 8,
+              "zh": "新芯片的GPU和CPU性能将是M5 Ultra的4倍，并采用博通技术。",
+              "en": "to be the most powerful chip ever, but this is going to have 4x that performance on the GPU and on the CPU side, this is going to have some Broadcom technology in there. You heard it first here",
+              "relative_start": 78.7,
+              "relative_end": 89.6
+            },
+            {
+              "index": 9,
+              "zh": "股价一度上涨6%，有望创下近期最佳表现。",
+              "en": "on Blueburg Tech, this looks like up 4% at one point it was up 6% and on track for its best days in",
+              "relative_start": 89.6,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:23 Apple, Broadcom Extend Chip Deal to 2031\",\n    \"source_title\": \"Duration: 2:23 Apple, Broadcom Extend Chip Deal to 2031\",\n    \"show_date\": \"\",\n    \"current_title\": \"苹果与博通延长芯片合作至2031年，AI服务器芯片成焦点\",\n    \"current_title_lines\": [\n      \"苹果与博通\",\n      \"延长芯片合作至2031年\",\n      \"AI服务器芯片成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"头条新闻：博通不仅是领涨股，也是最大新闻的中心。该公司宣布与苹果达成新协议，股价上涨。\",\n        \"en\": \"Our top story is Broadcom Broadcom isn't just leading the rally, it's also at the center of the biggest news item. The stock is higher after announcing a new agreement with Apple that\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.7\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"该协议将合作延长至2031年，博通将为多代苹果产品开发定制芯片。\",\n        \"en\": \"extends the partnership through 2031 Broadcom will develop custom chips for multiple generations of Apple products. Bloomberg's Consumer Tech and Apple managed to get us a mark gum and also here\",\n        \"relative_start\": 10.7,\n        \"relative_end\": 21.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"苹果与博通有历史性合作关系。这可能与AI服务器有关，多代产品意味着什么？\",\n        \"en\": \"in New York City, super interesting. There is a historic relationship with Apple and Broadcom we can get to. To me reading your report this might be AI server related, what do we think multiple generations\",\n        \"relative_start\": 21.9,\n        \"relative_end\": 33.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"苹果的合作伙伴发布新闻稿时通常很模糊，但据我所知，这是针对苹果正在开发的新服务器芯片。\",\n        \"en\": \"of products means? You know when partners to Apple put out these press releases there is vague as possible, they're not going to come out and say what it is but what I'm telling you is that this\",\n        \"relative_start\": 33.0,\n        \"relative_end\": 42.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"他们使用博通技术，这种ASIC芯片是单一用途的，专门用于AI处理。\",\n        \"en\": \"is specifically for a new server chip that Apple is developing, they're using some Broadcom technology, this is called ASIC chips, an ASIC chip silicon, it's single-purpose silicon right, you're not going to\",\n        \"relative_start\": 42.2,\n        \"relative_end\": 54.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这款芯片最早明年推出，内部代号Baltra，是苹果首款服务器专用芯片。\",\n        \"en\": \"need that for anything really other than a singular functionality which is processing for AI and so they're going to be rolling out this chip as early as next year, it's called Baltra within Apple,\",\n        \"relative_start\": 54.9,\n        \"relative_end\": 65.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"目前苹果智能服务器使用M2处理器，而新芯片将是M5 Ultra版本，性能更强。\",\n        \"en\": \"it's their first server specific chip. Right now for the Apple intelligence servers they use M2 processors, those were made for Max, this is going to be a version of the M5 Ultra which is going\",\n        \"relative_start\": 65.8,\n        \"relative_end\": 78.7\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"新芯片的GPU和CPU性能将是M5 Ultra的4倍，并采用博通技术。\",\n        \"en\": \"to be the most powerful chip ever, but this is going to have 4x that performance on the GPU and on the CPU side, this is going to have some Broadcom technology in there. You heard it first here\",\n        \"relative_start\": 78.7,\n        \"relative_end\": 89.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"股价一度上涨6%，有望创下近期最佳表现。\",\n        \"en\": \"on Blueburg Tech, this looks like up 4% at one point it was up 6% and on track for its best days in\",\n        \"relative_start\": 89.6,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 2:23 Apple, Broadcom Extend Chip Deal to 2031 Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Watch Apple, Broadcom Extend Chip Deal to 2031 - Bloomberg\",\n        \"snippet\": \"Jul 6th, 2026 Apple, Broadcom Extend Chip Deal to 2031 Broadcom will provide new custom chips to Apple in an expanded partnership that now runs through 2031 .\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-06/apple-broadcom-extend-chip-deal-to-2031-video\"\n      },\n      {\n        \"title\": \"Broadcom and Apple expand chip partnership | The Straits Times\",\n        \"snippet\": \"Broadcom and Apple have extended their partnership until 2031 , with Broadcom providing custom ASIC chips for multiple generations of Apple products.\",\n        \"url\": \"www.straitstimes.com/business/broadcom-and-apple-expand-partnership-to-2031-with-custom-chips\"\n      },\n      {\n        \"title\": \"Broadcom, Apple Expand Partnership to 2031 With Custom Chips\",\n        \"snippet\": \"( Bloomberg ) -- Broadcom Inc. said Monday that it will provide custom chips for Apple Inc. in an expanded deal that runs through 2031 .Most Read from BloombergGreece Offers Bounty to Catch Ravenous ...\",\n        \"url\": \"finance.yahoo.com/technology/ai/articles/broadcom-apple-expand-partnership-2031-124305429.html\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"Bloomberg - Business News, Stock Markets, Finance, Breaking & World News\",\n        \"snippet\": \"Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News\",\n        \"url\": \"www.bloomberg.com\"\n      },\n      {\n        \"title\": \"股票 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"全球股市新闻资讯 彭博提供驱动市场的实时新闻和资讯，并与彭博的数据、图表、上市公司信息、分析报告进行无缝整合，对用户关注的公司和行业的连续报道进行实时提醒，帮助用户尽览行业信息，直击最新动态。 宏观数据研究 彭博提供全球经济和金融市场的全方位实时数据和资讯，通过涵盖 ...\",\n        \"url\": \"www.bloombergchina.com/product/equity/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [\n        \"彭博社\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Official Bloomberg China site uses '彭博'.\"\n    },\n    {\n      \"source_text\": \"Apple\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Apple Inc.\",\n      \"preferred_zh\": \"苹果公司\",\n      \"aliases\": [\n        \"苹果\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '苹果' in Chinese media.\"\n    },\n    {\n      \"source_text\": \"Broadcom\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Broadcom Inc.\",\n      \"preferred_zh\": \"博通公司\",\n      \"aliases\": [\n        \"博通\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Chinese media consistently uses '博通'.\"\n    },\n    {\n      \"source_text\": \"Apple, Broadcom Extend Chip Deal to 2031\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Apple, Broadcom Extend Chip Deal to 2031\",\n      \"preferred_zh\": \"苹果与博通延长芯片合作至2031年\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title in Chinese matches this translation.\"\n    },\n    {\n      \"source_text\": \"AI server chip\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"AI server chip\",\n      \"preferred_zh\": \"AI服务器芯片\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common term in Chinese tech news.\"\n    },\n    {\n      \"source_text\": \"ASIC chip\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"ASIC chip\",\n      \"preferred_zh\": \"ASIC芯片\",\n      \"aliases\": [\n        \"专用集成电路芯片\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"ASIC is commonly used as is in Chinese.\"\n    },\n    {\n      \"source_text\": \"Baltra\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Baltra\",\n      \"preferred_zh\": \"Baltra\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Internal code name, no established Chinese translation found.\"\n    },\n    {\n      \"source_text\": \"M2 processor\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"M2 processor\",\n      \"preferred_zh\": \"M2处理器\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard term in Chinese tech media.\"\n    },\n    {\n      \"source_text\": \"M5 Ultra\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"M5 Ultra\",\n      \"preferred_zh\": \"M5 Ultra\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Apple chip naming is kept in English in Chinese.\"\n    },\n    {\n      \"source_text\": \"GPU\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"GPU\",\n      \"preferred_zh\": \"GPU\",\n      \"aliases\": [\n        \"图形处理器\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"GPU is commonly used in Chinese.\"\n    },\n    {\n      \"source_text\": \"CPU\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"CPU\",\n      \"preferred_zh\": \"CPU\",\n      \"aliases\": [\n        \"中央处理器\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"CPU is commonly used in Chinese.\"\n    },\n    {\n      \"source_text\": \"Apple intelligence servers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Apple Intelligence servers\",\n      \"preferred_zh\": \"苹果智能服务器\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Translation from subtitle context.\"\n    },\n    {\n      \"source_text\": \"Bloomberg's Consumer Tech and Apple managed to get us a mark gum\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Mark Gurman\",\n      \"preferred_zh\": \"马克·古尔曼\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Mark Gurman is a Bloomberg reporter; Chinese name from common usage.\"\n    }\n  ],\n  \"notes\": [\n    \"The entity 'mark gum' in subtitles is likely a mis-transcription of 'Mark Gurman'.\",\n    \"Internal code name 'Baltra' has no official Chinese translation; keep as is.\",\n    \"All company names have high confidence based on public snippets.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "苹果博通合作延长至2031年，AI服务器芯片成焦点",
+            "title_lines": [
+              "苹果与博通",
+              "合作延长至2031年",
+              "AI服务器芯片成焦点"
+            ],
+            "title_highlights": [
+              "苹果",
+              "博通",
+              "2031年",
+              "AI服务器芯片"
+            ],
+            "comment": "KC评论：苹果首款AI服务器芯片代号Baltra，性能是M5 Ultra的4倍。",
+            "comment_highlights": [
+              "AI服务器芯片",
+              "Baltra",
+              "M5 Ultra"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：博通与苹果新协议，股价上涨。",
+                "comment_highlights": [
+                  "博通",
+                  "苹果"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：合作延至2031年，博通开发多代定制芯片。",
+                "comment_highlights": [
+                  "2031年",
+                  "定制芯片"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：AI服务器可能是合作重点。",
+                "comment_highlights": [
+                  "AI服务器"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：新芯片针对苹果服务器，采用博通技术。",
+                "comment_highlights": [
+                  "博通技术"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：ASIC芯片专为AI处理设计。",
+                "comment_highlights": [
+                  "ASIC芯片"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：芯片代号Baltra，最早明年推出。",
+                "comment_highlights": [
+                  "Baltra"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：新芯片基于M5 Ultra，性能更强。",
+                "comment_highlights": [
+                  "M5 Ultra"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：GPU和CPU性能是M5 Ultra的4倍。",
+                "comment_highlights": [
+                  "4倍"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：博通股价一度涨6%。",
+                "comment_highlights": [
+                  "涨6%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "苹果公司博通公司合作延长至2031年，AI服务器芯片成焦点",
+          "title_lines": [
+            "苹果公司与博通公司",
+            "合作延长至2031年",
+            "AI服务器芯片成焦点"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 66,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data"
+            ],
+            "fixes": [
+              "add_question_or_tension_line",
+              "replace_flat_summary_with_tension"
+            ]
+          },
+          "comment": "KC评论：苹果公司首款AI服务器芯片代号Baltra"
+        }
+      }
+    }
+  ]
+}

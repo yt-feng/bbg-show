@@ -1,0 +1,406 @@
+{
+  "timestamp_utc": "2026-07-06T23:16:15.026707+00:00",
+  "plan_path": "work/top-videos/03_microsoft_s_xbox_to_cut_3_200_jobs/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg L.P.",
+        "preferred_zh": "彭博有限合伙企业",
+        "aliases": [
+          "彭博社",
+          "彭博新闻社"
+        ],
+        "confidence": "high",
+        "evidence": "Wikipedia and official site use '彭博有限合伙企业' and '彭博'."
+      },
+      {
+        "source_text": "Microsoft",
+        "entity_type": "company",
+        "preferred_en": "Microsoft Corporation",
+        "preferred_zh": "微软公司",
+        "aliases": [
+          "微软"
+        ],
+        "confidence": "high",
+        "evidence": "Standard translation used globally."
+      },
+      {
+        "source_text": "Xbox",
+        "entity_type": "other",
+        "preferred_en": "Xbox",
+        "preferred_zh": "Xbox",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Brand name, commonly kept as 'Xbox' in Chinese."
+      },
+      {
+        "source_text": "Asha Sharma",
+        "entity_type": "person",
+        "preferred_en": "Asha Sharma",
+        "preferred_zh": "阿莎·夏尔马",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Common transliteration; no official Chinese name found in snippets."
+      },
+      {
+        "source_text": "Brody",
+        "entity_type": "person",
+        "preferred_en": "Brody",
+        "preferred_zh": "布罗迪",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "Only mentioned in subtitle; no public snippet confirms full name or Chinese name."
+      }
+    ],
+    "notes": [
+      "The current title '微软Xbox裁员3200人，剥离工作室重组游戏业务' is accurate and does not require correction.",
+      "No mistranslations identified in the current title lines."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "微软公司Xbox裁员3200人，剥离工作室重组游戏业务",
+      "title_lines": [
+        "微软公司Xbox",
+        "裁员3200人并剥离工作",
+        "游戏业务利润率低，重组聚焦平"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 80,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data"
+        ],
+        "fixes": [
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：微软公司为AI投入砍掉低利润业务，游戏部门能否靠平台转型翻身？"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-06T23:16:15.006607+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:18 Microsoft’s Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul",
+          "source_title": "Duration: 5:18 Microsoft’s Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul",
+          "show_date": "",
+          "current_title": "微软Xbox裁员3200人，剥离工作室重组游戏业务",
+          "current_title_lines": [
+            "微软Xbox",
+            "裁员3200人并剥离工作室",
+            "游戏业务利润率低，重组聚焦平台"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "在科技行业，很多公司都在重新思考资金投向。",
+              "en": "Pretty much across the industry of technology, you see companies trying to rethink where they're spending money.",
+              "relative_start": 0.3,
+              "relative_end": 7.3
+            },
+            {
+              "index": 2,
+              "zh": "这很大程度上是因为他们在AI和数据中心上投入巨大，所以开始审视所有部门。",
+              "en": "A lot of this is fuel because they're spending so much on AI and building our data centers and infrastructures that they're taking a closer look across all divisions.",
+              "relative_start": 7.3,
+              "relative_end": 16.3
+            },
+            {
+              "index": 3,
+              "zh": "今天Xbox成了被调整的对象。",
+              "en": "So today Xbox is the one that we see really kind of getting that hammer.",
+              "relative_start": 16.3,
+              "relative_end": 21.3
+            },
+            {
+              "index": 4,
+              "zh": "他们计划未来一年裁减约20%的员工。",
+              "en": "They laid out a plan to cut about 20% of staff over the next year.",
+              "relative_start": 21.3,
+              "relative_end": 26.3
+            },
+            {
+              "index": 5,
+              "zh": "在微软整体层面，计划裁减约6400人。",
+              "en": "And broader at Microsoft, it's a plan to cut about 64 hundred people.",
+              "relative_start": 26.3,
+              "relative_end": 31.3
+            },
+            {
+              "index": 6,
+              "zh": "这主要是精简Xbox和销售团队，为下一阶段增长重新布局。",
+              "en": "Again, just kind of trimming both an Xbox and sales trying to reorient for what they say will help them grow in this next era.",
+              "relative_start": 31.3,
+              "relative_end": 40.3
+            },
+            {
+              "index": 7,
+              "zh": "Brody，微软保留Xbox的理由是什么？",
+              "en": "Brody, what is the rationale for Microsoft keeping Xbox?",
+              "relative_start": 40.3,
+              "relative_end": 44.3
+            },
+            {
+              "index": 8,
+              "zh": "Xbox部门CEO今早在给员工的备忘录中写道。",
+              "en": "The CEO of the Xbox division wrote in a note to staff this morning.",
+              "relative_start": 44.3,
+              "relative_end": 49.3
+            },
+            {
+              "index": 9,
+              "zh": "根据你的报道，Xbox的利润率比同类业务低3到10倍。",
+              "en": "And this is based on your reporting that Xbox is operating at margins three to 10 times lower than comparable businesses.",
+              "relative_start": 49.3,
+              "relative_end": 55.3
+            },
+            {
+              "index": 10,
+              "zh": "从财务上看，它表现不佳。那微软为什么还要保留它？",
+              "en": "I mean, financially, it's not keeping up. So why does Microsoft want to keep it?",
+              "relative_start": 55.3,
+              "relative_end": 60.3
+            },
+            {
+              "index": 11,
+              "zh": "问得好。微软在消费者业务上历来表现不佳。",
+              "en": "It's a good question. Microsoft really has traditionally struggled with consumer businesses.",
+              "relative_start": 60.3,
+              "relative_end": 66.3
+            },
+            {
+              "index": 12,
+              "zh": "过去他们尝试推出智能手机等产品，但效果并不理想。",
+              "en": "You know, every time they've kind of tried to spin up say like a smartphone or things of this nature over history, it hasn't always gone super well.",
+              "relative_start": 66.3,
+              "relative_end": 74.3
+            },
+            {
+              "index": 13,
+              "zh": "Xbox是硬件与软件的独特结合，微软一直很重视。",
+              "en": "Xbox, they've been traditionally committed to because it was this unique blend of hardware and software and they found a niche in it.",
+              "relative_start": 74.3,
+              "relative_end": 81.3
+            },
+            {
+              "index": 14,
+              "zh": "今天他们正试图重新调整业务，以便长期保持增长。",
+              "en": "And yeah, today is them trying to reorient that business into something that they can keep and grow for the long term.",
+              "relative_start": 81.3,
+              "relative_end": 88.3
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:18 Microsoft’s Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul\",\n    \"source_title\": \"Duration: 5:18 Microsoft’s Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul\",\n    \"show_date\": \"\",\n    \"current_title\": \"微软Xbox裁员3200人，剥离工作室重组游戏业务\",\n    \"current_title_lines\": [\n      \"微软Xbox\",\n      \"裁员3200人并剥离工作室\",\n      \"游戏业务利润率低，重组聚焦平台\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在科技行业，很多公司都在重新思考资金投向。\",\n        \"en\": \"Pretty much across the industry of technology, you see companies trying to rethink where they're spending money.\",\n        \"relative_start\": 0.3,\n        \"relative_end\": 7.3\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这很大程度上是因为他们在AI和数据中心上投入巨大，所以开始审视所有部门。\",\n        \"en\": \"A lot of this is fuel because they're spending so much on AI and building our data centers and infrastructures that they're taking a closer look across all divisions.\",\n        \"relative_start\": 7.3,\n        \"relative_end\": 16.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"今天Xbox成了被调整的对象。\",\n        \"en\": \"So today Xbox is the one that we see really kind of getting that hammer.\",\n        \"relative_start\": 16.3,\n        \"relative_end\": 21.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"他们计划未来一年裁减约20%的员工。\",\n        \"en\": \"They laid out a plan to cut about 20% of staff over the next year.\",\n        \"relative_start\": 21.3,\n        \"relative_end\": 26.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"在微软整体层面，计划裁减约6400人。\",\n        \"en\": \"And broader at Microsoft, it's a plan to cut about 64 hundred people.\",\n        \"relative_start\": 26.3,\n        \"relative_end\": 31.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这主要是精简Xbox和销售团队，为下一阶段增长重新布局。\",\n        \"en\": \"Again, just kind of trimming both an Xbox and sales trying to reorient for what they say will help them grow in this next era.\",\n        \"relative_start\": 31.3,\n        \"relative_end\": 40.3\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"Brody，微软保留Xbox的理由是什么？\",\n        \"en\": \"Brody, what is the rationale for Microsoft keeping Xbox?\",\n        \"relative_start\": 40.3,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Xbox部门CEO今早在给员工的备忘录中写道。\",\n        \"en\": \"The CEO of the Xbox division wrote in a note to staff this morning.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 49.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"根据你的报道，Xbox的利润率比同类业务低3到10倍。\",\n        \"en\": \"And this is based on your reporting that Xbox is operating at margins three to 10 times lower than comparable businesses.\",\n        \"relative_start\": 49.3,\n        \"relative_end\": 55.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"从财务上看，它表现不佳。那微软为什么还要保留它？\",\n        \"en\": \"I mean, financially, it's not keeping up. So why does Microsoft want to keep it?\",\n        \"relative_start\": 55.3,\n        \"relative_end\": 60.3\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"问得好。微软在消费者业务上历来表现不佳。\",\n        \"en\": \"It's a good question. Microsoft really has traditionally struggled with consumer businesses.\",\n        \"relative_start\": 60.3,\n        \"relative_end\": 66.3\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"过去他们尝试推出智能手机等产品，但效果并不理想。\",\n        \"en\": \"You know, every time they've kind of tried to spin up say like a smartphone or things of this nature over history, it hasn't always gone super well.\",\n        \"relative_start\": 66.3,\n        \"relative_end\": 74.3\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"Xbox是硬件与软件的独特结合，微软一直很重视。\",\n        \"en\": \"Xbox, they've been traditionally committed to because it was this unique blend of hardware and software and they found a niche in it.\",\n        \"relative_start\": 74.3,\n        \"relative_end\": 81.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"今天他们正试图重新调整业务，以便长期保持增长。\",\n        \"en\": \"And yeah, today is them trying to reorient that business into something that they can keep and grow for the long term.\",\n        \"relative_start\": 81.3,\n        \"relative_end\": 88.3\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 5:18 Microsoft’s Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Microsoft's Xbox to Cut 3,200 Jobs, Divest Studios in Overhaul\",\n        \"snippet\": \"Microsoft Corp.'s Xbox plans to eliminate 3,200 jobs , or around 20% of its staff over the next year, as part of a massive reorganization to spur growth in the struggling gaming division. Xbox ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-06/microsoft-s-xbox-to-cut-3-200-jobs-video\"\n      },\n      {\n        \"title\": \"Xbox Plans Significant Layoffs as New CEO Plans Overhaul\",\n        \"snippet\": \"Microsoft Corp. 's Xbox division is planning major job cuts next month as new Chief Executive Officer Asha Sharma overhauls the video game unit to stem declining revenue. The layoffs, the exact ...\",\n        \"url\": \"www.bloomberg.com/news/articles/2026-06-10/xbox-plans-significant-layoffs-as-it-transforms-under-new-ceo-asha-sharma\"\n      },\n      {\n        \"title\": \"Xbox cutting 3,200 jobs, divesting five studios in brand 'reset' - MSN\",\n        \"snippet\": \"Microsoft's XBOX will reportedly lay off 3,200 workers — about 20 percent of its total workforce — and divest five This post, \\\" XBOX cutting 3,200 jobs , divesting five studios in brand ...\",\n        \"url\": \"www.msn.com/en-us/money/technology/xbox-cutting-3-200-jobs-divesting-five-studios-in-brand-reset/ar-AA27jVqO\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"彭博有限合夥企業 - 维基百科，自由的百科全书\",\n        \"snippet\": \"彭博有限合夥企業 ... 位于伦敦的彭博新闻演播厅 彭博有限合伙企业 （英語： Bloomberg L.P.）是 美國 的跨國大眾 傳播媒體 公司，提供新聞、全球商業和金融數據服務。 集團總部位於 紐約市 的 莱辛顿大道731号。 彭博於全球176個地點擁有超過19,000名員工。 [7]\",\n        \"url\": \"zh.wikipedia.org/wiki/彭博有限合夥企業\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg L.P.\",\n      \"preferred_zh\": \"彭博有限合伙企业\",\n      \"aliases\": [\n        \"彭博社\",\n        \"彭博新闻社\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Wikipedia and official site use '彭博有限合伙企业' and '彭博'.\"\n    },\n    {\n      \"source_text\": \"Microsoft\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Microsoft Corporation\",\n      \"preferred_zh\": \"微软公司\",\n      \"aliases\": [\n        \"微软\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation used globally.\"\n    },\n    {\n      \"source_text\": \"Xbox\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Xbox\",\n      \"preferred_zh\": \"Xbox\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Brand name, commonly kept as 'Xbox' in Chinese.\"\n    },\n    {\n      \"source_text\": \"Asha Sharma\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Asha Sharma\",\n      \"preferred_zh\": \"阿莎·夏尔马\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Common transliteration; no official Chinese name found in snippets.\"\n    },\n    {\n      \"source_text\": \"Brody\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Brody\",\n      \"preferred_zh\": \"布罗迪\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Only mentioned in subtitle; no public snippet confirms full name or Chinese name.\"\n    }\n  ],\n  \"notes\": [\n    \"The current title '微软Xbox裁员3200人，剥离工作室重组游戏业务' is accurate and does not require correction.\",\n    \"No mistranslations identified in the current title lines.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "微软Xbox裁员3200人，剥离工作室重组游戏业务",
+            "title_lines": [
+              "微软Xbox",
+              "裁员3200人并剥离工作室",
+              "游戏业务利润率低，重组聚焦平台"
+            ],
+            "title_highlights": [
+              "微软Xbox",
+              "3200人",
+              "利润率低"
+            ],
+            "comment": "KC评论：微软为AI投入砍掉低利润业务，游戏部门能否靠平台转型翻身？",
+            "comment_highlights": [
+              "AI投入",
+              "平台转型"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：科技公司普遍在重新审视资金投向",
+                "comment_highlights": [
+                  "资金投向"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：AI和数据中心投入巨大，挤压其他部门预算",
+                "comment_highlights": [
+                  "AI",
+                  "数据中心"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：Xbox成为微软内部调整的重点对象",
+                "comment_highlights": [
+                  "Xbox"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：未来一年裁减约20%员工，力度不小",
+                "comment_highlights": [
+                  "20%"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：微软整体裁员约6400人，Xbox是重灾区",
+                "comment_highlights": [
+                  "6400人"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：精简Xbox和销售团队，为下一阶段增长布局",
+                "comment_highlights": [
+                  "精简",
+                  "增长"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：微软保留Xbox的理由是什么？",
+                "comment_highlights": [
+                  "保留Xbox"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：Xbox部门CEO今早在备忘录中说明重组计划",
+                "comment_highlights": [
+                  "CEO",
+                  "备忘录"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：Xbox利润率比同类业务低3到10倍",
+                "comment_highlights": [
+                  "利润率",
+                  "低3到10倍"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：财务表现不佳，微软为何还要保留？",
+                "comment_highlights": [
+                  "财务表现不佳"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：微软在消费者业务上历来表现不佳",
+                "comment_highlights": [
+                  "消费者业务"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：过去智能手机等尝试效果不理想",
+                "comment_highlights": [
+                  "智能手机"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：Xbox是硬件与软件结合，微软一直重视",
+                "comment_highlights": [
+                  "硬件与软件"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：今天重组是为长期增长重新定位",
+                "comment_highlights": [
+                  "长期增长"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "微软公司Xbox裁员3200人，剥离工作室重组游戏业务",
+          "title_lines": [
+            "微软公司Xbox",
+            "裁员3200人并剥离工作",
+            "游戏业务利润率低，重组聚焦平"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 80,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data"
+            ],
+            "fixes": [
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：微软公司为AI投入砍掉低利润业务，游戏部门能否靠平台转型翻身？"
+        }
+      }
+    }
+  ]
+}
