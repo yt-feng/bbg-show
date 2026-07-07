@@ -1,0 +1,361 @@
+{
+  "timestamp_utc": "2026-07-07T23:14:24.987336+00:00",
+  "plan_path": "work/top-videos/04_trump_says_he_ll_consider_selling_f_35s_to_turkey/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "彭博社",
+          "Bloomberg新闻"
+        ],
+        "confidence": "high",
+        "evidence": "Official Bloomberg China website uses '彭博'."
+      },
+      {
+        "source_text": "Trump",
+        "entity_type": "person",
+        "preferred_en": "Donald Trump",
+        "preferred_zh": "唐纳德·特朗普",
+        "aliases": [
+          "特朗普"
+        ],
+        "confidence": "high",
+        "evidence": "Standard Chinese media translation."
+      },
+      {
+        "source_text": "Turkey",
+        "entity_type": "place",
+        "preferred_en": "Turkey",
+        "preferred_zh": "土耳其",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard Chinese name."
+      },
+      {
+        "source_text": "F-35",
+        "entity_type": "other",
+        "preferred_en": "F-35",
+        "preferred_zh": "F-35",
+        "aliases": [
+          "F-35战机"
+        ],
+        "confidence": "high",
+        "evidence": "Common usage in Chinese media."
+      },
+      {
+        "source_text": "NATO",
+        "entity_type": "organization",
+        "preferred_en": "NATO",
+        "preferred_zh": "北约",
+        "aliases": [
+          "北大西洋公约组织"
+        ],
+        "confidence": "high",
+        "evidence": "Standard Chinese abbreviation."
+      },
+      {
+        "source_text": "Recep Tayyip Erdogan",
+        "entity_type": "person",
+        "preferred_en": "Recep Tayyip Erdogan",
+        "preferred_zh": "雷杰普·塔伊普·埃尔多安",
+        "aliases": [
+          "埃尔多安"
+        ],
+        "confidence": "high",
+        "evidence": "Standard Chinese media translation."
+      },
+      {
+        "source_text": "Ankara",
+        "entity_type": "place",
+        "preferred_en": "Ankara",
+        "preferred_zh": "安卡拉",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard Chinese name."
+      },
+      {
+        "source_text": "Reuters",
+        "entity_type": "organization",
+        "preferred_en": "Reuters",
+        "preferred_zh": "路透社",
+        "aliases": [
+          "路透"
+        ],
+        "confidence": "high",
+        "evidence": "Standard Chinese name."
+      },
+      {
+        "source_text": "Al-Monitor",
+        "entity_type": "organization",
+        "preferred_en": "Al-Monitor",
+        "preferred_zh": "Al-Monitor",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "No established Chinese name found in snippets."
+      }
+    ],
+    "notes": [
+      "The current title '特朗普：将考虑向土耳其出售F-35战机' is a reasonable translation but uses '特朗普' which is a common alias for Donald Trump; preferred_zh is '唐纳德·特朗普' for full name.",
+      "Al-Monitor has no widely recognized Chinese name; left as English."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "唐纳德·特朗普：考虑向土耳其出售F-35",
+      "title_lines": [
+        "唐纳德·特朗普",
+        "考虑向土耳其出售F-35",
+        "称土方更忠诚"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 80,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data"
+        ],
+        "fixes": [
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：唐纳德·特朗普对土耳其态度大转弯，北约盟友关系面临新考验"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-07T23:14:24.981979+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 41.4,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 0:41 Trump Says He'll Consider Selling F-35s to Turkey",
+          "source_title": "Duration: 0:41 Trump Says He'll Consider Selling F-35s to Turkey",
+          "show_date": "",
+          "current_title": "特朗普：将考虑向土耳其出售F-35战机",
+          "current_title_lines": [
+            "特朗普",
+            "考虑向土耳其出售F-35",
+            "称土方更忠诚"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "总统先生，您会向土耳其出售F-35吗？",
+              "en": "Mr. President, are you going to sell F-35s to Turkey?",
+              "relative_start": 1.0,
+              "relative_end": 4.0
+            },
+            {
+              "index": 2,
+              "zh": "法律上的说法呢？好吧。",
+              "en": "What about the legal assertions? All right.",
+              "relative_start": 4.0,
+              "relative_end": 7.0
+            },
+            {
+              "index": 3,
+              "zh": "至于决定，我们会维持很好的关系。",
+              "en": "To decision we're going to make a very good relationship.",
+              "relative_start": 7.0,
+              "relative_end": 13.0
+            },
+            {
+              "index": 4,
+              "zh": "我想很多人，包括在座的各位，都会问为什么不呢？",
+              "en": "I would think that many people, I can tell you, many people, including the people sitting right here, to see why wouldn't we do that?",
+              "relative_start": 13.0,
+              "relative_end": 21.0
+            },
+            {
+              "index": 5,
+              "zh": "我们与土耳其关系更好，土耳其比许多国家更忠诚。",
+              "en": "We have a better relationship with Turkey and Turkey's been in many ways much more loyal than other countries that we think would be loyal.",
+              "relative_start": 21.0,
+              "relative_end": 29.0
+            },
+            {
+              "index": 6,
+              "zh": "所以，情况不同了。我们认为这是个好计划。",
+              "en": "So, something is different. We consider it's a great plan.",
+              "relative_start": 29.0,
+              "relative_end": 33.0
+            },
+            {
+              "index": 7,
+              "zh": "这是最好的，显然是最好的计划。",
+              "en": "It's the best, certainly the best plan by far.",
+              "relative_start": 33.0,
+              "relative_end": 37.0
+            },
+            {
+              "index": 8,
+              "zh": "当然，我们会考虑。",
+              "en": "And certainly something we will consider.",
+              "relative_start": 37.0,
+              "relative_end": 41.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 41.4,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 0:41 Trump Says He'll Consider Selling F-35s to Turkey\",\n    \"source_title\": \"Duration: 0:41 Trump Says He'll Consider Selling F-35s to Turkey\",\n    \"show_date\": \"\",\n    \"current_title\": \"特朗普：将考虑向土耳其出售F-35战机\",\n    \"current_title_lines\": [\n      \"特朗普\",\n      \"考虑向土耳其出售F-35\",\n      \"称土方更忠诚\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"总统先生，您会向土耳其出售F-35吗？\",\n        \"en\": \"Mr. President, are you going to sell F-35s to Turkey?\",\n        \"relative_start\": 1.0,\n        \"relative_end\": 4.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"法律上的说法呢？好吧。\",\n        \"en\": \"What about the legal assertions? All right.\",\n        \"relative_start\": 4.0,\n        \"relative_end\": 7.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"至于决定，我们会维持很好的关系。\",\n        \"en\": \"To decision we're going to make a very good relationship.\",\n        \"relative_start\": 7.0,\n        \"relative_end\": 13.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我想很多人，包括在座的各位，都会问为什么不呢？\",\n        \"en\": \"I would think that many people, I can tell you, many people, including the people sitting right here, to see why wouldn't we do that?\",\n        \"relative_start\": 13.0,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们与土耳其关系更好，土耳其比许多国家更忠诚。\",\n        \"en\": \"We have a better relationship with Turkey and Turkey's been in many ways much more loyal than other countries that we think would be loyal.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 29.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"所以，情况不同了。我们认为这是个好计划。\",\n        \"en\": \"So, something is different. We consider it's a great plan.\",\n        \"relative_start\": 29.0,\n        \"relative_end\": 33.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是最好的，显然是最好的计划。\",\n        \"en\": \"It's the best, certainly the best plan by far.\",\n        \"relative_start\": 33.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"当然，我们会考虑。\",\n        \"en\": \"And certainly something we will consider.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 0:41 Trump Says He'll Consider Selling F-35s to Turkey Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Trump Signals Shift in Ties With Turkey at NATO Summit\",\n        \"snippet\": \"President Donald Trump said he may lift sanctions on Turkey and consider selling F-35 fighter jets to the country. He spoke to Turkish President Recep Tayyip Erdogan before a meeting on the ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-07/trump-signals-shift-in-ties-with-turkey-at-nato-summit-video\"\n      },\n      {\n        \"title\": \"Trump says he will lift Turkey sanctions, decide on selling F-35s\",\n        \"snippet\": \"U.S. President Donald Trump said he would lift sanctions off Turkey and make a decision ‌on a potential sale of F-35s to Ankara as he began a meeting on Tuesday with Turkish President Tayyip ...\",\n        \"url\": \"www.reuters.com/world/middle-east/trump-says-will-lift-turkey-sanctions-decide-selling-f-35s-2026-07-07/\"\n      },\n      {\n        \"title\": \"Trump says he will lift Turkey sanctions, decide on selling F-35s\",\n        \"snippet\": \"(Amends language in headline)ANKARA, Turkey , July 7 (Reuters) - U.S. President Donald Trump said he would lift sanctions off Turkey and make a decision on a potential sale of F-35s to Ankara as he began a meeting on Tuesday with Turkish President Tayyip Erdogan at a NATO summit. \\\"We're going to be taking the sanctions off,\\\" Trump told reporters when asked about the measures imposed under the ...\",\n        \"url\": \"www.al-monitor.com/originals/2026/07/trump-says-he-will-lift-turkey-sanctions-decide-selling-f-35s\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"Bloomberg and Huatai Securities: Navigating change in China's financial ...\",\n        \"snippet\": \"This year marks major milestones for two key players in China's financial landscape: Bloomberg celebrates 30+ years in mainland China, while Huatai Securities marks 10 years since its Hong Kong ...\",\n        \"url\": \"www.bloomberg.com/professional/insights/financial-services/bloomberg-and-huatai-securities-navigating-change-in-chinas-financial-markets/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [\n        \"彭博社\",\n        \"Bloomberg新闻\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Official Bloomberg China website uses '彭博'.\"\n    },\n    {\n      \"source_text\": \"Trump\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Donald Trump\",\n      \"preferred_zh\": \"唐纳德·特朗普\",\n      \"aliases\": [\n        \"特朗普\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese media translation.\"\n    },\n    {\n      \"source_text\": \"Turkey\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Turkey\",\n      \"preferred_zh\": \"土耳其\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese name.\"\n    },\n    {\n      \"source_text\": \"F-35\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"F-35\",\n      \"preferred_zh\": \"F-35\",\n      \"aliases\": [\n        \"F-35战机\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common usage in Chinese media.\"\n    },\n    {\n      \"source_text\": \"NATO\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"NATO\",\n      \"preferred_zh\": \"北约\",\n      \"aliases\": [\n        \"北大西洋公约组织\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese abbreviation.\"\n    },\n    {\n      \"source_text\": \"Recep Tayyip Erdogan\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Recep Tayyip Erdogan\",\n      \"preferred_zh\": \"雷杰普·塔伊普·埃尔多安\",\n      \"aliases\": [\n        \"埃尔多安\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese media translation.\"\n    },\n    {\n      \"source_text\": \"Ankara\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Ankara\",\n      \"preferred_zh\": \"安卡拉\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese name.\"\n    },\n    {\n      \"source_text\": \"Reuters\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Reuters\",\n      \"preferred_zh\": \"路透社\",\n      \"aliases\": [\n        \"路透\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese name.\"\n    },\n    {\n      \"source_text\": \"Al-Monitor\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Al-Monitor\",\n      \"preferred_zh\": \"Al-Monitor\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"No established Chinese name found in snippets.\"\n    }\n  ],\n  \"notes\": [\n    \"The current title '特朗普：将考虑向土耳其出售F-35战机' is a reasonable translation but uses '特朗普' which is a common alias for Donald Trump; preferred_zh is '唐纳德·特朗普' for full name.\",\n    \"Al-Monitor has no widely recognized Chinese name; left as English.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "特朗普：考虑向土耳其出售F-35",
+            "title_lines": [
+              "特朗普",
+              "考虑向土耳其出售F-35",
+              "称土方更忠诚"
+            ],
+            "title_highlights": [
+              "特朗普",
+              "F-35"
+            ],
+            "comment": "KC评论：特朗普对土耳其态度大转弯，北约盟友关系面临新考验。",
+            "comment_highlights": [
+              "特朗普",
+              "北约"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：记者直接追问F-35出售可能性。",
+                "comment_highlights": [
+                  "F-35"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：特朗普回避法律细节，转向关系表态。",
+                "comment_highlights": [
+                  "特朗普"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：强调维持良好关系，暗示政策转向。",
+                "comment_highlights": [
+                  "关系"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：反问为什么不卖，释放开放信号。",
+                "comment_highlights": [
+                  "信号"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：称土耳其比其他国家更忠诚，理由罕见。",
+                "comment_highlights": [
+                  "土耳其"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：认为情况已变，新计划值得推进。",
+                "comment_highlights": [
+                  "新计划"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：强调这是最佳方案，信心十足。",
+                "comment_highlights": [
+                  "最佳方案"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：最终表态会考虑，留有余地。",
+                "comment_highlights": [
+                  "考虑"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "唐纳德·特朗普：考虑向土耳其出售F-35",
+          "title_lines": [
+            "唐纳德·特朗普",
+            "考虑向土耳其出售F-35",
+            "称土方更忠诚"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 80,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data"
+            ],
+            "fixes": [
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：唐纳德·特朗普对土耳其态度大转弯，北约盟友关系面临新考验"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "timestamp_utc": "2026-07-07T23:09:54.227576+00:00",
+  "plan_path": "work/top-videos/01_how_to_get_the_most_out_of_your_kid_s_trump_account/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "Bloomberg Television"
+        ],
+        "confidence": "high",
+        "evidence": "Official Bloomberg China website uses '彭博'."
+      },
+      {
+        "source_text": "Trump account",
+        "entity_type": "other",
+        "preferred_en": "Trump Account",
+        "preferred_zh": "特朗普账户",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Current title and subtitles consistently use '特朗普账户'."
+      },
+      {
+        "source_text": "Burr",
+        "entity_type": "organization",
+        "preferred_en": "Burr",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "No public snippet found for 'Burr' as a financial institution. Possibly a misspelling or obscure entity."
+      },
+      {
+        "source_text": "Roth IRA",
+        "entity_type": "other",
+        "preferred_en": "Roth IRA",
+        "preferred_zh": "罗斯个人退休账户",
+        "aliases": [
+          "罗斯IRA"
+        ],
+        "confidence": "high",
+        "evidence": "Standard financial term in Chinese."
+      },
+      {
+        "source_text": "529 plan",
+        "entity_type": "other",
+        "preferred_en": "529 plan",
+        "preferred_zh": "529教育储蓄计划",
+        "aliases": [
+          "529计划"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '529教育储蓄计划' in Chinese financial media."
+      },
+      {
+        "source_text": "July 4th",
+        "entity_type": "event",
+        "preferred_en": "July 4th",
+        "preferred_zh": "7月4日",
+        "aliases": [
+          "美国独立日"
+        ],
+        "confidence": "high",
+        "evidence": "Direct translation from subtitle."
+      }
+    ],
+    "notes": [
+      "The entity 'Burr' could not be verified. It may be a typo or a lesser-known company. Consider checking the original video for correct spelling.",
+      "The current title contains '**' which likely represents censored characters. No entity extraction needed for those."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "彭博：特朗普账户免费千元，真能变百万？",
+      "title_lines": [
+        "彭博",
+        "特朗普账户免费千元",
+        "真能变百万？"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 80,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data"
+        ],
+        "fixes": [
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：免费资金值得领，但长期策略需匹配家庭目标，别被复利神话误导"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-07T23:09:54.214584+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 74.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "特朗普账户：儿童**新选择？免费千元种子资金如何最大化利用",
+          "current_title_lines": [
+            "特朗普账户开放申请",
+            "儿童**新选择",
+            "免费千元种子资金如何最大化利用"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "7月4日周六，政府向50多万美国儿童的Trump账户存入1000美元初始资金。",
+              "en": "On Saturday, July 4th, our administration deposited one-time seed contributions, $1,000 each into the Trump accounts of over 500,000 American children. It's a lot.",
+              "relative_start": 0.0,
+              "relative_end": 13.6
+            },
+            {
+              "index": 2,
+              "zh": "Trump账户声称：在Burr开户，利用复利增长，小额投入也能变成百万美元。",
+              "en": "Trump accounts make a bold claim. Give your kid a head start by opening an investing account at Burr and let decades of compound growth potentially turn small contributions into millions of dollars.",
+              "relative_start": 13.6,
+              "relative_end": 23.9
+            },
+            {
+              "index": 3,
+              "zh": "但与其他储蓄选项相比，它真的名副其实吗？",
+              "en": "But did they live up to the hype, especially with so many other savings options out there?",
+              "relative_start": 23.9,
+              "relative_end": 28.2
+            },
+            {
+              "index": 4,
+              "zh": "财务顾问表示，如果孩子符合条件，值得领取这笔初始资金。",
+              "en": "If your child qualifies for the seed contribution, financial advisors say it's worth claiming.",
+              "relative_start": 28.2,
+              "relative_end": 33.3
+            },
+            {
+              "index": 5,
+              "zh": "2025至2028年出生的孩子将获得1000美元联邦存款。",
+              "en": "Kids born between 2025 through 2028 receive a $1,000 federal deposit.",
+              "relative_start": 33.3,
+              "relative_end": 38.6
+            },
+            {
+              "index": 6,
+              "zh": "这笔免费资金到孩子18岁时可能增值数千美元。",
+              "en": "And that free money could turn into thousands more by the time they turn 18.",
+              "relative_start": 38.6,
+              "relative_end": 42.7
+            },
+            {
+              "index": 7,
+              "zh": "理财规划师表示，最佳策略不是二选一。",
+              "en": "Financial planners say the best strategy isn't choosing one account over another.",
+              "relative_start": 42.7,
+              "relative_end": 46.6
+            },
+            {
+              "index": 8,
+              "zh": "Trump账户类似孩子的退休账户，资金锁定至成年，灵活性低于传统经纪账户。",
+              "en": "Think of a Trump account as a retirement account for your child. The money is locked up until adulthood, so it's less flexible than a traditional brokerage account.",
+              "relative_start": 46.6,
+              "relative_end": 54.2
+            },
+            {
+              "index": 9,
+              "zh": "若目标是支付大学费用，其税收效率不如529计划。",
+              "en": "And not as tax-efficient as a 529 plan if your goal is paying for college.",
+              "relative_start": 54.2,
+              "relative_end": 58.2
+            },
+            {
+              "index": 10,
+              "zh": "真正机会在孩子成年后：Trump账户可转为Roth IRA，未来**收益免税。",
+              "en": "The real opportunity comes when your child is an adult. The Trump account can be converted into a Roth IRA, allowing future investment growth to become tax-free.",
+              "relative_start": 58.2,
+              "relative_end": 66.3
+            },
+            {
+              "index": 11,
+              "zh": "总之，符合条件就领取免费资金。但确保特朗普账户符合家庭整体储蓄策略。",
+              "en": "Bottom line, take the free money if you're eligible. But make sure a Trump account fits into your family's broader savings strategy.",
+              "relative_start": 66.3,
+              "relative_end": 72.7
+            },
+            {
+              "index": 12,
+              "zh": "而不是反过来。",
+              "en": "Not the other way around.",
+              "relative_start": 72.7,
+              "relative_end": 74.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 74.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"特朗普账户：儿童**新选择？免费千元种子资金如何最大化利用\",\n    \"current_title_lines\": [\n      \"特朗普账户开放申请\",\n      \"儿童**新选择\",\n      \"免费千元种子资金如何最大化利用\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"7月4日周六，政府向50多万美国儿童的Trump账户存入1000美元初始资金。\",\n        \"en\": \"On Saturday, July 4th, our administration deposited one-time seed contributions, $1,000 each into the Trump accounts of over 500,000 American children. It's a lot.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 13.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"Trump账户声称：在Burr开户，利用复利增长，小额投入也能变成百万美元。\",\n        \"en\": \"Trump accounts make a bold claim. Give your kid a head start by opening an investing account at Burr and let decades of compound growth potentially turn small contributions into millions of dollars.\",\n        \"relative_start\": 13.6,\n        \"relative_end\": 23.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"但与其他储蓄选项相比，它真的名副其实吗？\",\n        \"en\": \"But did they live up to the hype, especially with so many other savings options out there?\",\n        \"relative_start\": 23.9,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"财务顾问表示，如果孩子符合条件，值得领取这笔初始资金。\",\n        \"en\": \"If your child qualifies for the seed contribution, financial advisors say it's worth claiming.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 33.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"2025至2028年出生的孩子将获得1000美元联邦存款。\",\n        \"en\": \"Kids born between 2025 through 2028 receive a $1,000 federal deposit.\",\n        \"relative_start\": 33.3,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这笔免费资金到孩子18岁时可能增值数千美元。\",\n        \"en\": \"And that free money could turn into thousands more by the time they turn 18.\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 42.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"理财规划师表示，最佳策略不是二选一。\",\n        \"en\": \"Financial planners say the best strategy isn't choosing one account over another.\",\n        \"relative_start\": 42.7,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Trump账户类似孩子的退休账户，资金锁定至成年，灵活性低于传统经纪账户。\",\n        \"en\": \"Think of a Trump account as a retirement account for your child. The money is locked up until adulthood, so it's less flexible than a traditional brokerage account.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 54.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"若目标是支付大学费用，其税收效率不如529计划。\",\n        \"en\": \"And not as tax-efficient as a 529 plan if your goal is paying for college.\",\n        \"relative_start\": 54.2,\n        \"relative_end\": 58.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"真正机会在孩子成年后：Trump账户可转为Roth IRA，未来**收益免税。\",\n        \"en\": \"The real opportunity comes when your child is an adult. The Trump account can be converted into a Roth IRA, allowing future investment growth to become tax-free.\",\n        \"relative_start\": 58.2,\n        \"relative_end\": 66.3\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"总之，符合条件就领取免费资金。但确保特朗普账户符合家庭整体储蓄策略。\",\n        \"en\": \"Bottom line, take the free money if you're eligible. But make sure a Trump account fits into your family's broader savings strategy.\",\n        \"relative_start\": 66.3,\n        \"relative_end\": 72.7\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"而不是反过来。\",\n        \"en\": \"Not the other way around.\",\n        \"relative_start\": 72.7,\n        \"relative_end\": 74.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Watch Now Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Now TV網頁版 - 全日節目表 > Bloomberg Television\",\n        \"snippet\": \"了解 Bloomberg Television頻道的節目時間表。\",\n        \"url\": \"nowplayer.now.com/tvguide/channeldetail/321/1?lang=zh\"\n      },\n      {\n        \"title\": \"Now TV網頁版 - 全日節目表 > Bloomberg Television\",\n        \"snippet\": \"Bloomberg Primer 第2季第1集 -The Race To Challenge China's Ev Lead\",\n        \"url\": \"nowplayerplog.now.com/tvguide/channeldetail/321/1?isfromchannel=true&lang=zh\"\n      },\n      {\n        \"title\": \"Live TV - US BTV+ - Bloomberg\",\n        \"snippet\": \"Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News.\",\n        \"url\": \"www.bloomberg.com/live/us\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"Bloomberg and Huatai Securities: Navigating change in China's financial ...\",\n        \"snippet\": \"This year marks major milestones for two key players in China's financial landscape: Bloomberg celebrates 30+ years in mainland China, while Huatai Securities marks 10 years since its Hong Kong ...\",\n        \"url\": \"www.bloomberg.com/professional/insights/financial-services/bloomberg-and-huatai-securities-navigating-change-in-chinas-financial-markets/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [\n        \"Bloomberg Television\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Official Bloomberg China website uses '彭博'.\"\n    },\n    {\n      \"source_text\": \"Trump account\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Trump Account\",\n      \"preferred_zh\": \"特朗普账户\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title and subtitles consistently use '特朗普账户'.\"\n    },\n    {\n      \"source_text\": \"Burr\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Burr\",\n      \"preferred_zh\": \"\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"No public snippet found for 'Burr' as a financial institution. Possibly a misspelling or obscure entity.\"\n    },\n    {\n      \"source_text\": \"Roth IRA\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Roth IRA\",\n      \"preferred_zh\": \"罗斯个人退休账户\",\n      \"aliases\": [\n        \"罗斯IRA\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term in Chinese.\"\n    },\n    {\n      \"source_text\": \"529 plan\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"529 plan\",\n      \"preferred_zh\": \"529教育储蓄计划\",\n      \"aliases\": [\n        \"529计划\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '529教育储蓄计划' in Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"July 4th\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"July 4th\",\n      \"preferred_zh\": \"7月4日\",\n      \"aliases\": [\n        \"美国独立日\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Direct translation from subtitle.\"\n    }\n  ],\n  \"notes\": [\n    \"The entity 'Burr' could not be verified. It may be a typo or a lesser-known company. Consider checking the original video for correct spelling.\",\n    \"The current title contains '**' which likely represents censored characters. No entity extraction needed for those.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_number_question",
+            "title": "彭博：特朗普账户免费千元，真能变百万？",
+            "title_lines": [
+              "彭博",
+              "特朗普账户免费千元",
+              "真能变百万？"
+            ],
+            "title_highlights": [
+              "彭博",
+              "特朗普账户",
+              "千元"
+            ],
+            "comment": "KC评论：免费资金值得领，但长期策略需匹配家庭目标，别被复利神话误导。",
+            "comment_highlights": [
+              "免费资金",
+              "复利神话"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：政府直接给50万儿童存钱，政策力度不小。",
+                "comment_highlights": [
+                  "50万儿童"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：复利增长是卖点，但前提是长期不动用。",
+                "comment_highlights": [
+                  "复利增长"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：与其他储蓄选项对比，才能看清优劣。",
+                "comment_highlights": [
+                  "储蓄选项"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：免费资金不拿白不拿，这是共识。",
+                "comment_highlights": [
+                  "免费资金"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：2025-2028年出生儿童可获1000美元，窗口明确。",
+                "comment_highlights": [
+                  "1000美元"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：18年后增值数千美元，但需考虑通胀。",
+                "comment_highlights": [
+                  "增值"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：理财师建议组合使用，而非二选一。",
+                "comment_highlights": [
+                  "组合使用"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：账户类似退休账户，灵活性低是主要约束。",
+                "comment_highlights": [
+                  "灵活性低"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：大学费用目标下，529计划税收更优。",
+                "comment_highlights": [
+                  "529计划"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：转罗斯IRA后免税增长，才是长期价值。",
+                "comment_highlights": [
+                  "罗斯IRA"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：免费资金是起点，整体策略才是关键。",
+                "comment_highlights": [
+                  "整体策略"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：别让账户决定策略，而应策略选择账户。",
+                "comment_highlights": [
+                  "策略选择账户"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "彭博：特朗普账户免费千元，真能变百万？",
+          "title_lines": [
+            "彭博",
+            "特朗普账户免费千元",
+            "真能变百万？"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 80,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data"
+            ],
+            "fixes": [
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：免费资金值得领，但长期策略需匹配家庭目标，别被复利神话误导"
+        }
+      }
+    }
+  ]
+}
