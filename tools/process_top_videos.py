@@ -66,7 +66,7 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
             continue
         title = str(item.get("title", "")).strip() or slug_from_url(url).replace("_", " ").title()
         slug = str(item.get("slug", "")).strip() or slug_from_url(url)
-        if is_trump_related(url, title, slug):
+        if is_trump_related(url, title, slug, use_ai=True):
             print(f"[top-videos] Skipping Trump-related manifest video: {title or url}", flush=True)
             continue
         seen.add(url)
@@ -156,7 +156,7 @@ def process_one(
         "--plan", str(plan_path),
     ])
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
-    removed = remove_trump_clips_from_plan(plan)
+    removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
         plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"[top-video {index:02d}] Removed {len(removed)} Trump-related clip(s)", flush=True)

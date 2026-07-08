@@ -134,7 +134,7 @@ If there are no real guest/keynote interview segments, return {{"candidates": []
         if is_anchor_or_reporter(speaker, context):
             continue
         candidate_text = prompt_lines(segments, cand_start, cand_end)
-        if is_trump_related(speaker, context, reason, candidate_text):
+        if is_trump_related(speaker, context, reason, candidate_text, use_ai=True):
             print(f"Skipping Trump-related speaker candidate: {speaker} {format_time(cand_start)}-{format_time(cand_end)}", flush=True)
             continue
         candidates.append(Candidate(speaker, context, cand_start, cand_end, confidence, importance, reason))

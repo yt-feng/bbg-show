@@ -179,7 +179,7 @@ Rules:
 
 
 def build_plan(args: argparse.Namespace) -> dict[str, Any]:
-    if is_trump_related(args.source_title, args.source_url):
+    if is_trump_related(args.source_title, args.source_url, use_ai=True):
         raise SystemExit("Source video skipped by Trump filter")
 
     clip_start, clip_end = choose_clip_range(
@@ -253,7 +253,7 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
         ],
     }
     plan = sanitize_plan_wording(plan)
-    removed = remove_trump_clips_from_plan(plan)
+    removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
         print(f"Removed {len(removed)} Trump-related top-video clip(s)", flush=True)
     if not plan.get("clips"):

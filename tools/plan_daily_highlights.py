@@ -75,7 +75,7 @@ def main() -> None:
             continue
 
         plan = json.loads(plan_path.read_text(encoding="utf-8"))
-        removed = remove_trump_clips_from_plan(plan)
+        removed = remove_trump_clips_from_plan(plan, use_ai=True)
         if removed:
             plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             skipped.append({"speaker": name, "reason": f"removed {len(removed)} Trump-related clip(s)"})
@@ -109,7 +109,7 @@ def main() -> None:
         print("Refining combined clip titles with DeepSeek", flush=True)
         subprocess.run([sys.executable, str(refiner), "--plan", str(args.combined_plan)], check=True)
         combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
-        removed = remove_trump_clips_from_plan(combined)
+        removed = remove_trump_clips_from_plan(combined, use_ai=True)
         if removed:
             print(f"Removed {len(removed)} Trump-related clip(s) after title refinement", flush=True)
             if not combined.get("clips"):

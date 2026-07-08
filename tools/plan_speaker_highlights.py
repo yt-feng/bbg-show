@@ -208,7 +208,7 @@ Important:
         args.max_clips,
     )
     filter_probe = {"clips": clips}
-    removed = remove_trump_clips_from_plan(filter_probe)
+    removed = remove_trump_clips_from_plan(filter_probe, use_ai=True)
     if removed:
         print(f"Removed {len(removed)} Trump-related planned clip(s)", flush=True)
     clips = filter_probe["clips"]
@@ -225,7 +225,7 @@ Important:
         )
         if fallback_clip:
             filter_probe = {"clips": [fallback_clip]}
-            removed = remove_trump_clips_from_plan(filter_probe)
+            removed = remove_trump_clips_from_plan(filter_probe, use_ai=True)
             if filter_probe["clips"]:
                 clips = filter_probe["clips"]
                 print("Using transcript fallback clip", flush=True)
@@ -243,7 +243,7 @@ Important:
         "duration": segment_duration,
         "clips": clips,
     })
-    removed = remove_trump_clips_from_plan(payload)
+    removed = remove_trump_clips_from_plan(payload, use_ai=True)
     if removed:
         print(f"Removed {len(removed)} Trump-related clip(s) after wording guard", flush=True)
     if not payload.get("clips"):

@@ -125,7 +125,7 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
         title = clean_text(str(item.get("title") or item.get("source_title") or ""))
         if not url or not title or url in seen:
             continue
-        if is_trump_related(url, title, item.get("description", ""), item.get("slug", "")):
+        if is_trump_related(url, title, item.get("description", ""), item.get("slug", ""), use_ai=True):
             print(f"[ark] Skipping Trump-related manifest video: {title or url}", flush=True)
             continue
         seen.add(url)
@@ -221,6 +221,7 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
             candidate.get("title", ""),
             candidate.get("channel", candidate.get("uploader", "")),
             candidate.get("webpage_url", candidate.get("url", "")),
+            use_ai=True,
         )
     ]
     if not candidates:
@@ -436,7 +437,7 @@ def process_one(
         "--plan", str(plan_path),
     ])
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
-    removed = remove_trump_clips_from_plan(plan)
+    removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
         plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"[ark {index:02d}] Removed {len(removed)} Trump-related clip(s)", flush=True)
