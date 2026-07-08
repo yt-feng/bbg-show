@@ -1,0 +1,751 @@
+{
+  "timestamp_utc": "2026-07-08T20:36:41.431791+00:00",
+  "plan_path": "work/daily/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Kristie Tan",
+        "entity_type": "person",
+        "preferred_en": "Christy Tan",
+        "preferred_zh": "Christy Tan",
+        "aliases": [
+          "Kristie Tan"
+        ],
+        "confidence": "high",
+        "evidence": "Franklin Templeton official profile and press release use 'Christy Tan' as the official English name; no established Chinese name found in public snippets."
+      },
+      {
+        "source_text": "Franklin Templeton Institute",
+        "entity_type": "organization",
+        "preferred_en": "Franklin Templeton Institute",
+        "preferred_zh": "富兰克林坦伯顿研究所",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Current title uses '富兰克林坦伯顿研究所' which is the established Chinese name for Franklin Templeton Institute."
+      },
+      {
+        "source_text": "Franklin Templeton",
+        "entity_type": "company",
+        "preferred_en": "Franklin Templeton",
+        "preferred_zh": "富兰克林坦伯顿",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly known as 富兰克林坦伯顿 in Chinese financial media."
+      },
+      {
+        "source_text": "Beijing",
+        "entity_type": "place",
+        "preferred_en": "Beijing",
+        "preferred_zh": "北京",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Singapore",
+        "entity_type": "place",
+        "preferred_en": "Singapore",
+        "preferred_zh": "新加坡",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "South Korea",
+        "entity_type": "place",
+        "preferred_en": "South Korea",
+        "preferred_zh": "韩国",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Taiwan",
+        "entity_type": "place",
+        "preferred_en": "Taiwan",
+        "preferred_zh": "台湾",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Indonesia",
+        "entity_type": "place",
+        "preferred_en": "Indonesia",
+        "preferred_zh": "印尼",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "RBNZ",
+        "entity_type": "organization",
+        "preferred_en": "Reserve Bank of New Zealand",
+        "preferred_zh": "新西兰联储",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "RBNZ is the abbreviation for Reserve Bank of New Zealand, commonly translated as 新西兰联储."
+      },
+      {
+        "source_text": "Samsung",
+        "entity_type": "company",
+        "preferred_en": "Samsung",
+        "preferred_zh": "三星",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "SK Hynix",
+        "entity_type": "company",
+        "preferred_en": "SK Hynix",
+        "preferred_zh": "SK海力士",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "US Iran situation",
+        "entity_type": "event",
+        "preferred_en": "US-Iran tensions",
+        "preferred_zh": "美伊局势",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly referred to as 美伊局势 in Chinese media."
+      },
+      {
+        "source_text": "AI",
+        "entity_type": "other",
+        "preferred_en": "Artificial Intelligence",
+        "preferred_zh": "人工智能",
+        "aliases": [
+          "AI"
+        ],
+        "confidence": "high",
+        "evidence": "Standard translation; AI is commonly used as abbreviation."
+      }
+    ],
+    "notes": [
+      "Kristie Tan's official English name is Christy Tan per Franklin Templeton sources; no Chinese name found, so preferred_zh is left as English.",
+      "All other entities have well-established Chinese translations."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "富兰克林坦伯顿ChristyTan：地缘与通胀压力下，反弹能否持续？",
+      "title_lines": [
+        "富兰克林坦伯顿Chr",
+        "地缘与通胀压力",
+        "反弹能否持续？"
+      ],
+      "formula_id": "authority_pressure",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 68,
+        "pass": true,
+        "strengths": [
+          "has_hook_tension"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported"
+        ]
+      },
+      "comment": "KC评论：地缘风险未完全定价，通胀仍是核心变量，反弹面临双重考验"
+    },
+    "2": {
+      "title": "富兰克林坦伯顿ChristyTan：人工智能交易拥挤叠加地缘风险，波动或",
+      "title_lines": [
+        "富兰克林坦伯顿Chr",
+        "人工智能交易拥挤叠加地缘",
+        "市场波动或进一步加剧"
+      ],
+      "formula_id": "authority_pressure",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 50,
+        "pass": false,
+        "strengths": [],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：人工智能集中度与地缘风险尚未完全定价，市场波动性可能上升"
+    },
+    "3": {
+      "title": "富兰克林坦伯顿ChristyTan：韩国人工智能交易拥挤加杠杆，流动性风",
+      "title_lines": [
+        "富兰克林坦伯顿Chr",
+        "韩国人工智能交易拥挤加杠",
+        "流动性风险需关注"
+      ],
+      "formula_id": "authority_pressure",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 50,
+        "pass": false,
+        "strengths": [],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：杠杆单股产品放大波动，流动性不足时风险更突出"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-08T20:36:37.474643+00:00",
+      "indexes": [
+        1,
+        2,
+        3
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 98.8,
+          "speaker": "Kristie Tan",
+          "speaker_context": "Global Investment Strategist at Franklin Templeton Institute",
+          "source_title": "",
+          "show_date": "2026-07-08",
+          "current_title": "富兰克林坦伯顿Kristie Tan：地缘风险与通胀压力下，市场能否持续反弹？",
+          "current_title_lines": [
+            "富兰克林坦伯顿Kristie Tan",
+            "地缘风险与通胀压力",
+            "市场反弹能否持续？"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我们听到关于北京如何应对企业可能面临的限制，以及AI主题下投资者变得更加挑剔的进展。",
+              "en": "the developments that we're hearing when it comes to how Beijing is approaching some of these possible curbs from their companies as well as that broader theme of AI investors just turning more discerning",
+              "relative_start": 0.0,
+              "relative_end": 10.3
+            },
+            {
+              "index": 2,
+              "zh": "我们看到一些拥挤交易被获利了结，投资者在寻找更低估的机会，但这类机会越来越难找。",
+              "en": "we've seen that sort of cashing out of some very crowded trades widening the search for more undervalued opportunities they're getting harder to find",
+              "relative_start": 10.3,
+              "relative_end": 20.0
+            },
+            {
+              "index": 3,
+              "zh": "现在连线新加坡的Kristie Tan，她是富兰克林坦伯顿研究所的全球市场策略师。今天我们看到地缘政治紧张局势重燃，油价重回焦点，通胀担忧也成为市场核心议题。",
+              "en": "let's bring now from Singapore Kristie Tan has a global investment strategist at Franklin Templeton Institute and Kristie really great to have you with us so we are seeing a day where geopolitical tensions the revival of these concerns and ",
+              "relative_start": 20.0,
+              "relative_end": 37.6
+            },
+            {
+              "index": 4,
+              "zh": "投资者今天似乎对这些风险不以为意，但这是否会给已经备受质疑的反弹带来风险？这是个有趣的问题。",
+              "en": "is this something that investors have been pretty happy to shrug off today but is it something that now creates that risk for rally that is already looking very very hated so that's an interesting question",
+              "relative_start": 37.6,
+              "relative_end": 50.8
+            },
+            {
+              "index": 5,
+              "zh": "我认为年初我们就提到市场可能会扩散，权益市场集中度一直是关键主题。AI、资本支出和盈利动能让市场和投资者抵御了各种冲击。",
+              "en": "I think we started a year saying that you know the markets were probably broadened out and the equity markets concentration has been one of the key themes observed and this AI and KPACs and earnings momentum has kept you know markets and in",
+              "relative_start": 51.3,
+              "relative_end": 65.7
+            },
+            {
+              "index": 6,
+              "zh": "这些冲击来自地缘政治、油价和通胀风险。但你说得对，地缘政治仍是关键主题，许多投资者，尤其是中期投资者，仍然高度关注。",
+              "en": "that's coming from the geopolitics and the oil situation as well as inflation risks but I think you're probably right that you know geopolitics continue to be one of the key themes and one of the key concerns that a lot of investors especia",
+              "relative_start": 65.7,
+              "relative_end": 80.1
+            },
+            {
+              "index": 7,
+              "zh": "这将影响通胀走势。近期油价下跌，我们曾认为是因为美伊局势和停火，但显然停火并不稳固，谅解备忘录不等于协议，和平协议仍存疑，这持续引发整体担忧，尤其是地缘政治方面。",
+              "en": "and this will drive you know the kind of inflation profile which recently we've seen the fall in oil prices and we thought that you know because of the US Iran situation and cease fire but obviously that is not something that is very concre",
+              "relative_start": 80.1,
+              "relative_end": 98.8
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "duration_seconds": 81.6,
+          "speaker": "Kristie Tan",
+          "speaker_context": "Global Investment Strategist at Franklin Templeton Institute",
+          "source_title": "",
+          "show_date": "2026-07-08",
+          "current_title": "富兰克林坦伯顿Kristie Tan：AI交易拥挤与地缘风险叠加，市场波动或加剧",
+          "current_title_lines": [
+            "富兰克林坦伯顿Kristie Tan",
+            "AI交易拥挤与地缘风险",
+            "市场波动或进一步加剧"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "另一方面，AI交易和集中度风险引发担忧：这种波动是否会带来结构性问题，比如资本支出的资金来源，以及如何持续支撑未来盈利。",
+              "en": "on the other hand if you're looking at the AI trade and the concentration risk and now there are increasing concerns of whether or not this volatility induced will also lead to you know these structural questions on whether or not the KPACs",
+              "relative_start": 0.0,
+              "relative_end": 16.2
+            },
+            {
+              "index": 2,
+              "zh": "我认为这是现有担忧的组合：地缘政治风险尚未完全定价，同时集中度风险、资金来源以及盈利动能能否持续仍是焦点。",
+              "en": "so I think it's a combination of some of the existing concerns with regards to geopolitics that is really still not something that is absolutely priced in and then at the same time we're looking at the continued I think talks about the conc",
+              "relative_start": 16.2,
+              "relative_end": 31.8
+            },
+            {
+              "index": 3,
+              "zh": "总体而言，宏观数据显示经济具有韧性。关于韧性经济，你提到的通胀状况对下半年科技股影响有多大？上半年市场主要由动能驱动。",
+              "en": "so overall I think the macro data has shown that economy is resilient Christie to your point about the resilient economy how much does the inflation profile as you highlighted actually matter for tech stocks in the second half we saw in the",
+              "relative_start": 31.8,
+              "relative_end": 45.9
+            },
+            {
+              "index": 4,
+              "zh": "本周我们看到的情况说明了什么？你如何评估今年韩国、台湾等市场所见的增长？",
+              "en": "I mean this week yeah we are seeing that telling what are you assessing overall when it comes to the growth that we're rating that we've been seeing for much of this year in South Korea Taiwan markets in particular",
+              "relative_start": 45.9,
+              "relative_end": 60.4
+            },
+            {
+              "index": 5,
+              "zh": "在亚洲，通胀主题可能更为显著，因为亚洲是石油主要进口地区，通胀风险在亚洲表现得尤为明显。另一方面，亚洲的AI故事与美国截然不同。",
+              "en": "so in Asia the inflation themes probably came about quite meaningfully because essentially Asia largely a large importer of oil so that inflation profile I think inflation risks does manifest quite visibly in especially in Asia and then on ",
+              "relative_start": 60.4,
+              "relative_end": 81.6
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "duration_seconds": 99.8,
+          "speaker": "Kristie Tan",
+          "speaker_context": "Global Investment Strategist at Franklin Templeton Institute",
+          "source_title": "",
+          "show_date": "2026-07-08",
+          "current_title": "富兰克林坦伯顿Kristie Tan：韩国AI交易拥挤叠加杠杆，流动性风险不容忽视",
+          "current_title_lines": [
+            "富兰克林坦伯顿Kristie Tan",
+            "韩国AI交易拥挤叠加杠杆",
+            "流动性风险不容忽视"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "特别是韩国，它是AI存储和半导体周期的典型代表。当仓位变得拥挤，波动率就会上升，而韩国还有一个额外问题——杠杆。",
+              "en": "so we're looking at especially Korea I mean Korea is a very clean expression of the AI memory and semiconductor cycle and so when positioning becomes crowded volatility also rises and the added issue in Korea is leverage right",
+              "relative_start": 0.0,
+              "relative_end": 12.7
+            },
+            {
+              "index": 2,
+              "zh": "我们看到杠杆单一股票产品会引发同向资金流，追涨杀跌，从而放大市场波动，尤其是在流动性不足时。",
+              "en": "so we're seeing that leverage single stock products can force same direction flows so buying to rallies and selling to declines which can amplify market moves especially when liquidity is not ample",
+              "relative_start": 12.7,
+              "relative_end": 23.3
+            },
+            {
+              "index": 3,
+              "zh": "因此目前的问题不仅是基本面故事是否吸引人（我们认为是的），而是流动性和仓位能否吸收这些资金流。",
+              "en": "so I think at this point in time it's not just whether the fundamental story is attractive which we think it is the question is whether liquidity and position can absorb the flows",
+              "relative_start": 23.3,
+              "relative_end": 40.9
+            },
+            {
+              "index": 4,
+              "zh": "这与亚洲通胀状况的关联在于，我们看到政策方向趋紧，印尼加息，其他央行如新西兰联储也可能收紧政策以应对通胀风险。",
+              "en": "and so how do we relate that to that inflation profile in Asia is that we are seeing a lot more tightness in I think policy direction so we're seeing you know Indonesia hiking rates and the other central banks including RBNZ are probably go",
+              "relative_start": 40.9,
+              "relative_end": 59.8
+            },
+            {
+              "index": 5,
+              "zh": "而此时权益市场本身波动也很大。主持人想进一步了解你对韩国的看法，因为你说很多投资者仅因AI故事就买入指数，这很诱人但也有风险，包括将三星、SK海力士等公司视为韩国市场代表的风险。",
+              "en": "and this comes at a time Chris when there's a lot of volatility in the equity markets as well Chris they wanted to dig a bit deeper into your views on South Korea because you say you know there's obviously the danger of just buying the inde",
+              "relative_start": 59.8,
+              "relative_end": 80.8
+            },
+            {
+              "index": 6,
+              "zh": "那么如何交易这个市场？机会和价值在哪里？潜在的美国上市反映了全球投资者对AI供应链敞口和更深入资本市场准入的需求，但这并未消除半导体、存储定价的周期性，甚至集中度风险。",
+              "en": "so how do you trade this market where are the opportunities and I guess the value that you can still find so a potential US listing would speak to global investor demand for AI supply chain exposure and deeper capital market access beyond t",
+              "relative_start": 80.8,
+              "relative_end": 99.8
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never create or keep clips, titles, comments, or subtitle comments about Donald Trump / Trump / 特朗普 / 川普. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 98.8,\n    \"speaker\": \"Kristie Tan\",\n    \"speaker_context\": \"Global Investment Strategist at Franklin Templeton Institute\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-08\",\n    \"current_title\": \"富兰克林坦伯顿Kristie Tan：地缘风险与通胀压力下，市场能否持续反弹？\",\n    \"current_title_lines\": [\n      \"富兰克林坦伯顿Kristie Tan\",\n      \"地缘风险与通胀压力\",\n      \"市场反弹能否持续？\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们听到关于北京如何应对企业可能面临的限制，以及AI主题下投资者变得更加挑剔的进展。\",\n        \"en\": \"the developments that we're hearing when it comes to how Beijing is approaching some of these possible curbs from their companies as well as that broader theme of AI investors just turning more discerning\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.3\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"我们看到一些拥挤交易被获利了结，投资者在寻找更低估的机会，但这类机会越来越难找。\",\n        \"en\": \"we've seen that sort of cashing out of some very crowded trades widening the search for more undervalued opportunities they're getting harder to find\",\n        \"relative_start\": 10.3,\n        \"relative_end\": 20.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"现在连线新加坡的Kristie Tan，她是富兰克林坦伯顿研究所的全球市场策略师。今天我们看到地缘政治紧张局势重燃，油价重回焦点，通胀担忧也成为市场核心议题。\",\n        \"en\": \"let's bring now from Singapore Kristie Tan has a global investment strategist at Franklin Templeton Institute and Kristie really great to have you with us so we are seeing a day where geopolitical tensions the revival of these concerns and \",\n        \"relative_start\": 20.0,\n        \"relative_end\": 37.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"投资者今天似乎对这些风险不以为意，但这是否会给已经备受质疑的反弹带来风险？这是个有趣的问题。\",\n        \"en\": \"is this something that investors have been pretty happy to shrug off today but is it something that now creates that risk for rally that is already looking very very hated so that's an interesting question\",\n        \"relative_start\": 37.6,\n        \"relative_end\": 50.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我认为年初我们就提到市场可能会扩散，权益市场集中度一直是关键主题。AI、资本支出和盈利动能让市场和投资者抵御了各种冲击。\",\n        \"en\": \"I think we started a year saying that you know the markets were probably broadened out and the equity markets concentration has been one of the key themes observed and this AI and KPACs and earnings momentum has kept you know markets and in\",\n        \"relative_start\": 51.3,\n        \"relative_end\": 65.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这些冲击来自地缘政治、油价和通胀风险。但你说得对，地缘政治仍是关键主题，许多投资者，尤其是中期投资者，仍然高度关注。\",\n        \"en\": \"that's coming from the geopolitics and the oil situation as well as inflation risks but I think you're probably right that you know geopolitics continue to be one of the key themes and one of the key concerns that a lot of investors especia\",\n        \"relative_start\": 65.7,\n        \"relative_end\": 80.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这将影响通胀走势。近期油价下跌，我们曾认为是因为美伊局势和停火，但显然停火并不稳固，谅解备忘录不等于协议，和平协议仍存疑，这持续引发整体担忧，尤其是地缘政治方面。\",\n        \"en\": \"and this will drive you know the kind of inflation profile which recently we've seen the fall in oil prices and we thought that you know because of the US Iran situation and cease fire but obviously that is not something that is very concre\",\n        \"relative_start\": 80.1,\n        \"relative_end\": 98.8\n      }\n    ]\n  },\n  {\n    \"index\": 2,\n    \"duration_seconds\": 81.6,\n    \"speaker\": \"Kristie Tan\",\n    \"speaker_context\": \"Global Investment Strategist at Franklin Templeton Institute\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-08\",\n    \"current_title\": \"富兰克林坦伯顿Kristie Tan：AI交易拥挤与地缘风险叠加，市场波动或加剧\",\n    \"current_title_lines\": [\n      \"富兰克林坦伯顿Kristie Tan\",\n      \"AI交易拥挤与地缘风险\",\n      \"市场波动或进一步加剧\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"另一方面，AI交易和集中度风险引发担忧：这种波动是否会带来结构性问题，比如资本支出的资金来源，以及如何持续支撑未来盈利。\",\n        \"en\": \"on the other hand if you're looking at the AI trade and the concentration risk and now there are increasing concerns of whether or not this volatility induced will also lead to you know these structural questions on whether or not the KPACs\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 16.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"我认为这是现有担忧的组合：地缘政治风险尚未完全定价，同时集中度风险、资金来源以及盈利动能能否持续仍是焦点。\",\n        \"en\": \"so I think it's a combination of some of the existing concerns with regards to geopolitics that is really still not something that is absolutely priced in and then at the same time we're looking at the continued I think talks about the conc\",\n        \"relative_start\": 16.2,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"总体而言，宏观数据显示经济具有韧性。关于韧性经济，你提到的通胀状况对下半年科技股影响有多大？上半年市场主要由动能驱动。\",\n        \"en\": \"so overall I think the macro data has shown that economy is resilient Christie to your point about the resilient economy how much does the inflation profile as you highlighted actually matter for tech stocks in the second half we saw in the\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 45.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"本周我们看到的情况说明了什么？你如何评估今年韩国、台湾等市场所见的增长？\",\n        \"en\": \"I mean this week yeah we are seeing that telling what are you assessing overall when it comes to the growth that we're rating that we've been seeing for much of this year in South Korea Taiwan markets in particular\",\n        \"relative_start\": 45.9,\n        \"relative_end\": 60.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"在亚洲，通胀主题可能更为显著，因为亚洲是石油主要进口地区，通胀风险在亚洲表现得尤为明显。另一方面，亚洲的AI故事与美国截然不同。\",\n        \"en\": \"so in Asia the inflation themes probably came about quite meaningfully because essentially Asia largely a large importer of oil so that inflation profile I think inflation risks does manifest quite visibly in especially in Asia and then on \",\n        \"relative_start\": 60.4,\n        \"relative_end\": 81.6\n      }\n    ]\n  },\n  {\n    \"index\": 3,\n    \"duration_seconds\": 99.8,\n    \"speaker\": \"Kristie Tan\",\n    \"speaker_context\": \"Global Investment Strategist at Franklin Templeton Institute\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-08\",\n    \"current_title\": \"富兰克林坦伯顿Kristie Tan：韩国AI交易拥挤叠加杠杆，流动性风险不容忽视\",\n    \"current_title_lines\": [\n      \"富兰克林坦伯顿Kristie Tan\",\n      \"韩国AI交易拥挤叠加杠杆\",\n      \"流动性风险不容忽视\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"特别是韩国，它是AI存储和半导体周期的典型代表。当仓位变得拥挤，波动率就会上升，而韩国还有一个额外问题——杠杆。\",\n        \"en\": \"so we're looking at especially Korea I mean Korea is a very clean expression of the AI memory and semiconductor cycle and so when positioning becomes crowded volatility also rises and the added issue in Korea is leverage right\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 12.7\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"我们看到杠杆单一股票产品会引发同向资金流，追涨杀跌，从而放大市场波动，尤其是在流动性不足时。\",\n        \"en\": \"so we're seeing that leverage single stock products can force same direction flows so buying to rallies and selling to declines which can amplify market moves especially when liquidity is not ample\",\n        \"relative_start\": 12.7,\n        \"relative_end\": 23.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"因此目前的问题不仅是基本面故事是否吸引人（我们认为是的），而是流动性和仓位能否吸收这些资金流。\",\n        \"en\": \"so I think at this point in time it's not just whether the fundamental story is attractive which we think it is the question is whether liquidity and position can absorb the flows\",\n        \"relative_start\": 23.3,\n        \"relative_end\": 40.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这与亚洲通胀状况的关联在于，我们看到政策方向趋紧，印尼加息，其他央行如新西兰联储也可能收紧政策以应对通胀风险。\",\n        \"en\": \"and so how do we relate that to that inflation profile in Asia is that we are seeing a lot more tightness in I think policy direction so we're seeing you know Indonesia hiking rates and the other central banks including RBNZ are probably go\",\n        \"relative_start\": 40.9,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"而此时权益市场本身波动也很大。主持人想进一步了解你对韩国的看法，因为你说很多投资者仅因AI故事就买入指数，这很诱人但也有风险，包括将三星、SK海力士等公司视为韩国市场代表的风险。\",\n        \"en\": \"and this comes at a time Chris when there's a lot of volatility in the equity markets as well Chris they wanted to dig a bit deeper into your views on South Korea because you say you know there's obviously the danger of just buying the inde\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 80.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"那么如何交易这个市场？机会和价值在哪里？潜在的美国上市反映了全球投资者对AI供应链敞口和更深入资本市场准入的需求，但这并未消除半导体、存储定价的周期性，甚至集中度风险。\",\n        \"en\": \"so how do you trade this market where are the opportunities and I guess the value that you can still find so a potential US listing would speak to global investor demand for AI supply chain exposure and deeper capital market access beyond t\",\n        \"relative_start\": 80.8,\n        \"relative_end\": 99.8\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Kristie Tan Global Investment Strategist at Franklin Templeton Institute Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Christy Tan - Managing Director, Investment Strategist @ Franklin ...\",\n        \"snippet\": \"Managing Director, Investment Strategist @ Franklin Templeton | Global MBA · I have over 16 years of experience in financial markets, with a focus on FX and fixed income analysis, and portfolio management. As an Investment Strategist at Franklin Templeton (FT), I provide strategic insights and recommendations to investors, leveraging data and technology to enhance my research and ...\",\n        \"url\": \"sg.linkedin.com/in/christy-tan-94703b53\"\n      },\n      {\n        \"title\": \"Christy Tan - Franklin Templeton\",\n        \"snippet\": \"Christy Tan is the Managing Director and Investment Strategist for Asia-Pacific (APAC) at the Franklin Templeton Institute . In her leadership role, she spearheads in-house macro and thematic investment research, offering strategic capital markets analysis and long-term investment insights across various asset classes in APAC.\",\n        \"url\": \"www.franklintempleton.com/profiles/christy-tan\"\n      },\n      {\n        \"title\": \"Franklin Templeton appoints Christy Tan as Investment Strategist for ...\",\n        \"snippet\": \"Based in Singapore, Tan will be responsible for leading in-house macroeconomic, thematic investment research to deliver capital market and long-term investment insights across various asset classes in Asia Pacific. In this newly created role, Tan will report to Stephen Dover, Chief Market Strategist and Head of Franklin Templeton Institute .\",\n        \"url\": \"www.franklintempleton.com.sg/press-releases/franklin-templeton-appoints-christy-tan-as-investment-strategist-for-asia-pacific\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Kristie Tan Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"The Authentic Chinese Name for Kristie\",\n        \"snippet\": \"Kristie in Chinese is 珂缇 (Kē Tí). Explore pronunciation, character breakdown, the meaning \\\"The name 珂缇 (Kē Tí) is a fusion of steadfast purity and vibrant elegance. '珂' refers to a gemstone that resembles white jade, symbolizing a soul that is untarnished and clear in purpose. '缇' describes a specific shade of orange-red silk, representing the warmth of one's spirit and the ...\",\n        \"url\": \"findchinesename.com/names/kristie\"\n      },\n      {\n        \"title\": \"China Company Search - Database of Mainland Corporations\",\n        \"snippet\": \"China Company Free Search Engine is the first English-language version of the Corporation Search database in Mainland China. According to the Company law, there is no legal corporation name in the English language in Mainland China. Therefore, please enter the Company name in Chinese language or fill in the 18 digital Unified Social Credit Codes in the search box above. It is a basic ...\",\n        \"url\": \"www.registrationchina.com/china-company-search/\"\n      },\n      {\n        \"title\": \"Chinese Name Translation - Professional Chinese-English Name Translator\",\n        \"snippet\": \"Professional AI-powered Chinese -English name translation tool. Discover the cultural meaning, accurate pronunciation, and detailed analysis of your Chinese or English name .\",\n        \"url\": \"chinesenametranslator.online\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Kristie Tan\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Christy Tan\",\n      \"preferred_zh\": \"Christy Tan\",\n      \"aliases\": [\n        \"Kristie Tan\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Franklin Templeton official profile and press release use 'Christy Tan' as the official English name; no established Chinese name found in public snippets.\"\n    },\n    {\n      \"source_text\": \"Franklin Templeton Institute\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Franklin Templeton Institute\",\n      \"preferred_zh\": \"富兰克林坦伯顿研究所\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title uses '富兰克林坦伯顿研究所' which is the established Chinese name for Franklin Templeton Institute.\"\n    },\n    {\n      \"source_text\": \"Franklin Templeton\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Franklin Templeton\",\n      \"preferred_zh\": \"富兰克林坦伯顿\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as 富兰克林坦伯顿 in Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"Beijing\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Beijing\",\n      \"preferred_zh\": \"北京\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"Singapore\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Singapore\",\n      \"preferred_zh\": \"新加坡\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"South Korea\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"South Korea\",\n      \"preferred_zh\": \"韩国\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"Taiwan\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Taiwan\",\n      \"preferred_zh\": \"台湾\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"Indonesia\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Indonesia\",\n      \"preferred_zh\": \"印尼\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"RBNZ\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Reserve Bank of New Zealand\",\n      \"preferred_zh\": \"新西兰联储\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"RBNZ is the abbreviation for Reserve Bank of New Zealand, commonly translated as 新西兰联储.\"\n    },\n    {\n      \"source_text\": \"Samsung\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Samsung\",\n      \"preferred_zh\": \"三星\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"SK Hynix\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"SK Hynix\",\n      \"preferred_zh\": \"SK海力士\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"US Iran situation\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"US-Iran tensions\",\n      \"preferred_zh\": \"美伊局势\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly referred to as 美伊局势 in Chinese media.\"\n    },\n    {\n      \"source_text\": \"AI\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Artificial Intelligence\",\n      \"preferred_zh\": \"人工智能\",\n      \"aliases\": [\n        \"AI\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation; AI is commonly used as abbreviation.\"\n    }\n  ],\n  \"notes\": [\n    \"Kristie Tan's official English name is Christy Tan per Franklin Templeton sources; no Chinese name found, so preferred_zh is left as English.\",\n    \"All other entities have well-established Chinese translations.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.\n- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_pressure",
+            "title": "富兰克林坦伯顿Christy Tan：地缘与通胀压力下，反弹能否持续？",
+            "title_lines": [
+              "富兰克林坦伯顿Christy Tan",
+              "地缘与通胀压力",
+              "反弹能否持续？"
+            ],
+            "title_highlights": [
+              "富兰克林坦伯顿",
+              "地缘",
+              "通胀",
+              "反弹"
+            ],
+            "comment": "KC评论：地缘风险未完全定价，通胀仍是核心变量，反弹面临双重考验。",
+            "comment_highlights": [
+              "地缘风险",
+              "通胀"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：北京应对企业限制的进展，AI投资者更挑剔。",
+                "comment_highlights": [
+                  "北京",
+                  "AI"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：拥挤交易获利了结，低估机会更难寻。",
+                "comment_highlights": [
+                  "拥挤交易",
+                  "低估机会"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：地缘紧张重燃，油价与通胀重回焦点。",
+                "comment_highlights": [
+                  "地缘紧张",
+                  "油价",
+                  "通胀"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：市场对风险不以为意，但反弹已受质疑。",
+                "comment_highlights": [
+                  "反弹"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：AI与盈利动能支撑市场抵御冲击。",
+                "comment_highlights": [
+                  "AI",
+                  "盈利动能"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：地缘政治仍是中期投资者高度关注的主题。",
+                "comment_highlights": [
+                  "地缘政治"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：油价下跌后停火不稳固，地缘担忧持续。",
+                "comment_highlights": [
+                  "油价",
+                  "地缘"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "formula_id": "authority_pressure",
+            "title": "富兰克林坦伯顿Christy Tan：AI交易拥挤叠加地缘风险，波动或加剧",
+            "title_lines": [
+              "富兰克林坦伯顿Christy Tan",
+              "AI交易拥挤叠加地缘风险",
+              "市场波动或进一步加剧"
+            ],
+            "title_highlights": [
+              "AI交易拥挤",
+              "地缘风险",
+              "波动"
+            ],
+            "comment": "KC评论：AI集中度与地缘风险尚未完全定价，市场波动性可能上升。",
+            "comment_highlights": [
+              "AI集中度",
+              "地缘风险",
+              "波动性"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：AI交易集中度引发资本支出与盈利持续性质疑。",
+                "comment_highlights": [
+                  "AI交易集中度",
+                  "资本支出"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：地缘风险未完全定价，集中度与盈利动能仍是焦点。",
+                "comment_highlights": [
+                  "地缘风险",
+                  "集中度"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：经济韧性下，通胀状况对科技股影响几何？",
+                "comment_highlights": [
+                  "经济韧性",
+                  "通胀",
+                  "科技股"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：韩国、台湾等市场增长如何评估？",
+                "comment_highlights": [
+                  "韩国",
+                  "台湾"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：亚洲通胀风险更显著，AI故事与美国不同。",
+                "comment_highlights": [
+                  "亚洲通胀",
+                  "AI故事"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "formula_id": "authority_pressure",
+            "title": "富兰克林坦伯顿Christy Tan：韩国AI交易拥挤加杠杆，流动性风险需关注",
+            "title_lines": [
+              "富兰克林坦伯顿Christy Tan",
+              "韩国AI交易拥挤加杠杆",
+              "流动性风险需关注"
+            ],
+            "title_highlights": [
+              "韩国AI",
+              "拥挤",
+              "杠杆",
+              "流动性风险"
+            ],
+            "comment": "KC评论：杠杆单股产品放大波动，流动性不足时风险更突出。",
+            "comment_highlights": [
+              "杠杆",
+              "流动性"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：韩国是AI存储周期代表，拥挤加杠杆推升波动。",
+                "comment_highlights": [
+                  "韩国",
+                  "AI存储",
+                  "杠杆"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：杠杆单股产品追涨杀跌，放大市场波动。",
+                "comment_highlights": [
+                  "杠杆单股",
+                  "追涨杀跌"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：问题在于流动性和仓位能否吸收资金流。",
+                "comment_highlights": [
+                  "流动性",
+                  "仓位"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：亚洲政策趋紧，印尼加息，其他央行或跟进。",
+                "comment_highlights": [
+                  "印尼加息",
+                  "政策趋紧"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：仅因AI买入指数有风险，三星、SK海力士为代表。",
+                "comment_highlights": [
+                  "AI",
+                  "三星",
+                  "SK海力士"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：美国上市反映AI供应链需求，但周期与集中度风险仍在。",
+                "comment_highlights": [
+                  "美国上市",
+                  "AI供应链",
+                  "周期风险"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1,
+        2,
+        3
+      ],
+      "normalized": {
+        "1": {
+          "title": "富兰克林坦伯顿ChristyTan：地缘与通胀压力下，反弹能否持续？",
+          "title_lines": [
+            "富兰克林坦伯顿Chr",
+            "地缘与通胀压力",
+            "反弹能否持续？"
+          ],
+          "formula_id": "authority_pressure",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 68,
+            "pass": true,
+            "strengths": [
+              "has_hook_tension"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported"
+            ]
+          },
+          "comment": "KC评论：地缘风险未完全定价，通胀仍是核心变量，反弹面临双重考验"
+        },
+        "2": {
+          "title": "富兰克林坦伯顿ChristyTan：人工智能交易拥挤叠加地缘风险，波动或",
+          "title_lines": [
+            "富兰克林坦伯顿Chr",
+            "人工智能交易拥挤叠加地缘",
+            "市场波动或进一步加剧"
+          ],
+          "formula_id": "authority_pressure",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 50,
+            "pass": false,
+            "strengths": [],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：人工智能集中度与地缘风险尚未完全定价，市场波动性可能上升"
+        },
+        "3": {
+          "title": "富兰克林坦伯顿ChristyTan：韩国人工智能交易拥挤加杠杆，流动性风",
+          "title_lines": [
+            "富兰克林坦伯顿Chr",
+            "韩国人工智能交易拥挤加杠",
+            "流动性风险需关注"
+          ],
+          "formula_id": "authority_pressure",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 50,
+            "pass": false,
+            "strengths": [],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：杠杆单股产品放大波动，流动性不足时风险更突出"
+        }
+      }
+    }
+  ]
+}
