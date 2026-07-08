@@ -1,0 +1,419 @@
+{
+  "timestamp_utc": "2026-07-08T23:18:52.285698+00:00",
+  "plan_path": "work/top-videos/01_bofa_makes_u_turn_on_openai_provides_520m_credit_line/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg L.P.",
+        "preferred_zh": "彭博有限合伙企业",
+        "aliases": [
+          "彭博社",
+          "彭博新闻社"
+        ],
+        "confidence": "high",
+        "evidence": "Wikipedia page shows '彭博有限合伙企业' as official Chinese name."
+      },
+      {
+        "source_text": "BofA",
+        "entity_type": "organization",
+        "preferred_en": "Bank of America",
+        "preferred_zh": "美国银行",
+        "aliases": [
+          "美银",
+          "美国银行公司"
+        ],
+        "confidence": "high",
+        "evidence": "Commonly known as '美国银行' in Chinese financial media."
+      },
+      {
+        "source_text": "OpenAI",
+        "entity_type": "organization",
+        "preferred_en": "OpenAI",
+        "preferred_zh": "OpenAI",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "OpenAI is widely used as is in Chinese media; no official Chinese translation."
+      },
+      {
+        "source_text": "IPO",
+        "entity_type": "event",
+        "preferred_en": "Initial Public Offering",
+        "preferred_zh": "首次公开募股",
+        "aliases": [
+          "IPO"
+        ],
+        "confidence": "high",
+        "evidence": "Standard financial term in Chinese."
+      },
+      {
+        "source_text": "Wall Street",
+        "entity_type": "place",
+        "preferred_en": "Wall Street",
+        "preferred_zh": "华尔街",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Commonly known as '华尔街'."
+      },
+      {
+        "source_text": "Sridhar",
+        "entity_type": "person",
+        "preferred_en": "Sridhar Natarajan",
+        "preferred_zh": "斯里达尔·纳塔拉詹",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Bloomberg reporter; name appears in snippet; Chinese transliteration based on common practice."
+      },
+      {
+        "source_text": "Reuters",
+        "entity_type": "organization",
+        "preferred_en": "Reuters",
+        "preferred_zh": "路透社",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard Chinese name for Reuters."
+      },
+      {
+        "source_text": "AOL",
+        "entity_type": "organization",
+        "preferred_en": "AOL",
+        "preferred_zh": "美国在线",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common Chinese name for AOL."
+      }
+    ],
+    "notes": [
+      "The current title '美国银行转变态度，向OpenAI提供5.2亿美元信贷额度' is accurate and uses standard Chinese names.",
+      "No mistranslations found in current title; aliases are provided for alternative common names."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "美国银行转向OpenAI，5.2亿美元信贷为首次公开募股铺路？",
+      "title_lines": [
+        "美国银行转向Open",
+        "5.2亿美元信贷",
+        "为首次公开募股铺路？"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 98,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data",
+          "has_hook_tension"
+        ],
+        "fixes": []
+      },
+      "comment": "KC评论：美国银行从拒绝到加入，AI信贷需求信号明确"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-08T23:18:51.101305+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 79.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:50 BofA Makes U-Turn on OpenAI, Provides $520 Million Credit Line",
+          "source_title": "Duration: 1:50 BofA Makes U-Turn on OpenAI, Provides $520 Million Credit Line",
+          "show_date": "",
+          "current_title": "美国银行转变态度，向OpenAI提供5.2亿美元信贷额度",
+          "current_title_lines": [
+            "美国银行转变态度",
+            "向OpenAI提供5.2亿美元信贷",
+            "为潜在IPO铺路"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我们称之为大转弯。说说背景。",
+              "en": "So we're saying that this is a U-turn. Give us the backstory.",
+              "relative_start": 0.0,
+              "relative_end": 3.0
+            },
+            {
+              "index": 2,
+              "zh": "这确实是个有趣的冲突。AI领域由OpenAI这类公司主导，高增长、高烧钱。",
+              "en": "Well, it is an interesting clash. The AI sector right now is represented by companies like OpenAI, high growth, massive cashburn companies",
+              "relative_start": 3.0,
+              "relative_end": 12.4
+            },
+            {
+              "index": 3,
+              "zh": "另一边是华尔街老牌银行美国银行，美国第二大银行，以负责任增长为信条。",
+              "en": "that are dominating the sector. And on the other hand, you have the old God of Wall Street Bank of America, the second largest lender in the United States that is defined by its responsible growth mantra.",
+              "relative_start": 12.4,
+              "relative_end": 23.2
+            },
+            {
+              "index": 4,
+              "zh": "所以当OpenAI申请信贷额度时，银行犹豫不决也情有可原。",
+              "en": "So when a company like that comes out and asks for a credit line, you can see why that bank would be reticent.",
+              "relative_start": 23.2,
+              "relative_end": 29.0
+            },
+            {
+              "index": 5,
+              "zh": "此前几乎所有竞争对手都向OpenAI提供了信贷，但美银拒绝了。",
+              "en": "And they had said no previously when pretty much the entire list of Bank of America's rivals lined up to extend a credit line to OpenAI.",
+              "relative_start": 29.1,
+              "relative_end": 38.2
+            },
+            {
+              "index": 6,
+              "zh": "2026年3月，他们再次拒绝，就在最近的三月。",
+              "en": "They said no again in March, 2026 as recently as March.",
+              "relative_start": 38.2,
+              "relative_end": 41.9
+            },
+            {
+              "index": 7,
+              "zh": "但最近几周，美银终于加入了。",
+              "en": "But now in recent weeks, Bank of America finally is on board.",
+              "relative_start": 41.9,
+              "relative_end": 46.1
+            },
+            {
+              "index": 8,
+              "zh": "最好的解释是，这展示了内部斗争：坚持负责任增长理念，",
+              "en": "And the best way to explain this is it showcases the internal struggle between maintaining this responsible growth philosophy,",
+              "relative_start": 46.1,
+              "relative_end": 53.6
+            },
+            {
+              "index": 9,
+              "zh": "即更保守的做法，与银行家追逐最热门交易之间的冲突。",
+              "en": "which unfortunately translates to a more conservative approach versus bankers wanting to chase the hottest deals out there.",
+              "relative_start": 53.6,
+              "relative_end": 61.3
+            },
+            {
+              "index": 10,
+              "zh": "风险总是存在的。最热门的交易可能是OpenAI的IPO，对吧？",
+              "en": "And there's always going to be some risk on them. The hottest deal could be an OpenAI IPO, right?",
+              "relative_start": 61.3,
+              "relative_end": 66.4
+            },
+            {
+              "index": 11,
+              "zh": "我们和其他媒体上周及前周报道，OpenAI的IPO可能要等到2027年，对吧？",
+              "en": "We and others reported last week, the week before, that an OpenAI IPO looking like 2027, right?",
+              "relative_start": 66.4,
+              "relative_end": 74.0
+            },
+            {
+              "index": 12,
+              "zh": "原本可能今年年底，现在推迟到2027年。",
+              "en": "Originally maybe this the end of this year now, 2027.",
+              "relative_start": 74.0,
+              "relative_end": 77.0
+            },
+            {
+              "index": 13,
+              "zh": "美国银行想参与其中，对吧？",
+              "en": "Bank of America wants to get in on that, right?",
+              "relative_start": 77.0,
+              "relative_end": 79.1
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never create or keep clips, titles, comments, or subtitle comments about Donald Trump / Trump / 特朗普 / 川普. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 79.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:50 BofA Makes U-Turn on OpenAI, Provides $520 Million Credit Line\",\n    \"source_title\": \"Duration: 1:50 BofA Makes U-Turn on OpenAI, Provides $520 Million Credit Line\",\n    \"show_date\": \"\",\n    \"current_title\": \"美国银行转变态度，向OpenAI提供5.2亿美元信贷额度\",\n    \"current_title_lines\": [\n      \"美国银行转变态度\",\n      \"向OpenAI提供5.2亿美元信贷\",\n      \"为潜在IPO铺路\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们称之为大转弯。说说背景。\",\n        \"en\": \"So we're saying that this is a U-turn. Give us the backstory.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这确实是个有趣的冲突。AI领域由OpenAI这类公司主导，高增长、高烧钱。\",\n        \"en\": \"Well, it is an interesting clash. The AI sector right now is represented by companies like OpenAI, high growth, massive cashburn companies\",\n        \"relative_start\": 3.0,\n        \"relative_end\": 12.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"另一边是华尔街老牌银行美国银行，美国第二大银行，以负责任增长为信条。\",\n        \"en\": \"that are dominating the sector. And on the other hand, you have the old God of Wall Street Bank of America, the second largest lender in the United States that is defined by its responsible growth mantra.\",\n        \"relative_start\": 12.4,\n        \"relative_end\": 23.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以当OpenAI申请信贷额度时，银行犹豫不决也情有可原。\",\n        \"en\": \"So when a company like that comes out and asks for a credit line, you can see why that bank would be reticent.\",\n        \"relative_start\": 23.2,\n        \"relative_end\": 29.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"此前几乎所有竞争对手都向OpenAI提供了信贷，但美银拒绝了。\",\n        \"en\": \"And they had said no previously when pretty much the entire list of Bank of America's rivals lined up to extend a credit line to OpenAI.\",\n        \"relative_start\": 29.1,\n        \"relative_end\": 38.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"2026年3月，他们再次拒绝，就在最近的三月。\",\n        \"en\": \"They said no again in March, 2026 as recently as March.\",\n        \"relative_start\": 38.2,\n        \"relative_end\": 41.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"但最近几周，美银终于加入了。\",\n        \"en\": \"But now in recent weeks, Bank of America finally is on board.\",\n        \"relative_start\": 41.9,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"最好的解释是，这展示了内部斗争：坚持负责任增长理念，\",\n        \"en\": \"And the best way to explain this is it showcases the internal struggle between maintaining this responsible growth philosophy,\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 53.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"即更保守的做法，与银行家追逐最热门交易之间的冲突。\",\n        \"en\": \"which unfortunately translates to a more conservative approach versus bankers wanting to chase the hottest deals out there.\",\n        \"relative_start\": 53.6,\n        \"relative_end\": 61.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"风险总是存在的。最热门的交易可能是OpenAI的IPO，对吧？\",\n        \"en\": \"And there's always going to be some risk on them. The hottest deal could be an OpenAI IPO, right?\",\n        \"relative_start\": 61.3,\n        \"relative_end\": 66.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们和其他媒体上周及前周报道，OpenAI的IPO可能要等到2027年，对吧？\",\n        \"en\": \"We and others reported last week, the week before, that an OpenAI IPO looking like 2027, right?\",\n        \"relative_start\": 66.4,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"原本可能今年年底，现在推迟到2027年。\",\n        \"en\": \"Originally maybe this the end of this year now, 2027.\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 77.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"美国银行想参与其中，对吧？\",\n        \"en\": \"Bank of America wants to get in on that, right?\",\n        \"relative_start\": 77.0,\n        \"relative_end\": 79.1\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 1:50 BofA Makes U-Turn on OpenAI, Provides $520 Million Credit Line Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"BofA Makes U-Turn on OpenAI, Provides $520M Credit Line\",\n        \"snippet\": \"Bank of America is changing its tune on OpenAI : after initially passing on lending to the AI company, it is now extending a $520 million credit line , according to sources. Bloomberg's Sridhar ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-08/bofa-makes-u-turn-on-openai-provides-520m-credit-line-video\"\n      },\n      {\n        \"title\": \"Bloomberg Videos: Live Streaming, Shows & Interviews\",\n        \"snippet\": \"Watch Bloomberg live TV, original videos, interviews, and shows on markets, business, finance, technology, and global news.\",\n        \"url\": \"www.bloomberg.com/videos\"\n      },\n      {\n        \"title\": \"BofA extends first $520 million loan to OpenAI ahead of IPO ... - AOL\",\n        \"snippet\": \"July 8 (Reuters) - Bank of America has extended a $520 million credit line to OpenAI, its first loan to the AI company that is preparing for an initial public offering, a person familiar with the ...\",\n        \"url\": \"www.aol.com/articles/bofa-extends-first-520-million-165741000.html\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"彭博有限合夥企業 - 维基百科，自由的百科全书\",\n        \"snippet\": \"彭博有限合夥企業 ... 位于伦敦的彭博新闻演播厅 彭博有限合伙企业 （英語： Bloomberg L.P.）是 美國 的跨國大眾 傳播媒體 公司，提供新聞、全球商業和金融數據服務。 集團總部位於 紐約市 的 莱辛顿大道731号。 彭博於全球176個地點擁有超過19,000名員工。 [7]\",\n        \"url\": \"zh.wikipedia.org/wiki/彭博有限合夥企業\"\n      },\n      {\n        \"title\": \"Bloomberg and Huatai Securities: Navigating change in China's financial ...\",\n        \"snippet\": \"This year marks major milestones for two key players in China's financial landscape: Bloomberg celebrates 30+ years in mainland China, while Huatai Securities marks 10 years since its Hong Kong ...\",\n        \"url\": \"www.bloomberg.com/professional/insights/financial-services/bloomberg-and-huatai-securities-navigating-change-in-chinas-financial-markets/\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg L.P.\",\n      \"preferred_zh\": \"彭博有限合伙企业\",\n      \"aliases\": [\n        \"彭博社\",\n        \"彭博新闻社\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Wikipedia page shows '彭博有限合伙企业' as official Chinese name.\"\n    },\n    {\n      \"source_text\": \"BofA\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bank of America\",\n      \"preferred_zh\": \"美国银行\",\n      \"aliases\": [\n        \"美银\",\n        \"美国银行公司\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '美国银行' in Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"OpenAI is widely used as is in Chinese media; no official Chinese translation.\"\n    },\n    {\n      \"source_text\": \"IPO\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Initial Public Offering\",\n      \"preferred_zh\": \"首次公开募股\",\n      \"aliases\": [\n        \"IPO\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term in Chinese.\"\n    },\n    {\n      \"source_text\": \"Wall Street\",\n      \"entity_type\": \"place\",\n      \"preferred_en\": \"Wall Street\",\n      \"preferred_zh\": \"华尔街\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Commonly known as '华尔街'.\"\n    },\n    {\n      \"source_text\": \"Sridhar\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Sridhar Natarajan\",\n      \"preferred_zh\": \"斯里达尔·纳塔拉詹\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Bloomberg reporter; name appears in snippet; Chinese transliteration based on common practice.\"\n    },\n    {\n      \"source_text\": \"Reuters\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Reuters\",\n      \"preferred_zh\": \"路透社\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard Chinese name for Reuters.\"\n    },\n    {\n      \"source_text\": \"AOL\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"AOL\",\n      \"preferred_zh\": \"美国在线\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common Chinese name for AOL.\"\n    }\n  ],\n  \"notes\": [\n    \"The current title '美国银行转变态度，向OpenAI提供5.2亿美元信贷额度' is accurate and uses standard Chinese names.\",\n    \"No mistranslations found in current title; aliases are provided for alternative common names.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.\n- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "美国银行转向OpenAI，5.2亿美元信贷为IPO铺路？",
+            "title_lines": [
+              "美国银行转向OpenAI",
+              "5.2亿美元信贷",
+              "为IPO铺路？"
+            ],
+            "title_highlights": [
+              "美国银行",
+              "OpenAI",
+              "5.2亿美元",
+              "IPO"
+            ],
+            "comment": "KC评论：美银从拒绝到加入，AI信贷需求信号明确。",
+            "comment_highlights": [
+              "美银",
+              "AI信贷"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：大转弯背后是银行内部博弈。",
+                "comment_highlights": [
+                  "大转弯"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：AI公司高增长与高烧钱并存。",
+                "comment_highlights": [
+                  "高增长",
+                  "高烧钱"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：华尔街老牌银行的保守与贪婪。",
+                "comment_highlights": [
+                  "保守",
+                  "贪婪"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：银行对AI信贷风险存疑。",
+                "comment_highlights": [
+                  "信贷风险"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：竞争对手纷纷入局，美银一度缺席。",
+                "comment_highlights": [
+                  "缺席"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：2026年3月再次拒绝，态度强硬。",
+                "comment_highlights": [
+                  "拒绝"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：几周后美银终于加入，信号转变。",
+                "comment_highlights": [
+                  "信号转变"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：内部斗争：保守理念 vs 追逐热门。",
+                "comment_highlights": [
+                  "内部斗争"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：银行家不愿错过最热交易。",
+                "comment_highlights": [
+                  "最热交易"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：OpenAI的IPO是潜在诱因。",
+                "comment_highlights": [
+                  "IPO"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：IPO推迟至2027年，时间线拉长。",
+                "comment_highlights": [
+                  "推迟"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：从年底到2027年，市场预期调整。",
+                "comment_highlights": [
+                  "预期调整"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：美银想分一杯羹，信贷是敲门砖。",
+                "comment_highlights": [
+                  "敲门砖"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "美国银行转向OpenAI，5.2亿美元信贷为首次公开募股铺路？",
+          "title_lines": [
+            "美国银行转向Open",
+            "5.2亿美元信贷",
+            "为首次公开募股铺路？"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 98,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data",
+              "has_hook_tension"
+            ],
+            "fixes": []
+          },
+          "comment": "KC评论：美国银行从拒绝到加入，AI信贷需求信号明确"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "timestamp_utc": "2026-07-08T23:24:27.848067+00:00",
+  "plan_path": "work/top-videos/05_big_tech_s_25b_mega_bond_sales_push_market_limits/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg L.P.",
+        "preferred_zh": "彭博有限合伙企业",
+        "aliases": [
+          "彭博",
+          "Bloomberg"
+        ],
+        "confidence": "high",
+        "evidence": "Wikipedia page: 彭博有限合夥企業"
+      },
+      {
+        "source_text": "Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits",
+        "entity_type": "event",
+        "preferred_en": "Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits",
+        "preferred_zh": "科技巨头250亿美元债券发行 市场承压",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Current title in metadata: 科技巨头250亿美元债券发行 市场承压"
+      },
+      {
+        "source_text": "Amazon",
+        "entity_type": "company",
+        "preferred_en": "Amazon.com, Inc.",
+        "preferred_zh": "亚马逊公司",
+        "aliases": [
+          "亚马逊"
+        ],
+        "confidence": "high",
+        "evidence": "Common financial news usage"
+      },
+      {
+        "source_text": "Alphabet Inc.",
+        "entity_type": "company",
+        "preferred_en": "Alphabet Inc.",
+        "preferred_zh": "Alphabet公司",
+        "aliases": [
+          "谷歌母公司Alphabet"
+        ],
+        "confidence": "high",
+        "evidence": "Bloomberg article: Alphabet Sells $25 Billion of Corporate Bonds"
+      },
+      {
+        "source_text": "Nvidia Corp.",
+        "entity_type": "company",
+        "preferred_en": "Nvidia Corporation",
+        "preferred_zh": "英伟达公司",
+        "aliases": [
+          "Nvidia"
+        ],
+        "confidence": "high",
+        "evidence": "Bloomberg article: Nvidia Joins AI Borrowing Frenzy With $25 Billion Bond Sale"
+      },
+      {
+        "source_text": "investment grade market",
+        "entity_type": "other",
+        "preferred_en": "investment-grade bond market",
+        "preferred_zh": "**级债券市场",
+        "aliases": [
+          "IG市场",
+          "投资级市场"
+        ],
+        "confidence": "high",
+        "evidence": "Common financial term"
+      },
+      {
+        "source_text": "fixed income investors",
+        "entity_type": "other",
+        "preferred_en": "fixed-income investors",
+        "preferred_zh": "固定收益市场参与者",
+        "aliases": [
+          "固收市场参与者"
+        ],
+        "confidence": "high",
+        "evidence": "Common financial term"
+      },
+      {
+        "source_text": "convexity",
+        "entity_type": "other",
+        "preferred_en": "convexity",
+        "preferred_zh": "凸性",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard financial term"
+      },
+      {
+        "source_text": "credit risk",
+        "entity_type": "other",
+        "preferred_en": "credit risk",
+        "preferred_zh": "信用风险",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard financial term"
+      },
+      {
+        "source_text": "concession",
+        "entity_type": "other",
+        "preferred_en": "concession",
+        "preferred_zh": "让步",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Bond market term"
+      },
+      {
+        "source_text": "basis points",
+        "entity_type": "other",
+        "preferred_en": "basis points",
+        "preferred_zh": "基点",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard financial term"
+      },
+      {
+        "source_text": "30-year bond",
+        "entity_type": "other",
+        "preferred_en": "30-year bond",
+        "preferred_zh": "30年期债券",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common term"
+      },
+      {
+        "source_text": "book subscription",
+        "entity_type": "other",
+        "preferred_en": "book subscription",
+        "preferred_zh": "认购倍数",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Bond issuance term"
+      },
+      {
+        "source_text": "yield-based buyers",
+        "entity_type": "other",
+        "preferred_en": "yield-based buyers",
+        "preferred_zh": "收益型买家",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Context from subtitles"
+      },
+      {
+        "source_text": "pensions",
+        "entity_type": "other",
+        "preferred_en": "pension funds",
+        "preferred_zh": "养老金",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common term"
+      },
+      {
+        "source_text": "insurance",
+        "entity_type": "other",
+        "preferred_en": "insurance companies",
+        "preferred_zh": "保障公司",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common term"
+      },
+      {
+        "source_text": "CapEx",
+        "entity_type": "other",
+        "preferred_en": "capital expenditure",
+        "preferred_zh": "资本开支",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard financial abbreviation"
+      },
+      {
+        "source_text": "IG market",
+        "entity_type": "other",
+        "preferred_en": "investment-grade market",
+        "preferred_zh": "**级市场",
+        "aliases": [
+          "IG市场"
+        ],
+        "confidence": "high",
+        "evidence": "Common abbreviation"
+      }
+    ],
+    "notes": [
+      "The current title '科技巨头250亿美元债券发行 市场承压' is a reasonable translation of the video title.",
+      "The subtitles contain some OCR errors (e.g., '**' for '是'), but these are not entity issues.",
+      "All entities have high confidence due to public snippets and standard financial terminology."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "科技巨头250亿债券市场饱和？",
+      "title_lines": [
+        "科技巨头",
+        "250亿债券发行",
+        "市场饱和了吗"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 80,
+        "pass": true,
+        "strengths": [
+          "has_number_or_data",
+          "has_hook_tension"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor"
+        ]
+      },
+      "comment": "KC评论：亚马逊公司债券认购倍数仅1.5倍，市场对科技债态度生变"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-08T23:24:26.663991+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:38 Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits",
+          "source_title": "Duration: 4:38 Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits",
+          "show_date": "",
+          "current_title": "科技巨头250亿美元债券发行 市场承压",
+          "current_title_lines": [
+            "科技巨头250亿美元债券发行",
+            "市场承压 利差扩大",
+            "市场参与者要求更高风险溢价"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "作为固收市场参与者，我们**的是资产负债表，为信用风险、凸性、复杂性和流动性获得回报。目前，我认为信用风险被低估了。",
+              "en": "I think as fixed income investors, we are investing in balance sheets, getting paid for credit risk, convexity, complexity and liquidity. Right now, I think credit risk is too undervalued.",
+              "relative_start": 0.0,
+              "relative_end": 9.9
+            },
+            {
+              "index": 2,
+              "zh": "昨天的大规模发行（250亿）需要很大的让步，我们在其中发现了不少价值。",
+              "en": "Right now in the market, we saw that with the big deal yesterday, a 25 billion, that needed a big concession. We're finding a lot of value there.",
+              "relative_start": 10.7,
+              "relative_end": 18.1
+            },
+            {
+              "index": 3,
+              "zh": "谈谈亚马逊的发行。昨天进展如何？出乎意料。我们原以为他们今年资本开支的债务发行已基本完成。",
+              "en": "Talk about the Amazon deal. How did that go yesterday? Big surprise came out. We were thinking that they were almost done for the CapEx build out for this year in terms of debt issuance from the IG market.",
+              "relative_start": 18.1,
+              "relative_end": 29.8
+            },
+            {
+              "index": 4,
+              "zh": "他们突然发行大单，利差扩大25个基点，市场反应强烈，利差走阔20到25个基点。",
+              "en": "Surprise us with a big deal there, 25 basis points, significant pushback in the market, meaning 20 to 25 basis points wider on spread. So I'm just going to translate that in, if you take a 30-year",
+              "relative_start": 29.8,
+              "relative_end": 43.7
+            },
+            {
+              "index": 5,
+              "zh": "如果你两天前买了亚马逊30年期债券，新债发行当天价格会下跌3.5到4个点。这就是市场要求的让步。",
+              "en": "bond in Amazon, bought it two days before and then the new issue comes in, you are three and a half to four points down on that day. That's the concession the bond market built and then you had a one",
+              "relative_start": 43.7,
+              "relative_end": 55.9
+            },
+            {
+              "index": 6,
+              "zh": "认购倍数为1.5倍，远低于其他**级债券。为什么？因为**级市场已经吸收了太多科技债。",
+              "en": "and a half times book subscription, which is much lower than if you look at the other investment grade deals. So why is that? It's just your market, the investment grade market has had enough",
+              "relative_start": 55.9,
+              "relative_end": 65.6
+            },
+            {
+              "index": 7,
+              "zh": "是整体市场对科技债饱和，还是亚马逊自身的问题？是整体，不是亚马逊。",
+              "en": "high technology paper at the moment or is it something about Amazon per se? It's a lie overall, not Amazon. So if you break it down, fixed income investors again.",
+              "relative_start": 66.3,
+              "relative_end": 75.3
+            },
+            {
+              "index": 8,
+              "zh": "交易型资金比较谨慎，我们买了不少；而收益型买家如养老金、保险等，长期债券收益率在6.10%到6.15%之间。",
+              "en": "He's sitting in your back pocket. You guys can see that. Deal-based money is quite a bit acidic. So that's where we bought quite a bit of that, where yield-based buyers, pensions, insurance, reliability, the long and bond was 6-10 to 6-15 y",
+              "relative_start": 75.3,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never create or keep clips, titles, comments, or subtitle comments about Donald Trump / Trump / 特朗普 / 川普. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:38 Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits\",\n    \"source_title\": \"Duration: 4:38 Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits\",\n    \"show_date\": \"\",\n    \"current_title\": \"科技巨头250亿美元债券发行 市场承压\",\n    \"current_title_lines\": [\n      \"科技巨头250亿美元债券发行\",\n      \"市场承压 利差扩大\",\n      \"市场参与者要求更高风险溢价\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"作为固收市场参与者，我们**的是资产负债表，为信用风险、凸性、复杂性和流动性获得回报。目前，我认为信用风险被低估了。\",\n        \"en\": \"I think as fixed income investors, we are investing in balance sheets, getting paid for credit risk, convexity, complexity and liquidity. Right now, I think credit risk is too undervalued.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"昨天的大规模发行（250亿）需要很大的让步，我们在其中发现了不少价值。\",\n        \"en\": \"Right now in the market, we saw that with the big deal yesterday, a 25 billion, that needed a big concession. We're finding a lot of value there.\",\n        \"relative_start\": 10.7,\n        \"relative_end\": 18.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"谈谈亚马逊的发行。昨天进展如何？出乎意料。我们原以为他们今年资本开支的债务发行已基本完成。\",\n        \"en\": \"Talk about the Amazon deal. How did that go yesterday? Big surprise came out. We were thinking that they were almost done for the CapEx build out for this year in terms of debt issuance from the IG market.\",\n        \"relative_start\": 18.1,\n        \"relative_end\": 29.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"他们突然发行大单，利差扩大25个基点，市场反应强烈，利差走阔20到25个基点。\",\n        \"en\": \"Surprise us with a big deal there, 25 basis points, significant pushback in the market, meaning 20 to 25 basis points wider on spread. So I'm just going to translate that in, if you take a 30-year\",\n        \"relative_start\": 29.8,\n        \"relative_end\": 43.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"如果你两天前买了亚马逊30年期债券，新债发行当天价格会下跌3.5到4个点。这就是市场要求的让步。\",\n        \"en\": \"bond in Amazon, bought it two days before and then the new issue comes in, you are three and a half to four points down on that day. That's the concession the bond market built and then you had a one\",\n        \"relative_start\": 43.7,\n        \"relative_end\": 55.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"认购倍数为1.5倍，远低于其他**级债券。为什么？因为**级市场已经吸收了太多科技债。\",\n        \"en\": \"and a half times book subscription, which is much lower than if you look at the other investment grade deals. So why is that? It's just your market, the investment grade market has had enough\",\n        \"relative_start\": 55.9,\n        \"relative_end\": 65.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"是整体市场对科技债饱和，还是亚马逊自身的问题？是整体，不是亚马逊。\",\n        \"en\": \"high technology paper at the moment or is it something about Amazon per se? It's a lie overall, not Amazon. So if you break it down, fixed income investors again.\",\n        \"relative_start\": 66.3,\n        \"relative_end\": 75.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"交易型资金比较谨慎，我们买了不少；而收益型买家如养老金、保险等，长期债券收益率在6.10%到6.15%之间。\",\n        \"en\": \"He's sitting in your back pocket. You guys can see that. Deal-based money is quite a bit acidic. So that's where we bought quite a bit of that, where yield-based buyers, pensions, insurance, reliability, the long and bond was 6-10 to 6-15 y\",\n        \"relative_start\": 75.3,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 4:38 Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Watch Big Tech's $25 Billion Mega Bond Sales Are Pushing Market Limits ...\",\n        \"snippet\": \"Once a rare event reserved for historic mega -acquisitions, the jumbo bond sale is increasingly becoming the tech sector's go-to financing tool. Debt offerings of $25 billion or more have quickly ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-08/big-tech-s-25b-mega-bond-sales-push-market-limits-video\"\n      },\n      {\n        \"title\": \"Alphabet Sells $25 Billion of Corporate Bonds in US, Europe\",\n        \"snippet\": \"Alphabet Inc. sold $17.5 billion of bonds in the US, after issuing €6.5 billion ($7.48 billion ) of notes in Europe, adding to a wave of borrowing from technology companies as they invest ...\",\n        \"url\": \"www.bloomberg.com/news/articles/2025-11-03/alphabet-to-sell-at-least-3-billion-bonds-to-fund-ai-expansion\"\n      },\n      {\n        \"title\": \"Nvidia Joins AI Borrowing Frenzy With $25 Billion Bond Sale\",\n        \"snippet\": \"Chipmaking giant Nvidia Corp. sold $25 billion of high-grade bonds , joining a wave of jumbo debt offerings from tech heavyweights as investors clamor to get exposure to the artificial intelligence ...\",\n        \"url\": \"www.bloomberg.com/news/articles/2026-06-15/nvidia-kicks-off-first-high-grade-bond-offering-since-2021\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"彭博有限合夥企業 - 维基百科，自由的百科全书\",\n        \"snippet\": \"彭博有限合夥企業 ... 位于伦敦的彭博新闻演播厅 彭博有限合伙企业 （英語： Bloomberg L.P.）是 美國 的跨國大眾 傳播媒體 公司，提供新聞、全球商業和金融數據服務。 集團總部位於 紐約市 的 莱辛顿大道731号。 彭博於全球176個地點擁有超過19,000名員工。 [7]\",\n        \"url\": \"zh.wikipedia.org/wiki/彭博有限合夥企業\"\n      },\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      },\n      {\n        \"title\": \"Bloomberg - Business News, Stock Markets, Finance, Breaking & World News\",\n        \"snippet\": \"Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News\",\n        \"url\": \"www.bloomberg.com\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg L.P.\",\n      \"preferred_zh\": \"彭博有限合伙企业\",\n      \"aliases\": [\n        \"彭博\",\n        \"Bloomberg\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Wikipedia page: 彭博有限合夥企業\"\n    },\n    {\n      \"source_text\": \"Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"Big Tech’s $25 Billion Mega Bond Sales Are Pushing Market Limits\",\n      \"preferred_zh\": \"科技巨头250亿美元债券发行 市场承压\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title in metadata: 科技巨头250亿美元债券发行 市场承压\"\n    },\n    {\n      \"source_text\": \"Amazon\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Amazon.com, Inc.\",\n      \"preferred_zh\": \"亚马逊公司\",\n      \"aliases\": [\n        \"亚马逊\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common financial news usage\"\n    },\n    {\n      \"source_text\": \"Alphabet Inc.\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Alphabet Inc.\",\n      \"preferred_zh\": \"Alphabet公司\",\n      \"aliases\": [\n        \"谷歌母公司Alphabet\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bloomberg article: Alphabet Sells $25 Billion of Corporate Bonds\"\n    },\n    {\n      \"source_text\": \"Nvidia Corp.\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"Nvidia Corporation\",\n      \"preferred_zh\": \"英伟达公司\",\n      \"aliases\": [\n        \"Nvidia\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bloomberg article: Nvidia Joins AI Borrowing Frenzy With $25 Billion Bond Sale\"\n    },\n    {\n      \"source_text\": \"investment grade market\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"investment-grade bond market\",\n      \"preferred_zh\": \"**级债券市场\",\n      \"aliases\": [\n        \"IG市场\",\n        \"投资级市场\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common financial term\"\n    },\n    {\n      \"source_text\": \"fixed income investors\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"fixed-income investors\",\n      \"preferred_zh\": \"固定收益市场参与者\",\n      \"aliases\": [\n        \"固收市场参与者\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common financial term\"\n    },\n    {\n      \"source_text\": \"convexity\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"convexity\",\n      \"preferred_zh\": \"凸性\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term\"\n    },\n    {\n      \"source_text\": \"credit risk\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"credit risk\",\n      \"preferred_zh\": \"信用风险\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term\"\n    },\n    {\n      \"source_text\": \"concession\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"concession\",\n      \"preferred_zh\": \"让步\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bond market term\"\n    },\n    {\n      \"source_text\": \"basis points\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"basis points\",\n      \"preferred_zh\": \"基点\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term\"\n    },\n    {\n      \"source_text\": \"30-year bond\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"30-year bond\",\n      \"preferred_zh\": \"30年期债券\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common term\"\n    },\n    {\n      \"source_text\": \"book subscription\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"book subscription\",\n      \"preferred_zh\": \"认购倍数\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bond issuance term\"\n    },\n    {\n      \"source_text\": \"yield-based buyers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"yield-based buyers\",\n      \"preferred_zh\": \"收益型买家\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Context from subtitles\"\n    },\n    {\n      \"source_text\": \"pensions\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"pension funds\",\n      \"preferred_zh\": \"养老金\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common term\"\n    },\n    {\n      \"source_text\": \"insurance\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"insurance companies\",\n      \"preferred_zh\": \"保障公司\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common term\"\n    },\n    {\n      \"source_text\": \"CapEx\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"capital expenditure\",\n      \"preferred_zh\": \"资本开支\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial abbreviation\"\n    },\n    {\n      \"source_text\": \"IG market\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"investment-grade market\",\n      \"preferred_zh\": \"**级市场\",\n      \"aliases\": [\n        \"IG市场\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common abbreviation\"\n    }\n  ],\n  \"notes\": [\n    \"The current title '科技巨头250亿美元债券发行 市场承压' is a reasonable translation of the video title.\",\n    \"The subtitles contain some OCR errors (e.g., '**' for '是'), but these are not entity issues.\",\n    \"All entities have high confidence due to public snippets and standard financial terminology.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.\n- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "科技巨头250亿债券 市场饱和？",
+            "title_lines": [
+              "科技巨头",
+              "250亿债券发行",
+              "市场饱和了吗"
+            ],
+            "title_highlights": [
+              "科技巨头",
+              "250亿",
+              "市场饱和"
+            ],
+            "comment": "KC评论：亚马逊债券认购倍数仅1.5倍，市场对科技债态度生变。",
+            "comment_highlights": [
+              "亚马逊",
+              "1.5倍"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：信用风险被低估，固收市场开始警惕。",
+                "comment_highlights": [
+                  "信用风险"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：250亿大单需要大幅让步，价值浮现。",
+                "comment_highlights": [
+                  "250亿"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：亚马逊意外发债，市场预期被打乱。",
+                "comment_highlights": [
+                  "亚马逊"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：利差扩大25个基点，市场强烈抵制。",
+                "comment_highlights": [
+                  "25个基点"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：新债发行日价格下跌3.5-4个点，让步显著。",
+                "comment_highlights": [
+                  "3.5-4个点"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：认购倍数仅1.5倍，远低于其他投资级债券。",
+                "comment_highlights": [
+                  "1.5倍"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：不是亚马逊的问题，是科技债整体饱和。",
+                "comment_highlights": [
+                  "科技债"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：长期债券收益率6.1-6.15%，收益型买家入场。",
+                "comment_highlights": [
+                  "6.1-6.15%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "科技巨头250亿债券市场饱和？",
+          "title_lines": [
+            "科技巨头",
+            "250亿债券发行",
+            "市场饱和了吗"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 80,
+            "pass": true,
+            "strengths": [
+              "has_number_or_data",
+              "has_hook_tension"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor"
+            ]
+          },
+          "comment": "KC评论：亚马逊公司债券认购倍数仅1.5倍，市场对科技债态度生变"
+        }
+      }
+    }
+  ]
+}
