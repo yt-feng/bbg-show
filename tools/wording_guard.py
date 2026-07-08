@@ -18,7 +18,8 @@ WORDING_GUARD_PROMPT = """Wording guard for all Chinese output:
 - Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.
 - For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.
 - If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.
-- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments."""
+- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.
+- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点."""
 
 
 GENERAL_REPLACEMENTS: tuple[tuple[str, str], ...] = (
@@ -76,6 +77,69 @@ TITLE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
     ("恐慌", "波动"),
 )
 
+TITLE_SENSITIVE_REPLACEMENTS: tuple[tuple[str, str], ...] = (
+    ("资产管理公司", "资管机构"),
+    ("資產管理公司", "资管机构"),
+    ("资产管理", "资管"),
+    ("資產管理", "资管"),
+    ("投资银行", "投行"),
+    ("投資銀行", "投行"),
+    ("投资管理", "配置管理"),
+    ("投資管理", "配置管理"),
+    ("投资建议", "观点参考"),
+    ("投資建議", "观点参考"),
+    ("投资评级", "机构评级"),
+    ("投資評級", "机构评级"),
+    ("买入评级", "正面评级"),
+    ("買入評級", "正面评级"),
+    ("卖出评级", "负面评级"),
+    ("賣出評級", "负面评级"),
+    ("投资级债", "高评级债"),
+    ("投資級債", "高评级债"),
+    ("投资级", "高评级"),
+    ("投資級", "高评级"),
+    ("投资者", "市场参与者"),
+    ("投資者", "市场参与者"),
+    ("投资人", "资金方"),
+    ("投資人", "资金方"),
+    ("投资组合", "组合"),
+    ("投資組合", "组合"),
+    ("投资主题", "主线"),
+    ("投資主題", "主线"),
+    ("投资逻辑", "配置逻辑"),
+    ("投資邏輯", "配置逻辑"),
+    ("投资机会", "机会线索"),
+    ("投資機會", "机会线索"),
+    ("投资策略", "配置思路"),
+    ("投資策略", "配置思路"),
+    ("投资", "配置"),
+    ("投資", "配置"),
+    ("A股", "内地市场"),
+    ("Ａ股", "内地市场"),
+    ("港股", "香港市场"),
+    ("美股", "美国市场"),
+    ("中国股票", "中国市场"),
+    ("中國股票", "中国市场"),
+    ("股票", "权益资产"),
+    ("股市", "市场"),
+    ("个股", "单家公司"),
+    ("基金经理", "组合经理"),
+    ("基金經理", "组合经理"),
+    ("基金", "产品"),
+    ("理财", "财富配置"),
+    ("理財", "财富配置"),
+    ("保险", "保障"),
+    ("保險", "保障"),
+    ("投顾", "顾问"),
+    ("投顧", "顾问"),
+    ("荐股", "观点"),
+    ("薦股", "观点"),
+    ("买入", "看多"),
+    ("買入", "看多"),
+    ("卖出", "看淡"),
+    ("賣出", "看淡"),
+)
+
 CHINA_REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"(?:外资|资金|资本)(?:正|正在)?(?:集体)?逃离(中国资产|中国市场|A股|港股|中概股?)"), r"\1再定价"),
     (re.compile(r"(?:外资逃离|资金逃离|资本外逃|集体逃离)"), "资金再配置"),
@@ -106,6 +170,8 @@ def sanitize_zh_wording(text: str, *, context: str = "", for_title: bool = False
         value = value.replace(old, new)
 
     if for_title:
+        for old, new in TITLE_SENSITIVE_REPLACEMENTS:
+            value = value.replace(old, new)
         for old, new in TITLE_REPLACEMENTS:
             value = value.replace(old, new)
 
@@ -117,6 +183,8 @@ def sanitize_zh_wording(text: str, *, context: str = "", for_title: bool = False
     # Clean up awkward repeats after replacement.
     value = value.replace("承压承压", "承压")
     value = value.replace("变化变化", "变化")
+    value = value.replace("配置配置", "配置")
+    value = value.replace("资管管理", "资管")
     value = re.sub(r"(流动性变化)(?:变化|压力)", r"\1", value)
     return clean_text(value)
 

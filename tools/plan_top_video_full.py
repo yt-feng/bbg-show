@@ -116,7 +116,9 @@ def generate_title(source_title: str, source_url: str, source_label: str, sample
     system_prompt = (
         "You are a Chinese finance short-video title editor. Return strict JSON only. "
         "Write concise Simplified Chinese titles suitable for a vertical finance/news clip. "
-        "Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed. "
+        "Chinese title fields must not contain 资产管理/投资/股票/基金/理财/保险/投顾/荐股/买入/卖出. "
+        "Rephrase with neutral market wording such as 资管/配置/权益资产/市场/产品/财富配置/保障/观点. "
+        "For subtitles, rephrase 投资/股票/A股/港股/美股 when needed. "
         "Never use source badges such as 彭博独家, 独家, 【彭博独家】, or Bloomberg Exclusive. "
         + WORDING_GUARD_PROMPT
     )

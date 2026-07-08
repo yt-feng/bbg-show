@@ -122,8 +122,9 @@ def main() -> None:
     system_prompt = (
         "You are a senior Chinese short-video editor. Your task is to split an interview segment "
         "into short clips and provide bilingual subtitles with keyword highlights. "
-        "Return strict JSON only. All Chinese text must avoid sensitive words: "
-        "replace 投资 with ** or rephrase, replace 股票/A股/港股 with 权益资产/内地市场/香港市场. "
+        "Return strict JSON only. All Chinese title fields must avoid financial-advice/product-sale words: "
+        "rephrase 资产管理/投资/股票/基金/理财/保险 as neutral market wording. "
+        "For subtitles, rephrase 投资/股票/A股/港股 with 配置/权益资产/内地市场/香港市场 when needed. "
         + WORDING_GUARD_PROMPT
     )
 
@@ -146,7 +147,7 @@ Task:
 
 3. For each subtitle entry:
    - Provide the original English text
-   - Provide a natural Chinese translation (avoid 投资/股 words)
+   - Provide a natural Chinese translation (avoid 投资/股 words when possible)
    - zh_highlights: 1-2 key Chinese phrases to highlight yellow
    - en_highlights: 1-2 key English phrases to highlight yellow
    - Each subtitle should be 3-8 seconds long
@@ -186,7 +187,9 @@ Important:
 - Do not create clips about Donald Trump / Trump / 特朗普 / 川普. If the strongest segment is Trump-related, return fewer clips or no clips.
 - Do not reuse the same subtitle text in multiple clips unless it genuinely appears twice in the source transcript.
 - Chinese titles must have hook/conflict angle, not flat descriptions
-- Avoid: 投资, 股票, A股, 港股, 美股 in Chinese text
+- Avoid in Chinese title fields: 资产管理, 投资, 股票, 基金, 理财, 保险, 投顾, 荐股, 买入, 卖出.
+- Rephrase title wording with neutral alternatives such as 资管, 配置, 权益资产, 市场, 产品, 财富配置, 保障, 观点.
+- Avoid: 投资, 股票, A股, 港股, 美股 in Chinese subtitles when possible.
 - Never use hard crisis/doom wording in Chinese title/subtitle/comment fields: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
 - Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
 - If the segment is China-related and negative, word the Chinese subtitles around pressure, policy response, demand repair, liquidity change, or confidence repair. Do not make China itself sound hopeless or ridiculed.

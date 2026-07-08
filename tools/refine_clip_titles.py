@@ -763,7 +763,9 @@ Rules:
 - Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
 - Do not use financial-advice wording.
-- Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.
+- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
+- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.
+- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.
 - Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.
 - Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
 - For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.

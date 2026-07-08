@@ -181,9 +181,9 @@ def render_overlay_images(
             "output": str(static_png),
             "width": OUT_W,
             "height": OUT_H,
-            "title": safe_zh_text(str(clip.get("title", ""))),
-            "titleLines": [safe_zh_text(line) for line in title_lines_for_clip(clip)],
-            "titleHighlights": [safe_zh_text(str(item)) for item in clip.get("title_highlights", [])],
+            "title": safe_title_text(str(clip.get("title", ""))),
+            "titleLines": [safe_title_text(line) for line in title_lines_for_clip(clip)],
+            "titleHighlights": [safe_title_text(str(item)) for item in clip.get("title_highlights", [])],
             "watermark": "KC桌面",
             "cta": "关注「KC桌面」，追踪国际热点",
             "disclaimer": DISCLAIMER_TEXT,
@@ -721,7 +721,7 @@ def split_title_topic(topic: str) -> list[str]:
 
 
 def output_name(index: int, clip: dict[str, Any]) -> str:
-    title = safe_zh_text(str(clip.get("title", f"clip_{index:02d}")))
+    title = safe_title_text(str(clip.get("title", f"clip_{index:02d}")))
     title = title.replace("：", "_").replace(":", "_")
     title = title.replace("（", "(").replace("）", ")")
     title = re.sub(r"\((\d+)/(\d+)\)", r"_\1-\2", title)
@@ -749,6 +749,10 @@ def paraphrase_sensitive_zh(text: str) -> str:
 
 def safe_zh_text(text: str) -> str:
     return filter_sensitive_zh(paraphrase_sensitive_zh(clean_display_text(text)))
+
+
+def safe_title_text(text: str) -> str:
+    return sanitize_zh_wording(clean_display_text(text), for_title=True)
 
 
 def clean_display_text(text: str) -> str:
