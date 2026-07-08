@@ -19,6 +19,7 @@ from urllib.request import Request, urlopen
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from plan_speaker_full import clean_text, normalize_highlights, safe_zh  # noqa: E402
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
+from trump_filter import remove_trump_clips_from_plan  # noqa: E402
 from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording, sanitize_zh_wording  # noqa: E402
 
 
@@ -41,14 +42,14 @@ TITLE_DATA_LESSONS = {
     "avoid_patterns": [
         "过长的新闻句，尤其是 24 字以上还塞多个从句",
         "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
-        "美国宏观泛标题如果没有特朗普/美联储/鲍威尔等强锚点，点击明显弱",
+        "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
         "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
         "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
     ],
 }
 TITLE_BIG_ANCHOR_RE = re.compile(
     r"(高盛|摩根士丹利|摩根大通|美联储|野村|中金|美银|花旗|贝莱德|桥水|富达|瀚亚|"
-    r"CLSA|中银|特朗普|马斯克|黄仁勋|鲍威尔|巴菲特|辜朝明|洪灏|邢自强|王逸|Kevin|"
+    r"CLSA|中银|马斯克|黄仁勋|鲍威尔|巴菲特|辜朝明|洪灏|邢自强|王逸|Kevin|"
     r"腾讯|阿里|英伟达|苹果|微软|OpenAI|ARK|木头姐|Cathie)",
     re.IGNORECASE,
 )
@@ -655,6 +656,7 @@ def system_prompt() -> str:
         "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
         "Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. "
         "Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. "
+        "Never create or keep clips, titles, comments, or subtitle comments about Donald Trump / Trump / 特朗普 / 川普. "
         "Never invent facts or names. Treat public lookup snippets "
         "as the source of truth for person and institution names. "
         + WORDING_GUARD_PROMPT
@@ -717,7 +719,7 @@ Title strategy:
   data_policy_signal = "6月PMI / 积极信号 / 政策会加码吗"
   big_name_consequence = "黄仁勋 / AI人才 / 中国优势被低估？"
 - If none fits, use the closest formula and make line 3 a sharp question.
-- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、特朗普、马斯克、洪灏、邢自强、辜朝明等。
+- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。
 - Use compact authority labels when factual: "高盛王逸", "野村辜朝明", "中金Kevin". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.
 - Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.
 - Make the viewer ask "why?" or "really?" without cheap exaggeration. A good third line is often a sharp question or pressure point.
@@ -758,6 +760,7 @@ Rules:
 - Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.
 - For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.
 - Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.
+- Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
 - Do not use financial-advice wording.
 - Avoid sensitive Chinese words: rephrase 投资/股票/A股/港股/美股 when needed.
@@ -1229,9 +1232,13 @@ def main() -> None:
         raise SystemExit("DEEPSEEK_API_KEY is required")
 
     plan = json.loads(args.plan.read_text(encoding="utf-8"))
+    removed = remove_trump_clips_from_plan(plan)
+    if removed:
+        print(f"Removed {len(removed)} Trump-related clip(s) before title refinement", flush=True)
+        args.plan.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     clips = plan.get("clips", [])
     if not isinstance(clips, list) or not clips:
-        raise SystemExit("No clips found in plan")
+        raise SystemExit("No non-Trump clips found in plan")
 
     briefs = all_clip_briefs(plan, clips, args.max_subtitles)
     lookup: list[dict[str, Any]] = []
@@ -1258,6 +1265,11 @@ def main() -> None:
         log_events=log_events,
     )
     apply_refinements(plan, refinements, args.style, lookup, entity_guide)
+    removed = remove_trump_clips_from_plan(plan)
+    if removed:
+        print(f"Removed {len(removed)} Trump-related clip(s) after title refinement", flush=True)
+        if not plan.get("clips"):
+            raise SystemExit("No non-Trump clips remained after title refinement")
     log_path = args.log_path or default_log_path(args.plan)
     plan["title_refine"]["log_file"] = str(log_path)
     args.plan.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

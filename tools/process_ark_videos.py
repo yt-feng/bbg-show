@@ -32,6 +32,7 @@ from download_bloomberg_video import (  # noqa: E402
     slug_from_url,
 )
 import proxy_hls_downloader as hls_downloader  # noqa: E402
+from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -124,6 +125,9 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
         title = clean_text(str(item.get("title") or item.get("source_title") or ""))
         if not url or not title or url in seen:
             continue
+        if is_trump_related(url, title, item.get("description", ""), item.get("slug", "")):
+            print(f"[ark] Skipping Trump-related manifest video: {title or url}", flush=True)
+            continue
         seen.add(url)
         slug = clean_text(str(item.get("slug", ""))) or safe_file_part(slug_from_url(url) or title)
         item = {
@@ -210,6 +214,17 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
     candidates = parse_json_lines(proc.stdout)
     if not candidates:
         raise RuntimeError("yt-dlp search returned no candidates")
+    candidates = [
+        candidate
+        for candidate in candidates
+        if not is_trump_related(
+            candidate.get("title", ""),
+            candidate.get("channel", candidate.get("uploader", "")),
+            candidate.get("webpage_url", candidate.get("url", "")),
+        )
+    ]
+    if not candidates:
+        raise RuntimeError("yt-dlp search returned only Trump-related candidates")
     candidates.sort(key=lambda candidate: candidate_score(candidate, item["title"]), reverse=True)
     selected = candidates[0]
     (work_dir / "yt_dlp_selected.json").write_text(
@@ -420,6 +435,13 @@ def process_one(
         str(TOOLS / "refine_clip_titles.py"),
         "--plan", str(plan_path),
     ])
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    removed = remove_trump_clips_from_plan(plan)
+    if removed:
+        plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[ark {index:02d}] Removed {len(removed)} Trump-related clip(s)", flush=True)
+    if not plan.get("clips"):
+        raise RuntimeError("ARK video skipped by Trump filter")
 
     print(f"[ark {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():
@@ -440,7 +462,6 @@ def process_one(
     if not rendered:
         raise RuntimeError("Renderer produced no MP4 files")
 
-    plan = json.loads(plan_path.read_text(encoding="utf-8"))
     first_clip = next(iter(plan.get("clips", [])), {})
     refined_title = clean_text(str(first_clip.get("title", "")))
     metadata = {

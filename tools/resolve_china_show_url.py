@@ -13,6 +13,8 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
+from trump_filter import is_trump_related
+
 
 SHOW_CHINA = "china"
 SHOW_WEEKEND = "weekend"
@@ -199,7 +201,11 @@ def weekend_candidate_items(
     history_days: int,
 ) -> list[dict[str, str]]:
     cutoff = parse_date(cutoff_date)
-    backlog = [item for item in load_weekend_backlog(backlog_path) if parse_date(item["date"]) <= cutoff]
+    backlog = [
+        item
+        for item in load_weekend_backlog(backlog_path)
+        if parse_date(item["date"]) <= cutoff and not is_trump_related(item)
+    ]
     for item in backlog:
         item.setdefault("source", "weekend-backlog")
 

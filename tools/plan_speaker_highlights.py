@@ -19,6 +19,7 @@ from typing import Any, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from trump_filter import remove_trump_clips_from_plan
 from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording
 
 
@@ -182,6 +183,7 @@ Important:
 - Each clip must have at least 3 subtitles
 - Every clip must contain a substantive answer from {args.speaker}. A host question is allowed only if the speaker answer follows in the same clip.
 - Do not create clips from host outros, thank-you lines, post-interview market recaps, market open boards, or transitions to the next segment. If the provided range includes that material, stop before it and return fewer clips.
+- Do not create clips about Donald Trump / Trump / 特朗普 / 川普. If the strongest segment is Trump-related, return fewer clips or no clips.
 - Do not reuse the same subtitle text in multiple clips unless it genuinely appears twice in the source transcript.
 - Chinese titles must have hook/conflict angle, not flat descriptions
 - Avoid: 投资, 股票, A股, 港股, 美股 in Chinese text
@@ -205,6 +207,11 @@ Important:
         args.max_seconds,
         args.max_clips,
     )
+    filter_probe = {"clips": clips}
+    removed = remove_trump_clips_from_plan(filter_probe)
+    if removed:
+        print(f"Removed {len(removed)} Trump-related planned clip(s)", flush=True)
+    clips = filter_probe["clips"]
     if not clips:
         print("All generated clips failed the speaker-content quality gate", flush=True)
         fallback_clip = build_transcript_fallback_clip(
@@ -217,8 +224,13 @@ Important:
             args.max_seconds,
         )
         if fallback_clip:
-            clips = [fallback_clip]
-            print("Using transcript fallback clip", flush=True)
+            filter_probe = {"clips": [fallback_clip]}
+            removed = remove_trump_clips_from_plan(filter_probe)
+            if filter_probe["clips"]:
+                clips = filter_probe["clips"]
+                print("Using transcript fallback clip", flush=True)
+            else:
+                raise SystemExit("All generated clips were Trump-related")
         else:
             raise SystemExit("All generated clips failed the speaker-content quality gate")
 
@@ -231,6 +243,11 @@ Important:
         "duration": segment_duration,
         "clips": clips,
     })
+    removed = remove_trump_clips_from_plan(payload)
+    if removed:
+        print(f"Removed {len(removed)} Trump-related clip(s) after wording guard", flush=True)
+    if not payload.get("clips"):
+        raise SystemExit("No non-Trump clips remained after filtering")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote plan: {args.out} ({len(clips)} clips)", flush=True)

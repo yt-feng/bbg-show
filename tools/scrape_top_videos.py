@@ -33,6 +33,7 @@ from download_bloomberg_video import (  # noqa: E402
     fetch_text_direct,
     safe_file_part,
 )
+from trump_filter import is_trump_related  # noqa: E402
 
 
 DEFAULT_URL = "https://www.bloomberg.com/videos"
@@ -85,12 +86,16 @@ def add_link(links: list[dict[str, str]], seen: set[str], url: str, title: str) 
     normalized = normalize_url(DEFAULT_URL, url)
     if "/news/videos/" not in urlsplit(normalized).path:
         return
+    clean_title = clean_text(title) or title_from_url(normalized)
+    if is_trump_related(normalized, clean_title):
+        log(f"Skipping Trump-related top video: {clean_title or normalized}")
+        return
     if normalized in seen:
         return
     seen.add(normalized)
     links.append({
         "url": normalized,
-        "title": clean_text(title) or title_from_url(normalized),
+        "title": clean_title,
         "slug": safe_file_part(title_from_url(normalized)),
     })
 

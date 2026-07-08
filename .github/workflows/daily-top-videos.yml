@@ -366,6 +366,7 @@ jobs:
               "total": len(videos),
               "succeeded": sum(1 for item in videos if item.get("status") == "success"),
               "failed": sum(1 for item in videos if item.get("status") == "failed"),
+              "skipped": sum(1 for item in videos if item.get("status") == "skipped"),
               "rendered_mp4_count": len(mp4s),
               "rendered_mp4_files": mp4s,
               "videos": videos,
@@ -389,14 +390,20 @@ jobs:
           total = int(summary.get("total") or 0)
           succeeded = int(summary.get("succeeded") or 0)
           failed = int(summary.get("failed") or 0)
+          skipped = int(summary.get("skipped") or 0)
           threshold = float(os.environ.get("MAX_FAILURE_RATE", "0.30"))
-          failure_rate = (failed / total) if total else 1.0
+          processable = max(total - skipped, 0)
+          failure_rate = (failed / processable) if processable else 0.0
           print(
               f"Top video batch: total={total}, succeeded={succeeded}, "
-              f"failed={failed}, failure_rate={failure_rate:.1%}, threshold={threshold:.0%}"
+              f"failed={failed}, skipped={skipped}, failure_rate={failure_rate:.1%}, threshold={threshold:.0%}"
           )
           if total < 1:
-              raise SystemExit("No top video processing summaries were collected.")
+              print("No top videos after filtering; keeping workflow green.")
+              raise SystemExit(0)
+          if processable < 1:
+              print("All top videos were skipped by content filters; keeping workflow green.")
+              raise SystemExit(0)
           if succeeded < 1:
               raise SystemExit("No top videos were processed successfully.")
           if failure_rate >= threshold:
@@ -415,6 +422,10 @@ jobs:
           CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l | tr -d ' ')
           echo "Rendered MP4 count: $CLIP_COUNT"
           if [ "$CLIP_COUNT" -lt 1 ]; then
+            if python3 -c 'import json, sys; s=json.load(open(sys.argv[1], encoding="utf-8")); total=int(s.get("total") or 0); skipped=int(s.get("skipped") or 0); raise SystemExit(0 if total == 0 or skipped == total else 1)' "$OUTPUT_DIR/summary.json"; then
+              echo "All top videos were skipped by content filters; no MP4 expected."
+              exit 0
+            fi
             echo "No rendered top video clips produced" >&2
             exit 1
           fi

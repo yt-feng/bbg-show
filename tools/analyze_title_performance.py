@@ -88,7 +88,7 @@ def main() -> None:
 
     patterns: dict[str, Callable[[str], bool]] = {
         "question": lambda t: bool(re.search(r"[?？]|吗|为何|为什么|怎么|能否|是否", t)),
-        "big_anchor": lambda t: bool(re.search(r"高盛|摩根|美联储|特朗普|马斯克|黄仁勋|辜朝明|洪灏|中金|野村|美银|腾讯|阿里|英伟达|ARK|木头姐", t, re.I)),
+        "big_anchor": lambda t: bool(re.search(r"高盛|摩根|美联储|马斯克|黄仁勋|辜朝明|洪灏|中金|野村|美银|腾讯|阿里|英伟达|ARK|木头姐", t, re.I)),
         "number_data": lambda t: bool(re.search(r"\d|万亿|万|亿|%|美元|基点|PMI|CPI|PCE", t, re.I)),
         "china_related": lambda t: bool(re.search(r"中国|A股|港股|人民币|楼市|房价|房地产|地产|消费|内需", t)),
         "hook_words": lambda t: bool(re.search(r"关键|信号|反转|真相|意外|被逼|陷阱|托底|转向|拐点|分歧|重估|掩盖|冰火两重天", t)),

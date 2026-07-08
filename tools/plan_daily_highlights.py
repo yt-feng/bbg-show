@@ -11,6 +11,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from trump_filter import remove_trump_clips_from_plan
+
 
 def slugify(value: str) -> str:
     value = re.sub(r"\s+", "_", value.strip())
@@ -73,6 +75,10 @@ def main() -> None:
             continue
 
         plan = json.loads(plan_path.read_text(encoding="utf-8"))
+        removed = remove_trump_clips_from_plan(plan)
+        if removed:
+            plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            skipped.append({"speaker": name, "reason": f"removed {len(removed)} Trump-related clip(s)"})
         clips = plan.get("clips", [])
         if not clips:
             skipped.append({"speaker": name, "reason": "planner returned no clips"})
@@ -102,7 +108,16 @@ def main() -> None:
         refiner = Path(__file__).with_name("refine_clip_titles.py")
         print("Refining combined clip titles with DeepSeek", flush=True)
         subprocess.run([sys.executable, str(refiner), "--plan", str(args.combined_plan)], check=True)
-    print(f"Wrote combined plan: {args.combined_plan} ({len(combined_clips)} clips)", flush=True)
+        combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
+        removed = remove_trump_clips_from_plan(combined)
+        if removed:
+            print(f"Removed {len(removed)} Trump-related clip(s) after title refinement", flush=True)
+            if not combined.get("clips"):
+                raise SystemExit("No non-Trump clips remained after title refinement")
+            args.combined_plan.write_text(json.dumps(combined, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    final_combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
+    final_count = len(final_combined.get("clips", [])) if isinstance(final_combined.get("clips", []), list) else 0
+    print(f"Wrote combined plan: {args.combined_plan} ({final_count} clips)", flush=True)
 
 
 if __name__ == "__main__":

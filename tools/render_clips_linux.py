@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from trump_filter import is_trump_related  # noqa: E402
 from wording_guard import sanitize_zh_wording  # noqa: E402
 
 
@@ -100,11 +101,18 @@ def main() -> None:
     if not renderer.exists():
         raise SystemExit(f"Pillow renderer not found: {renderer}")
 
+    rendered_count = 0
+    skipped_trump = 0
     for one_based in selected:
         clip = clips[one_based - 1]
+        if is_trump_related(clip):
+            skipped_trump += 1
+            print(f"[{one_based}/{len(clips)}] Skipping Trump-related clip: {clip.get('title', '')}", flush=True)
+            continue
         output = args.out_dir / output_name(one_based, clip)
         if output.exists() and not args.force:
             print(f"[{one_based}/{len(clips)}] Exists, skipping: {output}", flush=True)
+            rendered_count += 1
             continue
 
         clip_dir = args.work_dir / f"clip_{one_based:02d}"
@@ -132,8 +140,14 @@ def main() -> None:
             threads=args.threads,
         )
         print(f"[{one_based}/{len(clips)}] Wrote: {output}", flush=True)
+        rendered_count += 1
 
-    print(f"\nDone. {len(selected)} clips rendered to {args.out_dir}", flush=True)
+    if rendered_count < 1:
+        if skipped_trump:
+            raise SystemExit("No non-Trump clips to render")
+        raise SystemExit("No clips rendered")
+
+    print(f"\nDone. {rendered_count} clips rendered to {args.out_dir}", flush=True)
 
 
 def parse_only(value: str | None, total: int) -> list[int]:
