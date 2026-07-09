@@ -656,7 +656,7 @@ def system_prompt() -> str:
         "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
         "Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. "
         "Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. "
-        "Never create or keep clips, titles, comments, or subtitle comments about Donald Trump / Trump / 特朗普 / 川普. "
+        "Never create or keep clips, titles, comments, or subtitle comments about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories. "
         "Never invent facts or names. Treat public lookup snippets "
         "as the source of truth for person and institution names. "
         + WORDING_GUARD_PROMPT
@@ -760,7 +760,7 @@ Rules:
 - Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.
 - For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.
 - Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.
-- Do not mention Donald Trump / Trump / 特朗普 / 川普. If a clip is Trump-related, it should have been filtered out and must not be rewritten.
+- Do not mention sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories. If a clip is sensitive-topic related, it should have been filtered out and must not be rewritten.
 - Do not use emojis, markdown, quotation marks, hashtags, or numbering.
 - Do not use financial-advice wording.
 - Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
@@ -1236,11 +1236,11 @@ def main() -> None:
     plan = json.loads(args.plan.read_text(encoding="utf-8"))
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
-        print(f"Removed {len(removed)} Trump-related clip(s) before title refinement", flush=True)
+        print(f"Removed {len(removed)} sensitive-topic clip(s) before title refinement", flush=True)
         args.plan.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     clips = plan.get("clips", [])
     if not isinstance(clips, list) or not clips:
-        raise SystemExit("No non-Trump clips found in plan")
+        raise SystemExit("No non-sensitive-topic clips found in plan")
 
     briefs = all_clip_briefs(plan, clips, args.max_subtitles)
     lookup: list[dict[str, Any]] = []
@@ -1269,9 +1269,9 @@ def main() -> None:
     apply_refinements(plan, refinements, args.style, lookup, entity_guide)
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
-        print(f"Removed {len(removed)} Trump-related clip(s) after title refinement", flush=True)
+        print(f"Removed {len(removed)} sensitive-topic clip(s) after title refinement", flush=True)
         if not plan.get("clips"):
-            raise SystemExit("No non-Trump clips remained after title refinement")
+            raise SystemExit("No non-sensitive-topic clips remained after title refinement")
     log_path = args.log_path or default_log_path(args.plan)
     plan["title_refine"]["log_file"] = str(log_path)
     args.plan.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

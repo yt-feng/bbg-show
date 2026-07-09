@@ -78,7 +78,7 @@ def main() -> None:
         removed = remove_trump_clips_from_plan(plan, use_ai=True)
         if removed:
             plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            skipped.append({"speaker": name, "reason": f"removed {len(removed)} Trump-related clip(s)"})
+            skipped.append({"speaker": name, "reason": f"removed {len(removed)} sensitive-topic clip(s)"})
         clips = plan.get("clips", [])
         if not clips:
             skipped.append({"speaker": name, "reason": "planner returned no clips"})
@@ -111,9 +111,9 @@ def main() -> None:
         combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
         removed = remove_trump_clips_from_plan(combined, use_ai=True)
         if removed:
-            print(f"Removed {len(removed)} Trump-related clip(s) after title refinement", flush=True)
+            print(f"Removed {len(removed)} sensitive-topic clip(s) after title refinement", flush=True)
             if not combined.get("clips"):
-                raise SystemExit("No non-Trump clips remained after title refinement")
+                raise SystemExit("No non-sensitive-topic clips remained after title refinement")
             args.combined_plan.write_text(json.dumps(combined, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     final_combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
     final_count = len(final_combined.get("clips", [])) if isinstance(final_combined.get("clips", []), list) else 0

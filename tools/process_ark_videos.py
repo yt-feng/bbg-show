@@ -126,7 +126,7 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
         if not url or not title or url in seen:
             continue
         if is_trump_related(url, title, item.get("description", ""), item.get("slug", ""), use_ai=True):
-            print(f"[ark] Skipping Trump-related manifest video: {title or url}", flush=True)
+            print(f"[ark] Skipping sensitive-topic manifest video: {title or url}", flush=True)
             continue
         seen.add(url)
         slug = clean_text(str(item.get("slug", ""))) or safe_file_part(slug_from_url(url) or title)
@@ -225,7 +225,7 @@ def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results
         )
     ]
     if not candidates:
-        raise RuntimeError("yt-dlp search returned only Trump-related candidates")
+        raise RuntimeError("yt-dlp search returned only sensitive-topic candidates")
     candidates.sort(key=lambda candidate: candidate_score(candidate, item["title"]), reverse=True)
     selected = candidates[0]
     (work_dir / "yt_dlp_selected.json").write_text(
@@ -440,9 +440,9 @@ def process_one(
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
         plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"[ark {index:02d}] Removed {len(removed)} Trump-related clip(s)", flush=True)
+        print(f"[ark {index:02d}] Removed {len(removed)} sensitive-topic clip(s)", flush=True)
     if not plan.get("clips"):
-        raise RuntimeError("ARK video skipped by Trump filter")
+        raise RuntimeError("ARK video skipped by sensitive topic filter")
 
     print(f"[ark {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():

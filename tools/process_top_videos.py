@@ -67,7 +67,7 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
         title = str(item.get("title", "")).strip() or slug_from_url(url).replace("_", " ").title()
         slug = str(item.get("slug", "")).strip() or slug_from_url(url)
         if is_trump_related(url, title, slug, use_ai=True):
-            print(f"[top-videos] Skipping Trump-related manifest video: {title or url}", flush=True)
+            print(f"[top-videos] Skipping sensitive-topic manifest video: {title or url}", flush=True)
             continue
         seen.add(url)
         normalized.append({
@@ -159,9 +159,9 @@ def process_one(
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
         plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"[top-video {index:02d}] Removed {len(removed)} Trump-related clip(s)", flush=True)
+        print(f"[top-video {index:02d}] Removed {len(removed)} sensitive-topic clip(s)", flush=True)
     if not plan.get("clips"):
-        raise RuntimeError("Top video skipped by Trump filter")
+        raise RuntimeError("Top video skipped by sensitive topic filter")
 
     print(f"[top-video {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():
@@ -252,8 +252,13 @@ def main() -> None:
             result = process_one(item, index, args, output_dir)
         except Exception as exc:  # noqa: BLE001 - keep the daily batch moving
             message = str(exc)
-            trump_skip = "Trump filter" in message or "Trump-related" in message
-            status = "skipped" if trump_skip else "failed"
+            topic_skip = (
+                "Trump filter" in message
+                or "Trump-related" in message
+                or "sensitive topic filter" in message
+                or "sensitive-topic" in message
+            )
+            status = "skipped" if topic_skip else "failed"
             print(f"{status.upper()} top video {index}: {exc}", flush=True)
             result = {
                 "status": status,
@@ -262,8 +267,8 @@ def main() -> None:
                 "title": item.get("title", ""),
                 "error": str(exc),
             }
-            if trump_skip:
-                result["skip_reason"] = "trump"
+            if topic_skip:
+                result["skip_reason"] = "sensitive_topic"
         results.append(result)
 
     summary = {

@@ -151,7 +151,7 @@ Rules:
 - Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃 in Chinese titles.
 - Prefer softer market wording such as 流动性变化、政策信号、需求变化、信心修复、估值重估、周期压力.
 - For China-related topics, keep pressure factual but word it as market/policy/liquidity changes, not China decline.
-- Do not produce any title/comment/subtitle for Donald Trump / Trump / 特朗普 / 川普 content.
+- Do not produce any title/comment/subtitle for sensitive geopolitics or military content, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories.
 - Do not add markdown.
 """
     result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.2)
@@ -182,7 +182,7 @@ Rules:
 
 def build_plan(args: argparse.Namespace) -> dict[str, Any]:
     if is_trump_related(args.source_title, args.source_url, use_ai=True):
-        raise SystemExit("Source video skipped by Trump filter")
+        raise SystemExit("Source video skipped by sensitive topic filter")
 
     clip_start, clip_end = choose_clip_range(
         args.transcript,
@@ -257,9 +257,9 @@ def build_plan(args: argparse.Namespace) -> dict[str, Any]:
     plan = sanitize_plan_wording(plan)
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
-        print(f"Removed {len(removed)} Trump-related top-video clip(s)", flush=True)
+        print(f"Removed {len(removed)} sensitive-topic top-video clip(s)", flush=True)
     if not plan.get("clips"):
-        raise SystemExit("No non-Trump clips remained after filtering")
+        raise SystemExit("No non-sensitive-topic clips remained after filtering")
     return plan
 
 

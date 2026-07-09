@@ -88,7 +88,7 @@ def add_link(links: list[dict[str, str]], seen: set[str], url: str, title: str) 
         return
     clean_title = clean_text(title) or title_from_url(normalized)
     if is_trump_related(normalized, clean_title):
-        log(f"Skipping Trump-related top video: {clean_title or normalized}")
+        log(f"Skipping sensitive-topic top video: {clean_title or normalized}")
         return
     if normalized in seen:
         return

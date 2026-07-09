@@ -97,7 +97,7 @@ Include:
 Exclude:
 - Bloomberg anchors, hosts, reporters, correspondents, market-board updates, headlines, weather/traffic, teasers, and transitions.
 - Segments shorter than 60 seconds.
-- Any segment about Donald Trump / Trump / 特朗普 / 川普. Do not select it even if it is otherwise newsworthy.
+- Any segment about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories. Do not select it even if it is otherwise newsworthy.
 
 Return JSON:
 {{
@@ -135,7 +135,7 @@ If there are no real guest/keynote interview segments, return {{"candidates": []
             continue
         candidate_text = prompt_lines(segments, cand_start, cand_end)
         if is_trump_related(speaker, context, reason, candidate_text, use_ai=True):
-            print(f"Skipping Trump-related speaker candidate: {speaker} {format_time(cand_start)}-{format_time(cand_end)}", flush=True)
+            print(f"Skipping sensitive-topic speaker candidate: {speaker} {format_time(cand_start)}-{format_time(cand_end)}", flush=True)
             continue
         candidates.append(Candidate(speaker, context, cand_start, cand_end, confidence, importance, reason))
     return candidates

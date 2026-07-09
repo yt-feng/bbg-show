@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared filter for excluding Trump-related Bloomberg clips."""
+"""Shared filter for excluding sensitive geopolitical/military Bloomberg clips."""
 
 from __future__ import annotations
 
@@ -14,11 +14,29 @@ from urllib.request import Request, urlopen
 
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
-TRUMP_PATTERNS = [
+EXCLUDED_TOPIC_PATTERNS = [
     re.compile(r"\b(?:donald\s+(?:j\.?\s+)?)?trump(?:'s)?\b", re.IGNORECASE),
     re.compile(r"\bpresident\s+trump\b", re.IGNORECASE),
     re.compile(r"特朗普|川普|唐纳德[·\s-]?特朗普|唐納德[·\s-]?特朗普|川建国"),
+    re.compile(
+        r"\b(?:iran|iranian|tehran|strait\s+of\s+hormuz|hormuz|strait\s+of\s+hummus|"
+        r"straighter\s+hummus|street\s+of\s+ramuz)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(r"伊朗|德黑兰|德黑蘭|霍尔木兹|霍爾木茲|霍穆兹|霍穆茲|荷姆兹|荷姆茲"),
+    re.compile(
+        r"\b(?:geopolitics?|geopolitical|military|missile|airstrike|drone\s+strike|warship|"
+        r"naval\s+activity|ceasefire|armed\s+conflict|middle\s+east\s+conflict|"
+        r"persian\s+gulf|red\s+sea|nuclear\s+(?:site|facility|program|talks?)|"
+        r"gaza|hamas|hezbollah|houthi)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"地缘政治|地緣政治|军事|軍事|战争|戰爭|导弹|導彈|空袭|空襲|无人机|無人機|"
+        r"核设施|核設施|停火|军舰|軍艦|以色列|加沙|哈马斯|哈瑪斯|真主党|真主黨|胡塞|俄乌|俄烏"
+    ),
 ]
+TRUMP_PATTERNS = EXCLUDED_TOPIC_PATTERNS
 AI_CACHE: dict[str, dict[str, Any]] = {}
 
 
@@ -41,15 +59,19 @@ def iter_text(value: Any) -> Iterable[str]:
     yield str(value)
 
 
-def trump_match(value: Any) -> str:
+def excluded_topic_match(value: Any) -> str:
     text = "\n".join(iter_text(value))
     if not text:
         return ""
-    for pattern in TRUMP_PATTERNS:
+    for pattern in EXCLUDED_TOPIC_PATTERNS:
         match = pattern.search(text)
         if match:
             return match.group(0)
     return ""
+
+
+def trump_match(value: Any) -> str:
+    return excluded_topic_match(value)
 
 
 def compact_filter_text(value: Any, max_chars: int = 6000) -> str:
@@ -70,19 +92,20 @@ def ask_deepseek_filter(text: str, api_key: str, timeout: int = 90) -> dict[str,
         "Return strict JSON only."
     )
     user_prompt = f"""User rule:
-Do not generate any video if the source video or clip involves Donald Trump.
+Do not generate any video if the source video or clip involves sensitive geopolitics or military topics.
 
 Classify whether this item should be excluded.
 
 Exclude when:
-- Donald Trump is a main or material topic.
-- The item discusses his presidency, campaign, administration, family, companies, legal cases, social media, policy agenda, tariffs, immigration stance, Fed pressure, China policy, election chances, or market impact.
-- The text uses indirect references that clearly point to him, such as former president, 47th president, MAGA, Mar-a-Lago, Truth Social, his tariffs, or his White House, when context makes the reference clear.
-- Chinese wording points to him, including 特朗普、川普、唐纳德特朗普, or indirect phrasing clearly about him.
+- Donald Trump is a main or material topic, including his presidency, campaign, administration, legal cases, companies, social media, tariff agenda, immigration stance, Fed pressure, China policy, election chances, or market impact.
+- The item discusses Iran, Iranian policy, Tehran, the Strait of Hormuz, Hormuz shipping, Middle East military escalation, missiles, drones, airstrikes, naval activity, ceasefires, nuclear facilities, armed conflict, war, or military operations.
+- The item is materially about sensitive geopolitical confrontation, including Israel/Gaza/Hamas/Hezbollah/Houthi, Russia-Ukraine fighting, sanctions tied to military conflict, or any active-conflict military story.
+- The text uses indirect references that clearly point to these topics, such as former president, 47th president, MAGA, Mar-a-Lago, Truth Social, his tariffs, his White House, Persian Gulf chokepoint, oil route threat, red sea attacks, or nuclear site strikes, when context makes the reference clear.
+- Chinese wording points to these topics, including 特朗普、川普、唐纳德特朗普、伊朗、霍尔木兹海峡、德黑兰、地缘政治、军事、战争、导弹、空袭.
 
 Do not exclude when:
-- The item is only about the US, the White House, tariffs, Republicans, elections, or the Fed without a clear Trump connection.
-- Trump appears only as a historical comparison and is not a material part of the clip.
+- The item is ordinary macro, central-bank, earnings, trade, commodities, or market analysis without a clear connection to the sensitive topics above.
+- A sensitive word appears only as a minor historical comparison and is not a material part of the clip.
 
 Return JSON exactly:
 {{
@@ -129,7 +152,7 @@ Text:
     return decision
 
 
-def semantic_trump_decision(value: Any, *, api_key: str | None = None) -> dict[str, Any]:
+def semantic_excluded_topic_decision(value: Any, *, api_key: str | None = None) -> dict[str, Any]:
     text = compact_filter_text(value)
     if not text:
         return {"exclude": False, "confidence": 0.0, "reason": "empty text"}
@@ -149,8 +172,12 @@ def semantic_trump_decision(value: Any, *, api_key: str | None = None) -> dict[s
     }
 
 
-def trump_decision(value: Any, *, use_ai: bool = False) -> dict[str, Any]:
-    matched = trump_match(value)
+def semantic_trump_decision(value: Any, *, api_key: str | None = None) -> dict[str, Any]:
+    return semantic_excluded_topic_decision(value, api_key=api_key)
+
+
+def excluded_topic_decision(value: Any, *, use_ai: bool = False) -> dict[str, Any]:
+    matched = excluded_topic_match(value)
     if matched:
         return {
             "exclude": True,
@@ -160,7 +187,7 @@ def trump_decision(value: Any, *, use_ai: bool = False) -> dict[str, Any]:
             "reason": f"keyword matched: {matched}",
         }
     if use_ai:
-        decision = semantic_trump_decision(value)
+        decision = semantic_excluded_topic_decision(value)
         if decision.get("exclude"):
             return {
                 "exclude": True,
@@ -172,11 +199,19 @@ def trump_decision(value: Any, *, use_ai: bool = False) -> dict[str, Any]:
     return {"exclude": False, "source": "none", "matched": "", "confidence": 0.0, "reason": ""}
 
 
+def trump_decision(value: Any, *, use_ai: bool = False) -> dict[str, Any]:
+    return excluded_topic_decision(value, use_ai=use_ai)
+
+
+def is_excluded_topic(*values: Any, use_ai: bool = False) -> bool:
+    return excluded_topic_decision(values, use_ai=use_ai).get("exclude", False)
+
+
 def is_trump_related(*values: Any, use_ai: bool = False) -> bool:
-    return trump_decision(values, use_ai=use_ai).get("exclude", False)
+    return is_excluded_topic(*values, use_ai=use_ai)
 
 
-def remove_trump_items(
+def remove_excluded_topic_items(
     items: list[dict[str, Any]],
     *,
     text_getter: Callable[[dict[str, Any]], Any] | None = None,
@@ -186,7 +221,7 @@ def remove_trump_items(
     removed: list[dict[str, Any]] = []
     for index, item in enumerate(items, start=1):
         haystack = text_getter(item) if text_getter else item
-        decision = trump_decision(haystack, use_ai=use_ai)
+        decision = excluded_topic_decision(haystack, use_ai=use_ai)
         if decision.get("exclude"):
             removed.append({
                 "index": index,
@@ -202,18 +237,31 @@ def remove_trump_items(
     return kept, removed
 
 
-def remove_trump_clips_from_plan(plan: dict[str, Any], *, use_ai: bool = False) -> list[dict[str, Any]]:
+def remove_trump_items(
+    items: list[dict[str, Any]],
+    *,
+    text_getter: Callable[[dict[str, Any]], Any] | None = None,
+    use_ai: bool = False,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    return remove_excluded_topic_items(items, text_getter=text_getter, use_ai=use_ai)
+
+
+def remove_excluded_topic_clips_from_plan(plan: dict[str, Any], *, use_ai: bool = False) -> list[dict[str, Any]]:
     clips = plan.get("clips", [])
     if not isinstance(clips, list):
         return []
-    kept, removed = remove_trump_items([clip for clip in clips if isinstance(clip, dict)], use_ai=use_ai)
+    kept, removed = remove_excluded_topic_items([clip for clip in clips if isinstance(clip, dict)], use_ai=use_ai)
     plan["clips"] = kept
     if removed:
         content_filter = plan.setdefault("content_filter", {})
-        content_filter["trump"] = {
+        content_filter["sensitive_topics"] = {
             "enabled": True,
             "ai_enabled": use_ai,
             "removed_count": len(removed),
             "removed": removed,
         }
     return removed
+
+
+def remove_trump_clips_from_plan(plan: dict[str, Any], *, use_ai: bool = False) -> list[dict[str, Any]]:
+    return remove_excluded_topic_clips_from_plan(plan, use_ai=use_ai)
