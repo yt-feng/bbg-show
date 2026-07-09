@@ -1,0 +1,847 @@
+{
+  "timestamp_utc": "2026-07-09T21:03:32.708444+00:00",
+  "plan_path": "work/daily/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Robin Xing",
+        "entity_type": "person",
+        "preferred_en": "Robin Xing",
+        "preferred_zh": "邢自强",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Baidu Baike and HKU biography confirm 邢自强 as official Chinese name."
+      },
+      {
+        "source_text": "Morgan Stanley",
+        "entity_type": "organization",
+        "preferred_en": "Morgan Stanley",
+        "preferred_zh": "摩根士丹利",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation used in all Chinese financial media."
+      },
+      {
+        "source_text": "Chief China Economist",
+        "entity_type": "other",
+        "preferred_en": "Chief China Economist",
+        "preferred_zh": "中国首席经济学家",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common title translation."
+      },
+      {
+        "source_text": "K型经济",
+        "entity_type": "other",
+        "preferred_en": "K-shaped economy",
+        "preferred_zh": "K型经济",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Direct translation used in Chinese media."
+      },
+      {
+        "source_text": "GDP growth",
+        "entity_type": "other",
+        "preferred_en": "GDP growth",
+        "preferred_zh": "GDP增长",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard term."
+      },
+      {
+        "source_text": "infrastructure",
+        "entity_type": "other",
+        "preferred_en": "infrastructure",
+        "preferred_zh": "基础设施",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "global trade",
+        "entity_type": "other",
+        "preferred_en": "global trade",
+        "preferred_zh": "全球贸易",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "AI infrastructure",
+        "entity_type": "other",
+        "preferred_en": "AI infrastructure",
+        "preferred_zh": "人工智能基础设施",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common translation."
+      },
+      {
+        "source_text": "energy spending",
+        "entity_type": "other",
+        "preferred_en": "energy spending",
+        "preferred_zh": "能源支出",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "exports",
+        "entity_type": "other",
+        "preferred_en": "exports",
+        "preferred_zh": "出口",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "housing sector",
+        "entity_type": "other",
+        "preferred_en": "housing sector",
+        "preferred_zh": "房地产行业",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "social safety net",
+        "entity_type": "other",
+        "preferred_en": "social safety net",
+        "preferred_zh": "社会保障网",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "migrant workers",
+        "entity_type": "other",
+        "preferred_en": "migrant workers",
+        "preferred_zh": "农民工",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "domestic consumption",
+        "entity_type": "other",
+        "preferred_en": "domestic consumption",
+        "preferred_zh": "国内消费",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "September 2024 movement",
+        "entity_type": "event",
+        "preferred_en": "September 2024 policy shift",
+        "preferred_zh": "2024年9月政策转向",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Refers to a policy response in September 2024; translation inferred from context."
+      }
+    ],
+    "notes": [
+      "All entities have high confidence except 'September 2024 movement' which is inferred from context."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "摩根士丹利邢自强：5%目标靠基建和出口，能持续吗",
+      "title_lines": [
+        "摩根士丹利邢自强",
+        "5%目标靠基建和出口",
+        "能持续吗"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data",
+          "has_hook_tension",
+          "china_related_interest"
+        ],
+        "fixes": []
+      },
+      "comment": "KC评论：出口韧性是亮点，但K型结构下消费溢出有限，政策需平衡"
+    },
+    "2": {
+      "title": "摩根士丹利邢自强：K型经济难改，消费外溢有限",
+      "title_lines": [
+        "摩根士丹利邢自强",
+        "K型经济难改",
+        "消费外溢有限"
+      ],
+      "formula_id": "contrarian_condition",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 76,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_number_asset_or_specific_topic_if_supported",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：出口强但就业收入弱，结构性转变需政策推动"
+    },
+    "3": {
+      "title": "摩根士丹利邢自强：楼市底部或在2027，社保改革是关键",
+      "title_lines": [
+        "摩根士丹利邢自强",
+        "楼市底部或在2027",
+        "社保改革是关键"
+      ],
+      "formula_id": "authority_number_question",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_number_or_data",
+          "has_hook_tension",
+          "china_related_interest"
+        ],
+        "fixes": []
+      },
+      "comment": "KC评论：购房者持币观望，社会保障网缺口是消费释放的关键"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-09T21:03:27.541971+00:00",
+      "indexes": [
+        1,
+        2,
+        3
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 50.9,
+          "speaker": "Robin Xing",
+          "speaker_context": "Morgan Stanley, Chief China Economist",
+          "source_title": "",
+          "show_date": "2026-07-09",
+          "current_title": "摩根士丹利邢自强：5%目标可期，但靠基建和出口",
+          "current_title_lines": [
+            "摩根士丹利邢自强",
+            "5%目标可期",
+            "但靠基建和出口"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这对你今年的GDP增长预期意味着什么？",
+              "en": "What is that going to mean for your GDP growth outlook for this year?",
+              "relative_start": 0.0,
+              "relative_end": 1.3
+            },
+            {
+              "index": 2,
+              "zh": "这是否能让中国避免从去年5%的增长放缓？",
+              "en": "Is that a way that China can avoid the moderation from last year's 5% growth?",
+              "relative_start": 1.3,
+              "relative_end": 9.5
+            },
+            {
+              "index": 3,
+              "zh": "政府务实地下调了目标，对吧？",
+              "en": "Well, the government has kind of lowered its own target in a pragmatic way, right?",
+              "relative_start": 9.5,
+              "relative_end": 14.9
+            },
+            {
+              "index": 4,
+              "zh": "所以预期是4.5到5。",
+              "en": "So the renders are 4.5 to 5.",
+              "relative_start": 14.9,
+              "relative_end": 18.2
+            },
+            {
+              "index": 5,
+              "zh": "我认为下半年加快债券和额度财政工具，以赶上基建建设。",
+              "en": "I do think with certain acceleration of the bond and the quota fiscal tools to catch up on the infrastructure building in the second half.",
+              "relative_start": 18.2,
+              "relative_end": 26.5
+            },
+            {
+              "index": 6,
+              "zh": "我们可能会看到一些债券回归，年度目标仍可实现，但这主要依赖基建和全球贸易。",
+              "en": "We may see some bonds back, and the annual target is still within reach, but that largely rely on infrastructure and global trade.",
+              "relative_start": 26.5,
+              "relative_end": 33.9
+            },
+            {
+              "index": 7,
+              "zh": "中国受益于AI基础设施和能源支出的全球超级周期，出口一直繁荣。",
+              "en": "China benefited from the global super cycle on AI infrastructure and energy spending, so their exports has been booming.",
+              "relative_start": 33.9,
+              "relative_end": 44.2
+            },
+            {
+              "index": 8,
+              "zh": "我们认为中国出口的韧性是亮点，将继续前进。",
+              "en": "We do think the resilience of Chinese exports is the bright spot. It will continue to march on.",
+              "relative_start": 44.2,
+              "relative_end": 50.9
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "duration_seconds": 68.6,
+          "speaker": "Robin Xing",
+          "speaker_context": "Morgan Stanley, Chief China Economist",
+          "source_title": "",
+          "show_date": "2026-07-09",
+          "current_title": "摩根士丹利邢自强：K型经济结构难改，消费外溢有限",
+          "current_title_lines": [
+            "摩根士丹利邢自强",
+            "K型经济结构难改",
+            "消费外溢有限"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "它将继续前进，从先进技术、能源扩展到许多其他行业，包括资本品。",
+              "en": "It will continue to march on, expanding from advanced tech, growing energy to a lot of other sectors, including capital goods.",
+              "relative_start": 0.0,
+              "relative_end": 7.6
+            },
+            {
+              "index": 2,
+              "zh": "但正如我所说，K型上半部分结构上太强，无法溢出到就业、收入和消费预期。",
+              "en": "But, as I mentioned, that top half of the K is structurally too saying to have spill over to jobs, to income, to consumer expectation.",
+              "relative_start": 7.6,
+              "relative_end": 17.2
+            },
+            {
+              "index": 3,
+              "zh": "所以不幸的是，即使中国能达到年度GDP目标，这种K型经济可能还会持续。",
+              "en": "So, unfortunately, even if China can reach the annual GDP target, that case-ship economy is probably here to stay.",
+              "relative_start": 17.2,
+              "relative_end": 28.2
+            },
+            {
+              "index": 4,
+              "zh": "我们谈到这种需要政策推动的结构性转变，但这不是一个更宏大、更长期的转变吗？",
+              "en": "We talk about this kind of structural shift that needs to happen with policy, but Robin, isn't this a really big picture, longer-term shift, right?",
+              "relative_start": 28.2,
+              "relative_end": 36.2
+            },
+            {
+              "index": 5,
+              "zh": "过去10年、20年，政府一直想转向国内消费，但并未达到预期的力度。",
+              "en": "The government has been wanting to turn to domestic consumption for the last 10 years, 20 years, and it hasn't quite sort of happened to the strength that you might expect.",
+              "relative_start": 36.2,
+              "relative_end": 46.8
+            },
+            {
+              "index": 6,
+              "zh": "你认为，通过社会福利和房地产领域的重大变革，能否扭转人口问题？",
+              "en": "Is it possible, do you think, with major changes to social welfare, with major changes to what we've seen with the property sector, for example, to be able to turn around the demographic issues?",
+              "relative_start": 46.8,
+              "relative_end": 54.6
+            },
+            {
+              "index": 7,
+              "zh": "我认为需要理解障碍。消费者的障碍是住房问题的集合。",
+              "en": "Well, I do think you need the understanding of the roadblocks. The roadblocks for consumers are a compilation of housing.",
+              "relative_start": 54.6,
+              "relative_end": 62.9
+            },
+            {
+              "index": 8,
+              "zh": "房地产行业仍在下降。事实上，住房投资占经济总量的比例从16%的峰值下降到6%。",
+              "en": "The housing sector is still in decline. In fact, housing investment as percentage of total economy declined from the peak level of 16% to 6%.",
+              "relative_start": 62.9,
+              "relative_end": 68.6
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "duration_seconds": 75.6,
+          "speaker": "Robin Xing",
+          "speaker_context": "Morgan Stanley, Chief China Economist",
+          "source_title": "",
+          "show_date": "2026-07-09",
+          "current_title": "摩根士丹利邢自强：楼市底部或在2027，社保改革是关键",
+          "current_title_lines": [
+            "摩根士丹利邢自强",
+            "楼市底部或在2027",
+            "社保改革是关键"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "房地产行业仍在下降。住房投资占经济总量的比例从16%的峰值下降到6%。",
+              "en": "The housing sector is still in decline. In fact, housing investment as percentage of total economy declined from the peak level of 16% to 6%.",
+              "relative_start": 0.0,
+              "relative_end": 7.8
+            },
+            {
+              "index": 2,
+              "zh": "基本上，购房者持有现金，我们看不到房地产的真正底部，可能要到2027年底。",
+              "en": "Basically, home buyers are holding their cash, and we do not see a true bottom for the housing sector, and here may be late 2027.",
+              "relative_start": 7.8,
+              "relative_end": 17.4
+            },
+            {
+              "index": 3,
+              "zh": "这是一个因素。另一个是社会保障网的巨大缺口。",
+              "en": "So that's one factor. The other one is the major gap on social safety net.",
+              "relative_start": 17.4,
+              "relative_end": 27.0
+            },
+            {
+              "index": 4,
+              "zh": "农民工、低收入人群，他们没有足够的保障或享受这些福利。",
+              "en": "Migrant workers, lower income population, they don't have enough coverage or access to those benefits.",
+              "relative_start": 27.0,
+              "relative_end": 35.0
+            },
+            {
+              "index": 5,
+              "zh": "我知道在很多政策辩论中，有一种观点认为消费只是收入的结果，不能刺激消费，也不应该刺激。",
+              "en": "I know in a lot of policy debates, there is a certain view that consumption is just the consequence of income. You cannot boost the consumption. You should not do.",
+              "relative_start": 35.0,
+              "relative_end": 43.8
+            },
+            {
+              "index": 6,
+              "zh": "但我认为这种观点完全错误，因为你完全可以改善社会保障网。",
+              "en": "But I think that view is totally incorrect, because you can definitely work on the social safety net.",
+              "relative_start": 43.8,
+              "relative_end": 53.2
+            },
+            {
+              "index": 7,
+              "zh": "如果就业市场依然疲软，加上房价下跌，人们自然会锁定现金和储蓄。",
+              "en": "If job market remains weak, math is the falling home price. Naturally, people will lock their cash, lock their savings.",
+              "relative_start": 53.2,
+              "relative_end": 62.3
+            },
+            {
+              "index": 8,
+              "zh": "要解锁这些，你需要更好的社会福利。这可能是释放中国国内消费潜力的关键基础改革。",
+              "en": "And to unlock them, you need a better social welfare. That's probably the key fundamental reform to unlock China's domestic consumption potential.",
+              "relative_start": 62.3,
+              "relative_end": 69.8
+            },
+            {
+              "index": 9,
+              "zh": "但我们需要2024年9月那样的行动，在看到了所有这些社会反馈后，终于对问题有了更深的理解。",
+              "en": "But we need a lot of September 2024 movement, that is after seeing all these social feedback, finally, there is a deeper understanding of the issue.",
+              "relative_start": 69.8,
+              "relative_end": 75.6
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never create or keep clips, titles, comments, or subtitle comments about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 50.9,\n    \"speaker\": \"Robin Xing\",\n    \"speaker_context\": \"Morgan Stanley, Chief China Economist\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-09\",\n    \"current_title\": \"摩根士丹利邢自强：5%目标可期，但靠基建和出口\",\n    \"current_title_lines\": [\n      \"摩根士丹利邢自强\",\n      \"5%目标可期\",\n      \"但靠基建和出口\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这对你今年的GDP增长预期意味着什么？\",\n        \"en\": \"What is that going to mean for your GDP growth outlook for this year?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 1.3\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这是否能让中国避免从去年5%的增长放缓？\",\n        \"en\": \"Is that a way that China can avoid the moderation from last year's 5% growth?\",\n        \"relative_start\": 1.3,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"政府务实地下调了目标，对吧？\",\n        \"en\": \"Well, the government has kind of lowered its own target in a pragmatic way, right?\",\n        \"relative_start\": 9.5,\n        \"relative_end\": 14.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以预期是4.5到5。\",\n        \"en\": \"So the renders are 4.5 to 5.\",\n        \"relative_start\": 14.9,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我认为下半年加快债券和额度财政工具，以赶上基建建设。\",\n        \"en\": \"I do think with certain acceleration of the bond and the quota fiscal tools to catch up on the infrastructure building in the second half.\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 26.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们可能会看到一些债券回归，年度目标仍可实现，但这主要依赖基建和全球贸易。\",\n        \"en\": \"We may see some bonds back, and the annual target is still within reach, but that largely rely on infrastructure and global trade.\",\n        \"relative_start\": 26.5,\n        \"relative_end\": 33.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"中国受益于AI基础设施和能源支出的全球超级周期，出口一直繁荣。\",\n        \"en\": \"China benefited from the global super cycle on AI infrastructure and energy spending, so their exports has been booming.\",\n        \"relative_start\": 33.9,\n        \"relative_end\": 44.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们认为中国出口的韧性是亮点，将继续前进。\",\n        \"en\": \"We do think the resilience of Chinese exports is the bright spot. It will continue to march on.\",\n        \"relative_start\": 44.2,\n        \"relative_end\": 50.9\n      }\n    ]\n  },\n  {\n    \"index\": 2,\n    \"duration_seconds\": 68.6,\n    \"speaker\": \"Robin Xing\",\n    \"speaker_context\": \"Morgan Stanley, Chief China Economist\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-09\",\n    \"current_title\": \"摩根士丹利邢自强：K型经济结构难改，消费外溢有限\",\n    \"current_title_lines\": [\n      \"摩根士丹利邢自强\",\n      \"K型经济结构难改\",\n      \"消费外溢有限\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"它将继续前进，从先进技术、能源扩展到许多其他行业，包括资本品。\",\n        \"en\": \"It will continue to march on, expanding from advanced tech, growing energy to a lot of other sectors, including capital goods.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但正如我所说，K型上半部分结构上太强，无法溢出到就业、收入和消费预期。\",\n        \"en\": \"But, as I mentioned, that top half of the K is structurally too saying to have spill over to jobs, to income, to consumer expectation.\",\n        \"relative_start\": 7.6,\n        \"relative_end\": 17.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以不幸的是，即使中国能达到年度GDP目标，这种K型经济可能还会持续。\",\n        \"en\": \"So, unfortunately, even if China can reach the annual GDP target, that case-ship economy is probably here to stay.\",\n        \"relative_start\": 17.2,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我们谈到这种需要政策推动的结构性转变，但这不是一个更宏大、更长期的转变吗？\",\n        \"en\": \"We talk about this kind of structural shift that needs to happen with policy, but Robin, isn't this a really big picture, longer-term shift, right?\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 36.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"过去10年、20年，政府一直想转向国内消费，但并未达到预期的力度。\",\n        \"en\": \"The government has been wanting to turn to domestic consumption for the last 10 years, 20 years, and it hasn't quite sort of happened to the strength that you might expect.\",\n        \"relative_start\": 36.2,\n        \"relative_end\": 46.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你认为，通过社会福利和房地产领域的重大变革，能否扭转人口问题？\",\n        \"en\": \"Is it possible, do you think, with major changes to social welfare, with major changes to what we've seen with the property sector, for example, to be able to turn around the demographic issues?\",\n        \"relative_start\": 46.8,\n        \"relative_end\": 54.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我认为需要理解障碍。消费者的障碍是住房问题的集合。\",\n        \"en\": \"Well, I do think you need the understanding of the roadblocks. The roadblocks for consumers are a compilation of housing.\",\n        \"relative_start\": 54.6,\n        \"relative_end\": 62.9\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"房地产行业仍在下降。事实上，住房投资占经济总量的比例从16%的峰值下降到6%。\",\n        \"en\": \"The housing sector is still in decline. In fact, housing investment as percentage of total economy declined from the peak level of 16% to 6%.\",\n        \"relative_start\": 62.9,\n        \"relative_end\": 68.6\n      }\n    ]\n  },\n  {\n    \"index\": 3,\n    \"duration_seconds\": 75.6,\n    \"speaker\": \"Robin Xing\",\n    \"speaker_context\": \"Morgan Stanley, Chief China Economist\",\n    \"source_title\": \"\",\n    \"show_date\": \"2026-07-09\",\n    \"current_title\": \"摩根士丹利邢自强：楼市底部或在2027，社保改革是关键\",\n    \"current_title_lines\": [\n      \"摩根士丹利邢自强\",\n      \"楼市底部或在2027\",\n      \"社保改革是关键\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"房地产行业仍在下降。住房投资占经济总量的比例从16%的峰值下降到6%。\",\n        \"en\": \"The housing sector is still in decline. In fact, housing investment as percentage of total economy declined from the peak level of 16% to 6%.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"基本上，购房者持有现金，我们看不到房地产的真正底部，可能要到2027年底。\",\n        \"en\": \"Basically, home buyers are holding their cash, and we do not see a true bottom for the housing sector, and here may be late 2027.\",\n        \"relative_start\": 7.8,\n        \"relative_end\": 17.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这是一个因素。另一个是社会保障网的巨大缺口。\",\n        \"en\": \"So that's one factor. The other one is the major gap on social safety net.\",\n        \"relative_start\": 17.4,\n        \"relative_end\": 27.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"农民工、低收入人群，他们没有足够的保障或享受这些福利。\",\n        \"en\": \"Migrant workers, lower income population, they don't have enough coverage or access to those benefits.\",\n        \"relative_start\": 27.0,\n        \"relative_end\": 35.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我知道在很多政策辩论中，有一种观点认为消费只是收入的结果，不能刺激消费，也不应该刺激。\",\n        \"en\": \"I know in a lot of policy debates, there is a certain view that consumption is just the consequence of income. You cannot boost the consumption. You should not do.\",\n        \"relative_start\": 35.0,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但我认为这种观点完全错误，因为你完全可以改善社会保障网。\",\n        \"en\": \"But I think that view is totally incorrect, because you can definitely work on the social safety net.\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 53.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"如果就业市场依然疲软，加上房价下跌，人们自然会锁定现金和储蓄。\",\n        \"en\": \"If job market remains weak, math is the falling home price. Naturally, people will lock their cash, lock their savings.\",\n        \"relative_start\": 53.2,\n        \"relative_end\": 62.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"要解锁这些，你需要更好的社会福利。这可能是释放中国国内消费潜力的关键基础改革。\",\n        \"en\": \"And to unlock them, you need a better social welfare. That's probably the key fundamental reform to unlock China's domestic consumption potential.\",\n        \"relative_start\": 62.3,\n        \"relative_end\": 69.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"但我们需要2024年9月那样的行动，在看到了所有这些社会反馈后，终于对问题有了更深的理解。\",\n        \"en\": \"But we need a lot of September 2024 movement, that is after seeing all these social feedback, finally, there is a deeper understanding of the issue.\",\n        \"relative_start\": 69.8,\n        \"relative_end\": 75.6\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Robin Xing Morgan Stanley, Chief China Economist Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Xing Ziqiang（Morgan Stanley China Chief Economist）_Baiduwiki\",\n        \"snippet\": \"Xing Ziqiang, male, was the Anhui Province liberal arts college entrance exam top scorer in 2000. He earned his bachelor's degree from the Peking University Department of Economics and holds a Ph.D. in economics from the Chinese Academy of Social Sciences. He currently serves as Chief China Economist and Managing Director at Morgan Stanley .\",\n        \"url\": \"baike.baidu.com/en/item/Xing Ziqiang/18237\"\n      },\n      {\n        \"title\": \"Robin Xing - Chief China Economist, Morgan Stanley | LinkedIn\",\n        \"snippet\": \"Chief China Economist , Morgan Stanley · Location: Hong Kong SAR · 500+ connections on LinkedIn. View Robin Xing's profile on LinkedIn, a professional community of 1 billion members.\",\n        \"url\": \"hk.linkedin.com/in/robin-xing-2bb5138a\"\n      },\n      {\n        \"title\": \"PDF Dr Robin Xing - University of Hong Kong\",\n        \"snippet\": \"Biography 邢自强,现任摩根士丹利中国首席经济学家、董事总经理,曾任高盛执行董事和中金公司经济学家、副总经理。2019-2021年,被国际权威《机构投资者杂志》评选为亚洲最佳宏观研究第一名,他带领的团队于2008年荣获《新财富》宏观研究团队第一 名。他主持了许多有影响力的专题深度研究,包括 ...\",\n        \"url\": \"www.socsc.hku.hk/events/wp-content/uploads/2022/08/mgm_Biography_DrRobinXing.pdf\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Robin Xing Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"China Economic Outlook: Morgan Stanley economist: Targeted R&D ... - CGTN\",\n        \"snippet\": \"China's economic outlook and its transition toward innovation-driven growth continue to shape expectations, even amid domestic and external challenges. Earlier, I spoke with Robin Xing , Chief China Economist at Morgan Stanley, for his perspective on what this shift means for markets, investors, and China's economic path forward.\",\n        \"url\": \"news.cgtn.com/news/2025-12-15/VHJhbnNjcmlwdDg3OTQ5/index.html\"\n      },\n      {\n        \"title\": \"Morgan Stanley | Asia Research Team\",\n        \"snippet\": \"China: How can China reflate the economy and market? Laura Wang Robin Xing Richard Xu Lillian Lou Rachel Zhang\",\n        \"url\": \"www.morganstanley.com/asiaresearch/country-and-region/china.html\"\n      },\n      {\n        \"title\": \"Morgan Stanley Lifts China Outlook Across the Board: GDP Growth Seen at ...\",\n        \"snippet\": \"Morgan Stanley has comprehensively upgraded its economic outlook for China in its mid-year review, raising 2026 and 2027 GDP growth forecasts to 4.8% and 4.7%, respectively. Chief China Economist Robin Xing attributed the upgrade to China being a disproportionate beneficiary of two global super-cycles: the rapid development of AI and the energy transition. He characterized China's current ...\",\n        \"url\": \"finance.biggo.com/news/uTEBNp4BoQmpnl367ict\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Robin Xing\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Robin Xing\",\n      \"preferred_zh\": \"邢自强\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Baidu Baike and HKU biography confirm 邢自强 as official Chinese name.\"\n    },\n    {\n      \"source_text\": \"Morgan Stanley\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Morgan Stanley\",\n      \"preferred_zh\": \"摩根士丹利\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation used in all Chinese financial media.\"\n    },\n    {\n      \"source_text\": \"Chief China Economist\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"Chief China Economist\",\n      \"preferred_zh\": \"中国首席经济学家\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common title translation.\"\n    },\n    {\n      \"source_text\": \"K型经济\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"K-shaped economy\",\n      \"preferred_zh\": \"K型经济\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Direct translation used in Chinese media.\"\n    },\n    {\n      \"source_text\": \"GDP growth\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"GDP growth\",\n      \"preferred_zh\": \"GDP增长\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard term.\"\n    },\n    {\n      \"source_text\": \"infrastructure\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"infrastructure\",\n      \"preferred_zh\": \"基础设施\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"global trade\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"global trade\",\n      \"preferred_zh\": \"全球贸易\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"AI infrastructure\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"AI infrastructure\",\n      \"preferred_zh\": \"人工智能基础设施\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common translation.\"\n    },\n    {\n      \"source_text\": \"energy spending\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"energy spending\",\n      \"preferred_zh\": \"能源支出\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"exports\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"exports\",\n      \"preferred_zh\": \"出口\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"housing sector\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"housing sector\",\n      \"preferred_zh\": \"房地产行业\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"social safety net\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"social safety net\",\n      \"preferred_zh\": \"社会保障网\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"migrant workers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"migrant workers\",\n      \"preferred_zh\": \"农民工\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"domestic consumption\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"domestic consumption\",\n      \"preferred_zh\": \"国内消费\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"September 2024 movement\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"September 2024 policy shift\",\n      \"preferred_zh\": \"2024年9月政策转向\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Refers to a policy response in September 2024; translation inferred from context.\"\n    }\n  ],\n  \"notes\": [\n    \"All entities have high confidence except 'September 2024 movement' which is inferred from context.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not mention sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. If a clip is sensitive-topic related, it should have been filtered out and must not be rewritten.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.\n- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_number_question",
+            "title": "摩根士丹利邢自强：5%目标靠基建和出口，能持续吗",
+            "title_lines": [
+              "摩根士丹利邢自强",
+              "5%目标靠基建和出口",
+              "能持续吗"
+            ],
+            "title_highlights": [
+              "5%",
+              "基建",
+              "出口"
+            ],
+            "comment": "KC评论：出口韧性是亮点，但K型结构下消费溢出有限，政策需平衡。",
+            "comment_highlights": [
+              "出口韧性",
+              "K型结构"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：GDP预期是市场焦点。",
+                "comment_highlights": [
+                  "GDP预期"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：增速放缓压力下，政策空间受关注。",
+                "comment_highlights": [
+                  "增速放缓"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：务实下调目标，市场已有预期。",
+                "comment_highlights": [
+                  "务实下调"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：4.5-5%区间，政策仍需发力。",
+                "comment_highlights": [
+                  "4.5-5%"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：下半年财政工具加速，基建是抓手。",
+                "comment_highlights": [
+                  "财政工具",
+                  "基建"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：年度目标可及，但依赖基建和贸易。",
+                "comment_highlights": [
+                  "年度目标"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：AI和能源全球超级周期利好中国出口。",
+                "comment_highlights": [
+                  "AI",
+                  "能源",
+                  "出口"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：出口韧性是当前经济亮点。",
+                "comment_highlights": [
+                  "出口韧性"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "formula_id": "contrarian_condition",
+            "title": "摩根士丹利邢自强：K型经济难改，消费外溢有限",
+            "title_lines": [
+              "摩根士丹利邢自强",
+              "K型经济难改",
+              "消费外溢有限"
+            ],
+            "title_highlights": [
+              "K型经济",
+              "消费外溢"
+            ],
+            "comment": "KC评论：出口强但就业收入弱，结构性转变需政策推动。",
+            "comment_highlights": [
+              "结构性转变"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：出口从技术向资本品扩展。",
+                "comment_highlights": [
+                  "出口扩展"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：K型上半部分强，但难溢出到就业收入。",
+                "comment_highlights": [
+                  "K型上半部分"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：即使GDP达标，K型结构可能持续。",
+                "comment_highlights": [
+                  "K型结构持续"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：结构性转变需长期政策推动。",
+                "comment_highlights": [
+                  "结构性转变"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：政府多年想转向消费，但力度不足。",
+                "comment_highlights": [
+                  "转向消费"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：社会福利和房地产改革能否扭转人口问题？",
+                "comment_highlights": [
+                  "社会福利",
+                  "房地产改革"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：消费者障碍是住房问题集合。",
+                "comment_highlights": [
+                  "住房问题"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：住房投资占比从16%降至6%，调整仍在继续。",
+                "comment_highlights": [
+                  "住房投资占比"
+                ]
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "formula_id": "authority_number_question",
+            "title": "摩根士丹利邢自强：楼市底部或在2027，社保改革是关键",
+            "title_lines": [
+              "摩根士丹利邢自强",
+              "楼市底部或在2027",
+              "社保改革是关键"
+            ],
+            "title_highlights": [
+              "2027",
+              "社保改革"
+            ],
+            "comment": "KC评论：购房者持币观望，社会保障网缺口是消费释放的关键。",
+            "comment_highlights": [
+              "社会保障网缺口"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：住房投资占比从16%降至6%，调整深化。",
+                "comment_highlights": [
+                  "住房投资占比"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：购房者持币，楼市底部或到2027年底。",
+                "comment_highlights": [
+                  "楼市底部",
+                  "2027"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：社会保障网缺口是另一大障碍。",
+                "comment_highlights": [
+                  "社会保障网缺口"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：农民工等低收入群体保障不足。",
+                "comment_highlights": [
+                  "农民工"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：消费是收入的结果，但政策可改善社保。",
+                "comment_highlights": [
+                  "消费",
+                  "社保"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：改善社保网是释放消费潜力的关键。",
+                "comment_highlights": [
+                  "社保网"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：就业弱、房价跌，居民倾向储蓄。",
+                "comment_highlights": [
+                  "储蓄"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：更好社会福利是释放内需的基础改革。",
+                "comment_highlights": [
+                  "社会福利",
+                  "内需"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：2024年9月政策转向显示对问题的更深理解。",
+                "comment_highlights": [
+                  "2024年9月政策转向"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1,
+        2,
+        3
+      ],
+      "normalized": {
+        "1": {
+          "title": "摩根士丹利邢自强：5%目标靠基建和出口，能持续吗",
+          "title_lines": [
+            "摩根士丹利邢自强",
+            "5%目标靠基建和出口",
+            "能持续吗"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data",
+              "has_hook_tension",
+              "china_related_interest"
+            ],
+            "fixes": []
+          },
+          "comment": "KC评论：出口韧性是亮点，但K型结构下消费溢出有限，政策需平衡"
+        },
+        "2": {
+          "title": "摩根士丹利邢自强：K型经济难改，消费外溢有限",
+          "title_lines": [
+            "摩根士丹利邢自强",
+            "K型经济难改",
+            "消费外溢有限"
+          ],
+          "formula_id": "contrarian_condition",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 76,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_number_asset_or_specific_topic_if_supported",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：出口强但就业收入弱，结构性转变需政策推动"
+        },
+        "3": {
+          "title": "摩根士丹利邢自强：楼市底部或在2027，社保改革是关键",
+          "title_lines": [
+            "摩根士丹利邢自强",
+            "楼市底部或在2027",
+            "社保改革是关键"
+          ],
+          "formula_id": "authority_number_question",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_number_or_data",
+              "has_hook_tension",
+              "china_related_interest"
+            ],
+            "fixes": []
+          },
+          "comment": "KC评论：购房者持币观望，社会保障网缺口是消费释放的关键"
+        }
+      }
+    }
+  ]
+}
