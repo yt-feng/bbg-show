@@ -151,7 +151,7 @@ Rules:
 - Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃 in Chinese titles.
 - Prefer softer market wording such as 流动性变化、政策信号、需求变化、信心修复、估值重估、周期压力.
 - For China-related topics, keep pressure factual but word it as market/policy/liquidity changes, not China decline.
-- Do not produce any title/comment/subtitle for sensitive geopolitics or military content, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories.
+- Do not produce any title/comment/subtitle for sensitive geopolitics or military content, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories.
 - Do not add markdown.
 """
     result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.2)

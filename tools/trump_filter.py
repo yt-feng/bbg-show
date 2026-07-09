@@ -28,12 +28,14 @@ EXCLUDED_TOPIC_PATTERNS = [
         r"\b(?:geopolitics?|geopolitical|military|missile|airstrike|drone\s+strike|warship|"
         r"naval\s+activity|ceasefire|armed\s+conflict|middle\s+east\s+conflict|"
         r"persian\s+gulf|red\s+sea|nuclear\s+(?:site|facility|program|talks?)|"
-        r"gaza|hamas|hezbollah|houthi)\b",
+        r"gaza|hamas|hezbollah|houthi|ukraine|ukrainian|kyiv|kiev|crimea|"
+        r"donbas|donetsk|luhansk|russia[-\s]?ukraine)\b",
         re.IGNORECASE,
     ),
     re.compile(
         r"地缘政治|地緣政治|军事|軍事|战争|戰爭|导弹|導彈|空袭|空襲|无人机|無人機|"
-        r"核设施|核設施|停火|军舰|軍艦|以色列|加沙|哈马斯|哈瑪斯|真主党|真主黨|胡塞|俄乌|俄烏"
+        r"核设施|核設施|停火|军舰|軍艦|以色列|加沙|哈马斯|哈瑪斯|真主党|真主黨|"
+        r"胡塞|乌克兰|烏克蘭|基辅|基輔|克里米亚|克里米亞|顿巴斯|頓巴斯|俄乌|俄烏"
     ),
 ]
 TRUMP_PATTERNS = EXCLUDED_TOPIC_PATTERNS
@@ -99,9 +101,9 @@ Classify whether this item should be excluded.
 Exclude when:
 - Donald Trump is a main or material topic, including his presidency, campaign, administration, legal cases, companies, social media, tariff agenda, immigration stance, Fed pressure, China policy, election chances, or market impact.
 - The item discusses Iran, Iranian policy, Tehran, the Strait of Hormuz, Hormuz shipping, Middle East military escalation, missiles, drones, airstrikes, naval activity, ceasefires, nuclear facilities, armed conflict, war, or military operations.
-- The item is materially about sensitive geopolitical confrontation, including Israel/Gaza/Hamas/Hezbollah/Houthi, Russia-Ukraine fighting, sanctions tied to military conflict, or any active-conflict military story.
+- The item is materially about sensitive geopolitical confrontation, including Israel/Gaza/Hamas/Hezbollah/Houthi, Ukraine, the Russia-Ukraine war/fighting, sanctions tied to military conflict, or any active-conflict military story.
 - The text uses indirect references that clearly point to these topics, such as former president, 47th president, MAGA, Mar-a-Lago, Truth Social, his tariffs, his White House, Persian Gulf chokepoint, oil route threat, red sea attacks, or nuclear site strikes, when context makes the reference clear.
-- Chinese wording points to these topics, including 特朗普、川普、唐纳德特朗普、伊朗、霍尔木兹海峡、德黑兰、地缘政治、军事、战争、导弹、空袭.
+- Chinese wording points to these topics, including 特朗普、川普、唐纳德特朗普、伊朗、霍尔木兹海峡、德黑兰、乌克兰、俄乌战争、俄乌冲突、地缘政治、军事、战争、导弹、空袭.
 
 Do not exclude when:
 - The item is ordinary macro, central-bank, earnings, trade, commodities, or market analysis without a clear connection to the sensitive topics above.

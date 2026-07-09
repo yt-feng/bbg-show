@@ -184,7 +184,7 @@ Important:
 - Each clip must have at least 3 subtitles
 - Every clip must contain a substantive answer from {args.speaker}. A host question is allowed only if the speaker answer follows in the same clip.
 - Do not create clips from host outros, thank-you lines, post-interview market recaps, market open boards, or transitions to the next segment. If the provided range includes that material, stop before it and return fewer clips.
-- Do not create clips about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories. If the strongest segment is sensitive-topic related, return fewer clips or no clips.
+- Do not create clips about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. If the strongest segment is sensitive-topic related, return fewer clips or no clips.
 - Do not reuse the same subtitle text in multiple clips unless it genuinely appears twice in the source transcript.
 - Chinese titles must have hook/conflict angle, not flat descriptions
 - Avoid in Chinese title fields: 资产管理, 投资, 股票, 基金, 理财, 保险, 投顾, 荐股, 买入, 卖出.

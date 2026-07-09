@@ -97,7 +97,7 @@ Include:
 Exclude:
 - Bloomberg anchors, hosts, reporters, correspondents, market-board updates, headlines, weather/traffic, teasers, and transitions.
 - Segments shorter than 60 seconds.
-- Any segment about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, wars, missiles, airstrikes, military operations, or active-conflict stories. Do not select it even if it is otherwise newsworthy.
+- Any segment about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. Do not select it even if it is otherwise newsworthy.
 
 Return JSON:
 {{
