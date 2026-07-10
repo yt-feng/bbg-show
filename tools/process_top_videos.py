@@ -21,16 +21,41 @@ from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa:
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = Path(__file__).resolve().parent
+SENSITIVE_SKIP_MARKERS = (
+    "sensitive topic filter",
+    "sensitive-topic",
+    "no non-sensitive-topic",
+)
 
 
 def run_date_default() -> str:
     return datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
 
 
-def run(command: list[str], env: dict[str, str] | None = None) -> None:
+def is_sensitive_skip_output(text: str) -> bool:
+    lowered = text.lower()
+    return any(marker in lowered for marker in SENSITIVE_SKIP_MARKERS)
+
+
+def run(command: list[str], env: dict[str, str] | None = None, *, detect_sensitive_skip: bool = False) -> None:
     print("+ " + " ".join(command), flush=True)
     started = time.monotonic()
-    subprocess.run(command, check=True, env=env)
+    if detect_sensitive_skip:
+        proc = subprocess.run(
+            command,
+            env=env,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if proc.stdout:
+            print(proc.stdout, end="" if proc.stdout.endswith("\n") else "\n", flush=True)
+        if proc.returncode:
+            if is_sensitive_skip_output(proc.stdout or ""):
+                raise RuntimeError("Top video skipped by sensitive topic filter")
+            raise subprocess.CalledProcessError(proc.returncode, command, output=proc.stdout)
+    else:
+        subprocess.run(command, check=True, env=env)
     elapsed = time.monotonic() - started
     print(f"Finished in {elapsed:.1f}s: {' '.join(command[:2])}", flush=True)
 
@@ -147,14 +172,14 @@ def process_one(
         "--segment-end", f"{duration:.2f}",
         "--max-clip-seconds", f"{args.max_clip_seconds:.2f}",
         "--out", str(plan_path),
-    ])
+    ], detect_sensitive_skip=True)
 
     print(f"[top-video {index:02d}] Refining title with DeepSeek", flush=True)
     run([
         sys.executable,
         str(TOOLS / "refine_clip_titles.py"),
         "--plan", str(plan_path),
-    ])
+    ], detect_sensitive_skip=True)
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
