@@ -1972,6 +1972,26 @@ def surgical_repair_user_prompt(
 ) -> str:
     index = int(brief["index"])
     research = research_for_indexes(entity_guide, {index})
+    focused_rules: list[str] = []
+    if "make_the_emotional_reversal_visible_in_words" in fixes:
+        focused_rules.append(
+            "- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. "
+            "It must name a real actor, object, number, comparison, or forced choice from the clip. "
+            "Do not return a declarative summary such as 却未达预期 or 真实且加剧."
+        )
+    brief_probe = {
+        "title": brief.get("current_title", ""),
+        "speaker_context": brief.get("speaker_context", ""),
+        "source_title": brief.get("source_title", ""),
+        "subtitles": brief.get("subtitles", []),
+    }
+    if is_china_related_clip(brief_probe):
+        focused_rules.append(
+            "- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, "
+            "or foreign competitor response, the title must present that fact directly and constructively. "
+            "Do not replace it with a generic market or negotiation summary."
+        )
+    focused_rule_block = "\n".join(focused_rules) or "- No additional clip-specific rule."
     return f"""Repair only the three-line Chinese cover title for clip {index}. Return strict JSON only.
 
 Clip facts:
@@ -1993,6 +2013,9 @@ Current rejected title:
 
 Code audit failures to fix:
 {json.dumps(fixes, ensure_ascii=False)}
+
+Mandatory clip-specific repair rules:
+{focused_rule_block}
 
 Return JSON:
 {{
@@ -2035,7 +2058,7 @@ Surgical rules:
 - angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.
 - Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.
 - If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.
-- If make_the_emotional_reversal_visible_in_words is listed, at least one line must contain a specific factual reversal, forced choice, consequence question, or tension verb. A generic state such as 真实且加剧 is not enough.
+- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.
 - If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.
 - If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.
 - If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.

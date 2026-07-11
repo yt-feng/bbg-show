@@ -315,6 +315,29 @@ class PromptContractTests(unittest.TestCase):
         self.assertIn("directly show the subject", prompt)
         self.assertIn("do not use synonyms for the same editorial narration", prompt)
 
+    def test_surgical_hook_repair_requires_a_concrete_question(self) -> None:
+        brief = {
+            "index": 2,
+            "current_title": "大众车型砍半",
+            "source_title": "Volkswagen cuts model lineup",
+            "subtitles": [{"zh": "来自中国汽车企业的竞争正在加剧", "en": "Chinese competition is rising"}],
+        }
+        current = {
+            "title": "大众砍车型一半成本谈判却未达预期",
+            "title_lines": ["大众砍车型一半", "成本谈判", "却未达预期"],
+        }
+
+        prompt = titles.surgical_repair_user_prompt(
+            brief,
+            {"entities": [], "clip_research": []},
+            current,
+            ["make_the_emotional_reversal_visible_in_words"],
+        )
+
+        self.assertIn("must be a concrete consequence question ending in ？", prompt)
+        self.assertIn("CHINA-RELATED REPAIR", prompt)
+        self.assertIn("Do not return a declarative summary", prompt)
+
 
 class RefinementFlowTests(unittest.TestCase):
     def test_only_china_resonance_seven_can_be_accepted_after_repairs(self) -> None:
