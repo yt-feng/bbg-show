@@ -1,0 +1,399 @@
+{
+  "timestamp_utc": "2026-07-10T23:05:47.979542+00:00",
+  "plan_path": "work/top-videos/01_sk_chairman_calls_sk_hynix_us_debut_a_dream_come_true/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词"
+    ]
+  },
+  "quality_min_score": 65,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg L.P.",
+        "preferred_zh": "彭博有限合伙企业",
+        "aliases": [
+          "彭博"
+        ],
+        "confidence": "high",
+        "evidence": "Wikipedia and official site use '彭博有限合伙企业' and '彭博'."
+      },
+      {
+        "source_text": "SK Chairman",
+        "entity_type": "person",
+        "preferred_en": "Chey Tae-won",
+        "preferred_zh": "崔泰源",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Bloomberg snippet names Chey Tae-won as SK chairman; common Korean name translation."
+      },
+      {
+        "source_text": "SK Hynix",
+        "entity_type": "company",
+        "preferred_en": "SK Hynix",
+        "preferred_zh": "SK海力士",
+        "aliases": [
+          "海力士"
+        ],
+        "confidence": "high",
+        "evidence": "Current title uses 'SK海力士'; widely used in Chinese media."
+      },
+      {
+        "source_text": "SK Group",
+        "entity_type": "company",
+        "preferred_en": "SK Group",
+        "preferred_zh": "SK集团",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Common translation; parent of SK Hynix."
+      },
+      {
+        "source_text": "US listing",
+        "entity_type": "event",
+        "preferred_en": "SK Hynix US listing",
+        "preferred_zh": "SK海力士美国上市",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Current title and snippets refer to '美国上市'."
+      },
+      {
+        "source_text": "ADR",
+        "entity_type": "other",
+        "preferred_en": "American Depositary Receipt",
+        "preferred_zh": "美国存托凭证",
+        "aliases": [
+          "ADR"
+        ],
+        "confidence": "high",
+        "evidence": "Standard financial term translation."
+      },
+      {
+        "source_text": "Nasdaq",
+        "entity_type": "organization",
+        "preferred_en": "Nasdaq",
+        "preferred_zh": "纳斯达克",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Ed Ludlow",
+        "entity_type": "person",
+        "preferred_en": "Ed Ludlow",
+        "preferred_zh": "埃德·拉德洛",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Bloomberg journalist; common transliteration."
+      },
+      {
+        "source_text": "SK Hynex",
+        "entity_type": "company",
+        "preferred_en": "SK Hynix",
+        "preferred_zh": "SK海力士",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "Misspelling in subtitle; correct name is SK Hynix."
+      }
+    ],
+    "notes": [
+      "The subtitle contains a misspelling 'SK Hynex' which should be corrected to 'SK Hynix'.",
+      "The current title 'SK会长' refers to Chey Tae-won, chairman of SK Group."
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "崔泰源：SK海力士美国上市是梦想成真",
+      "title_lines": [
+        "SK集团会长崔泰源",
+        "SK海力士美国上市265",
+        "AI时代内存需求激增"
+      ],
+      "formula_id": "big_name_consequence",
+      "quality_check": {
+        "has_big_name_or_institution": true,
+        "has_specific_topic_or_number": true,
+        "has_hook_or_tension": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 70,
+        "pass": true,
+        "strengths": [
+          "has_number_or_data",
+          "china_related_interest"
+        ],
+        "fixes": [
+          "add_institution_or_person_anchor",
+          "add_question_or_tension_line"
+        ]
+      },
+      "comment": "KC评论：SKSK海力士创外国公司最大美国市场IPO，AI芯片需求是关键驱动力"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-10T23:05:46.280441+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 81.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:43 SK Chairman Calls SK Hynix US Debut a 'Dream Come True'",
+          "source_title": "Duration: 2:43 SK Chairman Calls SK Hynix US Debut a 'Dream Come True'",
+          "show_date": "",
+          "current_title": "SK会长：SK海力士美国上市是梦想成真",
+          "current_title_lines": [
+            "SK会长谈海力士美国上市",
+            "称是里程碑，梦想成真",
+            "AI时代带来内存需求激增"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "一个合理的起点是，为什么是现在？您考虑美国上市已有一段时间，但为何现在让SK海力士面对美国市场参与者？",
+              "en": "I think a sensible place to start is why now you've been thinking about a US listing for some time but why put SK Hynex in front of US investors now?",
+              "relative_start": 0.0,
+              "relative_end": 11.0
+            },
+            {
+              "index": 2,
+              "zh": "我们等待这一刻已经很久了，自从大约15年前我收购海力士以来。",
+              "en": "Well we've been waiting for that for a long long time and since I acquired that Hynex about 15 years ago.",
+              "relative_start": 12.0,
+              "relative_end": 20.0
+            },
+            {
+              "index": 3,
+              "zh": "所以这是我们的一个里程碑。我们必须进入美国资本市场。",
+              "en": "So this is one of our milestones. Well we have to go to access to the US capital market.",
+              "relative_start": 20.0,
+              "relative_end": 27.0
+            },
+            {
+              "index": 4,
+              "zh": "现在梦想成真了。",
+              "en": "So now Dream comes true.",
+              "relative_start": 28.0,
+              "relative_end": 32.0
+            },
+            {
+              "index": 5,
+              "zh": "有人问为什么是现在，但这是我们可以做到的最早时机。",
+              "en": "So people asking why now but well this is kind of the earliest moment we can have.",
+              "relative_start": 32.0,
+              "relative_end": 40.0
+            },
+            {
+              "index": 6,
+              "zh": "尽可能早的时机。265亿美元是一大笔钱。",
+              "en": "The earliest moment possible. 26.5 billion dollars is a lot of money.",
+              "relative_start": 40.0,
+              "relative_end": 45.0
+            },
+            {
+              "index": 7,
+              "zh": "但考虑到SK在国内和国际上的承诺，这个数字并不算大。",
+              "en": "But in the context of SK's commitment in domestically and career and internationally not so big",
+              "relative_start": 45.0,
+              "relative_end": 54.0
+            },
+            {
+              "index": 8,
+              "zh": "我们能否期待多次ADR发行？",
+              "en": "can we expect multiple returns to ADRs, the sale of multiple rounds of ADRs?",
+              "relative_start": 54.0,
+              "relative_end": 62.0
+            },
+            {
+              "index": 9,
+              "zh": "是的，我期待我们也能做到这些。",
+              "en": "Well yes I'm expect we can deliver those things too.",
+              "relative_start": 62.0,
+              "relative_end": 68.0
+            },
+            {
+              "index": 10,
+              "zh": "所以我们会努力扩大ADR规模，也包括电池业务。",
+              "en": "So try to expand that our ADR size and also battery.",
+              "relative_start": 68.0,
+              "relative_end": 74.0
+            },
+            {
+              "index": 11,
+              "zh": "这实际上需要大量的电池。一旦我们有了足够的电池，就会有更多的需求。",
+              "en": "That actually requires a battery tons. Once we have the battery tons then there is a more demand.",
+              "relative_start": 74.0,
+              "relative_end": 81.0
+            }
+          ]
+        }
+      ],
+      "system_prompt": "You are the chief Chinese title editor for finance/news short videos. Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate for a China audience while staying factual. Think in cover-copy blocks, not article headlines. Use a constrained template first, then fill it with facts; do not freestyle long sentences. Use credible hooks: big-name institutions, recognizable people, contrarian tension, surprising consequence, concrete catalyst, numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. Never create or keep clips, titles, comments, or subtitle comments about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. Never invent facts or names. Treat public lookup snippets as the source of truth for person and institution names. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "user_prompt": "Refine these clip titles for Chinese vertical short videos.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 81.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:43 SK Chairman Calls SK Hynix US Debut a 'Dream Come True'\",\n    \"source_title\": \"Duration: 2:43 SK Chairman Calls SK Hynix US Debut a 'Dream Come True'\",\n    \"show_date\": \"\",\n    \"current_title\": \"SK会长：SK海力士美国上市是梦想成真\",\n    \"current_title_lines\": [\n      \"SK会长谈海力士美国上市\",\n      \"称是里程碑，梦想成真\",\n      \"AI时代带来内存需求激增\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"一个合理的起点是，为什么是现在？您考虑美国上市已有一段时间，但为何现在让SK海力士面对美国市场参与者？\",\n        \"en\": \"I think a sensible place to start is why now you've been thinking about a US listing for some time but why put SK Hynex in front of US investors now?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 11.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"我们等待这一刻已经很久了，自从大约15年前我收购海力士以来。\",\n        \"en\": \"Well we've been waiting for that for a long long time and since I acquired that Hynex about 15 years ago.\",\n        \"relative_start\": 12.0,\n        \"relative_end\": 20.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以这是我们的一个里程碑。我们必须进入美国资本市场。\",\n        \"en\": \"So this is one of our milestones. Well we have to go to access to the US capital market.\",\n        \"relative_start\": 20.0,\n        \"relative_end\": 27.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"现在梦想成真了。\",\n        \"en\": \"So now Dream comes true.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"有人问为什么是现在，但这是我们可以做到的最早时机。\",\n        \"en\": \"So people asking why now but well this is kind of the earliest moment we can have.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 40.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"尽可能早的时机。265亿美元是一大笔钱。\",\n        \"en\": \"The earliest moment possible. 26.5 billion dollars is a lot of money.\",\n        \"relative_start\": 40.0,\n        \"relative_end\": 45.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"但考虑到SK在国内和国际上的承诺，这个数字并不算大。\",\n        \"en\": \"But in the context of SK's commitment in domestically and career and internationally not so big\",\n        \"relative_start\": 45.0,\n        \"relative_end\": 54.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们能否期待多次ADR发行？\",\n        \"en\": \"can we expect multiple returns to ADRs, the sale of multiple rounds of ADRs?\",\n        \"relative_start\": 54.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"是的，我期待我们也能做到这些。\",\n        \"en\": \"Well yes I'm expect we can deliver those things too.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 68.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以我们会努力扩大ADR规模，也包括电池业务。\",\n        \"en\": \"So try to expand that our ADR size and also battery.\",\n        \"relative_start\": 68.0,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这实际上需要大量的电池。一旦我们有了足够的电池，就会有更多的需求。\",\n        \"en\": \"That actually requires a battery tons. Once we have the battery tons then there is a more demand.\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 81.0\n      }\n    ]\n  }\n]\n\nPublic entity lookup snippets:\n[\n  {\n    \"query\": \"Bloomberg Duration: 2:43 SK Chairman Calls SK Hynix US Debut a 'Dream Come True' Chinese name official\",\n    \"results\": [\n      {\n        \"title\": \"Watch SK Hynix Makes Biggest Foreign Debut in US - Bloomberg\",\n        \"snippet\": \"SK Hynix Makes Biggest Foreign Debut in US SK Hynix raised $26.5 billion in its American depositary receipt offering, the largest ever US first-time share sale by a foreign company.\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-10/sk-hynix-makes-biggest-foreign-debut-in-us-video\"\n      },\n      {\n        \"title\": \"SK Chairman Calls SK Hynix US Debut a 'Dream Come True'\",\n        \"snippet\": \"Chey Tae-won, chairman of SK Hynix parent SK Group, discusses SK Hynix's listing on the Nasdaq and says he hopes to expand the ADR size once there is a good return. He speaks with Ed Ludlow on ...\",\n        \"url\": \"www.youtube.com/watch?v=lVIxsU2eVPc\"\n      },\n      {\n        \"title\": \"Memory Chipmaker SK Hynix Kicks Off $28 Billion US Listing\",\n        \"snippet\": \"SK Hynix kicked off the formal marketing process for its US listing on Monday, as the South Korean chipmaker looks to capitalize on surging investor demand for the high-flying memory-chip sector ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-06/sk-hynix-kicks-off-28-billion-us-listing-video\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Chinese name finance\",\n    \"results\": [\n      {\n        \"title\": \"关于我们 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博创建于1981年，是全球商业、金融信息和新闻资讯提供商，通过其强大的集信息、人物及观点为一体的动态网络为全球决策者带来关键优势。彭博精于以创新的技术来快速、精准地传递数据、新闻和分析，这也是彭博终端的核心优势所在。依托彭博核心优势，彭博的企业解决方案借助科技手段 ...\",\n        \"url\": \"www.bloombergchina.com/about-us/\"\n      },\n      {\n        \"title\": \"彭博有限合夥企業 - 维基百科，自由的百科全书\",\n        \"snippet\": \"彭博有限合夥企業 ... 位于伦敦的彭博新闻演播厅 彭博有限合伙企业 （英語： Bloomberg L.P.）是 美國 的跨國大眾 傳播媒體 公司，提供新聞、全球商業和金融數據服務。 集團總部位於 紐約市 的 莱辛顿大道731号。 彭博於全球176個地點擁有超過19,000名員工。 [7]\",\n        \"url\": \"zh.wikipedia.org/wiki/彭博有限合夥企業\"\n      },\n      {\n        \"title\": \"彭博专业服务 | 彭博Bloomberg | 中国\",\n        \"snippet\": \"彭博债券通项下境外投资者债券回购服务可让投资者经由中国内地和香港的交易、清算与结算基础设施，参与人民币债券回购交易。 作为中国人民银行（PBOC）认可的离岸接入点，彭博已连接至中国外汇交易中心（CFETS）系统，允许符合条件的境外投资者通过彭博债券通项下境外投资者债券回购服务 ...\",\n        \"url\": \"www.bloombergchina.com\"\n      }\n    ]\n  }\n]\n\nEntity translation guide:\n{\n  \"entities\": [\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg L.P.\",\n      \"preferred_zh\": \"彭博有限合伙企业\",\n      \"aliases\": [\n        \"彭博\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Wikipedia and official site use '彭博有限合伙企业' and '彭博'.\"\n    },\n    {\n      \"source_text\": \"SK Chairman\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Chey Tae-won\",\n      \"preferred_zh\": \"崔泰源\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Bloomberg snippet names Chey Tae-won as SK chairman; common Korean name translation.\"\n    },\n    {\n      \"source_text\": \"SK Hynix\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"SK Hynix\",\n      \"preferred_zh\": \"SK海力士\",\n      \"aliases\": [\n        \"海力士\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title uses 'SK海力士'; widely used in Chinese media.\"\n    },\n    {\n      \"source_text\": \"SK Group\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"SK Group\",\n      \"preferred_zh\": \"SK集团\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Common translation; parent of SK Hynix.\"\n    },\n    {\n      \"source_text\": \"US listing\",\n      \"entity_type\": \"event\",\n      \"preferred_en\": \"SK Hynix US listing\",\n      \"preferred_zh\": \"SK海力士美国上市\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Current title and snippets refer to '美国上市'.\"\n    },\n    {\n      \"source_text\": \"ADR\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"American Depositary Receipt\",\n      \"preferred_zh\": \"美国存托凭证\",\n      \"aliases\": [\n        \"ADR\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard financial term translation.\"\n    },\n    {\n      \"source_text\": \"Nasdaq\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Nasdaq\",\n      \"preferred_zh\": \"纳斯达克\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Standard translation.\"\n    },\n    {\n      \"source_text\": \"Ed Ludlow\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Ed Ludlow\",\n      \"preferred_zh\": \"埃德·拉德洛\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Bloomberg journalist; common transliteration.\"\n    },\n    {\n      \"source_text\": \"SK Hynex\",\n      \"entity_type\": \"company\",\n      \"preferred_en\": \"SK Hynix\",\n      \"preferred_zh\": \"SK海力士\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"Misspelling in subtitle; correct name is SK Hynix.\"\n    }\n  ],\n  \"notes\": [\n    \"The subtitle contains a misspelling 'SK Hynex' which should be corrected to 'SK Hynix'.\",\n    \"The current title 'SK会长' refers to Chey Tae-won, chairman of SK Group.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence\",\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"quality_check\": {\n        \"has_big_name_or_institution\": true,\n        \"has_specific_topic_or_number\": true,\n        \"has_hook_or_tension\": true,\n        \"passes_wording_guard\": true\n      },\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTitle strategy:\n- Style: factual clickbait for China finance audience\n- Data-backed lessons from past KC Desktop posts:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\"\n  ]\n}\n- Choose exactly one formula_id for each clip:\n  authority_number_question = \"高盛王逸 / 4万亿城市更新 / 会托住楼市吗\"\n  authority_pressure = \"野村辜朝明 / 日本央行 / 为何被逼到墙角\"\n  contrarian_condition = \"中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费\"\n  data_policy_signal = \"6月PMI / 积极信号 / 政策会加码吗\"\n  big_name_consequence = \"黄仁勋 / AI人才 / 中国优势被低估？\"\n- If none fits, use the closest formula and make line 3 a sharp question.\n- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。\n- Use compact authority labels when factual: \"高盛王逸\", \"野村辜朝明\", \"中金Kevin\". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.\n- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.\n- Make the viewer ask \"why?\" or \"really?\" without cheap exaggeration. A good third line is often a sharp question or pressure point.\n- Strong three-line reference formats. Use their structure, not their facts unless supported:\n  1. [\"高盛王逸\", \"4万亿城市更新\", \"会托住楼市吗\"] with highlights [\"4万亿\"]\n  2. [\"解读腾讯\", \"AI路径\", \"关键分叉在哪\"] with highlights [\"腾讯\", \"AI\"]\n  3. [\"野村辜朝明\", \"日本央行\", \"为何被逼到墙角\"] with highlights [\"辜朝明\", \"被逼到墙角\"]\n  4. [\"中金Kevin\", \"低估值可能是价值陷阱\", \"等待政策转向消费\"] with highlights [\"低估值\", \"价值陷阱\", \"政策转向消费\"]\n- More strong patterns: \"高盛：楼市真触底了？\", \"美联储这句话不寻常\", \"马斯克押错了吗？\", \"摩根士丹利：最坏时刻过去？\"\n- Weak patterns to avoid: flat summaries, \"今日热点\", \"核心观点速览\", \"值得关注\", \"震惊\", \"必看\", \"速看\", clickbait with no factual basis.\n- Avoid newspaper-style verbs when a short noun phrase works: prefer \"腾讯AI路径\" over \"腾讯正在探索AI业务路径\"; prefer \"日本央行\" over \"关于日本央行的讨论\".\n- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.\n- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or \"can X support Y?\".\n- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer \"楼市承压，政策如何托底？\" over \"中国楼市完了？\".\n- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.\n\nRules:\n- Return one refined item for every input index, with the same index.\n- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.\n- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.\n- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.\n- title should be short and sharp, ideally 10-24 Chinese characters.\n- title_lines must contain exactly 3 non-empty short display lines:\n  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,\n  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,\n  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.\n- Keep each title line as a punchy block, not a full sentence. No filler like \"关于\", \"表示\", \"认为\", \"指出\" unless needed for facts.\n- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, \"低估值\", \"价值陷阱\", \"政策转向\", \"被逼到墙角\".\n- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as \"政策转向\", \"消费\", \"产业升级\", \"托底\", \"修复\", \"低估值\", \"4万亿\".\n- comment must start with \"KC评论：\" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.\n- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.\n- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.\n- Do not repeat the title verbatim in comment.\n- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.\n- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.\n- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.\n- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after \"KC评论：\", hard limit 28 Chinese characters.\n- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.\n- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.\n- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.\n- Do not mention sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. If a clip is sensitive-topic related, it should have been filtered out and must not be rewritten.\n- Do not use emojis, markdown, quotation marks, hashtags, or numbering.\n- Do not use financial-advice wording.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.\n- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.\n- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.\n- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.\n- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.\n- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.\n- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "big_name_consequence",
+            "title": "崔泰源：海力士美国上市是梦想成真",
+            "title_lines": [
+              "SK集团会长崔泰源",
+              "海力士美国上市265亿美元",
+              "AI时代内存需求激增"
+            ],
+            "title_highlights": [
+              "崔泰源",
+              "265亿美元",
+              "AI"
+            ],
+            "comment": "KC评论：SK海力士创外国公司最大美股IPO，AI芯片需求是关键驱动力。",
+            "comment_highlights": [
+              "最大美股IPO",
+              "AI芯片需求"
+            ],
+            "quality_check": {
+              "has_big_name_or_institution": true,
+              "has_specific_topic_or_number": true,
+              "has_hook_or_tension": true,
+              "passes_wording_guard": true
+            },
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：崔泰源解释为何现在启动美国上市。",
+                "comment_highlights": [
+                  "崔泰源"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：15年前收购海力士，如今迎来里程碑。",
+                "comment_highlights": [
+                  "15年"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：进入美国资本市场是战略必需。",
+                "comment_highlights": [
+                  "美国资本市场"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：梦想成真，但只是开始。",
+                "comment_highlights": [
+                  "梦想成真"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：强调这是最早可行的时间点。",
+                "comment_highlights": [
+                  "最早时机"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：265亿美元融资规模巨大。",
+                "comment_highlights": [
+                  "265亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：相对SK集团整体承诺，规模合理。",
+                "comment_highlights": [
+                  "SK集团"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：未来可能多次增发ADR。",
+                "comment_highlights": [
+                  "ADR"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：崔泰源对后续发行有信心。",
+                "comment_highlights": [
+                  "崔泰源"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：计划扩大ADR规模，包括电池业务。",
+                "comment_highlights": [
+                  "电池业务"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：电池需求将带动更多融资。",
+                "comment_highlights": [
+                  "电池需求"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "崔泰源：SK海力士美国上市是梦想成真",
+          "title_lines": [
+            "SK集团会长崔泰源",
+            "SK海力士美国上市265",
+            "AI时代内存需求激增"
+          ],
+          "formula_id": "big_name_consequence",
+          "quality_check": {
+            "has_big_name_or_institution": true,
+            "has_specific_topic_or_number": true,
+            "has_hook_or_tension": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 70,
+            "pass": true,
+            "strengths": [
+              "has_number_or_data",
+              "china_related_interest"
+            ],
+            "fixes": [
+              "add_institution_or_person_anchor",
+              "add_question_or_tension_line"
+            ]
+          },
+          "comment": "KC评论：SKSK海力士创外国公司最大美国市场IPO，AI芯片需求是关键驱动力"
+        }
+      }
+    }
+  ]
+}
