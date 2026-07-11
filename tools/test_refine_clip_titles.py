@@ -76,10 +76,10 @@ class TitleQualityTests(unittest.TestCase):
             "subtitles": [{"zh": "中国AI更可靠也更便宜", "en": "Chinese AI is reliable and inexpensive"}],
         }
         refined = {
-            "title": "外资罕见看好中国AI成本优势藏不住了？",
-            "title_lines": ["外资罕见看好", "中国AI成本优势", "这次藏不住了？"],
-            "angle_id": "outsider_candor",
-            "emotion_pole": "意外",
+            "title": "中国AI既便宜又可靠海外份额要反转？",
+            "title_lines": ["中国AI", "既便宜又可靠", "海外份额要反转？"],
+            "angle_id": "china_advantage",
+            "emotion_pole": "民族自豪",
             "editor_scores": passing_scores(),
             "quality_check": passing_quality_check(),
         }
@@ -169,6 +169,22 @@ class TitleQualityTests(unittest.TestCase):
         self.assertFalse(audit["pass"])
         self.assertIn("make_the_emotional_reversal_visible_in_words", audit["fixes"])
 
+    def test_internal_editorial_labels_are_rejected_from_reader_copy(self) -> None:
+        clip = {"title": "Chinese AI", "subtitles": [{"zh": "中国AI成本更低"}]}
+        refined = {
+            "title": "外资策略师罕见直言中国AI更便宜",
+            "title_lines": ["外资策略师", "罕见直言", "中国AI更便宜"],
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("remove_internal_editorial_labels_from_reader_copy", audit["fixes"])
+
 
 class PromptContractTests(unittest.TestCase):
     def test_candidate_prompt_operationalizes_emotion_polarity(self) -> None:
@@ -183,6 +199,35 @@ class PromptContractTests(unittest.TestCase):
 
 
 class RefinementFlowTests(unittest.TestCase):
+    def test_only_china_resonance_seven_can_be_accepted_after_repairs(self) -> None:
+        refined = {
+            "title_quality_audit": {
+                "pass": False,
+                "fixes": ["make_china_direction_constructive_or_positive"],
+                "semantic_thresholds": {"china_resonance": 7},
+            }
+        }
+
+        accepted = titles.accept_near_miss_after_repair(refined)
+
+        self.assertTrue(accepted)
+        self.assertTrue(refined["title_quality_audit"]["pass"])
+        self.assertEqual(refined["title_quality_audit"]["pass_level"], "accepted_after_repair")
+
+    def test_near_miss_does_not_override_a_missing_visible_hook(self) -> None:
+        refined = {
+            "title_quality_audit": {
+                "pass": False,
+                "fixes": [
+                    "make_china_direction_constructive_or_positive",
+                    "make_the_emotional_reversal_visible_in_words",
+                ],
+                "semantic_thresholds": {"china_resonance": 7},
+            }
+        }
+
+        self.assertFalse(titles.accept_near_miss_after_repair(refined))
+
     @patch.object(titles, "ask_deepseek")
     def test_refine_batch_runs_candidate_then_judge(self, ask_deepseek) -> None:
         candidate_result = {
@@ -193,14 +238,14 @@ class RefinementFlowTests(unittest.TestCase):
                 {
                     "index": 1,
                     "formula_id": "outsider_candor",
-                    "angle_id": "outsider_candor",
-                    "emotion_pole": "意外",
-                    "viewer_reaction": "外资居然这样看中国AI",
+                    "angle_id": "china_advantage",
+                    "emotion_pole": "民族自豪",
+                    "viewer_reaction": "原来中国AI强在这里",
                     "evidence_basis": ["字幕明确称中国AI可靠且便宜"],
-                    "title": "外资罕见看好中国AI成本优势但为何不敢下结论？",
-                    "title_lines": ["外资罕见看好", "中国AI成本优势", "但为何不敢下结论？"],
-                    "title_highlights": ["罕见看好", "中国AI", "藏不住"],
-                    "runner_up_titles": ["外资终于说透中国AI优势"],
+                    "title": "中国AI既便宜又可靠海外份额要反转？",
+                    "title_lines": ["中国AI", "既便宜又可靠", "海外份额要反转？"],
+                    "title_highlights": ["中国AI", "便宜", "海外份额"],
+                    "runner_up_titles": ["中国AI性价比改写海外份额？"],
                     "editor_scores": passing_scores(),
                     "quality_check": passing_quality_check(),
                     "comment": "KC评论：海外机构的积极判断，让成本优势更有反差",
@@ -258,10 +303,10 @@ class RefinementFlowTests(unittest.TestCase):
 
         self.assertEqual(ask_deepseek.call_count, 2)
         self.assertTrue(refined[1]["title_quality_audit"]["pass"])
-        self.assertEqual(refined[1]["angle_id"], "outsider_candor")
+        self.assertEqual(refined[1]["angle_id"], "china_advantage")
         self.assertEqual(
             refined[1]["title"],
-            "外资罕见看好：中国AI成本优势，但为何不敢下结论？",
+            "中国AI：既便宜又可靠，海外份额要反转？",
         )
         self.assertIn("candidate_raw_result", events[0])
 
