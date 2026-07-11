@@ -185,6 +185,21 @@ class TitleQualityTests(unittest.TestCase):
         self.assertFalse(audit["pass"])
         self.assertIn("remove_internal_editorial_labels_from_reader_copy", audit["fixes"])
 
+    def test_direct_factual_contrast_is_reader_facing_tension(self) -> None:
+        clip = {"title": "Chinese AI", "subtitles": [{"zh": "中国AI更便宜，但股东回报尚不确定"}]}
+        refined = {
+            "title": "拉扎德首席中国AI更便宜赚钱是另一回事",
+            "title_lines": ["拉扎德首席", "中国AI更便宜", "赚钱是另一回事"],
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertTrue(audit["pass"], audit)
+
 
 class PromptContractTests(unittest.TestCase):
     def test_candidate_prompt_operationalizes_emotion_polarity(self) -> None:
