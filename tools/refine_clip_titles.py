@@ -88,7 +88,8 @@ TITLE_HOOK_RE = re.compile(
 TITLE_FLAT_RE = re.compile(
     r"(市场机会|市场影响|策略前瞻|成焦点|长期催化剂|短期压力|值得关注|"
     r"回报路径在哪|前景如何|未来如何|有待观察|仍不明朗|面临挑战|带来机遇|"
-    r"释放信号|成本谈判未达预期|关键分叉在哪)(?:？|\?)?$"
+    r"释放信号|成本谈判未达预期|关键分叉在哪|(?:股东)?回报(?:仍)?(?:存疑|待解|成疑)|"
+    r"(?:盈利|前景|效果)(?:仍)?(?:存疑|待解|成疑))(?:？|\?)?$"
 )
 TITLE_SOURCE_LABEL_RE = re.compile(
     r"^(?:彭博(?:社|有限合伙企业|有限责任公司)?|Bloomberg(?:\s+L\.?P\.?)?)"
@@ -1222,7 +1223,7 @@ Operating rule: 二极管法则
 - A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.
 - The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.
 - Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.
-- A question mark is not emotion. "前景如何", "回报路径在哪", "能否实现", "面临哪些挑战", and "释放什么信号" score at most 4 unless they contain a concrete contradiction or consequence.
+- A question mark is not emotion. "前景如何", "回报路径在哪", "能否实现", "面临哪些挑战", "回报存疑", and "释放什么信号" score at most 4 unless they contain a concrete contradiction or consequence.
 
 Angle rules:
 - surprise_reversal: state the familiar baseline, then expose the source claim that reverses it.
@@ -1357,7 +1358,7 @@ Title and display rules:
 - Full title should be short and sharp, ideally 10-24 Chinese characters.
 - Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.
 - Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.
-- Do not use flat endings such as 回报路径在哪、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪.
+- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪. Turn the caveat into a concrete unresolved action or contradiction.
 - Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.
 - Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
 - Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
@@ -1594,9 +1595,8 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
     if not all(lines):
         return None
 
-    title = compact_title(china_safe_title_text(apply_entity_replacements(str(raw.get("title", "")), entity_guide), clip))
-    if not title:
-        title = f"{lines[0]}：{lines[1]}，{lines[2]}"
+    # Keep filenames/descriptions aligned with the three cover blocks selected by the editor.
+    title = compact_title(f"{lines[0]}：{lines[1]}，{lines[2]}")
 
     joined = "".join(lines)
     raw_highlights = raw.get("title_highlights")

@@ -137,6 +137,22 @@ class TitleQualityTests(unittest.TestCase):
         self.assertFalse(audit["pass"])
         self.assertIn("replace_flat_summary_or_generic_question", audit["fixes"])
 
+    def test_generic_uncertainty_caveat_is_rejected(self) -> None:
+        clip = {"title": "Chinese AI", "subtitles": [{"zh": "中国AI成本更低"}]}
+        refined = {
+            "title": "外资首席罕见直言中国AI更便宜但股东回报存疑",
+            "title_lines": ["外资首席罕见直言", "中国AI更便宜", "但股东回报存疑"],
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("replace_flat_summary_or_generic_question", audit["fixes"])
+
 
 class PromptContractTests(unittest.TestCase):
     def test_candidate_prompt_operationalizes_emotion_polarity(self) -> None:
@@ -165,8 +181,8 @@ class RefinementFlowTests(unittest.TestCase):
                     "emotion_pole": "意外",
                     "viewer_reaction": "外资居然这样看中国AI",
                     "evidence_basis": ["字幕明确称中国AI可靠且便宜"],
-                    "title": "外资罕见看好中国AI成本优势藏不住了？",
-                    "title_lines": ["外资罕见看好", "中国AI成本优势", "这次藏不住了？"],
+                    "title": "外资罕见看好中国AI成本优势但为何不敢下结论？",
+                    "title_lines": ["外资罕见看好", "中国AI成本优势", "但为何不敢下结论？"],
                     "title_highlights": ["罕见看好", "中国AI", "藏不住"],
                     "runner_up_titles": ["外资终于说透中国AI优势"],
                     "editor_scores": passing_scores(),
@@ -227,6 +243,10 @@ class RefinementFlowTests(unittest.TestCase):
         self.assertEqual(ask_deepseek.call_count, 2)
         self.assertTrue(refined[1]["title_quality_audit"]["pass"])
         self.assertEqual(refined[1]["angle_id"], "outsider_candor")
+        self.assertEqual(
+            refined[1]["title"],
+            "外资罕见看好：中国AI成本优势，但为何不敢下结论？",
+        )
         self.assertIn("candidate_raw_result", events[0])
 
 
