@@ -341,7 +341,8 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
     else:
         fixes.append("add_specific_number_action_comparison_or_consequence")
 
-    if TITLE_HOOK_RE.search(text):
+    has_visible_hook = bool(TITLE_HOOK_RE.search(text))
+    if has_visible_hook:
         score += 10
         strengths.append("has_hook_tension")
     else:
@@ -448,6 +449,9 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
         and curiosity_gap >= 7
         and factual_fidelity >= 9
         and all_quality_checks
+        and has_anchor
+        and has_specific_fact
+        and has_visible_hook
         and not is_flat
         and not has_source_actor
     )

@@ -153,6 +153,22 @@ class TitleQualityTests(unittest.TestCase):
         self.assertFalse(audit["pass"])
         self.assertIn("replace_flat_summary_or_generic_question", audit["fixes"])
 
+    def test_news_summary_cannot_pass_on_model_scores_alone(self) -> None:
+        clip = {"title": "Volkswagen model cuts", "subtitles": [{"zh": "中国车企竞争正在加剧"}]}
+        refined = {
+            "title": "外媒点破大众汽车困境中国车企竞争真实且加剧",
+            "title_lines": ["外媒点破大众汽车困境", "中国车企竞争", "真实且加剧"],
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("make_the_emotional_reversal_visible_in_words", audit["fixes"])
+
 
 class PromptContractTests(unittest.TestCase):
     def test_candidate_prompt_operationalizes_emotion_polarity(self) -> None:
