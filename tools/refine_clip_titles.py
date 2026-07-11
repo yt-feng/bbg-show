@@ -2086,6 +2086,25 @@ def refine_titles(
         if not refinements[index].get("title_quality_audit", {}).get("pass")
     ]
     if quality_failed:
+        for index in quality_failed:
+            rejected = refinements[index]
+            print(
+                "Rejected title after all repairs: "
+                + json.dumps(
+                    {
+                        "index": index,
+                        "title": rejected.get("title"),
+                        "title_lines": rejected.get("title_lines"),
+                        "angle_id": rejected.get("angle_id"),
+                        "emotion_pole": rejected.get("emotion_pole"),
+                        "viewer_reaction": rejected.get("viewer_reaction"),
+                        "editor_scores": rejected.get("editor_scores"),
+                        "audit": rejected.get("title_quality_audit"),
+                    },
+                    ensure_ascii=False,
+                ),
+                flush=True,
+            )
         details = "; ".join(
             f"{index}:{','.join(refinements[index].get('title_quality_audit', {}).get('fixes', []))}"
             for index in quality_failed
