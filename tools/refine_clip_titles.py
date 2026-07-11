@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import datetime as dt
 import html as html_lib
 import json
@@ -25,11 +26,28 @@ from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording, sanitize_
 
 TITLE_LINE_LIMITS = (10, 12, 14)
 TITLE_MAX_CHARS = 36
-DEFAULT_BATCH_SIZE = 8
+DEFAULT_BATCH_SIZE = 4
 DEFAULT_MAX_SUBTITLES = 24
-DEFAULT_LOOKUP_MAX_QUERIES = 8
+DEFAULT_LOOKUP_MAX_QUERIES = 12
 DEFAULT_LOOKUP_RESULTS_PER_QUERY = 3
-TITLE_QUALITY_MIN_SCORE = 65
+TITLE_QUALITY_MIN_SCORE = 78
+TITLE_RESEARCH_VERSION = "emotion-polarity-v2"
+TITLE_EMOTION_POLES = {
+    "意外",
+    "惊喜",
+    "强疑惑",
+    "终于有人说",
+    "反差质疑",
+    "民族自豪",
+}
+TITLE_ANGLE_IDS = {
+    "surprise_reversal",
+    "outsider_candor",
+    "words_vs_actions",
+    "china_advantage",
+    "concrete_stakes",
+    "authority_breaks_consensus",
+}
 TITLE_DATA_LESSONS = {
     "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
     "winning_patterns": [
@@ -38,6 +56,10 @@ TITLE_DATA_LESSONS = {
         "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
         "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
         "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+        "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+        "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+        "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+        "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突",
     ],
     "avoid_patterns": [
         "过长的新闻句，尤其是 24 字以上还塞多个从句",
@@ -45,6 +67,10 @@ TITLE_DATA_LESSONS = {
         "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
         "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
         "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+        "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+        "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+        "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+        "没有公开证据却暗示嘉宾撒谎、操纵或言行不一",
     ],
 }
 TITLE_BIG_ANCHOR_RE = re.compile(
@@ -55,10 +81,20 @@ TITLE_BIG_ANCHOR_RE = re.compile(
 )
 TITLE_NUMBER_RE = re.compile(r"(\d|万亿|万|亿|%|美元|基点|BP|bp|PMI|CPI|PCE)", re.IGNORECASE)
 TITLE_HOOK_RE = re.compile(
-    r"(吗|为何|为什么|怎么|会不会|能否|是否|真相|反转|意外|被逼|墙角|陷阱|托底|"
-    r"转向|拐点|分歧|重估|关键|信号|底|加码|掩盖|冰火两重天|低估值)"
+    r"(？|\?|吗|为何|为什么|怎么|会不会|能否|是否|真相|反转|意外|罕见|居然|竟然|"
+    r"终于|敢说|说透|嘴上|手里|改口|认了|急了|逼急|被逼|砍半|砍一半|墙角|陷阱|托底|"
+    r"转向|拐点|分歧|重估|低估|藏不住|关键|底牌|底|加码|掩盖|冰火两重天|低估值)"
 )
-TITLE_FLAT_RE = re.compile(r"(市场机会|市场影响|策略前瞻|成焦点|长期催化剂|短期压力|值得关注)$")
+TITLE_FLAT_RE = re.compile(
+    r"(市场机会|市场影响|策略前瞻|成焦点|长期催化剂|短期压力|值得关注|"
+    r"回报路径在哪|前景如何|未来如何|有待观察|仍不明朗|面临挑战|带来机遇|"
+    r"释放信号|成本谈判未达预期|关键分叉在哪)(?:？|\?)?$"
+)
+TITLE_SOURCE_LABEL_RE = re.compile(
+    r"^(?:彭博(?:社|有限合伙企业|有限责任公司)?|Bloomberg(?:\s+L\.?P\.?)?)"
+    r"(?:对话|采访|报道|解读)?$",
+    re.IGNORECASE,
+)
 CHINA_CONTEXT_RE = re.compile(
     r"(中国|中资|中企|中概|内地|国内|人民币|楼市|房价|房地产|地产|A股|港股|"
     r"China|Chinese|Hong Kong|renminbi|yuan|property|housing|real estate)",
@@ -264,31 +300,100 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
     title = str(refined.get("title", "")) or joined
     text = f"{title}{joined}"
 
-    score = 50
+    quality_check = refined.get("quality_check")
+    if not isinstance(quality_check, dict):
+        quality_check = {}
+    editor_scores = refined.get("editor_scores")
+    if not isinstance(editor_scores, dict):
+        editor_scores = {}
+
+    def score_value(key: str) -> int:
+        try:
+            return max(0, min(10, int(float(editor_scores.get(key, 0)))))
+        except (TypeError, ValueError):
+            return 0
+
+    emotion_tension = score_value("emotion_tension")
+    novelty = score_value("novelty")
+    specificity = score_value("specificity")
+    curiosity_gap = score_value("curiosity_gap")
+    factual_fidelity = score_value("factual_fidelity")
+    china_resonance = score_value("china_resonance")
+    angle_id = clean_text(str(refined.get("angle_id", "")))
+    emotion_pole = clean_text(str(refined.get("emotion_pole", "")))
+
+    score = 20
     strengths: list[str] = []
     fixes: list[str] = []
 
-    if TITLE_BIG_ANCHOR_RE.search(text):
-        score += 18
+    has_anchor = bool(TITLE_BIG_ANCHOR_RE.search(text)) or bool(quality_check.get("has_recognizable_anchor"))
+    if has_anchor:
+        score += 12
         strengths.append("has_authority_anchor")
     else:
-        fixes.append("add_institution_or_person_anchor")
+        fixes.append("add_recognizable_actor_or_role")
 
-    if TITLE_NUMBER_RE.search(text):
+    has_specific_fact = bool(TITLE_NUMBER_RE.search(text)) or bool(quality_check.get("has_specific_fact"))
+    if has_specific_fact:
         score += 12
-        strengths.append("has_number_or_data")
+        strengths.append("has_specific_fact")
     else:
-        fixes.append("add_number_asset_or_specific_topic_if_supported")
+        fixes.append("add_specific_number_action_comparison_or_consequence")
 
     if TITLE_HOOK_RE.search(text):
-        score += 18
+        score += 10
         strengths.append("has_hook_tension")
     else:
-        fixes.append("add_question_or_tension_line")
+        fixes.append("make_the_emotional_reversal_visible_in_words")
+
+    if angle_id in TITLE_ANGLE_IDS:
+        score += 6
+        strengths.append(f"angle:{angle_id}")
+    else:
+        fixes.append("choose_supported_angle_id")
+
+    if emotion_pole in TITLE_EMOTION_POLES:
+        score += 8
+        strengths.append(f"emotion:{emotion_pole}")
+    else:
+        fixes.append("choose_one_emotion_pole")
+
+    if emotion_tension >= 8:
+        score += 8
+        strengths.append("high_emotion_tension")
+    else:
+        fixes.append("raise_emotion_tension_to_8")
+
+    if novelty >= 7:
+        score += 7
+        strengths.append("has_novelty")
+    else:
+        fixes.append("show_baseline_then_reversal")
+
+    if specificity >= 7:
+        score += 5
+    else:
+        fixes.append("replace_generic_language_with_a_concrete_fact")
+
+    if curiosity_gap >= 7:
+        score += 7
+        strengths.append("has_curiosity_gap")
+    else:
+        fixes.append("create_a_small_answerable_information_gap")
+
+    if factual_fidelity >= 9 and bool(quality_check.get("is_factually_supported")):
+        score += 10
+        strengths.append("factually_grounded")
+    else:
+        fixes.append("restore_transcript_and_research_fidelity")
 
     if is_china_related_clip(clip):
-        score += 8
-        strengths.append("china_related_interest")
+        if china_resonance >= 8 and bool(quality_check.get("passes_china_frame")):
+            score += 8
+            strengths.append("china_positive_resonance")
+        else:
+            score -= 12
+            fixes.append("make_china_direction_constructive_or_positive")
 
     if any(len(str(line)) > TITLE_LINE_LIMITS[min(idx, 2)] for idx, line in enumerate(lines[:3])):
         score -= 8
@@ -298,9 +403,15 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
         score -= 10
         fixes.append("shorten_full_title")
 
-    if TITLE_FLAT_RE.search(title) or TITLE_FLAT_RE.search(joined):
-        score -= 14
-        fixes.append("replace_flat_summary_with_tension")
+    is_flat = bool(TITLE_FLAT_RE.search(title) or TITLE_FLAT_RE.search(joined))
+    if is_flat:
+        score -= 22
+        fixes.append("replace_flat_summary_or_generic_question")
+
+    has_source_actor = any(TITLE_SOURCE_LABEL_RE.fullmatch(str(line).strip()) for line in lines[:2])
+    if has_source_actor:
+        score -= 30
+        fixes.append("replace_publisher_source_with_the_real_actor_or_topic")
 
     if re.search(r"(今日热点|核心观点速览|值得关注|速看|必看|震惊)", text):
         score -= 16
@@ -311,12 +422,51 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
         score -= 12
         fixes.append("wording_guard_changed_title")
 
+    all_quality_checks = all(
+        bool(quality_check.get(key))
+        for key in (
+            "has_recognizable_anchor",
+            "has_specific_fact",
+            "has_single_emotion_pole",
+            "has_novelty_or_surprise",
+            "has_curiosity_gap",
+            "is_factually_supported",
+            "passes_china_frame",
+            "passes_wording_guard",
+        )
+    )
+    if not all_quality_checks:
+        fixes.append("complete_all_model_quality_checks")
+
+    semantic_pass = (
+        angle_id in TITLE_ANGLE_IDS
+        and emotion_pole in TITLE_EMOTION_POLES
+        and emotion_tension >= 8
+        and novelty >= 7
+        and specificity >= 7
+        and curiosity_gap >= 7
+        and factual_fidelity >= 9
+        and all_quality_checks
+        and not is_flat
+        and not has_source_actor
+    )
+    if is_china_related_clip(clip):
+        semantic_pass = semantic_pass and china_resonance >= 8
+
     score = max(0, min(100, score))
     return {
         "score": score,
-        "pass": score >= TITLE_QUALITY_MIN_SCORE,
+        "pass": score >= TITLE_QUALITY_MIN_SCORE and semantic_pass,
         "strengths": strengths,
         "fixes": list(dict.fromkeys(fixes)),
+        "semantic_thresholds": {
+            "emotion_tension": emotion_tension,
+            "novelty": novelty,
+            "specificity": specificity,
+            "curiosity_gap": curiosity_gap,
+            "factual_fidelity": factual_fidelity,
+            "china_resonance": china_resonance,
+        },
     }
 
 
@@ -411,6 +561,123 @@ def add_query(queries: list[str], seen: set[str], query: str, max_queries: int) 
     queries.append(query)
 
 
+def compact_research_briefs(briefs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    compact: list[dict[str, Any]] = []
+    for brief in briefs:
+        claims: list[str] = []
+        for subtitle in brief.get("subtitles", [])[:10]:
+            if not isinstance(subtitle, dict):
+                continue
+            text = clean_text(str(subtitle.get("en") or subtitle.get("zh") or ""))
+            if text:
+                claims.append(text[:220])
+        compact.append({
+            "index": brief.get("index"),
+            "speaker": brief.get("speaker", ""),
+            "speaker_context": brief.get("speaker_context", ""),
+            "source_title": brief.get("source_title", ""),
+            "current_title": brief.get("current_title", ""),
+            "source_claims": claims,
+        })
+    return compact
+
+
+def research_query_system_prompt() -> str:
+    return (
+        "You plan public-web searches for a Chinese short-video title desk. Return strict JSON only. "
+        "The search results will be used to verify names and find a factual contrast, not to invent a story. "
+        "Write concise search-engine queries in Chinese or English using exact entities and claims."
+    )
+
+
+def research_query_user_prompt(briefs: list[dict[str, Any]], max_queries: int) -> str:
+    return f"""Plan at most {max_queries} public web searches for these clips:
+
+{json.dumps(compact_research_briefs(briefs), ensure_ascii=False, indent=2)}
+
+Return JSON:
+{{
+  "queries": [
+    {{
+      "query": "search engine query",
+      "purpose": "entity_name|consensus|speaker_stance|public_position|china_comparison",
+      "clip_indexes": [1],
+      "why": "what exact fact this query should verify"
+    }}
+  ]
+}}
+
+Research priorities, in order:
+1. Verify established Chinese names and exact institutions for non-Chinese people and organizations.
+2. Establish the public baseline or consensus needed to tell whether the source claim is genuinely unexpected.
+3. Verify whether a foreign institution or overseas expert is making an unusually positive or candid China-related claim.
+4. Only when the source names a company, institution, or public figure and there is a concrete reason to suspect a mismatch, search official disclosures, holdings, business actions, forecasts, or prior public statements. Do not assume a mismatch.
+5. Verify concrete China comparative advantages when the transcript makes that comparison.
+
+Rules:
+- Every query must contain an exact person, institution, company, product, statistic, or quoted claim. Never search vague phrases such as "is this surprising".
+- Use two independently phrased queries for a possible words-versus-actions angle; otherwise that angle cannot be used.
+- Prefer official pages, filings, established financial media, company announcements, and exact bilingual mentions.
+- Do not search sensitive geopolitical or military topics.
+- Do not create queries merely to confirm the current title. Search the underlying claim and comparison.
+- Spend queries on the clips with the strongest possible surprise, outsider-candor, China-advantage, or verified words-versus-actions angle.
+"""
+
+
+def parse_research_queries(
+    result: dict[str, Any],
+    *,
+    max_queries: int,
+    valid_indexes: set[int],
+) -> list[dict[str, Any]]:
+    raw_queries = result.get("queries")
+    if not isinstance(raw_queries, list):
+        return []
+
+    planned: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    allowed_purposes = {
+        "entity_name",
+        "consensus",
+        "speaker_stance",
+        "public_position",
+        "china_comparison",
+    }
+    for raw in raw_queries:
+        if isinstance(raw, str):
+            raw = {"query": raw}
+        if not isinstance(raw, dict):
+            continue
+        query = clean_text(str(raw.get("query", "")))[:220]
+        key = query.casefold()
+        if len(query) < 4 or key in seen:
+            continue
+        purpose = clean_text(str(raw.get("purpose", "consensus")))
+        if purpose not in allowed_purposes:
+            purpose = "consensus"
+        raw_indexes = raw.get("clip_indexes")
+        if not isinstance(raw_indexes, list):
+            raw_indexes = []
+        indexes: list[int] = []
+        for value in raw_indexes:
+            try:
+                index = int(value)
+            except (TypeError, ValueError):
+                continue
+            if index in valid_indexes and index not in indexes:
+                indexes.append(index)
+        planned.append({
+            "query": query,
+            "purpose": purpose,
+            "clip_indexes": indexes,
+            "why": clean_text(str(raw.get("why", "")))[:240],
+        })
+        seen.add(key)
+        if len(planned) >= max_queries:
+            break
+    return planned
+
+
 def public_lookup_queries(briefs: list[dict[str, Any]], max_queries: int) -> list[str]:
     queries: list[str] = []
     seen: set[str] = set()
@@ -453,6 +720,48 @@ def public_lookup_queries(briefs: list[dict[str, Any]], max_queries: int) -> lis
     return queries
 
 
+def plan_public_research_queries(
+    api_key: str,
+    briefs: list[dict[str, Any]],
+    max_queries: int,
+) -> list[dict[str, Any]]:
+    valid_indexes = {
+        int(brief["index"])
+        for brief in briefs
+        if isinstance(brief.get("index"), int)
+    }
+    try:
+        result = ask_deepseek(
+            api_key,
+            research_query_system_prompt(),
+            research_query_user_prompt(briefs, max_queries),
+            temperature=0.1,
+        )
+        planned = parse_research_queries(
+            result,
+            max_queries=max_queries,
+            valid_indexes=valid_indexes,
+        )
+    except SystemExit as exc:
+        print(f"Research query planning failed; using entity lookup fallback: {exc}", flush=True)
+        planned = []
+
+    seen = {str(item["query"]).casefold() for item in planned}
+    for query in public_lookup_queries(briefs, max_queries):
+        if len(planned) >= max_queries:
+            break
+        if query.casefold() in seen:
+            continue
+        planned.append({
+            "query": query,
+            "purpose": "entity_name",
+            "clip_indexes": [],
+            "why": "Fallback query for established Chinese entity names.",
+        })
+        seen.add(query.casefold())
+    return planned
+
+
 def html_to_text(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", value)
     return clean_text(html_lib.unescape(value))
@@ -491,38 +800,62 @@ def search_public_web(query: str, max_results: int) -> list[dict[str, str]]:
 
 
 def public_entity_lookup(
-    briefs: list[dict[str, Any]],
+    query_plans: list[dict[str, Any]],
     *,
-    max_queries: int,
     results_per_query: int,
 ) -> list[dict[str, Any]]:
     lookups: list[dict[str, Any]] = []
-    if max_queries < 1 or results_per_query < 1:
+    if not query_plans or results_per_query < 1:
         return lookups
 
-    for query in public_lookup_queries(briefs, max_queries):
-        try:
-            results = search_public_web(query, results_per_query)
-        except (HTTPError, URLError, TimeoutError, OSError) as exc:
-            print(f"Public lookup failed for {query!r}: {exc}", flush=True)
-            continue
-        if not results:
-            print(f"Public lookup returned no results for {query!r}", flush=True)
-            continue
-        print(f"Public lookup: {query!r} -> {len(results)} result(s)", flush=True)
-        lookups.append({
-            "query": query,
-            "results": results,
-        })
+    def fetch(query_plan: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, str]]]:
+        query = clean_text(str(query_plan.get("query", "")))
+        if not query:
+            return query_plan, []
+        return query_plan, search_public_web(query, results_per_query)
+
+    found_by_index: dict[int, dict[str, Any]] = {}
+    worker_count = min(3, len(query_plans))
+    with ThreadPoolExecutor(max_workers=worker_count) as pool:
+        futures = {
+            pool.submit(fetch, query_plan): index
+            for index, query_plan in enumerate(query_plans)
+        }
+        for future in as_completed(futures):
+            index = futures[future]
+            query_plan = query_plans[index]
+            query = clean_text(str(query_plan.get("query", "")))
+            if not query:
+                continue
+            try:
+                _, results = future.result()
+            except (HTTPError, URLError, TimeoutError, OSError) as exc:
+                print(f"Public lookup failed for {query!r}: {exc}", flush=True)
+                continue
+            if not results:
+                print(f"Public lookup returned no results for {query!r}", flush=True)
+                continue
+            print(f"Public lookup: {query!r} -> {len(results)} result(s)", flush=True)
+            found_by_index[index] = {
+                "query": query,
+                "purpose": query_plan.get("purpose", "consensus"),
+                "clip_indexes": query_plan.get("clip_indexes", []),
+                "why": query_plan.get("why", ""),
+                "results": results,
+            }
+
+    for index in sorted(found_by_index):
+        lookups.append(found_by_index[index])
     return lookups
 
 
 def entity_guide_system_prompt() -> str:
     return (
-        "You are a bilingual financial-news fact checker. Return strict JSON only. "
-        "Your job is to identify people, institutions, companies, places, and events "
-        "from source metadata and public search snippets, then provide established "
-        "Simplified Chinese names. Do not invent translations."
+        "You are a bilingual financial-news fact checker and editorial researcher. Return strict JSON only. "
+        "Identify entities, verify established Simplified Chinese names, and build a per-clip evidence card "
+        "for surprising or emotionally strong titles. Separate transcript facts from public context. "
+        "A search snippet is a lead, not automatic proof. Never invent a translation, consensus, holding, "
+        "business action, prior statement, or contradiction."
     )
 
 
@@ -548,6 +881,33 @@ Return JSON:
       "evidence": "short reason from public snippets"
     }}
   ],
+  "clip_research": [
+    {{
+      "index": 1,
+      "source_claim": "the strongest claim explicitly present in this clip",
+      "public_baseline": "what the public context normally expects, or empty if unverified",
+      "surprise_gap": "why source_claim conflicts with public_baseline, or empty",
+      "speaker_relation": "foreign_institution|foreign_expert|insider|company_executive|analyst|media_source|other",
+      "supported_angles": ["surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus"],
+      "words_vs_actions": {{
+        "supported": false,
+        "spoken_position": "",
+        "public_action": "",
+        "independent_source_count": 0,
+        "evidence": []
+      }},
+      "china_advantage": {{
+        "supported": false,
+        "comparison": "",
+        "evidence": []
+      }},
+      "evidence": [
+        {{"kind": "transcript|public", "query": "", "url": "", "fact": "short fact"}}
+      ],
+      "forbidden_claims": ["tempting claims that the evidence does not support"],
+      "confidence": "high|medium|low"
+    }}
+  ],
   "notes": ["optional notes"]
 }}
 
@@ -558,6 +918,15 @@ Rules:
 - If there is not enough evidence for a Chinese name, set confidence to low and leave preferred_zh empty or use the original English name.
 - Include likely mistranslations from current titles in aliases only when the public evidence supports a better name.
 - Keep aliases short; they are used for string replacement.
+- Build exactly one clip_research item for every input clip index.
+- source_claim must come from that clip's subtitles. Do not import a claim from another clip in the batch.
+- public_baseline and surprise_gap require relevant public snippets. Leave them empty when search returned no useful context.
+- outsider_candor is supported only when an identifiable foreign institution/expert makes a clear, unusually direct claim.
+- words_vs_actions is supported only when at least two independent public results, including an official disclosure or exact prior statement when available, show a concrete mismatch. A general impression is not enough.
+- Never label a person or institution dishonest. Record the exact spoken position and exact public action so the title editor can use a factual question.
+- china_advantage is supported only when the transcript or public evidence makes a concrete comparison favorable to China, Chinese companies, Chinese talent, Chinese technology, Chinese consumers, or Chinese policy capacity.
+- Do not treat Bloomberg, Bloomberg LP, the show host, or the publisher as the opinion-holding actor unless the clip is explicitly an editorial opinion piece.
+- Use query and URL fields from Public lookup snippets so downstream title claims remain auditable.
 """
 
 
@@ -593,11 +962,80 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
             "evidence": clean_text(str(raw.get("evidence", "")))[:260],
         })
 
+    raw_clip_research = result.get("clip_research")
+    if not isinstance(raw_clip_research, list):
+        raw_clip_research = []
+    clip_research: list[dict[str, Any]] = []
+    seen_indexes: set[int] = set()
+    for raw in raw_clip_research:
+        if not isinstance(raw, dict):
+            continue
+        try:
+            index = int(raw.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if index < 1 or index in seen_indexes:
+            continue
+        supported_angles = raw.get("supported_angles")
+        if not isinstance(supported_angles, list):
+            supported_angles = []
+        clean_angles = [
+            clean_text(str(angle))
+            for angle in supported_angles
+            if clean_text(str(angle)) in TITLE_ANGLE_IDS
+        ]
+        words_vs_actions = raw.get("words_vs_actions")
+        if not isinstance(words_vs_actions, dict):
+            words_vs_actions = {}
+        china_advantage = raw.get("china_advantage")
+        if not isinstance(china_advantage, dict):
+            china_advantage = {}
+        evidence = raw.get("evidence")
+        if not isinstance(evidence, list):
+            evidence = []
+        forbidden_claims = raw.get("forbidden_claims")
+        if not isinstance(forbidden_claims, list):
+            forbidden_claims = []
+        try:
+            independent_source_count = int(words_vs_actions.get("independent_source_count", 0) or 0)
+        except (TypeError, ValueError):
+            independent_source_count = 0
+        clip_research.append({
+            "index": index,
+            "source_claim": clean_text(str(raw.get("source_claim", "")))[:360],
+            "public_baseline": clean_text(str(raw.get("public_baseline", "")))[:360],
+            "surprise_gap": clean_text(str(raw.get("surprise_gap", "")))[:360],
+            "speaker_relation": clean_text(str(raw.get("speaker_relation", "other")))[:40] or "other",
+            "supported_angles": list(dict.fromkeys(clean_angles)),
+            "words_vs_actions": {
+                "supported": bool(words_vs_actions.get("supported", False)),
+                "spoken_position": clean_text(str(words_vs_actions.get("spoken_position", "")))[:280],
+                "public_action": clean_text(str(words_vs_actions.get("public_action", "")))[:280],
+                "independent_source_count": max(0, min(9, independent_source_count)),
+                "evidence": words_vs_actions.get("evidence", [])[:6]
+                if isinstance(words_vs_actions.get("evidence"), list)
+                else [],
+            },
+            "china_advantage": {
+                "supported": bool(china_advantage.get("supported", False)),
+                "comparison": clean_text(str(china_advantage.get("comparison", "")))[:280],
+                "evidence": china_advantage.get("evidence", [])[:6]
+                if isinstance(china_advantage.get("evidence"), list)
+                else [],
+            },
+            "evidence": evidence[:10],
+            "forbidden_claims": [clean_text(str(item))[:240] for item in forbidden_claims if clean_text(str(item))][:8],
+            "confidence": clean_text(str(raw.get("confidence", "low")))[:12] or "low",
+        })
+        seen_indexes.add(index)
+
     notes = result.get("notes")
     if not isinstance(notes, list):
         notes = []
     return {
+        "research_version": TITLE_RESEARCH_VERSION,
         "entities": entities,
+        "clip_research": clip_research,
         "notes": [clean_text(str(note))[:180] for note in notes if clean_text(str(note))][:8],
     }
 
@@ -607,16 +1045,54 @@ def build_entity_translation_guide(
     briefs: list[dict[str, Any]],
     public_lookup: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    if not public_lookup:
-        return {"entities": [], "notes": ["No public lookup snippets were available."]}
-    print("Building entity translation guide with DeepSeek", flush=True)
+    print("Building entity and editorial research guide with DeepSeek", flush=True)
     result = ask_deepseek(
         api_key,
         entity_guide_system_prompt(),
-        entity_guide_user_prompt(briefs, public_lookup),
+        entity_guide_user_prompt(compact_research_briefs(briefs), public_lookup),
         temperature=0.1,
     )
-    return parse_entity_guide(result)
+    guide = parse_entity_guide(result)
+    existing_indexes = {
+        int(item.get("index", 0))
+        for item in guide.get("clip_research", [])
+        if isinstance(item, dict) and str(item.get("index", "")).isdigit()
+    }
+    for brief in briefs:
+        try:
+            index = int(brief.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if index < 1 or index in existing_indexes:
+            continue
+        source_claim = clean_text(str(brief.get("current_title", "")))
+        if not source_claim:
+            for subtitle in brief.get("subtitles", []):
+                if isinstance(subtitle, dict):
+                    source_claim = clean_text(str(subtitle.get("zh") or subtitle.get("en") or ""))
+                if source_claim:
+                    break
+        guide["clip_research"].append({
+            "index": index,
+            "source_claim": source_claim[:360],
+            "public_baseline": "",
+            "surprise_gap": "",
+            "speaker_relation": "other",
+            "supported_angles": ["concrete_stakes"],
+            "words_vs_actions": {
+                "supported": False,
+                "spoken_position": "",
+                "public_action": "",
+                "independent_source_count": 0,
+                "evidence": [],
+            },
+            "china_advantage": {"supported": False, "comparison": "", "evidence": []},
+            "evidence": [{"kind": "transcript", "query": "", "url": "", "fact": source_claim[:300]}],
+            "forbidden_claims": ["No public baseline was verified for this clip."],
+            "confidence": "low",
+        })
+    guide["clip_research"].sort(key=lambda item: int(item.get("index", 0) or 0))
+    return guide
 
 
 def entity_replacement_pairs(entity_guide: dict[str, Any]) -> list[tuple[str, str]]:
@@ -645,20 +1121,142 @@ def apply_entity_replacements(text: str, entity_guide: dict[str, Any]) -> str:
     return value
 
 
+def research_for_indexes(entity_guide: dict[str, Any], indexes: set[int]) -> dict[str, Any]:
+    clip_research: list[dict[str, Any]] = []
+    for item in entity_guide.get("clip_research", []):
+        if not isinstance(item, dict):
+            continue
+        try:
+            index = int(item.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if index in indexes:
+            clip_research.append(item)
+    return {
+        "research_version": entity_guide.get("research_version", TITLE_RESEARCH_VERSION),
+        "entities": entity_guide.get("entities", []),
+        "clip_research": clip_research,
+        "notes": entity_guide.get("notes", []),
+    }
+
+
+def lookups_for_indexes(public_lookup: list[dict[str, Any]], indexes: set[int]) -> list[dict[str, Any]]:
+    selected: list[dict[str, Any]] = []
+    for lookup in public_lookup:
+        raw_indexes = lookup.get("clip_indexes")
+        if not isinstance(raw_indexes, list) or not raw_indexes:
+            selected.append(lookup)
+            continue
+        lookup_indexes: set[int] = set()
+        for value in raw_indexes:
+            try:
+                lookup_indexes.add(int(value))
+            except (TypeError, ValueError):
+                continue
+        if lookup_indexes & indexes:
+            selected.append(lookup)
+    return selected
+
+
+def candidate_system_prompt() -> str:
+    return (
+        "You are a Chinese viral-title angle architect. Return strict JSON only. "
+        "Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. "
+        "Each candidate must make a viewer feel one strong reaction instead of mild interest. "
+        "Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, "
+        "and national comparisons are forbidden. "
+        + WORDING_GUARD_PROMPT
+    )
+
+
+def candidate_user_prompt(
+    briefs: list[dict[str, Any]],
+    style: str,
+    public_lookup: list[dict[str, Any]],
+    entity_guide: dict[str, Any],
+) -> str:
+    indexes = {int(brief["index"]) for brief in briefs}
+    return f"""Create four genuinely different title candidates for every clip.
+
+Input clips:
+{json.dumps(briefs, ensure_ascii=False, indent=2)}
+
+Public lookup evidence:
+{json.dumps(lookups_for_indexes(public_lookup, indexes), ensure_ascii=False, indent=2)}
+
+Verified research guide:
+{json.dumps(research_for_indexes(entity_guide, indexes), ensure_ascii=False, indent=2)}
+
+Return JSON:
+{{
+  "clips": [
+    {{
+      "index": 1,
+      "fact_anchor": "the exact transcript fact every candidate preserves",
+      "candidates": [
+        {{
+          "candidate_id": "c1",
+          "angle_id": "surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus",
+          "emotion_pole": "意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪",
+          "viewer_reaction": "居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里",
+          "title": "完整中文标题",
+          "title_lines": ["第一行", "第二行", "第三行"],
+          "factual_mode": "statement|question",
+          "evidence_basis": ["transcript fact or public evidence reference"],
+          "scores": {{
+            "emotion_tension": 0,
+            "novelty": 0,
+            "specificity": 0,
+            "curiosity_gap": 0,
+            "factual_fidelity": 0,
+            "china_resonance": 0
+          }},
+          "fatal_issue": ""
+        }}
+      ]
+    }}
+  ]
+}}
+
+Operating rule: 二极管法则
+- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.
+- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.
+- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.
+- A question mark is not emotion. "前景如何", "回报路径在哪", "能否实现", "面临哪些挑战", and "释放什么信号" score at most 4 unless they contain a concrete contradiction or consequence.
+
+Angle rules:
+- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it.
+- outsider_candor: use only when a foreign institution/expert says something unusually direct; the identity contrast must be visible, such as 外资罕见看好 or 只有外部观察者敢说透. Do not call an ordinary comment 大实话.
+- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.
+- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.
+- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.
+- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.
+
+Writing rules:
+- Style: {style}
+- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.
+- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.
+- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.
+- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.
+- Prefer concrete verbs and consequences: 逼急、改口、藏不住、说透、砍半、押反了. Use only when facts support them.
+- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.
+- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.
+- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.
+- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.
+- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
+- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
+- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.
+- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.
+"""
+
+
 def system_prompt() -> str:
     return (
-        "You are the chief Chinese title editor for finance/news short videos. "
-        "Return strict JSON only. Rewrite titles to improve thumb-stop rate and completion rate "
-        "for a China audience while staying factual. Think in cover-copy blocks, not article headlines. "
-        "Use a constrained template first, then fill it with facts; do not freestyle long sentences. "
-        "Use credible hooks: big-name institutions, "
-        "recognizable people, contrarian tension, surprising consequence, concrete catalyst, "
-        "numbers, and curiosity gaps. Apply China-related brand safety: do not frame China, "
-        "Chinese markets, Chinese companies, or Chinese policy as fundamentally bad or hopeless. "
-        "Never use hard crisis/doom financial wording in Chinese titles or comments; prefer liquidity, policy, demand, confidence, valuation, and cycle-change language. "
-        "Never create or keep clips, titles, comments, or subtitle comments about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. "
-        "Never invent facts or names. Treat public lookup snippets "
-        "as the source of truth for person and institution names. "
+        "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. "
+        "Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. "
+        "At the same time, transcript fidelity and verified research boundaries are absolute. "
+        "Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. "
+        "Never directly accuse a person or institution of lying. "
         + WORDING_GUARD_PROMPT
     )
 
@@ -668,35 +1266,62 @@ def user_prompt(
     style: str,
     public_lookup: list[dict[str, Any]],
     entity_guide: dict[str, Any],
+    candidate_result: dict[str, Any],
+    repair_context: dict[str, Any] | None = None,
 ) -> str:
-    return f"""Refine these clip titles for Chinese vertical short videos.
+    indexes = {int(brief["index"]) for brief in briefs}
+    repair_block = (
+        "\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n"
+        + json.dumps(repair_context, ensure_ascii=False, indent=2)
+        if repair_context
+        else ""
+    )
+    return f"""Run a title tournament for these Chinese vertical short-video clips.
 
 Input clips:
 {json.dumps(briefs, ensure_ascii=False, indent=2)}
 
-Public entity lookup snippets:
-{json.dumps(public_lookup, ensure_ascii=False, indent=2) if public_lookup else "[]"}
+Verified research guide:
+{json.dumps(research_for_indexes(entity_guide, indexes), ensure_ascii=False, indent=2)}
 
-Entity translation guide:
-{json.dumps(entity_guide, ensure_ascii=False, indent=2)}
+Candidate pool from the angle architect:
+{json.dumps(candidate_result, ensure_ascii=False, indent=2)}
+{repair_block}
 
 Return JSON:
 {{
   "clips": [
     {{
       "index": 1,
-      "formula_id": "authority_number_question|authority_pressure|contrarian_condition|data_policy_signal|big_name_consequence",
+      "formula_id": "legacy-compatible short label",
+      "angle_id": "surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus",
+      "emotion_pole": "意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪",
+      "viewer_reaction": "the one immediate audience reaction",
+      "evidence_basis": ["specific transcript or research fact"],
       "title": "完整中文标题",
       "title_lines": ["第一行", "第二行", "第三行"],
       "title_highlights": ["关键词1", "关键词2"],
-      "comment": "KC评论：一句话解释为什么值得关注",
-      "comment_highlights": ["关键词1"],
+      "runner_up_titles": ["候选标题1", "候选标题2"],
+      "editor_scores": {{
+        "emotion_tension": 0,
+        "novelty": 0,
+        "specificity": 0,
+        "curiosity_gap": 0,
+        "factual_fidelity": 0,
+        "china_resonance": 0
+      }},
       "quality_check": {{
-        "has_big_name_or_institution": true,
-        "has_specific_topic_or_number": true,
-        "has_hook_or_tension": true,
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
         "passes_wording_guard": true
       }},
+      "comment": "KC评论：一句话解释为什么值得关注",
+      "comment_highlights": ["关键词1"],
       "subtitle_comments": [
         {{
           "subtitle_index": 1,
@@ -708,69 +1333,45 @@ Return JSON:
   ]
 }}
 
-Title strategy:
-- Style: {style}
-- Data-backed lessons from past KC Desktop posts:
-{json.dumps(TITLE_DATA_LESSONS, ensure_ascii=False, indent=2)}
-- Choose exactly one formula_id for each clip:
-  authority_number_question = "高盛王逸 / 4万亿城市更新 / 会托住楼市吗"
-  authority_pressure = "野村辜朝明 / 日本央行 / 为何被逼到墙角"
-  contrarian_condition = "中金Kevin / 低估值可能是价值陷阱 / 等待政策转向消费"
-  data_policy_signal = "6月PMI / 积极信号 / 政策会加码吗"
-  big_name_consequence = "黄仁勋 / AI人才 / 中国优势被低估？"
-- If none fits, use the closest formula and make line 3 a sharp question.
-- Prefer institution/person authority when present: 高盛、摩根士丹利、美联储、马斯克、洪灏、邢自强、辜朝明等。
-- Use compact authority labels when factual: "高盛王逸", "野村辜朝明", "中金Kevin". If no established Chinese name exists, keep the recognizable English name instead of forced transliteration.
-- Prefer counter-intuitive hooks when the transcript supports them, e.g. weak consensus vs unexpected turn, low valuation vs value trap, good data vs market selloff, central bank choice vs being forced.
-- Make the viewer ask "why?" or "really?" without cheap exaggeration. A good third line is often a sharp question or pressure point.
-- Strong three-line reference formats. Use their structure, not their facts unless supported:
-  1. ["高盛王逸", "4万亿城市更新", "会托住楼市吗"] with highlights ["4万亿"]
-  2. ["解读腾讯", "AI路径", "关键分叉在哪"] with highlights ["腾讯", "AI"]
-  3. ["野村辜朝明", "日本央行", "为何被逼到墙角"] with highlights ["辜朝明", "被逼到墙角"]
-  4. ["中金Kevin", "低估值可能是价值陷阱", "等待政策转向消费"] with highlights ["低估值", "价值陷阱", "政策转向消费"]
-- More strong patterns: "高盛：楼市真触底了？", "美联储这句话不寻常", "马斯克押错了吗？", "摩根士丹利：最坏时刻过去？"
-- Weak patterns to avoid: flat summaries, "今日热点", "核心观点速览", "值得关注", "震惊", "必看", "速看", clickbait with no factual basis.
-- Avoid newspaper-style verbs when a short noun phrase works: prefer "腾讯AI路径" over "腾讯正在探索AI业务路径"; prefer "日本央行" over "关于日本央行的讨论".
-- China framing rule: if the clip involves China, Chinese companies, Chinese assets, Chinese consumers, Chinese policy, or Chinese macro conditions, do not write titles that sound like China-bashing, national decline, collapse, ridicule, or hopelessness.
-- It is OK, and often preferable, to frame China-related clips through constructive or positive angles: policy space, confidence repair, consumption pivot, valuation repair, industrial upgrade, resilience, opportunity, or "can X support Y?".
-- If the transcript contains real pressure or risk about China, keep it factual but make the target the market mechanism or policy signal, not China itself. Prefer "楼市承压，政策如何托底？" over "中国楼市完了？".
-- Also write a concise KC commentary line that adds context or explains why the clip matters, like a restrained danmaku below subtitles.
+Tournament procedure, perform in this order:
+1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.
+2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.
+3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.
+4. Audience test: complete exactly one sentence: "看完标题，观众第一反应是____". If the answer is merely "我知道发生了什么", reject it.
+5. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.
+6. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.
+7. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.
 
-Rules:
-- Return one refined item for every input index, with the same index.
-- First use the entity translation guide to verify person names and institution names. Use preferred_zh when confidence is high or medium; do not literally translate names.
-- Convert Traditional Chinese names in public snippets to Simplified Chinese for the final title, e.g. 蓮華 -> 莲华, 資產 -> 资产, 洪灝 -> 洪灏.
-- If public snippets conflict, prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual mentions.
-- title should be short and sharp, ideally 10-24 Chinese characters.
-- title_lines must contain exactly 3 non-empty short display lines:
-  line 1 = the strongest actor / institution / person, ideally 3-8 Chinese characters or an institution+person label,
-  line 2 = the concrete topic, number, asset, policy, or event, ideally 4-10 Chinese characters,
-  line 3 = the hook, tension, question, pressure point, or consequence, ideally 5-12 Chinese characters.
-- Keep each title line as a punchy block, not a full sentence. No filler like "关于", "表示", "认为", "指出" unless needed for facts.
-- title_highlights must be exact substrings from the joined title_lines. Prefer 2-6 character visual anchors: numbers, institution/person names, "低估值", "价值陷阱", "政策转向", "被逼到墙角".
-- For China-related titles, highlights should not visually amplify derogatory or doom phrases. Highlight constructive anchors such as "政策转向", "消费", "产业升级", "托底", "修复", "低估值", "4万亿".
-- comment must start with "KC评论：" and be one sharp sentence, ideally 16-34 Chinese characters after the prefix.
-- comment should add an editorial lens: why this matters, what tension it reveals, or what signal to watch next.
-- comment_highlights must be exact substrings of comment. Prefer the entity/event/risk keyword, not the prefix.
-- Do not repeat the title verbatim in comment.
-- subtitle_comments must contain one item for every input subtitle in that clip's subtitles array.
-- Each subtitle_comments[].subtitle_index must exactly match the input subtitle index.
-- Each subtitle comment must be dynamic and grounded in that specific subtitle's zh/en text, not a generic clip-level slogan.
-- Subtitle comments should be shorter than the clip-level comment: ideally 10-24 Chinese characters after "KC评论：", hard limit 28 Chinese characters.
-- Subtitle comments must end as a complete phrase; do not leave trailing fragments after truncation.
-- For adjacent subtitles, vary the angle: signal, tension, implication, risk, or why the line matters.
-- Do not use source labels such as 彭博独家, 独家, Bloomberg Exclusive.
-- Do not mention sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. If a clip is sensitive-topic related, it should have been filtered out and must not be rewritten.
-- Do not use emojis, markdown, quotation marks, hashtags, or numbering.
-- Do not use financial-advice wording.
+Editorial interpretation:
+- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.
+- 新鲜感 requires a baseline plus a reversal. "外资谈中国" is ordinary; "外资在普遍悲观时罕见给出积极判断" is a usable reversal only if public_baseline supports it.
+- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste "大实话" onto a routine forecast.
+- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as "嘴上X，手里却Y？".
+- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.
+- Familiar authority helps. An obscure person or institution should be replaced by a useful identity such as 外资策略师、海外车企CEO、芯片巨头, when accurate.
+- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.
+
+Title and display rules:
+- Style: {style}
+- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.
+- Full title should be short and sharp, ideally 10-24 Chinese characters.
+- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.
+- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.
+- Do not use flat endings such as 回报路径在哪、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪.
+- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.
 - Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
-- Rephrase title wording with neutral alternatives such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.
-- In subtitles/comments, rephrase 投资/股票/A股/港股/美股 when needed.
-- Never use hard crisis/doom wording such as 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了 in title, title_lines, highlights, comments, or subtitle_comments.
-- Prefer softer wording: 流动性变化、信贷变化、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动.
-- For China-related subtitles/comments, rewrite negative macro wording into neutral pressure/change/repair wording instead of saying China is bad or hopeless.
-- Preserve the clip's factual meaning. If the transcript does not support a dramatic claim, use a curiosity question instead of stating it as fact.
-- Before returning JSON, run quality_check yourself. If any quality_check field is false, rewrite the title once.
+- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
+- Do not mention sensitive geopolitical or military topics.
+
+KC comment rules:
+- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.
+- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.
+- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.
+- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.
+- All highlight strings must be exact substrings of their corresponding title/comment.
+
+Data lessons:
+{json.dumps(TITLE_DATA_LESSONS, ensure_ascii=False, indent=2)}
 """
 
 
@@ -957,6 +1558,26 @@ def normalize_subtitle_comments(
     return normalized
 
 
+def normalize_editor_scores(raw_scores: Any) -> dict[str, int]:
+    if not isinstance(raw_scores, dict):
+        raw_scores = {}
+    normalized: dict[str, int] = {}
+    for key in (
+        "emotion_tension",
+        "novelty",
+        "specificity",
+        "curiosity_gap",
+        "factual_fidelity",
+        "china_resonance",
+    ):
+        try:
+            value = int(float(raw_scores.get(key, 0)))
+        except (TypeError, ValueError):
+            value = 0
+        normalized[key] = max(0, min(10, value))
+    return normalized
+
+
 def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> dict[str, Any] | None:
     fallback = fallback_lines(clip, entity_guide)
     raw_lines = raw.get("title_lines")
@@ -986,6 +1607,24 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         highlights = [line for line in lines[1:] if line][:2]
     comment, comment_highlights = normalize_comment(raw, clip, entity_guide)
 
+    raw_evidence = raw.get("evidence_basis")
+    if not isinstance(raw_evidence, list):
+        raw_evidence = []
+    evidence_basis = [
+        clean_text(str(item))[:300]
+        for item in raw_evidence
+        if clean_text(str(item))
+    ][:8]
+    raw_runners = raw.get("runner_up_titles")
+    if not isinstance(raw_runners, list):
+        raw_runners = []
+    runner_up_titles = [
+        compact_title(china_safe_title_text(apply_entity_replacements(str(item), entity_guide), clip))
+        for item in raw_runners
+        if clean_text(str(item))
+    ][:3]
+    quality_check = raw.get("quality_check") if isinstance(raw.get("quality_check"), dict) else {}
+
     refined = {
         "title": title,
         "title_lines": lines,
@@ -994,10 +1633,33 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         "comment_highlights": comment_highlights,
         "subtitle_comments": normalize_subtitle_comments(raw, clip, entity_guide),
         "formula_id": clean_text(str(raw.get("formula_id", "")))[:48],
-        "quality_check": raw.get("quality_check") if isinstance(raw.get("quality_check"), dict) else {},
+        "angle_id": clean_text(str(raw.get("angle_id", "")))[:48],
+        "emotion_pole": clean_text(str(raw.get("emotion_pole", "")))[:24],
+        "viewer_reaction": clean_text(str(raw.get("viewer_reaction", "")))[:80],
+        "evidence_basis": evidence_basis,
+        "runner_up_titles": [item for item in runner_up_titles if item],
+        "editor_scores": normalize_editor_scores(raw.get("editor_scores")),
+        "quality_check": quality_check,
     }
     refined["title_quality_audit"] = title_quality_audit(refined, clip)
     return refined
+
+
+def candidate_result_for_indexes(candidate_result: dict[str, Any], indexes: set[int]) -> dict[str, Any]:
+    raw_clips = candidate_result.get("clips")
+    if not isinstance(raw_clips, list):
+        return candidate_result
+    selected: list[dict[str, Any]] = []
+    for item in raw_clips:
+        if not isinstance(item, dict):
+            continue
+        try:
+            index = int(item.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if index in indexes:
+            selected.append(item)
+    return {"clips": selected}
 
 
 def refine_batch(
@@ -1016,13 +1678,22 @@ def refine_batch(
         clip_brief(plan, clips[index - 1], index, max_subtitles)
         for index in indexes
     ]
+    candidate_system_text = candidate_system_prompt()
+    candidate_prompt_text = candidate_user_prompt(briefs, style, public_lookup, entity_guide)
+    candidate_result = ask_deepseek(
+        api_key,
+        candidate_system_text,
+        candidate_prompt_text,
+        temperature=0.65,
+    )
+
     system_text = system_prompt()
-    prompt_text = user_prompt(briefs, style, public_lookup, entity_guide)
+    prompt_text = user_prompt(briefs, style, public_lookup, entity_guide, candidate_result)
     result = ask_deepseek(
         api_key,
         system_text,
         prompt_text,
-        temperature=0.45,
+        temperature=0.25,
     )
     parsed = parse_items(result)
 
@@ -1035,20 +1706,92 @@ def refine_batch(
         if refined:
             normalized[index] = refined
 
+    repair_events: list[dict[str, Any]] = []
+    failed_indexes = [
+        index
+        for index in indexes
+        if index not in normalized or not normalized[index]["title_quality_audit"].get("pass")
+    ]
+    if failed_indexes:
+        print(
+            "Repairing title quality for clip(s) " + ",".join(map(str, failed_indexes)),
+            flush=True,
+        )
+        failed_briefs = [brief for brief in briefs if int(brief["index"]) in failed_indexes]
+        repair_context = {
+            "previous_finals": {
+                str(index): normalized.get(index, {})
+                for index in failed_indexes
+            },
+            "required_fixes": {
+                str(index): (
+                    normalized[index].get("title_quality_audit", {}).get("fixes", [])
+                    if index in normalized
+                    else ["return_a_complete_valid_item"]
+                )
+                for index in failed_indexes
+            },
+        }
+        repair_candidates = candidate_result_for_indexes(candidate_result, set(failed_indexes))
+        repair_prompt_text = user_prompt(
+            failed_briefs,
+            style,
+            public_lookup,
+            entity_guide,
+            repair_candidates,
+            repair_context=repair_context,
+        )
+        repair_result = ask_deepseek(
+            api_key,
+            system_text,
+            repair_prompt_text,
+            temperature=0.15,
+        )
+        repaired_items = parse_items(repair_result)
+        for index in failed_indexes:
+            raw_item = repaired_items.get(index)
+            if not raw_item:
+                continue
+            repaired = normalize_item(raw_item, clips[index - 1], entity_guide)
+            if not repaired:
+                continue
+            current_score = int(normalized.get(index, {}).get("title_quality_audit", {}).get("score", -1))
+            repaired_score = int(repaired.get("title_quality_audit", {}).get("score", -1))
+            if repaired.get("title_quality_audit", {}).get("pass") or repaired_score > current_score:
+                normalized[index] = repaired
+        repair_events.append({
+            "indexes": failed_indexes,
+            "user_prompt": repair_prompt_text,
+            "raw_result": repair_result,
+            "remaining_failed_indexes": [
+                index
+                for index in failed_indexes
+                if index not in normalized or not normalized[index]["title_quality_audit"].get("pass")
+            ],
+        })
+
     if log_events is not None:
         log_events.append({
             "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
             "indexes": indexes,
             "briefs": briefs,
-            "system_prompt": system_text,
-            "user_prompt": prompt_text,
+            "candidate_system_prompt": candidate_system_text,
+            "candidate_user_prompt": candidate_prompt_text,
+            "candidate_raw_result": candidate_result,
+            "judge_system_prompt": system_text,
+            "judge_user_prompt": prompt_text,
             "raw_result": result,
+            "repair_events": repair_events,
             "parsed_indexes": sorted(parsed),
             "normalized": {
                 str(index): {
                     "title": item.get("title"),
                     "title_lines": item.get("title_lines"),
                     "formula_id": item.get("formula_id"),
+                    "angle_id": item.get("angle_id"),
+                    "emotion_pole": item.get("emotion_pole"),
+                    "viewer_reaction": item.get("viewer_reaction"),
+                    "editor_scores": item.get("editor_scores"),
                     "quality_check": item.get("quality_check"),
                     "title_quality_audit": item.get("title_quality_audit"),
                     "comment": item.get("comment"),
@@ -1119,6 +1862,43 @@ def refine_titles(
     if missing:
         raise SystemExit("DeepSeek did not return valid title refinements for clips: " + ",".join(map(str, missing)))
 
+    quality_failed = [
+        index
+        for index in indexes
+        if not refinements[index].get("title_quality_audit", {}).get("pass")
+    ]
+    for index in quality_failed:
+        print(f"Retrying emotion-polarity quality gate for clip {index}", flush=True)
+        retried = refine_batch(
+            api_key,
+            plan,
+            clips,
+            [index],
+            style=style,
+            max_subtitles=max_subtitles,
+            public_lookup=public_lookup,
+            entity_guide=entity_guide,
+            log_events=log_events,
+        ).get(index)
+        if not retried:
+            continue
+        current_score = int(refinements[index].get("title_quality_audit", {}).get("score", -1))
+        retried_score = int(retried.get("title_quality_audit", {}).get("score", -1))
+        if retried.get("title_quality_audit", {}).get("pass") or retried_score > current_score:
+            refinements[index] = retried
+
+    quality_failed = [
+        index
+        for index in indexes
+        if not refinements[index].get("title_quality_audit", {}).get("pass")
+    ]
+    if quality_failed:
+        details = "; ".join(
+            f"{index}:{','.join(refinements[index].get('title_quality_audit', {}).get('fixes', []))}"
+            for index in quality_failed
+        )
+        raise SystemExit("Title emotion-polarity quality gate failed: " + details)
+
     return refinements
 
 
@@ -1144,6 +1924,12 @@ def apply_refinements(
         clip["comment_highlights"] = refined["comment_highlights"]
         clip["subtitle_comments"] = refined["subtitle_comments"]
         clip["title_formula_id"] = refined.get("formula_id", "")
+        clip["title_angle_id"] = refined.get("angle_id", "")
+        clip["title_emotion_pole"] = refined.get("emotion_pole", "")
+        clip["title_viewer_reaction"] = refined.get("viewer_reaction", "")
+        clip["title_evidence_basis"] = refined.get("evidence_basis", [])
+        clip["title_runner_up_titles"] = refined.get("runner_up_titles", [])
+        clip["title_editor_scores"] = refined.get("editor_scores", {})
         clip["title_quality_audit"] = refined.get("title_quality_audit", {})
         clip["title_model_quality_check"] = refined.get("quality_check", {})
         clip["title_refined"] = True
@@ -1154,6 +1940,7 @@ def apply_refinements(
     plan["title_refine"] = {
         "provider": "deepseek",
         "model": "deepseek-chat",
+        "research_version": TITLE_RESEARCH_VERSION,
         "style": style,
         "clip_count": len(refinements),
         "entity_translation_guide": entity_guide,
@@ -1164,6 +1951,10 @@ def apply_refinements(
             {
                 "index": index,
                 "title": clips[index - 1].get("title", ""),
+                "angle_id": clips[index - 1].get("title_angle_id", ""),
+                "emotion_pole": clips[index - 1].get("title_emotion_pole", ""),
+                "viewer_reaction": clips[index - 1].get("title_viewer_reaction", ""),
+                "editor_scores": clips[index - 1].get("title_editor_scores", {}),
                 **(clips[index - 1].get("title_quality_audit") or {}),
             }
             for index in sorted(refinements)
@@ -1191,6 +1982,7 @@ def write_refine_log(
         "style": style,
         "provider": "deepseek",
         "model": "deepseek-chat",
+        "research_version": TITLE_RESEARCH_VERSION,
         "data_driven_lessons": TITLE_DATA_LESSONS,
         "quality_min_score": TITLE_QUALITY_MIN_SCORE,
         "public_lookup_count": len(public_lookup),
@@ -1200,6 +1992,12 @@ def write_refine_log(
                 "title": item.get("title"),
                 "title_lines": item.get("title_lines"),
                 "formula_id": item.get("formula_id"),
+                "angle_id": item.get("angle_id"),
+                "emotion_pole": item.get("emotion_pole"),
+                "viewer_reaction": item.get("viewer_reaction"),
+                "evidence_basis": item.get("evidence_basis"),
+                "runner_up_titles": item.get("runner_up_titles"),
+                "editor_scores": item.get("editor_scores"),
                 "quality_check": item.get("quality_check"),
                 "title_quality_audit": item.get("title_quality_audit"),
                 "comment": item.get("comment"),
@@ -1244,16 +2042,23 @@ def main() -> None:
 
     briefs = all_clip_briefs(plan, clips, args.max_subtitles)
     lookup: list[dict[str, Any]] = []
+    research_queries: list[dict[str, Any]] = []
     if not args.no_public_lookup:
-        lookup = public_entity_lookup(
+        print("Planning title research queries with DeepSeek", flush=True)
+        research_queries = plan_public_research_queries(
+            api_key,
             briefs,
-            max_queries=args.lookup_max_queries,
+            args.lookup_max_queries,
+        )
+        lookup = public_entity_lookup(
+            research_queries,
             results_per_query=args.lookup_results_per_query,
         )
         if not lookup:
             print("No public entity lookup snippets collected; continuing with transcript context only.", flush=True)
 
     entity_guide = build_entity_translation_guide(api_key, briefs, lookup)
+    entity_guide["research_queries"] = research_queries
 
     log_events: list[dict[str, Any]] = []
     refinements = refine_titles(

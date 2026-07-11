@@ -1,0 +1,63 @@
+name: Test DeepSeek Title Refinement
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-title-refinement-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refine-titles:
+    name: Research and Refine Two Titles
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            tools
+            tools/**
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run title unit tests
+        run: python tools/test_refine_clip_titles.py
+
+      - name: Run DeepSeek title tournament
+        env:
+          PYTHONUNBUFFERED: "1"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          mkdir -p work/title-refinement
+          cp tools/testdata/title_refine_sample.json work/title-refinement/highlight_plan.json
+          python tools/refine_clip_titles.py \
+            --plan work/title-refinement/highlight_plan.json \
+            --log-path work/title-refinement/title_refine_log.json
+
+      - name: Publish title summary
+        run: |
+          {
+            echo "## DeepSeek title refinement"
+            echo
+            jq -r '.clips[] | "### Clip \(.title_angle_id): \(.title_emotion_pole)\n\n**\(.title_lines | join(" / "))**\n\n- Viewer reaction: \(.title_viewer_reaction)\n- Score: \(.title_quality_audit.score)\n- Runner-ups: \(.title_runner_up_titles | join("；"))\n"' work/title-refinement/highlight_plan.json
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload title research logs
+        uses: actions/upload-artifact@v5
+        with:
+          name: deepseek-title-refinement
+          path: work/title-refinement/
+          if-no-files-found: error
+          retention-days: 7
