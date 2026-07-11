@@ -200,6 +200,91 @@ class TitleQualityTests(unittest.TestCase):
 
         self.assertTrue(audit["pass"], audit)
 
+    def test_position_change_requires_two_public_sources(self) -> None:
+        clip = {"title": "China AI", "subtitles": [{"zh": "中国AI成本更低"}]}
+        refined = {
+            "title": "高盛改口中国AI成本更低海外份额要反转？",
+            "title_lines": ["高盛改口", "中国AI成本更低", "海外份额要反转？"],
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "意外",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        unsupported = titles.title_quality_audit(refined, clip, {"position_change": {"supported": False}})
+        supported = titles.title_quality_audit(
+            refined,
+            clip,
+            {"position_change": {"supported": True, "independent_source_count": 2}},
+        )
+
+        self.assertFalse(unsupported["pass"])
+        self.assertIn("remove_unverified_position_change_claim", unsupported["fixes"])
+        self.assertTrue(supported["pass"], supported)
+
+    def test_words_versus_actions_requires_two_public_sources(self) -> None:
+        clip = {"title": "AI company", "subtitles": [{"zh": "公司讨论AI路线"}]}
+        refined = {
+            "title": "科技巨头嘴上看多手里却押反了？",
+            "title_lines": ["科技巨头", "嘴上看多", "手里却押反了？"],
+            "angle_id": "words_vs_actions",
+            "emotion_pole": "反差质疑",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip, {"words_vs_actions": {"supported": False}})
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("remove_unverified_words_versus_actions_claim", audit["fixes"])
+
+    def test_incomplete_tension_phrase_is_rejected(self) -> None:
+        clip = {"title": "Volkswagen", "subtitles": [{"zh": "中国车企竞争加剧"}]}
+        refined = {
+            "title": "大众车型砍半谈判卡壳中国车企竞争逼急",
+            "title_lines": ["大众车型砍半", "谈判却卡壳", "中国车企竞争逼急"],
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("complete_the_tension_phrase_with_its_subject_or_object", audit["fixes"])
+
+    def test_generic_growth_forecast_is_flat(self) -> None:
+        clip = {"title": "China AI", "subtitles": [{"zh": "中国AI成本更低"}]}
+        refined = {
+            "title": "中国AI成本更低市场份额有望扩大",
+            "title_lines": ["中国AI成本更低", "性价比优势", "市场份额有望扩大"],
+            "angle_id": "china_advantage",
+            "emotion_pole": "惊喜",
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+        }
+
+        audit = titles.title_quality_audit(refined, clip)
+
+        self.assertFalse(audit["pass"])
+        self.assertIn("replace_flat_summary_or_generic_question", audit["fixes"])
+
+
+class EntityReplacementTests(unittest.TestCase):
+    def test_replacement_is_idempotent_when_alias_prefixes_preferred_name(self) -> None:
+        guide = {
+            "entities": [
+                {
+                    "preferred_zh": "大众汽车",
+                    "aliases": ["大众"],
+                }
+            ]
+        }
+
+        self.assertEqual(titles.apply_entity_replacements("大众车型砍半", guide), "大众汽车车型砍半")
+        self.assertEqual(titles.apply_entity_replacements("大众汽车车型砍半", guide), "大众汽车车型砍半")
+
 
 class PromptContractTests(unittest.TestCase):
     def test_candidate_prompt_operationalizes_emotion_polarity(self) -> None:

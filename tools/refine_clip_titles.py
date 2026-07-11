@@ -90,7 +90,8 @@ TITLE_FLAT_RE = re.compile(
     r"(市场机会|市场影响|策略前瞻|成焦点|长期催化剂|短期压力|值得关注|"
     r"回报路径在哪|前景如何|未来如何|有待观察|仍不明朗|面临挑战|带来机遇|"
     r"释放信号|成本谈判未达预期|关键分叉在哪|(?:股东)?回报(?:仍)?(?:存疑|待解|成疑)|"
-    r"(?:盈利|前景|效果)(?:仍)?(?:存疑|待解|成疑))(?:？|\?)?$"
+    r"(?:盈利|前景|效果)(?:仍)?(?:存疑|待解|成疑)|"
+    r"(?:有望|预计|可能)(?:扩大|增长|提升|改善))(?:？|\?)?$"
 )
 TITLE_SOURCE_LABEL_RE = re.compile(
     r"^(?:彭博(?:社|有限合伙企业|有限责任公司)?|Bloomberg(?:\s+L\.?P\.?)?)"
@@ -98,10 +99,13 @@ TITLE_SOURCE_LABEL_RE = re.compile(
     re.IGNORECASE,
 )
 TITLE_EDITORIAL_META_RE = re.compile(
-    r"(外资策略师|外资首席|海外策略师|海外专家|外媒点破|外媒直言|西方机构承认|"
+    r"(外资策略师|外资首席|海外策略师|海外专家|西方策略师|外媒点破|外媒直言|西方机构承认|"
     r"外资(?:罕见|终于|也)(?:直言|承认|看好|改口|说透)?|罕见直言|终于有人说|"
     r"说了句大实话|大实话|只有外资[^，。？！?]{0,8}敢说)"
 )
+TITLE_POSITION_CHANGE_RE = re.compile(r"(改口|口风突变|态度反转|突然看多|突然看空)")
+TITLE_WORDS_ACTIONS_RE = re.compile(r"(嘴上.+手里|说一套.+做一套|言行不一|押反了|押注相反)")
+TITLE_INCOMPLETE_TENSION_RE = re.compile(r"(逼急|逼到|迫使|倒逼)$")
 CHINA_CONTEXT_RE = re.compile(
     r"(中国|中资|中企|中概|内地|国内|人民币|楼市|房价|房地产|地产|A股|港股|"
     r"China|Chinese|Hong Kong|renminbi|yuan|property|housing|real estate)",
@@ -299,7 +303,11 @@ def china_safe_title_text(text: str, clip: dict[str, Any]) -> str:
     return sanitize_zh_wording(value, context=clip_wording_context(clip), for_title=True)
 
 
-def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[str, Any]:
+def title_quality_audit(
+    refined: dict[str, Any],
+    clip: dict[str, Any],
+    research_item: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     lines = refined.get("title_lines", [])
     if not isinstance(lines, list):
         lines = []
@@ -426,6 +434,41 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
         score -= 30
         fixes.append("remove_internal_editorial_labels_from_reader_copy")
 
+    research_item = research_item if isinstance(research_item, dict) else {}
+    position_change = research_item.get("position_change")
+    if not isinstance(position_change, dict):
+        position_change = {}
+    try:
+        position_source_count = int(position_change.get("independent_source_count", 0) or 0)
+    except (TypeError, ValueError):
+        position_source_count = 0
+    position_change_supported = bool(position_change.get("supported")) and position_source_count >= 2
+    has_unsupported_position_change = bool(TITLE_POSITION_CHANGE_RE.search(text)) and not position_change_supported
+    if has_unsupported_position_change:
+        score -= 35
+        fixes.append("remove_unverified_position_change_claim")
+
+    words_vs_actions = research_item.get("words_vs_actions")
+    if not isinstance(words_vs_actions, dict):
+        words_vs_actions = {}
+    try:
+        action_source_count = int(words_vs_actions.get("independent_source_count", 0) or 0)
+    except (TypeError, ValueError):
+        action_source_count = 0
+    words_vs_actions_supported = bool(words_vs_actions.get("supported")) and action_source_count >= 2
+    has_unsupported_words_actions = bool(TITLE_WORDS_ACTIONS_RE.search(text)) and not words_vs_actions_supported
+    if has_unsupported_words_actions:
+        score -= 35
+        fixes.append("remove_unverified_words_versus_actions_claim")
+
+    has_incomplete_tension = any(
+        TITLE_INCOMPLETE_TENSION_RE.search(str(line).strip())
+        for line in lines
+    )
+    if has_incomplete_tension:
+        score -= 20
+        fixes.append("complete_the_tension_phrase_with_its_subject_or_object")
+
     if re.search(r"(今日热点|核心观点速览|值得关注|速看|必看|震惊)", text):
         score -= 16
         fixes.append("remove_generic_clickbait_or_filler")
@@ -466,6 +509,9 @@ def title_quality_audit(refined: dict[str, Any], clip: dict[str, Any]) -> dict[s
         and not is_flat
         and not has_source_actor
         and not has_editorial_meta
+        and not has_unsupported_position_change
+        and not has_unsupported_words_actions
+        and not has_incomplete_tension
     )
     if is_china_related_clip(clip):
         semantic_pass = semantic_pass and china_resonance >= 8
@@ -634,6 +680,7 @@ Research priorities, in order:
 Rules:
 - Every query must contain an exact person, institution, company, product, statistic, or quoted claim. Never search vague phrases such as "is this surprising".
 - Use two independently phrased queries for a possible words-versus-actions angle; otherwise that angle cannot be used.
+- Use two independently phrased queries for a possible claim that the same speaker or institution changed position. No prior search result is not evidence of a change.
 - Prefer official pages, filings, established financial media, company announcements, and exact bilingual mentions.
 - Do not search sensitive geopolitical or military topics.
 - Do not create queries merely to confirm the current title. Search the underlying claim and comparison.
@@ -913,6 +960,13 @@ Return JSON:
         "independent_source_count": 0,
         "evidence": []
       }},
+      "position_change": {{
+        "supported": false,
+        "prior_position": "",
+        "current_position": "",
+        "independent_source_count": 0,
+        "evidence": []
+      }},
       "china_advantage": {{
         "supported": false,
         "comparison": "",
@@ -940,6 +994,7 @@ Rules:
 - public_baseline and surprise_gap require relevant public snippets. Leave them empty when search returned no useful context.
 - outsider_candor is supported only when an identifiable foreign institution/expert makes a clear, unusually direct claim.
 - words_vs_actions is supported only when at least two independent public results, including an official disclosure or exact prior statement when available, show a concrete mismatch. A general impression is not enough.
+- position_change is supported only when an exact earlier public position and the current position show a real change, backed by at least two independent public results. Search-result absence, no prior mention, or a vague reputation is not evidence of a change.
 - Never label a person or institution dishonest. Record the exact spoken position and exact public action so the title editor can use a factual question.
 - china_advantage is supported only when the transcript or public evidence makes a concrete comparison favorable to China, Chinese companies, Chinese talent, Chinese technology, Chinese consumers, or Chinese policy capacity.
 - Do not treat Bloomberg, Bloomberg LP, the show host, or the publisher as the opinion-holding actor unless the clip is explicitly an editorial opinion piece.
@@ -1004,6 +1059,9 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
         words_vs_actions = raw.get("words_vs_actions")
         if not isinstance(words_vs_actions, dict):
             words_vs_actions = {}
+        position_change = raw.get("position_change")
+        if not isinstance(position_change, dict):
+            position_change = {}
         china_advantage = raw.get("china_advantage")
         if not isinstance(china_advantage, dict):
             china_advantage = {}
@@ -1017,6 +1075,10 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
             independent_source_count = int(words_vs_actions.get("independent_source_count", 0) or 0)
         except (TypeError, ValueError):
             independent_source_count = 0
+        try:
+            position_source_count = int(position_change.get("independent_source_count", 0) or 0)
+        except (TypeError, ValueError):
+            position_source_count = 0
         clip_research.append({
             "index": index,
             "source_claim": clean_text(str(raw.get("source_claim", "")))[:360],
@@ -1031,6 +1093,15 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
                 "independent_source_count": max(0, min(9, independent_source_count)),
                 "evidence": words_vs_actions.get("evidence", [])[:6]
                 if isinstance(words_vs_actions.get("evidence"), list)
+                else [],
+            },
+            "position_change": {
+                "supported": bool(position_change.get("supported", False)),
+                "prior_position": clean_text(str(position_change.get("prior_position", "")))[:280],
+                "current_position": clean_text(str(position_change.get("current_position", "")))[:280],
+                "independent_source_count": max(0, min(9, position_source_count)),
+                "evidence": position_change.get("evidence", [])[:6]
+                if isinstance(position_change.get("evidence"), list)
                 else [],
             },
             "china_advantage": {
@@ -1103,6 +1174,13 @@ def build_entity_translation_guide(
                 "independent_source_count": 0,
                 "evidence": [],
             },
+            "position_change": {
+                "supported": False,
+                "prior_position": "",
+                "current_position": "",
+                "independent_source_count": 0,
+                "evidence": [],
+            },
             "china_advantage": {"supported": False, "comparison": "", "evidence": []},
             "evidence": [{"kind": "transcript", "query": "", "url": "", "fact": source_claim[:300]}],
             "forbidden_claims": ["No public baseline was verified for this clip."],
@@ -1134,7 +1212,17 @@ def entity_replacement_pairs(entity_guide: dict[str, Any]) -> list[tuple[str, st
 def apply_entity_replacements(text: str, entity_guide: dict[str, Any]) -> str:
     value = to_simplified_common(text)
     for alias, preferred in entity_replacement_pairs(entity_guide):
-        value = value.replace(alias, preferred)
+        if preferred.startswith(alias):
+            suffix = preferred[len(alias):]
+            if not suffix:
+                continue
+            value = re.sub(
+                re.escape(alias) + r"(?!" + re.escape(suffix) + r")",
+                lambda _: preferred,
+                value,
+            )
+        else:
+            value = value.replace(alias, preferred)
     return value
 
 
@@ -1155,6 +1243,19 @@ def research_for_indexes(entity_guide: dict[str, Any], indexes: set[int]) -> dic
         "clip_research": clip_research,
         "notes": entity_guide.get("notes", []),
     }
+
+
+def research_item_for_index(entity_guide: dict[str, Any], index: int) -> dict[str, Any]:
+    for item in entity_guide.get("clip_research", []):
+        if not isinstance(item, dict):
+            continue
+        try:
+            item_index = int(item.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if item_index == index:
+            return item
+    return {}
 
 
 def lookups_for_indexes(public_lookup: list[dict[str, Any]], indexes: set[int]) -> list[dict[str, Any]]:
@@ -1242,7 +1343,7 @@ Operating rule: 二极管法则
 - A question mark is not emotion. "前景如何", "回报路径在哪", "能否实现", "面临哪些挑战", "回报存疑", and "释放什么信号" score at most 4 unless they contain a concrete contradiction or consequence.
 
 Angle rules:
-- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it.
+- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into "改口" unless research.position_change.supported is true with at least two independent sources.
 - outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.
 - words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.
 - china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.
@@ -1255,7 +1356,7 @@ Writing rules:
 - Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.
 - Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.
 - The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.
-- Prefer concrete verbs and consequences: 逼急、改口、藏不住、说透、砍半、押反了. Use only when facts support them.
+- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. "改口" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.
 - Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.
 - angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.
 - Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].
@@ -1357,7 +1458,7 @@ Tournament procedure, perform in this order:
 1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.
 2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.
 3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.
-4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.
+4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.
 5. Audience test: complete exactly one sentence: "看完标题，观众第一反应是____". If the answer is merely "我知道发生了什么", reject it.
 6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.
 7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.
@@ -1369,8 +1470,9 @@ Editorial interpretation:
 - 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste "大实话" onto a routine forecast.
 - 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.
 - The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as "嘴上X，手里却Y？".
+- "改口" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.
 - 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.
-- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师 or 海外专家 are not final copy.
+- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.
 - Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.
 
 Title and display rules:
@@ -1379,7 +1481,8 @@ Title and display rules:
 - Full title should be short and sharp, ideally 10-24 Chinese characters.
 - Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.
 - Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.
-- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪. Turn the caveat into a concrete unresolved action or contradiction.
+- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.
+- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.
 - Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.
 - Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.
 - Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.
@@ -1600,7 +1703,12 @@ def normalize_editor_scores(raw_scores: Any) -> dict[str, int]:
     return normalized
 
 
-def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> dict[str, Any] | None:
+def normalize_item(
+    raw: dict[str, Any],
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any],
+    research_item: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
     fallback = fallback_lines(clip, entity_guide)
     raw_lines = raw.get("title_lines")
     if not isinstance(raw_lines, list) or len(raw_lines) != 3:
@@ -1662,7 +1770,7 @@ def normalize_item(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict
         "editor_scores": normalize_editor_scores(raw.get("editor_scores")),
         "quality_check": quality_check,
     }
-    refined["title_quality_audit"] = title_quality_audit(refined, clip)
+    refined["title_quality_audit"] = title_quality_audit(refined, clip, research_item)
     return refined
 
 
@@ -1723,7 +1831,12 @@ def refine_batch(
         item = parsed.get(index)
         if not item:
             continue
-        refined = normalize_item(item, clips[index - 1], entity_guide)
+        refined = normalize_item(
+            item,
+            clips[index - 1],
+            entity_guide,
+            research_item_for_index(entity_guide, index),
+        )
         if refined:
             normalized[index] = refined
 
@@ -1773,7 +1886,12 @@ def refine_batch(
             raw_item = repaired_items.get(index)
             if not raw_item:
                 continue
-            repaired = normalize_item(raw_item, clips[index - 1], entity_guide)
+            repaired = normalize_item(
+                raw_item,
+                clips[index - 1],
+                entity_guide,
+                research_item_for_index(entity_guide, index),
+            )
             if not repaired:
                 continue
             current_score = int(normalized.get(index, {}).get("title_quality_audit", {}).get("score", -1))
@@ -1915,13 +2033,15 @@ Surgical rules:
 - Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.
 - The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.
 - angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.
-- Never output 外资策略师、外资首席、海外专家、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.
+- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.
 - If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.
 - If make_the_emotional_reversal_visible_in_words is listed, at least one line must contain a specific factual reversal, forced choice, consequence question, or tension verb. A generic state such as 真实且加剧 is not enough.
 - If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.
+- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.
+- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.
 - For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.
 - Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.
-- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战, or 释放信号.
+- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.
 - Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.
 - Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.
 """
@@ -1972,7 +2092,12 @@ def repair_refinement_surgically(
     ):
         if key in raw:
             merged[key] = raw[key]
-    repaired = normalize_item(merged, clip, entity_guide)
+    repaired = normalize_item(
+        merged,
+        clip,
+        entity_guide,
+        research_item_for_index(entity_guide, index),
+    )
     if log_events is not None:
         log_events.append({
             "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
