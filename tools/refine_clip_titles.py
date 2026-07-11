@@ -1845,6 +1845,146 @@ def accept_near_miss_after_repair(refined: dict[str, Any]) -> bool:
     return False
 
 
+def surgical_repair_user_prompt(
+    brief: dict[str, Any],
+    entity_guide: dict[str, Any],
+    current: dict[str, Any],
+    fixes: list[str],
+) -> str:
+    index = int(brief["index"])
+    research = research_for_indexes(entity_guide, {index})
+    return f"""Repair only the three-line Chinese cover title for clip {index}. Return strict JSON only.
+
+Clip facts:
+{json.dumps(compact_research_briefs([brief])[0], ensure_ascii=False, indent=2)}
+
+Verified research:
+{json.dumps(research, ensure_ascii=False, indent=2)}
+
+Current rejected title:
+{json.dumps({
+    "title": current.get("title"),
+    "title_lines": current.get("title_lines"),
+    "angle_id": current.get("angle_id"),
+    "emotion_pole": current.get("emotion_pole"),
+    "viewer_reaction": current.get("viewer_reaction"),
+    "evidence_basis": current.get("evidence_basis"),
+    "editor_scores": current.get("editor_scores"),
+}, ensure_ascii=False, indent=2)}
+
+Code audit failures to fix:
+{json.dumps(fixes, ensure_ascii=False)}
+
+Return JSON:
+{{
+  "clips": [
+    {{
+      "index": {index},
+      "angle_id": "surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus",
+      "emotion_pole": "意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪",
+      "viewer_reaction": "internal audience reaction only",
+      "evidence_basis": ["specific supporting fact"],
+      "title": "semantic equivalent of all three lines",
+      "title_lines": ["specific subject", "unexpected fact or comparison", "concrete unresolved consequence"],
+      "title_highlights": ["exact substring"],
+      "runner_up_titles": ["one alternate"],
+      "editor_scores": {{
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 7,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 8
+      }},
+      "quality_check": {{
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      }}
+    }}
+  ]
+}}
+
+Surgical rules:
+- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.
+- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.
+- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.
+- Never output 外资策略师、外资首席、海外专家、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.
+- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.
+- If make_the_emotional_reversal_visible_in_words is listed, at least one line must contain a specific factual reversal, forced choice, consequence question, or tension verb. A generic state such as 真实且加剧 is not enough.
+- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.
+- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.
+- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.
+- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战, or 释放信号.
+- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.
+- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.
+"""
+
+
+def repair_refinement_surgically(
+    api_key: str,
+    brief: dict[str, Any],
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any],
+    current: dict[str, Any],
+    *,
+    log_events: list[dict[str, Any]] | None = None,
+) -> dict[str, Any] | None:
+    fixes = list(current.get("title_quality_audit", {}).get("fixes", []))
+    prompt_text = surgical_repair_user_prompt(brief, entity_guide, current, fixes)
+    result = ask_deepseek(
+        api_key,
+        (
+            "You are a precision Chinese cover-title repair editor. Return strict JSON only. "
+            "Fix the listed audit failures without changing supported facts or exposing internal editorial labels. "
+            + WORDING_GUARD_PROMPT
+        ),
+        prompt_text,
+        temperature=0.1,
+    )
+    try:
+        index = int(brief["index"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    raw = parse_items(result).get(index)
+    if not raw:
+        return None
+
+    merged = dict(current)
+    for key in (
+        "formula_id",
+        "angle_id",
+        "emotion_pole",
+        "viewer_reaction",
+        "evidence_basis",
+        "title",
+        "title_lines",
+        "title_highlights",
+        "runner_up_titles",
+        "editor_scores",
+        "quality_check",
+    ):
+        if key in raw:
+            merged[key] = raw[key]
+    repaired = normalize_item(merged, clip, entity_guide)
+    if log_events is not None:
+        log_events.append({
+            "timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "type": "surgical_title_repair",
+            "indexes": [index],
+            "briefs": [brief],
+            "user_prompt": prompt_text,
+            "raw_result": result,
+            "normalized": repaired,
+        })
+    return repaired
+
+
 def refine_titles(
     plan: dict[str, Any],
     *,
@@ -1911,18 +2051,16 @@ def refine_titles(
         if not refinements[index].get("title_quality_audit", {}).get("pass")
     ]
     for index in quality_failed:
-        print(f"Retrying emotion-polarity quality gate for clip {index}", flush=True)
-        retried = refine_batch(
+        print(f"Surgically repairing title quality for clip {index}", flush=True)
+        brief = clip_brief(plan, clips[index - 1], index, max_subtitles)
+        retried = repair_refinement_surgically(
             api_key,
-            plan,
-            clips,
-            [index],
-            style=style,
-            max_subtitles=max_subtitles,
-            public_lookup=public_lookup,
+            brief,
+            clips[index - 1],
             entity_guide=entity_guide,
+            current=refinements[index],
             log_events=log_events,
-        ).get(index)
+        )
         if not retried:
             continue
         current_score = int(refinements[index].get("title_quality_audit", {}).get("score", -1))

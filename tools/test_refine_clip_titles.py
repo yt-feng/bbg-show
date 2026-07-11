@@ -197,6 +197,24 @@ class PromptContractTests(unittest.TestCase):
         self.assertIn("words_vs_actions.supported is true", prompt)
         self.assertIn("china_advantage.supported is true", prompt)
 
+    def test_surgical_prompt_separates_internal_labels_from_reader_copy(self) -> None:
+        brief = {"index": 1, "current_title": "中国AI", "subtitles": []}
+        current = {
+            "title": "外资策略师罕见直言中国AI更便宜",
+            "title_lines": ["外资策略师", "罕见直言", "中国AI更便宜"],
+        }
+
+        prompt = titles.surgical_repair_user_prompt(
+            brief,
+            {"entities": [], "clip_research": []},
+            current,
+            ["remove_internal_editorial_labels_from_reader_copy"],
+        )
+
+        self.assertIn("internal metadata", prompt)
+        self.assertIn("directly show the subject", prompt)
+        self.assertIn("do not use synonyms for the same editorial narration", prompt)
+
 
 class RefinementFlowTests(unittest.TestCase):
     def test_only_china_resonance_seven_can_be_accepted_after_repairs(self) -> None:
@@ -227,6 +245,78 @@ class RefinementFlowTests(unittest.TestCase):
         }
 
         self.assertFalse(titles.accept_near_miss_after_repair(refined))
+
+    @patch.object(titles, "ask_deepseek")
+    def test_surgical_repair_changes_only_title_fields(self, ask_deepseek) -> None:
+        ask_deepseek.return_value = {
+            "clips": [
+                {
+                    "index": 1,
+                    "angle_id": "china_advantage",
+                    "emotion_pole": "民族自豪",
+                    "viewer_reaction": "原来优势这么具体",
+                    "evidence_basis": ["字幕称中国AI可靠且便宜"],
+                    "title": "中国AI既便宜又可靠海外份额要反转？",
+                    "title_lines": ["中国AI", "既便宜又可靠", "海外份额要反转？"],
+                    "title_highlights": ["中国AI", "便宜", "海外份额"],
+                    "runner_up_titles": ["中国AI性价比改写海外份额？"],
+                    "editor_scores": passing_scores(),
+                    "quality_check": passing_quality_check(),
+                }
+            ]
+        }
+        clip = {
+            "title": "中国AI",
+            "subtitles": [
+                {
+                    "index": 1,
+                    "zh": "中国AI更可靠也更便宜",
+                    "en": "Chinese AI is reliable and inexpensive",
+                }
+            ],
+        }
+        brief = titles.clip_brief({}, clip, 1, 24)
+        current = {
+            "title": "外资策略师罕见直言中国AI更便宜",
+            "title_lines": ["外资策略师", "罕见直言", "中国AI更便宜"],
+            "title_highlights": ["中国AI"],
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "viewer_reaction": "终于有人说了",
+            "evidence_basis": ["字幕称中国AI更便宜"],
+            "runner_up_titles": [],
+            "editor_scores": passing_scores(),
+            "quality_check": passing_quality_check(),
+            "comment": "KC评论：中国AI的成本优势开始转化为市场竞争力",
+            "comment_highlights": ["成本优势"],
+            "subtitle_comments": [
+                {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：便宜与可靠可以同时成立",
+                    "comment_highlights": ["便宜与可靠"],
+                }
+            ],
+            "formula_id": "legacy",
+            "title_quality_audit": {
+                "pass": False,
+                "fixes": ["remove_internal_editorial_labels_from_reader_copy"],
+            },
+        }
+
+        repaired = titles.repair_refinement_surgically(
+            "test-key",
+            brief,
+            clip,
+            {"entities": [], "clip_research": []},
+            current,
+        )
+
+        self.assertIsNotNone(repaired)
+        assert repaired is not None
+        self.assertEqual(repaired["title"], "中国AI：既便宜又可靠，海外份额要反转？")
+        self.assertEqual(repaired["comment"], current["comment"])
+        self.assertEqual(repaired["subtitle_comments"], current["subtitle_comments"])
+        self.assertTrue(repaired["title_quality_audit"]["pass"])
 
     @patch.object(titles, "ask_deepseek")
     def test_refine_batch_runs_candidate_then_judge(self, ask_deepseek) -> None:
