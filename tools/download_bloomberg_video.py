@@ -39,6 +39,7 @@ DEFAULT_SUBSCRIPTION_URL_FILE = ROOT / "tmp/proxy_subscription_url.txt"
 DEFAULT_PROXY_CACHE = ROOT / "tmp/working_proxy.url"
 DEFAULT_STRATEGY_CACHE = ROOT / "tmp/download_strategy.json"
 DEFAULT_PROXY_TEST_URL = "https://www.google.com/generate_204"
+YOUTUBE_PROXY_ATTEMPT_LIMIT = 3
 
 UUID_RE = r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
 HLS_URL_RE = re.compile(r"https?://[^\s'\"<>]+?\.m3u8(?:\?[^\s'\"<>]*)?", re.IGNORECASE)
@@ -1354,6 +1355,10 @@ def run_ytdlp_process(cmd: list[str], *, output: Path) -> bool:
     if proc.returncode != 0:
         log(f"yt-dlp exited with status {proc.returncode}")
         cleanup_ytdlp_partials(output)
+        try:
+            output.unlink()
+        except FileNotFoundError:
+            pass
         return False
     if output.exists() and output.stat().st_size > 0:
         return True
@@ -1432,7 +1437,12 @@ def run_ytdlp_downloader(args: argparse.Namespace, variant: Variant, work_dir: P
         return run_ytdlp_process(proxied_cmd, output=output)
 
 
-def run_ytdlp_page_downloader(args: argparse.Namespace, output: Path) -> bool:
+def run_ytdlp_page_downloader(
+    args: argparse.Namespace,
+    output: Path,
+    *,
+    proxy: str | None = None,
+) -> bool:
     base_command = yt_dlp_base_command(args)
     if not base_command:
         log("yt-dlp is required for YouTube page downloads but was not found")
@@ -1470,8 +1480,53 @@ def run_ytdlp_page_downloader(args: argparse.Namespace, output: Path) -> bool:
         yt_dlp_output_template(output),
         args.url,
     ]
-    log("Starting direct yt-dlp YouTube page download")
-    return run_ytdlp_process(cmd, output=output)
+    if proxy is None:
+        log("Starting direct yt-dlp YouTube page download")
+        return run_ytdlp_process(cmd, output=output)
+
+    log("Starting yt-dlp YouTube page download through a local proxy forwarder")
+    with LocalProxyServer(proxy, google_doh=args.google_doh) as local_proxy:
+        proxied_cmd = [*cmd[:-1], "--proxy", local_proxy, cmd[-1]]
+        return run_ytdlp_process(proxied_cmd, output=output)
+
+
+def youtube_proxy_candidates(
+    subscription: Path,
+    *,
+    limit: int = YOUTUBE_PROXY_ATTEMPT_LIMIT,
+) -> list[str]:
+    if limit < 1:
+        return []
+    candidates: list[str] = []
+    seen: set[str] = set()
+    for node in hls_downloader.load_subscription(subscription):
+        proxy = hls_downloader.normalize_proxy(node)
+        if not proxy or hls_downloader.proxy_scheme(proxy) not in {"http", "https"}:
+            continue
+        if proxy in seen:
+            continue
+        seen.add(proxy)
+        candidates.append(proxy)
+        if len(candidates) >= limit:
+            break
+    return candidates
+
+
+def run_ytdlp_page_downloader_with_proxies(
+    args: argparse.Namespace,
+    subscription: Path,
+    output: Path,
+) -> bool:
+    candidates = youtube_proxy_candidates(subscription)
+    if not candidates:
+        log("No credential-safe HTTP/HTTPS proxy is available for the YouTube fallback")
+        return False
+    for index, proxy in enumerate(candidates, start=1):
+        log(f"Trying YouTube proxy fallback {index}/{len(candidates)}")
+        if run_ytdlp_page_downloader(args, output, proxy=proxy):
+            return True
+    log("All YouTube proxy fallback attempts failed")
+    return False
 
 
 def run_segmented_downloader(
@@ -1654,6 +1709,7 @@ def main(argv: list[str] | None = None) -> int:
                         "source_kind": "youtube-page",
                         "youtube_id": youtube_video_id(args.url),
                         "download_backend": "yt-dlp",
+                        "yt_dlp_proxy_mode": args.yt_dlp_proxy_mode,
                         "output": str(output),
                     },
                     indent=2,
@@ -1665,8 +1721,16 @@ def main(argv: list[str] | None = None) -> int:
                 log(f"Dry run complete; planned direct YouTube output: {rel(output)}")
                 success = True
                 return 0
-            if not run_ytdlp_page_downloader(args, output):
-                raise SystemExit("Direct yt-dlp YouTube page download failed.")
+            downloaded = False
+            if args.yt_dlp_proxy_mode in {"auto", "never"}:
+                downloaded = run_ytdlp_page_downloader(args, output)
+                if not downloaded and args.yt_dlp_proxy_mode == "auto":
+                    log("Direct YouTube download failed; trying subscription proxies")
+            if not downloaded and args.yt_dlp_proxy_mode in {"auto", "always"}:
+                subscription = ensure_subscription(args)
+                downloaded = run_ytdlp_page_downloader_with_proxies(args, subscription, output)
+            if not downloaded:
+                raise SystemExit("yt-dlp YouTube page download failed.")
             verify_output(output)
             success = True
             return 0

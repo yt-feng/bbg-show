@@ -15,7 +15,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from download_bloomberg_video import is_youtube_url, safe_file_part, slug_from_url  # noqa: E402
+from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
 from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
@@ -128,6 +128,25 @@ def cleanup_failed_render_output(item: dict[str, Any], index: int, output_dir: P
         print(f"Removed incomplete render output: {render_dir}", flush=True)
 
 
+def refine_title_or_keep_planner_title(plan_path: Path) -> bool:
+    original_plan = plan_path.read_text(encoding="utf-8")
+    try:
+        run([
+            sys.executable,
+            str(TOOLS / "refine_clip_titles.py"),
+            "--plan", str(plan_path),
+        ], detect_sensitive_skip=True)
+    except subprocess.CalledProcessError as exc:
+        plan_path.write_text(original_plan, encoding="utf-8")
+        print(
+            f"::warning::Title refinement failed with exit code {exc.returncode}; "
+            "using the planner-generated title after content filtering.",
+            flush=True,
+        )
+        return False
+    return True
+
+
 def process_one(
     item: dict[str, Any],
     index: int,
@@ -156,7 +175,7 @@ def process_one(
         str(TOOLS / "download_bloomberg_video.py"),
         "--url", url,
         "--download-backend", args.download_backend,
-        "--yt-dlp-proxy-mode", "never" if is_youtube_url(url) else "auto",
+        "--yt-dlp-proxy-mode", "auto",
         "--output", str(video_path),
         "--work-dir", str(work_dir / "download"),
         "--workers", str(args.workers),
@@ -198,11 +217,7 @@ def process_one(
     ], detect_sensitive_skip=True)
 
     print(f"[top-video {index:02d}] Refining title with DeepSeek", flush=True)
-    run([
-        sys.executable,
-        str(TOOLS / "refine_clip_titles.py"),
-        "--plan", str(plan_path),
-    ], detect_sensitive_skip=True)
+    title_refined = refine_title_or_keep_planner_title(plan_path)
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
@@ -242,6 +257,7 @@ def process_one(
         "youtube_id": str(item.get("youtube_id", "")),
         "channel_id": str(item.get("channel_id", "")),
         "published_at": str(item.get("published_at", "")),
+        "title_refinement_status": "refined" if title_refined else "planner_fallback",
         "duration": round(duration, 2),
         "max_clip_seconds": args.max_clip_seconds,
         "video_file": str(video_path),
