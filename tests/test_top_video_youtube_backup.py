@@ -253,6 +253,7 @@ class YouTubeDownloaderTests(unittest.TestCase):
             yt_dlp_bin=None,
             workers=32,
             url="https://www.youtube.com/watch?v=HQDWoxHF62M",
+            google_doh=True,
         )
         with tempfile.TemporaryDirectory() as tmp:
             output = Path(tmp) / "source.mp4"
@@ -269,6 +270,96 @@ class YouTubeDownloaderTests(unittest.TestCase):
         self.assertIn("--no-playlist", command)
         self.assertNotIn("--proxy", command)
         self.assertEqual(command[-1], args.url)
+
+    def test_proxied_youtube_command_hides_upstream_credentials(self) -> None:
+        args = argparse.Namespace(
+            yt_dlp_bin=None,
+            workers=32,
+            url="https://www.youtube.com/watch?v=HQDWoxHF62M",
+            google_doh=True,
+        )
+        upstream = "https://user:secret@example.com:443"
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "source.mp4"
+            with (
+                mock.patch.object(downloader, "yt_dlp_base_command", return_value=["yt-dlp"]),
+                mock.patch.object(downloader, "LocalProxyServer") as forwarder,
+                mock.patch.object(downloader, "run_ytdlp_process", return_value=True) as run,
+            ):
+                forwarder.return_value.__enter__.return_value = "http://127.0.0.1:43123"
+                self.assertTrue(
+                    downloader.run_ytdlp_page_downloader(args, output, proxy=upstream)
+                )
+
+        command = run.call_args.args[0]
+        self.assertEqual(command[command.index("--proxy") + 1], "http://127.0.0.1:43123")
+        self.assertNotIn(upstream, command)
+        forwarder.assert_called_once_with(upstream, google_doh=True)
+
+    def test_youtube_proxy_candidates_are_http_only_deduplicated_and_limited(self) -> None:
+        nodes = [
+            "socks5://socks.example:1080",
+            "https://user:pass@one.example:443#first",
+            "https://user:pass@one.example:443#duplicate",
+            "http://two.example:8080",
+            "vmess://unsupported",
+            "https://three.example:443",
+        ]
+        with mock.patch.object(downloader.hls_downloader, "load_subscription", return_value=nodes):
+            candidates = downloader.youtube_proxy_candidates(Path("subscription.txt"), limit=2)
+
+        self.assertEqual(
+            candidates,
+            ["https://user:pass@one.example:443", "http://two.example:8080"],
+        )
+
+    def test_youtube_proxy_fallback_stops_after_first_success_and_caps_attempts(self) -> None:
+        args = argparse.Namespace()
+        proxies = [
+            "https://one.example:443",
+            "https://two.example:443",
+            "https://three.example:443",
+            "https://four.example:443",
+        ]
+        with (
+            mock.patch.object(
+                downloader,
+                "youtube_proxy_candidates",
+                return_value=proxies[: downloader.YOUTUBE_PROXY_ATTEMPT_LIMIT],
+            ) as candidates,
+            mock.patch.object(
+                downloader,
+                "run_ytdlp_page_downloader",
+                side_effect=[False, True],
+            ) as run,
+        ):
+            self.assertTrue(
+                downloader.run_ytdlp_page_downloader_with_proxies(
+                    args,
+                    Path("subscription.txt"),
+                    Path("output.mp4"),
+                )
+            )
+
+        candidates.assert_called_once_with(Path("subscription.txt"))
+        self.assertEqual(run.call_count, 2)
+        self.assertEqual(run.call_args_list[0].kwargs["proxy"], proxies[0])
+        self.assertEqual(run.call_args_list[1].kwargs["proxy"], proxies[1])
+
+    def test_failed_ytdlp_attempt_removes_exact_partial_output(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "partial.mp4"
+            output.write_bytes(b"incomplete")
+            with mock.patch.object(
+                downloader.subprocess,
+                "run",
+                return_value=downloader.subprocess.CompletedProcess(["yt-dlp"], 1),
+            ):
+                self.assertFalse(
+                    downloader.run_ytdlp_process(["yt-dlp", "video"], output=output)
+                )
+
+            self.assertFalse(output.exists())
 
     def test_main_routes_youtube_before_bloomberg_asset_discovery(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -288,6 +379,7 @@ class YouTubeDownloaderTests(unittest.TestCase):
             ]
             with (
                 mock.patch.object(downloader, "run_ytdlp_page_downloader", return_value=True) as run,
+                mock.patch.object(downloader, "ensure_subscription") as subscription,
                 mock.patch.object(downloader, "verify_output") as verify,
                 mock.patch.object(
                     downloader,
@@ -302,10 +394,142 @@ class YouTubeDownloaderTests(unittest.TestCase):
         self.assertEqual(plan["youtube_id"], "HQDWoxHF62M")
         self.assertEqual(plan["source_kind"], "youtube-page")
         run.assert_called_once()
+        subscription.assert_not_called()
         verify.assert_called_once_with(output)
+
+    def test_main_retries_youtube_through_subscription_proxy_after_direct_failure(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "youtube.mp4"
+            work_dir = root / "download"
+            subscription_path = root / "subscription.txt"
+            argv = [
+                "download_bloomberg_video.py",
+                "--url",
+                "https://www.youtube.com/watch?v=HQDWoxHF62M",
+                "--output",
+                str(output),
+                "--work-dir",
+                str(work_dir),
+                "--no-strategy-cache",
+                "--keep-tmp",
+            ]
+            with (
+                mock.patch.object(
+                    downloader,
+                    "run_ytdlp_page_downloader",
+                    side_effect=[False, True],
+                ) as run,
+                mock.patch.object(downloader, "ensure_subscription", return_value=subscription_path) as ensure,
+                mock.patch.object(
+                    downloader,
+                    "youtube_proxy_candidates",
+                    return_value=["https://user:secret@proxy.example:443"],
+                ),
+                mock.patch.object(downloader, "verify_output") as verify,
+            ):
+                self.assertEqual(downloader.main(argv[1:]), 0)
+
+        self.assertEqual(run.call_count, 2)
+        self.assertEqual(run.call_args_list[0].args, (mock.ANY, output))
+        self.assertNotIn("proxy", run.call_args_list[0].kwargs)
+        self.assertEqual(
+            run.call_args_list[1].kwargs["proxy"],
+            "https://user:secret@proxy.example:443",
+        )
+        ensure.assert_called_once()
+        verify.assert_called_once_with(output)
+
+    def test_youtube_proxy_modes_never_and_always_control_direct_attempts(self) -> None:
+        base_argv = [
+            "download_bloomberg_video.py",
+            "--url",
+            "https://www.youtube.com/watch?v=HQDWoxHF62M",
+            "--no-strategy-cache",
+            "--keep-tmp",
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            with (
+                mock.patch.object(downloader, "run_ytdlp_page_downloader", return_value=False) as direct,
+                mock.patch.object(downloader, "ensure_subscription") as ensure,
+                self.assertRaisesRegex(SystemExit, "YouTube page download failed"),
+            ):
+                downloader.main(
+                    [
+                        *base_argv[1:],
+                        "--output",
+                        str(root / "never.mp4"),
+                        "--work-dir",
+                        str(root / "never-work"),
+                        "--yt-dlp-proxy-mode",
+                        "never",
+                    ]
+                )
+            direct.assert_called_once()
+            ensure.assert_not_called()
+
+            subscription_path = root / "subscription.txt"
+            with (
+                mock.patch.object(downloader, "run_ytdlp_page_downloader") as direct,
+                mock.patch.object(
+                    downloader,
+                    "ensure_subscription",
+                    return_value=subscription_path,
+                ) as ensure,
+                mock.patch.object(
+                    downloader,
+                    "run_ytdlp_page_downloader_with_proxies",
+                    return_value=True,
+                ) as proxied,
+                mock.patch.object(downloader, "verify_output"),
+            ):
+                self.assertEqual(
+                    downloader.main(
+                        [
+                            *base_argv[1:],
+                            "--output",
+                            str(root / "always.mp4"),
+                            "--work-dir",
+                            str(root / "always-work"),
+                            "--yt-dlp-proxy-mode",
+                            "always",
+                        ]
+                    ),
+                    0,
+                )
+            direct.assert_not_called()
+            ensure.assert_called_once()
+            proxied.assert_called_once_with(mock.ANY, subscription_path, root / "always.mp4")
 
 
 class TopVideoManifestTests(unittest.TestCase):
+    def test_title_refinement_technical_failure_keeps_original_plan(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            plan_path = Path(tmp) / "plan.json"
+            original = '{"clips": [{"title": "planner title"}]}\n'
+            plan_path.write_text(original, encoding="utf-8")
+            error = processor.subprocess.CalledProcessError(1, ["refiner"])
+            with mock.patch.object(processor, "run", side_effect=error):
+                refined = processor.refine_title_or_keep_planner_title(plan_path)
+
+            self.assertFalse(refined)
+            self.assertEqual(plan_path.read_text(encoding="utf-8"), original)
+
+    def test_title_refinement_sensitive_failure_is_not_swallowed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            plan_path = Path(tmp) / "plan.json"
+            plan_path.write_text('{"clips": []}', encoding="utf-8")
+            with (
+                mock.patch.object(
+                    processor,
+                    "run",
+                    side_effect=RuntimeError("Top video skipped by sensitive topic filter"),
+                ),
+                self.assertRaisesRegex(RuntimeError, "sensitive topic filter"),
+            ):
+                processor.refine_title_or_keep_planner_title(plan_path)
+
     def test_run_date_validation_rejects_path_traversal(self) -> None:
         self.assertEqual(processor.validate_run_date("2026-07-12"), "2026-07-12")
         for value in ("..", "2026-7-12", "2026-07-12/../..", "2026-07-12\nother=value"):

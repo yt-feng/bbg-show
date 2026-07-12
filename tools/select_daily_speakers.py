@@ -21,7 +21,6 @@ ANCHOR_OR_REPORTER_HINTS = {
     "stephen engle",
     "haidi stroud-watts",
     "paul allen",
-    "bloomberg",
     "anchor",
     "host",
     "reporter",
@@ -115,6 +114,16 @@ Return JSON:
 If there are no real guest/keynote interview segments, return {{"candidates": []}}.
 """
     result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.2)
+    return parse_candidate_items(result, start, end, allow_editorial=False)
+
+
+def parse_candidate_items(
+    result: dict[str, Any],
+    start: float,
+    end: float,
+    *,
+    allow_editorial: bool,
+) -> list[Candidate]:
     candidates: list[Candidate] = []
     for item in result.get("candidates", []):
         try:
@@ -129,10 +138,64 @@ If there are no real guest/keynote interview segments, return {{"candidates": []
             continue
         if not speaker or cand_end - cand_start < 60:
             continue
-        if is_anchor_or_reporter(speaker, context):
+        if not allow_editorial and is_anchor_or_reporter(speaker, context):
             continue
         candidates.append(Candidate(speaker, context, cand_start, cand_end, confidence, importance, reason))
     return candidates
+
+
+def find_editorial_candidates_in_window(
+    api_key: str,
+    segments: list[dict[str, Any]],
+    start: float,
+    end: float,
+) -> list[Candidate]:
+    transcript = prompt_lines(segments, start, end)
+    if not transcript:
+        return []
+
+    system_prompt = (
+        "You are a senior Bloomberg Weekend editor. The strict external-guest pass found no usable "
+        "speaker. Identify substantive, non-sensitive interview or expert-explainer blocks suitable "
+        "for short-video highlights. Return strict JSON only."
+    )
+    user_prompt = f"""Transcript window: {format_time(start)}-{format_time(end)}
+
+{transcript}
+
+Fallback task:
+Identify up to two strong business, technology, health, science, consumer, culture, or markets segments.
+
+You may include:
+- A named external guest even when their formal title is unclear.
+- A named Bloomberg specialist, correspondent, or host when they conduct, recap, or deliver a substantive interview/explainer with specific facts and analysis.
+- A recorded interview package containing meaningful answers from a CEO, founder, executive, academic, or subject-matter expert.
+
+Exclude:
+- Headline reads, market boards, teasers, ads, transitions, generic studio banter, and segments shorter than 90 seconds.
+- Sensitive geopolitics or military material, including Trump, Iran, Ukraine, active wars, missiles, weapons, armed forces, and military operations.
+
+Use the principal named on-air expert, reporter, interviewer, or guest as `speaker`; never use a generic label such as "Bloomberg" or "Weekend segment".
+
+Return JSON:
+{{
+  "candidates": [
+    {{
+      "speaker": "Principal person's full name",
+      "context": "Role, organization, and segment topic",
+      "start": <absolute seconds from video start>,
+      "end": <absolute seconds from video start>,
+      "confidence": 0.0,
+      "importance": 0.0,
+      "reason": "why this segment is worth clipping"
+    }}
+  ]
+}}
+
+If this window has no suitable non-sensitive substantive segment, return {{"candidates": []}}.
+"""
+    result = ask_deepseek(api_key, system_prompt, user_prompt, temperature=0.1)
+    return parse_candidate_items(result, start, end, allow_editorial=True)
 
 
 def is_anchor_or_reporter(speaker: str, context: str) -> bool:
@@ -212,11 +275,35 @@ def main() -> None:
         start = max(0.0, end - args.overlap_seconds)
 
     selected = sorted(consolidate(candidates), key=score, reverse=True)[: args.max_speakers]
+    selection_mode = "guest"
+    if not selected:
+        print(
+            "Strict guest selection returned no candidates; trying substantive editorial fallback",
+            flush=True,
+        )
+        editorial_candidates: list[Candidate] = []
+        start = 0.0
+        while start < duration:
+            end = min(duration, start + args.window_seconds)
+            print(f"Fallback selection in {format_time(start)}-{format_time(end)}", flush=True)
+            editorial_candidates.extend(
+                find_editorial_candidates_in_window(api_key, segments, start, end)
+            )
+            if end >= duration:
+                break
+            start = max(0.0, end - args.overlap_seconds)
+        selected = sorted(
+            consolidate(editorial_candidates),
+            key=score,
+            reverse=True,
+        )[: args.max_speakers]
+        selection_mode = "editorial_fallback" if selected else "none"
     payload = {
         "show_date": args.show_date,
         "source_transcript": str(args.transcript),
         "max_speakers": args.max_speakers,
         "selection_status": "selected" if selected else "no_eligible_speakers",
+        "selection_mode": selection_mode,
         "speakers": [
             {
                 "speaker": item.speaker,
