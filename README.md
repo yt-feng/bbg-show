@@ -17,7 +17,9 @@ python3 tools/download_bloomberg_video.py \
 
 The script resolves the Bloomberg asset ID, fetches Bloomberg's media manifest directly, selects the best non-ad HLS variant, downloads it with `yt-dlp` when available, falls back to the proxy-backed downloader only if needed, remuxes to MP4, verifies the output with `ffprobe`, and cleans the temporary work directory. The fallback downloader retries failed segments by round and writes the final MP4 atomically after remux succeeds.
 
-It also accepts direct HLS and Haystack mirror URLs:
+It also accepts direct HLS, Haystack mirror, and YouTube watch URLs. YouTube
+downloads use `yt-dlp[default]` with an external JavaScript runtime such as
+Node.js 22 or newer:
 
 ```bash
 python3 tools/download_bloomberg_video.py \
@@ -25,6 +27,9 @@ python3 tools/download_bloomberg_video.py \
 
 python3 tools/download_bloomberg_video.py \
   --url 'https://www.haystack.tv/v/ray-dalio-ai-bubble-burst-wealth-converts-money'
+
+python3 tools/download_bloomberg_video.py \
+  --url 'https://www.youtube.com/watch?v=VIDEO_ID'
 ```
 
 Default discovery is non-invasive: it reuses cached URL-to-asset mappings when available, otherwise uses Bloomberg's BRP background endpoint, then fetches the embed manifest and CDN playlist directly. If direct embed-manifest fetch fails and a proxy is configured, the script tries the proxy path automatically. The foreground Chrome browser is used only when explicitly requested with `--fetch-mode chrome`.
@@ -63,14 +68,19 @@ Known downloaded outputs:
 - `downloads/the_china_show_6_9_26_2026_06_09_1080p.mp4`
 - `downloads/dalio_ai_bubble_to_burst_as_wealth_converts_to_money_2026_06_03.mp4`
 
-The workflow only downloads public HLS media URLs exposed by Bloomberg's own media manifests. It does not bypass DRM, paywall checks, or encrypted streams.
+The workflow only downloads public media exposed by Bloomberg or the official
+Bloomberg Television YouTube channel. It does not bypass DRM, paywall checks, or
+encrypted streams.
 
 ## Daily Bloomberg show clips
 
 `.github/workflows/daily-china-show.yml` runs at 03:00 Beijing time. Tuesday
 through Saturday Beijing runs clip the previous day's Bloomberg China Show;
 Sunday and Monday Beijing runs clip the previous day's Bloomberg Weekend. The
-workflow resolves the Bloomberg URL using the date pattern, downloads the
+workflow checks the current Weekend episode first, then drains older unprocessed
+episodes. A committed terminal-state ledger prevents a rendered or intentionally
+skipped Weekend episode from being downloaded again after its clips expire. It
+resolves the Bloomberg URL using the date pattern, downloads the
 episode, transcribes it, selects keynote guest speakers, renders 3-5 KC Desktop
 formatted highlight clips per selected speaker, and commits the generated files
 to:
@@ -88,9 +98,13 @@ Bloomberg Weekend for Saturday-Sunday show dates. The default font preset is
 ## Daily Bloomberg Top Videos
 
 `.github/workflows/daily-top-videos.yml` runs at 06:00 Beijing time every day.
-It opens `https://www.bloomberg.com/videos`, extracts the current Top Videos
-carousel links, downloads each video, transcribes it, renders a KC Desktop
-formatted vertical clip for each source video, and commits generated files to:
+It opens `https://www.bloomberg.com/videos`, extracts up to nine current Top
+Videos, and appends up to three fresh, eligible backup candidates from Bloomberg
+Television's official YouTube feed. Shorts, live/full episodes, duplicates, and
+sensitive-topic items are excluded. Each source is downloaded, transcribed, and
+rendered as a KC Desktop vertical clip. If at least one candidate succeeds, all
+successful clips are committed and individual failures are reported as warnings;
+the batch fails only when every processable candidate fails. Generated files go to:
 
 ```text
 rendered-clips/top-videos/YYYY-MM-DD/

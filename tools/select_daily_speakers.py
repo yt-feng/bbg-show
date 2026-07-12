@@ -12,7 +12,6 @@ from pathlib import Path
 from typing import Any
 
 from plan_speaker_highlights import ask_deepseek
-from trump_filter import is_trump_related
 
 
 ANCHOR_OR_REPORTER_HINTS = {
@@ -97,7 +96,6 @@ Include:
 Exclude:
 - Bloomberg anchors, hosts, reporters, correspondents, market-board updates, headlines, weather/traffic, teasers, and transitions.
 - Segments shorter than 60 seconds.
-- Any segment about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. Do not select it even if it is otherwise newsworthy.
 
 Return JSON:
 {{
@@ -132,10 +130,6 @@ If there are no real guest/keynote interview segments, return {{"candidates": []
         if not speaker or cand_end - cand_start < 60:
             continue
         if is_anchor_or_reporter(speaker, context):
-            continue
-        candidate_text = prompt_lines(segments, cand_start, cand_end)
-        if is_trump_related(speaker, context, reason, candidate_text, use_ai=True):
-            print(f"Skipping sensitive-topic speaker candidate: {speaker} {format_time(cand_start)}-{format_time(cand_end)}", flush=True)
             continue
         candidates.append(Candidate(speaker, context, cand_start, cand_end, confidence, importance, reason))
     return candidates
@@ -187,7 +181,15 @@ def main() -> None:
     parser.add_argument("--max-speakers", type=int, default=3)
     parser.add_argument("--window-seconds", type=int, default=720)
     parser.add_argument("--overlap-seconds", type=int, default=90)
+    parser.add_argument(
+        "--allow-empty",
+        action="store_true",
+        help="Write an empty successful selection instead of exiting with an error.",
+    )
     args = parser.parse_args()
+
+    if args.max_speakers < 1:
+        raise SystemExit("--max-speakers must be at least 1")
 
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
@@ -214,6 +216,7 @@ def main() -> None:
         "show_date": args.show_date,
         "source_transcript": str(args.transcript),
         "max_speakers": args.max_speakers,
+        "selection_status": "selected" if selected else "no_eligible_speakers",
         "speakers": [
             {
                 "speaker": item.speaker,
@@ -235,7 +238,7 @@ def main() -> None:
     for item in selected:
         print(f"  {item.speaker}: {format_time(item.start)}-{format_time(item.end)} {item.context}", flush=True)
 
-    if not selected:
+    if not selected and not args.allow_empty:
         raise SystemExit("No keynote speakers selected")
 
 

@@ -18,7 +18,7 @@ import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from urllib.parse import unquote, urljoin, urlsplit
+from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import urllib.error
 import urllib.request
 
@@ -321,6 +321,10 @@ def safe_file_part(value: str) -> str:
 
 
 def slug_from_url(url: str) -> str:
+    youtube_id = youtube_video_id(url)
+    if youtube_id:
+        return safe_file_part(f"youtube_{youtube_id}")
+
     parsed = urlsplit(url)
     parts = [part for part in parsed.path.split("/") if part]
     slug = parts[-1] if parts else "bloomberg_video"
@@ -342,6 +346,27 @@ def is_hls_url(url: str) -> bool:
 
 def is_haystack_url(url: str) -> bool:
     return "haystack.tv" in urlsplit(url).netloc.lower()
+
+
+def youtube_video_id(url: str) -> str:
+    parsed = urlsplit(url)
+    host = (parsed.hostname or "").lower()
+    candidate = ""
+    if host == "youtu.be":
+        candidate = parsed.path.strip("/").split("/", 1)[0]
+    elif host == "youtube.com" or host.endswith(".youtube.com"):
+        if parsed.path.rstrip("/") == "/watch":
+            candidate = (parse_qs(parsed.query).get("v") or [""])[0]
+        else:
+            parts = [part for part in parsed.path.split("/") if part]
+            if len(parts) >= 2 and parts[0].lower() in {"embed", "live", "shorts"}:
+                candidate = parts[1]
+    candidate = candidate.strip()
+    return candidate if re.fullmatch(r"[A-Za-z0-9_-]{6,20}", candidate) else ""
+
+
+def is_youtube_url(url: str) -> bool:
+    return bool(youtube_video_id(url))
 
 
 def is_bloomberg_url(url: str) -> bool:
@@ -1407,6 +1432,48 @@ def run_ytdlp_downloader(args: argparse.Namespace, variant: Variant, work_dir: P
         return run_ytdlp_process(proxied_cmd, output=output)
 
 
+def run_ytdlp_page_downloader(args: argparse.Namespace, output: Path) -> bool:
+    base_command = yt_dlp_base_command(args)
+    if not base_command:
+        log("yt-dlp is required for YouTube page downloads but was not found")
+        return False
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        *base_command,
+        "--no-warnings",
+        "--newline",
+        "--no-playlist",
+        "--js-runtimes",
+        "node",
+        "--match-filters",
+        "!is_live",
+        "--concurrent-fragments",
+        str(max(1, min(args.workers, 8))),
+        "--retries",
+        "10",
+        "--fragment-retries",
+        "10",
+        "--merge-output-format",
+        "mp4",
+        "--remux-video",
+        "mp4",
+        "--referer",
+        "https://www.youtube.com/",
+        "--user-agent",
+        BROWSER_UA,
+        "-f",
+        "bv*[height<=1080]+ba/b[height<=1080]/best[height<=1080]/best",
+        "-S",
+        "res:1080,ext:mp4:m4a",
+        "-o",
+        yt_dlp_output_template(output),
+        args.url,
+    ]
+    log("Starting direct yt-dlp YouTube page download")
+    return run_ytdlp_process(cmd, output=output)
+
+
 def run_segmented_downloader(
     args: argparse.Namespace,
     variant: Variant,
@@ -1520,8 +1587,10 @@ def write_plan(work_dir: Path, url: str, asset_id: str | None, candidates: list[
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Download a Bloomberg video URL through the direct-first background workflow.")
-    parser.add_argument("--url", required=True, help="Bloomberg video page URL.")
+    parser = argparse.ArgumentParser(
+        description="Download a Bloomberg video URL or an official YouTube page through the background workflow."
+    )
+    parser.add_argument("--url", required=True, help="Bloomberg/HLS/Haystack URL or YouTube video page URL.")
     parser.add_argument("--subscription", type=Path, default=DEFAULT_SUBSCRIPTION)
     parser.add_argument("--subscription-url", help="Proxy subscription URL. Prefer env/file for normal use.")
     parser.add_argument("--subscription-url-file", type=Path, default=DEFAULT_SUBSCRIPTION_URL_FILE)
@@ -1574,6 +1643,34 @@ def main(argv: list[str] | None = None) -> int:
     success = False
     try:
         subscription: Path | None = None
+        if is_youtube_url(args.url):
+            if args.download_backend == "custom":
+                raise SystemExit("YouTube page URLs require the yt-dlp download backend.")
+            work_dir.mkdir(parents=True, exist_ok=True)
+            (work_dir / "download_plan.json").write_text(
+                json.dumps(
+                    {
+                        "url": args.url,
+                        "source_kind": "youtube-page",
+                        "youtube_id": youtube_video_id(args.url),
+                        "download_backend": "yt-dlp",
+                        "output": str(output),
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            if args.dry_run:
+                log(f"Dry run complete; planned direct YouTube output: {rel(output)}")
+                success = True
+                return 0
+            if not run_ytdlp_page_downloader(args, output):
+                raise SystemExit("Direct yt-dlp YouTube page download failed.")
+            verify_output(output)
+            success = True
+            return 0
+
         if is_hls_url(args.url):
             candidates = [args.url]
 

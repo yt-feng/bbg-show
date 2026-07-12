@@ -10,8 +10,15 @@ from datetime import datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from weekend_processed_shows import (
+    WeekendProcessedShowsError,
+    load_processed_shows,
+    rendered_processed_at,
+)
+
 
 DATE_DIR_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+DEFAULT_WEEKEND_PROCESSED_SHOWS = Path("rendered-clips/weekend/processed_shows.json")
 DEFAULT_TARGETS = (
     Path("rendered-clips"),
     Path("rendered-clips/top-videos"),
@@ -43,7 +50,12 @@ def date_dir_start(name: str, timezone: ZoneInfo) -> datetime | None:
     return datetime.combine(date_value, time.min, tzinfo=timezone)
 
 
-def expired_date_dirs(root: Path, cutoff: datetime, timezone: ZoneInfo) -> list[Path]:
+def expired_date_dirs(
+    root: Path,
+    cutoff: datetime,
+    timezone: ZoneInfo,
+    weekend_rendered_at: dict[str, datetime] | None = None,
+) -> list[Path]:
     if not root.exists():
         print(f"Skip missing target: {root}")
         return []
@@ -59,6 +71,9 @@ def expired_date_dirs(root: Path, cutoff: datetime, timezone: ZoneInfo) -> list[
         started_at = date_dir_start(child.name, timezone)
         if started_at is None:
             continue
+
+        if weekend_rendered_at and child.name in weekend_rendered_at:
+            started_at = weekend_rendered_at[child.name].astimezone(timezone)
 
         if started_at < cutoff:
             expired.append(child)
@@ -78,6 +93,15 @@ def main() -> None:
     parser.add_argument("--retention-hours", type=int, default=72)
     parser.add_argument("--timezone", default="Asia/Shanghai")
     parser.add_argument(
+        "--weekend-processed-shows",
+        type=Path,
+        default=DEFAULT_WEEKEND_PROCESSED_SHOWS,
+        help=(
+            "Strict Weekend terminal-state ledger. Rendered backlog directories use processed_at "
+            "instead of the historical show date for retention."
+        ),
+    )
+    parser.add_argument(
         "--now",
         default="",
         help="Override current time for tests, e.g. 2026-06-22T08:00:00+08:00.",
@@ -92,6 +116,12 @@ def main() -> None:
     now = parse_now(args.now, timezone)
     cutoff = now - timedelta(hours=args.retention_hours)
     targets = args.target or list(DEFAULT_TARGETS)
+    try:
+        weekend_ledger = load_processed_shows(args.weekend_processed_shows)
+    except WeekendProcessedShowsError as exc:
+        raise SystemExit(str(exc)) from exc
+    weekend_rendered_at = rendered_processed_at(weekend_ledger)
+    weekend_rendered_root = args.weekend_processed_shows.parent.parent.resolve()
 
     print(f"Now: {now.isoformat()}")
     print(f"Retention: {args.retention_hours} hours")
@@ -99,7 +129,8 @@ def main() -> None:
 
     removed = 0
     for target in targets:
-        for path in expired_date_dirs(target, cutoff, timezone):
+        retention_overrides = weekend_rendered_at if target.resolve() == weekend_rendered_root else None
+        for path in expired_date_dirs(target, cutoff, timezone, retention_overrides):
             print(f"{'Would remove' if args.dry_run else 'Removing'}: {path}")
             if not args.dry_run:
                 shutil.rmtree(path)

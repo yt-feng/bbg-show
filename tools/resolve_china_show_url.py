@@ -14,6 +14,11 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 from trump_filter import is_trump_related
+from weekend_processed_shows import (
+    WeekendProcessedShowsError,
+    load_processed_shows,
+    processed_show_dates,
+)
 
 
 SHOW_CHINA = "china"
@@ -199,17 +204,23 @@ def weekend_candidate_items(
     backlog_path: Path,
     cutoff_date: str,
     history_days: int,
+    excluded_dates: set[str] | None = None,
 ) -> list[dict[str, str]]:
     cutoff = parse_date(cutoff_date)
+    excluded_dates = excluded_dates or set()
     backlog = [
         item
         for item in load_weekend_backlog(backlog_path)
-        if parse_date(item["date"]) <= cutoff and not is_trump_related(item)
+        if (
+            parse_date(item["date"]) <= cutoff
+            and item["date"] not in excluded_dates
+            and not is_trump_related(item)
+        )
     ]
     for item in backlog:
         item.setdefault("source", "weekend-backlog")
 
-    seen_dates = {item["date"] for item in backlog}
+    seen_dates = {item["date"] for item in backlog} | excluded_dates
     if backlog:
         oldest = min(parse_date(item["date"]) for item in backlog)
         history_start = oldest - timedelta(days=1)
@@ -227,10 +238,41 @@ def choose_weekend_backlog_item(
     probe_timeout: int,
     probe_availability: bool,
     max_history_probes: int,
+    processed_dates: set[str] | None = None,
 ) -> dict[str, str] | None:
+    processed_dates = processed_dates or set()
+    current_date = parse_date(cutoff_date)
+    current_show_date = current_date.isoformat()
+
+    if current_show_date in processed_dates:
+        print(f"Skipping Weekend current candidate {current_show_date}: terminal state already recorded", flush=True)
+    elif has_rendered_mp4(rendered_root, current_show_date):
+        print(f"Skipping Weekend current candidate {current_show_date}: rendered MP4 already exists", flush=True)
+    else:
+        current_item = {
+            "date": current_show_date,
+            "title": f"Bloomberg This Weekend {current_date.month}/{current_date.day:02d}/{current_date.year}",
+            "source": "weekend-current",
+        }
+        if not probe_availability:
+            return current_item
+        available, reason = probe_weekend_url(current_show_date, probe_timeout)
+        print(f"Weekend current candidate {current_show_date}: {reason}", flush=True)
+        if available:
+            return current_item
+
     history_probes = 0
-    for item in weekend_candidate_items(backlog_path, cutoff_date, history_days):
+    for item in weekend_candidate_items(
+        backlog_path,
+        cutoff_date,
+        history_days,
+        excluded_dates={current_show_date},
+    ):
+        if item["date"] in processed_dates:
+            print(f"Skipping Weekend candidate {item['date']}: terminal state already recorded", flush=True)
+            continue
         if has_rendered_mp4(rendered_root, item["date"]):
+            print(f"Skipping Weekend candidate {item['date']}: rendered MP4 already exists", flush=True)
             continue
         should_probe = probe_availability and item.get("source") == "weekend-history"
         if should_probe:
@@ -275,6 +317,15 @@ def main() -> None:
         help="Rendered clips root used to skip already processed backlog dates.",
     )
     parser.add_argument(
+        "--weekend-processed-shows",
+        type=Path,
+        default=None,
+        help=(
+            "Strict terminal-state ledger for Weekend shows. "
+            "Defaults to <rendered-root>/weekend/processed_shows.json."
+        ),
+    )
+    parser.add_argument(
         "--weekend-history-days",
         type=int,
         default=730,
@@ -313,6 +364,15 @@ def main() -> None:
     skip_reason = ""
 
     if show_type == SHOW_WEEKEND and not explicit_show_date and not explicit_url:
+        processed_shows_path = (
+            args.weekend_processed_shows
+            if args.weekend_processed_shows is not None
+            else args.rendered_root / "weekend" / "processed_shows.json"
+        )
+        try:
+            weekend_ledger = load_processed_shows(processed_shows_path)
+        except WeekendProcessedShowsError as exc:
+            raise SystemExit(str(exc)) from exc
         backlog_item = choose_weekend_backlog_item(
             args.weekend_backlog,
             args.rendered_root,
@@ -321,6 +381,7 @@ def main() -> None:
             probe_timeout=args.weekend_probe_timeout,
             probe_availability=not args.no_weekend_availability_probe,
             max_history_probes=args.weekend_max_history_probes,
+            processed_dates=processed_show_dates(weekend_ledger),
         )
         if backlog_item:
             show_date = backlog_item["date"]
@@ -330,7 +391,8 @@ def main() -> None:
         else:
             skip_show = True
             skip_reason = (
-                "No unrendered Bloomberg Weekend show was found in configured backlog or older weekend scan."
+                "No unprocessed available Bloomberg Weekend show was found in the current date, "
+                "configured backlog, or older weekend scan."
             )
 
     url = args.url.strip() or build_url(show_date, show_type)

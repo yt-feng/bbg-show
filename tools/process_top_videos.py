@@ -15,7 +15,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
+from download_bloomberg_video import is_youtube_url, safe_file_part, slug_from_url  # noqa: E402
 from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
@@ -30,6 +30,16 @@ SENSITIVE_SKIP_MARKERS = (
 
 def run_date_default() -> str:
     return datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+
+
+def validate_run_date(value: str) -> str:
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%d").date()
+    except ValueError as exc:
+        raise ValueError("run date must use strict YYYY-MM-DD format") from exc
+    if parsed.isoformat() != value:
+        raise ValueError("run date must use strict YYYY-MM-DD format")
+    return value
 
 
 def is_sensitive_skip_output(text: str) -> bool:
@@ -76,12 +86,12 @@ def ffprobe_duration(path: Path) -> float:
     return float(proc.stdout.strip())
 
 
-def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
+def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
     data = json.loads(path.read_text(encoding="utf-8"))
     videos = data.get("videos", [])
     if not isinstance(videos, list) or not videos:
         raise SystemExit(f"No videos found in manifest: {path}")
-    normalized: list[dict[str, str]] = []
+    normalized: list[dict[str, Any]] = []
     seen: set[str] = set()
     for item in videos:
         if not isinstance(item, dict):
@@ -91,11 +101,9 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
             continue
         title = str(item.get("title", "")).strip() or slug_from_url(url).replace("_", " ").title()
         slug = str(item.get("slug", "")).strip() or slug_from_url(url)
-        if is_trump_related(url, title, slug, use_ai=True):
-            print(f"[top-videos] Skipping sensitive-topic manifest video: {title or url}", flush=True)
-            continue
         seen.add(url)
         normalized.append({
+            **item,
             "url": url,
             "title": title,
             "slug": slug,
@@ -107,8 +115,21 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, str]]:
     return normalized
 
 
+def render_output_dir(item: dict[str, Any], index: int, output_dir: Path) -> Path:
+    url = str(item.get("url", ""))
+    slug = safe_file_part(item.get("slug") or slug_from_url(url))
+    return output_dir / f"{index:02d}_{slug}"
+
+
+def cleanup_failed_render_output(item: dict[str, Any], index: int, output_dir: Path) -> None:
+    render_dir = render_output_dir(item, index, output_dir)
+    if render_dir.exists():
+        shutil.rmtree(render_dir)
+        print(f"Removed incomplete render output: {render_dir}", flush=True)
+
+
 def process_one(
-    item: dict[str, str],
+    item: dict[str, Any],
     index: int,
     args: argparse.Namespace,
     output_dir: Path,
@@ -116,12 +137,14 @@ def process_one(
     url = item["url"]
     title = item["title"]
     slug = safe_file_part(item.get("slug") or slug_from_url(url))
+    if is_trump_related(url, title, slug, item.get("description", ""), use_ai=True):
+        raise RuntimeError("Top video skipped by sensitive topic filter")
     label = f"{index:02d}_{slug}"
     work_dir = args.work_root / label
     video_path = work_dir / f"{label}.mp4"
     transcript_path = work_dir / "transcript.json"
     plan_path = work_dir / "highlight_plan.json"
-    render_dir = output_dir / label
+    render_dir = render_output_dir(item, index, output_dir)
 
     work_dir.mkdir(parents=True, exist_ok=True)
     print(f"\n=== Top video {index}: {title} ===", flush=True)
@@ -133,7 +156,7 @@ def process_one(
         str(TOOLS / "download_bloomberg_video.py"),
         "--url", url,
         "--download-backend", args.download_backend,
-        "--yt-dlp-proxy-mode", "auto",
+        "--yt-dlp-proxy-mode", "never" if is_youtube_url(url) else "auto",
         "--output", str(video_path),
         "--work-dir", str(work_dir / "download"),
         "--workers", str(args.workers),
@@ -215,6 +238,10 @@ def process_one(
         "title": refined_title or title,
         "source_title": title,
         "slug": slug,
+        "source": str(item.get("source", "bloomberg")),
+        "youtube_id": str(item.get("youtube_id", "")),
+        "channel_id": str(item.get("channel_id", "")),
+        "published_at": str(item.get("published_at", "")),
         "duration": round(duration, 2),
         "max_clip_seconds": args.max_clip_seconds,
         "video_file": str(video_path),
@@ -252,7 +279,10 @@ def main() -> None:
     parser.add_argument("--clean-output-dir", action="store_true")
     args = parser.parse_args()
 
-    run_date = args.run_date.strip() or run_date_default()
+    try:
+        run_date = validate_run_date(args.run_date.strip() or run_date_default())
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
     output_dir = args.out_root / run_date
     if args.clean_output_dir and output_dir.exists():
         print(f"Cleaning output directory before processing: {output_dir}", flush=True)
@@ -276,6 +306,7 @@ def main() -> None:
         try:
             result = process_one(item, index, args, output_dir)
         except Exception as exc:  # noqa: BLE001 - keep the daily batch moving
+            cleanup_failed_render_output(item, index, output_dir)
             message = str(exc)
             topic_skip = (
                 "Trump filter" in message
@@ -290,6 +321,8 @@ def main() -> None:
                 "index": index,
                 "url": item.get("url", ""),
                 "title": item.get("title", ""),
+                "source": item.get("source", "bloomberg"),
+                "youtube_id": item.get("youtube_id", ""),
                 "error": str(exc),
             }
             if topic_skip:

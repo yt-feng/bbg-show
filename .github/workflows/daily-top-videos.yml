@@ -17,7 +17,7 @@ on:
         type: string
         default: "https://www.bloomberg.com/videos"
       max_videos:
-        description: "Maximum Top Videos to process."
+        description: "Maximum Bloomberg.com Top Videos to process; three YouTube backups are appended."
         required: false
         type: number
         default: 9
@@ -47,6 +47,7 @@ jobs:
     outputs:
       run_date: ${{ steps.resolve.outputs.run_date }}
       max_videos: ${{ steps.resolve.outputs.max_videos }}
+      total_videos: ${{ steps.resolve.outputs.total_videos }}
       video_count: ${{ steps.scrape.outputs.video_count }}
       matrix: ${{ steps.matrix.outputs.matrix }}
     env:
@@ -54,6 +55,7 @@ jobs:
       RUN_DATE_INPUT: ${{ github.event.inputs.run_date || '' }}
       PAGE_URL: ${{ github.event.inputs.page_url || 'https://www.bloomberg.com/videos' }}
       MAX_VIDEOS_INPUT: ${{ github.event.inputs.max_videos || '9' }}
+      YOUTUBE_BACKUP_VIDEOS: "3"
 
     steps:
       - name: Check out repository
@@ -68,6 +70,19 @@ jobs:
             RUN_DATE=$(TZ=Asia/Shanghai date +%F)
           fi
 
+          python - "$RUN_DATE" <<'PY'
+          from datetime import datetime
+          import sys
+
+          value = sys.argv[1]
+          try:
+              parsed = datetime.strptime(value, "%Y-%m-%d").date()
+          except ValueError as exc:
+              raise SystemExit("run_date must use strict YYYY-MM-DD format") from exc
+          if parsed.isoformat() != value:
+              raise SystemExit("run_date must use strict YYYY-MM-DD format")
+          PY
+
           MAX_VIDEOS="$MAX_VIDEOS_INPUT"
           if [ -z "$MAX_VIDEOS" ]; then
             MAX_VIDEOS=9
@@ -78,13 +93,20 @@ jobs:
           if [ "$MAX_VIDEOS" -gt 9 ]; then
             MAX_VIDEOS=9
           fi
+          TOTAL_VIDEOS=$((MAX_VIDEOS + YOUTUBE_BACKUP_VIDEOS))
+          if [ "$TOTAL_VIDEOS" -gt 12 ]; then
+            TOTAL_VIDEOS=12
+          fi
 
           echo "RUN_DATE=$RUN_DATE" >> "$GITHUB_ENV"
           echo "MAX_VIDEOS=$MAX_VIDEOS" >> "$GITHUB_ENV"
+          echo "TOTAL_VIDEOS=$TOTAL_VIDEOS" >> "$GITHUB_ENV"
           echo "run_date=$RUN_DATE" >> "$GITHUB_OUTPUT"
           echo "max_videos=$MAX_VIDEOS" >> "$GITHUB_OUTPUT"
+          echo "total_videos=$TOTAL_VIDEOS" >> "$GITHUB_OUTPUT"
           echo "RUN_DATE=$RUN_DATE"
           echo "MAX_VIDEOS=$MAX_VIDEOS"
+          echo "TOTAL_VIDEOS=$TOTAL_VIDEOS"
 
       - name: Scrape Bloomberg Top Videos
         id: scrape
@@ -96,6 +118,7 @@ jobs:
           python tools/scrape_top_videos.py \
             --url "$PAGE_URL" \
             --max-videos "$MAX_VIDEOS" \
+            --youtube-backup-videos "$YOUTUBE_BACKUP_VIDEOS" \
             --method auto \
             --out work/top-videos/top_videos.json
 
@@ -113,8 +136,10 @@ jobs:
           import os
 
           count = int(os.environ["VIDEO_COUNT"])
-          max_videos = int(os.environ["MAX_VIDEOS"])
-          indexes = list(range(1, min(count, max_videos) + 1))
+          total_videos = int(os.environ["TOTAL_VIDEOS"])
+          indexes = list(range(1, min(count, total_videos) + 1))
+          if not indexes:
+              indexes = [0]
           print("matrix=" + json.dumps({"index": indexes}, separators=(",", ":")))
           print("indexes=" + ",".join(str(index) for index in indexes))
           PY
@@ -130,6 +155,11 @@ jobs:
   process:
     name: Process Top Video ${{ matrix.index }}
     needs: scrape
+    if: needs.scrape.outputs.video_count != '0'
+    # A single matrix runner may fail before it can write a summary. The collect
+    # job fills in missing results and is the only place that decides whether
+    # the whole batch failed (zero successful videos).
+    continue-on-error: true
     runs-on: ubuntu-latest
     timeout-minutes: 120
     strategy:
@@ -139,7 +169,7 @@ jobs:
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       RUN_DATE: ${{ needs.scrape.outputs.run_date }}
-      MAX_VIDEOS: ${{ needs.scrape.outputs.max_videos }}
+      TOTAL_VIDEOS: ${{ needs.scrape.outputs.total_videos }}
       FONT_PRESET: ${{ github.event.inputs.font_preset || 'noto-serif-sc' }}
 
     steps:
@@ -150,6 +180,11 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
 
       - name: Cache Whisper model
         uses: actions/cache@v4
@@ -199,7 +234,7 @@ jobs:
           python tools/process_top_videos.py \
             --manifest work/top-videos/top_videos.json \
             --run-date "$RUN_DATE" \
-            --max-videos "$MAX_VIDEOS" \
+            --max-videos "$TOTAL_VIDEOS" \
             --video-index "$VIDEO_INDEX" \
             --out-root rendered-clips/top-videos \
             --work-root work/top-videos \
@@ -214,7 +249,7 @@ jobs:
 
           SUMMARY_PATH=$(printf "rendered-clips/top-videos/%s/summary_%02d.json" "$RUN_DATE" "$VIDEO_INDEX")
           if [ "$STATUS" -ne 0 ]; then
-            echo "::warning::Top Video ${VIDEO_INDEX} failed with exit code ${STATUS}; batch failure threshold is evaluated in the collect job."
+            echo "::warning::Top Video ${VIDEO_INDEX} failed with exit code ${STATUS}; the collect job will preserve any successful clips."
             if [ ! -f "$SUMMARY_PATH" ]; then
               WRITE_FALLBACK_SUMMARY=1
             fi
@@ -254,6 +289,8 @@ jobs:
                       "index": index,
                       "url": str(video.get("url", "")),
                       "title": str(video.get("title", "")),
+                      "source": str(video.get("source", "bloomberg")),
+                      "youtube_id": str(video.get("youtube_id", "")),
                       "error": "process_top_videos.py exited before writing a summary",
                   }
               ],
@@ -286,8 +323,8 @@ jobs:
       RUN_DATE: ${{ needs.scrape.outputs.run_date }}
       OUTPUT_DIR: rendered-clips/top-videos/${{ needs.scrape.outputs.run_date }}
       VIDEO_COUNT: ${{ needs.scrape.outputs.video_count }}
-      MAX_VIDEOS: ${{ needs.scrape.outputs.max_videos }}
-      MAX_FAILURE_RATE: "0.30"
+      TOTAL_VIDEOS: ${{ needs.scrape.outputs.total_videos }}
+      PREVIOUS_OUTPUT_DIR: work/top-videos/previous-output
 
     steps:
       - name: Check out repository
@@ -301,6 +338,14 @@ jobs:
           name: top-videos-manifest
           path: work/top-videos
 
+      - name: Preserve existing output directory
+        run: |
+          rm -rf "$PREVIOUS_OUTPUT_DIR"
+          if [ -d "$OUTPUT_DIR" ]; then
+            cp -a "$OUTPUT_DIR" "$PREVIOUS_OUTPUT_DIR"
+            echo "Preserved existing output from $OUTPUT_DIR"
+          fi
+
       - name: Reset output directory
         run: |
           rm -rf "$OUTPUT_DIR"
@@ -308,11 +353,18 @@ jobs:
           cp work/top-videos/top_videos.json "$OUTPUT_DIR/top_videos.json"
 
       - name: Download rendered top video artifacts
+        if: env.VIDEO_COUNT != '0'
         uses: actions/download-artifact@v5
         with:
           pattern: top-video-${{ needs.scrape.outputs.run_date }}-*
           path: ${{ env.OUTPUT_DIR }}
           merge-multiple: true
+
+      - name: Prune unsuccessful output directories
+        run: |
+          python tools/collect_top_video_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --expected-total "$VIDEO_COUNT"
 
       - name: Build summary
         run: |
@@ -328,7 +380,7 @@ jobs:
               payload = json.loads(path.read_text(encoding="utf-8"))
               videos.extend(payload.get("videos", []))
 
-          expected_total = min(int(os.environ["VIDEO_COUNT"]), int(os.environ["MAX_VIDEOS"]))
+          expected_total = min(int(os.environ["VIDEO_COUNT"]), int(os.environ["TOTAL_VIDEOS"]))
           manifest_path = output_dir / "top_videos.json"
           manifest_videos = []
           if manifest_path.exists():
@@ -355,6 +407,8 @@ jobs:
                   "index": index,
                   "url": str(video.get("url", "")),
                   "title": str(video.get("title", "")),
+                  "source": str(video.get("source", "bloomberg")),
+                  "youtube_id": str(video.get("youtube_id", "")),
                   "error": "No process summary artifact was uploaded for this video.",
               }
 
@@ -378,44 +432,17 @@ jobs:
           print(json.dumps(summary, ensure_ascii=False, indent=2))
           PY
 
-      - name: Evaluate batch failure rate
+      - name: Evaluate batch results
         run: |
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
+          python tools/collect_top_video_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --evaluate
 
-          summary_path = Path(os.environ["OUTPUT_DIR"]) / "summary.json"
-          summary = json.loads(summary_path.read_text(encoding="utf-8"))
-          total = int(summary.get("total") or 0)
-          succeeded = int(summary.get("succeeded") or 0)
-          failed = int(summary.get("failed") or 0)
-          skipped = int(summary.get("skipped") or 0)
-          threshold = float(os.environ.get("MAX_FAILURE_RATE", "0.30"))
-          processable = max(total - skipped, 0)
-          failure_rate = (failed / processable) if processable else 0.0
-          print(
-              f"Top video batch: total={total}, succeeded={succeeded}, "
-              f"failed={failed}, skipped={skipped}, failure_rate={failure_rate:.1%}, threshold={threshold:.0%}"
-          )
-          if total < 1:
-              print("No top videos after filtering; keeping workflow green.")
-              raise SystemExit(0)
-          if processable < 1:
-              print("All top videos were skipped by content filters; keeping workflow green.")
-              raise SystemExit(0)
-          if succeeded < 1:
-              raise SystemExit("No top videos were processed successfully.")
-          if failure_rate >= threshold:
-              raise SystemExit(
-                  f"Top video failure rate {failure_rate:.1%} is at or above threshold {threshold:.0%}."
-              )
-          if failed:
-              print(
-                  f"::warning::{failed}/{total} top videos failed "
-                  f"({failure_rate:.1%}), below threshold {threshold:.0%}; keeping workflow green."
-              )
-          PY
+      - name: Restore existing output when rerun has no successful candidates
+        run: |
+          python tools/collect_top_video_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --restore-previous "$PREVIOUS_OUTPUT_DIR"
 
       - name: Verify rendered clips
         run: |
