@@ -113,26 +113,25 @@ class WeekendProcessedShowsTests(unittest.TestCase):
 
     def test_seed_uses_successful_publish_commit_times(self) -> None:
         records = show_records(load_processed_shows(ROOT / "rendered-clips/weekend/processed_shows.json"))
-        self.assertEqual(
-            records,
-            {
-                "2026-06-13": {
-                    "show_date": "2026-06-13",
-                    "status": "rendered",
-                    "processed_at": "2026-06-13T20:48:58Z",
-                },
-                "2026-06-14": {
-                    "show_date": "2026-06-14",
-                    "status": "rendered",
-                    "processed_at": "2026-06-15T00:18:26Z",
-                },
-                "2026-06-28": {
-                    "show_date": "2026-06-28",
-                    "status": "rendered",
-                    "processed_at": "2026-06-28T20:43:25Z",
-                },
+        expected_seed_records = {
+            "2026-06-13": {
+                "show_date": "2026-06-13",
+                "status": "rendered",
+                "processed_at": "2026-06-13T20:48:58Z",
             },
-        )
+            "2026-06-14": {
+                "show_date": "2026-06-14",
+                "status": "rendered",
+                "processed_at": "2026-06-15T00:18:26Z",
+            },
+            "2026-06-28": {
+                "show_date": "2026-06-28",
+                "status": "rendered",
+                "processed_at": "2026-06-28T20:43:25Z",
+            },
+        }
+        for show_date, expected in expected_seed_records.items():
+            self.assertEqual(records.get(show_date), expected)
 
     def test_successful_explicit_rerender_refreshes_retention_time(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

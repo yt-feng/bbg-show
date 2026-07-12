@@ -72,6 +72,26 @@ def write_combined_plan(
     return combined
 
 
+def refine_titles_or_restore_planner_plan(plan_path: Path, refiner: Path) -> str:
+    """Refine titles, preserving a usable planner plan on non-content failures."""
+    original_plan = plan_path.read_text(encoding="utf-8")
+    proc = run_and_stream([sys.executable, str(refiner), "--plan", str(plan_path)])
+    if proc.returncode == 0:
+        return "refined"
+
+    output = proc.stdout or ""
+    if is_no_eligible_clip_output(output):
+        return "no_eligible_clips"
+
+    plan_path.write_text(original_plan, encoding="utf-8")
+    print(
+        f"::warning::Title refinement failed with exit code {proc.returncode}; "
+        "using planner-generated titles after content filtering.",
+        flush=True,
+    )
+    return "planner_fallback"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--transcript", type=Path, required=True)
@@ -182,15 +202,18 @@ def main() -> None:
         clips=combined_clips,
         planning_status="planned",
     )
+    title_refinement_status = "skipped"
     if not args.skip_title_refine:
         refiner = Path(__file__).with_name("refine_clip_titles.py")
         print("Refining combined clip titles with DeepSeek", flush=True)
-        proc = run_and_stream([sys.executable, str(refiner), "--plan", str(args.combined_plan)])
-        if proc.returncode:
-            if not is_no_eligible_clip_output(proc.stdout or ""):
-                raise SystemExit(f"Title refinement failed with exit code {proc.returncode}")
+        title_refinement_status = refine_titles_or_restore_planner_plan(
+            args.combined_plan,
+            refiner,
+        )
+        if title_refinement_status == "no_eligible_clips":
             combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
             combined["planning_status"] = "no_eligible_clips"
+            combined["title_refinement_status"] = "no_eligible_clips"
             combined["clips"] = []
             args.combined_plan.write_text(
                 json.dumps(combined, ensure_ascii=False, indent=2) + "\n",
@@ -214,10 +237,15 @@ def main() -> None:
                     print("No eligible clips remained after title refinement", flush=True)
                     return
                 raise SystemExit("No non-sensitive-topic clips remained after title refinement")
-            args.combined_plan.write_text(json.dumps(combined, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        combined["title_refinement_status"] = title_refinement_status
+        args.combined_plan.write_text(
+            json.dumps(combined, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     final_combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
     final_count = len(final_combined.get("clips", [])) if isinstance(final_combined.get("clips", []), list) else 0
     final_combined["planning_status"] = "planned" if final_count else "no_eligible_clips"
+    final_combined.setdefault("title_refinement_status", title_refinement_status)
     args.combined_plan.write_text(
         json.dumps(final_combined, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
