@@ -71,6 +71,7 @@ jobs:
       MAX_SPEAKERS: ${{ github.event.inputs.max_speakers || '3' }}
       CLIPS_PER_SPEAKER: ${{ github.event.inputs.clips_per_speaker || '5' }}
       FONT_PRESET: ${{ github.event.inputs.font_preset || 'noto-serif-sc' }}
+      WEEKEND_PROCESSED_SHOWS: rendered-clips/weekend/processed_shows.json
 
     steps:
       - name: Check out repository
@@ -90,6 +91,7 @@ jobs:
             --show-date "$SHOW_DATE_INPUT" \
             --show-type "$SHOW_TYPE_INPUT" \
             --url "$URL_INPUT" \
+            --weekend-processed-shows "$WEEKEND_PROCESSED_SHOWS" \
             --github-env "$GITHUB_ENV" \
             --metadata work/daily/show.json
 
@@ -181,6 +183,7 @@ jobs:
 
       - name: Select keynote speakers
         if: steps.existing_clips.outputs.skip != 'true'
+        id: select_speakers
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -189,10 +192,27 @@ jobs:
             --transcript work/daily/transcript.json \
             --show-date "$SHOW_DATE" \
             --out work/daily/speakers.json \
-            --max-speakers "$MAX_SPEAKERS"
+            --max-speakers "$MAX_SPEAKERS" \
+            --allow-empty
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+
+          payload = json.load(open("work/daily/speakers.json", encoding="utf-8"))
+          speakers = payload.get("speakers")
+          if not isinstance(speakers, list):
+              raise SystemExit("speakers.json must contain a speakers list")
+          expected_status = "selected" if speakers else "no_eligible_speakers"
+          if payload.get("selection_status") != expected_status:
+              raise SystemExit("speakers.json selection_status does not match its speakers list")
+          print(f"speaker_count={len(speakers)}")
+          print(f"has_speakers={'true' if speakers else 'false'}")
+          print(f"selection_status={expected_status}")
+          PY
 
       - name: Plan speaker highlights
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.select_speakers.outputs.has_speakers == 'true'
+        id: plan_highlights
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -205,10 +225,26 @@ jobs:
             --min-seconds 30 \
             --max-seconds 150 \
             --min-clips 3 \
-            --max-clips "$CLIPS_PER_SPEAKER"
+            --max-clips "$CLIPS_PER_SPEAKER" \
+            --allow-empty
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+
+          payload = json.load(open("work/daily/highlight_plan.json", encoding="utf-8"))
+          clips = payload.get("clips")
+          if not isinstance(clips, list):
+              raise SystemExit("highlight_plan.json must contain a clips list")
+          expected_status = "planned" if clips else "no_eligible_clips"
+          if payload.get("planning_status") != expected_status:
+              raise SystemExit("highlight_plan.json planning_status does not match its clips list")
+          print(f"clip_count={len(clips)}")
+          print(f"has_clips={'true' if clips else 'false'}")
+          print(f"planning_status={expected_status}")
+          PY
 
       - name: Render KC Desktop clips
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         env:
           PYTHONUNBUFFERED: "1"
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
@@ -224,7 +260,7 @@ jobs:
             --force
 
       - name: Copy metadata
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         run: |
           cp work/daily/show.json "$OUTPUT_DIR/show.json"
           cp work/daily/speakers.json "$OUTPUT_DIR/speakers.json"
@@ -235,7 +271,7 @@ jobs:
           find "$OUTPUT_DIR" -maxdepth 1 -type f -print -exec ls -lh {} \;
 
       - name: Verify rendered clips
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         run: |
           CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l)
           echo "Rendered MP4 count: $CLIP_COUNT"
@@ -244,13 +280,33 @@ jobs:
             exit 1
           fi
 
-      - name: Clean rendered clips older than 72 hours
-        if: steps.existing_clips.outputs.skip != 'true'
+      - name: Record Weekend show with no eligible speakers
+        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'false'
         run: |
-          python3 tools/cleanup_rendered_clips.py --retention-hours 72
+          python tools/weekend_processed_shows.py record \
+            --path "$WEEKEND_PROCESSED_SHOWS" \
+            --show-date "$SHOW_DATE" \
+            --status no_eligible_speakers
+
+      - name: Record Weekend show with no eligible clips
+        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'true' && steps.plan_highlights.outputs.has_clips == 'false'
+        run: |
+          python tools/weekend_processed_shows.py record \
+            --path "$WEEKEND_PROCESSED_SHOWS" \
+            --show-date "$SHOW_DATE" \
+            --status no_eligible_clips
+
+      - name: Record rendered Weekend show
+        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.plan_highlights.outputs.has_clips == 'true'
+        run: |
+          python tools/weekend_processed_shows.py record \
+            --path "$WEEKEND_PROCESSED_SHOWS" \
+            --show-date "$SHOW_DATE" \
+            --status rendered \
+            --refresh
 
       - name: Commit rendered clips to main
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: success() && steps.existing_clips.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -259,6 +315,6 @@ jobs:
             echo "No rendered clip changes to commit."
             exit 0
           fi
-          git commit -m "chore: publish ${SHOW_TYPE} show clips ${SHOW_DATE}"
+          git commit -m "chore: finalize ${SHOW_TYPE} show ${SHOW_DATE}"
           git pull --rebase origin main
           git push origin HEAD:main

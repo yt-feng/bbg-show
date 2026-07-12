@@ -38,6 +38,12 @@ HOST_OUTRO_PATTERNS = [
 ]
 SHORT_CLIP_EXPAND_MIN_RATIO = 0.75
 SHORT_CLIP_EXPAND_MAX_DEFICIT = 10.0
+NO_ELIGIBLE_CLIPS_EXIT_CODE = 3
+
+
+def exit_no_eligible_clips(message: str) -> None:
+    print(message, flush=True)
+    raise SystemExit(NO_ELIGIBLE_CLIPS_EXIT_CODE)
 
 
 def ask_deepseek(api_key: str, system_prompt: str, user_prompt: str, temperature: float = 0.3) -> dict:
@@ -233,9 +239,9 @@ Important:
                 clips = filter_probe["clips"]
                 print("Using transcript fallback clip", flush=True)
             else:
-                raise SystemExit("All generated clips were sensitive-topic related")
+                exit_no_eligible_clips("All generated clips were sensitive-topic related")
         else:
-            raise SystemExit("All generated clips failed the speaker-content quality gate")
+            exit_no_eligible_clips("All generated clips failed the speaker-content quality gate")
 
     # Write output
     payload = sanitize_plan_wording({
@@ -250,7 +256,7 @@ Important:
     if removed:
         print(f"Removed {len(removed)} sensitive-topic clip(s) after wording guard", flush=True)
     if not payload.get("clips"):
-        raise SystemExit("No non-sensitive-topic clips remained after filtering")
+        exit_no_eligible_clips("No non-sensitive-topic clips remained after filtering")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote plan: {args.out} ({len(clips)} clips)", flush=True)

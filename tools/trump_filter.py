@@ -26,7 +26,8 @@ EXCLUDED_TOPIC_PATTERNS = [
     re.compile(r"伊朗|德黑兰|德黑蘭|霍尔木兹|霍爾木茲|霍穆兹|霍穆茲|荷姆兹|荷姆茲"),
     re.compile(
         r"\b(?:geopolitics?|geopolitical|military|missile|airstrike|drone\s+strike|warship|"
-        r"naval\s+activity|ceasefire|armed\s+conflict|middle\s+east\s+conflict|"
+        r"navy|naval|army|air\s+force|armed\s+forces|pentagon|weapons?|munitions?|"
+        r"patriot\s+(?:missile|interceptor)|ceasefire|armed\s+conflict|middle\s+east\s+conflict|"
         r"persian\s+gulf|red\s+sea|nuclear\s+(?:site|facility|program|talks?)|"
         r"gaza|hamas|hezbollah|houthi|ukraine|ukrainian|kyiv|kiev|crimea|"
         r"donbas|donetsk|luhansk|russia[-\s]?ukraine)\b",
@@ -34,7 +35,8 @@ EXCLUDED_TOPIC_PATTERNS = [
     ),
     re.compile(
         r"地缘政治|地緣政治|军事|軍事|战争|戰爭|导弹|導彈|空袭|空襲|无人机|無人機|"
-        r"核设施|核設施|停火|军舰|軍艦|以色列|加沙|哈马斯|哈瑪斯|真主党|真主黨|"
+        r"核设施|核設施|停火|军舰|軍艦|海军|海軍|陆军|陸軍|空军|空軍|国防|國防|"
+        r"武器|弹药|彈藥|以色列|加沙|哈马斯|哈瑪斯|真主党|真主黨|"
         r"胡塞|乌克兰|烏克蘭|基辅|基輔|克里米亚|克里米亞|顿巴斯|頓巴斯|俄乌|俄烏"
     ),
 ]
