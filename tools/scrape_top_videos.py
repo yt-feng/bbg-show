@@ -35,6 +35,11 @@ from download_bloomberg_video import (  # noqa: E402
     fetch_text_direct,
     safe_file_part,
 )
+from top_video_sources import (  # noqa: E402
+    item_source_key,
+    load_processed_source_keys,
+    source_key,
+)
 from trump_filter import is_trump_related  # noqa: E402
 
 
@@ -158,6 +163,7 @@ def parse_youtube_feed(
     now: datetime | None = None,
     max_age_hours: int = 48,
     expected_channel_id: str = YOUTUBE_CHANNEL_ID,
+    processed_source_keys: set[str] | None = None,
 ) -> list[dict[str, str]]:
     root = ET.fromstring(xml_bytes)
     feed_channel_id = root.findtext("yt:channelId", default="", namespaces=YOUTUBE_NAMESPACES)
@@ -182,6 +188,7 @@ def parse_youtube_feed(
     cutoff = reference_time - timedelta(hours=max(1, max_age_hours))
     seen_ids: set[str] = set()
     seen_title_keys = set(existing_title_keys or set())
+    processed_keys = processed_source_keys or set()
     candidates: list[dict[str, str]] = []
 
     for entry in root.findall("atom:entry", YOUTUBE_NAMESPACES):
@@ -207,6 +214,9 @@ def parse_youtube_feed(
         if published < cutoff or published > reference_time + timedelta(hours=1):
             continue
         canonical_url = f"https://www.youtube.com/watch?v={video_id}"
+        if source_key(canonical_url, video_id) in processed_keys:
+            log(f"Skipping previously processed YouTube backup: {title}")
+            continue
         unsuitable_reason = unsuitable_youtube_entry(title, url, raw_description)
         if unsuitable_reason:
             log(f"Skipping unsuitable YouTube backup ({unsuitable_reason}): {title}")
@@ -256,17 +266,26 @@ def normalize_url(base_url: str, href: str) -> str:
     return urlunsplit((parts.scheme or "https", parts.netloc or "www.bloomberg.com", parts.path, "", ""))
 
 
-def add_link(links: list[dict[str, str]], seen: set[str], url: str, title: str) -> None:
+def add_link(
+    links: list[dict[str, str]],
+    seen: set[str],
+    url: str,
+    title: str,
+    processed_source_keys: set[str] | None = None,
+) -> None:
     normalized = normalize_url(DEFAULT_URL, url)
     if "/news/videos/" not in urlsplit(normalized).path:
-        return
-    clean_title = clean_text(title) or title_from_url(normalized)
-    if is_trump_related(normalized, clean_title):
-        log(f"Skipping sensitive-topic top video: {clean_title or normalized}")
         return
     if normalized in seen:
         return
     seen.add(normalized)
+    clean_title = clean_text(title) or title_from_url(normalized)
+    if is_trump_related(normalized, clean_title):
+        log(f"Skipping sensitive-topic top video: {clean_title or normalized}")
+        return
+    if source_key(normalized) in (processed_source_keys or set()):
+        log(f"Skipping previously processed top video: {clean_title or normalized}")
+        return
     links.append({
         "url": normalized,
         "title": clean_title,
@@ -281,10 +300,24 @@ def title_from_url(url: str) -> str:
     return clean_text(slug.replace("-", " ")).title()
 
 
-def direct_top_video_slice(links: list[dict[str, str]], max_videos: int, skip_leading: int) -> list[dict[str, str]]:
+def direct_top_video_slice(
+    links: list[dict[str, str]],
+    max_videos: int,
+    skip_leading: int,
+    processed_source_keys: set[str] | None = None,
+) -> list[dict[str, str]]:
     if skip_leading > 0 and len(links) >= max_videos + skip_leading:
-        return links[skip_leading:skip_leading + max_videos]
-    return links[:max_videos]
+        links = links[skip_leading:]
+    processed_keys = processed_source_keys or set()
+    selected: list[dict[str, str]] = []
+    for item in links:
+        if item_source_key(item) in processed_keys:
+            log(f"Skipping previously processed top video: {item.get('title') or item.get('url')}")
+            continue
+        selected.append(item)
+        if len(selected) >= max_videos:
+            break
+    return selected
 
 
 def extract_links_from_html(
@@ -293,11 +326,10 @@ def extract_links_from_html(
     max_videos: int,
     *,
     skip_leading: int = 4,
+    processed_source_keys: set[str] | None = None,
 ) -> list[dict[str, str]]:
     links: list[dict[str, str]] = []
     seen: set[str] = set()
-    scan_limit = max_videos + max(0, skip_leading)
-
     anchor_re = re.compile(
         r"<a\b[^>]*href=[\"']([^\"']+)[\"'][^>]*>(.*?)</a>",
         flags=re.IGNORECASE | re.DOTALL,
@@ -310,14 +342,15 @@ def extract_links_from_html(
         label = re.sub(r"(?is)<style[^>]*>.*?</style>", " ", label)
         label = re.sub(r"(?s)<[^>]+>", " ", label)
         add_link(links, seen, normalize_url(base_url, href), label)
-        if len(links) >= scan_limit:
-            return direct_top_video_slice(links, max_videos, skip_leading)
 
     for match in VIDEO_PATH_RE.finditer(html.unescape(text)):
         add_link(links, seen, normalize_url(base_url, match.group(0)), "")
-        if len(links) >= scan_limit:
-            break
-    return direct_top_video_slice(links, max_videos, skip_leading)
+    return direct_top_video_slice(
+        links,
+        max_videos,
+        skip_leading,
+        processed_source_keys,
+    )
 
 
 class WebSocketClient:
@@ -439,7 +472,13 @@ def allocate_local_port() -> int:
         return int(sock.getsockname()[1])
 
 
-def extract_links_with_headless_chrome(url: str, xpath: str, max_videos: int, wait_seconds: int) -> list[dict[str, str]]:
+def extract_links_with_headless_chrome(
+    url: str,
+    xpath: str,
+    max_videos: int,
+    wait_seconds: int,
+    processed_source_keys: set[str] | None = None,
+) -> list[dict[str, str]]:
     binary = chrome_binary()
     if not binary:
         raise RuntimeError("No Chrome/Chromium binary found")
@@ -470,7 +509,12 @@ def extract_links_with_headless_chrome(url: str, xpath: str, max_videos: int, wa
             ws.command("Page.enable")
             ws.command("Runtime.enable")
             time.sleep(wait_seconds)
-            expression = top_videos_js(xpath, max_videos)
+            excluded_urls = {
+                key.removeprefix("url:")
+                for key in (processed_source_keys or set())
+                if key.startswith("url:")
+            }
+            expression = top_videos_js(xpath, max_videos, excluded_urls)
             result = ws.command("Runtime.evaluate", {
                 "expression": expression,
                 "awaitPromise": True,
@@ -480,7 +524,11 @@ def extract_links_with_headless_chrome(url: str, xpath: str, max_videos: int, wa
             ws.close()
         value = result.get("result", {}).get("value", "{}")
         parsed = json.loads(value)
-        return normalize_browser_links(parsed.get("links", []), max_videos)
+        return normalize_browser_links(
+            parsed.get("links", []),
+            max_videos,
+            processed_source_keys=processed_source_keys,
+        )
     finally:
         proc.terminate()
         try:
@@ -489,11 +537,16 @@ def extract_links_with_headless_chrome(url: str, xpath: str, max_videos: int, wa
             proc.kill()
 
 
-def top_videos_js(xpath: str, max_videos: int) -> str:
+def top_videos_js(
+    xpath: str,
+    max_videos: int,
+    excluded_urls: set[str] | None = None,
+) -> str:
     return f"""
 (async function () {{
   const xpath = {json.dumps(xpath)};
   const maxVideos = {int(max_videos)};
+  const excludedUrls = new Set({json.dumps(sorted(excluded_urls or set()))});
   const node = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   const root = node || document;
   const seen = new Map();
@@ -501,8 +554,19 @@ def top_videos_js(xpath: str, max_videos: int) -> str:
     Array.from(root.querySelectorAll('a[href]')).forEach((a) => {{
       const href = a.href || '';
       if (!/\\/news\\/videos\\//.test(href)) return;
+      const normalized = new URL(href, location.href);
+      normalized.search = '';
+      normalized.hash = '';
+      if (normalized.hostname === 'bloomberg.com' || normalized.hostname === 'www.bloomberg.com') {{
+        normalized.protocol = 'https:';
+        normalized.hostname = 'www.bloomberg.com';
+        normalized.port = '';
+      }}
+      normalized.pathname = normalized.pathname.replace(/\\/$/, '') || '/';
+      if (excludedUrls.has(normalized.toString())) return;
       const text = (a.innerText || a.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim();
-      if (!seen.has(href)) seen.set(href, {{ url: href, title: text }});
+      const canonicalHref = normalized.toString();
+      if (!seen.has(canonicalHref)) seen.set(canonicalHref, {{ url: canonicalHref, title: text }});
     }});
   }}
   function scrollCandidates() {{
@@ -530,11 +594,22 @@ def top_videos_js(xpath: str, max_videos: int) -> str:
 """
 
 
-def normalize_browser_links(items: list[dict[str, Any]], max_videos: int) -> list[dict[str, str]]:
+def normalize_browser_links(
+    items: list[dict[str, Any]],
+    max_videos: int,
+    *,
+    processed_source_keys: set[str] | None = None,
+) -> list[dict[str, str]]:
     links: list[dict[str, str]] = []
     seen: set[str] = set()
     for item in items:
-        add_link(links, seen, str(item.get("url", "")), str(item.get("title", "")))
+        add_link(
+            links,
+            seen,
+            str(item.get("url", "")),
+            str(item.get("title", "")),
+            processed_source_keys,
+        )
         if len(links) >= max_videos:
             break
     return links
@@ -564,13 +639,20 @@ def scrape(
     wait_seconds: int,
     direct_skip_leading: int,
     work_dir: Path,
+    processed_source_keys: set[str] | None = None,
 ) -> tuple[str, list[dict[str, str]]]:
     errors: list[str] = []
     if method in {"auto", "direct"}:
         try:
             log(f"Trying direct page fetch: {url}")
             text = fetch_text_direct(url, timeout=90)
-            links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
+            links = extract_links_from_html(
+                text,
+                url,
+                max_videos,
+                skip_leading=direct_skip_leading,
+                processed_source_keys=processed_source_keys,
+            )
             if links:
                 log(f"Direct page fetch found {len(links)} video link(s)")
                 return "direct", links
@@ -586,7 +668,13 @@ def scrape(
             try:
                 log(f"Trying BRP background page fetch: {brp_url}")
                 text = fetch_text_direct(brp_url, timeout=45)
-                links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
+                links = extract_links_from_html(
+                    text,
+                    url,
+                    max_videos,
+                    skip_leading=direct_skip_leading,
+                    processed_source_keys=processed_source_keys,
+                )
                 if links:
                     log(f"BRP background page fetch found {len(links)} video link(s)")
                     return "brp", links
@@ -600,7 +688,13 @@ def scrape(
         try:
             log("Trying proxy page fetch fallback")
             text = fetch_text_proxy(url, work_dir)
-            links = extract_links_from_html(text, url, max_videos, skip_leading=direct_skip_leading)
+            links = extract_links_from_html(
+                text,
+                url,
+                max_videos,
+                skip_leading=direct_skip_leading,
+                processed_source_keys=processed_source_keys,
+            )
             if links:
                 log(f"Proxy page fetch found {len(links)} video link(s)")
                 return "proxy", links
@@ -613,7 +707,13 @@ def scrape(
     if method in {"auto", "chrome"}:
         try:
             log("Trying headless Chrome XPath fallback")
-            links = extract_links_with_headless_chrome(url, xpath, max_videos, wait_seconds)
+            links = extract_links_with_headless_chrome(
+                url,
+                xpath,
+                max_videos,
+                wait_seconds,
+                processed_source_keys,
+            )
             if links:
                 log(f"Headless Chrome found {len(links)} video link(s)")
                 return "chrome", links
@@ -648,6 +748,18 @@ def main() -> None:
     )
     parser.add_argument("--youtube-feed-url", default=YOUTUBE_FEED_URL)
     parser.add_argument("--youtube-max-age-hours", type=int, default=48)
+    parser.add_argument(
+        "--processed-sources",
+        type=Path,
+        default=Path("rendered-clips/top-videos/processed_sources.json"),
+        help="Persistent successful-source ledger used for cross-run deduplication.",
+    )
+    parser.add_argument(
+        "--history-root",
+        type=Path,
+        default=Path("rendered-clips/top-videos"),
+        help="Top Videos root whose retained dated summaries seed successful-source history.",
+    )
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
 
@@ -657,6 +769,12 @@ def main() -> None:
         raise SystemExit("--youtube-backup-videos must be at least 0")
     if args.youtube_max_age_hours < 1:
         raise SystemExit("--youtube-max-age-hours must be at least 1")
+
+    try:
+        processed_keys = load_processed_source_keys(args.processed_sources, args.history_root)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+    log(f"Loaded {len(processed_keys)} previously successful source identity/identities")
 
     primary_error = ""
     try:
@@ -668,6 +786,7 @@ def main() -> None:
             args.wait_seconds,
             args.direct_skip_leading,
             args.work_dir,
+            processed_keys,
         )
     except SystemExit as exc:
         if args.youtube_backup_videos < 1:
@@ -677,6 +796,8 @@ def main() -> None:
         links = []
         log(f"Bloomberg Top Videos scrape failed; using YouTube backup only: {primary_error}")
 
+    links = [item for item in links if item_source_key(item) not in processed_keys]
+    links = links[: args.max_videos]
     primary_count = len(links)
     youtube_links: list[dict[str, str]] = []
     youtube_error = ""
@@ -695,6 +816,7 @@ def main() -> None:
                 max_videos=args.youtube_backup_videos,
                 existing_title_keys=existing_title_keys,
                 max_age_hours=args.youtube_max_age_hours,
+                processed_source_keys=processed_keys,
             )
             links.extend(youtube_links)
             log(f"Appended {len(youtube_links)} official YouTube backup video(s)")

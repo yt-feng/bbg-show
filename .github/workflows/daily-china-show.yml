@@ -72,6 +72,7 @@ jobs:
       CLIPS_PER_SPEAKER: ${{ github.event.inputs.clips_per_speaker || '5' }}
       FONT_PRESET: ${{ github.event.inputs.font_preset || 'noto-serif-sc' }}
       WEEKEND_PROCESSED_SHOWS: rendered-clips/weekend/processed_shows.json
+      SHOW_SOURCE_LEDGER: rendered-clips/show_sources.json
 
     steps:
       - name: Check out repository
@@ -126,6 +127,7 @@ jobs:
           python -m pip install faster-whisper Pillow
 
       - name: Download Bloomberg video
+        id: download
         if: steps.existing_clips.outputs.skip != 'true'
         env:
           PYTHONUNBUFFERED: "1"
@@ -133,18 +135,28 @@ jobs:
         run: |
           for attempt in 1 2 3; do
             echo "Download attempt $attempt/3"
-            if python tools/download_bloomberg_video.py \
+            set +e
+            python tools/download_bloomberg_video.py \
               --url "$SHOW_URL" \
               --download-backend auto \
               --yt-dlp-proxy-mode auto \
               --output-dir downloads \
               --work-dir work/download \
               --workers 32 \
-              --no-strategy-cache; then
+              --keep-tmp \
+              --no-strategy-cache
+            status=$?
+            set -e
+            if [ "$status" -eq 0 ]; then
+              echo "source_ready=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
-            status=$?
             if [ "$attempt" -eq 3 ]; then
+              if [ "$status" -eq 75 ]; then
+                echo "::warning::Bloomberg still exposes an ambiguous or stale source; leaving this run green so the backup schedule can retry."
+                echo "source_ready=false" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
               exit "$status"
             fi
             if [ "$SHOW_TYPE" = "weekend" ] && [ "$SHOW_RESOLUTION_SOURCE" != "explicit" ]; then
@@ -157,7 +169,7 @@ jobs:
           done
 
       - name: Identify video file
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true'
         run: |
           VIDEO_FILE=$(find downloads -type f -name '*.mp4' | head -1)
           if [ -z "$VIDEO_FILE" ]; then
@@ -168,8 +180,21 @@ jobs:
           echo "Downloaded: $VIDEO_FILE"
           ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$VIDEO_FILE"
 
+      - name: Reject stale or previously published Bloomberg asset
+        id: source_guard_initial
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true'
+        run: |
+          python tools/show_source_guard.py check \
+            --show-metadata work/daily/show.json \
+            --download-plan work/download/download_plan.json \
+            --manifest work/download/embed_manifest.json \
+            --ledger "$SHOW_SOURCE_LEDGER" \
+            --rendered-root rendered-clips \
+            --identity-output work/daily/source_identity.json \
+            --github-output "$GITHUB_OUTPUT"
+
       - name: Transcribe full show
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true'
         env:
           PYTHONUNBUFFERED: "1"
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -181,8 +206,22 @@ jobs:
             --language en \
             --force
 
+      - name: Reject repeated show content
+        id: source_guard_transcript
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true'
+        run: |
+          python tools/show_source_guard.py check \
+            --show-metadata work/daily/show.json \
+            --download-plan work/download/download_plan.json \
+            --manifest work/download/embed_manifest.json \
+            --transcript work/daily/transcript.json \
+            --ledger "$SHOW_SOURCE_LEDGER" \
+            --rendered-root rendered-clips \
+            --identity-output work/daily/source_identity.json \
+            --github-output "$GITHUB_OUTPUT"
+
       - name: Select keynote speakers
-        if: steps.existing_clips.outputs.skip != 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true'
         id: select_speakers
         env:
           PYTHONUNBUFFERED: "1"
@@ -211,7 +250,7 @@ jobs:
           PY
 
       - name: Plan speaker highlights
-        if: steps.existing_clips.outputs.skip != 'true' && steps.select_speakers.outputs.has_speakers == 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.select_speakers.outputs.has_speakers == 'true'
         id: plan_highlights
         env:
           PYTHONUNBUFFERED: "1"
@@ -244,7 +283,7 @@ jobs:
           PY
 
       - name: Render KC Desktop clips
-        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         env:
           PYTHONUNBUFFERED: "1"
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
@@ -260,9 +299,10 @@ jobs:
             --force
 
       - name: Copy metadata
-        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         run: |
           cp work/daily/show.json "$OUTPUT_DIR/show.json"
+          cp work/daily/source_identity.json "$OUTPUT_DIR/source_identity.json"
           cp work/daily/speakers.json "$OUTPUT_DIR/speakers.json"
           cp work/daily/highlight_plan.json "$OUTPUT_DIR/highlight_plan.json"
           if [ -f work/daily/title_refine_log.json ]; then
@@ -271,7 +311,7 @@ jobs:
           find "$OUTPUT_DIR" -maxdepth 1 -type f -print -exec ls -lh {} \;
 
       - name: Verify rendered clips
-        if: steps.existing_clips.outputs.skip != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
         run: |
           CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l)
           echo "Rendered MP4 count: $CLIP_COUNT"
@@ -280,8 +320,15 @@ jobs:
             exit 1
           fi
 
+      - name: Record processed Bloomberg source
+        if: success() && steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true'
+        run: |
+          python tools/show_source_guard.py record \
+            --identity work/daily/source_identity.json \
+            --ledger "$SHOW_SOURCE_LEDGER"
+
       - name: Record Weekend show with no eligible speakers
-        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'false'
+        if: success() && steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'false'
         run: |
           python tools/weekend_processed_shows.py record \
             --path "$WEEKEND_PROCESSED_SHOWS" \
@@ -289,7 +336,7 @@ jobs:
             --status no_eligible_speakers
 
       - name: Record Weekend show with no eligible clips
-        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'true' && steps.plan_highlights.outputs.has_clips == 'false'
+        if: success() && steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && env.SHOW_TYPE == 'weekend' && steps.select_speakers.outputs.has_speakers == 'true' && steps.plan_highlights.outputs.has_clips == 'false'
         run: |
           python tools/weekend_processed_shows.py record \
             --path "$WEEKEND_PROCESSED_SHOWS" \
@@ -297,7 +344,7 @@ jobs:
             --status no_eligible_clips
 
       - name: Record rendered Weekend show
-        if: success() && steps.existing_clips.outputs.skip != 'true' && env.SHOW_TYPE == 'weekend' && steps.plan_highlights.outputs.has_clips == 'true'
+        if: success() && steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && env.SHOW_TYPE == 'weekend' && steps.plan_highlights.outputs.has_clips == 'true'
         run: |
           python tools/weekend_processed_shows.py record \
             --path "$WEEKEND_PROCESSED_SHOWS" \
@@ -306,7 +353,7 @@ jobs:
             --refresh
 
       - name: Commit rendered clips to main
-        if: success() && steps.existing_clips.outputs.skip != 'true'
+        if: success() && steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

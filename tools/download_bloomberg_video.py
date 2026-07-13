@@ -50,6 +50,7 @@ BROWSER_UA = (
 )
 MANIFEST_FETCH_TIMEOUT = 35
 HLS_FETCH_TIMEOUT = 45
+SOURCE_NOT_READY_EXIT = 75
 
 
 class FetchError(RuntimeError):
@@ -695,6 +696,36 @@ def extract_url_bound_asset_ids(probe: dict, page_url: str) -> list[str]:
     return found
 
 
+def extract_current_video_asset_ids(probe: dict) -> list[str]:
+    """Return asset IDs explicitly attached to Bloomberg's currentVideo object.
+
+    Bloomberg pages commonly embed the requested programme alongside a long
+    recommendation list.  The generic asset scan sees both, while currentVideo
+    identifies the page's primary player.
+    """
+
+    found: list[str] = []
+    patterns = (
+        re.compile(
+            rf'"currentVideo"\s*:\s*\{{(?:(?!"(?:related|recommended|playlistItems)").){{0,6000}}?'
+            rf'"assetI[Dd]"\s*:\s*"({UUID_RE})"',
+            re.IGNORECASE | re.DOTALL,
+        ),
+        re.compile(
+            rf'"currentVideoAssetI[Dd]"\s*:\s*"({UUID_RE})"',
+            re.IGNORECASE,
+        ),
+    )
+    for text in walk_strings(probe):
+        normalized = normalize_embedded_script_text(text)
+        for pattern in patterns:
+            for match in pattern.finditer(normalized):
+                value = match.group(1).lower()
+                if value not in found:
+                    found.append(value)
+    return found
+
+
 def choose_asset_id(probe: dict, page_url: str, candidates: list[str], override: str | None = None) -> str | None:
     if override:
         override = override.strip().lower()
@@ -705,7 +736,30 @@ def choose_asset_id(probe: dict, page_url: str, candidates: list[str], override:
     url_bound = extract_url_bound_asset_ids(probe, page_url)
     if url_bound:
         return url_bound[0]
-    return candidates[0] if candidates else None
+
+    current_video = extract_current_video_asset_ids(probe)
+    if current_video:
+        return current_video[0]
+    if len(candidates) == 1:
+        return candidates[0]
+    if len(candidates) > 1:
+        log(
+            "Refusing to choose among multiple assetIds that are not bound to "
+            "the requested Bloomberg page"
+        )
+    return None
+
+
+def reject_ambiguous_bloomberg_assets(page_url: str, asset_id: str | None, candidates: list[str]) -> None:
+    """Fail closed when a Bloomberg page exposes multiple unbound assets."""
+
+    unique_candidates = list(dict.fromkeys(item.lower() for item in candidates if item))
+    if is_bloomberg_url(page_url) and not asset_id and len(unique_candidates) > 1:
+        log(
+            "Bloomberg has not bound the requested page to one current asset; "
+            "refusing to guess from recommendations"
+        )
+        raise SystemExit(SOURCE_NOT_READY_EXIT)
 
 
 def cached_asset_id_for_url(page_url: str) -> str | None:
@@ -1904,6 +1958,7 @@ def main(argv: list[str] | None = None) -> int:
         asset_ids = extract_asset_ids(probe)
         if not asset_id:
             asset_id = choose_asset_id(probe, args.url, asset_ids, args.asset_id)
+        reject_ambiguous_bloomberg_assets(args.url, asset_id, asset_ids)
         url_bound_asset_ids = extract_url_bound_asset_ids(probe, args.url)
         if asset_id:
             if args.asset_id:
