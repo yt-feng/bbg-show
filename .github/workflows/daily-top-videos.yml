@@ -119,6 +119,8 @@ jobs:
             --url "$PAGE_URL" \
             --max-videos "$MAX_VIDEOS" \
             --youtube-backup-videos "$YOUTUBE_BACKUP_VIDEOS" \
+            --processed-sources rendered-clips/top-videos/processed_sources.json \
+            --history-root rendered-clips/top-videos \
             --method auto \
             --out work/top-videos/top_videos.json
 
@@ -332,6 +334,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Seed source ledger from retained successful summaries
+        run: |
+          python tools/collect_top_video_outputs.py \
+            --output-dir rendered-clips/top-videos \
+            --record-successes \
+            --processed-sources rendered-clips/top-videos/processed_sources.json \
+            --history-root rendered-clips/top-videos
+
       - name: Download scrape manifest
         uses: actions/download-artifact@v5
         with:
@@ -437,6 +447,14 @@ jobs:
           python tools/collect_top_video_outputs.py \
             --output-dir "$OUTPUT_DIR" \
             --evaluate
+
+      - name: Record successful source identities
+        run: |
+          python tools/collect_top_video_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --record-successes \
+            --processed-sources rendered-clips/top-videos/processed_sources.json \
+            --history-root rendered-clips/top-videos
 
       - name: Restore existing output when rerun has no successful candidates
         run: |

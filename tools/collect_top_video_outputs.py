@@ -10,6 +10,8 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+from top_video_sources import update_processed_sources
+
 
 class BatchEvaluationError(RuntimeError):
     """Raised when a batch had processable candidates but none succeeded."""
@@ -320,6 +322,22 @@ def restore_previous_if_no_success(output_dir: Path, previous_dir: Path) -> bool
     return True
 
 
+def record_successful_source_history(
+    ledger_path: Path,
+    history_root: Path,
+    output_dir: Path,
+) -> tuple[int, int]:
+    """Backfill retained successes, then include the explicitly collected output."""
+    summary_paths = set(history_root.glob("*/summary.json")) if history_root.is_dir() else set()
+    current_summary = output_dir / "summary.json"
+    if current_summary.is_file():
+        summary_paths.add(current_summary)
+    recorded = 0
+    for summary_path in sorted(summary_paths):
+        recorded += update_processed_sources(ledger_path, summary_path)
+    return recorded, len(summary_paths)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -340,13 +358,49 @@ def main() -> None:
         action="store_true",
         help="Fail only when the summary has processable candidates but zero successful videos.",
     )
+    parser.add_argument(
+        "--record-successes",
+        action="store_true",
+        help="Add successful items from the final summary to the persistent source ledger.",
+    )
+    parser.add_argument(
+        "--processed-sources",
+        type=Path,
+        default=Path("rendered-clips/top-videos/processed_sources.json"),
+        help="Persistent successful-source ledger.",
+    )
+    parser.add_argument(
+        "--history-root",
+        type=Path,
+        default=Path("rendered-clips/top-videos"),
+        help="Top Videos root whose retained successful summaries should backfill the ledger.",
+    )
     args = parser.parse_args()
     if not args.output_dir.is_dir():
         raise SystemExit(f"Output directory does not exist: {args.output_dir}")
-    if args.restore_previous is not None and args.evaluate:
-        raise SystemExit("--restore-previous and --evaluate cannot be used together")
+    selected_modes = sum(
+        (args.restore_previous is not None, args.evaluate, args.record_successes)
+    )
+    if selected_modes > 1:
+        raise SystemExit(
+            "--restore-previous, --evaluate, and --record-successes cannot be used together"
+        )
     if args.evaluate:
         evaluate_batch_file(args.output_dir)
+    elif args.record_successes:
+        try:
+            recorded, summary_count = record_successful_source_history(
+                args.processed_sources,
+                args.history_root,
+                args.output_dir,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        print(
+            f"Recorded {recorded} successful Top Videos source result(s) from "
+            f"{summary_count} summary file(s) in {args.processed_sources}",
+            flush=True,
+        )
     elif args.restore_previous is not None:
         restore_previous_if_no_success(args.output_dir, args.restore_previous)
     else:
