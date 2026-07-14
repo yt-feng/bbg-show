@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -15,7 +16,11 @@ if str(TOOLS) not in sys.path:
 
 import collect_top_video_outputs as collector  # noqa: E402
 import scrape_top_videos as scraper  # noqa: E402
+from content_fingerprint import fingerprint_text  # noqa: E402
 from top_video_sources import (  # noqa: E402
+    backfill_processed_sources_from_git_history,
+    find_duplicate_content,
+    load_ledger,
     load_processed_source_keys,
     source_key,
     update_processed_sources,
@@ -246,6 +251,174 @@ class TopVideoSourceLedgerTests(unittest.TestCase):
         self.assertEqual(records[source_key("", youtube_id)]["youtube_id"], youtube_id)
         self.assertEqual(records[source_key(bloomberg_url)]["first_processed_on"], "2026-07-13")
         self.assertEqual(records[source_key(bloomberg_url)]["last_processed_on"], "2026-07-13")
+
+    def test_v1_migrates_and_preserves_existing_fingerprint(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ledger_path = root / "processed_sources.json"
+            summary_path = root / "summary.json"
+            url = "https://www.bloomberg.com/news/videos/2026-07-12/already-seen-video"
+            fingerprint = fingerprint_text(
+                "A distinctive discussion about artificial intelligence investment and earnings expectations."
+            )
+            ledger_path.write_text(
+                json.dumps(
+                    {
+                        "version": 1,
+                        "sources": [
+                            {
+                                "source_key": source_key(url),
+                                "url": url,
+                                "source_fingerprint": fingerprint,
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            migrated = load_ledger(ledger_path)
+            self.assertEqual(migrated["version"], 2)
+            self.assertEqual(migrated["clips"], [])
+            self.assertFalse(migrated["history_backfilled"])
+
+            summary_path.write_text(
+                json.dumps(
+                    {
+                        "run_date": "2026-07-14",
+                        "videos": [
+                            {"status": "success", "url": url, "source_title": "Renamed"},
+                            {
+                                "status": "failed",
+                                "url": url + "-failed",
+                                "source_fingerprint": fingerprint_text("failed content is not history"),
+                            },
+                            {
+                                "status": "skipped",
+                                "url": url + "-skipped",
+                                "source_fingerprint": fingerprint_text("skipped content is not history"),
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            self.assertEqual(update_processed_sources(ledger_path, summary_path), 1)
+            updated = load_ledger(ledger_path)
+
+        self.assertEqual(len(updated["sources"]), 1)
+        self.assertEqual(updated["sources"][0]["source_fingerprint"], fingerprint)
+
+    def test_finds_source_and_clip_duplicates_with_readable_history(self) -> None:
+        source_fingerprint = fingerprint_text(
+            " ".join(
+                f"market{i} earnings{i} artificial{i} intelligence{i} demand{i} portfolio{i}"
+                for i in range(50)
+            )
+        )
+        clip_fingerprint = fingerprint_text(
+            "The forecast calls for twenty five percent earnings growth in the next cycle while "
+            "artificial intelligence investment supports demand and corporate margins remain resilient."
+        )
+        ledger = {
+            "version": 2,
+            "history_backfilled": True,
+            "sources": [
+                {
+                    "source_key": "url:https://example.com/old",
+                    "url": "https://example.com/old",
+                    "title": "Earlier market interview",
+                    "first_processed_on": "2026-07-13",
+                    "source_fingerprint": source_fingerprint,
+                    "source_duration": 180.0,
+                }
+            ],
+            "clips": [
+                {
+                    "source_key": "url:https://example.com/old",
+                    "url": "https://example.com/old",
+                    "title": "Earlier earnings clip",
+                    "processed_on": "2026-07-13",
+                    "clip_fingerprint": clip_fingerprint,
+                }
+            ],
+        }
+
+        source_match = find_duplicate_content(
+            ledger,
+            source_fingerprint=source_fingerprint,
+            source_duration=180.0,
+        )
+        clip_match = find_duplicate_content(ledger, clip_fingerprints=[clip_fingerprint])
+
+        self.assertEqual(source_match["duplicate_kind"], "full_source")
+        self.assertIn("Earlier market interview", source_match["duplicate_of"])
+        self.assertEqual(clip_match["duplicate_kind"], "clip")
+        self.assertIn("2026-07-13", clip_match["duplicate_of"])
+
+    def test_git_history_backfill_imports_a_deleted_plan_once(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"],
+                cwd=repo,
+                check=True,
+            )
+            deleted_url = "https://www.bloomberg.com/news/videos/2026-06-30/deleted-plan-video"
+            plan_path = (
+                repo
+                / "rendered-clips/top-videos/2026-07-01/01_deleted_plan/highlight_plan.json"
+            )
+            plan_path.parent.mkdir(parents=True)
+            plan_path.write_text(
+                json.dumps(
+                    {
+                        "source_url": deleted_url,
+                        "source_title": "A plan retained only in Git history",
+                        "source_segment_range": [0.0, 240.0],
+                        "clips": [
+                            {
+                                "start": 30.0,
+                                "end": 90.0,
+                                "title": "Distinct historical clip",
+                                "subtitles": [
+                                    {
+                                        "en": (
+                                            "A distinctive historical interview explains capital spending, "
+                                            "earnings growth, market expectations, and technology demand."
+                                        )
+                                    }
+                                ],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "add", "."], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add historical plan"], cwd=repo, check=True)
+            plan_path.unlink()
+            subprocess.run(["git", "add", "-A"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "remove historical plan"], cwd=repo, check=True)
+
+            ledger_path = repo / "rendered-clips/top-videos/processed_sources.json"
+            self.assertEqual(
+                backfill_processed_sources_from_git_history(ledger_path, repo),
+                1,
+            )
+            first_write = ledger_path.read_bytes()
+            ledger = load_ledger(ledger_path)
+            self.assertEqual(
+                backfill_processed_sources_from_git_history(ledger_path, repo),
+                0,
+            )
+            self.assertEqual(first_write, ledger_path.read_bytes())
+
+        self.assertTrue(ledger["history_backfilled"])
+        self.assertIn(source_key(deleted_url), {item["source_key"] for item in ledger["sources"]})
+        self.assertEqual(len(ledger["clips"]), 1)
+        self.assertEqual(ledger["clips"][0]["processed_on"], "2026-07-01")
 
     def test_collector_backfills_all_retained_success_summaries(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

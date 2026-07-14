@@ -10,7 +10,14 @@ import shutil
 from pathlib import Path
 from typing import Any
 
-from top_video_sources import update_processed_sources
+from content_fingerprint import validate_fingerprint
+from top_video_sources import (
+    backfill_processed_sources_from_git_history,
+    find_duplicate_content,
+    item_source_key,
+    load_ledger,
+    update_processed_sources,
+)
 
 
 class BatchEvaluationError(RuntimeError):
@@ -251,6 +258,161 @@ def prune_unsuccessful_outputs(
     return result
 
 
+def _validated_success_fingerprints(
+    item: dict[str, Any],
+) -> tuple[dict[str, Any], float, list[dict[str, Any]]]:
+    """Validate the fingerprints that every newly rendered success must carry."""
+    raw_source = item.get("source_fingerprint")
+    if raw_source in (None, ""):
+        raise ValueError("successful output has no source_fingerprint")
+    source_fingerprint = validate_fingerprint(raw_source)
+    try:
+        source_duration = float(item.get("source_duration", item.get("duration", 0)))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("successful output has an invalid source_duration") from exc
+    if source_duration <= 0:
+        raise ValueError("successful output has no positive source_duration")
+
+    raw_clips = item.get("clip_fingerprints")
+    if not isinstance(raw_clips, list) or not raw_clips:
+        raise ValueError("successful output has no clip_fingerprints")
+    clips: list[dict[str, Any]] = []
+    for index, raw_clip in enumerate(raw_clips, start=1):
+        details = dict(raw_clip) if isinstance(raw_clip, dict) else {}
+        raw_fingerprint = details.get("clip_fingerprint", raw_clip)
+        details["clip_fingerprint"] = validate_fingerprint(raw_fingerprint)
+        details.setdefault("clip_index", index)
+        clips.append(details)
+    return source_fingerprint, source_duration, clips
+
+
+def _append_batch_identity(
+    ledger: dict[str, Any],
+    item: dict[str, Any],
+    *,
+    run_date: str,
+    source_fingerprint: dict[str, Any],
+    source_duration: float,
+    clip_fingerprints: list[dict[str, Any]],
+) -> None:
+    """Make one accepted index visible to later indexes in the same matrix batch."""
+    key = item_source_key(item) or f"batch-index:{item.get('index', '')}"
+    source_record = {
+        "source_key": key,
+        "url": str(item.get("url", "")),
+        "source_title": str(item.get("source_title", item.get("title", ""))),
+        "title": str(item.get("title", "")),
+        "processed_on": run_date,
+        "source_fingerprint": source_fingerprint,
+        "source_duration": source_duration,
+    }
+    ledger["sources"].append(source_record)
+    for raw_clip in clip_fingerprints:
+        clip = dict(raw_clip)
+        clip.update({
+            "source_key": key,
+            "url": str(item.get("url", "")),
+            "source_title": str(item.get("source_title", item.get("title", ""))),
+            "processed_on": run_date,
+        })
+        ledger["clips"].append(clip)
+
+
+def deduplicate_success_outputs(output_dir: Path, ledger_path: Path) -> dict[str, int]:
+    """Reject historical or same-batch content repeats after artifact validation."""
+    historical = load_ledger(ledger_path)
+    current_batch: dict[str, Any] = {
+        "version": 2,
+        "sources": [],
+        "clips": [],
+        "history_backfilled": False,
+    }
+    accepted = 0
+    duplicates = 0
+    invalid_fingerprints = 0
+
+    for summary_path in sorted(output_dir.glob("summary_*.json")):
+        index = summary_index(summary_path)
+        if index is None:
+            continue
+        payload = json.loads(summary_path.read_text(encoding="utf-8"))
+        videos = payload.get("videos")
+        if not isinstance(videos, list) or len(videos) != 1 or not isinstance(videos[0], dict):
+            continue
+        item = videos[0]
+        if item.get("status") != "success":
+            continue
+
+        try:
+            source_fingerprint, source_duration, clip_fingerprints = (
+                _validated_success_fingerprints(item)
+            )
+        except (TypeError, ValueError) as exc:
+            item["status"] = "failed"
+            item["error"] = f"content fingerprint validation failed: {exc}"
+            label = Path(str(item.get("output_dir", ""))).name
+            if label and (output_dir / label).is_dir():
+                shutil.rmtree(output_dir / label)
+            invalid_fingerprints += 1
+            print(f"Rejected Top Video {index:02d}: {item['error']}", flush=True)
+        else:
+            duplicate = find_duplicate_content(
+                historical,
+                source_fingerprint=source_fingerprint,
+                source_duration=source_duration,
+                clip_fingerprints=clip_fingerprints,
+            )
+            if duplicate is None:
+                duplicate = find_duplicate_content(
+                    current_batch,
+                    source_fingerprint=source_fingerprint,
+                    source_duration=source_duration,
+                    clip_fingerprints=clip_fingerprints,
+                )
+            if duplicate is not None:
+                item["status"] = "skipped"
+                item["skip_reason"] = "duplicate_content"
+                item["duplicate_stage"] = "collector"
+                item["duplicate_kind"] = str(duplicate.get("duplicate_kind", "content"))
+                item["duplicate_of"] = str(
+                    duplicate.get("duplicate_of", "previously accepted Top Video")
+                )
+                item["error"] = "Top video skipped because its content was already published"
+                item["rendered_files"] = []
+                label = Path(str(item.get("output_dir", ""))).name
+                if label and (output_dir / label).is_dir():
+                    shutil.rmtree(output_dir / label)
+                duplicates += 1
+                print(
+                    f"Skipped duplicate Top Video {index:02d}: {item['duplicate_of']}",
+                    flush=True,
+                )
+            else:
+                _append_batch_identity(
+                    current_batch,
+                    item,
+                    run_date=str(payload.get("run_date", "")),
+                    source_fingerprint=source_fingerprint,
+                    source_duration=source_duration,
+                    clip_fingerprints=clip_fingerprints,
+                )
+                accepted += 1
+
+        payload.update(summary_counts(payload["videos"]))
+        summary_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+    result = {
+        "accepted": accepted,
+        "duplicates": duplicates,
+        "invalid_fingerprints": invalid_fingerprints,
+    }
+    print(json.dumps(result, sort_keys=True), flush=True)
+    return result
+
+
 def evaluate_batch_summary(summary: dict[str, Any]) -> dict[str, Any]:
     total = int(summary.get("total") or 0)
     succeeded = int(summary.get("succeeded") or 0)
@@ -364,6 +526,22 @@ def main() -> None:
         help="Add successful items from the final summary to the persistent source ledger.",
     )
     parser.add_argument(
+        "--backfill-git-history",
+        action="store_true",
+        help="Import all historical Top Videos highlight plans into the content ledger once.",
+    )
+    parser.add_argument(
+        "--repo-root",
+        type=Path,
+        default=Path("."),
+        help="Git repository root used by --backfill-git-history.",
+    )
+    parser.add_argument(
+        "--deduplicate-content",
+        action="store_true",
+        help="After artifact validation, skip historical and same-batch content duplicates.",
+    )
+    parser.add_argument(
         "--processed-sources",
         type=Path,
         default=Path("rendered-clips/top-videos/processed_sources.json"),
@@ -379,12 +557,20 @@ def main() -> None:
     if not args.output_dir.is_dir():
         raise SystemExit(f"Output directory does not exist: {args.output_dir}")
     selected_modes = sum(
-        (args.restore_previous is not None, args.evaluate, args.record_successes)
+        (
+            args.restore_previous is not None,
+            args.evaluate,
+            args.record_successes,
+            args.backfill_git_history,
+        )
     )
     if selected_modes > 1:
         raise SystemExit(
-            "--restore-previous, --evaluate, and --record-successes cannot be used together"
+            "--restore-previous, --evaluate, --record-successes, and "
+            "--backfill-git-history cannot be used together"
         )
+    if args.deduplicate_content and selected_modes:
+        raise SystemExit("--deduplicate-content can only be used with artifact pruning")
     if args.evaluate:
         evaluate_batch_file(args.output_dir)
     elif args.record_successes:
@@ -401,10 +587,28 @@ def main() -> None:
             f"{summary_count} summary file(s) in {args.processed_sources}",
             flush=True,
         )
+    elif args.backfill_git_history:
+        try:
+            imported = backfill_processed_sources_from_git_history(
+                args.processed_sources,
+                args.repo_root,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        print(
+            f"Imported {imported} historical Top Videos plan(s) into "
+            f"{args.processed_sources}",
+            flush=True,
+        )
     elif args.restore_previous is not None:
         restore_previous_if_no_success(args.output_dir, args.restore_previous)
     else:
         prune_unsuccessful_outputs(args.output_dir, expected_total=args.expected_total)
+        if args.deduplicate_content:
+            try:
+                deduplicate_success_outputs(args.output_dir, args.processed_sources)
+            except ValueError as exc:
+                raise SystemExit(str(exc)) from exc
 
 
 if __name__ == "__main__":

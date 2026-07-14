@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import subprocess
 import sys
@@ -21,6 +22,12 @@ NO_ELIGIBLE_CLIP_MARKERS = (
     "no non-sensitive-topic clips remained after filtering",
 )
 
+ENGLISH_WORD_RE = re.compile(r"[a-z0-9]+(?:'[a-z0-9]+)?", re.IGNORECASE)
+TIME_CONTAINMENT_THRESHOLD = 0.80
+MIN_TIME_DUPLICATE_DURATION_RATIO = 0.70
+MIN_TRANSCRIPT_DUPLICATE_WORDS = 45
+FIVE_GRAM_CONTAINMENT_THRESHOLD = 0.86
+
 
 def slugify(value: str) -> str:
     value = re.sub(r"\s+", "_", value.strip())
@@ -32,6 +39,164 @@ def slugify(value: str) -> str:
 def is_no_eligible_clip_output(output: str) -> bool:
     lowered = output.casefold()
     return any(marker in lowered for marker in NO_ELIGIBLE_CLIP_MARKERS)
+
+
+def clip_english_words(clip: dict[str, Any]) -> list[str]:
+    """Return normalized English subtitle words for duplicate comparison."""
+    subtitles = clip.get("subtitles")
+    if not isinstance(subtitles, list):
+        return []
+    text = " ".join(
+        str(subtitle.get("en") or "")
+        for subtitle in subtitles
+        if isinstance(subtitle, dict)
+    )
+    return [match.group(0).lower() for match in ENGLISH_WORD_RE.finditer(text)]
+
+
+def clip_time_containment(left: dict[str, Any], right: dict[str, Any]) -> float:
+    """Measure how much of the shorter clip is covered by the other clip."""
+    try:
+        left_start = float(left["start"])
+        left_end = float(left["end"])
+        right_start = float(right["start"])
+        right_end = float(right["end"])
+    except (KeyError, TypeError, ValueError):
+        return 0.0
+    values = (left_start, left_end, right_start, right_end)
+    if not all(math.isfinite(value) for value in values):
+        return 0.0
+    left_duration = left_end - left_start
+    right_duration = right_end - right_start
+    shorter_duration = min(left_duration, right_duration)
+    if shorter_duration <= 0:
+        return 0.0
+    overlap = max(0.0, min(left_end, right_end) - max(left_start, right_start))
+    return min(1.0, overlap / shorter_duration)
+
+
+def clip_duration_ratio(left: dict[str, Any], right: dict[str, Any]) -> float:
+    """Return the shorter/longer duration ratio for two valid clip ranges."""
+    try:
+        durations = (
+            float(left["end"]) - float(left["start"]),
+            float(right["end"]) - float(right["start"]),
+        )
+    except (KeyError, TypeError, ValueError):
+        return 0.0
+    if not all(math.isfinite(value) and value > 0 for value in durations):
+        return 0.0
+    return min(durations) / max(durations)
+
+
+def ngram_containment(left: list[str], right: list[str], size: int) -> float:
+    """Measure shared n-grams relative to the smaller unique n-gram set."""
+    if len(left) < size or len(right) < size:
+        return 0.0
+    left_ngrams = {
+        tuple(left[index : index + size])
+        for index in range(len(left) - size + 1)
+    }
+    right_ngrams = {
+        tuple(right[index : index + size])
+        for index in range(len(right) - size + 1)
+    }
+    smaller_count = min(len(left_ngrams), len(right_ngrams))
+    if not smaller_count:
+        return 0.0
+    return len(left_ngrams & right_ngrams) / smaller_count
+
+
+def duplicate_clip_evidence(
+    kept_clip: dict[str, Any], candidate_clip: dict[str, Any]
+) -> tuple[str, dict[str, float]] | None:
+    """Return evidence when two planned clips cover the same source passage."""
+    time_containment = clip_time_containment(kept_clip, candidate_clip)
+    duration_ratio = clip_duration_ratio(kept_clip, candidate_clip)
+    kept_words = clip_english_words(kept_clip)
+    candidate_words = clip_english_words(candidate_clip)
+    four_gram_containment = ngram_containment(kept_words, candidate_words, 4)
+    five_gram_containment = ngram_containment(kept_words, candidate_words, 5)
+    evidence = {
+        "time_containment": round(time_containment, 4),
+        "duration_ratio": round(duration_ratio, 4),
+        "four_gram_containment": round(four_gram_containment, 4),
+        "five_gram_containment": round(five_gram_containment, 4),
+        "shorter_english_word_count": float(min(len(kept_words), len(candidate_words))),
+    }
+    if (
+        time_containment >= TIME_CONTAINMENT_THRESHOLD
+        and duration_ratio >= MIN_TIME_DUPLICATE_DURATION_RATIO
+    ):
+        return "time_containment", evidence
+    if (
+        min(len(kept_words), len(candidate_words)) >= MIN_TRANSCRIPT_DUPLICATE_WORDS
+        and five_gram_containment >= FIVE_GRAM_CONTAINMENT_THRESHOLD
+    ):
+        return "english_subtitle_5gram_containment", evidence
+    return None
+
+
+def clip_audit_summary(clip: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "speaker": str(clip.get("speaker") or ""),
+        "title": str(clip.get("title") or ""),
+        "start": clip.get("start"),
+        "end": clip.get("end"),
+        "daily_speaker_index": clip.get("daily_speaker_index"),
+    }
+
+
+def deduplicate_plan_clips(plan: dict[str, Any], *, stage: str) -> list[dict[str, Any]]:
+    """Stably remove cross-speaker plans that describe the same source passage."""
+    clips = plan.get("clips")
+    if not isinstance(clips, list):
+        return []
+
+    retained: list[tuple[int, Any]] = []
+    removed: list[dict[str, Any]] = []
+    for candidate_position, candidate in enumerate(clips, start=1):
+        if not isinstance(candidate, dict):
+            retained.append((candidate_position, candidate))
+            continue
+        for kept_position, kept_clip in retained:
+            if not isinstance(kept_clip, dict):
+                continue
+            match = duplicate_clip_evidence(kept_clip, candidate)
+            if match is None:
+                continue
+            reason, evidence = match
+            removed.append(
+                {
+                    "stage": stage,
+                    "reason": reason,
+                    "kept_position": kept_position,
+                    "removed_position": candidate_position,
+                    "kept_clip": clip_audit_summary(kept_clip),
+                    "removed_clip": clip_audit_summary(candidate),
+                    "evidence": evidence,
+                }
+            )
+            break
+        else:
+            retained.append((candidate_position, candidate))
+
+    plan["clips"] = [clip for _, clip in retained]
+    audit = plan.setdefault("deduplicated_clips", [])
+    if not isinstance(audit, list):
+        audit = []
+        plan["deduplicated_clips"] = audit
+    audit.extend(removed)
+    if removed:
+        print(
+            f"Removed {len(removed)} duplicate clip(s) during {stage}: "
+            + ", ".join(
+                f"{item['removed_position']} duplicates {item['kept_position']}"
+                for item in removed
+            ),
+            flush=True,
+        )
+    return removed
 
 
 def run_and_stream(command: list[str]) -> subprocess.CompletedProcess[str]:
@@ -65,6 +230,7 @@ def write_combined_plan(
         "planning_status": planning_status,
         "plan_files": plan_files,
         "skipped_speakers": skipped,
+        "deduplicated_clips": [],
         "clips": clips,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -202,6 +368,11 @@ def main() -> None:
         clips=combined_clips,
         planning_status="planned",
     )
+    deduplicate_plan_clips(combined, stage="pre_title_refine")
+    args.combined_plan.write_text(
+        json.dumps(combined, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     title_refinement_status = "skipped"
     if not args.skip_title_refine:
         refiner = Path(__file__).with_name("refine_clip_titles.py")
@@ -243,6 +414,10 @@ def main() -> None:
             encoding="utf-8",
         )
     final_combined = json.loads(args.combined_plan.read_text(encoding="utf-8"))
+    deduplicate_plan_clips(
+        final_combined,
+        stage="post_title_refine" if not args.skip_title_refine else "final_validation",
+    )
     final_count = len(final_combined.get("clips", [])) if isinstance(final_combined.get("clips", []), list) else 0
     final_combined["planning_status"] = "planned" if final_count else "no_eligible_clips"
     final_combined.setdefault("title_refinement_status", title_refinement_status)

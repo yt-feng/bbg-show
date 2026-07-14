@@ -15,7 +15,13 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from content_fingerprint import (  # noqa: E402
+    fingerprint_text,
+    fingerprints_from_plan,
+    validate_fingerprint,
+)
 from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
+from top_video_sources import find_duplicate_content  # noqa: E402
 from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
@@ -128,6 +134,80 @@ def cleanup_failed_render_output(item: dict[str, Any], index: int, output_dir: P
         print(f"Removed incomplete render output: {render_dir}", flush=True)
 
 
+def transcript_text(path: Path) -> str:
+    """Return the complete recognized source text used for content identity."""
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    segments = payload.get("segments") if isinstance(payload, dict) else None
+    if not isinstance(segments, list):
+        raise ValueError(f"Transcript has no segments array: {path}")
+    return " ".join(
+        str(segment.get("text", "")).strip()
+        for segment in segments
+        if isinstance(segment, dict) and str(segment.get("text", "")).strip()
+    )
+
+
+def clip_fingerprint_records(
+    plan: dict[str, Any],
+    fingerprints: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Attach clip metadata to plan fingerprints for durable audit records."""
+    clips = plan.get("clips") if isinstance(plan, dict) else None
+    clips = clips if isinstance(clips, list) else []
+    records: list[dict[str, Any]] = []
+    for offset, raw_fingerprint in enumerate(fingerprints):
+        fingerprint = validate_fingerprint(raw_fingerprint)
+        clip = clips[offset] if offset < len(clips) and isinstance(clips[offset], dict) else {}
+        try:
+            start = float(clip.get("start", 0.0))
+            end = float(clip.get("end", start))
+        except (TypeError, ValueError):
+            start = 0.0
+            end = 0.0
+        records.append({
+            "clip_index": offset + 1,
+            "title": str(clip.get("title", "")),
+            "start": round(start, 2),
+            "end": round(end, 2),
+            "duration": round(max(end - start, 0.0), 2),
+            "clip_fingerprint": fingerprint,
+        })
+    return records
+
+
+def duplicate_skip_result(
+    item: dict[str, Any],
+    index: int,
+    *,
+    stage: str,
+    duplicate: dict[str, Any],
+    source_fingerprint: dict[str, Any] | None = None,
+    source_duration: float = 0.0,
+    clip_fingerprints: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    """Build the structured, green result used for historical content repeats."""
+    result: dict[str, Any] = {
+        "status": "skipped",
+        "skip_reason": "duplicate_content",
+        "duplicate_stage": stage,
+        "duplicate_kind": str(duplicate.get("duplicate_kind", "content")),
+        "duplicate_of": str(duplicate.get("duplicate_of", "historical Top Video")),
+        "index": index,
+        "url": str(item.get("url", "")),
+        "title": str(item.get("title", "")),
+        "source_title": str(item.get("title", "")),
+        "source": str(item.get("source", "bloomberg")),
+        "youtube_id": str(item.get("youtube_id", "")),
+        "source_duration": round(float(source_duration), 2),
+        "error": "Top video skipped because its content was already published",
+    }
+    if source_fingerprint is not None:
+        result["source_fingerprint"] = source_fingerprint
+    if clip_fingerprints:
+        result["clip_fingerprints"] = clip_fingerprints
+    return result
+
+
 def refine_title_or_keep_planner_title(plan_path: Path) -> bool:
     original_plan = plan_path.read_text(encoding="utf-8")
     try:
@@ -199,6 +279,27 @@ def process_one(
         "--force",
     ])
 
+    source_fingerprint = validate_fingerprint(fingerprint_text(transcript_text(transcript_path)))
+    duplicate = find_duplicate_content(
+        args.processed_sources,
+        source_fingerprint=source_fingerprint,
+        source_duration=duration,
+    )
+    if duplicate is not None:
+        print(
+            f"[top-video {index:02d}] Duplicate full source: "
+            f"{duplicate.get('duplicate_of', 'historical Top Video')}",
+            flush=True,
+        )
+        return duplicate_skip_result(
+            item,
+            index,
+            stage="source_transcript",
+            duplicate=duplicate,
+            source_fingerprint=source_fingerprint,
+            source_duration=duration,
+        )
+
     print(
         f"[top-video {index:02d}] Planning translated clip "
         f"(max {args.max_clip_seconds:.0f}s) with DeepSeek",
@@ -225,6 +326,29 @@ def process_one(
         print(f"[top-video {index:02d}] Removed {len(removed)} sensitive-topic clip(s)", flush=True)
     if not plan.get("clips"):
         raise RuntimeError("Top video skipped by sensitive topic filter")
+
+    clip_fingerprints = clip_fingerprint_records(plan, fingerprints_from_plan(plan))
+    duplicate = find_duplicate_content(
+        args.processed_sources,
+        source_fingerprint=source_fingerprint,
+        source_duration=duration,
+        clip_fingerprints=clip_fingerprints,
+    )
+    if duplicate is not None:
+        print(
+            f"[top-video {index:02d}] Duplicate planned clip: "
+            f"{duplicate.get('duplicate_of', 'historical Top Video')}",
+            flush=True,
+        )
+        return duplicate_skip_result(
+            item,
+            index,
+            stage="highlight_plan",
+            duplicate=duplicate,
+            source_fingerprint=source_fingerprint,
+            source_duration=duration,
+            clip_fingerprints=clip_fingerprints,
+        )
 
     print(f"[top-video {index:02d}] Rendering KC Desktop clip", flush=True)
     if render_dir.exists():
@@ -259,6 +383,9 @@ def process_one(
         "published_at": str(item.get("published_at", "")),
         "title_refinement_status": "refined" if title_refined else "planner_fallback",
         "duration": round(duration, 2),
+        "source_duration": round(duration, 2),
+        "source_fingerprint": source_fingerprint,
+        "clip_fingerprints": clip_fingerprints,
         "max_clip_seconds": args.max_clip_seconds,
         "video_file": str(video_path),
         "transcript": str(transcript_path),
@@ -291,6 +418,12 @@ def main() -> None:
     parser.add_argument("--whisper-model", default="base")
     parser.add_argument("--min-video-seconds", type=float, default=15.0)
     parser.add_argument("--max-clip-seconds", type=float, default=90.0)
+    parser.add_argument(
+        "--processed-sources",
+        type=Path,
+        default=ROOT / "rendered-clips" / "top-videos" / "processed_sources.json",
+        help="Persistent ledger used to skip previously published source and clip content.",
+    )
     parser.add_argument("--no-copy-manifest", action="store_true")
     parser.add_argument("--clean-output-dir", action="store_true")
     args = parser.parse_args()

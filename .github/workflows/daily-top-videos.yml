@@ -240,6 +240,7 @@ jobs:
             --video-index "$VIDEO_INDEX" \
             --out-root rendered-clips/top-videos \
             --work-root work/top-videos \
+            --processed-sources rendered-clips/top-videos/processed_sources.json \
             --download-backend auto \
             --workers 32 \
             --threads 2 \
@@ -334,13 +335,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Seed source ledger from retained successful summaries
+      - name: Seed content ledger from complete Git history
         run: |
           python tools/collect_top_video_outputs.py \
             --output-dir rendered-clips/top-videos \
-            --record-successes \
+            --backfill-git-history \
             --processed-sources rendered-clips/top-videos/processed_sources.json \
-            --history-root rendered-clips/top-videos
+            --repo-root .
 
       - name: Download scrape manifest
         uses: actions/download-artifact@v5
@@ -374,7 +375,9 @@ jobs:
         run: |
           python tools/collect_top_video_outputs.py \
             --output-dir "$OUTPUT_DIR" \
-            --expected-total "$VIDEO_COUNT"
+            --expected-total "$VIDEO_COUNT" \
+            --deduplicate-content \
+            --processed-sources rendered-clips/top-videos/processed_sources.json
 
       - name: Build summary
         run: |
