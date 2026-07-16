@@ -1,0 +1,942 @@
+{
+  "timestamp_utc": "2026-07-16T23:12:45.084942+00:00",
+  "plan_path": "work/top-videos/07_hyperscalers_to_keep_upping_capex_in_2027_goldman_says/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "research_version": "emotion-polarity-v2",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 5,
+  "entity_translation_guide": {
+    "research_version": "emotion-polarity-v2",
+    "entities": [
+      {
+        "source_text": "Goldman Sachs",
+        "entity_type": "organization",
+        "preferred_en": "Goldman Sachs",
+        "preferred_zh": "高盛",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "高盛 is the established Chinese name for Goldman Sachs in financial media."
+      },
+      {
+        "source_text": "hyperscalers",
+        "entity_type": "other",
+        "preferred_en": "hyperscalers",
+        "preferred_zh": "超大规模企业",
+        "aliases": [
+          "超大规模云服务商"
+        ],
+        "confidence": "high",
+        "evidence": "超大规模企业 is the standard translation in Chinese financial news for hyperscalers."
+      },
+      {
+        "source_text": "Sharon Bell",
+        "entity_type": "person",
+        "preferred_en": "Sharon Bell",
+        "preferred_zh": "莎伦·贝尔",
+        "aliases": [],
+        "confidence": "medium",
+        "evidence": "Sharon Bell is a Goldman Sachs strategist; Chinese media may use 莎伦·贝尔, but not widely confirmed."
+      },
+      {
+        "source_text": "The Opening Trade",
+        "entity_type": "other",
+        "preferred_en": "The Opening Trade",
+        "preferred_zh": "开盘交易",
+        "aliases": [],
+        "confidence": "low",
+        "evidence": "Bloomberg show name; no official Chinese translation found in snippets."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "preferred_en": "Bloomberg",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "evidence": "彭博 is the established Chinese name for Bloomberg."
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "We still feel that the hyperscalers will be upping their capex again in 2027.",
+        "public_baseline": "Goldman Sachs forecasts hyperscaler capex to reach $1.1-$1.4 trillion by 2027, above consensus of $920 billion.",
+        "surprise_gap": "The clip's claim is consistent with public reports; no surprise gap.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "Goldman Sachs hyperscalers capex 2027 forecast",
+            "url": "finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html",
+            "fact": "Goldman Sachs says consensus 2027 hyperscaler capex estimates are too low."
+          },
+          {
+            "kind": "public",
+            "query": "Goldman Sachs hyperscalers capex 2027 forecast",
+            "url": "marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/",
+            "fact": "Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027."
+          },
+          {
+            "kind": "public",
+            "query": "Goldman Sachs hyperscalers capex 2027 forecast",
+            "url": "rallies.ai/news/goldman-sachs-sees-2027-hyperscaler-capex-at-11t-45-growth",
+            "fact": "Goldman Sachs sees 2027 hyperscaler capex at $1.1T, 45% growth."
+          },
+          {
+            "kind": "public",
+            "query": "Bloomberg The Opening Trade hyperscalers capex 2027",
+            "url": "www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video",
+            "fact": "Bloomberg video confirms Sharon Bell stating hyperscalers will up capex in 2027."
+          }
+        ],
+        "forbidden_claims": [
+          "Goldman Sachs changed its position on hyperscaler capex",
+          "Hyperscalers are cutting capex"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "Goldman Sachs hyperscalers capex 2027 forecast",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Goldman Sachs' specific forecast that hyperscalers will increase capex in 2027."
+      },
+      {
+        "query": "hyperscalers capital expenditure 2027 outlook Goldman Sachs",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check the same forecast with alternative phrasing to confirm consensus."
+      },
+      {
+        "query": "Bloomberg The Opening Trade hyperscalers capex 2027",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find the original Bloomberg segment to verify the exact claims made by the speaker."
+      },
+      {
+        "query": "Goldman Sachs AI infrastructure returns 2027",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that returns from AI spend are starting to come through."
+      },
+      {
+        "query": "Bloomberg Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade Chinese name official",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      },
+      {
+        "query": "Bloomberg Chinese name finance",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      },
+      {
+        "query": "Bloomberg Duration 中文名 官方",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      },
+      {
+        "query": "Hyperscalers 中文名 官方",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      },
+      {
+        "query": "Keep Upping Capex 中文名 官方",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      },
+      {
+        "query": "Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade 中文 名称",
+        "purpose": "entity_name",
+        "clip_indexes": [],
+        "why": "Fallback query for established Chinese entity names."
+      }
+    ]
+  },
+  "refined_titles": {
+    "1": {
+      "title": "高盛2027年：超大规模企业，资本支出市场低估了",
+      "title_lines": [
+        "高盛2027年",
+        "超大规模企业",
+        "资本支出市场低估了"
+      ],
+      "formula_id": "authority_breaks_consensus",
+      "angle_id": "authority_breaks_consensus",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B",
+        "Clip: 'We still feel that the hyperscalers will be upping their capex again in 2027'"
+      ],
+      "runner_up_titles": [
+        "AI配置回报初现，高盛：超大规模企业2027年再砸钱",
+        "高盛策略师：市场担心涨太多，但盈利撑得住"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:authority_breaks_consensus",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：高盛预测2027年超大规模企业资本支出达1.1万亿美元"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-07-16T23:12:43.497668+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.2,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade",
+          "source_title": "Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade",
+          "show_date": "",
+          "current_title": "高盛：超大规模企业2027年继续加码资本支出",
+          "current_title_lines": [
+            "高盛观点",
+            "超大规模企业资本支出",
+            "2027年仍将上行"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "欧洲数据中心和AI基础设施相关公司还有机会吗？",
+              "en": "Is the door still open for European companies that have exposure to data centers and AI infrastructure?",
+              "relative_start": 0.2,
+              "relative_end": 6.2
+            },
+            {
+              "index": 2,
+              "zh": "这个行情还能持续吗？我们认为还能持续。",
+              "en": "Is that story got further to run, do you think? We do think it's got a further to run.",
+              "relative_start": 6.2,
+              "relative_end": 10.2
+            },
+            {
+              "index": 3,
+              "zh": "我能理解市场为何紧张，毕竟这些权益资产涨了不少。",
+              "en": "I mean, yes, I can see why the market's nervous because these have run quite a lot.",
+              "relative_start": 10.2,
+              "relative_end": 15.2
+            },
+            {
+              "index": 4,
+              "zh": "欧洲涨幅不大，但全球其他地区表现强劲，主要基于盈利兑现。",
+              "en": "Not so much in Europe, but in the rest of the world and in particular, you've had some very strong performance, but really based on earnings coming through.",
+              "relative_start": 15.2,
+              "relative_end": 23.2
+            },
+            {
+              "index": 5,
+              "zh": "我们仍认为超大规模企业2027年将再次增加资本支出，盈利预期良好，财报已体现。",
+              "en": "And we still feel that the hyperscalers will be upping their capex again in 2027 and we're looking for reasonably good earnings and that's absolutely coming through in the print so far.",
+              "relative_start": 23.2,
+              "relative_end": 33.2
+            },
+            {
+              "index": 6,
+              "zh": "良好盈利推动股价表现，而非估值提升。",
+              "en": "So good earnings, driving, not necessarily higher valuations, but higher performance by these stocks.",
+              "relative_start": 33.2,
+              "relative_end": 39.2
+            },
+            {
+              "index": 7,
+              "zh": "为何确信超大规模企业2027年将继续增加资本支出？",
+              "en": "What is giving you the conviction that hyperscalers continue to spend and increase capex in 2027?",
+              "relative_start": 39.2,
+              "relative_end": 45.2
+            },
+            {
+              "index": 8,
+              "zh": "很多企业已公布计划，我们只是跟随这些信号。",
+              "en": "Yeah, I mean, in many cases, they've already said that this is what they plan to do.",
+              "relative_start": 45.2,
+              "relative_end": 49.2
+            },
+            {
+              "index": 9,
+              "zh": "AI**也开始看到回报。",
+              "en": "So I think it's following that, it's following those signals.",
+              "relative_start": 49.2,
+              "relative_end": 53.2
+            },
+            {
+              "index": 10,
+              "zh": "而且你也开始看到AI投入带来一些回报。",
+              "en": "And you are starting to see some returns from the AI spend as well.",
+              "relative_start": 53.2,
+              "relative_end": 56.2
+            },
+            {
+              "index": 11,
+              "zh": "因此，更好的回报加上已有的计划，意味着你会开始看到一些成果。",
+              "en": "So a combination of better returns from this and plans already in place means that you start to get some.",
+              "relative_start": 57.2,
+              "relative_end": 63.2
+            },
+            {
+              "index": 12,
+              "zh": "你认为在财报季初期，高管们是否会面临更大压力，需要提供更多关于代币成本的信息？",
+              "en": "Do you think executives in the early season will be under more pressure to give more detail on the token cost,",
+              "relative_start": 63.2,
+              "relative_end": 72.2
+            },
+            {
+              "index": 13,
+              "zh": "代币支出和**回报率？",
+              "en": "the spend on tokens and the ROI?",
+              "relative_start": 72.2,
+              "relative_end": 75.2
+            },
+            {
+              "index": 14,
+              "zh": "这是否是分析师们会关注并推动更多披露的方面？",
+              "en": "Is that something that analysts are going to be looking and pushing for more?",
+              "relative_start": 75.2,
+              "relative_end": 78.2
+            },
+            {
+              "index": 15,
+              "zh": "我认为人们会推动这一点，但我不认为我们会得到所有这些细节。",
+              "en": "I think people will push for it. I don't think we want to get all those details.",
+              "relative_start": 78.2,
+              "relative_end": 81.2
+            },
+            {
+              "index": 16,
+              "zh": "不幸的是，我认为这需要时间。",
+              "en": "Unfortunately, I mean, I think it will take time.",
+              "relative_start": 81.2,
+              "relative_end": 84.2
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"source_title\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"高盛：超大规模企业2027年继续加码资本支出\",\n    \"current_title_lines\": [\n      \"高盛观点\",\n      \"超大规模企业资本支出\",\n      \"2027年仍将上行\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"欧洲数据中心和AI基础设施相关公司还有机会吗？\",\n        \"en\": \"Is the door still open for European companies that have exposure to data centers and AI infrastructure?\",\n        \"relative_start\": 0.2,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个行情还能持续吗？我们认为还能持续。\",\n        \"en\": \"Is that story got further to run, do you think? We do think it's got a further to run.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我能理解市场为何紧张，毕竟这些权益资产涨了不少。\",\n        \"en\": \"I mean, yes, I can see why the market's nervous because these have run quite a lot.\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 15.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"欧洲涨幅不大，但全球其他地区表现强劲，主要基于盈利兑现。\",\n        \"en\": \"Not so much in Europe, but in the rest of the world and in particular, you've had some very strong performance, but really based on earnings coming through.\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 23.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们仍认为超大规模企业2027年将再次增加资本支出，盈利预期良好，财报已体现。\",\n        \"en\": \"And we still feel that the hyperscalers will be upping their capex again in 2027 and we're looking for reasonably good earnings and that's absolutely coming through in the print so far.\",\n        \"relative_start\": 23.2,\n        \"relative_end\": 33.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"良好盈利推动股价表现，而非估值提升。\",\n        \"en\": \"So good earnings, driving, not necessarily higher valuations, but higher performance by these stocks.\",\n        \"relative_start\": 33.2,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"为何确信超大规模企业2027年将继续增加资本支出？\",\n        \"en\": \"What is giving you the conviction that hyperscalers continue to spend and increase capex in 2027?\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 45.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"很多企业已公布计划，我们只是跟随这些信号。\",\n        \"en\": \"Yeah, I mean, in many cases, they've already said that this is what they plan to do.\",\n        \"relative_start\": 45.2,\n        \"relative_end\": 49.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"AI**也开始看到回报。\",\n        \"en\": \"So I think it's following that, it's following those signals.\",\n        \"relative_start\": 49.2,\n        \"relative_end\": 53.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"而且你也开始看到AI投入带来一些回报。\",\n        \"en\": \"And you are starting to see some returns from the AI spend as well.\",\n        \"relative_start\": 53.2,\n        \"relative_end\": 56.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"因此，更好的回报加上已有的计划，意味着你会开始看到一些成果。\",\n        \"en\": \"So a combination of better returns from this and plans already in place means that you start to get some.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你认为在财报季初期，高管们是否会面临更大压力，需要提供更多关于代币成本的信息？\",\n        \"en\": \"Do you think executives in the early season will be under more pressure to give more detail on the token cost,\",\n        \"relative_start\": 63.2,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"代币支出和**回报率？\",\n        \"en\": \"the spend on tokens and the ROI?\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 75.2\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"这是否是分析师们会关注并推动更多披露的方面？\",\n        \"en\": \"Is that something that analysts are going to be looking and pushing for more?\",\n        \"relative_start\": 75.2,\n        \"relative_end\": 78.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我认为人们会推动这一点，但我不认为我们会得到所有这些细节。\",\n        \"en\": \"I think people will push for it. I don't think we want to get all those details.\",\n        \"relative_start\": 78.2,\n        \"relative_end\": 81.2\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"不幸的是，我认为这需要时间。\",\n        \"en\": \"Unfortunately, I mean, I think it will take time.\",\n        \"relative_start\": 81.2,\n        \"relative_end\": 84.2\n      }\n    ]\n  }\n]\n\nPublic lookup evidence:\n[\n  {\n    \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n    \"purpose\": \"consensus\",\n    \"clip_indexes\": [\n      1\n    ],\n    \"why\": \"Verify Goldman Sachs' specific forecast that hyperscalers will increase capex in 2027.\",\n    \"results\": [\n      {\n        \"title\": \"Goldman says consensus 2027 hyperscaler capex estimates are too ...\",\n        \"snippet\": \"Investing.com -- Goldman Sachs believes Wall Street's 2027 hyperscaler capital expenditure forecasts are greatly underestimating the scale of AI infrastructure investment, with the bank's own ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\"\n      },\n      {\n        \"title\": \"Hyperscalers Set to Invest $1.15 Trillion in AI Infrastructure by 2027\",\n        \"snippet\": \"Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027 , reflecting a major infrastructure push to support AI compute growth. Annual spending could hit ~$400 billion by 2027 , driven by Big Tech firms including Microsoft, Amazon, Alphabet, Meta, and Nvidia. Data center power demand is forecast to increase 50% by 2027 ,\",\n        \"url\": \"marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/\"\n      },\n      {\n        \"title\": \"Goldman Sachs Sees 2027 Hyperscaler Capex at $1.1T, 45% Growth\",\n        \"snippet\": \"1. Revised Hyperscaler Capex Forecast Goldman Sachs challenged consensus forecasts of $920 billion in 2027 hyperscaler capex , estimating $1.1 trillion under a 2-3% of GDP AI investment scenario and up to $1.4 trillion in an extreme upside case.\",\n        \"url\": \"rallies.ai/news/goldman-sachs-sees-2027-hyperscaler-capex-at-11t-45-growth\"\n      }\n    ]\n  },\n  {\n    \"query\": \"hyperscalers capital expenditure 2027 outlook Goldman Sachs\",\n    \"purpose\": \"consensus\",\n    \"clip_indexes\": [\n      1\n    ],\n    \"why\": \"Cross-check the same forecast with alternative phrasing to confirm consensus.\",\n    \"results\": [\n      {\n        \"title\": \"Hyperscalers Set to Invest $1.15 Trillion in AI Infrastructure by 2027\",\n        \"snippet\": \"Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027 , reflecting a major infrastructure push to support AI compute growth. Annual spending could hit ~$400 billion by 2027 , driven by Big Tech firms including Microsoft, Amazon, Alphabet, Meta, and Nvidia.\",\n        \"url\": \"marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/\"\n      },\n      {\n        \"title\": \"Goldman says consensus 2027 hyperscaler capex estimates are too ...\",\n        \"snippet\": \"Investing.com -- Goldman Sachs believes Wall Street's 2027 hyperscaler capital expenditure forecasts are greatly underestimating the scale of AI infrastructure investment, with the bank's own ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\"\n      },\n      {\n        \"title\": \"U.S. hyperscalers' capex to almost triple to $1.4T by 2027, Goldman ...\",\n        \"snippet\": \"U.S. tech giants are expected to significantly increase their infrastructure investments, with total capital expenditure by hyperscalers seen to soar to almost $1.4 trillion between 2025 and 2027\",\n        \"url\": \"seekingalpha.com/news/4501906-us-hyperscalers-capex-to-almost-triple-to-14t-by-2027-goldman-sachs-says\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg The Opening Trade hyperscalers capex 2027\",\n    \"purpose\": \"speaker_stance\",\n    \"clip_indexes\": [\n      1\n    ],\n    \"why\": \"Find the original Bloomberg segment to verify the exact claims made by the speaker.\",\n    \"results\": [\n      {\n        \"title\": \"Watch Hyperscalers to Keep Upping Capex in 2027, Goldman Says - Bloomberg\",\n        \"snippet\": \"Sharon Bell, Goldman Sachs senior European equity strategist, discusses tech and artificial intelligence earnings, saying \\\" hyperscalers will be upping their capex spending again in 2027 .\\\" Speaking ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video\"\n      },\n      {\n        \"title\": \"Goldman says consensus 2027 hyperscaler capex estimates are too ...\",\n        \"snippet\": \"Investing.com -- Goldman Sachs believes Wall Street's 2027 hyperscaler capital expenditure forecasts are greatly underestimating the scale of AI infrastructure investment, with the bank's own ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\"\n      },\n      {\n        \"title\": \"Hyperscalers to Keep Upping Capex in 2027, Goldman Says\",\n        \"snippet\": \"00:24 And we still feel that the hyperscalers will be upping their capex again in 2027 . 00:29 And we're looking for reasonably good earnings. 00:31 And that's absolutely coming through in the print so far. 00:33 So good earnings driving not necessarily higher valuations, but higher performance by these stocks.\",\n        \"url\": \"www.dailymotion.com/video/xapp9eq\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Goldman Sachs AI infrastructure returns 2027\",\n    \"purpose\": \"speaker_stance\",\n    \"clip_indexes\": [\n      1\n    ],\n    \"why\": \"Verify the claim that returns from AI spend are starting to come through.\",\n    \"results\": [\n      {\n        \"title\": \"Goldman says consensus 2027 hyperscaler capex estimates are too ...\",\n        \"snippet\": \"Investing.com -- Goldman Sachs believes Wall Street's 2027 hyperscaler capital expenditure forecasts are greatly underestimating the scale of AI infrastructure investment, with the bank's own ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\"\n      },\n      {\n        \"title\": \"Goldman Sachs Predicts AI Infrastructure Spending Could Hit More Than ...\",\n        \"snippet\": \"Spending on artificial intelligence ( AI ) infrastructure is booming, with related capital expenditure (capex) expected to surpass $700 billion this year. While that is a staggering amount, Goldman ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-sachs-predicts-ai-infrastructure-135000060.html\"\n      },\n      {\n        \"title\": \"Tracking Trillions: The Assumptions Shaping the Scale of the AI Build ...\",\n        \"snippet\": \"Not all assumptions matter equally in this equation. A small number of assumptions determines how much capital must ultimately be deployed to build AI infrastructure , while other assumptions—despite commanding significant attention—primarily influence timing, monetization, or the distribution of returns .\",\n        \"url\": \"www.goldmansachs.com/insights/articles/tracking-trillions-the-assumptions-shaping-scale-of-the-ai-build-out\"\n      }\n    ]\n  },\n  {\n    \"query\": \"Bloomberg Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade Chinese name official\",\n    \"purpose\": \"entity_name\",\n    \"clip_indexes\": [],\n    \"why\": \"Fallback query for established Chinese entity names.\",\n    \"results\": [\n      {\n        \"title\": \"Watch Hyperscalers to Keep Upping Capex in 2027, Goldman Says - Bloomberg\",\n        \"snippet\": \"Sharon Bell, Goldman Sachs senior European equity strategist, discusses tech and artificial intelligence earnings, saying \\\" hyperscalers will be upping their capex spending again in 2027 .\\\" Speaking ...\",\n        \"url\": \"www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video\"\n      },\n      {\n        \"title\": \"Hyperscalers to Keep Upping Capex in 2027, Goldman Says\",\n        \"snippet\": \"00:24 And we still feel that the hyperscalers will be upping their capex again in 2027 . 00:29 And we're looking for reasonably good earnings. 00:31 And that's absolutely coming through in the print so far. 00:33 So good earnings driving not necessarily higher valuations, but higher performance by these stocks.\",\n        \"url\": \"www.dailymotion.com/video/xapp9eq\"\n      },\n      {\n        \"title\": \"Goldman says consensus 2027 hyperscaler capex estimates are too ...\",\n        \"snippet\": \"Investing.com -- Goldman Sachs believes Wall Street's 2027 hyperscaler capital expenditure forecasts are greatly underestimating the scale of AI infrastructure investment, with the bank's own ...\",\n        \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\"\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"emotion-polarity-v2\",\n  \"entities\": [\n    {\n      \"source_text\": \"Goldman Sachs\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Goldman Sachs\",\n      \"preferred_zh\": \"高盛\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"高盛 is the established Chinese name for Goldman Sachs in financial media.\"\n    },\n    {\n      \"source_text\": \"hyperscalers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"hyperscalers\",\n      \"preferred_zh\": \"超大规模企业\",\n      \"aliases\": [\n        \"超大规模云服务商\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"超大规模企业 is the standard translation in Chinese financial news for hyperscalers.\"\n    },\n    {\n      \"source_text\": \"Sharon Bell\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Sharon Bell\",\n      \"preferred_zh\": \"莎伦·贝尔\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Sharon Bell is a Goldman Sachs strategist; Chinese media may use 莎伦·贝尔, but not widely confirmed.\"\n    },\n    {\n      \"source_text\": \"The Opening Trade\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"The Opening Trade\",\n      \"preferred_zh\": \"开盘交易\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Bloomberg show name; no official Chinese translation found in snippets.\"\n    },\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"彭博 is the established Chinese name for Bloomberg.\"\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"We still feel that the hyperscalers will be upping their capex again in 2027.\",\n      \"public_baseline\": \"Goldman Sachs forecasts hyperscaler capex to reach $1.1-$1.4 trillion by 2027, above consensus of $920 billion.\",\n      \"surprise_gap\": \"The clip's claim is consistent with public reports; no surprise gap.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\",\n          \"fact\": \"Goldman Sachs says consensus 2027 hyperscaler capex estimates are too low.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/\",\n          \"fact\": \"Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"rallies.ai/news/goldman-sachs-sees-2027-hyperscaler-capex-at-11t-45-growth\",\n          \"fact\": \"Goldman Sachs sees 2027 hyperscaler capex at $1.1T, 45% growth.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bloomberg The Opening Trade hyperscalers capex 2027\",\n          \"url\": \"www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video\",\n          \"fact\": \"Bloomberg video confirms Sharon Bell stating hyperscalers will up capex in 2027.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Goldman Sachs changed its position on hyperscaler capex\",\n        \"Hyperscalers are cutting capex\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "高盛预测超大规模企业2027年资本支出将再次增加，高于市场共识",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "高盛看2027年：超大规模企业资本支出远超预期",
+                "title_lines": [
+                  "高盛看2027年",
+                  "超大规模企业",
+                  "资本支出远超预期"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "终于有人说了",
+                "title": "AI投资回报初现，高盛：超大规模企业2027年再砸钱",
+                "title_lines": [
+                  "AI投资回报初现",
+                  "高盛：超大规模企业",
+                  "2027年再砸钱"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Clip: 'you are starting to see some returns from the AI spend'",
+                  "Goldman Sachs: returns are starting to come through"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "高盛策略师：市场担心超大规模企业涨太多，但盈利撑得住",
+                "title_lines": [
+                  "市场担心涨太多",
+                  "高盛策略师",
+                  "盈利撑得住"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Clip: 'I can see why the market's nervous because these have run quite a lot'",
+                  "Clip: 'good earnings driving performance'"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "2027年超大规模企业资本支出将达1.1万亿美元，高盛这么说",
+                "title_lines": [
+                  "2027年资本支出",
+                  "1.1万亿美元",
+                  "高盛这么说"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Goldman Sachs sees 2027 hyperscaler capex at $1.1T"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"source_title\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"高盛：超大规模企业2027年继续加码资本支出\",\n    \"current_title_lines\": [\n      \"高盛观点\",\n      \"超大规模企业资本支出\",\n      \"2027年仍将上行\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"欧洲数据中心和AI基础设施相关公司还有机会吗？\",\n        \"en\": \"Is the door still open for European companies that have exposure to data centers and AI infrastructure?\",\n        \"relative_start\": 0.2,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个行情还能持续吗？我们认为还能持续。\",\n        \"en\": \"Is that story got further to run, do you think? We do think it's got a further to run.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我能理解市场为何紧张，毕竟这些权益资产涨了不少。\",\n        \"en\": \"I mean, yes, I can see why the market's nervous because these have run quite a lot.\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 15.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"欧洲涨幅不大，但全球其他地区表现强劲，主要基于盈利兑现。\",\n        \"en\": \"Not so much in Europe, but in the rest of the world and in particular, you've had some very strong performance, but really based on earnings coming through.\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 23.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们仍认为超大规模企业2027年将再次增加资本支出，盈利预期良好，财报已体现。\",\n        \"en\": \"And we still feel that the hyperscalers will be upping their capex again in 2027 and we're looking for reasonably good earnings and that's absolutely coming through in the print so far.\",\n        \"relative_start\": 23.2,\n        \"relative_end\": 33.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"良好盈利推动股价表现，而非估值提升。\",\n        \"en\": \"So good earnings, driving, not necessarily higher valuations, but higher performance by these stocks.\",\n        \"relative_start\": 33.2,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"为何确信超大规模企业2027年将继续增加资本支出？\",\n        \"en\": \"What is giving you the conviction that hyperscalers continue to spend and increase capex in 2027?\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 45.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"很多企业已公布计划，我们只是跟随这些信号。\",\n        \"en\": \"Yeah, I mean, in many cases, they've already said that this is what they plan to do.\",\n        \"relative_start\": 45.2,\n        \"relative_end\": 49.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"AI**也开始看到回报。\",\n        \"en\": \"So I think it's following that, it's following those signals.\",\n        \"relative_start\": 49.2,\n        \"relative_end\": 53.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"而且你也开始看到AI投入带来一些回报。\",\n        \"en\": \"And you are starting to see some returns from the AI spend as well.\",\n        \"relative_start\": 53.2,\n        \"relative_end\": 56.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"因此，更好的回报加上已有的计划，意味着你会开始看到一些成果。\",\n        \"en\": \"So a combination of better returns from this and plans already in place means that you start to get some.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你认为在财报季初期，高管们是否会面临更大压力，需要提供更多关于代币成本的信息？\",\n        \"en\": \"Do you think executives in the early season will be under more pressure to give more detail on the token cost,\",\n        \"relative_start\": 63.2,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"代币支出和**回报率？\",\n        \"en\": \"the spend on tokens and the ROI?\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 75.2\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"这是否是分析师们会关注并推动更多披露的方面？\",\n        \"en\": \"Is that something that analysts are going to be looking and pushing for more?\",\n        \"relative_start\": 75.2,\n        \"relative_end\": 78.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我认为人们会推动这一点，但我不认为我们会得到所有这些细节。\",\n        \"en\": \"I think people will push for it. I don't think we want to get all those details.\",\n        \"relative_start\": 78.2,\n        \"relative_end\": 81.2\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"不幸的是，我认为这需要时间。\",\n        \"en\": \"Unfortunately, I mean, I think it will take time.\",\n        \"relative_start\": 81.2,\n        \"relative_end\": 84.2\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"emotion-polarity-v2\",\n  \"entities\": [\n    {\n      \"source_text\": \"Goldman Sachs\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Goldman Sachs\",\n      \"preferred_zh\": \"高盛\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"高盛 is the established Chinese name for Goldman Sachs in financial media.\"\n    },\n    {\n      \"source_text\": \"hyperscalers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"hyperscalers\",\n      \"preferred_zh\": \"超大规模企业\",\n      \"aliases\": [\n        \"超大规模云服务商\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"超大规模企业 is the standard translation in Chinese financial news for hyperscalers.\"\n    },\n    {\n      \"source_text\": \"Sharon Bell\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Sharon Bell\",\n      \"preferred_zh\": \"莎伦·贝尔\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Sharon Bell is a Goldman Sachs strategist; Chinese media may use 莎伦·贝尔, but not widely confirmed.\"\n    },\n    {\n      \"source_text\": \"The Opening Trade\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"The Opening Trade\",\n      \"preferred_zh\": \"开盘交易\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Bloomberg show name; no official Chinese translation found in snippets.\"\n    },\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"彭博 is the established Chinese name for Bloomberg.\"\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"We still feel that the hyperscalers will be upping their capex again in 2027.\",\n      \"public_baseline\": \"Goldman Sachs forecasts hyperscaler capex to reach $1.1-$1.4 trillion by 2027, above consensus of $920 billion.\",\n      \"surprise_gap\": \"The clip's claim is consistent with public reports; no surprise gap.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\",\n          \"fact\": \"Goldman Sachs says consensus 2027 hyperscaler capex estimates are too low.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/\",\n          \"fact\": \"Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"rallies.ai/news/goldman-sachs-sees-2027-hyperscaler-capex-at-11t-45-growth\",\n          \"fact\": \"Goldman Sachs sees 2027 hyperscaler capex at $1.1T, 45% growth.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bloomberg The Opening Trade hyperscalers capex 2027\",\n          \"url\": \"www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video\",\n          \"fact\": \"Bloomberg video confirms Sharon Bell stating hyperscalers will up capex in 2027.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Goldman Sachs changed its position on hyperscaler capex\",\n        \"Hyperscalers are cutting capex\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"高盛预测超大规模企业2027年资本支出将再次增加，高于市场共识\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"高盛看2027年：超大规模企业资本支出远超预期\",\n          \"title_lines\": [\n            \"高盛看2027年\",\n            \"超大规模企业\",\n            \"资本支出远超预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"AI投资回报初现，高盛：超大规模企业2027年再砸钱\",\n          \"title_lines\": [\n            \"AI投资回报初现\",\n            \"高盛：超大规模企业\",\n            \"2027年再砸钱\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Clip: 'you are starting to see some returns from the AI spend'\",\n            \"Goldman Sachs: returns are starting to come through\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"高盛策略师：市场担心超大规模企业涨太多，但盈利撑得住\",\n          \"title_lines\": [\n            \"市场担心涨太多\",\n            \"高盛策略师\",\n            \"盈利撑得住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Clip: 'I can see why the market's nervous because these have run quite a lot'\",\n            \"Clip: 'good earnings driving performance'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"2027年超大规模企业资本支出将达1.1万亿美元，高盛这么说\",\n          \"title_lines\": [\n            \"2027年资本支出\",\n            \"1.1万亿美元\",\n            \"高盛这么说\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Goldman Sachs sees 2027 hyperscaler capex at $1.1T\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_breaks_consensus",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B",
+              "Clip: 'We still feel that the hyperscalers will be upping their capex again in 2027'"
+            ],
+            "title": "高盛：2027年超大规模企业资本支出远超市场预期",
+            "title_lines": [
+              "高盛：2027年",
+              "超大规模企业",
+              "资本支出远超预期"
+            ],
+            "title_highlights": [
+              "高盛",
+              "2027年",
+              "资本支出远超预期"
+            ],
+            "runner_up_titles": [
+              "AI投资回报初现，高盛：超大规模企业2027年再砸钱",
+              "高盛策略师：市场担心涨太多，但盈利撑得住"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：高盛预测2027年超大规模企业资本支出达1.1万亿美元，较市场共识高出近20%。",
+            "comment_highlights": [
+              "1.1万亿美元",
+              "高出近20%"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：欧洲数据中心和AI基础设施公司仍有增长空间。",
+                "comment_highlights": [
+                  "欧洲数据中心"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：高盛认为行情还能持续，基于盈利兑现而非估值扩张。",
+                "comment_highlights": [
+                  "盈利兑现"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：市场紧张源于涨幅已大，但盈利增长支撑股价。",
+                "comment_highlights": [
+                  "盈利增长"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：全球其他地区表现强劲，欧洲相对落后。",
+                "comment_highlights": [
+                  "欧洲相对落后"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：超大规模企业2027年资本支出将再次增加，盈利预期良好。",
+                "comment_highlights": [
+                  "2027年资本支出"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：股价上涨由盈利驱动，而非估值提升。",
+                "comment_highlights": [
+                  "盈利驱动"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：高盛确信超大规模企业将继续增加资本支出。",
+                "comment_highlights": [
+                  "增加资本支出"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：企业已公布计划，高盛只是跟随信号。",
+                "comment_highlights": [
+                  "跟随信号"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：AI投入开始看到回报。",
+                "comment_highlights": [
+                  "AI投入回报"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：更好的回报加上已有计划，成果可期。",
+                "comment_highlights": [
+                  "成果可期"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：高管面临压力需提供更多代币成本细节。",
+                "comment_highlights": [
+                  "代币成本"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：分析师会推动更多披露，但细节可能有限。",
+                "comment_highlights": [
+                  "更多披露"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：代币支出和回报率是关注焦点。",
+                "comment_highlights": [
+                  "代币支出"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：分析师会推动更多披露，但细节可能有限。",
+                "comment_highlights": [
+                  "推动披露"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：人们会推动，但不会得到所有细节。",
+                "comment_highlights": [
+                  "不会得到所有细节"
+                ]
+              },
+              {
+                "subtitle_index": 16,
+                "comment": "KC评论：细节披露需要时间。",
+                "comment_highlights": [
+                  "需要时间"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"source_title\": \"Duration: 1:46 Hyperscalers to Keep Upping Capex in 2027, Goldman Says The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"高盛：超大规模企业2027年继续加码资本支出\",\n    \"current_title_lines\": [\n      \"高盛观点\",\n      \"超大规模企业资本支出\",\n      \"2027年仍将上行\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"欧洲数据中心和AI基础设施相关公司还有机会吗？\",\n        \"en\": \"Is the door still open for European companies that have exposure to data centers and AI infrastructure?\",\n        \"relative_start\": 0.2,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个行情还能持续吗？我们认为还能持续。\",\n        \"en\": \"Is that story got further to run, do you think? We do think it's got a further to run.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我能理解市场为何紧张，毕竟这些权益资产涨了不少。\",\n        \"en\": \"I mean, yes, I can see why the market's nervous because these have run quite a lot.\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 15.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"欧洲涨幅不大，但全球其他地区表现强劲，主要基于盈利兑现。\",\n        \"en\": \"Not so much in Europe, but in the rest of the world and in particular, you've had some very strong performance, but really based on earnings coming through.\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 23.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们仍认为超大规模企业2027年将再次增加资本支出，盈利预期良好，财报已体现。\",\n        \"en\": \"And we still feel that the hyperscalers will be upping their capex again in 2027 and we're looking for reasonably good earnings and that's absolutely coming through in the print so far.\",\n        \"relative_start\": 23.2,\n        \"relative_end\": 33.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"良好盈利推动股价表现，而非估值提升。\",\n        \"en\": \"So good earnings, driving, not necessarily higher valuations, but higher performance by these stocks.\",\n        \"relative_start\": 33.2,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"为何确信超大规模企业2027年将继续增加资本支出？\",\n        \"en\": \"What is giving you the conviction that hyperscalers continue to spend and increase capex in 2027?\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 45.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"很多企业已公布计划，我们只是跟随这些信号。\",\n        \"en\": \"Yeah, I mean, in many cases, they've already said that this is what they plan to do.\",\n        \"relative_start\": 45.2,\n        \"relative_end\": 49.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"AI**也开始看到回报。\",\n        \"en\": \"So I think it's following that, it's following those signals.\",\n        \"relative_start\": 49.2,\n        \"relative_end\": 53.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"而且你也开始看到AI投入带来一些回报。\",\n        \"en\": \"And you are starting to see some returns from the AI spend as well.\",\n        \"relative_start\": 53.2,\n        \"relative_end\": 56.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"因此，更好的回报加上已有的计划，意味着你会开始看到一些成果。\",\n        \"en\": \"So a combination of better returns from this and plans already in place means that you start to get some.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你认为在财报季初期，高管们是否会面临更大压力，需要提供更多关于代币成本的信息？\",\n        \"en\": \"Do you think executives in the early season will be under more pressure to give more detail on the token cost,\",\n        \"relative_start\": 63.2,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"代币支出和**回报率？\",\n        \"en\": \"the spend on tokens and the ROI?\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 75.2\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"这是否是分析师们会关注并推动更多披露的方面？\",\n        \"en\": \"Is that something that analysts are going to be looking and pushing for more?\",\n        \"relative_start\": 75.2,\n        \"relative_end\": 78.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我认为人们会推动这一点，但我不认为我们会得到所有这些细节。\",\n        \"en\": \"I think people will push for it. I don't think we want to get all those details.\",\n        \"relative_start\": 78.2,\n        \"relative_end\": 81.2\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"不幸的是，我认为这需要时间。\",\n        \"en\": \"Unfortunately, I mean, I think it will take time.\",\n        \"relative_start\": 81.2,\n        \"relative_end\": 84.2\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"emotion-polarity-v2\",\n  \"entities\": [\n    {\n      \"source_text\": \"Goldman Sachs\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Goldman Sachs\",\n      \"preferred_zh\": \"高盛\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"高盛 is the established Chinese name for Goldman Sachs in financial media.\"\n    },\n    {\n      \"source_text\": \"hyperscalers\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"hyperscalers\",\n      \"preferred_zh\": \"超大规模企业\",\n      \"aliases\": [\n        \"超大规模云服务商\"\n      ],\n      \"confidence\": \"high\",\n      \"evidence\": \"超大规模企业 is the standard translation in Chinese financial news for hyperscalers.\"\n    },\n    {\n      \"source_text\": \"Sharon Bell\",\n      \"entity_type\": \"person\",\n      \"preferred_en\": \"Sharon Bell\",\n      \"preferred_zh\": \"莎伦·贝尔\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"evidence\": \"Sharon Bell is a Goldman Sachs strategist; Chinese media may use 莎伦·贝尔, but not widely confirmed.\"\n    },\n    {\n      \"source_text\": \"The Opening Trade\",\n      \"entity_type\": \"other\",\n      \"preferred_en\": \"The Opening Trade\",\n      \"preferred_zh\": \"开盘交易\",\n      \"aliases\": [],\n      \"confidence\": \"low\",\n      \"evidence\": \"Bloomberg show name; no official Chinese translation found in snippets.\"\n    },\n    {\n      \"source_text\": \"Bloomberg\",\n      \"entity_type\": \"organization\",\n      \"preferred_en\": \"Bloomberg\",\n      \"preferred_zh\": \"彭博\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"evidence\": \"彭博 is the established Chinese name for Bloomberg.\"\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"We still feel that the hyperscalers will be upping their capex again in 2027.\",\n      \"public_baseline\": \"Goldman Sachs forecasts hyperscaler capex to reach $1.1-$1.4 trillion by 2027, above consensus of $920 billion.\",\n      \"surprise_gap\": \"The clip's claim is consistent with public reports; no surprise gap.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html\",\n          \"fact\": \"Goldman Sachs says consensus 2027 hyperscaler capex estimates are too low.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"marketnewsdata.com/2025/07/🌐-hyperscaler-ai-capex-outlook-goldman-sachs/\",\n          \"fact\": \"Goldman Sachs estimates total hyperscaler capex will reach $1.15 trillion between 2025 and 2027.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Goldman Sachs hyperscalers capex 2027 forecast\",\n          \"url\": \"rallies.ai/news/goldman-sachs-sees-2027-hyperscaler-capex-at-11t-45-growth\",\n          \"fact\": \"Goldman Sachs sees 2027 hyperscaler capex at $1.1T, 45% growth.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bloomberg The Opening Trade hyperscalers capex 2027\",\n          \"url\": \"www.bloomberg.com/news/videos/2026-07-16/hyperscalers-to-keep-upping-capex-in-2027-goldman-says-video\",\n          \"fact\": \"Bloomberg video confirms Sharon Bell stating hyperscalers will up capex in 2027.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Goldman Sachs changed its position on hyperscaler capex\",\n        \"Hyperscalers are cutting capex\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"高盛预测超大规模企业2027年资本支出将再次增加，高于市场共识\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"高盛看2027年：超大规模企业资本支出远超预期\",\n          \"title_lines\": [\n            \"高盛看2027年\",\n            \"超大规模企业\",\n            \"资本支出远超预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"AI投资回报初现，高盛：超大规模企业2027年再砸钱\",\n          \"title_lines\": [\n            \"AI投资回报初现\",\n            \"高盛：超大规模企业\",\n            \"2027年再砸钱\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Clip: 'you are starting to see some returns from the AI spend'\",\n            \"Goldman Sachs: returns are starting to come through\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"高盛策略师：市场担心超大规模企业涨太多，但盈利撑得住\",\n          \"title_lines\": [\n            \"市场担心涨太多\",\n            \"高盛策略师\",\n            \"盈利撑得住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Clip: 'I can see why the market's nervous because these have run quite a lot'\",\n            \"Clip: 'good earnings driving performance'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"2027年超大规模企业资本支出将达1.1万亿美元，高盛这么说\",\n          \"title_lines\": [\n            \"2027年资本支出\",\n            \"1.1万亿美元\",\n            \"高盛这么说\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Goldman Sachs sees 2027 hyperscaler capex at $1.1T\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"高盛2027年：超大规模企业，资本支出远超预期\",\n      \"title_lines\": [\n        \"高盛2027年\",\n        \"超大规模企业\",\n        \"资本支出远超预期\"\n      ],\n      \"title_highlights\": [\n        \"高盛\",\n        \"2027年\",\n        \"资本支出远超预期\"\n      ],\n      \"comment\": \"KC评论：高盛预测2027年超大规模企业资本支出达1.1万亿美元\",\n      \"comment_highlights\": [\n        \"1.1万亿美元\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：欧洲数据中心和AI基础设施公司仍有增长空间\",\n          \"comment_highlights\": [\n            \"欧洲数据中心\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：高盛认为行情还能持续，基于盈利兑现而非估值扩张\",\n          \"comment_highlights\": [\n            \"盈利兑现\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：市场紧张源于涨幅已大，但盈利增长支撑股价\",\n          \"comment_highlights\": [\n            \"盈利增长\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：全球其他地区表现强劲，欧洲相对落后\",\n          \"comment_highlights\": [\n            \"欧洲相对落后\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：超大规模企业2027年资本支出将再次增加，盈利预期良好\",\n          \"comment_highlights\": [\n            \"2027年资本支出\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：股价上涨由盈利驱动，而非估值提升\",\n          \"comment_highlights\": [\n            \"盈利驱动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：高盛确信超大规模企业将继续增加资本支出\",\n          \"comment_highlights\": [\n            \"增加资本支出\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：企业已公布计划，高盛只是跟随信号\",\n          \"comment_highlights\": [\n            \"跟随信号\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：AI投入开始看到回报\",\n          \"comment_highlights\": [\n            \"AI投入开始看到\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：更好的回报加上已有计划，成果可期\",\n          \"comment_highlights\": [\n            \"成果可期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：高管面临压力需提供更多代币成本细节\",\n          \"comment_highlights\": [\n            \"代币成本\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：分析师会推动更多披露，但细节可能有限\",\n          \"comment_highlights\": [\n            \"更多披露\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：代币支出和回报率是关注焦点\",\n          \"comment_highlights\": [\n            \"代币支出\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：分析师会推动更多披露，但细节可能有限\",\n          \"comment_highlights\": [\n            \"分析师会推动更多\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：人们会推动，但不会得到所有细节\",\n          \"comment_highlights\": [\n            \"不会得到所有细节\"\n          ]\n        },\n        {\n          \"subtitle_index\": 16,\n          \"comment\": \"KC评论：细节披露需要时间\",\n          \"comment_highlights\": [\n            \"需要时间\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority_breaks_consensus\",\n      \"angle_id\": \"authority_breaks_consensus\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B\",\n        \"Clip: 'We still feel that the hyperscalers will be upping their capex again in 2027'\"\n      ],\n      \"runner_up_titles\": [\n        \"AI配置回报初现，高盛：超大规模企业2027年再砸钱\",\n        \"高盛策略师：市场担心涨太多，但盈利撑得住\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:authority_breaks_consensus\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 7,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority_breaks_consensus",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "Goldman Sachs estimates 2027 hyperscaler capex at $1.1T vs consensus $920B",
+                  "Clip: 'We still feel that the hyperscalers will be upping their capex again in 2027'"
+                ],
+                "title": "高盛：2027年超大规模企业资本支出，市场低估了",
+                "title_lines": [
+                  "高盛：2027年",
+                  "超大规模企业",
+                  "资本支出市场低估了"
+                ],
+                "title_highlights": [
+                  "高盛",
+                  "2027年",
+                  "资本支出市场低估了"
+                ],
+                "runner_up_titles": [
+                  "AI投资回报初现，高盛：超大规模企业2027年再砸钱",
+                  "高盛策略师：市场担心涨太多，但盈利撑得住"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：高盛预测2027年超大规模企业资本支出达1.1万亿美元，高于市场共识的9200亿",
+                "comment_highlights": [
+                  "1.1万亿美元"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：欧洲数据中心和AI基础设施公司仍有增长空间",
+                    "comment_highlights": [
+                      "欧洲数据中心"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：高盛认为行情还能持续，基于盈利兑现而非估值扩张",
+                    "comment_highlights": [
+                      "盈利兑现"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：市场紧张源于涨幅已大，但盈利增长支撑股价",
+                    "comment_highlights": [
+                      "盈利增长"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：全球其他地区表现强劲，欧洲相对落后",
+                    "comment_highlights": [
+                      "欧洲相对落后"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：超大规模企业2027年资本支出将再次增加，盈利预期良好",
+                    "comment_highlights": [
+                      "2027年资本支出"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：股价上涨由盈利驱动，而非估值提升",
+                    "comment_highlights": [
+                      "盈利驱动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：高盛确信超大规模企业将继续增加资本支出",
+                    "comment_highlights": [
+                      "增加资本支出"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：企业已公布计划，高盛只是跟随信号",
+                    "comment_highlights": [
+                      "跟随信号"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：AI投入开始看到回报",
+                    "comment_highlights": [
+                      "AI投入开始看到"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：更好的回报加上已有计划，成果可期",
+                    "comment_highlights": [
+                      "成果可期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：高管面临压力需提供更多代币成本细节",
+                    "comment_highlights": [
+                      "代币成本"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：分析师会推动更多披露，但细节可能有限",
+                    "comment_highlights": [
+                      "更多披露"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：代币支出和回报率是关注焦点",
+                    "comment_highlights": [
+                      "代币支出"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：分析师会推动更多披露，但细节可能有限",
+                    "comment_highlights": [
+                      "分析师会推动更多"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：人们会推动，但不会得到所有细节",
+                    "comment_highlights": [
+                      "不会得到所有细节"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 16,
+                    "comment": "KC评论：细节披露需要时间",
+                    "comment_highlights": [
+                      "需要时间"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": []
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "高盛2027年：超大规模企业，资本支出市场低估了",
+          "title_lines": [
+            "高盛2027年",
+            "超大规模企业",
+            "资本支出市场低估了"
+          ],
+          "formula_id": "authority_breaks_consensus",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:authority_breaks_consensus",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：高盛预测2027年超大规模企业资本支出达1.1万亿美元"
+        }
+      }
+    }
+  ]
+}
