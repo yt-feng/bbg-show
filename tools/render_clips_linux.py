@@ -175,15 +175,23 @@ def render_overlay_images(
 ) -> tuple[Path, list[TimedOverlay]]:
     """Generate overlay PNGs using the Pillow renderer."""
     static_png = clip_dir / "static.png"
+    title = safe_title_text(str(clip.get("title", "")))
+    title_lines = [safe_title_text(line) for line in title_lines_for_clip(clip)]
+    title_body = "".join(title_lines) or title
+    title_highlights = [
+        highlight
+        for item in clip.get("title_highlights", [])
+        if (highlight := safe_title_text(str(item))) and highlight in title_body
+    ]
     jobs: list[dict[str, Any]] = [
         {
             "kind": "static",
             "output": str(static_png),
             "width": OUT_W,
             "height": OUT_H,
-            "title": safe_title_text(str(clip.get("title", ""))),
-            "titleLines": [safe_title_text(line) for line in title_lines_for_clip(clip)],
-            "titleHighlights": [safe_title_text(str(item)) for item in clip.get("title_highlights", [])],
+            "title": title,
+            "titleLines": title_lines,
+            "titleHighlights": title_highlights,
             "watermark": "KC桌面",
             "cta": "关注「KC桌面」，追踪国际热点",
             "disclaimer": DISCLAIMER_TEXT,
@@ -198,15 +206,21 @@ def render_overlay_images(
             continue
         index = subtitle_index(subtitle, fallback_index)
         zh_source = subtitle.get("zh_filtered") or subtitle.get("zh", "")
+        zh = safe_zh_text(str(zh_source))
+        zh_highlights = [
+            highlight
+            for item in subtitle.get("zh_highlights", [])
+            if (highlight := safe_zh_text(str(item))) and highlight in zh
+        ]
         png = clip_dir / f"sub_{index:03d}.png"
         jobs.append({
             "kind": "subtitle",
             "output": str(png),
             "width": CAPTION_W,
             "height": CAPTION_H,
-            "zh": safe_zh_text(str(zh_source)),
+            "zh": zh,
             "en": clean_display_text(str(subtitle.get("en", ""))),
-            "zhHighlights": [safe_zh_text(str(item)) for item in subtitle.get("zh_highlights", [])],
+            "zhHighlights": zh_highlights,
             "enHighlights": subtitle.get("en_highlights", []),
         })
         timed_overlays.append((png, start, end, CAPTION_Y))
@@ -256,10 +270,13 @@ def subtitle_comment_map(clip: dict[str, Any]) -> dict[int, tuple[str, list[str]
         highlights = item.get("comment_highlights", item.get("highlights", []))
         if not isinstance(highlights, list):
             highlights = []
-        mapped[idx] = (
-            safe_zh_text(comment),
-            [safe_zh_text(str(highlight)) for highlight in highlights if str(highlight).strip()],
-        )
+        safe_comment = safe_zh_text(comment)
+        safe_highlights = [
+            highlight
+            for raw in highlights
+            if (highlight := safe_zh_text(str(raw))) and highlight in safe_comment
+        ]
+        mapped[idx] = (safe_comment, safe_highlights)
     return mapped
 
 

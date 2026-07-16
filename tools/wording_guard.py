@@ -18,8 +18,81 @@ WORDING_GUARD_PROMPT = """Wording guard for all Chinese output:
 - Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.
 - For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.
 - If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.
+- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.
 - Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.
 - Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点."""
+
+
+HOUSING_PRICE_ALIASES: tuple[tuple[str, str], ...] = (
+    ("新建商品住宅销售价格", "新房价"),
+    ("新建商品住宅销售價格", "新房价"),
+    ("新建商品房销售价格", "新房价"),
+    ("新建商品房销售價格", "新房价"),
+    ("新建住宅销售价格", "新房价"),
+    ("新建住宅销售價格", "新房价"),
+    ("二手住宅销售价格", "二手房价"),
+    ("二手住宅销售價格", "二手房价"),
+    ("二手房销售价格", "二手房价"),
+    ("二手房销售價格", "二手房价"),
+    ("商品住宅销售价格", "房价"),
+    ("商品住宅销售價格", "房价"),
+    ("商品房销售价格", "房价"),
+    ("商品房销售價格", "房价"),
+    ("住宅销售价格", "房价"),
+    ("住宅销售價格", "房价"),
+    ("新房均价", "新房价均价"),
+    ("新房均價", "新房价均价"),
+    ("二手房均价", "二手房价均价"),
+    ("二手房均價", "二手房价均价"),
+    ("住房均价", "房价均价"), ("住房均價", "房价均价"),
+    ("住宅均价", "房价均价"), ("住宅均價", "房价均价"),
+    ("房屋均价", "房价均价"), ("房屋均價", "房价均价"),
+    ("房地产均价", "房价均价"), ("房地產均價", "房价均价"),
+    ("房产均价", "房价均价"), ("房產均價", "房价均价"),
+    ("商品房均价", "房价均价"), ("商品房均價", "房价均价"),
+    ("楼盘均价", "房价均价"), ("樓盤均價", "房价均价"),
+    ("物业均价", "房价均价"), ("物業均價", "房价均价"),
+    ("楼市均价", "房价均价"), ("樓市均價", "房价均价"),
+    ("新房价格", "新房价"),
+    ("新房價格", "新房价"),
+    ("新房售价", "新房价"),
+    ("新房售價", "新房价"),
+    ("二手房价格", "二手房价"),
+    ("二手房價格", "二手房价"),
+    ("二手房售价", "二手房价"),
+    ("二手房售價", "二手房价"),
+    ("住房价格", "房价"), ("住房價格", "房价"),
+    ("住房售价", "房价"), ("住房售價", "房价"),
+    ("住宅价格", "房价"), ("住宅價格", "房价"),
+    ("住宅售价", "房价"), ("住宅售價", "房价"),
+    ("房屋价格", "房价"), ("房屋價格", "房价"),
+    ("房屋售价", "房价"), ("房屋售價", "房价"),
+    ("房地产价格", "房价"), ("房地產價格", "房价"),
+    ("房地产售价", "房价"), ("房地產售價", "房价"),
+    ("地产价格", "房价"), ("地產價格", "房价"),
+    ("地产售价", "房价"), ("地產售價", "房价"),
+    ("房产价格", "房价"), ("房產價格", "房价"),
+    ("房产售价", "房价"), ("房產售價", "房价"),
+    ("商品房价格", "房价"), ("商品房價格", "房价"),
+    ("楼盘价格", "房价"), ("樓盤價格", "房价"),
+    ("楼盘售价", "房价"), ("樓盤售價", "房价"),
+    ("物业价格", "房价"), ("物業價格", "房价"),
+    ("物业售价", "房价"), ("物業售價", "房价"),
+    ("楼市价格", "房价"), ("樓市價格", "房价"),
+    ("房價", "房价"),
+    ("樓價", "房价"),
+    ("楼价", "房价"),
+)
+
+HOUSING_PRICE_TERM_PATTERN = r"(?P<segment>二手|新)?房价"
+HOUSING_CURRENCY_AMOUNT_PATTERN = (
+    r"(?:\d[\d,]*(?:\.\d+)?|[一二三四五六七八九十百千万亿两]+)\s*"
+    r"(?:(?:万|千|百|亿)?(?:元|美元|港元|人民币|英镑|欧元)|"
+    r"(?:万|千|百|亿)(?![%％]))"
+    r"(?:\s*(?:[/／]|每)(?:平方米|平米|㎡))?"
+)
+HOUSING_BASIS_PATTERN = r"(?P<basis>同比|环比)?"
+HOUSING_DEGREE_PATTERN = r"(?P<degree>大幅|明显|快速|持续|小幅|温和)?"
 
 
 GENERAL_REPLACEMENTS: tuple[tuple[str, str], ...] = (
@@ -161,6 +234,213 @@ def is_china_context(text: str) -> bool:
     return bool(CHINA_CONTEXT_RE.search(text))
 
 
+def _housing_subject(segment: str | None) -> str:
+    if segment == "新":
+        return "新房市场"
+    if segment == "二手":
+        return "二手房市场"
+    return "地产市场"
+
+
+def _housing_level(segment: str | None, *, average: bool = False, median: bool = False) -> str:
+    prefix = f"{segment}房" if segment else "住宅"
+    qualifier = "平均" if average else "中位" if median else ""
+    return f"{prefix}{qualifier}成交水平"
+
+
+def _housing_cost(segment: str | None) -> str:
+    if segment == "新":
+        return "新房置业成本"
+    if segment == "二手":
+        return "二手房置业成本"
+    return "居住成本"
+
+
+def _housing_valuation(segment: str | None, *, pressure: bool = False) -> str:
+    value = f"{_housing_subject(segment)}估值" if segment else "地产估值"
+    return f"{value}压力" if pressure else value
+
+
+def neutralize_housing_price_wording(text: str) -> str:
+    """Paraphrase direct housing-price language without losing facts or units."""
+    value = text
+    for old, new in HOUSING_PRICE_ALIASES:
+        value = value.replace(old, new)
+
+    # Preserve whether the source is discussing all housing, new homes, or
+    # second-hand homes while replacing the direct price term.
+    value = re.sub(
+        rf"平均{HOUSING_PRICE_TERM_PATTERN}",
+        lambda match: _housing_level(match.group("segment"), average=True),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?:均价|平均值)",
+        lambda match: _housing_level(match.group("segment"), average=True),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}中位数",
+        lambda match: _housing_level(match.group("segment"), median=True),
+        value,
+    )
+
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?:负担能力|可负担性)",
+        "住房可负担性",
+        value,
+    )
+    value = re.sub(rf"{HOUSING_PRICE_TERM_PATTERN}收入比", "住房成本收入比", value)
+    value = re.sub(rf"{HOUSING_PRICE_TERM_PATTERN}负担", "置业负担", value)
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}泡沫",
+        lambda match: _housing_valuation(match.group("segment"), pressure=True),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}估值",
+        lambda match: _housing_valuation(match.group("segment")),
+        value,
+    )
+
+    trend_suffixes = {
+        "涨幅": "升幅",
+        "跌幅": "调整幅度",
+        "涨跌": "表现",
+        "走势": "表现",
+        "趋势": "趋势",
+        "预期": "预期",
+        "变化": "变化",
+        "波动": "波动",
+    }
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?:{'|'.join(trend_suffixes)})",
+        lambda match: _housing_subject(match.group("segment"))
+        + trend_suffixes[match.group(0).removeprefix((match.group("segment") or "") + "房价")],
+        value,
+    )
+
+    # When the change itself is denominated in currency, describe the
+    # transaction level being adjusted rather than a market moving by yuan.
+    def replace_absolute_change(match: re.Match[str], direction: str) -> str:
+        return (
+            _housing_level(match.group("segment"))
+            + (match.group("basis") or "")
+            + (match.group("degree") or "")
+            + direction
+            + match.group("amount")
+        )
+
+    up_words = r"上涨|上升|走高|大涨|飙升|涨"
+    down_words = r"下跌|下降|走低|大跌|暴跌|跌"
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*{HOUSING_BASIS_PATTERN}{HOUSING_DEGREE_PATTERN}"
+        rf"(?:{up_words})\s*(?P<amount>{HOUSING_CURRENCY_AMOUNT_PATTERN})",
+        lambda match: replace_absolute_change(match, "上调"),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*{HOUSING_BASIS_PATTERN}{HOUSING_DEGREE_PATTERN}"
+        rf"(?:{down_words})\s*(?P<amount>{HOUSING_CURRENCY_AMOUNT_PATTERN})",
+        lambda match: replace_absolute_change(match, "下调"),
+        value,
+    )
+
+    # Explicit from/to currency levels are also absolute transaction levels.
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*从\s*(?P<start>{HOUSING_CURRENCY_AMOUNT_PATTERN})"
+        rf"\s*(?:{up_words})到\s*(?P<end>{HOUSING_CURRENCY_AMOUNT_PATTERN})",
+        lambda match: (
+            f"{_housing_level(match.group('segment'))}从{match.group('start')}"
+            f"上调至{match.group('end')}"
+        ),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*从\s*(?P<start>{HOUSING_CURRENCY_AMOUNT_PATTERN})"
+        rf"\s*(?:{down_words})到\s*(?P<end>{HOUSING_CURRENCY_AMOUNT_PATTERN})",
+        lambda match: (
+            f"{_housing_level(match.group('segment'))}从{match.group('start')}"
+            f"下调至{match.group('end')}"
+        ),
+        value,
+    )
+
+    def replace_market_direction(match: re.Match[str], direction: str) -> str:
+        return (
+            _housing_subject(match.group("segment"))
+            + (match.group("basis") or "")
+            + (match.group("degree") or "")
+            + direction
+        )
+
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*{HOUSING_BASIS_PATTERN}{HOUSING_DEGREE_PATTERN}(?:{up_words})",
+        lambda match: replace_market_direction(match, "上行"),
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}\s*{HOUSING_BASIS_PATTERN}{HOUSING_DEGREE_PATTERN}(?:{down_words})",
+        lambda match: replace_market_direction(match, "下行"),
+        value,
+    )
+
+    state_words = (
+        (r"回落|调整", "调整"),
+        (r"企稳|稳定|止跌|见底", "趋稳"),
+        (r"反弹|回升|回暖|复苏", "修复"),
+        (r"承压|疲弱|低迷", "承压"),
+    )
+    for words, replacement in state_words:
+        value = re.sub(
+            rf"{HOUSING_PRICE_TERM_PATTERN}(?P<state_modifier>正在|正|持续|逐步|开始|有所)?(?:{words})",
+            lambda match, replacement=replacement: (
+                _housing_subject(match.group("segment"))
+                + (match.group("state_modifier") or "")
+                + replacement
+            ),
+            value,
+        )
+
+    value = re.sub(
+        rf"(?:偏高|过高|高企|太高|很高|较高|昂贵|高){HOUSING_PRICE_TERM_PATTERN}",
+        lambda match: f"较高{_housing_cost(match.group('segment'))}",
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?:偏高|过高|高企|太高|很高|较高|昂贵|高)",
+        lambda match: f"{_housing_cost(match.group('segment'))}偏高",
+        value,
+    )
+    value = re.sub(
+        rf"(?:偏低|过低|太低|很低|较低|便宜|低){HOUSING_PRICE_TERM_PATTERN}",
+        lambda match: f"较低{_housing_cost(match.group('segment'))}",
+        value,
+    )
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?:偏低|过低|太低|很低|较低|便宜|低)",
+        lambda match: f"{_housing_cost(match.group('segment'))}较低",
+        value,
+    )
+
+    # A direct currency amount describes an absolute level.  This includes
+    # forms such as “约3万元/平方米”, “是每平米3万元”, and “从3万…”.
+    numeric_level_prefix = r"(?:约|大约|接近)?(?:为|是|达到|达|在)?"
+    unit_before_amount = r"(?:(?:每(?:平方米|平米)|每㎡)\s*)?"
+    value = re.sub(
+        rf"{HOUSING_PRICE_TERM_PATTERN}(?=\s*(?:{numeric_level_prefix}{unit_before_amount}"
+        rf"{HOUSING_CURRENCY_AMOUNT_PATTERN}|从\s*{HOUSING_CURRENCY_AMOUNT_PATTERN}))",
+        lambda match: _housing_level(match.group("segment")),
+        value,
+    )
+
+    return re.sub(
+        HOUSING_PRICE_TERM_PATTERN,
+        lambda match: _housing_subject(match.group("segment")),
+        value,
+    )
+
+
 def sanitize_zh_wording(text: str, *, context: str = "", for_title: bool = False) -> str:
     value = clean_text(text)
     if not value:
@@ -180,11 +460,16 @@ def sanitize_zh_wording(text: str, *, context: str = "", for_title: bool = False
         for pattern, replacement in CHINA_REPLACEMENTS:
             value = pattern.sub(replacement, value)
 
+    # Run this last so earlier crisis/China guards can first turn phrases such
+    # as 房价崩盘 into 房价承压; the final pass then removes the direct term.
+    value = neutralize_housing_price_wording(value)
+
     # Clean up awkward repeats after replacement.
     value = value.replace("承压承压", "承压")
     value = value.replace("变化变化", "变化")
     value = value.replace("配置配置", "配置")
     value = value.replace("资管管理", "资管")
+    value = value.replace("地产市场市场", "地产市场")
     value = re.sub(r"(流动性变化)(?:变化|压力)", r"\1", value)
     return clean_text(value)
 
@@ -243,7 +528,11 @@ def sanitize_clip_wording(plan: dict[str, Any], clip: dict[str, Any]) -> None:
             title_highlights = [line for line in clip["title_lines"][1:3] if line][:2]
         clip["title_highlights"] = title_highlights
     if isinstance(clip.get("comment_highlights"), list):
-        clip["comment_highlights"] = _sanitize_list(clip["comment_highlights"], context=context, for_title=False)
+        comment = str(clip.get("comment", ""))
+        clip["comment_highlights"] = [
+            item for item in _sanitize_list(clip["comment_highlights"], context=context, for_title=False)
+            if item and (not comment or item in comment)
+        ]
 
     subtitles = clip.get("subtitles")
     if isinstance(subtitles, list):
@@ -269,7 +558,14 @@ def sanitize_clip_wording(plan: dict[str, Any], clip: dict[str, Any]) -> None:
             if "comment" in item:
                 item["comment"] = sanitize_zh_wording(str(item.get("comment", "")), context=context)
             if isinstance(item.get("comment_highlights"), list):
-                item["comment_highlights"] = _sanitize_list(item["comment_highlights"], context=context, for_title=False)
+                comment = str(item.get("comment", ""))
+                item["comment_highlights"] = [
+                    highlight
+                    for highlight in _sanitize_list(
+                        item["comment_highlights"], context=context, for_title=False
+                    )
+                    if highlight and (not comment or highlight in comment)
+                ]
 
 
 def sanitize_plan_wording(plan: dict[str, Any]) -> dict[str, Any]:
