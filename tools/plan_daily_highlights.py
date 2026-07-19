@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from plan_speaker_highlights import NO_ELIGIBLE_CLIPS_EXIT_CODE
+from title_refinement_status import read_title_refinement_status
 from trump_filter import remove_trump_clips_from_plan
 
 
@@ -243,7 +244,16 @@ def refine_titles_or_restore_planner_plan(plan_path: Path, refiner: Path) -> str
     original_plan = plan_path.read_text(encoding="utf-8")
     proc = run_and_stream([sys.executable, str(refiner), "--plan", str(plan_path)])
     if proc.returncode == 0:
-        return "refined"
+        try:
+            return read_title_refinement_status(plan_path)
+        except (OSError, json.JSONDecodeError, ValueError) as exc:
+            plan_path.write_text(original_plan, encoding="utf-8")
+            print(
+                f"::warning::Title refiner returned no valid status ({exc}); "
+                "using planner-generated titles.",
+                flush=True,
+            )
+            return "planner_fallback"
 
     output = proc.stdout or ""
     if is_no_eligible_clip_output(output):

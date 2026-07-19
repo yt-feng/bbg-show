@@ -504,6 +504,17 @@ class YouTubeDownloaderTests(unittest.TestCase):
 
 
 class TopVideoManifestTests(unittest.TestCase):
+    def test_sensitive_skip_detection_requires_a_terminal_marker(self) -> None:
+        mixed_technical_failure = (
+            "Removed 1 sensitive-topic clip(s) before title refinement\n"
+            "DeepSeek request timed out"
+        )
+
+        self.assertFalse(processor.is_sensitive_skip_output(mixed_technical_failure))
+        self.assertTrue(
+            processor.is_sensitive_skip_output("No non-sensitive-topic clips found in plan")
+        )
+
     def test_title_refinement_technical_failure_keeps_original_plan(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             plan_path = Path(tmp) / "plan.json"
@@ -511,9 +522,44 @@ class TopVideoManifestTests(unittest.TestCase):
             plan_path.write_text(original, encoding="utf-8")
             error = processor.subprocess.CalledProcessError(1, ["refiner"])
             with mock.patch.object(processor, "run", side_effect=error):
-                refined = processor.refine_title_or_keep_planner_title(plan_path)
+                status = processor.refine_title_or_keep_planner_title(plan_path)
 
-            self.assertFalse(refined)
+            self.assertEqual(status, "planner_fallback")
+            self.assertEqual(plan_path.read_text(encoding="utf-8"), original)
+
+    def test_title_refinement_reads_structured_status(self) -> None:
+        for expected in ("refined", "partial_refined", "planner_fallback"):
+            with self.subTest(expected=expected), tempfile.TemporaryDirectory() as tmp:
+                plan_path = Path(tmp) / "plan.json"
+                plan_path.write_text('{"clips": [{"title": "planner title"}]}', encoding="utf-8")
+
+                def successful_refiner(_command: list[str], **_kwargs: object) -> None:
+                    plan_path.write_text(
+                        json.dumps({
+                            "clips": [{"title": "publishable title"}],
+                            "title_refine": {"status": expected},
+                        }),
+                        encoding="utf-8",
+                    )
+
+                with mock.patch.object(processor, "run", side_effect=successful_refiner):
+                    status = processor.refine_title_or_keep_planner_title(plan_path)
+
+                self.assertEqual(status, expected)
+
+    def test_title_refinement_missing_status_restores_original_plan(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            plan_path = Path(tmp) / "plan.json"
+            original = '{"clips": [{"title": "planner title"}]}\n'
+            plan_path.write_text(original, encoding="utf-8")
+
+            def refiner_without_status(_command: list[str], **_kwargs: object) -> None:
+                plan_path.write_text('{"clips": [{"title": "untracked title"}]}', encoding="utf-8")
+
+            with mock.patch.object(processor, "run", side_effect=refiner_without_status):
+                status = processor.refine_title_or_keep_planner_title(plan_path)
+
+            self.assertEqual(status, "planner_fallback")
             self.assertEqual(plan_path.read_text(encoding="utf-8"), original)
 
     def test_title_refinement_sensitive_failure_is_not_swallowed(self) -> None:

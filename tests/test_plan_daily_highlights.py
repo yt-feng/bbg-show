@@ -322,6 +322,34 @@ class PlanDailyHighlightsTests(unittest.TestCase):
         self.assertEqual(status, "no_eligible_clips")
         self.assertEqual(remaining["clips"], [])
 
+    def test_title_refinement_reads_structured_partial_status(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            plan = root / "combined.json"
+            plan.write_text('{"clips": [{"title": "Planner title"}]}', encoding="utf-8")
+
+            def successful_refiner(_command: list[str]) -> subprocess.CompletedProcess[str]:
+                plan.write_text(
+                    json.dumps({
+                        "clips": [{"title": "Refined title"}, {"title": "Planner title"}],
+                        "title_refine": {"status": "partial_refined"},
+                    }),
+                    encoding="utf-8",
+                )
+                return subprocess.CompletedProcess(args=[], returncode=0, stdout="")
+
+            with mock.patch.object(
+                plan_daily_highlights,
+                "run_and_stream",
+                side_effect=successful_refiner,
+            ):
+                status = plan_daily_highlights.refine_titles_or_restore_planner_plan(
+                    plan,
+                    root / "refine_clip_titles.py",
+                )
+
+        self.assertEqual(status, "partial_refined")
+
     def test_main_keeps_planned_clips_when_title_quality_gate_fails(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -406,6 +434,7 @@ class PlanDailyHighlightsTests(unittest.TestCase):
                 duplicate = dict(combined["clips"][0])
                 duplicate["title"] = "Different refined title"
                 combined["clips"].append(duplicate)
+                combined["title_refine"] = {"status": "refined"}
                 combined_path.write_text(json.dumps(combined), encoding="utf-8")
                 return subprocess.CompletedProcess(args=command, returncode=0, stdout="")
 
