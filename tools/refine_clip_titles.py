@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -29,9 +29,20 @@ TITLE_MAX_CHARS = 36
 DEFAULT_BATCH_SIZE = 4
 DEFAULT_MAX_SUBTITLES = 24
 DEFAULT_LOOKUP_MAX_QUERIES = 12
-DEFAULT_LOOKUP_RESULTS_PER_QUERY = 3
+DEFAULT_LOOKUP_RESULTS_PER_QUERY = 5
+DEFAULT_TAVILY_BATCH_QUERY_BUDGET = 6
+DEFAULT_TAVILY_SINGLE_CLIP_QUERY_BUDGET = 1
 TITLE_QUALITY_MIN_SCORE = 78
-TITLE_RESEARCH_VERSION = "emotion-polarity-v2"
+TITLE_RESEARCH_VERSION = "tavily-entity-facts-v4"
+TITLE_REFINEMENT_TECHNICAL_ERRORS = (
+    SystemExit,
+    TimeoutError,
+    OSError,
+    ValueError,
+    TypeError,
+    KeyError,
+    IndexError,
+)
 TITLE_EMOTION_POLES = {
     "意外",
     "惊喜",
@@ -121,7 +132,12 @@ CHINA_NEGATIVE_FRAMING_REPLACEMENTS = (
     (re.compile(r"(?:惨败|失败|输麻了)"), "遇挑战"),
     (re.compile(r"(?:很惨|太惨|惨了)"), "承压"),
 )
+LEGAL_NAME_SENSITIVE_TERM_RE = re.compile(
+    r"(?:资产管理|投资|保险|基金|证券)"
+    r"(?=[\u4e00-\u9fff（）()·]{0,12}(?:有限责任公司|股份有限公司|集团有限公司|有限公司|集团))"
+)
 PUBLIC_SEARCH_URL = "https://lite.duckduckgo.com/lite/"
+TAVILY_SEARCH_URL = "https://api.tavily.com/search"
 PUBLIC_SEARCH_USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -166,6 +182,10 @@ GENERIC_ENTITY_STOPWORDS = {
     "Officer",
     "CIO",
     "CEO",
+    "Duration",
+    "Technology",
+    "Interview",
+    "Report",
 }
 ENTITY_CANDIDATE_REJECT_WORDS = {
     "Says",
@@ -175,7 +195,6 @@ ENTITY_CANDIDATE_REJECT_WORDS = {
     "Tied",
     "Weak",
     "Strong",
-    "May",
     "Might",
     "Have",
     "Has",
@@ -194,6 +213,8 @@ ENTITY_CANDIDATE_REJECT_WORDS = {
     "How",
     "What",
     "When",
+    "Duration",
+    "Hard",
 }
 COMMON_TRADITIONAL_TO_SIMPLIFIED = str.maketrans({
     "灝": "灏",
@@ -236,8 +257,8 @@ def strip_title_badges(text: str) -> str:
 def compact_text(text: str, max_chars: int) -> str:
     value = safe_zh(to_simplified_common(strip_title_badges(text)))
     value = sanitize_zh_wording(value, for_title=True)
+    value = re.sub(r"^(?:标题|观点|看点|结论)\s*[：:]?\s*", "", value)
     value = value.replace("：", "").replace(":", "")
-    value = re.sub(r"^(?:标题|观点|看点|结论)\s*[：:]\s*", "", value)
     value = value.strip(" ，,。；;、｜|-")
     if len(value) <= max_chars:
         return value
@@ -411,11 +432,21 @@ def title_quality_audit(
             score -= 12
             fixes.append("make_china_direction_constructive_or_positive")
 
-    if any(len(str(line)) > TITLE_LINE_LIMITS[min(idx, 2)] for idx, line in enumerate(lines[:3])):
+    has_three_lines = len(lines) == 3 and all(clean_text(str(line)) for line in lines)
+    if not has_three_lines:
+        score -= 12
+        fixes.append("return_exactly_three_nonempty_lines")
+
+    lines_within_limits = has_three_lines and all(
+        len(str(line)) <= TITLE_LINE_LIMITS[idx]
+        for idx, line in enumerate(lines)
+    )
+    if not lines_within_limits:
         score -= 8
         fixes.append("tighten_display_lines")
 
-    if len(title) > TITLE_MAX_CHARS:
+    title_within_limit = len(title) <= TITLE_MAX_CHARS
+    if not title_within_limit:
         score -= 10
         fixes.append("shorten_full_title")
 
@@ -512,6 +543,9 @@ def title_quality_audit(
         and not has_unsupported_position_change
         and not has_unsupported_words_actions
         and not has_incomplete_tension
+        and has_three_lines
+        and lines_within_limits
+        and title_within_limit
     )
     if is_china_related_clip(clip):
         semantic_pass = semantic_pass and china_resonance >= 8
@@ -594,34 +628,38 @@ def entity_candidates_from_text(text: str) -> list[str]:
     if not value or not has_ascii_letter(value):
         return []
 
+    name_token = r"(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.-]+|[A-Z]{2,})"
     patterns = [
-        r"\b(?:[A-Z][a-z]+|[A-Z]{2,})(?:\s+(?:[A-Z][a-z]+|[A-Z]{2,}|&|and|of|the|[A-Z][a-z]+\.?)){0,5}",
+        rf"\b{name_token}(?:\s+(?:{name_token}|&|and|of|the)){{0,5}}",
         r"\b[A-Z]{2,}(?:\s+[A-Z]{2,}){0,4}\b",
     ]
     candidates: list[str] = []
+
+    def add_candidate(candidate: str) -> None:
+        candidate = clean_text(candidate.strip(" -:|,.;()[]"))
+        if len(candidate) < 2:
+            return
+        words = [word.strip(".,") for word in re.split(r"\s+", candidate) if word]
+        if not words or all(word in GENERIC_ENTITY_STOPWORDS for word in words):
+            return
+        if any(word in ENTITY_CANDIDATE_REJECT_WORDS for word in words):
+            return
+        if candidate not in candidates:
+            candidates.append(candidate)
+
     for pattern in patterns:
         for match in re.finditer(pattern, value):
             candidate = clean_text(match.group(0).strip(" -:|,.;()[]"))
-            if len(candidate) < 2:
+            person_at_org = re.fullmatch(
+                rf"(?P<person>{name_token}(?:\s+{name_token}){{1,2}})\s+(?:of|at)\s+(?P<org>.+)",
+                candidate,
+            )
+            if person_at_org:
+                add_candidate(person_at_org.group("person"))
+                add_candidate(person_at_org.group("org"))
                 continue
-            words = [word for word in re.split(r"\s+", candidate) if word]
-            if not words:
-                continue
-            if all(word in GENERIC_ENTITY_STOPWORDS for word in words):
-                continue
-            if any(word in ENTITY_CANDIDATE_REJECT_WORDS for word in words):
-                continue
-            if candidate not in candidates:
-                candidates.append(candidate)
+            add_candidate(candidate)
     return candidates
-
-
-def add_query(queries: list[str], seen: set[str], query: str, max_queries: int) -> None:
-    query = clean_text(query)
-    if not query or query in seen or len(queries) >= max_queries:
-        return
-    seen.add(query)
-    queries.append(query)
 
 
 def compact_research_briefs(briefs: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -699,7 +737,7 @@ def parse_research_queries(
         return []
 
     planned: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    by_query: dict[str, dict[str, Any]] = {}
     allowed_purposes = {
         "entity_name",
         "consensus",
@@ -713,9 +751,6 @@ def parse_research_queries(
         if not isinstance(raw, dict):
             continue
         query = clean_text(str(raw.get("query", "")))[:220]
-        key = query.casefold()
-        if len(query) < 4 or key in seen:
-            continue
         purpose = clean_text(str(raw.get("purpose", "consensus")))
         if purpose not in allowed_purposes:
             purpose = "consensus"
@@ -730,55 +765,102 @@ def parse_research_queries(
                 continue
             if index in valid_indexes and index not in indexes:
                 indexes.append(index)
-        planned.append({
+        key = query.casefold()
+        if (
+            len(query) < 4
+            or not indexes
+            or re.search(r"\b(?:Bloomberg|Duration|Hard)\b", query, re.IGNORECASE)
+        ):
+            continue
+        existing = by_query.get(key)
+        if existing is not None:
+            existing["clip_indexes"] = list(dict.fromkeys([*existing["clip_indexes"], *indexes]))
+            if purpose == "entity_name":
+                existing["purpose"] = purpose
+            if not existing.get("why"):
+                existing["why"] = clean_text(str(raw.get("why", "")))[:240]
+            continue
+        if len(planned) >= max_queries:
+            continue
+        item = {
             "query": query,
             "purpose": purpose,
             "clip_indexes": indexes,
             "why": clean_text(str(raw.get("why", "")))[:240],
-        })
-        seen.add(key)
-        if len(planned) >= max_queries:
-            break
+        }
+        planned.append(item)
+        by_query[key] = item
     return planned
 
 
-def public_lookup_queries(briefs: list[dict[str, Any]], max_queries: int) -> list[str]:
-    queries: list[str] = []
-    seen: set[str] = set()
+def public_lookup_queries(briefs: list[dict[str, Any]], max_queries: int) -> list[dict[str, Any]]:
+    queries: list[dict[str, Any]] = []
+    by_query: dict[str, dict[str, Any]] = {}
+
+    def add_scoped_query(query: str, clip_index: int, why: str) -> None:
+        query = clean_text(query)
+        key = query.casefold()
+        if not query:
+            return
+        existing = by_query.get(key)
+        if existing is not None:
+            if clip_index not in existing["clip_indexes"]:
+                existing["clip_indexes"].append(clip_index)
+            return
+        if len(queries) >= max_queries:
+            return
+        item = {
+            "query": query,
+            "purpose": "entity_name",
+            "clip_indexes": [clip_index],
+            "why": why,
+        }
+        queries.append(item)
+        by_query[key] = item
 
     for brief in briefs:
+        try:
+            clip_index = int(brief.get("index", 0))
+        except (TypeError, ValueError):
+            continue
+        if clip_index < 1:
+            continue
         speaker = clean_text(str(brief.get("speaker", "")))
         context = clean_text(str(brief.get("speaker_context", "")))
+        context_entities = entity_candidates_from_text(context)
 
-        if has_ascii_letter(speaker) and has_ascii_letter(context):
-            add_query(queries, seen, f"{speaker} {context} Chinese name official", max_queries)
+        if has_ascii_letter(speaker) and context_entities:
+            add_scoped_query(
+                f"{speaker} {context_entities[0]} established Chinese name title official",
+                clip_index,
+                "Verify the person's commonly used Chinese name and institution.",
+            )
         if has_ascii_letter(speaker):
-            add_query(queries, seen, f"{speaker} Chinese name finance", max_queries)
+            add_scoped_query(
+                f"{speaker} established Chinese name financial media",
+                clip_index,
+                "Verify whether a reliable common Chinese display name exists.",
+            )
         if len(queries) >= max_queries:
             return queries
 
     for brief in briefs:
-        speaker = clean_text(str(brief.get("speaker", "")))
+        try:
+            clip_index = int(brief.get("index", 0))
+        except (TypeError, ValueError):
+            continue
         context = clean_text(str(brief.get("speaker_context", "")))
         source_title = clean_text(str(brief.get("source_title", "")))
-        source_fields = [speaker, context, source_title]
+        source_fields = [context, source_title]
 
         for candidate in entity_candidates_from_text(" ".join(source_fields)):
-            add_query(queries, seen, f"{candidate} 中文名 官方", max_queries)
+            add_scoped_query(
+                f"{candidate} 官方中文名 常用简称",
+                clip_index,
+                "Verify the canonical and commonly displayed Chinese name.",
+            )
             if len(queries) >= max_queries:
                 return queries
-
-        if has_ascii_letter(source_title):
-            title_query = re.sub(
-                r"\b(?:Bloomberg|The China Show|Top Videos?|KC桌面|Video)\b",
-                " ",
-                source_title,
-                flags=re.IGNORECASE,
-            )
-            title_query = clean_text(title_query)
-            if title_query:
-                add_query(queries, seen, f"{title_query[:160]} 中文 名称", max_queries)
-
         if len(queries) >= max_queries:
             break
     return queries
@@ -806,23 +888,24 @@ def plan_public_research_queries(
             max_queries=max_queries,
             valid_indexes=valid_indexes,
         )
-    except SystemExit as exc:
+    except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
         print(f"Research query planning failed; using entity lookup fallback: {exc}", flush=True)
         planned = []
 
-    seen = {str(item["query"]).casefold() for item in planned}
-    for query in public_lookup_queries(briefs, max_queries):
+    by_query = {str(item["query"]).casefold(): item for item in planned}
+    for query_plan in public_lookup_queries(briefs, max_queries):
+        query = str(query_plan["query"])
+        existing = by_query.get(query.casefold())
+        if existing is not None:
+            existing["clip_indexes"] = list(dict.fromkeys([
+                *existing.get("clip_indexes", []),
+                *query_plan.get("clip_indexes", []),
+            ]))
+            continue
         if len(planned) >= max_queries:
             break
-        if query.casefold() in seen:
-            continue
-        planned.append({
-            "query": query,
-            "purpose": "entity_name",
-            "clip_indexes": [],
-            "why": "Fallback query for established Chinese entity names.",
-        })
-        seen.add(query.casefold())
+        planned.append(query_plan)
+        by_query[query.casefold()] = query_plan
     return planned
 
 
@@ -843,6 +926,8 @@ def parse_public_search_results(page: str, max_results: int) -> list[dict[str, s
         title = html_to_text(match.group("title"))
         snippet = html_to_text(match.group("snippet"))
         url = html_to_text(match.group("url"))
+        if url and not urlparse(url).scheme:
+            url = "https://" + url.lstrip("/")
         if not title and not snippet:
             continue
         results.append({
@@ -855,34 +940,189 @@ def parse_public_search_results(page: str, max_results: int) -> list[dict[str, s
     return results
 
 
-def search_public_web(query: str, max_results: int) -> list[dict[str, str]]:
+def search_public_web(query: str, max_results: int) -> list[dict[str, Any]]:
     url = PUBLIC_SEARCH_URL + "?" + urlencode({"q": query})
     req = Request(url, headers={"User-Agent": PUBLIC_SEARCH_USER_AGENT})
     with urlopen(req, timeout=20) as resp:
         page = resp.read(700_000).decode("utf-8", "replace")
-    return parse_public_search_results(page, max_results)
+    results: list[dict[str, Any]] = []
+    for item in parse_public_search_results(page, max_results):
+        results.append({
+            **item,
+            "provider": "duckduckgo",
+            "domain": urlparse(item.get("url", "")).netloc,
+            "score": None,
+            "published_date": "",
+        })
+    return results
+
+
+def parse_tavily_search_results(payload: dict[str, Any], max_results: int) -> list[dict[str, Any]]:
+    raw_results = payload.get("results")
+    if not isinstance(raw_results, list):
+        return []
+    results: list[dict[str, Any]] = []
+    for raw in raw_results:
+        if not isinstance(raw, dict):
+            continue
+        title = clean_text(str(raw.get("title", "")))[:200]
+        content = clean_text(str(raw.get("content", "")))[:900]
+        url = clean_text(str(raw.get("url", "")))[:500]
+        if not url or (not title and not content):
+            continue
+        try:
+            score = round(float(raw.get("score", 0)), 4)
+        except (TypeError, ValueError):
+            score = 0.0
+        results.append({
+            "title": title,
+            "snippet": content,
+            "url": url,
+            "provider": "tavily",
+            "domain": urlparse(url).netloc,
+            "score": score,
+            "published_date": clean_text(str(raw.get("published_date", "")))[:40],
+        })
+        if len(results) >= max_results:
+            break
+    return results
+
+
+def search_tavily(
+    query: str,
+    max_results: int,
+    api_key: str,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    request_body = json.dumps({
+        "query": query,
+        "topic": "general",
+        "search_depth": "basic",
+        "max_results": max_results,
+        "include_answer": False,
+        "include_raw_content": False,
+        "include_images": False,
+        "include_usage": True,
+    }).encode("utf-8")
+    req = Request(
+        TAVILY_SEARCH_URL,
+        data=request_body,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": "bbg-show-title-research/1.0",
+        },
+        method="POST",
+    )
+    with urlopen(req, timeout=20) as resp:
+        payload = json.loads(resp.read(1_500_000).decode("utf-8", "replace"))
+    if not isinstance(payload, dict):
+        raise ValueError("Tavily returned a non-object response")
+    usage = payload.get("usage")
+    if not isinstance(usage, dict):
+        usage = {}
+    try:
+        credits = max(0, int(usage.get("credits", 1)))
+    except (TypeError, ValueError):
+        credits = 1
+    return parse_tavily_search_results(payload, max_results), {
+        "provider": "tavily",
+        "request_id": clean_text(str(payload.get("request_id", "")))[:100],
+        "credits": credits,
+    }
+
+
+def tavily_query_indexes(query_plans: list[dict[str, Any]], max_queries: int) -> set[int]:
+    if max_queries < 1:
+        return set()
+    ranked = sorted(
+        enumerate(query_plans),
+        key=lambda item: (0 if item[1].get("purpose") == "entity_name" else 1, item[0]),
+    )
+    selected: set[int] = set()
+    covered_clips: set[int] = set()
+    # Give each clip one high-value lookup before spending a second credit on any clip.
+    for index, query_plan in ranked:
+        indexes = query_plan.get("clip_indexes")
+        if not isinstance(indexes, list) or not indexes:
+            continue
+        clip_indexes = set(parse_positive_indexes(indexes))
+        if not clip_indexes or clip_indexes <= covered_clips:
+            continue
+        selected.add(index)
+        covered_clips.update(clip_indexes)
+        if len(selected) >= max_queries:
+            return selected
+    for index, query_plan in ranked:
+        if index in selected:
+            continue
+        indexes = query_plan.get("clip_indexes")
+        if not isinstance(indexes, list) or not indexes:
+            continue
+        selected.add(index)
+        if len(selected) >= max_queries:
+            break
+    return selected
 
 
 def public_entity_lookup(
     query_plans: list[dict[str, Any]],
     *,
     results_per_query: int,
+    tavily_api_key: str = "",
+    tavily_max_queries: int = 0,
+    usage: dict[str, int] | None = None,
 ) -> list[dict[str, Any]]:
     lookups: list[dict[str, Any]] = []
     if not query_plans or results_per_query < 1:
         return lookups
 
-    def fetch(query_plan: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    tavily_indexes = tavily_query_indexes(query_plans, tavily_max_queries) if tavily_api_key else set()
+
+    def fetch(
+        index: int,
+        query_plan: dict[str, Any],
+    ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
         query = clean_text(str(query_plan.get("query", "")))
         if not query:
-            return query_plan, []
-        return query_plan, search_public_web(query, results_per_query)
+            return query_plan, [], {"provider": "none", "request_id": "", "credits": 0}
+        metadata: dict[str, Any] = {
+            "provider": "duckduckgo",
+            "request_id": "",
+            "credits": 0,
+            "tavily_attempted": False,
+            "tavily_request_id": "",
+            "tavily_credits": 0,
+        }
+        if index in tavily_indexes:
+            metadata["tavily_attempted"] = True
+            try:
+                results, tavily_metadata = search_tavily(query, results_per_query, tavily_api_key)
+                metadata["tavily_request_id"] = tavily_metadata.get("request_id", "")
+                metadata["tavily_credits"] = int(tavily_metadata.get("credits", 1) or 0)
+                if results:
+                    metadata.update({
+                        "provider": "tavily",
+                        "request_id": metadata["tavily_request_id"],
+                        "credits": metadata["tavily_credits"],
+                    })
+                    return query_plan, results, metadata
+                print(f"Tavily returned no results for {query!r}; trying public-search fallback", flush=True)
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, json.JSONDecodeError) as exc:
+                # A timeout may occur after Tavily accepted the request, so account for it conservatively.
+                metadata["tavily_credits"] = 1
+                print(f"Tavily lookup failed for {query!r}; trying public-search fallback: {exc}", flush=True)
+        try:
+            results = search_public_web(query, results_per_query)
+        except (HTTPError, URLError, TimeoutError, OSError, ValueError, json.JSONDecodeError) as exc:
+            metadata["fallback_error"] = str(exc)[:240]
+            results = []
+        return query_plan, results, metadata
 
     found_by_index: dict[int, dict[str, Any]] = {}
     worker_count = min(3, len(query_plans))
     with ThreadPoolExecutor(max_workers=worker_count) as pool:
         futures = {
-            pool.submit(fetch, query_plan): index
+            pool.submit(fetch, index, query_plan): index
             for index, query_plan in enumerate(query_plans)
         }
         for future in as_completed(futures):
@@ -892,19 +1132,36 @@ def public_entity_lookup(
             if not query:
                 continue
             try:
-                _, results = future.result()
-            except (HTTPError, URLError, TimeoutError, OSError) as exc:
+                _, results, metadata = future.result()
+            except (HTTPError, URLError, TimeoutError, OSError, ValueError, json.JSONDecodeError) as exc:
                 print(f"Public lookup failed for {query!r}: {exc}", flush=True)
                 continue
+            if usage is not None:
+                usage["tavily_queries"] = usage.get("tavily_queries", 0) + int(
+                    bool(metadata.get("tavily_attempted"))
+                )
+                usage["tavily_credits"] = usage.get("tavily_credits", 0) + int(
+                    metadata.get("tavily_credits", 0) or 0
+                )
+                usage["fallback_queries"] = usage.get("fallback_queries", 0) + int(
+                    metadata.get("provider") == "duckduckgo"
+                )
             if not results:
                 print(f"Public lookup returned no results for {query!r}", flush=True)
                 continue
-            print(f"Public lookup: {query!r} -> {len(results)} result(s)", flush=True)
+            provider = str(metadata.get("provider", "public"))
+            print(f"Public lookup via {provider}: {query!r} -> {len(results)} result(s)", flush=True)
             found_by_index[index] = {
                 "query": query,
                 "purpose": query_plan.get("purpose", "consensus"),
                 "clip_indexes": query_plan.get("clip_indexes", []),
                 "why": query_plan.get("why", ""),
+                "provider": provider,
+                "request_id": metadata.get("request_id", ""),
+                "credits": metadata.get("credits", 0),
+                "tavily_attempted": bool(metadata.get("tavily_attempted")),
+                "tavily_request_id": metadata.get("tavily_request_id", ""),
+                "tavily_credits": metadata.get("tavily_credits", 0),
                 "results": results,
             }
 
@@ -938,11 +1195,30 @@ Return JSON:
     {{
       "source_text": "English or original entity",
       "entity_type": "person|organization|company|place|event|other",
-      "preferred_en": "canonical English name if available",
-      "preferred_zh": "established Simplified Chinese name",
-      "aliases": ["wrong or alternate Chinese/English mentions to replace"],
+      "clip_indexes": [1],
+      "canonical_en": "canonical English name if available",
+      "official_zh": "formal Simplified Chinese name, or empty",
+      "common_zh": "name most commonly used by Chinese financial media, or empty",
+      "title_label": "short natural label safe for a video title, or original English/empty",
+      "aliases": ["only demonstrably wrong variants that are safe to replace"],
       "confidence": "high|medium|low",
+      "verified_source_count": 0,
+      "evidence_urls": ["https://source.example"],
       "evidence": "short reason from public snippets"
+    }}
+  ],
+  "terms": [
+    {{
+      "source_term": "NIL",
+      "clip_indexes": [1],
+      "context": "US college sports",
+      "sense": "name, image and likeness rights",
+      "preferred_zh": "姓名、形象与肖像权",
+      "title_label": "NIL权益",
+      "avoid_zh": ["likeness权"],
+      "confidence": "high|medium|low",
+      "verified_source_count": 0,
+      "evidence_urls": ["https://source.example"]
     }}
   ],
   "clip_research": [
@@ -985,10 +1261,15 @@ Return JSON:
 Rules:
 - This is generic. Do not rely on a fixed list of names.
 - Prefer official company pages, major financial media, Wikipedia/Wikidata-style summaries, and exact bilingual snippets.
-- If public snippets show Traditional Chinese, convert to Simplified Chinese in preferred_zh.
-- If there is not enough evidence for a Chinese name, set confidence to low and leave preferred_zh empty or use the original English name.
-- Include likely mistranslations from current titles in aliases only when the public evidence supports a better name.
-- Keep aliases short; they are used for string replacement.
+- Every entity and term must have non-empty clip_indexes. Never apply an entity from one clip to the whole batch.
+- Separate formal official_zh from common_zh and title_label. A legal corporate name is not automatically a good title label.
+- For a recognizable person or institution, title_label should be the shortest established Chinese form used by reliable Chinese financial media. Never expand a familiar short name into a longer formal name.
+- If no reliable Chinese common name exists, keep title_label in the original English or leave it empty so the title can lead with the topic. Never invent phonetic Chinese for a first name such as Eric, Sharon, or Steve.
+- confidence=high requires the same source identity and Chinese display form to co-occur in at least two independent reliable sources. medium also requires two supporting sources but may retain minor ambiguity. Otherwise use low.
+- verified_source_count and evidence_urls must count only sources that actually support the chosen label.
+- Include only demonstrably wrong variants in aliases. Do not put accepted common short names in aliases.
+- Use terms for domain-specific abbreviations and concepts. Resolve their meaning from that clip's context; never output mixed-language translations such as likeness权.
+- If public snippets show Traditional Chinese, convert title-facing labels to Simplified Chinese.
 - Build exactly one clip_research item for every input clip index.
 - source_claim must come from that clip's subtitles. Do not import a claim from another clip in the batch.
 - public_baseline and surprise_gap require relevant public snippets. Leave them empty when search returned no useful context.
@@ -1002,6 +1283,153 @@ Rules:
 """
 
 
+def clean_entity_label(value: Any, max_chars: int = 80) -> str:
+    """Clean a proper name without running title wording substitutions through it."""
+    if value is None:
+        return ""
+    label = clean_text(to_simplified_common(strip_title_badges(str(value))))
+    label = re.sub(r"[\x00-\x1f\x7f]", "", label).strip(" ，,。；;、｜|-")
+    return label if len(label) <= max_chars else ""
+
+
+def parse_positive_indexes(value: Any) -> list[int]:
+    if not isinstance(value, list):
+        return []
+    indexes: list[int] = []
+    for raw in value:
+        try:
+            index = int(raw)
+        except (TypeError, ValueError):
+            continue
+        if index > 0 and index not in indexes:
+            indexes.append(index)
+    return indexes[:20]
+
+
+def parse_evidence_urls(value: Any) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    urls: list[str] = []
+    for raw in value:
+        url = clean_text(str(raw))[:500]
+        if url.startswith(("https://", "http://")) and url not in urls:
+            urls.append(url)
+    return urls[:8]
+
+
+def normalize_confidence(value: Any) -> str:
+    confidence = clean_text(str(value)).lower()
+    return confidence if confidence in {"high", "medium", "low"} else "low"
+
+
+def verified_source_count(raw: dict[str, Any], urls: list[str]) -> int:
+    del raw  # Model-reported counts are not evidence.
+    return min(9, len({urlparse(url).netloc.lower() for url in urls if urlparse(url).netloc}))
+
+
+def normalized_evidence_url(value: Any) -> str:
+    url = clean_text(str(value))[:500]
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return ""
+    path = parsed.path.rstrip("/") or "/"
+    return f"{parsed.scheme.lower()}://{parsed.netloc.lower()}{path}"
+
+
+def evidence_match_key(value: Any) -> str:
+    return re.sub(
+        r"[\W_]+",
+        "",
+        to_simplified_common(clean_text(str(value))).casefold(),
+        flags=re.UNICODE,
+    )
+
+
+def validate_guide_evidence(
+    guide: dict[str, Any],
+    public_lookup: list[dict[str, Any]],
+    briefs: list[dict[str, Any]] | None = None,
+) -> None:
+    """Accept only scoped search URLs whose snippets contain the proposed display label."""
+    results_by_clip: dict[int, dict[str, str]] = {}
+    for lookup in public_lookup:
+        if not isinstance(lookup, dict):
+            continue
+        clip_indexes = parse_positive_indexes(lookup.get("clip_indexes"))
+        if not clip_indexes:
+            continue
+        for result in lookup.get("results", []):
+            if not isinstance(result, dict):
+                continue
+            url = normalized_evidence_url(result.get("url"))
+            if not url:
+                continue
+            evidence_text = evidence_match_key(
+                f"{result.get('title', '')} {result.get('snippet', '')}"
+            )
+            for clip_index in clip_indexes:
+                results_by_clip.setdefault(clip_index, {})[url] = evidence_text
+
+    brief_text_by_index: dict[int, str] = {}
+    for brief in briefs or []:
+        try:
+            clip_index = int(brief.get("index", 0))
+        except (AttributeError, TypeError, ValueError):
+            continue
+        brief_text_by_index[clip_index] = evidence_match_key(
+            json.dumps(brief, ensure_ascii=False)
+        )
+
+    for collection_name in ("entities", "terms"):
+        for item in guide.get(collection_name, []):
+            if not isinstance(item, dict):
+                continue
+            clip_indexes = parse_positive_indexes(item.get("clip_indexes"))
+            source_value = clean_entity_label(
+                item.get("source_text") if collection_name == "entities" else item.get("source_term")
+            )
+            source_key = evidence_match_key(source_value)
+            if brief_text_by_index:
+                clip_indexes = [
+                    clip_index
+                    for clip_index in clip_indexes
+                    if source_key and source_key in brief_text_by_index.get(clip_index, "")
+                ]
+                item["clip_indexes"] = clip_indexes
+            label = clean_entity_label(item.get("title_label") or item.get("common_zh") or item.get("preferred_zh"))
+            label_key = evidence_match_key(label)
+            source_keys = [source_key]
+            if collection_name == "entities":
+                source_keys.append(evidence_match_key(item.get("canonical_en")))
+            source_keys = [key for key in dict.fromkeys(source_keys) if key]
+            verified_urls_by_clip: dict[int, list[str]] = {}
+            if label_key and source_keys:
+                for clip_index in clip_indexes:
+                    for raw_url in item.get("evidence_urls", []):
+                        normalized_url = normalized_evidence_url(raw_url)
+                        if not normalized_url:
+                            continue
+                        evidence_text = results_by_clip.get(clip_index, {}).get(normalized_url, "")
+                        if (
+                            label_key in evidence_text
+                            and any(source_key in evidence_text for source_key in source_keys)
+                        ):
+                            verified_urls_by_clip.setdefault(clip_index, []).append(str(raw_url))
+            verified_indexes = [
+                clip_index
+                for clip_index in clip_indexes
+                if verified_source_count(item, verified_urls_by_clip.get(clip_index, [])) >= 2
+            ]
+            item["clip_indexes"] = verified_indexes
+            verified_urls = [
+                url
+                for clip_index in verified_indexes
+                for url in verified_urls_by_clip.get(clip_index, [])
+            ]
+            item["evidence_urls"] = list(dict.fromkeys(verified_urls))[:8]
+            item["verified_source_count"] = verified_source_count(item, item["evidence_urls"])
+
+
 def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
     raw_entities = result.get("entities")
     if not isinstance(raw_entities, list):
@@ -1011,27 +1439,72 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
     for raw in raw_entities:
         if not isinstance(raw, dict):
             continue
-        preferred_zh = compact_text(str(raw.get("preferred_zh", "")), 24)
-        preferred_en = clean_text(str(raw.get("preferred_en", "")))[:80]
-        source_text = clean_text(str(raw.get("source_text", "")))[:80]
-        if not preferred_zh and not preferred_en:
+        canonical_en = clean_entity_label(raw.get("canonical_en") or raw.get("preferred_en"))
+        source_text = clean_entity_label(raw.get("source_text"))
+        official_zh = clean_entity_label(raw.get("official_zh"))
+        common_zh = clean_entity_label(raw.get("common_zh") or raw.get("preferred_zh"))
+        title_label = clean_entity_label(raw.get("title_label") or common_zh)
+        if not source_text and not canonical_en:
             continue
+        accepted_labels = {item for item in (official_zh, common_zh, title_label) if item}
         aliases = raw.get("aliases", [])
         if not isinstance(aliases, list):
             aliases = []
         clean_aliases: list[str] = []
         for alias in aliases:
-            value = clean_text(to_simplified_common(str(alias)))
-            if value and value not in clean_aliases and value != preferred_zh:
-                clean_aliases.append(value[:40])
+            value = clean_entity_label(alias, 40)
+            if value and value not in clean_aliases and value not in accepted_labels:
+                clean_aliases.append(value)
+        evidence_urls = parse_evidence_urls(raw.get("evidence_urls"))
         entities.append({
             "source_text": source_text,
             "entity_type": clean_text(str(raw.get("entity_type", "other")))[:24] or "other",
-            "preferred_en": preferred_en,
-            "preferred_zh": preferred_zh,
+            "clip_indexes": parse_positive_indexes(raw.get("clip_indexes")),
+            "canonical_en": canonical_en,
+            "preferred_en": canonical_en,
+            "official_zh": official_zh,
+            "common_zh": common_zh,
+            "title_label": title_label,
+            "preferred_zh": common_zh,
             "aliases": clean_aliases[:8],
-            "confidence": clean_text(str(raw.get("confidence", "low")))[:12] or "low",
+            "confidence": normalize_confidence(raw.get("confidence")),
+            "verified_source_count": verified_source_count(raw, evidence_urls),
+            "evidence_urls": evidence_urls,
             "evidence": clean_text(str(raw.get("evidence", "")))[:260],
+        })
+
+    raw_terms = result.get("terms")
+    if not isinstance(raw_terms, list):
+        raw_terms = []
+    terms: list[dict[str, Any]] = []
+    for raw in raw_terms:
+        if not isinstance(raw, dict):
+            continue
+        source_term = clean_entity_label(raw.get("source_term"), 60)
+        preferred_zh = clean_entity_label(raw.get("preferred_zh"), 80)
+        title_label = clean_entity_label(raw.get("title_label") or preferred_zh, 60)
+        if not source_term or not title_label:
+            continue
+        avoid_zh = raw.get("avoid_zh")
+        if not isinstance(avoid_zh, list):
+            avoid_zh = []
+        clean_avoid = [
+            value
+            for item in avoid_zh
+            if (value := clean_entity_label(item, 60)) and value != title_label
+        ][:8]
+        evidence_urls = parse_evidence_urls(raw.get("evidence_urls"))
+        terms.append({
+            "source_term": source_term,
+            "clip_indexes": parse_positive_indexes(raw.get("clip_indexes")),
+            "context": clean_text(str(raw.get("context", "")))[:180],
+            "sense": clean_text(str(raw.get("sense", "")))[:240],
+            "preferred_zh": preferred_zh,
+            "title_label": title_label,
+            "avoid_zh": clean_avoid,
+            "confidence": normalize_confidence(raw.get("confidence")),
+            "verified_source_count": verified_source_count(raw, evidence_urls),
+            "evidence_urls": evidence_urls,
         })
 
     raw_clip_research = result.get("clip_research")
@@ -1123,6 +1596,7 @@ def parse_entity_guide(result: dict[str, Any]) -> dict[str, Any]:
     return {
         "research_version": TITLE_RESEARCH_VERSION,
         "entities": entities,
+        "terms": terms,
         "clip_research": clip_research,
         "notes": [clean_text(str(note))[:180] for note in notes if clean_text(str(note))][:8],
     }
@@ -1134,13 +1608,18 @@ def build_entity_translation_guide(
     public_lookup: list[dict[str, Any]],
 ) -> dict[str, Any]:
     print("Building entity and editorial research guide with DeepSeek", flush=True)
-    result = ask_deepseek(
-        api_key,
-        entity_guide_system_prompt(),
-        entity_guide_user_prompt(compact_research_briefs(briefs), public_lookup),
-        temperature=0.1,
-    )
+    try:
+        result = ask_deepseek(
+            api_key,
+            entity_guide_system_prompt(),
+            entity_guide_user_prompt(compact_research_briefs(briefs), public_lookup),
+            temperature=0.1,
+        )
+    except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
+        print(f"Entity research guide failed; continuing without name substitutions: {exc}", flush=True)
+        result = {}
     guide = parse_entity_guide(result)
+    validate_guide_evidence(guide, public_lookup, briefs)
     existing_indexes = {
         int(item.get("index", 0))
         for item in guide.get("clip_research", [])
@@ -1190,40 +1669,219 @@ def build_entity_translation_guide(
     return guide
 
 
-def entity_replacement_pairs(entity_guide: dict[str, Any]) -> list[tuple[str, str]]:
+def guide_item_applies_to_clip(item: dict[str, Any], clip_index: int | None) -> bool:
+    raw_indexes = item.get("clip_indexes")
+    if not isinstance(raw_indexes, list) or not raw_indexes or clip_index is None:
+        return False
+    try:
+        return clip_index in {int(value) for value in raw_indexes}
+    except (TypeError, ValueError):
+        return False
+
+
+def guide_item_is_verified(item: dict[str, Any]) -> bool:
+    confidence = normalize_confidence(item.get("confidence"))
+    evidence_urls = parse_evidence_urls(item.get("evidence_urls"))
+    evidence_domains = {
+        urlparse(url).netloc.lower()
+        for url in evidence_urls
+        if urlparse(url).netloc
+    }
+    try:
+        source_count = int(item.get("verified_source_count", 0) or 0)
+    except (TypeError, ValueError):
+        source_count = 0
+    source_count = min(source_count, len(evidence_domains))
+    return confidence in {"high", "medium"} and source_count >= 2
+
+
+def entity_replacement_pairs(
+    entity_guide: dict[str, Any],
+    clip_index: int | None = None,
+) -> list[tuple[str, str]]:
     pairs: list[tuple[str, str]] = []
     for entity in entity_guide.get("entities", []):
-        if not isinstance(entity, dict):
+        if (
+            not isinstance(entity, dict)
+            or not guide_item_applies_to_clip(entity, clip_index)
+            or not guide_item_is_verified(entity)
+        ):
             continue
-        preferred = clean_text(str(entity.get("preferred_zh", "")))
+        preferred = clean_entity_label(
+            entity.get("title_label") or entity.get("common_zh") or entity.get("preferred_zh"),
+            60,
+        )
         if not preferred:
             continue
-        aliases = entity.get("aliases", [])
-        if not isinstance(aliases, list):
-            aliases = []
+        raw_aliases = entity.get("aliases", [])
+        if not isinstance(raw_aliases, list):
+            raw_aliases = []
+        entity_type = clean_text(str(entity.get("entity_type", "other"))).lower()
+        aliases: list[Any] = []
+        for field in ("source_text", "canonical_en"):
+            source_label = clean_entity_label(entity.get(field), 80)
+            if (
+                source_label
+                and not has_ascii_letter(source_label)
+                and entity_type != "person"
+                and len(source_label) < 6
+            ):
+                continue
+            aliases.append(source_label)
+        aliases.extend([entity.get("official_zh"), entity.get("common_zh")])
+        for alias in raw_aliases:
+            alias_text = clean_entity_label(alias, 80)
+            # Chinese organization aliases have no word boundary. Require a distinctive
+            # long form; short person aliases remain useful for correcting bad transliterations.
+            if (
+                alias_text
+                and not has_ascii_letter(alias_text)
+                and entity_type != "person"
+                and len(alias_text) < 6
+            ):
+                continue
+            aliases.append(alias)
         for alias in aliases:
-            alias_text = clean_text(str(alias))
+            alias_text = clean_entity_label(alias, 80)
             if alias_text and alias_text != preferred:
                 pairs.append((alias_text, preferred))
+
+    for term in entity_guide.get("terms", []):
+        if (
+            not isinstance(term, dict)
+            or not guide_item_applies_to_clip(term, clip_index)
+            or not guide_item_is_verified(term)
+        ):
+            continue
+        preferred = clean_entity_label(term.get("title_label") or term.get("preferred_zh"), 60)
+        aliases = term.get("avoid_zh", [])
+        if not isinstance(aliases, list):
+            aliases = []
+        source_term = clean_entity_label(term.get("source_term"), 80)
+        aliases = [source_term, *aliases]
+        if source_term and preferred.startswith(source_term) and preferred.endswith("权益"):
+            aliases.insert(0, f"{source_term}权")
+        for alias in aliases:
+            alias_text = clean_entity_label(alias, 80)
+            if alias_text and alias_text != preferred:
+                pairs.append((alias_text, preferred))
+
+    pairs = list(dict.fromkeys(pairs))
+    # Collapse replacement chains so one pass reaches a stable terminal display label.
+    target_by_alias = {alias.casefold(): preferred for alias, preferred in pairs}
+    collapsed: list[tuple[str, str]] = []
+    for alias, preferred in pairs:
+        seen = {alias.casefold()}
+        terminal = preferred
+        while terminal.casefold() in target_by_alias and terminal.casefold() not in seen:
+            seen.add(terminal.casefold())
+            terminal = target_by_alias[terminal.casefold()]
+        collapsed.append((alias, terminal))
+    pairs = list(dict.fromkeys(collapsed))
     pairs.sort(key=lambda item: len(item[0]), reverse=True)
     return pairs
 
 
-def apply_entity_replacements(text: str, entity_guide: dict[str, Any]) -> str:
+def apply_entity_replacements(
+    text: str,
+    entity_guide: dict[str, Any],
+    clip_index: int | None = None,
+) -> str:
     value = to_simplified_common(text)
-    for alias, preferred in entity_replacement_pairs(entity_guide):
-        if preferred.startswith(alias):
-            suffix = preferred[len(alias):]
-            if not suffix:
-                continue
-            value = re.sub(
-                re.escape(alias) + r"(?!" + re.escape(suffix) + r")",
-                lambda _: preferred,
+    pairs = entity_replacement_pairs(entity_guide, clip_index)
+    replacements: dict[str, str] = {}
+    for pair_index, (alias, preferred) in enumerate(pairs):
+        suffix_guard = ""
+        if preferred.casefold().startswith(alias.casefold()) and len(preferred) > len(alias):
+            suffix_guard = r"(?!" + re.escape(preferred[len(alias):]) + r")"
+        marker = f"ZXQENTITYREPLACEMENT{pair_index}QXZ"
+        replaced = False
+        if has_ascii_letter(alias) or re.search(r"\d", alias):
+            value, count = re.subn(
+                r"(?<![A-Za-z0-9])"
+                + re.escape(alias)
+                + suffix_guard
+                + r"(?![A-Za-z0-9])",
+                lambda _: marker,
                 value,
+                flags=re.IGNORECASE,
             )
-        else:
-            value = value.replace(alias, preferred)
+            replaced = count > 0
+        elif len(alias) >= 4:
+            value, count = re.subn(re.escape(alias) + suffix_guard, lambda _: marker, value)
+            replaced = count > 0
+        if replaced:
+            replacements[marker] = preferred
+    for marker, preferred in replacements.items():
+        value = value.replace(marker, preferred)
     return value
+
+
+def verified_display_labels(entity_guide: dict[str, Any], clip_index: int | None) -> list[str]:
+    labels: list[str] = []
+    for collection, fields in (
+        (entity_guide.get("entities", []), ("title_label",)),
+        (entity_guide.get("terms", []), ("title_label", "preferred_zh")),
+    ):
+        if not isinstance(collection, list):
+            continue
+        for item in collection:
+            if (
+                not isinstance(item, dict)
+                or not guide_item_applies_to_clip(item, clip_index)
+                or not guide_item_is_verified(item)
+            ):
+                continue
+            for field in fields:
+                label = clean_entity_label(item.get(field), 80)
+                if label and label not in labels:
+                    labels.append(label)
+                    break
+    return sorted(labels, key=len, reverse=True)
+
+
+def sanitize_entity_aware_copy(
+    text: str,
+    entity_guide: dict[str, Any],
+    clip_index: int | None,
+    *,
+    clip: dict[str, Any] | None = None,
+    for_title: bool = False,
+) -> str:
+    value = apply_entity_replacements(text, entity_guide, clip_index)
+    protected: dict[str, str] = {}
+    for index, label in enumerate(verified_display_labels(entity_guide, clip_index)):
+        if label not in value:
+            continue
+        marker = f"ZXQENTITYTOKEN{index}QXZ"
+        value = value.replace(label, marker)
+        protected[marker] = label
+
+    value = safe_zh(to_simplified_common(strip_title_badges(value)))
+    if for_title and clip is not None:
+        value = china_safe_title_text(value, clip)
+    for marker, label in protected.items():
+        value = value.replace(marker, label)
+    return clean_text(value)
+
+
+def clean_cover_line(
+    text: str,
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any],
+    clip_index: int | None,
+) -> str:
+    """Normalize a cover line without cutting a proper noun or numeric unit."""
+    value = sanitize_entity_aware_copy(
+        text,
+        entity_guide,
+        clip_index,
+        clip=clip,
+        for_title=True,
+    )
+    value = re.sub(r"^(?:标题|观点|看点|结论)\s*[：:]?\s*", "", value)
+    value = value.replace("：", "").replace(":", "")
+    return value.strip(" ，,。；;、｜|-")
 
 
 def research_for_indexes(entity_guide: dict[str, Any], indexes: set[int]) -> dict[str, Any]:
@@ -1239,7 +1897,20 @@ def research_for_indexes(entity_guide: dict[str, Any], indexes: set[int]) -> dic
             clip_research.append(item)
     return {
         "research_version": entity_guide.get("research_version", TITLE_RESEARCH_VERSION),
-        "entities": entity_guide.get("entities", []),
+        "entities": [
+            item
+            for item in entity_guide.get("entities", [])
+            if isinstance(item, dict)
+            and set(parse_positive_indexes(item.get("clip_indexes"))) & indexes
+            and guide_item_is_verified(item)
+        ],
+        "terms": [
+            item
+            for item in entity_guide.get("terms", [])
+            if isinstance(item, dict)
+            and set(parse_positive_indexes(item.get("clip_indexes"))) & indexes
+            and guide_item_is_verified(item)
+        ],
         "clip_research": clip_research,
         "notes": entity_guide.get("notes", []),
     }
@@ -1256,24 +1927,6 @@ def research_item_for_index(entity_guide: dict[str, Any], index: int) -> dict[st
         if item_index == index:
             return item
     return {}
-
-
-def lookups_for_indexes(public_lookup: list[dict[str, Any]], indexes: set[int]) -> list[dict[str, Any]]:
-    selected: list[dict[str, Any]] = []
-    for lookup in public_lookup:
-        raw_indexes = lookup.get("clip_indexes")
-        if not isinstance(raw_indexes, list) or not raw_indexes:
-            selected.append(lookup)
-            continue
-        lookup_indexes: set[int] = set()
-        for value in raw_indexes:
-            try:
-                lookup_indexes.add(int(value))
-            except (TypeError, ValueError):
-                continue
-        if lookup_indexes & indexes:
-            selected.append(lookup)
-    return selected
 
 
 def candidate_system_prompt() -> str:
@@ -1293,14 +1946,12 @@ def candidate_user_prompt(
     public_lookup: list[dict[str, Any]],
     entity_guide: dict[str, Any],
 ) -> str:
+    del public_lookup  # Raw snippets are used only to build the validated guide above.
     indexes = {int(brief["index"]) for brief in briefs}
     return f"""Create four genuinely different title candidates for every clip.
 
 Input clips:
 {json.dumps(briefs, ensure_ascii=False, indent=2)}
-
-Public lookup evidence:
-{json.dumps(lookups_for_indexes(public_lookup, indexes), ensure_ascii=False, indent=2)}
 
 Verified research guide:
 {json.dumps(research_for_indexes(entity_guide, indexes), ensure_ascii=False, indent=2)}
@@ -1361,6 +2012,7 @@ Writing rules:
 - angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.
 - Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].
 - If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.
+- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.
 - Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.
 - For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.
 - If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.
@@ -1474,6 +2126,7 @@ Editorial interpretation:
 - 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.
 - Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.
 - Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.
+- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.
 
 Title and display rules:
 - Style: {style}
@@ -1519,25 +2172,28 @@ def parse_items(result: dict[str, Any]) -> dict[int, dict[str, Any]]:
     return items
 
 
-def fallback_lines(clip: dict[str, Any], entity_guide: dict[str, Any] | None = None) -> list[str]:
+def fallback_lines(
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any] | None = None,
+    clip_index: int | None = None,
+) -> list[str]:
+    guide = entity_guide or {}
     lines = clip.get("title_lines")
     if isinstance(lines, list):
         cleaned = [
-            compact_text(
-                china_safe_title_text(apply_entity_replacements(str(line), entity_guide or {}), clip),
-                TITLE_LINE_LIMITS[min(idx, 2)],
-            )
-            for idx, line in enumerate(lines[:3])
+            clean_cover_line(str(line), clip, guide, clip_index)
+            for line in lines[:3]
         ]
         if len(cleaned) == 3 and all(cleaned):
             return cleaned
 
-    speaker = compact_text(
-        china_safe_title_text(apply_entity_replacements(str(clip.get("speaker", "")), entity_guide or {}), clip),
-        TITLE_LINE_LIMITS[0],
-    )
-    title = compact_title(
-        china_safe_title_text(apply_entity_replacements(str(clip.get("title", "")), entity_guide or {}), clip)
+    speaker = clean_cover_line(str(clip.get("speaker", "")), clip, guide, clip_index)
+    title = sanitize_entity_aware_copy(
+        str(clip.get("title", "")),
+        guide,
+        clip_index,
+        clip=clip,
+        for_title=True,
     )
     if "：" in title:
         left, right = title.split("：", 1)
@@ -1546,8 +2202,8 @@ def fallback_lines(clip: dict[str, Any], entity_guide: dict[str, Any] | None = N
     else:
         left, right = speaker or "Bloomberg", title
     return [
-        compact_text(china_safe_title_text(left or speaker or "Bloomberg", clip), TITLE_LINE_LIMITS[0]),
-        compact_text(china_safe_title_text(right or title or "市场焦点", clip), TITLE_LINE_LIMITS[1]),
+        clean_cover_line(left or speaker or "Bloomberg", clip, guide, clip_index),
+        clean_cover_line(right or title or "市场焦点", clip, guide, clip_index),
         "关键转折来了",
     ]
 
@@ -1559,9 +2215,9 @@ def normalize_comment_payload(
     entity_guide: dict[str, Any],
     *,
     body_max_chars: int,
+    clip_index: int | None = None,
 ) -> tuple[str, list[str]]:
-    comment = apply_entity_replacements(str(raw_comment or ""), entity_guide)
-    comment = safe_zh(to_simplified_common(strip_title_badges(comment)))
+    comment = sanitize_entity_aware_copy(str(raw_comment or ""), entity_guide, clip_index)
     comment = re.sub(r"\s+", "", comment)
     comment = comment.strip(" ，,。；;、｜|-")
     if comment and not comment.startswith("KC评论："):
@@ -1577,7 +2233,10 @@ def normalize_comment_payload(
         comment = prefix + truncate_comment_body(body, body_max_chars)
 
     if isinstance(raw_highlights, list):
-        raw_highlights = [apply_entity_replacements(str(item), entity_guide) for item in raw_highlights]
+        raw_highlights = [
+            apply_entity_replacements(str(item), entity_guide, clip_index)
+            for item in raw_highlights
+        ]
     highlights = normalize_highlights(raw_highlights, comment, limit=2)
     if not highlights:
         body = comment.removeprefix("KC评论：")
@@ -1599,7 +2258,12 @@ def truncate_comment_body(body: str, max_chars: int) -> str:
     return clipped
 
 
-def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: dict[str, Any]) -> tuple[str, list[str]]:
+def normalize_comment(
+    raw: dict[str, Any],
+    clip: dict[str, Any],
+    entity_guide: dict[str, Any],
+    clip_index: int | None,
+) -> tuple[str, list[str]]:
     title = compact_title(str(clip.get("title", "")))
     fallback = f"KC评论：这条线索值得继续跟踪" if not title else f"KC评论：{title[:14]}背后有新信号"
     return normalize_comment_payload(
@@ -1608,6 +2272,7 @@ def normalize_comment(raw: dict[str, Any], clip: dict[str, Any], entity_guide: d
         fallback,
         entity_guide,
         body_max_chars=34,
+        clip_index=clip_index,
     )
 
 
@@ -1640,6 +2305,7 @@ def normalize_subtitle_comments(
     raw: dict[str, Any],
     clip: dict[str, Any],
     entity_guide: dict[str, Any],
+    clip_index: int | None,
 ) -> list[dict[str, Any]]:
     raw_items = raw.get("subtitle_comments")
     if not isinstance(raw_items, list):
@@ -1671,6 +2337,7 @@ def normalize_subtitle_comments(
             fallback_subtitle_comment(clip, by_index[idx]),
             entity_guide,
             body_max_chars=34,
+            clip_index=clip_index,
         )
         normalized.append({
             "subtitle_index": idx,
@@ -1709,32 +2376,36 @@ def normalize_item(
     entity_guide: dict[str, Any],
     research_item: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
-    fallback = fallback_lines(clip, entity_guide)
+    try:
+        clip_index = int((research_item or {}).get("index", 0)) or None
+    except (TypeError, ValueError):
+        clip_index = None
+    fallback = fallback_lines(clip, entity_guide, clip_index)
     raw_lines = raw.get("title_lines")
     if not isinstance(raw_lines, list) or len(raw_lines) != 3:
         raw_lines = fallback
 
     lines = [
-        compact_text(
-            china_safe_title_text(apply_entity_replacements(str(raw_lines[idx]), entity_guide), clip),
-            TITLE_LINE_LIMITS[idx],
-        ) or fallback[idx]
+        clean_cover_line(str(raw_lines[idx]), clip, entity_guide, clip_index) or fallback[idx]
         for idx in range(3)
     ]
     if not all(lines):
         return None
 
     # Keep filenames/descriptions aligned with the three cover blocks selected by the editor.
-    title = compact_title(f"{lines[0]}：{lines[1]}，{lines[2]}")
+    title = f"{lines[0]}：{lines[1]}，{lines[2]}"
 
     joined = "".join(lines)
     raw_highlights = raw.get("title_highlights")
     if isinstance(raw_highlights, list):
-        raw_highlights = [apply_entity_replacements(str(item), entity_guide) for item in raw_highlights]
+        raw_highlights = [
+            apply_entity_replacements(str(item), entity_guide, clip_index)
+            for item in raw_highlights
+        ]
     highlights = normalize_highlights(raw_highlights, joined, limit=3)
     if not highlights:
         highlights = [line for line in lines[1:] if line][:2]
-    comment, comment_highlights = normalize_comment(raw, clip, entity_guide)
+    comment, comment_highlights = normalize_comment(raw, clip, entity_guide, clip_index)
 
     raw_evidence = raw.get("evidence_basis")
     if not isinstance(raw_evidence, list):
@@ -1748,7 +2419,9 @@ def normalize_item(
     if not isinstance(raw_runners, list):
         raw_runners = []
     runner_up_titles = [
-        compact_title(china_safe_title_text(apply_entity_replacements(str(item), entity_guide), clip))
+        sanitize_entity_aware_copy(
+            str(item), entity_guide, clip_index, clip=clip, for_title=True
+        )
         for item in raw_runners
         if clean_text(str(item))
     ][:3]
@@ -1760,7 +2433,9 @@ def normalize_item(
         "title_highlights": highlights[:3],
         "comment": comment,
         "comment_highlights": comment_highlights,
-        "subtitle_comments": normalize_subtitle_comments(raw, clip, entity_guide),
+        "subtitle_comments": normalize_subtitle_comments(
+            raw, clip, entity_guide, clip_index
+        ),
         "formula_id": clean_text(str(raw.get("formula_id", "")))[:48],
         "angle_id": clean_text(str(raw.get("angle_id", "")))[:48],
         "emotion_pole": clean_text(str(raw.get("emotion_pole", "")))[:24],
@@ -1875,12 +2550,26 @@ def refine_batch(
             repair_candidates,
             repair_context=repair_context,
         )
-        repair_result = ask_deepseek(
-            api_key,
-            system_text,
-            repair_prompt_text,
-            temperature=0.15,
-        )
+        try:
+            repair_result = ask_deepseek(
+                api_key,
+                system_text,
+                repair_prompt_text,
+                temperature=0.15,
+            )
+        except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
+            print(
+                "::warning::Batch title repair failed; keeping valid first-pass titles: "
+                f"{exc}",
+                flush=True,
+            )
+            repair_events.append({
+                "indexes": failed_indexes,
+                "user_prompt": repair_prompt_text,
+                "error": str(exc),
+                "remaining_failed_indexes": failed_indexes,
+            })
+            repair_result = {}
         repaired_items = parse_items(repair_result)
         for index in failed_indexes:
             raw_item = repaired_items.get(index)
@@ -2058,6 +2747,7 @@ Surgical rules:
 - angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.
 - Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.
 - If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.
+- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.
 - If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.
 - If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.
 - If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.
@@ -2159,8 +2849,8 @@ def refine_titles(
             + " with DeepSeek",
             flush=True,
         )
-        refinements.update(
-            refine_batch(
+        try:
+            batch_refinements = refine_batch(
                 api_key,
                 plan,
                 clips,
@@ -2171,13 +2861,21 @@ def refine_titles(
                 entity_guide=entity_guide,
                 log_events=log_events,
             )
-        )
+        except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
+            print(
+                "::warning::Title refinement batch failed for clips "
+                + ",".join(map(str, batch_indexes))
+                + f"; retrying individually: {exc}",
+                flush=True,
+            )
+            batch_refinements = {}
+        refinements.update(batch_refinements)
 
     missing = [index for index in indexes if index not in refinements]
     for index in missing:
         print(f"Retrying missing title refinement for clip {index}", flush=True)
-        refinements.update(
-            refine_batch(
+        try:
+            individual_refinements = refine_batch(
                 api_key,
                 plan,
                 clips,
@@ -2188,28 +2886,46 @@ def refine_titles(
                 entity_guide=entity_guide,
                 log_events=log_events,
             )
-        )
+        except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
+            print(
+                f"::warning::Title refinement failed for clip {index}; keeping planner title: {exc}",
+                flush=True,
+            )
+            individual_refinements = {}
+        refinements.update(individual_refinements)
 
     missing = [index for index in indexes if index not in refinements]
     if missing:
-        raise SystemExit("DeepSeek did not return valid title refinements for clips: " + ",".join(map(str, missing)))
+        print(
+            "::warning::DeepSeek did not return valid title refinements for clips "
+            + ",".join(map(str, missing))
+            + "; keeping their planner titles.",
+            flush=True,
+        )
 
     quality_failed = [
         index
-        for index in indexes
+        for index in sorted(refinements)
         if not refinements[index].get("title_quality_audit", {}).get("pass")
     ]
     for index in quality_failed:
         print(f"Surgically repairing title quality for clip {index}", flush=True)
         brief = clip_brief(plan, clips[index - 1], index, max_subtitles)
-        retried = repair_refinement_surgically(
-            api_key,
-            brief,
-            clips[index - 1],
-            entity_guide=entity_guide,
-            current=refinements[index],
-            log_events=log_events,
-        )
+        try:
+            retried = repair_refinement_surgically(
+                api_key,
+                brief,
+                clips[index - 1],
+                entity_guide=entity_guide,
+                current=refinements[index],
+                log_events=log_events,
+            )
+        except TITLE_REFINEMENT_TECHNICAL_ERRORS as exc:
+            print(
+                f"::warning::Surgical title repair failed for clip {index}; evaluating the prior draft: {exc}",
+                flush=True,
+            )
+            retried = None
         if not retried:
             continue
         current_score = int(refinements[index].get("title_quality_audit", {}).get("score", -1))
@@ -2219,7 +2935,7 @@ def refine_titles(
 
     quality_failed = [
         index
-        for index in indexes
+        for index in sorted(refinements)
         if not refinements[index].get("title_quality_audit", {}).get("pass")
     ]
     for index in quality_failed:
@@ -2231,7 +2947,7 @@ def refine_titles(
 
     quality_failed = [
         index
-        for index in indexes
+        for index in sorted(refinements)
         if not refinements[index].get("title_quality_audit", {}).get("pass")
     ]
     if quality_failed:
@@ -2254,13 +2970,98 @@ def refine_titles(
                 ),
                 flush=True,
             )
-        details = "; ".join(
-            f"{index}:{','.join(refinements[index].get('title_quality_audit', {}).get('fixes', []))}"
-            for index in quality_failed
+        for index in quality_failed:
+            refinements.pop(index, None)
+        print(
+            "::warning::Keeping planner titles for rejected clips "
+            + ",".join(map(str, quality_failed))
+            + "; accepted refinements remain publishable.",
+            flush=True,
         )
-        raise SystemExit("Title emotion-polarity quality gate failed: " + details)
 
     return refinements
+
+
+def transform_clip_wording_fields(clip: dict[str, Any], transform: Any) -> None:
+    for key in ("title", "comment"):
+        if key in clip:
+            clip[key] = transform(clip[key])
+    for key in ("title_lines", "title_highlights", "comment_highlights"):
+        if isinstance(clip.get(key), list):
+            clip[key] = [transform(value) for value in clip[key]]
+    if isinstance(clip.get("subtitles"), list):
+        for subtitle in clip["subtitles"]:
+            if not isinstance(subtitle, dict):
+                continue
+            for key in ("zh", "zh_filtered"):
+                if key in subtitle:
+                    subtitle[key] = transform(subtitle[key])
+            if isinstance(subtitle.get("zh_highlights"), list):
+                subtitle["zh_highlights"] = [transform(value) for value in subtitle["zh_highlights"]]
+    if isinstance(clip.get("subtitle_comments"), list):
+        for item in clip["subtitle_comments"]:
+            if not isinstance(item, dict):
+                continue
+            if "comment" in item:
+                item["comment"] = transform(item["comment"])
+            if isinstance(item.get("comment_highlights"), list):
+                item["comment_highlights"] = [transform(value) for value in item["comment_highlights"]]
+
+
+def sanitize_plan_wording_entity_aware(
+    plan: dict[str, Any],
+    entity_guide: dict[str, Any],
+) -> None:
+    """Normalize verified names first, then shield them while applying generic wording rules."""
+    clips = plan.get("clips", [])
+    if not isinstance(clips, list):
+        return
+    tokens: dict[str, str] = {}
+    legal_name_token_index = 0
+    legal_name_markers: dict[tuple[int, str], str] = {}
+    for clip_index, clip in enumerate(clips, start=1):
+        if not isinstance(clip, dict):
+            continue
+        labels = verified_display_labels(entity_guide, clip_index)
+
+        def normalize_and_protect(value: Any) -> str:
+            nonlocal legal_name_token_index
+            text = apply_entity_replacements(str(value), entity_guide, clip_index)
+
+            def protect_legal_name_term(match: re.Match[str]) -> str:
+                nonlocal legal_name_token_index
+                marker_key = (clip_index, match.group(0))
+                existing_marker = legal_name_markers.get(marker_key)
+                if existing_marker:
+                    return existing_marker
+                marker = f"ZXQLEGALNAMETERM{legal_name_token_index}QXZ"
+                legal_name_token_index += 1
+                legal_name_markers[marker_key] = marker
+                tokens[marker] = match.group(0)
+                return marker
+
+            text = LEGAL_NAME_SENSITIVE_TERM_RE.sub(protect_legal_name_term, text)
+            for label_index, label in enumerate(labels):
+                if label not in text:
+                    continue
+                marker = f"ZXQENTITYCLIP{clip_index}LABEL{label_index}QXZ"
+                text = text.replace(label, marker)
+                tokens[marker] = label
+            return text
+
+        transform_clip_wording_fields(clip, normalize_and_protect)
+
+    sanitize_plan_wording(plan)
+
+    def restore(value: Any) -> str:
+        text = str(value)
+        for marker, label in tokens.items():
+            text = text.replace(marker, label)
+        return text
+
+    for clip in clips:
+        if isinstance(clip, dict):
+            transform_clip_wording_fields(clip, restore)
 
 
 def apply_refinements(
@@ -2296,14 +3097,25 @@ def apply_refinements(
         clip["title_refined"] = True
         clip["title_refine_style"] = style
 
-    sanitize_plan_wording(plan)
+    sanitize_plan_wording_entity_aware(plan, entity_guide)
+
+    if len(refinements) == len(clips):
+        refine_status = "refined"
+    elif refinements:
+        refine_status = "partial_refined"
+    else:
+        refine_status = "planner_fallback"
 
     plan["title_refine"] = {
         "provider": "deepseek",
         "model": "deepseek-chat",
         "research_version": TITLE_RESEARCH_VERSION,
         "style": style,
+        "status": refine_status,
         "clip_count": len(refinements),
+        "fallback_clip_indexes": [
+            index for index in range(1, len(clips) + 1) if index not in refinements
+        ],
         "entity_translation_guide": entity_guide,
         "public_lookup": public_lookup,
         "data_driven_lessons": TITLE_DATA_LESSONS,
@@ -2379,6 +3191,12 @@ def main() -> None:
     parser.add_argument("--max-subtitles", type=int, default=DEFAULT_MAX_SUBTITLES)
     parser.add_argument("--lookup-max-queries", type=int, default=DEFAULT_LOOKUP_MAX_QUERIES)
     parser.add_argument("--lookup-results-per-query", type=int, default=DEFAULT_LOOKUP_RESULTS_PER_QUERY)
+    parser.add_argument(
+        "--tavily-max-queries",
+        type=int,
+        default=0,
+        help="Tavily query budget; 0 uses 1 for a single clip or 6 for a multi-clip batch.",
+    )
     parser.add_argument("--no-public-lookup", action="store_true")
     parser.add_argument("--log-path", type=Path, default=None, help="Write DeepSeek title-refine prompts/results to this JSON file.")
     args = parser.parse_args()
@@ -2387,6 +3205,8 @@ def main() -> None:
         raise SystemExit("--batch-size must be at least 1")
     if args.max_subtitles < 1:
         raise SystemExit("--max-subtitles must be at least 1")
+    if args.tavily_max_queries < 0:
+        raise SystemExit("--tavily-max-queries cannot be negative")
 
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
@@ -2402,8 +3222,23 @@ def main() -> None:
         raise SystemExit("No non-sensitive-topic clips found in plan")
 
     briefs = all_clip_briefs(plan, clips, args.max_subtitles)
+    tavily_api_key = os.environ.get("TAVILY_API_KEY", "").strip()
+    if args.tavily_max_queries:
+        tavily_query_budget = args.tavily_max_queries
+    elif len(briefs) <= 1:
+        tavily_query_budget = DEFAULT_TAVILY_SINGLE_CLIP_QUERY_BUDGET
+    else:
+        tavily_query_budget = DEFAULT_TAVILY_BATCH_QUERY_BUDGET
+    if not tavily_api_key:
+        tavily_query_budget = 0
     lookup: list[dict[str, Any]] = []
     research_queries: list[dict[str, Any]] = []
+    search_usage = {
+        "tavily_queries": 0,
+        "tavily_credits": 0,
+        "fallback_queries": 0,
+        "tavily_budget": tavily_query_budget,
+    }
     if not args.no_public_lookup:
         print("Planning title research queries with DeepSeek", flush=True)
         research_queries = plan_public_research_queries(
@@ -2411,15 +3246,24 @@ def main() -> None:
             briefs,
             args.lookup_max_queries,
         )
+        if tavily_query_budget:
+            print(
+                f"Tavily entity research enabled with a {tavily_query_budget}-query budget",
+                flush=True,
+            )
         lookup = public_entity_lookup(
             research_queries,
             results_per_query=args.lookup_results_per_query,
+            tavily_api_key=tavily_api_key,
+            tavily_max_queries=tavily_query_budget,
+            usage=search_usage,
         )
         if not lookup:
             print("No public entity lookup snippets collected; continuing with transcript context only.", flush=True)
 
     entity_guide = build_entity_translation_guide(api_key, briefs, lookup)
     entity_guide["research_queries"] = research_queries
+    entity_guide["search_usage"] = search_usage
 
     log_events: list[dict[str, Any]] = []
     refinements = refine_titles(

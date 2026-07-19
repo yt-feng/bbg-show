@@ -22,15 +22,17 @@ from content_fingerprint import (  # noqa: E402
 )
 from download_bloomberg_video import safe_file_part, slug_from_url  # noqa: E402
 from top_video_sources import find_duplicate_content  # noqa: E402
+from title_refinement_status import read_title_refinement_status  # noqa: E402
 from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = Path(__file__).resolve().parent
 SENSITIVE_SKIP_MARKERS = (
-    "sensitive topic filter",
-    "sensitive-topic",
-    "no non-sensitive-topic",
+    "source video skipped by sensitive topic filter",
+    "no non-sensitive-topic clips remained after filtering",
+    "no non-sensitive-topic clips found in plan",
+    "no non-sensitive-topic clips remained after title refinement",
 )
 
 
@@ -208,7 +210,7 @@ def duplicate_skip_result(
     return result
 
 
-def refine_title_or_keep_planner_title(plan_path: Path) -> bool:
+def refine_title_or_keep_planner_title(plan_path: Path) -> str:
     original_plan = plan_path.read_text(encoding="utf-8")
     try:
         run([
@@ -223,8 +225,17 @@ def refine_title_or_keep_planner_title(plan_path: Path) -> bool:
             "using the planner-generated title after content filtering.",
             flush=True,
         )
-        return False
-    return True
+        return "planner_fallback"
+    try:
+        return read_title_refinement_status(plan_path)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        plan_path.write_text(original_plan, encoding="utf-8")
+        print(
+            f"::warning::Title refiner returned no valid status ({exc}); "
+            "using the planner-generated title.",
+            flush=True,
+        )
+        return "planner_fallback"
 
 
 def process_one(
@@ -318,7 +329,7 @@ def process_one(
     ], detect_sensitive_skip=True)
 
     print(f"[top-video {index:02d}] Refining title with DeepSeek", flush=True)
-    title_refined = refine_title_or_keep_planner_title(plan_path)
+    title_refinement_status = refine_title_or_keep_planner_title(plan_path)
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
@@ -381,7 +392,7 @@ def process_one(
         "youtube_id": str(item.get("youtube_id", "")),
         "channel_id": str(item.get("channel_id", "")),
         "published_at": str(item.get("published_at", "")),
-        "title_refinement_status": "refined" if title_refined else "planner_fallback",
+        "title_refinement_status": title_refinement_status,
         "duration": round(duration, 2),
         "source_duration": round(duration, 2),
         "source_fingerprint": source_fingerprint,

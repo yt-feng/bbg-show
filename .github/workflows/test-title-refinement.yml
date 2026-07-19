@@ -39,6 +39,7 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         run: |
           mkdir -p work/title-refinement
           cp tools/testdata/title_refine_sample.json work/title-refinement/highlight_plan.json

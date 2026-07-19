@@ -154,6 +154,7 @@ jobs:
         env:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         run: |
           python tools/plan_daily_highlights.py \
             --transcript work/test-overlay/transcript.json \

@@ -32,23 +32,87 @@ from download_bloomberg_video import (  # noqa: E402
     slug_from_url,
 )
 import proxy_hls_downloader as hls_downloader  # noqa: E402
+from title_refinement_status import read_title_refinement_status  # noqa: E402
 from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = Path(__file__).resolve().parent
+SENSITIVE_SKIP_MARKERS = (
+    "source video skipped by sensitive topic filter",
+    "no non-sensitive-topic clips remained after filtering",
+    "no non-sensitive-topic clips found in plan",
+    "no non-sensitive-topic clips remained after title refinement",
+)
 
 
 def run_date_default() -> str:
     return datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
 
 
-def run(command: list[str], env: dict[str, str] | None = None) -> None:
+def is_sensitive_skip_output(text: str) -> bool:
+    lowered = text.lower()
+    return any(marker in lowered for marker in SENSITIVE_SKIP_MARKERS)
+
+
+def run(
+    command: list[str],
+    env: dict[str, str] | None = None,
+    *,
+    detect_sensitive_skip: bool = False,
+) -> None:
     print("+ " + " ".join(command), flush=True)
     started = time.monotonic()
-    subprocess.run(command, check=True, env=env)
+    if detect_sensitive_skip:
+        proc = subprocess.run(
+            command,
+            env=env,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if proc.stdout:
+            print(proc.stdout, end="" if proc.stdout.endswith("\n") else "\n", flush=True)
+        if proc.returncode:
+            if is_sensitive_skip_output(proc.stdout or ""):
+                raise RuntimeError("ARK video skipped by sensitive topic filter")
+            raise subprocess.CalledProcessError(proc.returncode, command, output=proc.stdout)
+    else:
+        subprocess.run(command, check=True, env=env)
     elapsed = time.monotonic() - started
     print(f"Finished in {elapsed:.1f}s: {' '.join(command[:2])}", flush=True)
+
+
+def refine_title_or_keep_planner_title(plan_path: Path) -> str:
+    """Run title refinement and keep a publishable planner plan on technical failure."""
+    original_plan = plan_path.read_text(encoding="utf-8")
+    try:
+        run(
+            [
+                sys.executable,
+                str(TOOLS / "refine_clip_titles.py"),
+                "--plan", str(plan_path),
+            ],
+            detect_sensitive_skip=True,
+        )
+    except subprocess.CalledProcessError as exc:
+        plan_path.write_text(original_plan, encoding="utf-8")
+        print(
+            f"::warning::Title refinement failed with exit code {exc.returncode}; "
+            "using the planner-generated title after content filtering.",
+            flush=True,
+        )
+        return "planner_fallback"
+    try:
+        return read_title_refinement_status(plan_path)
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        plan_path.write_text(original_plan, encoding="utf-8")
+        print(
+            f"::warning::Title refiner returned no valid status ({exc}); "
+            "using the planner-generated title.",
+            flush=True,
+        )
+        return "planner_fallback"
 
 
 def ffprobe_duration(path: Path) -> float:
@@ -431,11 +495,7 @@ def process_one(
     ])
 
     print(f"[ark {index:02d}] Refining title and KC comments with DeepSeek", flush=True)
-    run([
-        sys.executable,
-        str(TOOLS / "refine_clip_titles.py"),
-        "--plan", str(plan_path),
-    ])
+    title_refinement_status = refine_title_or_keep_planner_title(plan_path)
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     removed = remove_trump_clips_from_plan(plan, use_ai=True)
     if removed:
@@ -477,6 +537,7 @@ def process_one(
         "pub_date": item.get("pub_date", ""),
         "slug": slug,
         "speaker": item.get("speaker", "Cathie Wood"),
+        "title_refinement_status": title_refinement_status,
         "youtube_url": selected_source["url"],
         "youtube_title": selected_source.get("title", ""),
         "youtube_channel": selected_source.get("channel", ""),
