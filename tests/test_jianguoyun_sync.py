@@ -310,7 +310,11 @@ class JianguoyunWebDavTests(unittest.TestCase):
         )
 
     def test_invalid_head_length_and_204_fall_back_to_propfind(self) -> None:
-        for head_status, head_length in ((200, "not-a-number"), (204, "0")):
+        for head_status, head_length in (
+            (200, "not-a-number"),
+            (200, "0"),
+            (204, "0"),
+        ):
             with self.subTest(head_status=head_status, head_length=head_length):
                 propfind_body = b"""<?xml version="1.0" encoding="utf-8"?>
 <d:multistatus xmlns:d="DAV:"><d:response><d:propstat><d:prop>
@@ -330,6 +334,7 @@ class JianguoyunWebDavTests(unittest.TestCase):
                 opener = RecordingOpener(handler)
                 size = self.target(opener).remote_size(
                     ["2026-07-25", "BBG Show", "clip.mp4"],
+                    expected_size=4321,
                 )
 
                 self.assertEqual(size, 4321)
@@ -347,11 +352,16 @@ class JianguoyunWebDavTests(unittest.TestCase):
             def ensure_collection(self, _parts) -> None:
                 return None
 
-            def remote_size(self, parts: list[str]) -> int | None:
+            def remote_size(
+                self,
+                parts: list[str],
+                *,
+                expected_size: int | None = None,
+            ) -> int | None:
                 name = parts[-1]
                 if name == "first.mp4":
                     raise sync.JianguoyunSyncError("simulated HEAD failure")
-                return 6 if name in self.uploaded else None
+                return expected_size if name in self.uploaded else None
 
             def upload(self, _path: Path, parts: list[str]) -> None:
                 self.uploaded.add(parts[-1])

@@ -218,7 +218,12 @@ class WebDavTarget:
                 timeout=45,
             )
 
-    def remote_size(self, relative_parts: list[str]) -> int | None:
+    def remote_size(
+        self,
+        relative_parts: list[str],
+        *,
+        expected_size: int | None = None,
+    ) -> int | None:
         parts = [*self.root_parts, *relative_parts]
         status, headers, _ = self._request(
             "HEAD",
@@ -233,7 +238,7 @@ class WebDavTarget:
                 size = int(headers.get("Content-Length", "-1"))
             except (TypeError, ValueError):
                 size = -1
-            if size >= 0:
+            if size >= 0 and (expected_size is None or size == expected_size):
                 return size
 
         propfind_body = b"""<?xml version="1.0" encoding="utf-8"?>
@@ -286,7 +291,10 @@ def sync_files(
         remote_parts = [remote_date, category, names[path]]
         try:
             size = path.stat().st_size
-            existing_size = target.remote_size(remote_parts)
+            existing_size = target.remote_size(
+                remote_parts,
+                expected_size=size,
+            )
             if existing_size == size:
                 skipped += 1
                 print(
@@ -307,14 +315,18 @@ def sync_files(
             target.upload(path, remote_parts)
             verified_size: int | None = None
             for verify_attempt in range(4):
-                verified_size = target.remote_size(remote_parts)
+                verified_size = target.remote_size(
+                    remote_parts,
+                    expected_size=size,
+                )
                 if verified_size == size:
                     break
                 if verify_attempt < 3:
                     target.sleeper(min(2**verify_attempt, 4))
             if verified_size != size:
                 raise JianguoyunSyncError(
-                    f"Uploaded size verification failed for {'/'.join(remote_parts)}"
+                    f"Uploaded size verification failed for {'/'.join(remote_parts)} "
+                    f"(expected={size}, remote={verified_size})"
                 )
             uploaded += 1
             print(
