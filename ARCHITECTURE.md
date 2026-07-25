@@ -6,7 +6,11 @@ This repository preserves the repeatable, direct-first, headless/background code
 
 The workflow downloads public HLS media URLs exposed by Bloomberg's own media manifests. It does not bypass DRM, paywall checks, or encrypted streams. If a future page exposes only DRM-protected media, this workflow should stop rather than attempt circumvention.
 
-Large media outputs and temporary proxy material are intentionally excluded from git.
+Raw Bloomberg downloads, HLS segment caches, and temporary proxy material are intentionally
+excluded from git. The verified short-form publishing outputs are different: rendered MP4s,
+their plans, source identities, summaries, and duplicate-prevention ledgers under
+`rendered-clips/` are intentionally committed to `main`. That committed tree is the publishing
+source of truth and the retryable input for downstream delivery.
 
 ## Target Operating Mode
 
@@ -232,13 +236,170 @@ GitHub Actions-specific notes:
 - The primary path is BRP metadata discovery plus direct Bloomberg CDN download through `yt-dlp`; it should not require Chrome, AppleScript, local macOS state, or the user's browser profile.
 - Keep `--yt-dlp-proxy-mode auto` so the job tries direct CDN first and uses the proxy only after a direct CDN failure.
 - Keep proxy subscription material in GitHub Secrets. Do not write decoded proxy nodes to logs.
-- Large Bloomberg episodes are commonly 3-4 GiB. Artifact upload can be the simplest proof of concept, but durable automation should allow an object-storage or release-asset upload step if artifact storage is too constrained.
-- The scheduled daily clipping workflow is `.github/workflows/daily-china-show.yml`.
-  - Schedule: `0 19 * * *` UTC, which is 03:00 in `Asia/Shanghai`.
-  - Manual dispatch accepts `show_date`, `url`, `max_speakers`, `clips_per_speaker`, and `font_preset`.
-  - It resolves yesterday's China Show URL, downloads the show, transcribes the full video, selects keynote speakers, plans speaker highlights, renders KC Desktop formatted/de-duplicated clips, and commits generated outputs back to `main`.
-  - It writes committed outputs under `rendered-clips/YYYY-MM-DD/`, including MP4 files plus `show.json`, `speakers.json`, and `highlight_plan.json`.
-  - It uses `permissions: contents: write` and the default `GITHUB_TOKEN` to push the generated clip commit.
+- Raw Bloomberg episodes are commonly 3-4 GiB and remain transient runner inputs. The much
+  smaller verified clips and their publishing metadata are committed under `rendered-clips/`.
+- The two production publishing workflows are `.github/workflows/daily-china-show.yml` and
+  `.github/workflows/daily-top-videos.yml`; their complete publish-and-deliver contract is
+  documented below.
+
+## Production Automation And Jianguoyun Delivery (2026-07-25)
+
+The production pipeline has two independent producers, one committed source of truth, and two
+WebDAV reconciliation layers:
+
+```text
+Bloomberg Show (content date D) ─┐
+                                ├─ verify/deduplicate ─ commit `rendered-clips/` to `main`
+Bloomberg Top Videos (date D) ───┘                         │
+                                                          ├─ immediate Jianguoyun reconcile
+                                                          └─ rpt_edit hourly 3-day reconcile
+```
+
+Committing verified clips is the publication boundary. Jianguoyun delivery happens immediately
+after that commit, but it is a reconciliation step rather than a second source of truth. This
+ordering makes a missed or interrupted upload recoverable without rendering the video again.
+
+### Daily Bloomberg Show
+
+`.github/workflows/daily-china-show.yml` produces China Show clips on weekdays and Bloomberg
+Weekend clips on weekend dates.
+
+- The primary run is 03:00 `Asia/Shanghai`; a second run at 07:30 retries sources that Bloomberg
+  published late. `workflow_dispatch` supports explicit `show_date`, `show_type`, and source URL
+  overrides.
+- `SHOW_DATE` is the Bloomberg content date, denoted `D`. The resolver writes the source output
+  directory as `OUTPUT_DIR=rendered-clips/D`, regardless of whether the selected program is
+  China Show or Bloomberg Weekend.
+- The normal delivery mapping is **Show `D` → delivery date `D+1`**. For example,
+  `rendered-clips/2026-07-24/` is reconciled into the Jianguoyun delivery folder
+  `2026-07-25/BBG Show/`.
+- The pipeline resolves and downloads the episode, performs source and transcript duplicate
+  checks, transcribes it, selects non-anchor speakers, plans clips, renders MP4s, verifies that
+  at least one requested render exists, records the source identity, and commits the result.
+- A rerun that finds MP4s already present under `OUTPUT_DIR` skips expensive generation but must
+  still execute the post-commit WebDAV reconciliation. This is the recovery path when rendering
+  and Git publication succeeded but storage delivery did not.
+
+Show duplicate state is durable:
+
+- `rendered-clips/show_sources.json` records source identities that reached a terminal published
+  state.
+- Each published date directory includes `source_identity.json`, allowing asset and transcript
+  fingerprints to reject the same long video even when Bloomberg changes its title or URL.
+- `rendered-clips/weekend/processed_shows.json` additionally records terminal Bloomberg Weekend
+  outcomes, including shows with no eligible speakers or clips, so the weekend backlog is not
+  selected repeatedly.
+
+### Daily Bloomberg Top Videos
+
+`.github/workflows/daily-top-videos.yml` scrapes Bloomberg Top Videos, appends the configured
+Bloomberg Television YouTube backup candidates, and processes candidates in a bounded matrix.
+
+- The normal run is 06:00 `Asia/Shanghai`. `RUN_DATE` is both output date and delivery date,
+  denoted `D`.
+- The source output directory is
+  `OUTPUT_DIR=rendered-clips/top-videos/D`.
+- The normal delivery mapping is **Top Videos `D` → delivery date `D`**, for example
+  `rendered-clips/top-videos/2026-07-25/` to
+  `2026-07-25/BBG Top Videos/`.
+- Matrix workers may fail independently. The collect job validates artifacts, removes partial or
+  undeclared files, deduplicates successful results, records summaries, commits all usable clips,
+  and publishes whenever at least one candidate succeeds.
+- One successful video is a publishable batch: other candidate failures are warnings and do not
+  turn the Action red. The batch fails for video-generation reasons only when every processable
+  candidate fails. A batch in which every candidate is skipped by content or duplicate filters is
+  a successful no-op and may restore the already-published directory during a rerun.
+
+Top Videos duplicate state lives in
+`rendered-clips/top-videos/processed_sources.json`. It records successful source identities and
+content fingerprints, is backfilled from complete Git history, and is checked both against
+historical publications and within the current batch. Renaming a title or rediscovering a source
+therefore does not make the same clip publishable again.
+
+### Immediate WebDAV Reconciliation
+
+Both workflows invoke `tools/sync_rendered_clips_to_jianguoyun.py` immediately after the
+`rendered-clips/` commit step. The script recursively discovers MP4s in the workflow's source
+directory and flattens them into the appropriate category directory:
+
+```text
+/我的坚果云/KCdesk/Ops/<delivery-date>/BBG Show/<clip>.mp4
+/我的坚果云/KCdesk/Ops/<delivery-date>/BBG Top Videos/<clip>.mp4
+```
+
+Remote path components are encoded independently so Chinese titles remain valid WebDAV paths.
+Names that become identical after sanitization receive a stable content-derived suffix.
+
+The reconciliation is idempotent per file:
+
+1. Create each missing WebDAV collection; an already-existing collection is success.
+2. Inspect the remote filename.
+3. If the remote and local byte sizes are equal and non-zero, skip the upload.
+4. If the file is missing or its size differs, upload it and verify the final remote size.
+
+The remote-size check prevents routine scheduled runs, workflow reruns, and the downstream
+reconciler from uploading the same completed file again. It also ensures that a truncated remote
+file is replaced instead of being mistaken for a completed delivery.
+
+WebDAV availability must not undo a completed video publication. Once at least one verified clip
+has been committed, an immediate WebDAV error is reported as an Action warning and the already
+published Action remains green. The next workflow rerun and the downstream reconciler can fill
+the missing files. Video-generation semantics remain unchanged: Top Videos is green with one or
+more successful clips, and red only when all processable candidates fail.
+
+The GitHub Actions integration requires exactly these repository secrets:
+
+| Secret | Purpose |
+| --- | --- |
+| `JIANGUOYUN_WEBDAV_URL` | Jianguoyun WebDAV HTTPS endpoint. |
+| `JIANGUOYUN_WEBDAV_USERNAME` | Jianguoyun WebDAV account name. |
+| `JIANGUOYUN_WEBDAV_PASSWORD` | Jianguoyun application-specific WebDAV password. |
+
+Secret values must never appear in this document, committed configuration, command output, or
+diagnostic logs.
+
+### Downstream And Manual Recovery
+
+The `yt-feng/rpt_edit` operations repository provides a second reconciliation layer. Its
+Jianguoyun sync runs hourly over the latest three delivery dates and uploads only files still
+missing from the same date/category layout. This is deliberately redundant with the immediate
+post-commit upload: either layer can repair a transient omission without creating duplicate
+remote files.
+
+Manual recovery uses `.github/workflows/sync-jianguoyun.yml` and is selected by **delivery
+date**, not by guessing a Bloomberg content date:
+
+- For delivery date `P`, reconcile Show from `rendered-clips/(P-1)` into
+  `P/BBG Show/`.
+- For delivery date `P`, reconcile Top Videos from `rendered-clips/top-videos/P` into
+  `P/BBG Top Videos/`.
+
+The manual path performs reconciliation only. Existing equal-size files are skipped, missing or
+truncated files are uploaded, unrelated files in the delivery folder are left untouched, and no
+video is regenerated.
+
+### Concurrency And Failure Boundaries
+
+The Show and Top Videos workflows use separate concurrency groups with
+`cancel-in-progress: false`. Runs of the same producer are serialized, while Show and Top Videos
+may publish concurrently. Their distinct category directories prevent filename collisions; the
+idempotent collection creation and per-file size checks make concurrent delivery safe.
+
+The boundaries are:
+
+- download, transcription, planning, rendering, verification, and Git publication are producer
+  responsibilities;
+- `main` plus the committed ledgers are the authoritative history;
+- immediate WebDAV sync is best-effort delivery and cannot invalidate already-committed clips;
+- hourly `rpt_edit` and manual delivery-date reconciliation repair omissions.
+
+### Architecture Document Maintenance
+
+`ARCHITECTURE.md` is part of every production pipeline change. A change that modifies a schedule,
+workflow stage, date mapping, output or remote directory, duplicate ledger, secret contract,
+concurrency rule, publication criterion, or recovery path must update this document in the same
+commit or pull request. Replace stale statements instead of appending contradictory notes, date
+material production contracts, and document secret names only—never their values.
 
 ## yt-dlp Test Results And Cloud Shape
 

@@ -1,0 +1,93 @@
+name: Sync Bloomberg Clips to Jianguoyun
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Jianguoyun delivery date in YYYY-MM-DD. Defaults to today in Asia/Shanghai."
+        required: false
+        type: string
+        default: ""
+      kind:
+        description: "Clip collection to reconcile."
+        required: true
+        type: choice
+        options:
+          - both
+          - show
+          - top-videos
+        default: both
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jianguoyun-sync-${{ inputs.target_date || 'today' }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Reconcile rendered clips
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Resolve delivery and source dates
+        env:
+          TARGET_DATE_INPUT: ${{ inputs.target_date }}
+        run: |
+          if [ -n "$TARGET_DATE_INPUT" ]; then
+            TARGET_DATE="$TARGET_DATE_INPUT"
+          else
+            TARGET_DATE=$(TZ=Asia/Shanghai date +%F)
+          fi
+          python - "$TARGET_DATE" >> "$GITHUB_ENV" <<'PY'
+          import sys
+          from datetime import date, timedelta
+
+          raw = sys.argv[1]
+          try:
+              target_date = date.fromisoformat(raw)
+          except ValueError as exc:
+              raise SystemExit("target_date must use strict YYYY-MM-DD format") from exc
+          if target_date.isoformat() != raw:
+              raise SystemExit("target_date must use strict YYYY-MM-DD format")
+          print(f"TARGET_DATE={target_date.isoformat()}")
+          print(f"SHOW_DATE={(target_date - timedelta(days=1)).isoformat()}")
+          PY
+
+      - name: Sync Bloomberg Show clips
+        if: ${{ inputs.kind == 'both' || inputs.kind == 'show' }}
+        env:
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+        run: |
+          python tools/sync_rendered_clips_to_jianguoyun.py \
+            --kind show \
+            --date "$SHOW_DATE" \
+            --source-dir "rendered-clips/$SHOW_DATE" \
+            --allow-empty
+
+      - name: Sync Bloomberg Top Videos
+        if: ${{ inputs.kind == 'both' || inputs.kind == 'top-videos' }}
+        env:
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+        run: |
+          python tools/sync_rendered_clips_to_jianguoyun.py \
+            --kind top-videos \
+            --date "$TARGET_DATE" \
+            --source-dir "rendered-clips/top-videos/$TARGET_DATE" \
+            --allow-empty

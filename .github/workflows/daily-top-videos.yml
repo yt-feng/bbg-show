@@ -496,3 +496,18 @@ jobs:
           git commit -m "chore: publish top videos ${RUN_DATE}"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Sync rendered clips to Jianguoyun
+        if: ${{ success() }}
+        continue-on-error: true
+        timeout-minutes: 45
+        env:
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+        run: |
+          python tools/sync_rendered_clips_to_jianguoyun.py \
+            --kind top-videos \
+            --date "$RUN_DATE" \
+            --source-dir "$OUTPUT_DIR" \
+            --allow-empty
