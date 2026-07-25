@@ -1,0 +1,1211 @@
+{
+  "timestamp_utc": "2026-07-25T23:04:40.680737+00:00",
+  "plan_path": "work/top-videos/03_ai_can_be_force_for_good_birkett_says/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Carolyn Rodrigues Birkett",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Carolyn Rodrigues Birkett",
+        "preferred_en": "Carolyn Rodrigues Birkett",
+        "official_zh": "卡罗琳·罗德里格斯·伯基特",
+        "common_zh": "卡罗琳·罗德里格斯·伯基特",
+        "title_label": "卡罗琳·罗德里格斯·伯基特",
+        "preferred_zh": "卡罗琳·罗德里格斯·伯基特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg video and Guyana government site confirm name and role as Guyana's UN ambassador."
+      },
+      {
+        "source_text": "María Fernanda Espinosa",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "María Fernanda Espinosa",
+        "preferred_en": "María Fernanda Espinosa",
+        "official_zh": "玛丽亚·费尔南达·埃斯皮诺萨",
+        "common_zh": "玛丽亚·费尔南达·埃斯皮诺萨",
+        "title_label": "玛丽亚·费尔南达·埃斯皮诺萨",
+        "preferred_zh": "玛丽亚·费尔南达·埃斯皮诺萨",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and YouTube snippets confirm name and role as former president of UN General Assembly."
+      },
+      {
+        "source_text": "United Nations",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "United Nations",
+        "preferred_en": "United Nations",
+        "official_zh": "联合国",
+        "common_zh": "联合国",
+        "title_label": "联合国",
+        "preferred_zh": "联合国",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "UN official sites confirm name."
+      },
+      {
+        "source_text": "UN General Assembly",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "United Nations General Assembly",
+        "preferred_en": "United Nations General Assembly",
+        "official_zh": "联合国大会",
+        "common_zh": "联合国大会",
+        "title_label": "联合国大会",
+        "preferred_zh": "联合国大会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and YouTube snippets mention 'former president of the UN General Assembly'."
+      },
+      {
+        "source_text": "Guyana",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Guyana",
+        "preferred_en": "Guyana",
+        "official_zh": "圭亚那",
+        "common_zh": "圭亚那",
+        "title_label": "圭亚那",
+        "preferred_zh": "圭亚那",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and Guyana government site confirm Birkett is Guyana's ambassador."
+      },
+      {
+        "source_text": "International Financial Institutions (IFIs)",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "International Financial Institutions",
+        "preferred_en": "International Financial Institutions",
+        "official_zh": "国际金融机构",
+        "common_zh": "国际金融机构",
+        "title_label": "国际金融机构",
+        "preferred_zh": "国际金融机构",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "UN and policy documents use 'international financial institutions'."
+      },
+      {
+        "source_text": "Global Digital Compact",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Global Digital Compact",
+        "preferred_en": "Global Digital Compact",
+        "official_zh": "全球数字契约",
+        "common_zh": "全球数字契约",
+        "title_label": "全球数字契约",
+        "preferred_zh": "全球数字契约",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Guyana government statement mentions 'Global Digital Compact'."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "AI",
+        "clip_indexes": [],
+        "context": "Artificial intelligence as a force for good and governance framework",
+        "sense": "artificial intelligence",
+        "preferred_zh": "人工智能",
+        "title_label": "人工智能",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "concessional financing",
+        "clip_indexes": [],
+        "context": "Financing for developing member states",
+        "sense": "financing provided on terms more generous than market terms",
+        "preferred_zh": "优惠融资",
+        "title_label": "优惠融资",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "SDGs",
+        "clip_indexes": [],
+        "context": "Sustainable Development Goals",
+        "sense": "Sustainable Development Goals",
+        "preferred_zh": "可持续发展目标",
+        "title_label": "可持续发展目标",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "AI can be a force for good, and the UN should create an AI governance framework that balances innovation and concerns.",
+        "public_baseline": "UN has already established an AI Advisory Body and released a report 'Governing AI for Humanity' in September 2024, proposing recommendations for AI governance.",
+        "surprise_gap": "Birkett's call for UN AI governance framework aligns with existing UN efforts; no surprise gap.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'."
+          },
+          {
+            "kind": "public",
+            "query": "Birkett AI force for good UN governance framework",
+            "url": "https://www.bloomberg.com/news/videos/2026-07-23/ai-can-be-force-for-good-birkett-says-video",
+            "fact": "Bloomberg video confirms Birkett's stance."
+          },
+          {
+            "kind": "public",
+            "query": "Birkett United Nations AI governance framework",
+            "url": "https://www.un.org/en/ai-advisory-body",
+            "fact": "UN already has AI Advisory Body and report 'Governing AI for Humanity'."
+          }
+        ],
+        "forbidden_claims": [
+          "Birkett is the first to propose UN AI governance",
+          "UN has no AI governance framework"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The name 'Maria Finerne-Espinoza' in the transcript appears to be a mishearing of 'María Fernanda Espinosa'; public snippets confirm the correct name.",
+      "No evidence of position change or words-vs-actions mismatch found for Birkett.",
+      "China advantage not applicable as clip does not mention China."
+    ],
+    "research_queries": [
+      {
+        "query": "Birkett AI force for good UN governance framework",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact claim that AI can be a force for good and that the UN should create an AI governance framework."
+      },
+      {
+        "query": "Birkett UN reform financial institutions incremental movement",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about UN reform and incremental movements with IFIs for concessional financing."
+      },
+      {
+        "query": "Birkett United Nations AI governance framework",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check if Birkett has publicly advocated for UN AI governance elsewhere."
+      },
+      {
+        "query": "Birkett UN Secretary-General convene partner advocate",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about the UN Secretary-General's role."
+      },
+      {
+        "query": "Birkett private sector role AI governance",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the mention of private sector role in AI governance."
+      },
+      {
+        "query": "Birkett young people AI jobs creativity concerns",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about young people's concerns regarding AI."
+      },
+      {
+        "query": "Birkett Maria Finerne-Espinoza",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the name Maria Finerne-Espinoza and her role."
+      },
+      {
+        "query": "Birkett IFIs concessional financing developing countries",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about IFIs bringing concessional financing to developing countries."
+      },
+      {
+        "query": "Birkett AI governance balance innovation concerns",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about balancing innovation and concerns."
+      },
+      {
+        "query": "Bloomberg AI Can Be Force For Good established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "AI Can Be Force For Good 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-07-25T23:04:37.597000+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:43 AI Can Be Force For Good, Birkett Says",
+          "source_title": "Duration: 2:43 AI Can Be Force For Good, Birkett Says",
+          "show_date": "",
+          "current_title": "AI可成向善力量，联合国应推动治理框架",
+          "current_title_lines": [
+            "Birkett：AI可成向善力量",
+            "联合国应推动治理框架",
+            "平衡创新与就业担忧"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "理想情况下，如果联合国改革与金融机构改革同步推进会很好，但这可能过于雄心勃勃。",
+              "en": "Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.",
+              "relative_start": 0.0,
+              "relative_end": 8.9
+            },
+            {
+              "index": 2,
+              "zh": "但如果能对国际金融机构进行系统性、渐进式的改革，例如为大量成员国带来优惠融资，",
+              "en": "But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,",
+              "relative_start": 8.9,
+              "relative_end": 21.0
+            },
+            {
+              "index": 3,
+              "zh": "特别是发展中国家，我认为这将改善世界上许多人的处境。",
+              "en": "especially developing member states, I think that will make things better for a lot of our people in the world.",
+              "relative_start": 21.0,
+              "relative_end": 27.3
+            },
+            {
+              "index": 4,
+              "zh": "但我也想谈谈人工智能，因为我相信人工智能可以成为一股向善的力量。",
+              "en": "But I also want to speak about AI, because I believe that AI can be a force for good.",
+              "relative_start": 27.3,
+              "relative_end": 33.0
+            },
+            {
+              "index": 5,
+              "zh": "但年轻人担心人工智能会夺走他们的工作，扼杀他们的创造力。",
+              "en": "But young people are concerned that AI will take their jobs, will kill their creativity.",
+              "relative_start": 33.0,
+              "relative_end": 38.6
+            },
+            {
+              "index": 6,
+              "zh": "因此，联合国汇聚193个成员国的智慧，可以制定一个人工智能治理框架，平衡创新与民众关切。",
+              "en": "And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,",
+              "relative_start": 38.6,
+              "relative_end": 50.6
+            },
+            {
+              "index": 7,
+              "zh": "玛丽亚·费尔南德斯-埃斯皮诺萨。",
+              "en": "the concerns of our people. Maria Finerne-Espinoza.",
+              "relative_start": 50.6,
+              "relative_end": 54.8
+            },
+            {
+              "index": 8,
+              "zh": "我认为联合国和秘书长有能力召集、合作和倡导。",
+              "en": "Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.",
+              "relative_start": 55.8,
+              "relative_end": 69.2
+            },
+            {
+              "index": 9,
+              "zh": "这正是当今世界所需要的。",
+              "en": "And that's exactly what we need in the world of today.",
+              "relative_start": 69.2,
+              "relative_end": 72.4
+            },
+            {
+              "index": 10,
+              "zh": "你问到了私营部门的作用。",
+              "en": "You asked about the role of the private sector.",
+              "relative_start": 72.4,
+              "relative_end": 75.5
+            },
+            {
+              "index": 11,
+              "zh": "我认为这一点至关重要，因为这是创新、就业和资源的来源，正是发展中国家当前所需。",
+              "en": "And I think this is absolutely critical, because that's where we see innovation, we see jobs, we see resources, and that's what developing countries need right now.",
+              "relative_start": 75.5,
+              "relative_end": 88.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"source_title\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI可成向善力量，联合国应推动治理框架\",\n    \"current_title_lines\": [\n      \"Birkett：AI可成向善力量\",\n      \"联合国应推动治理框架\",\n      \"平衡创新与就业担忧\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"理想情况下，如果联合国改革与金融机构改革同步推进会很好，但这可能过于雄心勃勃。\",\n        \"en\": \"Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但如果能对国际金融机构进行系统性、渐进式的改革，例如为大量成员国带来优惠融资，\",\n        \"en\": \"But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,\",\n        \"relative_start\": 8.9,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"特别是发展中国家，我认为这将改善世界上许多人的处境。\",\n        \"en\": \"especially developing member states, I think that will make things better for a lot of our people in the world.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 27.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我也想谈谈人工智能，因为我相信人工智能可以成为一股向善的力量。\",\n        \"en\": \"But I also want to speak about AI, because I believe that AI can be a force for good.\",\n        \"relative_start\": 27.3,\n        \"relative_end\": 33.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但年轻人担心人工智能会夺走他们的工作，扼杀他们的创造力。\",\n        \"en\": \"But young people are concerned that AI will take their jobs, will kill their creativity.\",\n        \"relative_start\": 33.0,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，联合国汇聚193个成员国的智慧，可以制定一个人工智能治理框架，平衡创新与民众关切。\",\n        \"en\": \"And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"玛丽亚·费尔南德斯-埃斯皮诺萨。\",\n        \"en\": \"the concerns of our people. Maria Finerne-Espinoza.\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为联合国和秘书长有能力召集、合作和倡导。\",\n        \"en\": \"Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.\",\n        \"relative_start\": 55.8,\n        \"relative_end\": 69.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这正是当今世界所需要的。\",\n        \"en\": \"And that's exactly what we need in the world of today.\",\n        \"relative_start\": 69.2,\n        \"relative_end\": 72.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"你问到了私营部门的作用。\",\n        \"en\": \"You asked about the role of the private sector.\",\n        \"relative_start\": 72.4,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我认为这一点至关重要，因为这是创新、就业和资源的来源，正是发展中国家当前所需。\",\n        \"en\": \"And I think this is absolutely critical, because that's where we see innovation, we see jobs, we see resources, and that's what developing countries need right now.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI can be a force for good, and the UN should create an AI governance framework that balances innovation and concerns.\",\n      \"public_baseline\": \"UN has already established an AI Advisory Body and released a report 'Governing AI for Humanity' in September 2024, proposing recommendations for AI governance.\",\n      \"surprise_gap\": \"Birkett's call for UN AI governance framework aligns with existing UN efforts; no surprise gap.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett AI force for good UN governance framework\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-07-23/ai-can-be-force-for-good-birkett-says-video\",\n          \"fact\": \"Bloomberg video confirms Birkett's stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett United Nations AI governance framework\",\n          \"url\": \"https://www.un.org/en/ai-advisory-body\",\n          \"fact\": \"UN already has AI Advisory Body and report 'Governing AI for Humanity'.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Birkett is the first to propose UN AI governance\",\n        \"UN has no AI governance framework\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The name 'Maria Finerne-Espinoza' in the transcript appears to be a mishearing of 'María Fernanda Espinosa'; public snippets confirm the correct name.\",\n    \"No evidence of position change or words-vs-actions mismatch found for Birkett.\",\n    \"China advantage not applicable as clip does not mention China.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Birkett says AI can be a force for good, and the UN should create an AI governance framework balancing innovation and employment concerns.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗？",
+                "title": "AI向善？Birkett直言联合国需出手",
+                "title_lines": [
+                  "AI向善？",
+                  "Birkett直言",
+                  "联合国需出手"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "年轻人怕AI抢饭碗，Birkett却说这是好事",
+                "title_lines": [
+                  "年轻人怕AI抢饭碗",
+                  "Birkett却说",
+                  "这是好事"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'."
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "终于有人说了",
+                "title": "193国智慧能治AI？Birkett给出路线图",
+                "title_lines": [
+                  "193国智慧",
+                  "能治AI？",
+                  "Birkett给出路线图"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Birkett says 'the wisdom of the 193 can come together to have an AI governance framework' and mentions balancing innovation and concerns."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗？",
+                "title": "AI治理不能只靠企业，Birkett喊话联合国",
+                "title_lines": [
+                  "AI治理不能只靠企业",
+                  "Birkett喊话",
+                  "联合国"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Birkett says 'the role of the private sector is absolutely critical' but also calls for UN framework."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"source_title\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI可成向善力量，联合国应推动治理框架\",\n    \"current_title_lines\": [\n      \"Birkett：AI可成向善力量\",\n      \"联合国应推动治理框架\",\n      \"平衡创新与就业担忧\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"理想情况下，如果联合国改革与金融机构改革同步推进会很好，但这可能过于雄心勃勃。\",\n        \"en\": \"Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但如果能对国际金融机构进行系统性、渐进式的改革，例如为大量成员国带来优惠融资，\",\n        \"en\": \"But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,\",\n        \"relative_start\": 8.9,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"特别是发展中国家，我认为这将改善世界上许多人的处境。\",\n        \"en\": \"especially developing member states, I think that will make things better for a lot of our people in the world.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 27.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我也想谈谈人工智能，因为我相信人工智能可以成为一股向善的力量。\",\n        \"en\": \"But I also want to speak about AI, because I believe that AI can be a force for good.\",\n        \"relative_start\": 27.3,\n        \"relative_end\": 33.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但年轻人担心人工智能会夺走他们的工作，扼杀他们的创造力。\",\n        \"en\": \"But young people are concerned that AI will take their jobs, will kill their creativity.\",\n        \"relative_start\": 33.0,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，联合国汇聚193个成员国的智慧，可以制定一个人工智能治理框架，平衡创新与民众关切。\",\n        \"en\": \"And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"玛丽亚·费尔南德斯-埃斯皮诺萨。\",\n        \"en\": \"the concerns of our people. Maria Finerne-Espinoza.\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为联合国和秘书长有能力召集、合作和倡导。\",\n        \"en\": \"Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.\",\n        \"relative_start\": 55.8,\n        \"relative_end\": 69.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这正是当今世界所需要的。\",\n        \"en\": \"And that's exactly what we need in the world of today.\",\n        \"relative_start\": 69.2,\n        \"relative_end\": 72.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"你问到了私营部门的作用。\",\n        \"en\": \"You asked about the role of the private sector.\",\n        \"relative_start\": 72.4,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我认为这一点至关重要，因为这是创新、就业和资源的来源，正是发展中国家当前所需。\",\n        \"en\": \"And I think this is absolutely critical, because that's where we see innovation, we see jobs, we see resources, and that's what developing countries need right now.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI can be a force for good, and the UN should create an AI governance framework that balances innovation and concerns.\",\n      \"public_baseline\": \"UN has already established an AI Advisory Body and released a report 'Governing AI for Humanity' in September 2024, proposing recommendations for AI governance.\",\n      \"surprise_gap\": \"Birkett's call for UN AI governance framework aligns with existing UN efforts; no surprise gap.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett AI force for good UN governance framework\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-07-23/ai-can-be-force-for-good-birkett-says-video\",\n          \"fact\": \"Bloomberg video confirms Birkett's stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett United Nations AI governance framework\",\n          \"url\": \"https://www.un.org/en/ai-advisory-body\",\n          \"fact\": \"UN already has AI Advisory Body and report 'Governing AI for Humanity'.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Birkett is the first to propose UN AI governance\",\n        \"UN has no AI governance framework\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The name 'Maria Finerne-Espinoza' in the transcript appears to be a mishearing of 'María Fernanda Espinosa'; public snippets confirm the correct name.\",\n    \"No evidence of position change or words-vs-actions mismatch found for Birkett.\",\n    \"China advantage not applicable as clip does not mention China.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Birkett says AI can be a force for good, and the UN should create an AI governance framework balancing innovation and employment concerns.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗？\",\n          \"title\": \"AI向善？Birkett直言联合国需出手\",\n          \"title_lines\": [\n            \"AI向善？\",\n            \"Birkett直言\",\n            \"联合国需出手\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"年轻人怕AI抢饭碗，Birkett却说这是好事\",\n          \"title_lines\": [\n            \"年轻人怕AI抢饭碗\",\n            \"Birkett却说\",\n            \"这是好事\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"193国智慧能治AI？Birkett给出路线图\",\n          \"title_lines\": [\n            \"193国智慧\",\n            \"能治AI？\",\n            \"Birkett给出路线图\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'the wisdom of the 193 can come together to have an AI governance framework' and mentions balancing innovation and concerns.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗？\",\n          \"title\": \"AI治理不能只靠企业，Birkett喊话联合国\",\n          \"title_lines\": [\n            \"AI治理不能只靠企业\",\n            \"Birkett喊话\",\n            \"联合国\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'the role of the private sector is absolutely critical' but also calls for UN framework.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'."
+            ],
+            "title": "年轻人怕AI抢饭碗，Birkett却说这是好事",
+            "title_lines": [
+              "年轻人怕AI抢饭碗",
+              "Birkett却说",
+              "这是好事"
+            ],
+            "title_highlights": [
+              "年轻人怕AI抢饭碗",
+              "Birkett却说",
+              "这是好事"
+            ],
+            "runner_up_titles": [
+              "AI向善？Birkett直言联合国需出手",
+              "193国智慧能治AI？Birkett给出路线图"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 1
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：Birkett认为AI治理需联合国牵头，平衡创新与就业担忧",
+            "comment_highlights": [
+              "AI治理",
+              "联合国牵头"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：改革金融机构与联合国同步，理想但雄心勃勃",
+                "comment_highlights": [
+                  "改革同步"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：渐进式改革为发展中国家带来优惠融资",
+                "comment_highlights": [
+                  "渐进式改革"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：改善发展中国家处境是核心目标",
+                "comment_highlights": [
+                  "改善处境"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：AI可成向善力量，Birkett给出积极信号",
+                "comment_highlights": [
+                  "AI向善"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：年轻人担忧AI夺走工作与创造力",
+                "comment_highlights": [
+                  "担忧AI"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：联合国193国智慧可制定AI治理框架",
+                "comment_highlights": [
+                  "193国智慧"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：Maria Finerne-Espinoza提及联合国召集能力",
+                "comment_highlights": [
+                  "召集能力"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：秘书长具备召集、合作、倡导能力",
+                "comment_highlights": [
+                  "秘书长能力"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：这正是当今世界所需",
+                "comment_highlights": [
+                  "当今所需"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：私营部门作用至关重要",
+                "comment_highlights": [
+                  "私营部门"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：创新、就业、资源是发展中国家所需",
+                "comment_highlights": [
+                  "创新就业资源"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"source_title\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI可成向善力量，联合国应推动治理框架\",\n    \"current_title_lines\": [\n      \"Birkett：AI可成向善力量\",\n      \"联合国应推动治理框架\",\n      \"平衡创新与就业担忧\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"理想情况下，如果联合国改革与金融机构改革同步推进会很好，但这可能过于雄心勃勃。\",\n        \"en\": \"Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但如果能对国际金融机构进行系统性、渐进式的改革，例如为大量成员国带来优惠融资，\",\n        \"en\": \"But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,\",\n        \"relative_start\": 8.9,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"特别是发展中国家，我认为这将改善世界上许多人的处境。\",\n        \"en\": \"especially developing member states, I think that will make things better for a lot of our people in the world.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 27.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我也想谈谈人工智能，因为我相信人工智能可以成为一股向善的力量。\",\n        \"en\": \"But I also want to speak about AI, because I believe that AI can be a force for good.\",\n        \"relative_start\": 27.3,\n        \"relative_end\": 33.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但年轻人担心人工智能会夺走他们的工作，扼杀他们的创造力。\",\n        \"en\": \"But young people are concerned that AI will take their jobs, will kill their creativity.\",\n        \"relative_start\": 33.0,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，联合国汇聚193个成员国的智慧，可以制定一个人工智能治理框架，平衡创新与民众关切。\",\n        \"en\": \"And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"玛丽亚·费尔南德斯-埃斯皮诺萨。\",\n        \"en\": \"the concerns of our people. Maria Finerne-Espinoza.\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为联合国和秘书长有能力召集、合作和倡导。\",\n        \"en\": \"Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.\",\n        \"relative_start\": 55.8,\n        \"relative_end\": 69.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这正是当今世界所需要的。\",\n        \"en\": \"And that's exactly what we need in the world of today.\",\n        \"relative_start\": 69.2,\n        \"relative_end\": 72.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"你问到了私营部门的作用。\",\n        \"en\": \"You asked about the role of the private sector.\",\n        \"relative_start\": 72.4,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我认为这一点至关重要，因为这是创新、就业和资源的来源，正是发展中国家当前所需。\",\n        \"en\": \"And I think this is absolutely critical, because that's where we see innovation, we see jobs, we see resources, and that's what developing countries need right now.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI can be a force for good, and the UN should create an AI governance framework that balances innovation and concerns.\",\n      \"public_baseline\": \"UN has already established an AI Advisory Body and released a report 'Governing AI for Humanity' in September 2024, proposing recommendations for AI governance.\",\n      \"surprise_gap\": \"Birkett's call for UN AI governance framework aligns with existing UN efforts; no surprise gap.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett AI force for good UN governance framework\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-07-23/ai-can-be-force-for-good-birkett-says-video\",\n          \"fact\": \"Bloomberg video confirms Birkett's stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett United Nations AI governance framework\",\n          \"url\": \"https://www.un.org/en/ai-advisory-body\",\n          \"fact\": \"UN already has AI Advisory Body and report 'Governing AI for Humanity'.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Birkett is the first to propose UN AI governance\",\n        \"UN has no AI governance framework\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The name 'Maria Finerne-Espinoza' in the transcript appears to be a mishearing of 'María Fernanda Espinosa'; public snippets confirm the correct name.\",\n    \"No evidence of position change or words-vs-actions mismatch found for Birkett.\",\n    \"China advantage not applicable as clip does not mention China.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Birkett says AI can be a force for good, and the UN should create an AI governance framework balancing innovation and employment concerns.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗？\",\n          \"title\": \"AI向善？Birkett直言联合国需出手\",\n          \"title_lines\": [\n            \"AI向善？\",\n            \"Birkett直言\",\n            \"联合国需出手\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"年轻人怕AI抢饭碗，Birkett却说这是好事\",\n          \"title_lines\": [\n            \"年轻人怕AI抢饭碗\",\n            \"Birkett却说\",\n            \"这是好事\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"193国智慧能治AI？Birkett给出路线图\",\n          \"title_lines\": [\n            \"193国智慧\",\n            \"能治AI？\",\n            \"Birkett给出路线图\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'the wisdom of the 193 can come together to have an AI governance framework' and mentions balancing innovation and concerns.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗？\",\n          \"title\": \"AI治理不能只靠企业，Birkett喊话联合国\",\n          \"title_lines\": [\n            \"AI治理不能只靠企业\",\n            \"Birkett喊话\",\n            \"联合国\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Birkett says 'the role of the private sector is absolutely critical' but also calls for UN framework.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"年轻人怕AI抢饭碗：Birkett却说，这是好事\",\n      \"title_lines\": [\n        \"年轻人怕AI抢饭碗\",\n        \"Birkett却说\",\n        \"这是好事\"\n      ],\n      \"title_highlights\": [\n        \"年轻人怕AI抢饭碗\",\n        \"Birkett却说\",\n        \"这是好事\"\n      ],\n      \"comment\": \"KC评论：Birkett认为AI治理需联合国牵头，平衡创新与就业担忧\",\n      \"comment_highlights\": [\n        \"AI治理\",\n        \"联合国牵头\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：改革金融机构与联合国同步，理想但雄心勃勃\",\n          \"comment_highlights\": [\n            \"改革金融机构与联\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：渐进式改革为发展中国家带来优惠融资\",\n          \"comment_highlights\": [\n            \"渐进式改革\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：改善发展中国家处境是核心目标\",\n          \"comment_highlights\": [\n            \"改善发展中国家处\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：AI可成向善力量，Birkett给出积极信号\",\n          \"comment_highlights\": [\n            \"AI可成向善力量\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：年轻人担忧AI夺走工作与创造力\",\n          \"comment_highlights\": [\n            \"担忧AI\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：联合国193国智慧可制定AI治理框架\",\n          \"comment_highlights\": [\n            \"193国智慧\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：MariaFinerne-Espinoza提及联合国召集能力\",\n          \"comment_highlights\": [\n            \"召集能力\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：秘书长具备召集、合作、倡导能力\",\n          \"comment_highlights\": [\n            \"秘书长具备召集、\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：这正是当今世界所需\",\n          \"comment_highlights\": [\n            \"这正是当今世界所\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：私营部门作用至关重要\",\n          \"comment_highlights\": [\n            \"私营部门\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：创新、就业、资源是发展中国家所需\",\n          \"comment_highlights\": [\n            \"创新、就业、资源\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'.\"\n      ],\n      \"runner_up_titles\": [\n        \"AI向善？Birkett直言联合国需出手\",\n        \"193国智慧能治AI？Birkett给出路线图\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 1\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 83,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"make_china_direction_constructive_or_positive\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 1\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"make_china_direction_constructive_or_positive\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'."
+                ],
+                "title": "年轻人怕AI抢饭碗，Birkett却说这是好事",
+                "title_lines": [
+                  "年轻人怕AI抢饭碗",
+                  "Birkett却说",
+                  "这是好事"
+                ],
+                "title_highlights": [
+                  "年轻人怕AI抢饭碗",
+                  "Birkett却说",
+                  "这是好事"
+                ],
+                "runner_up_titles": [
+                  "AI向善？Birkett直言联合国需出手",
+                  "193国智慧能治AI？Birkett给出路线图"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：Birkett认为AI治理需联合国牵头，平衡创新与就业担忧",
+                "comment_highlights": [
+                  "AI治理",
+                  "联合国牵头"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：改革金融机构与联合国同步，理想但雄心勃勃",
+                    "comment_highlights": [
+                      "改革金融机构与联"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：渐进式改革为发展中国家带来优惠融资",
+                    "comment_highlights": [
+                      "渐进式改革"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：改善发展中国家处境是核心目标",
+                    "comment_highlights": [
+                      "改善发展中国家处"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：AI可成向善力量，Birkett给出积极信号",
+                    "comment_highlights": [
+                      "AI可成向善力量"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：年轻人担忧AI夺走工作与创造力",
+                    "comment_highlights": [
+                      "担忧AI"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：联合国193国智慧可制定AI治理框架",
+                    "comment_highlights": [
+                      "193国智慧"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：MariaFinerne-Espinoza提及联合国召集能力",
+                    "comment_highlights": [
+                      "召集能力"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：秘书长具备召集、合作、倡导能力",
+                    "comment_highlights": [
+                      "秘书长具备召集、"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：这正是当今世界所需",
+                    "comment_highlights": [
+                      "这正是当今世界所"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：私营部门作用至关重要",
+                    "comment_highlights": [
+                      "私营部门"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：创新、就业、资源是发展中国家所需",
+                    "comment_highlights": [
+                      "创新、就业、资源"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "年轻人怕AI抢饭碗：Birkett却说，这是好事",
+          "title_lines": [
+            "年轻人怕AI抢饭碗",
+            "Birkett却说",
+            "这是好事"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 10,
+            "china_resonance": 1
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 83,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "make_china_direction_constructive_or_positive"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 1
+            }
+          },
+          "comment": "KC评论：Birkett认为AI治理需联合国牵头，平衡创新与就业担忧"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-07-25T23:04:40.673955+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:43 AI Can Be Force For Good, Birkett Says",
+          "source_title": "Duration: 2:43 AI Can Be Force For Good, Birkett Says",
+          "show_date": "",
+          "current_title": "AI可成向善力量，联合国应推动治理框架",
+          "current_title_lines": [
+            "Birkett：AI可成向善力量",
+            "联合国应推动治理框架",
+            "平衡创新与就业担忧"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "理想情况下，如果联合国改革与金融机构改革同步推进会很好，但这可能过于雄心勃勃。",
+              "en": "Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.",
+              "relative_start": 0.0,
+              "relative_end": 8.9
+            },
+            {
+              "index": 2,
+              "zh": "但如果能对国际金融机构进行系统性、渐进式的改革，例如为大量成员国带来优惠融资，",
+              "en": "But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,",
+              "relative_start": 8.9,
+              "relative_end": 21.0
+            },
+            {
+              "index": 3,
+              "zh": "特别是发展中国家，我认为这将改善世界上许多人的处境。",
+              "en": "especially developing member states, I think that will make things better for a lot of our people in the world.",
+              "relative_start": 21.0,
+              "relative_end": 27.3
+            },
+            {
+              "index": 4,
+              "zh": "但我也想谈谈人工智能，因为我相信人工智能可以成为一股向善的力量。",
+              "en": "But I also want to speak about AI, because I believe that AI can be a force for good.",
+              "relative_start": 27.3,
+              "relative_end": 33.0
+            },
+            {
+              "index": 5,
+              "zh": "但年轻人担心人工智能会夺走他们的工作，扼杀他们的创造力。",
+              "en": "But young people are concerned that AI will take their jobs, will kill their creativity.",
+              "relative_start": 33.0,
+              "relative_end": 38.6
+            },
+            {
+              "index": 6,
+              "zh": "因此，联合国汇聚193个成员国的智慧，可以制定一个人工智能治理框架，平衡创新与民众关切。",
+              "en": "And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,",
+              "relative_start": 38.6,
+              "relative_end": 50.6
+            },
+            {
+              "index": 7,
+              "zh": "玛丽亚·费尔南德斯-埃斯皮诺萨。",
+              "en": "the concerns of our people. Maria Finerne-Espinoza.",
+              "relative_start": 50.6,
+              "relative_end": 54.8
+            },
+            {
+              "index": 8,
+              "zh": "我认为联合国和秘书长有能力召集、合作和倡导。",
+              "en": "Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.",
+              "relative_start": 55.8,
+              "relative_end": 69.2
+            },
+            {
+              "index": 9,
+              "zh": "这正是当今世界所需要的。",
+              "en": "And that's exactly what we need in the world of today.",
+              "relative_start": 69.2,
+              "relative_end": 72.4
+            },
+            {
+              "index": 10,
+              "zh": "你问到了私营部门的作用。",
+              "en": "You asked about the role of the private sector.",
+              "relative_start": 72.4,
+              "relative_end": 75.5
+            },
+            {
+              "index": 11,
+              "zh": "我认为这一点至关重要，因为这是创新、就业和资源的来源，正是发展中国家当前所需。",
+              "en": "And I think this is absolutely critical, because that's where we see innovation, we see jobs, we see resources, and that's what developing countries need right now.",
+              "relative_start": 75.5,
+              "relative_end": 88.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n  \"source_title\": \"Duration: 2:43 AI Can Be Force For Good, Birkett Says\",\n  \"current_title\": \"AI可成向善力量，联合国应推动治理框架\",\n  \"source_claims\": [\n    \"Ideally, it would be good if we have UN reform moving parallel with the reform of the financial institutions, but that might be too ambitious.\",\n    \"But if we can have small movements, incremental movements with the IFIs that are systemic and that will bring concessional financing, for example, to a large number of member states,\",\n    \"especially developing member states, I think that will make things better for a lot of our people in the world.\",\n    \"But I also want to speak about AI, because I believe that AI can be a force for good.\",\n    \"But young people are concerned that AI will take their jobs, will kill their creativity.\",\n    \"And so this UN, the wisdom of the 193, I believe, can come together to have an AI governance framework that can balance innovation and not stifle creativity and, at the same time,\",\n    \"the concerns of our people. Maria Finerne-Espinoza.\",\n    \"Well, I think the UN and the Secretary-General is equipped to convene, to partner, to advocate.\",\n    \"And that's exactly what we need in the world of today.\",\n    \"You asked about the role of the private sector.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI can be a force for good, and the UN should create an AI governance framework that balances innovation and concerns.\",\n      \"public_baseline\": \"UN has already established an AI Advisory Body and released a report 'Governing AI for Humanity' in September 2024, proposing recommendations for AI governance.\",\n      \"surprise_gap\": \"Birkett's call for UN AI governance framework aligns with existing UN efforts; no surprise gap.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Birkett says 'AI can be a force for good' and 'the wisdom of the 193 can come together to have an AI governance framework'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett AI force for good UN governance framework\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-07-23/ai-can-be-force-for-good-birkett-says-video\",\n          \"fact\": \"Bloomberg video confirms Birkett's stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Birkett United Nations AI governance framework\",\n          \"url\": \"https://www.un.org/en/ai-advisory-body\",\n          \"fact\": \"UN already has AI Advisory Body and report 'Governing AI for Humanity'.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Birkett is the first to propose UN AI governance\",\n        \"UN has no AI governance framework\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The name 'Maria Finerne-Espinoza' in the transcript appears to be a mishearing of 'María Fernanda Espinosa'; public snippets confirm the correct name.\",\n    \"No evidence of position change or words-vs-actions mismatch found for Birkett.\",\n    \"China advantage not applicable as clip does not mention China.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"年轻人怕AI抢饭碗：Birkett却说，这是好事\",\n  \"title_lines\": [\n    \"年轻人怕AI抢饭碗\",\n    \"Birkett却说\",\n    \"这是好事\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'.\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 1\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"make_china_direction_constructive_or_positive\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, or foreign competitor response, the title must present that fact directly and constructively. Do not replace it with a generic market or negotiation summary.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'."
+            ],
+            "title": "年轻人担忧AI抢饭碗，Birkett却称可成向善力量，联合国治理框架能否平衡创新与担忧？",
+            "title_lines": [
+              "年轻人担忧AI抢饭碗",
+              "Birkett却称可成向善力量",
+              "联合国治理框架能否平衡创新与担忧？"
+            ],
+            "title_highlights": [
+              "年轻人担忧AI抢饭碗",
+              "Birkett却称可成向善力量",
+              "联合国治理框架能否平衡创新与担忧？"
+            ],
+            "runner_up_titles": [
+              "AI抢饭碗担忧蔓延，Birkett称可成向善力量，联合国治理框架如何回应？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 1
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "年轻人担忧AI抢饭碗：Birkett却称可成向善力量，联合国治理框架能否平衡创新与担忧？",
+        "title_lines": [
+          "年轻人担忧AI抢饭碗",
+          "Birkett却称可成向善力量",
+          "联合国治理框架能否平衡创新与担忧？"
+        ],
+        "title_highlights": [
+          "年轻人担忧AI抢饭碗",
+          "Birkett却称可成向善力量",
+          "联合国治理框架能否平衡创新与担忧？"
+        ],
+        "comment": "KC评论：Birkett认为AI治理需联合国牵头，平衡创新与就业担忧",
+        "comment_highlights": [
+          "AI治理",
+          "联合国牵头"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：改革金融机构与联合国同步，理想但雄心勃勃",
+            "comment_highlights": [
+              "改革金融机构与联"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：渐进式改革为发展中国家带来优惠融资",
+            "comment_highlights": [
+              "渐进式改革"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：改善发展中国家处境是核心目标",
+            "comment_highlights": [
+              "改善发展中国家处"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：AI可成向善力量，Birkett给出积极信号",
+            "comment_highlights": [
+              "AI可成向善力量"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：年轻人担忧AI夺走工作与创造力",
+            "comment_highlights": [
+              "担忧AI"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：联合国193国智慧可制定AI治理框架",
+            "comment_highlights": [
+              "193国智慧"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：MariaFinerne-Espinoza提及联合国召集能力",
+            "comment_highlights": [
+              "召集能力"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：秘书长具备召集、合作、倡导能力",
+            "comment_highlights": [
+              "秘书长具备召集、"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：这正是当今世界所需",
+            "comment_highlights": [
+              "这正是当今世界所"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：私营部门作用至关重要",
+            "comment_highlights": [
+              "私营部门"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：创新、就业、资源是发展中国家所需",
+            "comment_highlights": [
+              "创新、就业、资源"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "Birkett says 'young people are concerned that AI will take their jobs' but 'AI can be a force for good'."
+        ],
+        "runner_up_titles": [
+          "AI抢饭碗担忧蔓延，Birkett称可成向善力量，联合国治理框架如何回应？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 1
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 75,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "make_china_direction_constructive_or_positive",
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 1
+          }
+        }
+      }
+    }
+  ]
+}
