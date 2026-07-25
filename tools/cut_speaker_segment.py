@@ -20,11 +20,8 @@ import sys
 import time
 from pathlib import Path
 from typing import List, Optional, Sequence
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
 
-
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+from deepseek_api import DeepSeekAPIError, request_deepseek_json
 
 
 def run(cmd: Sequence[str], *, capture: bool = False) -> subprocess.CompletedProcess[str]:
@@ -44,33 +41,18 @@ def ffmpeg_time(seconds: float) -> str:
 
 
 def ask_deepseek(api_key: str, system_prompt: str, user_prompt: str) -> dict:
-    payload = {
-        "model": "deepseek-chat",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "temperature": 0.3,
-        "response_format": {"type": "json_object"},
-    }
-    body = json.dumps(payload).encode()
-    req = Request(
-        DEEPSEEK_URL, data=body,
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-    )
-    for attempt in range(3):
-        try:
-            with urlopen(req, timeout=120) as resp:
-                result = json.loads(resp.read())
-            content = result["choices"][0]["message"]["content"]
-            return json.loads(content)
-        except (HTTPError, URLError, json.JSONDecodeError, KeyError) as exc:
-            print(f"DeepSeek attempt {attempt + 1} failed: {exc}", flush=True)
-            if attempt < 2:
-                time.sleep(3 * (attempt + 1))
-            else:
-                raise SystemExit(f"DeepSeek API failed: {exc}")
-    return {}
+    try:
+        return request_deepseek_json(
+            api_key,
+            system_prompt,
+            user_prompt,
+            temperature=0.3,
+            timeout=120,
+            retry_delays=(3, 6),
+            log_prefix="",
+        )
+    except DeepSeekAPIError as exc:
+        raise SystemExit(str(exc)) from exc
 
 
 def extract_segment_audio_and_transcribe(

@@ -3,17 +3,13 @@
 
 from __future__ import annotations
 
-import re
 import hashlib
-import json
 import os
-import time
+import re
 from typing import Any, Callable, Iterable
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
 
+from deepseek_api import DeepSeekAPIError, request_deepseek_json
 
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 EXCLUDED_TOPIC_PATTERNS = [
     re.compile(r"\b(?:donald\s+(?:j\.?\s+)?)?trump(?:'s)?\b", re.IGNORECASE),
     re.compile(r"\bpresident\s+trump\b", re.IGNORECASE),
@@ -121,36 +117,20 @@ Return JSON exactly:
 Text:
 {text}
 """
-    payload = {
-        "model": "deepseek-chat",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "temperature": 0,
-        "response_format": {"type": "json_object"},
-    }
-    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = Request(
-        DEEPSEEK_URL,
-        data=body,
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-    )
-    last_error = ""
-    for attempt in range(3):
-        try:
-            with urlopen(req, timeout=timeout) as resp:
-                raw = json.loads(resp.read())
-            content = raw["choices"][0]["message"]["content"]
-            decision = json.loads(content)
-            if not isinstance(decision, dict):
-                decision = {}
-            AI_CACHE[cache_key] = decision
-            return decision
-        except (HTTPError, URLError, TimeoutError, OSError, KeyError, json.JSONDecodeError) as exc:
-            last_error = str(exc)
-            if attempt < 2:
-                time.sleep(2 * (attempt + 1))
+    try:
+        decision = request_deepseek_json(
+            api_key,
+            system_prompt,
+            user_prompt,
+            temperature=0,
+            timeout=timeout,
+            retry_delays=(2, 4),
+            log_prefix="",
+        )
+        AI_CACHE[cache_key] = decision
+        return decision
+    except DeepSeekAPIError as exc:
+        last_error = str(exc)
     decision = {"exclude": False, "confidence": 0.0, "reason": f"DeepSeek unavailable: {last_error}"}
     AI_CACHE[cache_key] = decision
     return decision

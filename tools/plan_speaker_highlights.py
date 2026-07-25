@@ -13,17 +13,14 @@ import json
 import os
 import re
 import sys
-import time
 from pathlib import Path
 from typing import Any, Optional, Tuple
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
 
+from deepseek_api import DeepSeekAPIError, request_deepseek_json
 from trump_filter import remove_trump_clips_from_plan
 from wording_guard import WORDING_GUARD_PROMPT, sanitize_plan_wording
 
 
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 HOST_OUTRO_PATTERNS = [
     r"\bthank you\b",
     r"\bleave it there\b",
@@ -47,33 +44,17 @@ def exit_no_eligible_clips(message: str) -> None:
 
 
 def ask_deepseek(api_key: str, system_prompt: str, user_prompt: str, temperature: float = 0.3) -> dict:
-    payload = {
-        "model": "deepseek-chat",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "temperature": temperature,
-        "response_format": {"type": "json_object"},
-    }
-    body = json.dumps(payload).encode()
-    req = Request(
-        DEEPSEEK_URL, data=body,
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-    )
-    for attempt in range(3):
-        try:
-            with urlopen(req, timeout=180) as resp:
-                result = json.loads(resp.read())
-            content = result["choices"][0]["message"]["content"]
-            return json.loads(content)
-        except (HTTPError, URLError, json.JSONDecodeError, KeyError) as exc:
-            print(f"  DeepSeek attempt {attempt + 1} failed: {exc}", flush=True)
-            if attempt < 2:
-                time.sleep(5 * (attempt + 1))
-            else:
-                raise SystemExit(f"DeepSeek API failed: {exc}")
-    return {}
+    try:
+        return request_deepseek_json(
+            api_key,
+            system_prompt,
+            user_prompt,
+            temperature=temperature,
+            timeout=180,
+            retry_delays=(5, 10),
+        )
+    except DeepSeekAPIError as exc:
+        raise SystemExit(str(exc)) from exc
 
 
 def format_time(seconds: float) -> str:

@@ -18,6 +18,7 @@ from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from deepseek_api import get_deepseek_model  # noqa: E402
 from plan_speaker_full import clean_text, normalize_highlights, safe_zh  # noqa: E402
 from plan_speaker_highlights import ask_deepseek  # noqa: E402
 from trump_filter import remove_trump_clips_from_plan  # noqa: E402
@@ -3108,7 +3109,7 @@ def apply_refinements(
 
     plan["title_refine"] = {
         "provider": "deepseek",
-        "model": "deepseek-chat",
+        "model": get_deepseek_model(),
         "research_version": TITLE_RESEARCH_VERSION,
         "style": style,
         "status": refine_status,
@@ -3154,7 +3155,7 @@ def write_refine_log(
         "plan_path": str(plan_path),
         "style": style,
         "provider": "deepseek",
-        "model": "deepseek-chat",
+        "model": get_deepseek_model(),
         "research_version": TITLE_RESEARCH_VERSION,
         "data_driven_lessons": TITLE_DATA_LESSONS,
         "quality_min_score": TITLE_QUALITY_MIN_SCORE,
