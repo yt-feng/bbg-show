@@ -1,0 +1,1196 @@
+{
+  "timestamp_utc": "2026-07-29T23:22:39.050783+00:00",
+  "plan_path": "work/top-videos/09_warsh_says_there_was_much_agreement_on_hard_questions/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Kevin Warsh",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Kevin Warsh",
+        "preferred_en": "Kevin Warsh",
+        "official_zh": "凯文·沃什",
+        "common_zh": "沃什",
+        "title_label": "沃什",
+        "preferred_zh": "沃什",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official Fed bio uses 'Kevin Warsh'; Reuters article uses '凯文·沃什' in Chinese context."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Wikipedia and Bloomberg's own site confirm '彭博' as the common Chinese name."
+      },
+      {
+        "source_text": "REITs",
+        "entity_type": "other",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Real Estate Investment Trusts",
+        "preferred_en": "Real Estate Investment Trusts",
+        "official_zh": "房地产投资信托基金",
+        "common_zh": "REITs",
+        "title_label": "REITs",
+        "preferred_zh": "REITs",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.reit.com/data-research",
+          "https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits"
+        ],
+        "evidence": "Nareit and J.P. Morgan use 'REITs' as standard term; Chinese media often retain 'REITs' or use '房地产投资信托基金'."
+      },
+      {
+        "source_text": "Federal Open Market Committee",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Open Market Committee",
+        "preferred_en": "Federal Open Market Committee",
+        "official_zh": "联邦公开市场委员会",
+        "common_zh": "FOMC",
+        "title_label": "FOMC",
+        "preferred_zh": "FOMC",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Fed official site uses 'FOMC' and '联邦公开市场委员会' in Chinese versions."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "REITs",
+        "clip_indexes": [
+          1
+        ],
+        "context": "Real estate investment trusts performance relative to interest rates",
+        "sense": "Real Estate Investment Trusts",
+        "preferred_zh": "房地产投资信托基金",
+        "title_label": "REITs",
+        "avoid_zh": [
+          "房地产信托基金"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.reit.com/data-research",
+          "https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits"
+        ]
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Markets have made decisions because we step back in part from trying to influence those.",
+        "public_baseline": "Fed typically emphasizes its independence and that it does not directly target market prices.",
+        "surprise_gap": "Warsh explicitly states the Fed is stepping back from influencing markets, which may be seen as a shift from traditional Fed communication.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'"
+          },
+          {
+            "kind": "public",
+            "query": "Kevin Warsh monetary policy stance 2025",
+            "url": "https://www.capitaladvisors.com/wp-content/uploads/2026/06/A-New-Fed-Chair-A-New-Direction.pdf",
+            "fact": "Warsh's impact is more likely to come from reshaping how the Fed operates than from immediate rate changes."
+          }
+        ],
+        "forbidden_claims": [
+          "Warsh is dovish",
+          "Warsh is hawkish"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The clip's title '沃什：利率决议分歧大，市场已提前反应' is consistent with Warsh's comments about market reaction and internal disagreement.",
+      "No evidence of a position change or words-vs-actions mismatch was found in the public snippets."
+    ],
+    "research_queries": [
+      {
+        "query": "Kevin Warsh monetary policy stance 2025",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Kevin Warsh's known views on monetary policy to assess if his comments on rates and market reaction are consistent with his public stance."
+      },
+      {
+        "query": "Warsh Fed policy rate decision 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Warsh's recent statements on Fed policy rate decisions to see if he has changed position."
+      },
+      {
+        "query": "REITs performance 2025 interest rates",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that REITs should be higher given current interest rates, establishing market consensus."
+      },
+      {
+        "query": "Treasury yield curve 2025 vs 42 days ago",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check if nominal rates across the Treasury curve have indeed moved up as claimed."
+      },
+      {
+        "query": "markets reacted to Fed decision 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether markets have reacted to Fed decisions in real time as Warsh claims."
+      },
+      {
+        "query": "Warsh says monetary policy matters real economy",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific claim that monetary policy affects the real economy, not just words or actions."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 6,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-07-29T23:22:35.860891+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions",
+          "source_title": "Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions",
+          "show_date": "",
+          "current_title": "沃什：利率决议分歧大，市场已提前反应",
+          "current_title_lines": [
+            "美联储沃什发声",
+            "利率决议分歧明显",
+            "市场已提前定价"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "为什么REITS今天不该更高？他们的交易里有很多因素。",
+              "en": "Why should REITS not be higher today? There's a lot in their deal.",
+              "relative_start": 0.0,
+              "relative_end": 5.4
+            },
+            {
+              "index": 2,
+              "zh": "所以今天的利率比42天前更高。",
+              "en": "So rates are higher today than they were 42 days ago.",
+              "relative_start": 5.4,
+              "relative_end": 11.3
+            },
+            {
+              "index": 3,
+              "zh": "市场已经做出决定，因为我们部分退出了试图影响这些决定。",
+              "en": "Markets have made decisions because we step back in part from trying to influence those.",
+              "relative_start": 11.3,
+              "relative_end": 18.2
+            },
+            {
+              "index": 4,
+              "zh": "市场判断推高了国债收益率曲线上的名义利率。",
+              "en": "Market judgments have moved up on what nominal rates are across the Treasury curve.",
+              "relative_start": 18.2,
+              "relative_end": 26.1
+            },
+            {
+              "index": 5,
+              "zh": "这并不意味着我们接受它们的指令，但我们正在观察它们。",
+              "en": "That doesn't mean we take them by dictation, but we're observing them.",
+              "relative_start": 26.2,
+              "relative_end": 32.0
+            },
+            {
+              "index": 6,
+              "zh": "所以，说市场没有因为我们今天没行动而反应，是一种误解。",
+              "en": "So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.",
+              "relative_start": 32.0,
+              "relative_end": 38.1
+            },
+            {
+              "index": 7,
+              "zh": "市场正在实时反应。未来一段时间，我们将就政策利率做出重要决定。",
+              "en": "Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.",
+              "relative_start": 38.1,
+              "relative_end": 46.0
+            },
+            {
+              "index": 8,
+              "zh": "我认为在此期间市场有很多决定要做。",
+              "en": "Markets in the intervening period I think have quite a bit of decisions to make.",
+              "relative_start": 46.0,
+              "relative_end": 51.2
+            },
+            {
+              "index": 9,
+              "zh": "我试着这样说：货币政策很重要，不仅在于我们说什么，甚至做什么。",
+              "en": "I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.",
+              "relative_start": 51.2,
+              "relative_end": 60.0
+            },
+            {
+              "index": 10,
+              "zh": "货币政策的重要性在于它如何影响实体经济。",
+              "en": "Monetary policy matters by how it affects the real economy.",
+              "relative_start": 60.0,
+              "relative_end": 64.4
+            },
+            {
+              "index": 11,
+              "zh": "我们在金融市场看到的这些价格，是它影响实体经济的众多方式之一。",
+              "en": "And these prices that we see in financial markets is one of the many ways in which it affects the real economy.",
+              "relative_start": 64.4,
+              "relative_end": 72.1
+            },
+            {
+              "index": 12,
+              "zh": "我们将继续关注市场信息，观察它如何应对新事件，这有助于我们在七八周后开会时做出决策。",
+              "en": "We'll be continuing to watch that market information, see how it responds to incoming events, and that can help inform our decision making",
+              "relative_start": 72.1,
+              "relative_end": 80.1
+            },
+            {
+              "index": 13,
+              "zh": "在最近几天的内部争论中，你和另外八位主张维持利率的成员，你们的分歧如何？",
+              "en": "when we meet in seven or eight weeks. How would you characterize in the family fight the last couple of days of you and the other eight members who wanted to hold?",
+              "relative_start": 80.1,
+              "relative_end": 87.5
+            },
+            {
+              "index": 14,
+              "zh": "那是强烈的信念吗？",
+              "en": "Was that a strong conviction?",
+              "relative_start": 87.5,
+              "relative_end": 88.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"source_title\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"show_date\": \"\",\n    \"current_title\": \"沃什：利率决议分歧大，市场已提前反应\",\n    \"current_title_lines\": [\n      \"美联储沃什发声\",\n      \"利率决议分歧明显\",\n      \"市场已提前定价\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"为什么REITS今天不该更高？他们的交易里有很多因素。\",\n        \"en\": \"Why should REITS not be higher today? There's a lot in their deal.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"所以今天的利率比42天前更高。\",\n        \"en\": \"So rates are higher today than they were 42 days ago.\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"市场已经做出决定，因为我们部分退出了试图影响这些决定。\",\n        \"en\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n        \"relative_start\": 11.3,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"市场判断推高了国债收益率曲线上的名义利率。\",\n        \"en\": \"Market judgments have moved up on what nominal rates are across the Treasury curve.\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这并不意味着我们接受它们的指令，但我们正在观察它们。\",\n        \"en\": \"That doesn't mean we take them by dictation, but we're observing them.\",\n        \"relative_start\": 26.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"所以，说市场没有因为我们今天没行动而反应，是一种误解。\",\n        \"en\": \"So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"市场正在实时反应。未来一段时间，我们将就政策利率做出重要决定。\",\n        \"en\": \"Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 46.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为在此期间市场有很多决定要做。\",\n        \"en\": \"Markets in the intervening period I think have quite a bit of decisions to make.\",\n        \"relative_start\": 46.0,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试着这样说：货币政策很重要，不仅在于我们说什么，甚至做什么。\",\n        \"en\": \"I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"货币政策的重要性在于它如何影响实体经济。\",\n        \"en\": \"Monetary policy matters by how it affects the real economy.\",\n        \"relative_start\": 60.0,\n        \"relative_end\": 64.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们在金融市场看到的这些价格，是它影响实体经济的众多方式之一。\",\n        \"en\": \"And these prices that we see in financial markets is one of the many ways in which it affects the real economy.\",\n        \"relative_start\": 64.4,\n        \"relative_end\": 72.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"我们将继续关注市场信息，观察它如何应对新事件，这有助于我们在七八周后开会时做出决策。\",\n        \"en\": \"We'll be continuing to watch that market information, see how it responds to incoming events, and that can help inform our decision making\",\n        \"relative_start\": 72.1,\n        \"relative_end\": 80.1\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"在最近几天的内部争论中，你和另外八位主张维持利率的成员，你们的分歧如何？\",\n        \"en\": \"when we meet in seven or eight weeks. How would you characterize in the family fight the last couple of days of you and the other eight members who wanted to hold?\",\n        \"relative_start\": 80.1,\n        \"relative_end\": 87.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"那是强烈的信念吗？\",\n        \"en\": \"Was that a strong conviction?\",\n        \"relative_start\": 87.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"REITs\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Real Estate Investment Trusts\",\n      \"preferred_en\": \"Real Estate Investment Trusts\",\n      \"official_zh\": \"房地产投资信托基金\",\n      \"common_zh\": \"REITs\",\n      \"title_label\": \"REITs\",\n      \"preferred_zh\": \"REITs\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ],\n      \"evidence\": \"Nareit and J.P. Morgan use 'REITs' as standard term; Chinese media often retain 'REITs' or use '房地产投资信托基金'.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"REITs\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"Real estate investment trusts performance relative to interest rates\",\n      \"sense\": \"Real Estate Investment Trusts\",\n      \"preferred_zh\": \"房地产投资信托基金\",\n      \"title_label\": \"REITs\",\n      \"avoid_zh\": [\n        \"房地产信托基金\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n      \"public_baseline\": \"Fed typically emphasizes its independence and that it does not directly target market prices.\",\n      \"surprise_gap\": \"Warsh explicitly states the Fed is stepping back from influencing markets, which may be seen as a shift from traditional Fed communication.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Kevin Warsh monetary policy stance 2025\",\n          \"url\": \"https://www.capitaladvisors.com/wp-content/uploads/2026/06/A-New-Fed-Chair-A-New-Direction.pdf\",\n          \"fact\": \"Warsh's impact is more likely to come from reshaping how the Fed operates than from immediate rate changes.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Warsh is dovish\",\n        \"Warsh is hawkish\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's title '沃什：利率决议分歧大，市场已提前反应' is consistent with Warsh's comments about market reaction and internal disagreement.\",\n    \"No evidence of a position change or words-vs-actions mismatch was found in the public snippets.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "沃什表示美联储部分退出对市场的干预，市场已提前定价利率变化",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "美联储自己承认了",
+                "title": "美联储官员坦言：我们正退出市场干预",
+                "title_lines": [
+                  "美联储官员坦言",
+                  "我们正退出市场干预",
+                  "利率已由市场定价"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "市场居然比美联储先动",
+                "title": "市场跑在美联储前面：利率已提前反应",
+                "title_lines": [
+                  "市场跑在美联储前面",
+                  "利率已提前反应",
+                  "官员称我们没动但市场已动"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "REITs到底该不该涨",
+                "title": "利率更高了，REITs为何不该涨？",
+                "title_lines": [
+                  "利率更高了",
+                  "REITs为何不该涨？",
+                  "沃什抛出关键疑问"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Warsh asks 'Why should REITS not be higher today?' and notes rates are higher than 42 days ago"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "内部竟然有这么大分歧",
+                "title": "利率决议内部分歧：九人主张按兵不动",
+                "title_lines": [
+                  "利率决议内部分歧",
+                  "九人主张按兵不动",
+                  "沃什称信念坚定"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Interviewer asks about disagreement among Warsh and eight other members who wanted to hold; Warsh implies strong conviction"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"source_title\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"show_date\": \"\",\n    \"current_title\": \"沃什：利率决议分歧大，市场已提前反应\",\n    \"current_title_lines\": [\n      \"美联储沃什发声\",\n      \"利率决议分歧明显\",\n      \"市场已提前定价\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"为什么REITS今天不该更高？他们的交易里有很多因素。\",\n        \"en\": \"Why should REITS not be higher today? There's a lot in their deal.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"所以今天的利率比42天前更高。\",\n        \"en\": \"So rates are higher today than they were 42 days ago.\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"市场已经做出决定，因为我们部分退出了试图影响这些决定。\",\n        \"en\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n        \"relative_start\": 11.3,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"市场判断推高了国债收益率曲线上的名义利率。\",\n        \"en\": \"Market judgments have moved up on what nominal rates are across the Treasury curve.\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这并不意味着我们接受它们的指令，但我们正在观察它们。\",\n        \"en\": \"That doesn't mean we take them by dictation, but we're observing them.\",\n        \"relative_start\": 26.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"所以，说市场没有因为我们今天没行动而反应，是一种误解。\",\n        \"en\": \"So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"市场正在实时反应。未来一段时间，我们将就政策利率做出重要决定。\",\n        \"en\": \"Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 46.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为在此期间市场有很多决定要做。\",\n        \"en\": \"Markets in the intervening period I think have quite a bit of decisions to make.\",\n        \"relative_start\": 46.0,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试着这样说：货币政策很重要，不仅在于我们说什么，甚至做什么。\",\n        \"en\": \"I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"货币政策的重要性在于它如何影响实体经济。\",\n        \"en\": \"Monetary policy matters by how it affects the real economy.\",\n        \"relative_start\": 60.0,\n        \"relative_end\": 64.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们在金融市场看到的这些价格，是它影响实体经济的众多方式之一。\",\n        \"en\": \"And these prices that we see in financial markets is one of the many ways in which it affects the real economy.\",\n        \"relative_start\": 64.4,\n        \"relative_end\": 72.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"我们将继续关注市场信息，观察它如何应对新事件，这有助于我们在七八周后开会时做出决策。\",\n        \"en\": \"We'll be continuing to watch that market information, see how it responds to incoming events, and that can help inform our decision making\",\n        \"relative_start\": 72.1,\n        \"relative_end\": 80.1\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"在最近几天的内部争论中，你和另外八位主张维持利率的成员，你们的分歧如何？\",\n        \"en\": \"when we meet in seven or eight weeks. How would you characterize in the family fight the last couple of days of you and the other eight members who wanted to hold?\",\n        \"relative_start\": 80.1,\n        \"relative_end\": 87.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"那是强烈的信念吗？\",\n        \"en\": \"Was that a strong conviction?\",\n        \"relative_start\": 87.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"REITs\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Real Estate Investment Trusts\",\n      \"preferred_en\": \"Real Estate Investment Trusts\",\n      \"official_zh\": \"房地产投资信托基金\",\n      \"common_zh\": \"REITs\",\n      \"title_label\": \"REITs\",\n      \"preferred_zh\": \"REITs\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ],\n      \"evidence\": \"Nareit and J.P. Morgan use 'REITs' as standard term; Chinese media often retain 'REITs' or use '房地产投资信托基金'.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"REITs\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"Real estate investment trusts performance relative to interest rates\",\n      \"sense\": \"Real Estate Investment Trusts\",\n      \"preferred_zh\": \"房地产投资信托基金\",\n      \"title_label\": \"REITs\",\n      \"avoid_zh\": [\n        \"房地产信托基金\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n      \"public_baseline\": \"Fed typically emphasizes its independence and that it does not directly target market prices.\",\n      \"surprise_gap\": \"Warsh explicitly states the Fed is stepping back from influencing markets, which may be seen as a shift from traditional Fed communication.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Kevin Warsh monetary policy stance 2025\",\n          \"url\": \"https://www.capitaladvisors.com/wp-content/uploads/2026/06/A-New-Fed-Chair-A-New-Direction.pdf\",\n          \"fact\": \"Warsh's impact is more likely to come from reshaping how the Fed operates than from immediate rate changes.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Warsh is dovish\",\n        \"Warsh is hawkish\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's title '沃什：利率决议分歧大，市场已提前反应' is consistent with Warsh's comments about market reaction and internal disagreement.\",\n    \"No evidence of a position change or words-vs-actions mismatch was found in the public snippets.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"沃什表示美联储部分退出对市场的干预，市场已提前定价利率变化\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"美联储自己承认了\",\n          \"title\": \"美联储官员坦言：我们正退出市场干预\",\n          \"title_lines\": [\n            \"美联储官员坦言\",\n            \"我们正退出市场干预\",\n            \"利率已由市场定价\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"市场居然比美联储先动\",\n          \"title\": \"市场跑在美联储前面：利率已提前反应\",\n          \"title_lines\": [\n            \"市场跑在美联储前面\",\n            \"利率已提前反应\",\n            \"官员称我们没动但市场已动\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"REITs到底该不该涨\",\n          \"title\": \"利率更高了，REITs为何不该涨？\",\n          \"title_lines\": [\n            \"利率更高了\",\n            \"REITs为何不该涨？\",\n            \"沃什抛出关键疑问\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Warsh asks 'Why should REITS not be higher today?' and notes rates are higher than 42 days ago\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"内部竟然有这么大分歧\",\n          \"title\": \"利率决议内部分歧：九人主张按兵不动\",\n          \"title_lines\": [\n            \"利率决议内部分歧\",\n            \"九人主张按兵不动\",\n            \"沃什称信念坚定\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Interviewer asks about disagreement among Warsh and eight other members who wanted to hold; Warsh implies strong conviction\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "legacy-compatible short label",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "市场居然比美联储先动",
+            "evidence_basis": [
+              "Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'"
+            ],
+            "title": "市场跑在美联储前面：利率已提前反应",
+            "title_lines": [
+              "市场跑在美联储前面",
+              "利率已提前反应",
+              "官员称我们没动但市场已动"
+            ],
+            "title_highlights": [
+              "市场跑在美联储前面",
+              "利率已提前反应"
+            ],
+            "runner_up_titles": [
+              "美联储官员坦言：我们正退出市场干预",
+              "利率更高了，REITs为何不该涨？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：美联储官员承认市场已提前定价，利率决议或成马后炮",
+            "comment_highlights": [
+              "市场已提前定价"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：沃什反问REITs为何不该涨，暗示利率与资产定价脱节",
+                "comment_highlights": [
+                  "REITs为何不该涨"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：42天前利率更低，如今市场已重新定价",
+                "comment_highlights": [
+                  "42天前利率更低"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：美联储部分退出干预，市场自主决策",
+                "comment_highlights": [
+                  "退出干预"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：市场判断推高名义利率，曲线陡峭化",
+                "comment_highlights": [
+                  "市场判断推高名义利率"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：美联储观察市场但不受指令约束",
+                "comment_highlights": [
+                  "观察市场"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：说市场没反应是误解，实时反应已发生",
+                "comment_highlights": [
+                  "实时反应已发生"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：未来政策利率决策将参考市场实时反应",
+                "comment_highlights": [
+                  "政策利率决策"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：市场在等待期间有大量决策要做",
+                "comment_highlights": [
+                  "市场有大量决策"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：货币政策影响实体经济，金融市场价格是关键渠道",
+                "comment_highlights": [
+                  "金融市场价格是关键渠道"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：实体经济才是货币政策的最终目标",
+                "comment_highlights": [
+                  "实体经济是最终目标"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：金融市场价格是货币政策传导的多种方式之一",
+                "comment_highlights": [
+                  "金融市场价格是传导方式"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：七八周后会议将参考市场对新事件的反应",
+                "comment_highlights": [
+                  "七八周后会议"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：内部争论中九人主张维持利率，分歧明显",
+                "comment_highlights": [
+                  "九人主张维持利率"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：沃什被问及信念强度，暗示立场坚定",
+                "comment_highlights": [
+                  "信念强度"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"source_title\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n    \"show_date\": \"\",\n    \"current_title\": \"沃什：利率决议分歧大，市场已提前反应\",\n    \"current_title_lines\": [\n      \"美联储沃什发声\",\n      \"利率决议分歧明显\",\n      \"市场已提前定价\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"为什么REITS今天不该更高？他们的交易里有很多因素。\",\n        \"en\": \"Why should REITS not be higher today? There's a lot in their deal.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"所以今天的利率比42天前更高。\",\n        \"en\": \"So rates are higher today than they were 42 days ago.\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"市场已经做出决定，因为我们部分退出了试图影响这些决定。\",\n        \"en\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n        \"relative_start\": 11.3,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"市场判断推高了国债收益率曲线上的名义利率。\",\n        \"en\": \"Market judgments have moved up on what nominal rates are across the Treasury curve.\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这并不意味着我们接受它们的指令，但我们正在观察它们。\",\n        \"en\": \"That doesn't mean we take them by dictation, but we're observing them.\",\n        \"relative_start\": 26.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"所以，说市场没有因为我们今天没行动而反应，是一种误解。\",\n        \"en\": \"So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"市场正在实时反应。未来一段时间，我们将就政策利率做出重要决定。\",\n        \"en\": \"Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 46.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为在此期间市场有很多决定要做。\",\n        \"en\": \"Markets in the intervening period I think have quite a bit of decisions to make.\",\n        \"relative_start\": 46.0,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试着这样说：货币政策很重要，不仅在于我们说什么，甚至做什么。\",\n        \"en\": \"I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"货币政策的重要性在于它如何影响实体经济。\",\n        \"en\": \"Monetary policy matters by how it affects the real economy.\",\n        \"relative_start\": 60.0,\n        \"relative_end\": 64.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们在金融市场看到的这些价格，是它影响实体经济的众多方式之一。\",\n        \"en\": \"And these prices that we see in financial markets is one of the many ways in which it affects the real economy.\",\n        \"relative_start\": 64.4,\n        \"relative_end\": 72.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"我们将继续关注市场信息，观察它如何应对新事件，这有助于我们在七八周后开会时做出决策。\",\n        \"en\": \"We'll be continuing to watch that market information, see how it responds to incoming events, and that can help inform our decision making\",\n        \"relative_start\": 72.1,\n        \"relative_end\": 80.1\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"在最近几天的内部争论中，你和另外八位主张维持利率的成员，你们的分歧如何？\",\n        \"en\": \"when we meet in seven or eight weeks. How would you characterize in the family fight the last couple of days of you and the other eight members who wanted to hold?\",\n        \"relative_start\": 80.1,\n        \"relative_end\": 87.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"那是强烈的信念吗？\",\n        \"en\": \"Was that a strong conviction?\",\n        \"relative_start\": 87.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"REITs\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Real Estate Investment Trusts\",\n      \"preferred_en\": \"Real Estate Investment Trusts\",\n      \"official_zh\": \"房地产投资信托基金\",\n      \"common_zh\": \"REITs\",\n      \"title_label\": \"REITs\",\n      \"preferred_zh\": \"REITs\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ],\n      \"evidence\": \"Nareit and J.P. Morgan use 'REITs' as standard term; Chinese media often retain 'REITs' or use '房地产投资信托基金'.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"REITs\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"Real estate investment trusts performance relative to interest rates\",\n      \"sense\": \"Real Estate Investment Trusts\",\n      \"preferred_zh\": \"房地产投资信托基金\",\n      \"title_label\": \"REITs\",\n      \"avoid_zh\": [\n        \"房地产信托基金\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n      \"public_baseline\": \"Fed typically emphasizes its independence and that it does not directly target market prices.\",\n      \"surprise_gap\": \"Warsh explicitly states the Fed is stepping back from influencing markets, which may be seen as a shift from traditional Fed communication.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Kevin Warsh monetary policy stance 2025\",\n          \"url\": \"https://www.capitaladvisors.com/wp-content/uploads/2026/06/A-New-Fed-Chair-A-New-Direction.pdf\",\n          \"fact\": \"Warsh's impact is more likely to come from reshaping how the Fed operates than from immediate rate changes.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Warsh is dovish\",\n        \"Warsh is hawkish\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's title '沃什：利率决议分歧大，市场已提前反应' is consistent with Warsh's comments about market reaction and internal disagreement.\",\n    \"No evidence of a position change or words-vs-actions mismatch was found in the public snippets.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"沃什表示美联储部分退出对市场的干预，市场已提前定价利率变化\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"美联储自己承认了\",\n          \"title\": \"美联储官员坦言：我们正退出市场干预\",\n          \"title_lines\": [\n            \"美联储官员坦言\",\n            \"我们正退出市场干预\",\n            \"利率已由市场定价\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"市场居然比美联储先动\",\n          \"title\": \"市场跑在美联储前面：利率已提前反应\",\n          \"title_lines\": [\n            \"市场跑在美联储前面\",\n            \"利率已提前反应\",\n            \"官员称我们没动但市场已动\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"REITs到底该不该涨\",\n          \"title\": \"利率更高了，REITs为何不该涨？\",\n          \"title_lines\": [\n            \"利率更高了\",\n            \"REITs为何不该涨？\",\n            \"沃什抛出关键疑问\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Warsh asks 'Why should REITS not be higher today?' and notes rates are higher than 42 days ago\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"内部竟然有这么大分歧\",\n          \"title\": \"利率决议内部分歧：九人主张按兵不动\",\n          \"title_lines\": [\n            \"利率决议内部分歧\",\n            \"九人主张按兵不动\",\n            \"沃什称信念坚定\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Interviewer asks about disagreement among Warsh and eight other members who wanted to hold; Warsh implies strong conviction\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"市场跑在美联储前面：利率已提前反应，官员称我们没动但市场已动\",\n      \"title_lines\": [\n        \"市场跑在美联储前面\",\n        \"利率已提前反应\",\n        \"官员称我们没动但市场已动\"\n      ],\n      \"title_highlights\": [\n        \"市场跑在美联储前面\",\n        \"利率已提前反应\"\n      ],\n      \"comment\": \"KC评论：美联储官员承认市场已提前定价，利率决议或成马后炮\",\n      \"comment_highlights\": [\n        \"市场已提前定价\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：沃什反问REITs为何不该涨，暗示利率与资产定价脱节\",\n          \"comment_highlights\": [\n            \"REITs为何不该涨\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：42天前利率更低，如今市场已重新定价\",\n          \"comment_highlights\": [\n            \"42天前利率更低\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：美联储部分退出干预，市场自主决策\",\n          \"comment_highlights\": [\n            \"退出干预\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：市场判断推高名义利率，曲线陡峭化\",\n          \"comment_highlights\": [\n            \"市场判断推高名义利率\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：美联储观察市场但不受指令约束\",\n          \"comment_highlights\": [\n            \"观察市场\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：说市场没反应是误解，实时反应已发生\",\n          \"comment_highlights\": [\n            \"实时反应已发生\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：未来政策利率决策将参考市场实时反应\",\n          \"comment_highlights\": [\n            \"政策利率决策\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：市场在等待期间有大量决策要做\",\n          \"comment_highlights\": [\n            \"市场在等待期间有\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：货币政策影响实体经济，金融市场价格是关键渠道\",\n          \"comment_highlights\": [\n            \"金融市场价格是关键渠道\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：实体经济才是货币政策的最终目标\",\n          \"comment_highlights\": [\n            \"实体经济才是货币\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：金融市场价格是货币政策传导的多种方式之一\",\n          \"comment_highlights\": [\n            \"金融市场价格是货\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：七八周后会议将参考市场对新事件的反应\",\n          \"comment_highlights\": [\n            \"七八周后会议\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：内部争论中九人主张维持利率，分歧明显\",\n          \"comment_highlights\": [\n            \"九人主张维持利率\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：沃什被问及信念强度，暗示立场坚定\",\n          \"comment_highlights\": [\n            \"信念强度\"\n          ]\n        }\n      ],\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"市场居然比美联储先动\",\n      \"evidence_basis\": [\n        \"Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'\"\n      ],\n      \"runner_up_titles\": [\n        \"美联储官员坦言：我们正退出市场干预\",\n        \"利率更高了，REITs为何不该涨？\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "legacy-compatible short label",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "市场居然比美联储先动",
+                "evidence_basis": [
+                  "Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'"
+                ],
+                "title": "市场跑在美联储前面：利率已提前反应",
+                "title_lines": [
+                  "市场跑在美联储前面",
+                  "利率已提前反应",
+                  "官员称我们没动但市场已动"
+                ],
+                "title_highlights": [
+                  "市场跑在美联储前面",
+                  "利率已提前反应"
+                ],
+                "runner_up_titles": [
+                  "美联储官员坦言：我们正退出市场干预",
+                  "利率更高了，REITs为何不该涨？"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：美联储官员承认市场已提前定价，利率决议或成马后炮",
+                "comment_highlights": [
+                  "市场已提前定价"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：沃什反问REITs为何不该涨，暗示利率与资产定价脱节",
+                    "comment_highlights": [
+                      "REITs为何不该涨"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：42天前利率更低，如今市场已重新定价",
+                    "comment_highlights": [
+                      "42天前利率更低"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：美联储部分退出干预，市场自主决策",
+                    "comment_highlights": [
+                      "退出干预"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：市场判断推高名义利率，曲线陡峭化",
+                    "comment_highlights": [
+                      "市场判断推高名义利率"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：美联储观察市场但不受指令约束",
+                    "comment_highlights": [
+                      "观察市场"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：说市场没反应是误解，实时反应已发生",
+                    "comment_highlights": [
+                      "实时反应已发生"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：未来政策利率决策将参考市场实时反应",
+                    "comment_highlights": [
+                      "政策利率决策"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：市场在等待期间有大量决策要做",
+                    "comment_highlights": [
+                      "市场在等待期间有"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：货币政策影响实体经济，金融市场价格是关键渠道",
+                    "comment_highlights": [
+                      "金融市场价格是关键渠道"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：实体经济才是货币政策的最终目标",
+                    "comment_highlights": [
+                      "实体经济才是货币"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：金融市场价格是货币政策传导的多种方式之一",
+                    "comment_highlights": [
+                      "金融市场价格是货"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：七八周后会议将参考市场对新事件的反应",
+                    "comment_highlights": [
+                      "七八周后会议"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：内部争论中九人主张维持利率，分歧明显",
+                    "comment_highlights": [
+                      "九人主张维持利率"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：沃什被问及信念强度，暗示立场坚定",
+                    "comment_highlights": [
+                      "信念强度"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "市场跑在美联储前面：利率已提前反应，官员称我们没动但市场已动",
+          "title_lines": [
+            "市场跑在美联储前面",
+            "利率已提前反应",
+            "官员称我们没动但市场已动"
+          ],
+          "formula_id": "legacy-compatible short label",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "市场居然比美联储先动",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：美联储官员承认市场已提前定价，利率决议或成马后炮"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-07-29T23:22:39.029289+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions",
+          "source_title": "Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions",
+          "show_date": "",
+          "current_title": "沃什：利率决议分歧大，市场已提前反应",
+          "current_title_lines": [
+            "美联储沃什发声",
+            "利率决议分歧明显",
+            "市场已提前定价"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "为什么REITS今天不该更高？他们的交易里有很多因素。",
+              "en": "Why should REITS not be higher today? There's a lot in their deal.",
+              "relative_start": 0.0,
+              "relative_end": 5.4
+            },
+            {
+              "index": 2,
+              "zh": "所以今天的利率比42天前更高。",
+              "en": "So rates are higher today than they were 42 days ago.",
+              "relative_start": 5.4,
+              "relative_end": 11.3
+            },
+            {
+              "index": 3,
+              "zh": "市场已经做出决定，因为我们部分退出了试图影响这些决定。",
+              "en": "Markets have made decisions because we step back in part from trying to influence those.",
+              "relative_start": 11.3,
+              "relative_end": 18.2
+            },
+            {
+              "index": 4,
+              "zh": "市场判断推高了国债收益率曲线上的名义利率。",
+              "en": "Market judgments have moved up on what nominal rates are across the Treasury curve.",
+              "relative_start": 18.2,
+              "relative_end": 26.1
+            },
+            {
+              "index": 5,
+              "zh": "这并不意味着我们接受它们的指令，但我们正在观察它们。",
+              "en": "That doesn't mean we take them by dictation, but we're observing them.",
+              "relative_start": 26.2,
+              "relative_end": 32.0
+            },
+            {
+              "index": 6,
+              "zh": "所以，说市场没有因为我们今天没行动而反应，是一种误解。",
+              "en": "So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.",
+              "relative_start": 32.0,
+              "relative_end": 38.1
+            },
+            {
+              "index": 7,
+              "zh": "市场正在实时反应。未来一段时间，我们将就政策利率做出重要决定。",
+              "en": "Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.",
+              "relative_start": 38.1,
+              "relative_end": 46.0
+            },
+            {
+              "index": 8,
+              "zh": "我认为在此期间市场有很多决定要做。",
+              "en": "Markets in the intervening period I think have quite a bit of decisions to make.",
+              "relative_start": 46.0,
+              "relative_end": 51.2
+            },
+            {
+              "index": 9,
+              "zh": "我试着这样说：货币政策很重要，不仅在于我们说什么，甚至做什么。",
+              "en": "I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.",
+              "relative_start": 51.2,
+              "relative_end": 60.0
+            },
+            {
+              "index": 10,
+              "zh": "货币政策的重要性在于它如何影响实体经济。",
+              "en": "Monetary policy matters by how it affects the real economy.",
+              "relative_start": 60.0,
+              "relative_end": 64.4
+            },
+            {
+              "index": 11,
+              "zh": "我们在金融市场看到的这些价格，是它影响实体经济的众多方式之一。",
+              "en": "And these prices that we see in financial markets is one of the many ways in which it affects the real economy.",
+              "relative_start": 64.4,
+              "relative_end": 72.1
+            },
+            {
+              "index": 12,
+              "zh": "我们将继续关注市场信息，观察它如何应对新事件，这有助于我们在七八周后开会时做出决策。",
+              "en": "We'll be continuing to watch that market information, see how it responds to incoming events, and that can help inform our decision making",
+              "relative_start": 72.1,
+              "relative_end": 80.1
+            },
+            {
+              "index": 13,
+              "zh": "在最近几天的内部争论中，你和另外八位主张维持利率的成员，你们的分歧如何？",
+              "en": "when we meet in seven or eight weeks. How would you characterize in the family fight the last couple of days of you and the other eight members who wanted to hold?",
+              "relative_start": 80.1,
+              "relative_end": 87.5
+            },
+            {
+              "index": 14,
+              "zh": "那是强烈的信念吗？",
+              "en": "Was that a strong conviction?",
+              "relative_start": 87.5,
+              "relative_end": 88.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n  \"source_title\": \"Duration: 2:24 Warsh Says There Was Much Agreement on Hard Questions\",\n  \"current_title\": \"沃什：利率决议分歧大，市场已提前反应\",\n  \"source_claims\": [\n    \"Why should REITS not be higher today? There's a lot in their deal.\",\n    \"So rates are higher today than they were 42 days ago.\",\n    \"Markets have made decisions because we step back in part from trying to influence those.\",\n    \"Market judgments have moved up on what nominal rates are across the Treasury curve.\",\n    \"That doesn't mean we take them by dictation, but we're observing them.\",\n    \"So I think it's a mischaracterization to say that markets haven't reacted because we didn't move today.\",\n    \"Markets are reacting in real time. In the period ahead, we've got important decisions to make about the policy rate.\",\n    \"Markets in the intervening period I think have quite a bit of decisions to make.\",\n    \"I'll see if I can put it this way. Monetary policy matters, not just by what we say, or even what we do.\",\n    \"Monetary policy matters by how it affects the real economy.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"REITs\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Real Estate Investment Trusts\",\n      \"preferred_en\": \"Real Estate Investment Trusts\",\n      \"official_zh\": \"房地产投资信托基金\",\n      \"common_zh\": \"REITs\",\n      \"title_label\": \"REITs\",\n      \"preferred_zh\": \"REITs\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ],\n      \"evidence\": \"Nareit and J.P. Morgan use 'REITs' as standard term; Chinese media often retain 'REITs' or use '房地产投资信托基金'.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"REITs\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"Real estate investment trusts performance relative to interest rates\",\n      \"sense\": \"Real Estate Investment Trusts\",\n      \"preferred_zh\": \"房地产投资信托基金\",\n      \"title_label\": \"REITs\",\n      \"avoid_zh\": [\n        \"房地产信托基金\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.reit.com/data-research\",\n        \"https://www.jpmorgan.com/insights/global-research/real-estate/inside-reits\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Markets have made decisions because we step back in part from trying to influence those.\",\n      \"public_baseline\": \"Fed typically emphasizes its independence and that it does not directly target market prices.\",\n      \"surprise_gap\": \"Warsh explicitly states the Fed is stepping back from influencing markets, which may be seen as a shift from traditional Fed communication.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Warsh says 'Markets have made decisions because we step back in part from trying to influence those.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Kevin Warsh monetary policy stance 2025\",\n          \"url\": \"https://www.capitaladvisors.com/wp-content/uploads/2026/06/A-New-Fed-Chair-A-New-Direction.pdf\",\n          \"fact\": \"Warsh's impact is more likely to come from reshaping how the Fed operates than from immediate rate changes.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Warsh is dovish\",\n        \"Warsh is hawkish\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's title '沃什：利率决议分歧大，市场已提前反应' is consistent with Warsh's comments about market reaction and internal disagreement.\",\n    \"No evidence of a position change or words-vs-actions mismatch was found in the public snippets.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"市场跑在美联储前面：利率已提前反应，官员称我们没动但市场已动\",\n  \"title_lines\": [\n    \"市场跑在美联储前面\",\n    \"利率已提前反应\",\n    \"官员称我们没动但市场已动\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"市场居然比美联储先动\",\n  \"evidence_basis\": [\n    \"Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "市场居然比美联储先动",
+            "evidence_basis": [
+              "Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'"
+            ],
+            "title": "市场跑在美联储前面：利率已提前反应，官员称我们没动但市场已动",
+            "title_lines": [
+              "市场跑在美联储前面",
+              "利率已提前反应",
+              "官员称我们没动但市场已动"
+            ],
+            "title_highlights": [
+              "市场跑在美联储前面"
+            ],
+            "runner_up_titles": [
+              "沃什：利率决议分歧大，市场已提前反应"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "市场跑在美联储前面：利率已提前反应，官员称我们没动但市场已动",
+        "title_lines": [
+          "市场跑在美联储前面",
+          "利率已提前反应",
+          "官员称我们没动但市场已动"
+        ],
+        "title_highlights": [
+          "市场跑在美联储前面"
+        ],
+        "comment": "KC评论：美联储官员承认市场已提前定价，利率决议或成马后炮",
+        "comment_highlights": [
+          "市场已提前定价"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：沃什反问REITs为何不该涨，暗示利率与资产定价脱节",
+            "comment_highlights": [
+              "REITs为何不该涨"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：42天前利率更低，如今市场已重新定价",
+            "comment_highlights": [
+              "42天前利率更低"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：美联储部分退出干预，市场自主决策",
+            "comment_highlights": [
+              "退出干预"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：市场判断推高名义利率，曲线陡峭化",
+            "comment_highlights": [
+              "市场判断推高名义利率"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：美联储观察市场但不受指令约束",
+            "comment_highlights": [
+              "观察市场"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：说市场没反应是误解，实时反应已发生",
+            "comment_highlights": [
+              "实时反应已发生"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：未来政策利率决策将参考市场实时反应",
+            "comment_highlights": [
+              "政策利率决策"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：市场在等待期间有大量决策要做",
+            "comment_highlights": [
+              "市场在等待期间有"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：货币政策影响实体经济，金融市场价格是关键渠道",
+            "comment_highlights": [
+              "金融市场价格是关键渠道"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：实体经济才是货币政策的最终目标",
+            "comment_highlights": [
+              "实体经济才是货币"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：金融市场价格是货币政策传导的多种方式之一",
+            "comment_highlights": [
+              "金融市场价格是货"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：七八周后会议将参考市场对新事件的反应",
+            "comment_highlights": [
+              "七八周后会议"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：内部争论中九人主张维持利率，分歧明显",
+            "comment_highlights": [
+              "九人主张维持利率"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：沃什被问及信念强度，暗示立场坚定",
+            "comment_highlights": [
+              "信念强度"
+            ]
+          }
+        ],
+        "formula_id": "legacy-compatible short label",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "市场居然比美联储先动",
+        "evidence_basis": [
+          "Warsh says 'markets have reacted because we didn't move today' and 'rates are higher today than they were 42 days ago'"
+        ],
+        "runner_up_titles": [
+          "沃什：利率决议分歧大，市场已提前反应"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 95,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "make_the_emotional_reversal_visible_in_words"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
