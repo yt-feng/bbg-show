@@ -1,0 +1,1396 @@
+{
+  "timestamp_utc": "2026-08-07T01:34:31.295383+00:00",
+  "plan_path": "work/top-videos/01_senate_panel_advances_fauci_contempt_of_congress_charges/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Anthony Fauci",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Anthony Fauci",
+        "preferred_en": "Anthony Fauci",
+        "official_zh": "安东尼·福奇",
+        "common_zh": "福奇",
+        "title_label": "福奇",
+        "preferred_zh": "福奇",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple reliable sources use '福奇' as the common Chinese name."
+      },
+      {
+        "source_text": "Senate Homeland Security Committee",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Senate Homeland Security and Governmental Affairs Committee",
+        "preferred_en": "Senate Homeland Security and Governmental Affairs Committee",
+        "official_zh": "参议院国土安全与政府事务委员会",
+        "common_zh": "参议院国土安全委员会",
+        "title_label": "参议院国土安全委员会",
+        "preferred_zh": "参议院国土安全委员会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Common Chinese media usage."
+      },
+      {
+        "source_text": "Joe Biden",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Joe Biden",
+        "preferred_en": "Joe Biden",
+        "official_zh": "乔·拜登",
+        "common_zh": "拜登",
+        "title_label": "拜登",
+        "preferred_zh": "拜登",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese name."
+      },
+      {
+        "source_text": "Rand Paul",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rand Paul",
+        "preferred_en": "Rand Paul",
+        "official_zh": "兰德·保罗",
+        "common_zh": "兰德·保罗",
+        "title_label": "兰德·保罗",
+        "preferred_zh": "兰德·保罗",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Common Chinese media usage."
+      },
+      {
+        "source_text": "Senator Johnson",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Ron Johnson",
+        "preferred_en": "Ron Johnson",
+        "official_zh": "罗恩·约翰逊",
+        "common_zh": "罗恩·约翰逊",
+        "title_label": "罗恩·约翰逊",
+        "preferred_zh": "罗恩·约翰逊",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Johnson is Ron Johnson, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Langford",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "James Lankford",
+        "preferred_en": "James Lankford",
+        "official_zh": "詹姆斯·兰克福德",
+        "common_zh": "詹姆斯·兰克福德",
+        "title_label": "詹姆斯·兰克福德",
+        "preferred_zh": "詹姆斯·兰克福德",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Langford is James Lankford, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Scott",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rick Scott",
+        "preferred_en": "Rick Scott",
+        "official_zh": "里克·斯科特",
+        "common_zh": "里克·斯科特",
+        "title_label": "里克·斯科特",
+        "preferred_zh": "里克·斯科特",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Scott is Rick Scott, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Hawley",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Josh Hawley",
+        "preferred_en": "Josh Hawley",
+        "official_zh": "乔什·霍利",
+        "common_zh": "乔什·霍利",
+        "title_label": "乔什·霍利",
+        "preferred_zh": "乔什·霍利",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Hawley is Josh Hawley, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Moreno",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Bernie Moreno",
+        "preferred_en": "Bernie Moreno",
+        "official_zh": "伯尼·莫雷诺",
+        "common_zh": "伯尼·莫雷诺",
+        "title_label": "伯尼·莫雷诺",
+        "preferred_zh": "伯尼·莫雷诺",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Moreno is Bernie Moreno, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Erts",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Joni Ernst",
+        "preferred_en": "Joni Ernst",
+        "official_zh": "乔尼·恩斯特",
+        "common_zh": "乔尼·恩斯特",
+        "title_label": "乔尼·恩斯特",
+        "preferred_zh": "乔尼·恩斯特",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Erts is Joni Ernst, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Moody",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Ashley Moody",
+        "preferred_en": "Ashley Moody",
+        "official_zh": "阿什利·穆迪",
+        "common_zh": "阿什利·穆迪",
+        "title_label": "阿什利·穆迪",
+        "preferred_zh": "阿什利·穆迪",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Moody is Ashley Moody, a Republican on the committee."
+      },
+      {
+        "source_text": "Senator Peters",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Gary Peters",
+        "preferred_en": "Gary Peters",
+        "official_zh": "加里·彼得斯",
+        "common_zh": "加里·彼得斯",
+        "title_label": "加里·彼得斯",
+        "preferred_zh": "加里·彼得斯",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Peters is Gary Peters, the top Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Hassan",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Maggie Hassan",
+        "preferred_en": "Maggie Hassan",
+        "official_zh": "玛吉·哈桑",
+        "common_zh": "玛吉·哈桑",
+        "title_label": "玛吉·哈桑",
+        "preferred_zh": "玛吉·哈桑",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Hassan is Maggie Hassan, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Blumenthal",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Richard Blumenthal",
+        "preferred_en": "Richard Blumenthal",
+        "official_zh": "理查德·布卢门撒尔",
+        "common_zh": "理查德·布卢门撒尔",
+        "title_label": "理查德·布卢门撒尔",
+        "preferred_zh": "理查德·布卢门撒尔",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Blumenthal is Richard Blumenthal, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Federman",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "John Fetterman",
+        "preferred_en": "John Fetterman",
+        "official_zh": "约翰·费特曼",
+        "common_zh": "约翰·费特曼",
+        "title_label": "约翰·费特曼",
+        "preferred_zh": "约翰·费特曼",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Federman is John Fetterman, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Kim",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Andy Kim",
+        "preferred_en": "Andy Kim",
+        "official_zh": "安迪·金",
+        "common_zh": "安迪·金",
+        "title_label": "安迪·金",
+        "preferred_zh": "安迪·金",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Kim is Andy Kim, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Gallego",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Ruben Gallego",
+        "preferred_en": "Ruben Gallego",
+        "official_zh": "鲁本·加列戈",
+        "common_zh": "鲁本·加列戈",
+        "title_label": "鲁本·加列戈",
+        "preferred_zh": "鲁本·加列戈",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Gallego is Ruben Gallego, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Slokkin",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Elissa Slotkin",
+        "preferred_en": "Elissa Slotkin",
+        "official_zh": "埃莉萨·斯洛特金",
+        "common_zh": "埃莉萨·斯洛特金",
+        "title_label": "埃莉萨·斯洛特金",
+        "preferred_zh": "埃莉萨·斯洛特金",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Context indicates Senator Slokkin is Elissa Slotkin, a Democrat on the committee."
+      },
+      {
+        "source_text": "Senator Paul",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rand Paul",
+        "preferred_en": "Rand Paul",
+        "official_zh": "兰德·保罗",
+        "common_zh": "兰德·保罗",
+        "title_label": "兰德·保罗",
+        "preferred_zh": "兰德·保罗",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Common Chinese media usage."
+      }
+    ],
+    "terms": [],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence.",
+        "public_baseline": "The Senate Homeland Security Committee voted along party lines to hold Fauci in contempt of Congress for refusing to answer questions at a hearing, invoking the Fifth Amendment over 100 times. Biden had issued a full and unconditional pardon covering offenses from 2014 onward.",
+        "surprise_gap": "The clip frames the vote as a test of whether a pardoned witness can defy a committee order without consequence, which is a specific legal argument not typically highlighted in standard news reports.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "surprise_reversal",
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "Anthony Fauci contempt of Congress Senate vote June 2024",
+            "url": "https://www.nytimes.com/2026/08/06/us/politics/fauci-contempt-of-congress.html",
+            "fact": "Senate panel voted along party lines to hold Fauci in contempt."
+          },
+          {
+            "kind": "public",
+            "query": "Fauci refused to answer questions 100 times Senate committee",
+            "url": "https://www.nytimes.com/2026/07/29/us/politics/fauci-testifies-rand-paul.html",
+            "fact": "Fauci invoked Fifth Amendment more than 100 times."
+          },
+          {
+            "kind": "public",
+            "query": "Biden pardon Fauci 2014 full and unconditional",
+            "url": "https://www.justice.gov/pardon/media/1385746/dl",
+            "fact": "Biden granted Fauci a full and unconditional pardon for offenses from January 1, 2014."
+          }
+        ],
+        "forbidden_claims": [
+          "Fauci was convicted of a crime.",
+          "The full Senate voted on contempt.",
+          "The vote was not along party lines."
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip is from a Senate committee hearing, not a full Senate vote.",
+      "The date of the vote is not explicitly stated in the clip but is inferred from public sources as August 6, 2026."
+    ],
+    "research_queries": [
+      {
+        "query": "Anthony Fauci contempt of Congress Senate vote June 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the factual outcome and date of the Senate vote on holding Fauci in contempt, establishing the baseline for the clip's claim."
+      },
+      {
+        "query": "Fauci refused to answer questions 100 times Senate committee",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific claim that Fauci refused to answer questions over 100 times during his testimony, as stated in the clip."
+      },
+      {
+        "query": "Biden pardon Fauci 2014 full and unconditional",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the existence and scope of President Biden's pardon of Fauci, which is a key premise in the clip's argument."
+      },
+      {
+        "query": "Fauci subpoena Senate committee testimony",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm that Fauci testified under subpoena before the Senate committee, as mentioned in the clip."
+      },
+      {
+        "query": "Senate roll call vote contempt Fauci 81-5",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact vote tally (81-5) and the names of senators voting, as the clip lists several votes."
+      },
+      {
+        "query": "Fauci contempt resolution original resolution",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Clarify the procedural context of the contempt resolution, including the term 'original resolution' used in the clip."
+      },
+      {
+        "query": "Fauci China gain-of-function research",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Explore any China-related angle in the Fauci controversy, as the clip may imply a comparison or contrast with China's handling of COVID-19 origins."
+      },
+      {
+        "query": "Fauci COVID-19 origins lab leak theory China",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Investigate the broader context of Fauci's testimony and the China connection, which could be relevant to the clip's underlying claims."
+      },
+      {
+        "query": "Bloomberg Senate Panel Holds Fauci established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Senate Panel Holds Fauci 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Contempt of Congress 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "福奇拒答百次：参议院表决，藐视国会成立？",
+      "title_lines": [
+        "福奇拒答百次",
+        "参议院表决",
+        "藐视国会成立？"
+      ],
+      "formula_id": "legacy-compatible short label",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "字幕：福奇拒绝回答超过100次",
+        "字幕：参议院表决8票赞成、5票反对通过"
+      ],
+      "runner_up_titles": [
+        "福奇拒答百次，参议院表决，藐视国会成立？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 8,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 8,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-07T01:34:26.909372+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.2,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress",
+          "source_title": "Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress",
+          "show_date": "",
+          "current_title": "美参议院表决：福奇藐视国会",
+          "current_title_lines": [
+            "美参议院表决",
+            "福奇藐视国会",
+            "党派划线通过"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "八天前，安东尼·福奇博士在传票下坐在本委员会证人席上。",
+              "en": "Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.",
+              "relative_start": 0.0,
+              "relative_end": 5.8
+            },
+            {
+              "index": 2,
+              "zh": "对于拜登总统全面无条件赦免所涵盖的、可追溯至2014年的行为，福奇博士没有面临联邦起诉的风险。他只需说出真相。",
+              "en": "For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.",
+              "relative_start": 6.4,
+              "relative_end": 18.6
+            },
+            {
+              "index": 3,
+              "zh": "然而，他拒绝了一百多次。这就是我们今天投票的内容，不是他的观点，不是他的政策，也不是他六年前在讲台上说的任何话。我们投票决定的是，一位证人",
+              "en": "More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness",
+              "relative_start": 19.2,
+              "relative_end": 33.8
+            },
+            {
+              "index": 4,
+              "zh": "在获得广泛联邦赦免的好处后，是否可以被本委员会命令回答问题，然后无视该命令而不承担后果。问题在于报告一份原始决议。",
+              "en": "who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original",
+              "relative_start": 33.8,
+              "relative_end": 44.3
+            },
+            {
+              "index": 5,
+              "zh": "关于藐视国会的决议，书记员将点名。约翰逊参议员。",
+              "en": "resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.",
+              "relative_start": 44.3,
+              "relative_end": 48.2
+            },
+            {
+              "index": 6,
+              "zh": "赞成。兰福德参议员。赞成。斯科特参议员。赞成。霍利参议员。赞成。",
+              "en": "Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.",
+              "relative_start": 48.2,
+              "relative_end": 54.0
+            },
+            {
+              "index": 7,
+              "zh": "莫雷诺参议员。代表数百万受安东尼·福奇伤害的人，响亮地赞成。",
+              "en": "Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.",
+              "relative_start": 54.8,
+              "relative_end": 59.2
+            },
+            {
+              "index": 8,
+              "zh": "厄茨参议员。赞成。穆迪参议员。彼得斯参议员。反对。哈桑参议员。反对。布卢门撒尔参议员。反对。费德曼参议员。",
+              "en": "Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.",
+              "relative_start": 59.8,
+              "relative_end": 70.4
+            },
+            {
+              "index": 9,
+              "zh": "反对。金参议员。反对。加列戈参议员。代理反对。斯洛特金参议员。代理反对。",
+              "en": "No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.",
+              "relative_start": 70.4,
+              "relative_end": 78.4
+            },
+            {
+              "index": 10,
+              "zh": "保罗参议员。赞成。本次投票，赞成8票，反对5票，动议通过。",
+              "en": "Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.",
+              "relative_start": 79.0,
+              "relative_end": 83.9
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"source_title\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"show_date\": \"\",\n    \"current_title\": \"美参议院表决：福奇藐视国会\",\n    \"current_title_lines\": [\n      \"美参议院表决\",\n      \"福奇藐视国会\",\n      \"党派划线通过\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"八天前，安东尼·福奇博士在传票下坐在本委员会证人席上。\",\n        \"en\": \"Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于拜登总统全面无条件赦免所涵盖的、可追溯至2014年的行为，福奇博士没有面临联邦起诉的风险。他只需说出真相。\",\n        \"en\": \"For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.\",\n        \"relative_start\": 6.4,\n        \"relative_end\": 18.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"然而，他拒绝了一百多次。这就是我们今天投票的内容，不是他的观点，不是他的政策，也不是他六年前在讲台上说的任何话。我们投票决定的是，一位证人\",\n        \"en\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness\",\n        \"relative_start\": 19.2,\n        \"relative_end\": 33.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"在获得广泛联邦赦免的好处后，是否可以被本委员会命令回答问题，然后无视该命令而不承担后果。问题在于报告一份原始决议。\",\n        \"en\": \"who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original\",\n        \"relative_start\": 33.8,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于藐视国会的决议，书记员将点名。约翰逊参议员。\",\n        \"en\": \"resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"赞成。兰福德参议员。赞成。斯科特参议员。赞成。霍利参议员。赞成。\",\n        \"en\": \"Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.\",\n        \"relative_start\": 48.2,\n        \"relative_end\": 54.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"莫雷诺参议员。代表数百万受安东尼·福奇伤害的人，响亮地赞成。\",\n        \"en\": \"Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"厄茨参议员。赞成。穆迪参议员。彼得斯参议员。反对。哈桑参议员。反对。布卢门撒尔参议员。反对。费德曼参议员。\",\n        \"en\": \"Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 70.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"反对。金参议员。反对。加列戈参议员。代理反对。斯洛特金参议员。代理反对。\",\n        \"en\": \"No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.\",\n        \"relative_start\": 70.4,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"保罗参议员。赞成。本次投票，赞成8票，反对5票，动议通过。\",\n        \"en\": \"Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 83.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence.\",\n      \"public_baseline\": \"The Senate Homeland Security Committee voted along party lines to hold Fauci in contempt of Congress for refusing to answer questions at a hearing, invoking the Fifth Amendment over 100 times. Biden had issued a full and unconditional pardon covering offenses from 2014 onward.\",\n      \"surprise_gap\": \"The clip frames the vote as a test of whether a pardoned witness can defy a committee order without consequence, which is a specific legal argument not typically highlighted in standard news reports.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthony Fauci contempt of Congress Senate vote June 2024\",\n          \"url\": \"https://www.nytimes.com/2026/08/06/us/politics/fauci-contempt-of-congress.html\",\n          \"fact\": \"Senate panel voted along party lines to hold Fauci in contempt.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fauci refused to answer questions 100 times Senate committee\",\n          \"url\": \"https://www.nytimes.com/2026/07/29/us/politics/fauci-testifies-rand-paul.html\",\n          \"fact\": \"Fauci invoked Fifth Amendment more than 100 times.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Biden pardon Fauci 2014 full and unconditional\",\n          \"url\": \"https://www.justice.gov/pardon/media/1385746/dl\",\n          \"fact\": \"Biden granted Fauci a full and unconditional pardon for offenses from January 1, 2014.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Fauci was convicted of a crime.\",\n        \"The full Senate voted on contempt.\",\n        \"The vote was not along party lines.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from a Senate committee hearing, not a full Senate vote.\",\n    \"The date of the vote is not explicitly stated in the clip but is inferred from public sources as August 6, 2026.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "参议院国土安全委员会以党派划线投票（8票赞成、5票反对）通过决议，认定福奇藐视国会，因其在听证会上援引第五修正案拒绝回答提问超过100次，且此前已获拜登全面无条件赦免。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "福奇拒答百次，参议院表决：藐视国会成立",
+                "title_lines": [
+                  "福奇拒答百次",
+                  "参议院表决",
+                  "藐视国会成立"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "字幕：福奇拒绝回答超过100次",
+                  "字幕：参议院表决8票赞成、5票反对通过"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "赦免之后拒答，福奇藐视国会后果几何？",
+                "title_lines": [
+                  "赦免之后拒答",
+                  "福奇藐视国会",
+                  "后果几何"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "字幕：福奇获得全面赦免后仍拒绝回答",
+                  "字幕：参议院通过藐视国会决议"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "美参议员：福奇受赦免仍拒答，无视命令无后果？",
+                "title_lines": [
+                  "美参议员：",
+                  "福奇受赦免仍拒答",
+                  "无视命令无后果"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "字幕：参议员称福奇获得赦免后仍拒绝回答",
+                  "字幕：参议员质疑无视命令是否无后果"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "党派划线，美参议院认定福奇藐视国会",
+                "title_lines": [
+                  "党派划线",
+                  "美参议院认定",
+                  "福奇藐视国会"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "字幕：投票结果为8票赞成、5票反对",
+                  "字幕：参议员按党派投票"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"source_title\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"show_date\": \"\",\n    \"current_title\": \"美参议院表决：福奇藐视国会\",\n    \"current_title_lines\": [\n      \"美参议院表决\",\n      \"福奇藐视国会\",\n      \"党派划线通过\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"八天前，安东尼·福奇博士在传票下坐在本委员会证人席上。\",\n        \"en\": \"Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于拜登总统全面无条件赦免所涵盖的、可追溯至2014年的行为，福奇博士没有面临联邦起诉的风险。他只需说出真相。\",\n        \"en\": \"For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.\",\n        \"relative_start\": 6.4,\n        \"relative_end\": 18.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"然而，他拒绝了一百多次。这就是我们今天投票的内容，不是他的观点，不是他的政策，也不是他六年前在讲台上说的任何话。我们投票决定的是，一位证人\",\n        \"en\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness\",\n        \"relative_start\": 19.2,\n        \"relative_end\": 33.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"在获得广泛联邦赦免的好处后，是否可以被本委员会命令回答问题，然后无视该命令而不承担后果。问题在于报告一份原始决议。\",\n        \"en\": \"who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original\",\n        \"relative_start\": 33.8,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于藐视国会的决议，书记员将点名。约翰逊参议员。\",\n        \"en\": \"resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"赞成。兰福德参议员。赞成。斯科特参议员。赞成。霍利参议员。赞成。\",\n        \"en\": \"Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.\",\n        \"relative_start\": 48.2,\n        \"relative_end\": 54.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"莫雷诺参议员。代表数百万受安东尼·福奇伤害的人，响亮地赞成。\",\n        \"en\": \"Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"厄茨参议员。赞成。穆迪参议员。彼得斯参议员。反对。哈桑参议员。反对。布卢门撒尔参议员。反对。费德曼参议员。\",\n        \"en\": \"Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 70.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"反对。金参议员。反对。加列戈参议员。代理反对。斯洛特金参议员。代理反对。\",\n        \"en\": \"No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.\",\n        \"relative_start\": 70.4,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"保罗参议员。赞成。本次投票，赞成8票，反对5票，动议通过。\",\n        \"en\": \"Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 83.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence.\",\n      \"public_baseline\": \"The Senate Homeland Security Committee voted along party lines to hold Fauci in contempt of Congress for refusing to answer questions at a hearing, invoking the Fifth Amendment over 100 times. Biden had issued a full and unconditional pardon covering offenses from 2014 onward.\",\n      \"surprise_gap\": \"The clip frames the vote as a test of whether a pardoned witness can defy a committee order without consequence, which is a specific legal argument not typically highlighted in standard news reports.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthony Fauci contempt of Congress Senate vote June 2024\",\n          \"url\": \"https://www.nytimes.com/2026/08/06/us/politics/fauci-contempt-of-congress.html\",\n          \"fact\": \"Senate panel voted along party lines to hold Fauci in contempt.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fauci refused to answer questions 100 times Senate committee\",\n          \"url\": \"https://www.nytimes.com/2026/07/29/us/politics/fauci-testifies-rand-paul.html\",\n          \"fact\": \"Fauci invoked Fifth Amendment more than 100 times.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Biden pardon Fauci 2014 full and unconditional\",\n          \"url\": \"https://www.justice.gov/pardon/media/1385746/dl\",\n          \"fact\": \"Biden granted Fauci a full and unconditional pardon for offenses from January 1, 2014.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Fauci was convicted of a crime.\",\n        \"The full Senate voted on contempt.\",\n        \"The vote was not along party lines.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from a Senate committee hearing, not a full Senate vote.\",\n    \"The date of the vote is not explicitly stated in the clip but is inferred from public sources as August 6, 2026.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"参议院国土安全委员会以党派划线投票（8票赞成、5票反对）通过决议，认定福奇藐视国会，因其在听证会上援引第五修正案拒绝回答提问超过100次，且此前已获拜登全面无条件赦免。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"福奇拒答百次，参议院表决：藐视国会成立\",\n          \"title_lines\": [\n            \"福奇拒答百次\",\n            \"参议院表决\",\n            \"藐视国会成立\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：福奇拒绝回答超过100次\",\n            \"字幕：参议院表决8票赞成、5票反对通过\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"赦免之后拒答，福奇藐视国会后果几何？\",\n          \"title_lines\": [\n            \"赦免之后拒答\",\n            \"福奇藐视国会\",\n            \"后果几何\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"字幕：福奇获得全面赦免后仍拒绝回答\",\n            \"字幕：参议院通过藐视国会决议\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"美参议员：福奇受赦免仍拒答，无视命令无后果？\",\n          \"title_lines\": [\n            \"美参议员：\",\n            \"福奇受赦免仍拒答\",\n            \"无视命令无后果\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：参议员称福奇获得赦免后仍拒绝回答\",\n            \"字幕：参议员质疑无视命令是否无后果\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"党派划线，美参议院认定福奇藐视国会\",\n          \"title_lines\": [\n            \"党派划线\",\n            \"美参议院认定\",\n            \"福奇藐视国会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：投票结果为8票赞成、5票反对\",\n            \"字幕：参议员按党派投票\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "legacy-compatible short label",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "字幕：福奇拒绝回答超过100次",
+              "字幕：参议院表决8票赞成、5票反对通过"
+            ],
+            "title": "福奇拒答百次，参议院表决：藐视国会成立",
+            "title_lines": [
+              "福奇拒答百次",
+              "参议院表决",
+              "藐视国会成立"
+            ],
+            "title_highlights": [
+              "拒答百次",
+              "藐视国会"
+            ],
+            "runner_up_titles": [
+              "赦免之后拒答，福奇藐视国会后果几何？",
+              "党派划线，美参议院认定福奇藐视国会"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 6,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点。",
+            "comment_highlights": [
+              "党派划线",
+              "司法程序"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：福奇在传票下出席，但拒绝回答关键问题。",
+                "comment_highlights": [
+                  "传票"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：拜登赦免范围覆盖2014年以来行为，福奇无起诉风险。",
+                "comment_highlights": [
+                  "赦免"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：拒绝回答超百次，成为投票直接导火索。",
+                "comment_highlights": [
+                  "拒绝回答"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：核心争议：赦免后能否无视委员会命令。",
+                "comment_highlights": [
+                  "赦免"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：点名表决开始，结果将按党派划线。",
+                "comment_highlights": [
+                  "点名表决"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：共和党参议员接连投赞成票。",
+                "comment_highlights": [
+                  "赞成票"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：莫雷诺称代表数百万受福奇伤害者投赞成。",
+                "comment_highlights": [
+                  "受伤害者"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：民主党参议员开始投反对票。",
+                "comment_highlights": [
+                  "反对票"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：多名民主党参议员代理反对，党派立场明显。",
+                "comment_highlights": [
+                  "代理反对"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：最终8比5通过，藐视国会决议成立。",
+                "comment_highlights": [
+                  "8比5"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"source_title\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n    \"show_date\": \"\",\n    \"current_title\": \"美参议院表决：福奇藐视国会\",\n    \"current_title_lines\": [\n      \"美参议院表决\",\n      \"福奇藐视国会\",\n      \"党派划线通过\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"八天前，安东尼·福奇博士在传票下坐在本委员会证人席上。\",\n        \"en\": \"Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于拜登总统全面无条件赦免所涵盖的、可追溯至2014年的行为，福奇博士没有面临联邦起诉的风险。他只需说出真相。\",\n        \"en\": \"For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.\",\n        \"relative_start\": 6.4,\n        \"relative_end\": 18.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"然而，他拒绝了一百多次。这就是我们今天投票的内容，不是他的观点，不是他的政策，也不是他六年前在讲台上说的任何话。我们投票决定的是，一位证人\",\n        \"en\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness\",\n        \"relative_start\": 19.2,\n        \"relative_end\": 33.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"在获得广泛联邦赦免的好处后，是否可以被本委员会命令回答问题，然后无视该命令而不承担后果。问题在于报告一份原始决议。\",\n        \"en\": \"who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original\",\n        \"relative_start\": 33.8,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于藐视国会的决议，书记员将点名。约翰逊参议员。\",\n        \"en\": \"resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"赞成。兰福德参议员。赞成。斯科特参议员。赞成。霍利参议员。赞成。\",\n        \"en\": \"Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.\",\n        \"relative_start\": 48.2,\n        \"relative_end\": 54.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"莫雷诺参议员。代表数百万受安东尼·福奇伤害的人，响亮地赞成。\",\n        \"en\": \"Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"厄茨参议员。赞成。穆迪参议员。彼得斯参议员。反对。哈桑参议员。反对。布卢门撒尔参议员。反对。费德曼参议员。\",\n        \"en\": \"Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 70.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"反对。金参议员。反对。加列戈参议员。代理反对。斯洛特金参议员。代理反对。\",\n        \"en\": \"No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.\",\n        \"relative_start\": 70.4,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"保罗参议员。赞成。本次投票，赞成8票，反对5票，动议通过。\",\n        \"en\": \"Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 83.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence.\",\n      \"public_baseline\": \"The Senate Homeland Security Committee voted along party lines to hold Fauci in contempt of Congress for refusing to answer questions at a hearing, invoking the Fifth Amendment over 100 times. Biden had issued a full and unconditional pardon covering offenses from 2014 onward.\",\n      \"surprise_gap\": \"The clip frames the vote as a test of whether a pardoned witness can defy a committee order without consequence, which is a specific legal argument not typically highlighted in standard news reports.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthony Fauci contempt of Congress Senate vote June 2024\",\n          \"url\": \"https://www.nytimes.com/2026/08/06/us/politics/fauci-contempt-of-congress.html\",\n          \"fact\": \"Senate panel voted along party lines to hold Fauci in contempt.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fauci refused to answer questions 100 times Senate committee\",\n          \"url\": \"https://www.nytimes.com/2026/07/29/us/politics/fauci-testifies-rand-paul.html\",\n          \"fact\": \"Fauci invoked Fifth Amendment more than 100 times.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Biden pardon Fauci 2014 full and unconditional\",\n          \"url\": \"https://www.justice.gov/pardon/media/1385746/dl\",\n          \"fact\": \"Biden granted Fauci a full and unconditional pardon for offenses from January 1, 2014.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Fauci was convicted of a crime.\",\n        \"The full Senate voted on contempt.\",\n        \"The vote was not along party lines.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from a Senate committee hearing, not a full Senate vote.\",\n    \"The date of the vote is not explicitly stated in the clip but is inferred from public sources as August 6, 2026.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"参议院国土安全委员会以党派划线投票（8票赞成、5票反对）通过决议，认定福奇藐视国会，因其在听证会上援引第五修正案拒绝回答提问超过100次，且此前已获拜登全面无条件赦免。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"福奇拒答百次，参议院表决：藐视国会成立\",\n          \"title_lines\": [\n            \"福奇拒答百次\",\n            \"参议院表决\",\n            \"藐视国会成立\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：福奇拒绝回答超过100次\",\n            \"字幕：参议院表决8票赞成、5票反对通过\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"赦免之后拒答，福奇藐视国会后果几何？\",\n          \"title_lines\": [\n            \"赦免之后拒答\",\n            \"福奇藐视国会\",\n            \"后果几何\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"字幕：福奇获得全面赦免后仍拒绝回答\",\n            \"字幕：参议院通过藐视国会决议\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"美参议员：福奇受赦免仍拒答，无视命令无后果？\",\n          \"title_lines\": [\n            \"美参议员：\",\n            \"福奇受赦免仍拒答\",\n            \"无视命令无后果\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：参议员称福奇获得赦免后仍拒绝回答\",\n            \"字幕：参议员质疑无视命令是否无后果\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"党派划线，美参议院认定福奇藐视国会\",\n          \"title_lines\": [\n            \"党派划线\",\n            \"美参议院认定\",\n            \"福奇藐视国会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：投票结果为8票赞成、5票反对\",\n            \"字幕：参议员按党派投票\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"福奇拒答百次：参议院表决，藐视国会成立\",\n      \"title_lines\": [\n        \"福奇拒答百次\",\n        \"参议院表决\",\n        \"藐视国会成立\"\n      ],\n      \"title_highlights\": [\n        \"拒答百次\",\n        \"藐视国会\"\n      ],\n      \"comment\": \"KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点\",\n      \"comment_highlights\": [\n        \"党派划线\",\n        \"司法程序\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：福奇在传票下出席，但拒绝回答关键问题\",\n          \"comment_highlights\": [\n            \"传票\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：拜登赦免范围覆盖2014年以来行为，福奇无起诉风险\",\n          \"comment_highlights\": [\n            \"赦免\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：拒绝回答超百次，成为投票直接导火索\",\n          \"comment_highlights\": [\n            \"拒绝回答\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：核心争议：赦免后能否无视委员会命令\",\n          \"comment_highlights\": [\n            \"赦免\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：点名表决开始，结果将按党派划线\",\n          \"comment_highlights\": [\n            \"点名表决\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：共和党参议员接连投赞成票\",\n          \"comment_highlights\": [\n            \"赞成票\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：莫雷诺称代表数百万受福奇伤害者投赞成\",\n          \"comment_highlights\": [\n            \"莫雷诺称代表数百\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：民主党参议员开始投反对票\",\n          \"comment_highlights\": [\n            \"反对票\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：多名民主党参议员代理反对，党派立场明显\",\n          \"comment_highlights\": [\n            \"代理反对\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：最终8比5通过，藐视国会决议成立\",\n          \"comment_highlights\": [\n            \"8比5\"\n          ]\n        }\n      ],\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"字幕：福奇拒绝回答超过100次\",\n        \"字幕：参议院表决8票赞成、5票反对通过\"\n      ],\n      \"runner_up_titles\": [\n        \"赦免之后拒答，福奇藐视国会后果几何？\",\n        \"党派划线，美参议院认定福奇藐视国会\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 8,\n        \"curiosity_gap\": 6,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 88,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"create_a_small_answerable_information_gap\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 8,\n          \"curiosity_gap\": 6,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"create_a_small_answerable_information_gap\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "legacy-compatible short label",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "字幕：福奇拒绝回答超过100次",
+                  "字幕：参议院表决8票赞成、5票反对通过"
+                ],
+                "title": "福奇拒答百次，参议院表决：藐视国会成立",
+                "title_lines": [
+                  "福奇拒答百次",
+                  "参议院表决",
+                  "藐视国会成立"
+                ],
+                "title_highlights": [
+                  "拒答百次",
+                  "藐视国会"
+                ],
+                "runner_up_titles": [
+                  "赦免之后拒答，福奇藐视国会后果几何？",
+                  "党派划线，美参议院认定福奇藐视国会"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点",
+                "comment_highlights": [
+                  "党派划线",
+                  "司法程序"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：福奇在传票下出席，但拒绝回答关键问题",
+                    "comment_highlights": [
+                      "传票"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：拜登赦免范围覆盖2014年以来行为，福奇无起诉风险",
+                    "comment_highlights": [
+                      "赦免"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：拒绝回答超百次，成为投票直接导火索",
+                    "comment_highlights": [
+                      "拒绝回答"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：核心争议：赦免后能否无视委员会命令",
+                    "comment_highlights": [
+                      "赦免"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：点名表决开始，结果将按党派划线",
+                    "comment_highlights": [
+                      "点名表决"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：共和党参议员接连投赞成票",
+                    "comment_highlights": [
+                      "赞成票"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：莫雷诺称代表数百万受福奇伤害者投赞成",
+                    "comment_highlights": [
+                      "莫雷诺称代表数百"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：民主党参议员开始投反对票",
+                    "comment_highlights": [
+                      "反对票"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：多名民主党参议员代理反对，党派立场明显",
+                    "comment_highlights": [
+                      "代理反对"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：最终8比5通过，藐视国会决议成立",
+                    "comment_highlights": [
+                      "8比5"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "福奇拒答百次：参议院表决，藐视国会成立",
+          "title_lines": [
+            "福奇拒答百次",
+            "参议院表决",
+            "藐视国会成立"
+          ],
+          "formula_id": "legacy-compatible short label",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-07T01:34:29.738024+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.2,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress",
+          "source_title": "Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress",
+          "show_date": "",
+          "current_title": "美参议院表决：福奇藐视国会",
+          "current_title_lines": [
+            "美参议院表决",
+            "福奇藐视国会",
+            "党派划线通过"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "八天前，安东尼·福奇博士在传票下坐在本委员会证人席上。",
+              "en": "Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.",
+              "relative_start": 0.0,
+              "relative_end": 5.8
+            },
+            {
+              "index": 2,
+              "zh": "对于拜登总统全面无条件赦免所涵盖的、可追溯至2014年的行为，福奇博士没有面临联邦起诉的风险。他只需说出真相。",
+              "en": "For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.",
+              "relative_start": 6.4,
+              "relative_end": 18.6
+            },
+            {
+              "index": 3,
+              "zh": "然而，他拒绝了一百多次。这就是我们今天投票的内容，不是他的观点，不是他的政策，也不是他六年前在讲台上说的任何话。我们投票决定的是，一位证人",
+              "en": "More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness",
+              "relative_start": 19.2,
+              "relative_end": 33.8
+            },
+            {
+              "index": 4,
+              "zh": "在获得广泛联邦赦免的好处后，是否可以被本委员会命令回答问题，然后无视该命令而不承担后果。问题在于报告一份原始决议。",
+              "en": "who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original",
+              "relative_start": 33.8,
+              "relative_end": 44.3
+            },
+            {
+              "index": 5,
+              "zh": "关于藐视国会的决议，书记员将点名。约翰逊参议员。",
+              "en": "resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.",
+              "relative_start": 44.3,
+              "relative_end": 48.2
+            },
+            {
+              "index": 6,
+              "zh": "赞成。兰福德参议员。赞成。斯科特参议员。赞成。霍利参议员。赞成。",
+              "en": "Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.",
+              "relative_start": 48.2,
+              "relative_end": 54.0
+            },
+            {
+              "index": 7,
+              "zh": "莫雷诺参议员。代表数百万受安东尼·福奇伤害的人，响亮地赞成。",
+              "en": "Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.",
+              "relative_start": 54.8,
+              "relative_end": 59.2
+            },
+            {
+              "index": 8,
+              "zh": "厄茨参议员。赞成。穆迪参议员。彼得斯参议员。反对。哈桑参议员。反对。布卢门撒尔参议员。反对。费德曼参议员。",
+              "en": "Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.",
+              "relative_start": 59.8,
+              "relative_end": 70.4
+            },
+            {
+              "index": 9,
+              "zh": "反对。金参议员。反对。加列戈参议员。代理反对。斯洛特金参议员。代理反对。",
+              "en": "No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.",
+              "relative_start": 70.4,
+              "relative_end": 78.4
+            },
+            {
+              "index": 10,
+              "zh": "保罗参议员。赞成。本次投票，赞成8票，反对5票，动议通过。",
+              "en": "Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.",
+              "relative_start": 79.0,
+              "relative_end": 83.9
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n  \"source_title\": \"Duration: 1:24 Senate Panel Holds Fauci in Contempt of Congress\",\n  \"current_title\": \"美参议院表决：福奇藐视国会\",\n  \"source_claims\": [\n    \"Eight days ago, Dr. Anthony Fauci sat before this committee in the witness chair under subpoena.\",\n    \"For conduct covered by the president Biden's full and unconditional pardon reaching back to 2014, Dr. Fauci faced no risk of federal prosecution. All he had to do was tell the truth.\",\n    \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness\",\n    \"who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence. The question is on reporting of an original\",\n    \"resolution regarding contempt of Congress, the clerk will call the roll. Senator Johnson.\",\n    \"Yes. Senator Langford. Aye. Senator Scott. Yes. Senator Hawley. Aye.\",\n    \"Senator Moreno. On behalf of the millions of people harmed by Anthony Fauci resoundingly, yes.\",\n    \"Senator Erts. Aye. Senator Moody. Senator Peters. No. Senator Hassan. No. Senator Blumenthal. No. Senator Federman.\",\n    \"No. Senator Kim. No. Senator Gallego. No, by proxy. Senator Slokkin. No, by proxy.\",\n    \"Senator Paul. Yes. On this vote, the age or eight, the age or five and the motion is agreed to.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"More than 100 times, though, he refused. That is what we are voting on today, not his opinions, not his policies. Not anything he said from a podium six years ago. We are voting on whether a witness who has received the benefit of a sweeping federal pardon can be ordered by this committee to answer questions and then defy that order without consequence.\",\n      \"public_baseline\": \"The Senate Homeland Security Committee voted along party lines to hold Fauci in contempt of Congress for refusing to answer questions at a hearing, invoking the Fifth Amendment over 100 times. Biden had issued a full and unconditional pardon covering offenses from 2014 onward.\",\n      \"surprise_gap\": \"The clip frames the vote as a test of whether a pardoned witness can defy a committee order without consequence, which is a specific legal argument not typically highlighted in standard news reports.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthony Fauci contempt of Congress Senate vote June 2024\",\n          \"url\": \"https://www.nytimes.com/2026/08/06/us/politics/fauci-contempt-of-congress.html\",\n          \"fact\": \"Senate panel voted along party lines to hold Fauci in contempt.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fauci refused to answer questions 100 times Senate committee\",\n          \"url\": \"https://www.nytimes.com/2026/07/29/us/politics/fauci-testifies-rand-paul.html\",\n          \"fact\": \"Fauci invoked Fifth Amendment more than 100 times.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Biden pardon Fauci 2014 full and unconditional\",\n          \"url\": \"https://www.justice.gov/pardon/media/1385746/dl\",\n          \"fact\": \"Biden granted Fauci a full and unconditional pardon for offenses from January 1, 2014.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Fauci was convicted of a crime.\",\n        \"The full Senate voted on contempt.\",\n        \"The vote was not along party lines.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from a Senate committee hearing, not a full Senate vote.\",\n    \"The date of the vote is not explicitly stated in the clip but is inferred from public sources as August 6, 2026.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"福奇拒答百次：参议院表决，藐视国会成立\",\n  \"title_lines\": [\n    \"福奇拒答百次\",\n    \"参议院表决\",\n    \"藐视国会成立\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"字幕：福奇拒绝回答超过100次\",\n    \"字幕：参议院表决8票赞成、5票反对通过\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 8,\n    \"curiosity_gap\": 7,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "字幕：福奇拒绝回答超过100次",
+              "字幕：参议院表决8票赞成、5票反对通过"
+            ],
+            "title": "福奇拒答百次，参议院表决，藐视国会成立？",
+            "title_lines": [
+              "福奇拒答百次",
+              "参议院表决",
+              "藐视国会成立？"
+            ],
+            "title_highlights": [
+              "福奇拒答百次",
+              "参议院表决",
+              "藐视国会成立？"
+            ],
+            "runner_up_titles": [
+              "福奇拒答百次，参议院表决，藐视国会成立？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "福奇拒答百次：参议院表决，藐视国会成立？",
+        "title_lines": [
+          "福奇拒答百次",
+          "参议院表决",
+          "藐视国会成立？"
+        ],
+        "title_highlights": [
+          "福奇拒答百次",
+          "参议院表决",
+          "藐视国会成立？"
+        ],
+        "comment": "KC评论：福奇获赦免仍拒答，参议院党派划线通过，后续司法程序或成焦点",
+        "comment_highlights": [
+          "党派划线",
+          "司法程序"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：福奇在传票下出席，但拒绝回答关键问题",
+            "comment_highlights": [
+              "传票"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：拜登赦免范围覆盖2014年以来行为，福奇无起诉风险",
+            "comment_highlights": [
+              "赦免"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：拒绝回答超百次，成为投票直接导火索",
+            "comment_highlights": [
+              "拒绝回答"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：核心争议：赦免后能否无视委员会命令",
+            "comment_highlights": [
+              "赦免"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：点名表决开始，结果将按党派划线",
+            "comment_highlights": [
+              "点名表决"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：共和党参议员接连投赞成票",
+            "comment_highlights": [
+              "赞成票"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：莫雷诺称代表数百万受福奇伤害者投赞成",
+            "comment_highlights": [
+              "莫雷诺称代表数百"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：民主党参议员开始投反对票",
+            "comment_highlights": [
+              "反对票"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：多名民主党参议员代理反对，党派立场明显",
+            "comment_highlights": [
+              "代理反对"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：最终8比5通过，藐视国会决议成立",
+            "comment_highlights": [
+              "8比5"
+            ]
+          }
+        ],
+        "formula_id": "legacy-compatible short label",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "字幕：福奇拒绝回答超过100次",
+          "字幕：参议院表决8票赞成、5票反对通过"
+        ],
+        "runner_up_titles": [
+          "福奇拒答百次，参议院表决，藐视国会成立？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 8,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          }
+        }
+      }
+    }
+  ]
+}
