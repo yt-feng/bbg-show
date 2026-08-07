@@ -378,6 +378,18 @@ The manual path performs reconciliation only. Existing equal-size files are skip
 truncated files are uploaded, unrelated files in the delivery folder are left untouched, and no
 video is regenerated.
 
+### Rendered Clip Retention
+
+GitHub keeps `rendered-clips/` as a short retry cache, not a permanent media archive. The
+standalone `.github/workflows/cleanup-rendered-clips.yml` workflow removes rendered Show and Top
+Videos date folders older than 72 hours. Jianguoyun remains the durable operator-facing copy.
+
+The standalone cleanup workflow uses a shallow sparse checkout and runs
+`tools/cleanup_rendered_clips.py --git-index`. In that mode the script reads date directories
+from the Git tree and removes expired paths with `git rm --sparse`, so the runner does not need
+to materialize MP4 blobs just to delete them. The daily producer workflows still call the same
+script in normal worktree mode after rendering clips locally.
+
 ### Concurrency And Failure Boundaries
 
 The Show and Top Videos workflows use separate concurrency groups with

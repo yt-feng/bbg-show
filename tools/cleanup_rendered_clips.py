@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
+import subprocess
+import sys
 from datetime import datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -81,6 +83,66 @@ def expired_date_dirs(
     return expired
 
 
+def git_tree_child_dirs(root: Path) -> list[str]:
+    if root.is_absolute():
+        raise SystemExit(f"--git-index target must be relative to the repository root: {root}")
+
+    tree = f"HEAD:{root.as_posix().rstrip('/')}"
+    result = subprocess.run(
+        ["git", "ls-tree", "-d", "--name-only", tree],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        message = result.stderr.strip() or result.stdout.strip()
+        if "Not a valid object name" in message:
+            print(f"Skip missing target in git tree: {root}")
+            return []
+        raise SystemExit(f"Cannot inspect git tree for {root}: {message}")
+
+    return [line.strip().rstrip("/") for line in result.stdout.splitlines() if line.strip()]
+
+
+def expired_git_index_dirs(
+    root: Path,
+    cutoff: datetime,
+    timezone: ZoneInfo,
+    weekend_rendered_at: dict[str, datetime] | None = None,
+) -> list[Path]:
+    expired: list[Path] = []
+    for name in git_tree_child_dirs(root):
+        started_at = date_dir_start(name, timezone)
+        if started_at is None:
+            continue
+
+        if weekend_rendered_at and name in weekend_rendered_at:
+            started_at = weekend_rendered_at[name].astimezone(timezone)
+
+        if started_at < cutoff:
+            expired.append(root / name)
+
+    return expired
+
+
+def remove_git_index_dirs(paths: list[Path]) -> None:
+    if not paths:
+        return
+
+    result = subprocess.run(
+        ["git", "rm", "-r", "--ignore-unmatch", "--sparse", "--", *[path.as_posix() for path in paths]],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
+    if result.returncode != 0:
+        raise SystemExit(f"git rm failed while removing expired rendered clips: {result.returncode}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -107,6 +169,11 @@ def main() -> None:
         help="Override current time for tests, e.g. 2026-06-22T08:00:00+08:00.",
     )
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--git-index",
+        action="store_true",
+        help="Remove expired directories from the Git index via git rm --sparse instead of the worktree.",
+    )
     args = parser.parse_args()
 
     if args.retention_hours < 1:
@@ -130,11 +197,20 @@ def main() -> None:
     removed = 0
     for target in targets:
         retention_overrides = weekend_rendered_at if target.resolve() == weekend_rendered_root else None
-        for path in expired_date_dirs(target, cutoff, timezone, retention_overrides):
+        expired = (
+            expired_git_index_dirs(target, cutoff, timezone, retention_overrides)
+            if args.git_index
+            else expired_date_dirs(target, cutoff, timezone, retention_overrides)
+        )
+        for path in expired:
             print(f"{'Would remove' if args.dry_run else 'Removing'}: {path}")
-            if not args.dry_run:
-                shutil.rmtree(path)
-            removed += 1
+        if not args.dry_run:
+            if args.git_index:
+                remove_git_index_dirs(expired)
+            else:
+                for path in expired:
+                    shutil.rmtree(path)
+        removed += len(expired)
 
     if args.dry_run:
         print(f"Expired rendered clip directories found: {removed}")
