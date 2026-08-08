@@ -1,0 +1,1456 @@
+{
+  "timestamp_utc": "2026-08-08T22:40:34.026688+00:00",
+  "plan_path": "work/top-videos/02_cyclospora_outbreak_puts_pressure_on_restaurant_stocks/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Papa John's",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Papa John's International, Inc.",
+        "preferred_en": "Papa John's International, Inc.",
+        "official_zh": "棒约翰国际公司",
+        "common_zh": "棒约翰",
+        "title_label": "棒约翰",
+        "preferred_zh": "棒约翰",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official investor relations site and Nasdaq article confirm the company name and stock ticker PZZA."
+      },
+      {
+        "source_text": "McDonald's",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "McDonald's Corporation",
+        "preferred_en": "McDonald's Corporation",
+        "official_zh": "麦当劳公司",
+        "common_zh": "麦当劳",
+        "title_label": "麦当劳",
+        "preferred_zh": "麦当劳",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly known as 麦当劳 in Chinese media; QSR tracker lists McDonald's as a major chain."
+      },
+      {
+        "source_text": "Chipotle",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Chipotle Mexican Grill, Inc.",
+        "preferred_en": "Chipotle Mexican Grill, Inc.",
+        "official_zh": "奇波雷墨西哥烧烤公司",
+        "common_zh": "Chipotle",
+        "title_label": "Chipotle",
+        "preferred_zh": "Chipotle",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media often use the English name; official Chinese name exists but is less common."
+      },
+      {
+        "source_text": "Brinker",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Brinker International, Inc.",
+        "preferred_en": "Brinker International, Inc.",
+        "official_zh": "布林克国际公司",
+        "common_zh": "Brinker",
+        "title_label": "Brinker",
+        "preferred_zh": "Brinker",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.barrons.com/market-data/stocks/eat",
+          "https://stockanalysis.com/stocks/eat/"
+        ],
+        "evidence": "Stock ticker EAT; Chinese name not widely used in media."
+      },
+      {
+        "source_text": "Wendy's",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "The Wendy's Company",
+        "preferred_en": "The Wendy's Company",
+        "official_zh": "温迪公司",
+        "common_zh": "温迪",
+        "title_label": "温迪",
+        "preferred_zh": "温迪",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly known as 温迪 in Chinese media."
+      },
+      {
+        "source_text": "Aura Mark",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Aura Mark",
+        "preferred_en": "Aura Mark",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Aura Mark",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable source found for this entity; likely a mishearing or obscure company."
+      },
+      {
+        "source_text": "Kava",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "CAVA Group, Inc.",
+        "preferred_en": "CAVA Group, Inc.",
+        "official_zh": "CAVA集团",
+        "common_zh": "CAVA",
+        "title_label": "CAVA",
+        "preferred_zh": "CAVA",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Transcript says 'Takes years at Kava' likely mishearing of CAVA; QSR tracker lists CAVA as a fast-growing concept."
+      },
+      {
+        "source_text": "Young brands",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Yum! Brands, Inc.",
+        "preferred_en": "Yum! Brands, Inc.",
+        "official_zh": "百胜餐饮集团",
+        "common_zh": "百胜",
+        "title_label": "百胜",
+        "preferred_zh": "百胜",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Transcript says 'Young brands' likely mishearing of Yum! Brands; commonly known as 百胜 in Chinese."
+      },
+      {
+        "source_text": "Saladin Go",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Salata",
+        "preferred_en": "Salata",
+        "official_zh": "萨拉塔",
+        "common_zh": "Salata",
+        "title_label": "Salata",
+        "preferred_zh": "Salata",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable source found; likely a mishearing of Salata, a salad chain."
+      },
+      {
+        "source_text": "Cyclospora",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Cyclospora cayetanensis",
+        "preferred_en": "Cyclospora cayetanensis",
+        "official_zh": "环孢子虫",
+        "common_zh": "环孢子虫",
+        "title_label": "环孢子虫",
+        "preferred_zh": "环孢子虫",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "CDC and The Hill confirm the parasite name; Chinese translation is standard."
+      },
+      {
+        "source_text": "salmonella",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Salmonella",
+        "preferred_en": "Salmonella",
+        "official_zh": "沙门氏菌",
+        "common_zh": "沙门氏菌",
+        "title_label": "沙门氏菌",
+        "preferred_zh": "沙门氏菌",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese translation for Salmonella."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "Chapter 11 bankruptcy",
+        "clip_indexes": [],
+        "context": "US corporate bankruptcy",
+        "sense": "Chapter 11 of the US Bankruptcy Code allows reorganization",
+        "preferred_zh": "第十一章破产保护",
+        "title_label": "破产保护",
+        "avoid_zh": [
+          "第十一章破产"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Papa John's down 17 percent on the day.",
+        "public_baseline": "Papa John's stock declined 17.2% in Q2 2026 after earnings miss and guidance cut, not directly linked to Cyclospora.",
+        "surprise_gap": "The clip attributes the drop to Cyclospora outbreak, but public data suggests the decline was due to earnings and guidance.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "Papa John's stock drop 17 percent Cyclospora outbreak 2023",
+            "url": "https://www.zacks.com/stock/news/2971382/papa-johns-q2-earnings-revenues-beat-estimates-stock-down",
+            "fact": "Papa John's Q2 earnings beat but stock sank 17.2% due to weak comps and reduced guidance."
+          }
+        ],
+        "forbidden_claims": [
+          "Papa John's drop was solely due to Cyclospora."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Transcript contains possible mishearings: 'Aura Mark' likely 'Yum! Brands'? 'Kava' likely 'CAVA', 'Young brands' likely 'Yum! Brands', 'Saladin Go' likely 'Salata'."
+    ],
+    "research_queries": [
+      {
+        "query": "Papa John's stock drop 17 percent Cyclospora outbreak 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific stock decline and its association with the Cyclospora outbreak."
+      },
+      {
+        "query": "Cyclospora outbreak largest ever recorded US 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the claim that this was the largest Cyclospora outbreak in U.S. history."
+      },
+      {
+        "query": "restaurant stocks index McDonald's Chipotle Brinker Wendy's performance Cyclospora",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the index composition and its performance during the outbreak."
+      },
+      {
+        "query": "Saladino Go Chapter 11 bankruptcy Cyclospora",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the bankruptcy filing and its link to the outbreak."
+      },
+      {
+        "query": "salmonella outbreak jalapeno peppers 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the existence of a salmonella outbreak involving jalapeno peppers."
+      },
+      {
+        "query": "Cyclospora parasite severe diarrhea symptoms",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the medical description of Cyclospora as a parasite causing severe diarrhea."
+      },
+      {
+        "query": "Papa John's growth concerns 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about concerns regarding Papa John's growth story."
+      },
+      {
+        "query": "Kava stock decline 9 percent Cyclospora",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific stock decline for Kava (likely a typo for 'Kava' or 'Cava'?) and its relation to the outbreak."
+      },
+      {
+        "query": "Young Brands stock decline 10 percent Cyclospora",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific stock decline for Young Brands (likely Yum! Brands?) and its relation to the outbreak."
+      },
+      {
+        "query": "Cyclospora outbreak identified months ago early June public awareness",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the timeline of the outbreak's identification and public awareness."
+      },
+      {
+        "query": "restaurant industry challenges food safety scare 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Provide context on the broader challenges facing the restaurant industry during the food safety scare."
+      },
+      {
+        "query": "Bloomberg Cyclospora Outbreak Sends Shivers Through Restaurant established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-08-08T22:40:31.165027+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.2,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close",
+          "source_title": "Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close",
+          "show_date": "",
+          "current_title": "食安风波冲击餐饮股 业绩预警引关注",
+          "current_title_lines": [
+            "食安风波冲击餐饮股",
+            "业绩预警引关注",
+            "行业压力持续"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "食品板块中，棒约翰今日下跌17%。",
+              "en": "In the food space, Papa John's down 17 percent on the day.",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "市场对其未来增长有所担忧，同时餐饮行业也存在更广泛的忧虑。",
+              "en": "Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.",
+              "relative_start": 3.4,
+              "relative_end": 9.8
+            },
+            {
+              "index": 3,
+              "zh": "这是我们的头条，聚焦餐饮股，食品安全恐慌让本已复杂的行业雪上加霜。",
+              "en": "And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already",
+              "relative_start": 9.8,
+              "relative_end": 19.0
+            },
+            {
+              "index": 4,
+              "zh": "该行业已面临诸多复杂问题，而这次是美国有史以来最大规模的疫情。",
+              "en": "dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.",
+              "relative_start": 19.0,
+              "relative_end": 24.6
+            },
+            {
+              "index": 5,
+              "zh": "环孢子虫，一种导致严重腹泻的寄生虫。",
+              "en": "Recyclospora. It's a parasite that causes severe diarrhea.",
+              "relative_start": 24.6,
+              "relative_end": 28.2
+            },
+            {
+              "index": 6,
+              "zh": "疫情在数月前已被发现，但直到六月初公众才广泛知晓。",
+              "en": "That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.",
+              "relative_start": 28.2,
+              "relative_end": 34.8
+            },
+            {
+              "index": 7,
+              "zh": "自那以来，包含麦当劳、Chipotle等在内的餐饮股指数承压。",
+              "en": "Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.",
+              "relative_start": 34.8,
+              "relative_end": 42.0
+            },
+            {
+              "index": 8,
+              "zh": "Kava下跌9%，Young Brands下滑约10%。",
+              "en": "Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.",
+              "relative_start": 42.0,
+              "relative_end": 46.6
+            },
+            {
+              "index": 9,
+              "zh": "还有一家名为Saladin Go的新兴连锁申请破产，称疫情加剧了其经营困境。",
+              "en": "And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.",
+              "relative_start": 46.6,
+              "relative_end": 55.6
+            },
+            {
+              "index": 10,
+              "zh": "此外，还有一起涉及辣椒的沙门氏菌疫情正在发酵。",
+              "en": "And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.",
+              "relative_start": 55.7,
+              "relative_end": 62.0
+            },
+            {
+              "index": 11,
+              "zh": "关于CDC的公告，或者说缺乏公告，存在很多困惑。",
+              "en": "And there's a lot of confusion about the CDC's messaging on this or rather the lack thereof.",
+              "relative_start": 62.0,
+              "relative_end": 67.4
+            },
+            {
+              "index": 12,
+              "zh": "这导致很多顾客决定不冒险。",
+              "en": "And that has a lot of customers just deciding we're not going to take any chances.",
+              "relative_start": 67.4,
+              "relative_end": 70.6
+            },
+            {
+              "index": 13,
+              "zh": "他们决定远离生蔬菜，以及销售这些蔬菜的餐厅。",
+              "en": "We're just going to stay away from raw veggies and quite frankly, the restaurants that sell them.",
+              "relative_start": 70.6,
+              "relative_end": 75.3
+            },
+            {
+              "index": 14,
+              "zh": "我们刚刚听到其中一家餐厅的消息，Sweetgreen，沙拉连锁店，销售生蔬菜，同店销售额增长。",
+              "en": "We just heard from one of those restaurants, sweet green, salad chain, raw vegetables, same-store sales growth.",
+              "relative_start": 75.3,
+              "relative_end": 80.3
+            },
+            {
+              "index": 15,
+              "zh": "它下降了。原本预期会下降，但实际下降幅度超过预期。",
+              "en": "It was down. It was expected to be down. And it was down more than expected.",
+              "relative_start": 80.3,
+              "relative_end": 83.7
+            },
+            {
+              "index": 16,
+              "zh": "他们给出了全年预测，并表示同店销售额。",
+              "en": "They gave a forecast for the full year and said same-store sales.",
+              "relative_start": 83.8,
+              "relative_end": 87.0
+            },
+            {
+              "index": 17,
+              "zh": "将下降约8%。",
+              "en": "They will be down about 8 percent.",
+              "relative_start": 87.0,
+              "relative_end": 89.2
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"source_title\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"食安风波冲击餐饮股 业绩预警引关注\",\n    \"current_title_lines\": [\n      \"食安风波冲击餐饮股\",\n      \"业绩预警引关注\",\n      \"行业压力持续\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"食品板块中，棒约翰今日下跌17%。\",\n        \"en\": \"In the food space, Papa John's down 17 percent on the day.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场对其未来增长有所担忧，同时餐饮行业也存在更广泛的忧虑。\",\n        \"en\": \"Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这是我们的头条，聚焦餐饮股，食品安全恐慌让本已复杂的行业雪上加霜。\",\n        \"en\": \"And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"该行业已面临诸多复杂问题，而这次是美国有史以来最大规模的疫情。\",\n        \"en\": \"dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"环孢子虫，一种导致严重腹泻的寄生虫。\",\n        \"en\": \"Recyclospora. It's a parasite that causes severe diarrhea.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"疫情在数月前已被发现，但直到六月初公众才广泛知晓。\",\n        \"en\": \"That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"自那以来，包含麦当劳、Chipotle等在内的餐饮股指数承压。\",\n        \"en\": \"Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 42.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Kava下跌9%，Young Brands下滑约10%。\",\n        \"en\": \"Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.\",\n        \"relative_start\": 42.0,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"还有一家名为Saladin Go的新兴连锁申请破产，称疫情加剧了其经营困境。\",\n        \"en\": \"And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 55.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"此外，还有一起涉及辣椒的沙门氏菌疫情正在发酵。\",\n        \"en\": \"And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.\",\n        \"relative_start\": 55.7,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"关于CDC的公告，或者说缺乏公告，存在很多困惑。\",\n        \"en\": \"And there's a lot of confusion about the CDC's messaging on this or rather the lack thereof.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这导致很多顾客决定不冒险。\",\n        \"en\": \"And that has a lot of customers just deciding we're not going to take any chances.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 70.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"他们决定远离生蔬菜，以及销售这些蔬菜的餐厅。\",\n        \"en\": \"We're just going to stay away from raw veggies and quite frankly, the restaurants that sell them.\",\n        \"relative_start\": 70.6,\n        \"relative_end\": 75.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我们刚刚听到其中一家餐厅的消息，Sweetgreen，沙拉连锁店，销售生蔬菜，同店销售额增长。\",\n        \"en\": \"We just heard from one of those restaurants, sweet green, salad chain, raw vegetables, same-store sales growth.\",\n        \"relative_start\": 75.3,\n        \"relative_end\": 80.3\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它下降了。原本预期会下降，但实际下降幅度超过预期。\",\n        \"en\": \"It was down. It was expected to be down. And it was down more than expected.\",\n        \"relative_start\": 80.3,\n        \"relative_end\": 83.7\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"他们给出了全年预测，并表示同店销售额。\",\n        \"en\": \"They gave a forecast for the full year and said same-store sales.\",\n        \"relative_start\": 83.8,\n        \"relative_end\": 87.0\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"将下降约8%。\",\n        \"en\": \"They will be down about 8 percent.\",\n        \"relative_start\": 87.0,\n        \"relative_end\": 89.2\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Brinker\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Brinker International, Inc.\",\n      \"preferred_en\": \"Brinker International, Inc.\",\n      \"official_zh\": \"布林克国际公司\",\n      \"common_zh\": \"Brinker\",\n      \"title_label\": \"Brinker\",\n      \"preferred_zh\": \"Brinker\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.barrons.com/market-data/stocks/eat\",\n        \"https://stockanalysis.com/stocks/eat/\"\n      ],\n      \"evidence\": \"Stock ticker EAT; Chinese name not widely used in media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Papa John's down 17 percent on the day.\",\n      \"public_baseline\": \"Papa John's stock declined 17.2% in Q2 2026 after earnings miss and guidance cut, not directly linked to Cyclospora.\",\n      \"surprise_gap\": \"The clip attributes the drop to Cyclospora outbreak, but public data suggests the decline was due to earnings and guidance.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Papa John's stock drop 17 percent Cyclospora outbreak 2023\",\n          \"url\": \"https://www.zacks.com/stock/news/2971382/papa-johns-q2-earnings-revenues-beat-estimates-stock-down\",\n          \"fact\": \"Papa John's Q2 earnings beat but stock sank 17.2% due to weak comps and reduced guidance.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Papa John's drop was solely due to Cyclospora.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript contains possible mishearings: 'Aura Mark' likely 'Yum! Brands'? 'Kava' likely 'CAVA', 'Young brands' likely 'Yum! Brands', 'Saladin Go' likely 'Salata'.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Papa John's shares fell 17% in a single day amid a food-safety scare that has pressured the entire restaurant sector.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然跌这么多",
+                "title": "环孢子虫恐慌 棒约翰单日跌17%",
+                "title_lines": [
+                  "环孢子虫恐慌",
+                  "棒约翰单日跌17%",
+                  "餐饮板块承压"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Papa John's down 17 percent on the day.",
+                  "Outbreak is the largest ever recorded in the U.S."
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "真的只是因为寄生虫吗",
+                "title": "棒约翰大跌17% 只怪环孢子虫吗",
+                "title_lines": [
+                  "棒约翰大跌17%",
+                  "只怪环孢子虫吗",
+                  "业绩预警更关键"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Transcript attributes drop to Cyclospora.",
+                  "Public data shows Q2 earnings miss and guidance cut also contributed."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "连锁反应这么大",
+                "title": "沙拉连锁预警 同店销售恐降8%",
+                "title_lines": [
+                  "沙拉连锁预警",
+                  "同店销售恐降8%",
+                  "食安风波蔓延"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Sweetgreen same-store sales down more than expected, forecast down about 8% for the year."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "顾客居然躲着生菜",
+                "title": "顾客躲生菜 沙拉店业绩预警",
+                "title_lines": [
+                  "顾客躲生菜",
+                  "沙拉店业绩预警",
+                  "食安恐慌冲击"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Customers staying away from raw veggies and restaurants that sell them.",
+                  "Sweetgreen same-store sales forecast down 8%."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"source_title\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"食安风波冲击餐饮股 业绩预警引关注\",\n    \"current_title_lines\": [\n      \"食安风波冲击餐饮股\",\n      \"业绩预警引关注\",\n      \"行业压力持续\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"食品板块中，棒约翰今日下跌17%。\",\n        \"en\": \"In the food space, Papa John's down 17 percent on the day.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场对其未来增长有所担忧，同时餐饮行业也存在更广泛的忧虑。\",\n        \"en\": \"Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这是我们的头条，聚焦餐饮股，食品安全恐慌让本已复杂的行业雪上加霜。\",\n        \"en\": \"And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"该行业已面临诸多复杂问题，而这次是美国有史以来最大规模的疫情。\",\n        \"en\": \"dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"环孢子虫，一种导致严重腹泻的寄生虫。\",\n        \"en\": \"Recyclospora. It's a parasite that causes severe diarrhea.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"疫情在数月前已被发现，但直到六月初公众才广泛知晓。\",\n        \"en\": \"That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"自那以来，包含麦当劳、Chipotle等在内的餐饮股指数承压。\",\n        \"en\": \"Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 42.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Kava下跌9%，Young Brands下滑约10%。\",\n        \"en\": \"Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.\",\n        \"relative_start\": 42.0,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"还有一家名为Saladin Go的新兴连锁申请破产，称疫情加剧了其经营困境。\",\n        \"en\": \"And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 55.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"此外，还有一起涉及辣椒的沙门氏菌疫情正在发酵。\",\n        \"en\": \"And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.\",\n        \"relative_start\": 55.7,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"关于CDC的公告，或者说缺乏公告，存在很多困惑。\",\n        \"en\": \"And there's a lot of confusion about the CDC's messaging on this or rather the lack thereof.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这导致很多顾客决定不冒险。\",\n        \"en\": \"And that has a lot of customers just deciding we're not going to take any chances.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 70.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"他们决定远离生蔬菜，以及销售这些蔬菜的餐厅。\",\n        \"en\": \"We're just going to stay away from raw veggies and quite frankly, the restaurants that sell them.\",\n        \"relative_start\": 70.6,\n        \"relative_end\": 75.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我们刚刚听到其中一家餐厅的消息，Sweetgreen，沙拉连锁店，销售生蔬菜，同店销售额增长。\",\n        \"en\": \"We just heard from one of those restaurants, sweet green, salad chain, raw vegetables, same-store sales growth.\",\n        \"relative_start\": 75.3,\n        \"relative_end\": 80.3\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它下降了。原本预期会下降，但实际下降幅度超过预期。\",\n        \"en\": \"It was down. It was expected to be down. And it was down more than expected.\",\n        \"relative_start\": 80.3,\n        \"relative_end\": 83.7\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"他们给出了全年预测，并表示同店销售额。\",\n        \"en\": \"They gave a forecast for the full year and said same-store sales.\",\n        \"relative_start\": 83.8,\n        \"relative_end\": 87.0\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"将下降约8%。\",\n        \"en\": \"They will be down about 8 percent.\",\n        \"relative_start\": 87.0,\n        \"relative_end\": 89.2\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Brinker\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Brinker International, Inc.\",\n      \"preferred_en\": \"Brinker International, Inc.\",\n      \"official_zh\": \"布林克国际公司\",\n      \"common_zh\": \"Brinker\",\n      \"title_label\": \"Brinker\",\n      \"preferred_zh\": \"Brinker\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.barrons.com/market-data/stocks/eat\",\n        \"https://stockanalysis.com/stocks/eat/\"\n      ],\n      \"evidence\": \"Stock ticker EAT; Chinese name not widely used in media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Papa John's down 17 percent on the day.\",\n      \"public_baseline\": \"Papa John's stock declined 17.2% in Q2 2026 after earnings miss and guidance cut, not directly linked to Cyclospora.\",\n      \"surprise_gap\": \"The clip attributes the drop to Cyclospora outbreak, but public data suggests the decline was due to earnings and guidance.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Papa John's stock drop 17 percent Cyclospora outbreak 2023\",\n          \"url\": \"https://www.zacks.com/stock/news/2971382/papa-johns-q2-earnings-revenues-beat-estimates-stock-down\",\n          \"fact\": \"Papa John's Q2 earnings beat but stock sank 17.2% due to weak comps and reduced guidance.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Papa John's drop was solely due to Cyclospora.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript contains possible mishearings: 'Aura Mark' likely 'Yum! Brands'? 'Kava' likely 'CAVA', 'Young brands' likely 'Yum! Brands', 'Saladin Go' likely 'Salata'.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Papa John's shares fell 17% in a single day amid a food-safety scare that has pressured the entire restaurant sector.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然跌这么多\",\n          \"title\": \"环孢子虫恐慌 棒约翰单日跌17%\",\n          \"title_lines\": [\n            \"环孢子虫恐慌\",\n            \"棒约翰单日跌17%\",\n            \"餐饮板块承压\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Papa John's down 17 percent on the day.\",\n            \"Outbreak is the largest ever recorded in the U.S.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"真的只是因为寄生虫吗\",\n          \"title\": \"棒约翰大跌17% 只怪环孢子虫吗\",\n          \"title_lines\": [\n            \"棒约翰大跌17%\",\n            \"只怪环孢子虫吗\",\n            \"业绩预警更关键\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript attributes drop to Cyclospora.\",\n            \"Public data shows Q2 earnings miss and guidance cut also contributed.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"连锁反应这么大\",\n          \"title\": \"沙拉连锁预警 同店销售恐降8%\",\n          \"title_lines\": [\n            \"沙拉连锁预警\",\n            \"同店销售恐降8%\",\n            \"食安风波蔓延\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Sweetgreen same-store sales down more than expected, forecast down about 8% for the year.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"顾客居然躲着生菜\",\n          \"title\": \"顾客躲生菜 沙拉店业绩预警\",\n          \"title_lines\": [\n            \"顾客躲生菜\",\n            \"沙拉店业绩预警\",\n            \"食安恐慌冲击\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Customers staying away from raw veggies and restaurants that sell them.\",\n            \"Sweetgreen same-store sales forecast down 8%.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "真的只是因为寄生虫吗",
+            "evidence_basis": [
+              "Transcript: Papa John's down 17 percent on the day.",
+              "Public data shows Q2 earnings miss and guidance cut also contributed."
+            ],
+            "title": "棒约翰大跌17% 只怪环孢子虫吗",
+            "title_lines": [
+              "棒约翰大跌17%",
+              "只怪环孢子虫吗",
+              "业绩预警更关键"
+            ],
+            "title_highlights": [
+              "大跌17%",
+              "环孢子虫",
+              "业绩预警"
+            ],
+            "runner_up_titles": [
+              "环孢子虫恐慌 棒约翰单日跌17%",
+              "沙拉连锁预警 同店销售恐降8%"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 8,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：棒约翰大跌背后，业绩预警才是关键，食安只是导火索。",
+            "comment_highlights": [
+              "业绩预警",
+              "食安"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：单日17%的跌幅，市场反应剧烈。",
+                "comment_highlights": [
+                  "17%"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：增长担忧叠加行业压力，餐饮股承压。",
+                "comment_highlights": [
+                  "增长担忧"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：食品安全恐慌让复杂行业雪上加霜。",
+                "comment_highlights": [
+                  "食品安全"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：美国史上最大规模疫情，影响深远。",
+                "comment_highlights": [
+                  "最大规模"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：环孢子虫引发严重腹泻，公众担忧加剧。",
+                "comment_highlights": [
+                  "环孢子虫"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：疫情数月前已发现，但公众知晓滞后。",
+                "comment_highlights": [
+                  "滞后"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：餐饮股指数承压，麦当劳等巨头受波及。",
+                "comment_highlights": [
+                  "承压"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：Kava和Young Brands跌幅明显，板块普跌。",
+                "comment_highlights": [
+                  "跌幅明显"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：新兴连锁申请破产，疫情加剧困境。",
+                "comment_highlights": [
+                  "破产"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：沙门氏菌疫情发酵，食品安全问题叠加。",
+                "comment_highlights": [
+                  "沙门氏菌"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：CDC信息混乱，加剧公众困惑。",
+                "comment_highlights": [
+                  "信息混乱"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：顾客选择不冒险，消费行为改变。",
+                "comment_highlights": [
+                  "不冒险"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：远离生蔬菜，餐厅客流受影响。",
+                "comment_highlights": [
+                  "生蔬菜"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：Sweetgreen同店销售下滑，超出预期。",
+                "comment_highlights": [
+                  "同店销售"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：下滑幅度超预期，市场反应负面。",
+                "comment_highlights": [
+                  "超预期"
+                ]
+              },
+              {
+                "subtitle_index": 16,
+                "comment": "KC评论：全年预测下调，同店销售承压。",
+                "comment_highlights": [
+                  "预测下调"
+                ]
+              },
+              {
+                "subtitle_index": 17,
+                "comment": "KC评论：预计下降8%，业绩预警明确。",
+                "comment_highlights": [
+                  "下降8%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.2,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"source_title\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"食安风波冲击餐饮股 业绩预警引关注\",\n    \"current_title_lines\": [\n      \"食安风波冲击餐饮股\",\n      \"业绩预警引关注\",\n      \"行业压力持续\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"食品板块中，棒约翰今日下跌17%。\",\n        \"en\": \"In the food space, Papa John's down 17 percent on the day.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场对其未来增长有所担忧，同时餐饮行业也存在更广泛的忧虑。\",\n        \"en\": \"Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这是我们的头条，聚焦餐饮股，食品安全恐慌让本已复杂的行业雪上加霜。\",\n        \"en\": \"And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"该行业已面临诸多复杂问题，而这次是美国有史以来最大规模的疫情。\",\n        \"en\": \"dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"环孢子虫，一种导致严重腹泻的寄生虫。\",\n        \"en\": \"Recyclospora. It's a parasite that causes severe diarrhea.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"疫情在数月前已被发现，但直到六月初公众才广泛知晓。\",\n        \"en\": \"That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"自那以来，包含麦当劳、Chipotle等在内的餐饮股指数承压。\",\n        \"en\": \"Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 42.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Kava下跌9%，Young Brands下滑约10%。\",\n        \"en\": \"Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.\",\n        \"relative_start\": 42.0,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"还有一家名为Saladin Go的新兴连锁申请破产，称疫情加剧了其经营困境。\",\n        \"en\": \"And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 55.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"此外，还有一起涉及辣椒的沙门氏菌疫情正在发酵。\",\n        \"en\": \"And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.\",\n        \"relative_start\": 55.7,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"关于CDC的公告，或者说缺乏公告，存在很多困惑。\",\n        \"en\": \"And there's a lot of confusion about the CDC's messaging on this or rather the lack thereof.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这导致很多顾客决定不冒险。\",\n        \"en\": \"And that has a lot of customers just deciding we're not going to take any chances.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 70.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"他们决定远离生蔬菜，以及销售这些蔬菜的餐厅。\",\n        \"en\": \"We're just going to stay away from raw veggies and quite frankly, the restaurants that sell them.\",\n        \"relative_start\": 70.6,\n        \"relative_end\": 75.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我们刚刚听到其中一家餐厅的消息，Sweetgreen，沙拉连锁店，销售生蔬菜，同店销售额增长。\",\n        \"en\": \"We just heard from one of those restaurants, sweet green, salad chain, raw vegetables, same-store sales growth.\",\n        \"relative_start\": 75.3,\n        \"relative_end\": 80.3\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它下降了。原本预期会下降，但实际下降幅度超过预期。\",\n        \"en\": \"It was down. It was expected to be down. And it was down more than expected.\",\n        \"relative_start\": 80.3,\n        \"relative_end\": 83.7\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"他们给出了全年预测，并表示同店销售额。\",\n        \"en\": \"They gave a forecast for the full year and said same-store sales.\",\n        \"relative_start\": 83.8,\n        \"relative_end\": 87.0\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"将下降约8%。\",\n        \"en\": \"They will be down about 8 percent.\",\n        \"relative_start\": 87.0,\n        \"relative_end\": 89.2\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Brinker\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Brinker International, Inc.\",\n      \"preferred_en\": \"Brinker International, Inc.\",\n      \"official_zh\": \"布林克国际公司\",\n      \"common_zh\": \"Brinker\",\n      \"title_label\": \"Brinker\",\n      \"preferred_zh\": \"Brinker\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.barrons.com/market-data/stocks/eat\",\n        \"https://stockanalysis.com/stocks/eat/\"\n      ],\n      \"evidence\": \"Stock ticker EAT; Chinese name not widely used in media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Papa John's down 17 percent on the day.\",\n      \"public_baseline\": \"Papa John's stock declined 17.2% in Q2 2026 after earnings miss and guidance cut, not directly linked to Cyclospora.\",\n      \"surprise_gap\": \"The clip attributes the drop to Cyclospora outbreak, but public data suggests the decline was due to earnings and guidance.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Papa John's stock drop 17 percent Cyclospora outbreak 2023\",\n          \"url\": \"https://www.zacks.com/stock/news/2971382/papa-johns-q2-earnings-revenues-beat-estimates-stock-down\",\n          \"fact\": \"Papa John's Q2 earnings beat but stock sank 17.2% due to weak comps and reduced guidance.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Papa John's drop was solely due to Cyclospora.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript contains possible mishearings: 'Aura Mark' likely 'Yum! Brands'? 'Kava' likely 'CAVA', 'Young brands' likely 'Yum! Brands', 'Saladin Go' likely 'Salata'.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Papa John's shares fell 17% in a single day amid a food-safety scare that has pressured the entire restaurant sector.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然跌这么多\",\n          \"title\": \"环孢子虫恐慌 棒约翰单日跌17%\",\n          \"title_lines\": [\n            \"环孢子虫恐慌\",\n            \"棒约翰单日跌17%\",\n            \"餐饮板块承压\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Papa John's down 17 percent on the day.\",\n            \"Outbreak is the largest ever recorded in the U.S.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"真的只是因为寄生虫吗\",\n          \"title\": \"棒约翰大跌17% 只怪环孢子虫吗\",\n          \"title_lines\": [\n            \"棒约翰大跌17%\",\n            \"只怪环孢子虫吗\",\n            \"业绩预警更关键\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript attributes drop to Cyclospora.\",\n            \"Public data shows Q2 earnings miss and guidance cut also contributed.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"连锁反应这么大\",\n          \"title\": \"沙拉连锁预警 同店销售恐降8%\",\n          \"title_lines\": [\n            \"沙拉连锁预警\",\n            \"同店销售恐降8%\",\n            \"食安风波蔓延\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Sweetgreen same-store sales down more than expected, forecast down about 8% for the year.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"顾客居然躲着生菜\",\n          \"title\": \"顾客躲生菜 沙拉店业绩预警\",\n          \"title_lines\": [\n            \"顾客躲生菜\",\n            \"沙拉店业绩预警\",\n            \"食安恐慌冲击\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Customers staying away from raw veggies and restaurants that sell them.\",\n            \"Sweetgreen same-store sales forecast down 8%.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"棒约翰大跌17%：只怪环孢子虫吗，业绩预警更关键\",\n      \"title_lines\": [\n        \"棒约翰大跌17%\",\n        \"只怪环孢子虫吗\",\n        \"业绩预警更关键\"\n      ],\n      \"title_highlights\": [\n        \"大跌17%\",\n        \"环孢子虫\",\n        \"业绩预警\"\n      ],\n      \"comment\": \"KC评论：棒约翰大跌背后，业绩预警才是关键，食安只是导火索\",\n      \"comment_highlights\": [\n        \"业绩预警\",\n        \"食安\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：单日17%的跌幅，市场反应剧烈\",\n          \"comment_highlights\": [\n            \"17%\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：增长担忧叠加行业压力，餐饮股承压\",\n          \"comment_highlights\": [\n            \"增长担忧\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：食品安全恐慌让复杂行业雪上加霜\",\n          \"comment_highlights\": [\n            \"食品安全\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：美国史上最大规模疫情，影响深远\",\n          \"comment_highlights\": [\n            \"最大规模\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：环孢子虫引发严重腹泻，公众担忧加剧\",\n          \"comment_highlights\": [\n            \"环孢子虫\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：疫情数月前已发现，但公众知晓滞后\",\n          \"comment_highlights\": [\n            \"滞后\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：餐饮股指数承压，麦当劳等巨头受波及\",\n          \"comment_highlights\": [\n            \"承压\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：Kava和YoungBrands跌幅明显，板块普跌\",\n          \"comment_highlights\": [\n            \"跌幅明显\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：新兴连锁申请破产，疫情加剧困境\",\n          \"comment_highlights\": [\n            \"破产\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：沙门氏菌疫情发酵，食品安全问题叠加\",\n          \"comment_highlights\": [\n            \"沙门氏菌\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：CDC信息混乱，加剧公众困惑\",\n          \"comment_highlights\": [\n            \"信息混乱\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：顾客选择不冒险，消费行为改变\",\n          \"comment_highlights\": [\n            \"不冒险\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：远离生蔬菜，餐厅客流受影响\",\n          \"comment_highlights\": [\n            \"生蔬菜\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：Sweetgreen同店销售下滑，超出预期\",\n          \"comment_highlights\": [\n            \"同店销售\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：下滑幅度超预期，市场反应负面\",\n          \"comment_highlights\": [\n            \"超预期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 16,\n          \"comment\": \"KC评论：全年预测下调，同店销售承压\",\n          \"comment_highlights\": [\n            \"预测下调\"\n          ]\n        },\n        {\n          \"subtitle_index\": 17,\n          \"comment\": \"KC评论：预计下降8%，业绩预警明确\",\n          \"comment_highlights\": [\n            \"下降8%\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"真的只是因为寄生虫吗\",\n      \"evidence_basis\": [\n        \"Transcript: Papa John's down 17 percent on the day.\",\n        \"Public data shows Q2 earnings miss and guidance cut also contributed.\"\n      ],\n      \"runner_up_titles\": [\n        \"环孢子虫波动 棒约翰单日跌17%\",\n        \"沙拉连锁预警 同店销售恐降8%\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 9,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 8,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"has_hook_tension\",\n          \"angle:surprise_reversal\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\"\n        ],\n        \"fixes\": [\n          \"restore_transcript_and_research_fidelity\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 9,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 8,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"restore_transcript_and_research_fidelity\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "真的只是因为寄生虫吗",
+                "evidence_basis": [
+                  "Transcript: Papa John's down 17 percent on the day.",
+                  "Public data shows Q2 earnings miss and guidance cut also contributed."
+                ],
+                "title": "棒约翰大跌17% 只怪环孢子虫吗",
+                "title_lines": [
+                  "棒约翰大跌17%",
+                  "只怪环孢子虫吗",
+                  "业绩预警更关键"
+                ],
+                "title_highlights": [
+                  "大跌17%",
+                  "环孢子虫",
+                  "业绩预警"
+                ],
+                "runner_up_titles": [
+                  "环孢子虫波动 棒约翰单日跌17%",
+                  "沙拉连锁预警 同店销售恐降8%"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：棒约翰大跌背后，业绩预警才是关键，食安只是导火索",
+                "comment_highlights": [
+                  "业绩预警",
+                  "食安"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：单日17%的跌幅，市场反应剧烈",
+                    "comment_highlights": [
+                      "17%"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：增长担忧叠加行业压力，餐饮股承压",
+                    "comment_highlights": [
+                      "增长担忧"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：食品安全恐慌让复杂行业雪上加霜",
+                    "comment_highlights": [
+                      "食品安全"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：美国史上最大规模疫情，影响深远",
+                    "comment_highlights": [
+                      "最大规模"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：环孢子虫引发严重腹泻，公众担忧加剧",
+                    "comment_highlights": [
+                      "环孢子虫"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：疫情数月前已发现，但公众知晓滞后",
+                    "comment_highlights": [
+                      "滞后"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：餐饮股指数承压，麦当劳等巨头受波及",
+                    "comment_highlights": [
+                      "承压"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：Kava和YoungBrands跌幅明显，板块普跌",
+                    "comment_highlights": [
+                      "跌幅明显"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：新兴连锁申请破产，疫情加剧困境",
+                    "comment_highlights": [
+                      "破产"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：沙门氏菌疫情发酵，食品安全问题叠加",
+                    "comment_highlights": [
+                      "沙门氏菌"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：CDC信息混乱，加剧公众困惑",
+                    "comment_highlights": [
+                      "信息混乱"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：顾客选择不冒险，消费行为改变",
+                    "comment_highlights": [
+                      "不冒险"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：远离生蔬菜，餐厅客流受影响",
+                    "comment_highlights": [
+                      "生蔬菜"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：Sweetgreen同店销售下滑，超出预期",
+                    "comment_highlights": [
+                      "同店销售"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：下滑幅度超预期，市场反应负面",
+                    "comment_highlights": [
+                      "超预期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 16,
+                    "comment": "KC评论：全年预测下调，同店销售承压",
+                    "comment_highlights": [
+                      "预测下调"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 17,
+                    "comment": "KC评论：预计下降8%，业绩预警明确",
+                    "comment_highlights": [
+                      "下降8%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "棒约翰大跌17%：只怪环孢子虫吗，业绩预警更关键",
+          "title_lines": [
+            "棒约翰大跌17%",
+            "只怪环孢子虫吗",
+            "业绩预警更关键"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "真的只是因为寄生虫吗",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 8,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap"
+            ],
+            "fixes": [
+              "restore_transcript_and_research_fidelity"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 8,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：棒约翰大跌背后，业绩预警才是关键，食安只是导火索"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-08T22:40:33.997468+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.2,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close",
+          "source_title": "Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close",
+          "show_date": "",
+          "current_title": "食安风波冲击餐饮股 业绩预警引关注",
+          "current_title_lines": [
+            "食安风波冲击餐饮股",
+            "业绩预警引关注",
+            "行业压力持续"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "食品板块中，棒约翰今日下跌17%。",
+              "en": "In the food space, Papa John's down 17 percent on the day.",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "市场对其未来增长有所担忧，同时餐饮行业也存在更广泛的忧虑。",
+              "en": "Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.",
+              "relative_start": 3.4,
+              "relative_end": 9.8
+            },
+            {
+              "index": 3,
+              "zh": "这是我们的头条，聚焦餐饮股，食品安全恐慌让本已复杂的行业雪上加霜。",
+              "en": "And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already",
+              "relative_start": 9.8,
+              "relative_end": 19.0
+            },
+            {
+              "index": 4,
+              "zh": "该行业已面临诸多复杂问题，而这次是美国有史以来最大规模的疫情。",
+              "en": "dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.",
+              "relative_start": 19.0,
+              "relative_end": 24.6
+            },
+            {
+              "index": 5,
+              "zh": "环孢子虫，一种导致严重腹泻的寄生虫。",
+              "en": "Recyclospora. It's a parasite that causes severe diarrhea.",
+              "relative_start": 24.6,
+              "relative_end": 28.2
+            },
+            {
+              "index": 6,
+              "zh": "疫情在数月前已被发现，但直到六月初公众才广泛知晓。",
+              "en": "That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.",
+              "relative_start": 28.2,
+              "relative_end": 34.8
+            },
+            {
+              "index": 7,
+              "zh": "自那以来，包含麦当劳、Chipotle等在内的餐饮股指数承压。",
+              "en": "Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.",
+              "relative_start": 34.8,
+              "relative_end": 42.0
+            },
+            {
+              "index": 8,
+              "zh": "Kava下跌9%，Young Brands下滑约10%。",
+              "en": "Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.",
+              "relative_start": 42.0,
+              "relative_end": 46.6
+            },
+            {
+              "index": 9,
+              "zh": "还有一家名为Saladin Go的新兴连锁申请破产，称疫情加剧了其经营困境。",
+              "en": "And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.",
+              "relative_start": 46.6,
+              "relative_end": 55.6
+            },
+            {
+              "index": 10,
+              "zh": "此外，还有一起涉及辣椒的沙门氏菌疫情正在发酵。",
+              "en": "And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.",
+              "relative_start": 55.7,
+              "relative_end": 62.0
+            },
+            {
+              "index": 11,
+              "zh": "关于CDC的公告，或者说缺乏公告，存在很多困惑。",
+              "en": "And there's a lot of confusion about the CDC's messaging on this or rather the lack thereof.",
+              "relative_start": 62.0,
+              "relative_end": 67.4
+            },
+            {
+              "index": 12,
+              "zh": "这导致很多顾客决定不冒险。",
+              "en": "And that has a lot of customers just deciding we're not going to take any chances.",
+              "relative_start": 67.4,
+              "relative_end": 70.6
+            },
+            {
+              "index": 13,
+              "zh": "他们决定远离生蔬菜，以及销售这些蔬菜的餐厅。",
+              "en": "We're just going to stay away from raw veggies and quite frankly, the restaurants that sell them.",
+              "relative_start": 70.6,
+              "relative_end": 75.3
+            },
+            {
+              "index": 14,
+              "zh": "我们刚刚听到其中一家餐厅的消息，Sweetgreen，沙拉连锁店，销售生蔬菜，同店销售额增长。",
+              "en": "We just heard from one of those restaurants, sweet green, salad chain, raw vegetables, same-store sales growth.",
+              "relative_start": 75.3,
+              "relative_end": 80.3
+            },
+            {
+              "index": 15,
+              "zh": "它下降了。原本预期会下降，但实际下降幅度超过预期。",
+              "en": "It was down. It was expected to be down. And it was down more than expected.",
+              "relative_start": 80.3,
+              "relative_end": 83.7
+            },
+            {
+              "index": 16,
+              "zh": "他们给出了全年预测，并表示同店销售额。",
+              "en": "They gave a forecast for the full year and said same-store sales.",
+              "relative_start": 83.8,
+              "relative_end": 87.0
+            },
+            {
+              "index": 17,
+              "zh": "将下降约8%。",
+              "en": "They will be down about 8 percent.",
+              "relative_start": 87.0,
+              "relative_end": 89.2
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n  \"source_title\": \"Duration: 6:50 Cyclospora Outbreak Sends Shivers Through Restaurant Stocks The Close\",\n  \"current_title\": \"食安风波冲击餐饮股 业绩预警引关注\",\n  \"source_claims\": [\n    \"In the food space, Papa John's down 17 percent on the day.\",\n    \"Some concerns here about their growth story going forward and well, there's some bigger concerns going on in the restaurant space as well.\",\n    \"And that is our top story, a focus on restaurant stocks amid a food safety scare that is making things maybe a little bit more complicated for an industry that was already\",\n    \"dealing with the myriad of other complex issues. The largest outbreak ever recorded in the U.S.\",\n    \"Recyclospora. It's a parasite that causes severe diarrhea.\",\n    \"That outbreak was quietly identified months ago, but it was only in early June that the mass public really became aware of it.\",\n    \"Since then, an index of restaurant stocks that includes McDonald's, and Chipotle, Brinker, Wendy's, Aura Mark, and others, it's been under pressure.\",\n    \"Takes years at Kava. They're down 9 percent since that time. Young brands have slid about 10 percent.\",\n    \"And then there was this closely held upstart chain called Saladin Go, which just filed for Chapter 11 bankruptcy saying the outbreak worsened its existing business challenges.\",\n    \"And that's not all. There's a salmonella outbreak out there. A small one involving high-alapenial peppers that has begun to unfold.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Brinker\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Brinker International, Inc.\",\n      \"preferred_en\": \"Brinker International, Inc.\",\n      \"official_zh\": \"布林克国际公司\",\n      \"common_zh\": \"Brinker\",\n      \"title_label\": \"Brinker\",\n      \"preferred_zh\": \"Brinker\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.barrons.com/market-data/stocks/eat\",\n        \"https://stockanalysis.com/stocks/eat/\"\n      ],\n      \"evidence\": \"Stock ticker EAT; Chinese name not widely used in media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Papa John's down 17 percent on the day.\",\n      \"public_baseline\": \"Papa John's stock declined 17.2% in Q2 2026 after earnings miss and guidance cut, not directly linked to Cyclospora.\",\n      \"surprise_gap\": \"The clip attributes the drop to Cyclospora outbreak, but public data suggests the decline was due to earnings and guidance.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Papa John's stock drop 17 percent Cyclospora outbreak 2023\",\n          \"url\": \"https://www.zacks.com/stock/news/2971382/papa-johns-q2-earnings-revenues-beat-estimates-stock-down\",\n          \"fact\": \"Papa John's Q2 earnings beat but stock sank 17.2% due to weak comps and reduced guidance.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Papa John's drop was solely due to Cyclospora.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript contains possible mishearings: 'Aura Mark' likely 'Yum! Brands'? 'Kava' likely 'CAVA', 'Young brands' likely 'Yum! Brands', 'Saladin Go' likely 'Salata'.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"棒约翰大跌17%：只怪环孢子虫吗，业绩预警更关键\",\n  \"title_lines\": [\n    \"棒约翰大跌17%\",\n    \"只怪环孢子虫吗\",\n    \"业绩预警更关键\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"真的只是因为寄生虫吗\",\n  \"evidence_basis\": [\n    \"Transcript: Papa John's down 17 percent on the day.\",\n    \"Public data shows Q2 earnings miss and guidance cut also contributed.\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 9,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 8,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"restore_transcript_and_research_fidelity\"]\n\nMandatory clip-specific repair rules:\n- No additional clip-specific rule.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "真的只是因为寄生虫吗",
+            "evidence_basis": [
+              "Transcript: Papa John's down 17 percent on the day.",
+              "Public data shows Q2 earnings miss and guidance cut also contributed."
+            ],
+            "title": "棒约翰大跌17%：环孢子虫之外，业绩预警更关键",
+            "title_lines": [
+              "棒约翰大跌17%",
+              "环孢子虫之外",
+              "业绩预警更关键"
+            ],
+            "title_highlights": [
+              "棒约翰大跌17%",
+              "环孢子虫之外",
+              "业绩预警更关键"
+            ],
+            "runner_up_titles": [
+              "棒约翰大跌17%：业绩预警叠加食安风波"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 8,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "棒约翰大跌17%：环孢子虫之外，业绩预警更关键",
+        "title_lines": [
+          "棒约翰大跌17%",
+          "环孢子虫之外",
+          "业绩预警更关键"
+        ],
+        "title_highlights": [
+          "棒约翰大跌17%",
+          "环孢子虫之外",
+          "业绩预警更关键"
+        ],
+        "comment": "KC评论：棒约翰大跌背后，业绩预警才是关键，食安只是导火索",
+        "comment_highlights": [
+          "业绩预警",
+          "食安"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：单日17%的跌幅，市场反应剧烈",
+            "comment_highlights": [
+              "17%"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：增长担忧叠加行业压力，餐饮股承压",
+            "comment_highlights": [
+              "增长担忧"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：食品安全恐慌让复杂行业雪上加霜",
+            "comment_highlights": [
+              "食品安全"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：美国史上最大规模疫情，影响深远",
+            "comment_highlights": [
+              "最大规模"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：环孢子虫引发严重腹泻，公众担忧加剧",
+            "comment_highlights": [
+              "环孢子虫"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：疫情数月前已发现，但公众知晓滞后",
+            "comment_highlights": [
+              "滞后"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：餐饮股指数承压，麦当劳等巨头受波及",
+            "comment_highlights": [
+              "承压"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：Kava和YoungBrands跌幅明显，板块普跌",
+            "comment_highlights": [
+              "跌幅明显"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：新兴连锁申请破产，疫情加剧困境",
+            "comment_highlights": [
+              "破产"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：沙门氏菌疫情发酵，食品安全问题叠加",
+            "comment_highlights": [
+              "沙门氏菌"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：CDC信息混乱，加剧公众困惑",
+            "comment_highlights": [
+              "信息混乱"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：顾客选择不冒险，消费行为改变",
+            "comment_highlights": [
+              "不冒险"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：远离生蔬菜，餐厅客流受影响",
+            "comment_highlights": [
+              "生蔬菜"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：Sweetgreen同店销售下滑，超出预期",
+            "comment_highlights": [
+              "同店销售"
+            ]
+          },
+          {
+            "subtitle_index": 15,
+            "comment": "KC评论：下滑幅度超预期，市场反应负面",
+            "comment_highlights": [
+              "超预期"
+            ]
+          },
+          {
+            "subtitle_index": 16,
+            "comment": "KC评论：全年预测下调，同店销售承压",
+            "comment_highlights": [
+              "预测下调"
+            ]
+          },
+          {
+            "subtitle_index": 17,
+            "comment": "KC评论：预计下降8%，业绩预警明确",
+            "comment_highlights": [
+              "下降8%"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "真的只是因为寄生虫吗",
+        "evidence_basis": [
+          "Transcript: Papa John's down 17 percent on the day.",
+          "Public data shows Q2 earnings miss and guidance cut also contributed."
+        ],
+        "runner_up_titles": [
+          "棒约翰大跌17%：业绩预警叠加食安风波"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 9,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 8,
+          "china_resonance": 0
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 95,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap"
+          ],
+          "fixes": [
+            "restore_transcript_and_research_fidelity"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 8,
+            "china_resonance": 0
+          }
+        }
+      }
+    }
+  ]
+}
