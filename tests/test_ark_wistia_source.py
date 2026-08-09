@@ -184,8 +184,8 @@ class ArkWistiaSourceTests(unittest.TestCase):
             with (
                 mock.patch.object(
                     process_ark_videos,
-                    "discover_ark_wistia_media_ids",
-                    return_value=["footer1234"],
+                    "discover_ark_wistia_candidates",
+                    return_value=[{"media_id": "footer1234", "provenance": "test"}],
                 ),
                 mock.patch.object(
                     process_ark_videos,
@@ -219,8 +219,11 @@ class ArkWistiaSourceTests(unittest.TestCase):
             with (
                 mock.patch.object(
                     process_ark_videos,
-                    "discover_ark_wistia_media_ids",
-                    return_value=["candidate1", "candidate2"],
+                    "discover_ark_wistia_candidates",
+                    return_value=[
+                        {"media_id": "candidate1", "provenance": "test"},
+                        {"media_id": "candidate2", "provenance": "test"},
+                    ],
                 ),
                 mock.patch.object(
                     process_ark_videos,
@@ -233,6 +236,304 @@ class ArkWistiaSourceTests(unittest.TestCase):
             ):
                 with self.assertRaisesRegex(RuntimeError, "Ambiguous Wistia media identity"):
                     process_ark_videos.resolve_wistia_source(item, Path(tmp))
+
+    def test_exact_ledger_entry_bypasses_live_page_discovery(self) -> None:
+        page_url = (
+            "https://www.ark-invest.com/videos/market-commentary/"
+            "august-2026-in-the-know-cathie-wood"
+        )
+        item = {
+            "url": page_url,
+            "guid": page_url,
+            "slug": "august_2026_in_the_know_cathie_wood",
+            "title": 'Why This "Scary" Jobs Report Might Be Good News | ITK With Cathie Wood',
+            "pub_date": "2026-08-08T09:00:00+08:00",
+        }
+        media = {
+            "hashedId": "s9r5knrzoe",
+            "name": "ITK August",
+            "seoDescription": "an In The Know video",
+            "createdAt": 1786152080,
+            "duration": 3690.77,
+            "protected": False,
+            "hls_enabled": True,
+            "assets": [{
+                "type": "hd_mp4_video",
+                "height": 720,
+                "public": True,
+                "status": 2,
+                "url": "https://embed-ssl.wistia.com/deliveries/source.bin",
+            }],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ledger = root / "wistia_sources.json"
+            ledger.write_text(json.dumps({
+                "schema_version": 1,
+                "sources": [{
+                    **item,
+                    "wistia_id": "s9r5knrzoe",
+                }],
+            }), encoding="utf-8")
+            with (
+                mock.patch.object(
+                    process_ark_videos,
+                    "discover_ark_wistia_candidates",
+                ) as discover,
+                mock.patch.object(
+                    process_ark_videos,
+                    "fetch_wistia_media",
+                    return_value=(media, json.dumps({"media": media}), "https://metadata"),
+                ),
+            ):
+                source = process_ark_videos.resolve_wistia_source(
+                    item,
+                    root,
+                    max_height=720,
+                    source_ledger=ledger,
+                    tavily_api_key="unused",
+                )
+
+        discover.assert_not_called()
+        self.assertEqual(source["media_id"], "s9r5knrzoe")
+        self.assertEqual(source["provenance"], "ledger")
+
+    def test_ledger_integrity_mismatch_continues_live_discovery(self) -> None:
+        page_url = "https://www.ark-invest.com/videos/market-commentary/august-itk"
+        item = {
+            "url": page_url,
+            "slug": "august_itk",
+            "title": "August In The Know Jobs Update",
+            "pub_date": "2026-08-08T09:00:00+08:00",
+        }
+        media = {
+            "hashedId": "s9r5knrzoe",
+            "name": "August ITK Jobs Update",
+            "createdAt": 1786152080,
+            "duration": 600,
+            "protected": False,
+            "hls_enabled": True,
+            "assets": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ledger = root / "wistia_sources.json"
+            ledger.write_text(json.dumps({
+                "schema_version": 1,
+                "sources": [{
+                    "url": page_url,
+                    "slug": "august_itk",
+                    "title": "Wrong cached title",
+                    "pub_date": item["pub_date"],
+                    "wistia_id": "wrong12345",
+                }],
+            }), encoding="utf-8")
+            with (
+                mock.patch.object(
+                    process_ark_videos,
+                    "discover_ark_wistia_candidates",
+                    return_value=[{"media_id": "s9r5knrzoe", "provenance": "tavily_extract"}],
+                ),
+                mock.patch.object(
+                    process_ark_videos,
+                    "fetch_wistia_media",
+                    return_value=(media, json.dumps({"media": media}), "https://metadata"),
+                ),
+            ):
+                source = process_ark_videos.resolve_wistia_source(
+                    item,
+                    root,
+                    source_ledger=ledger,
+                    tavily_api_key="test-key",
+                )
+
+        self.assertEqual(source["media_id"], "s9r5knrzoe")
+        self.assertEqual(source["provenance"], "tavily_extract")
+
+    def test_conflicting_ledger_mappings_are_rejected(self) -> None:
+        first_url = "https://www.ark-invest.com/videos/market-commentary/first-item"
+        second_url = "https://www.ark-invest.com/videos/market-commentary/second-item"
+        first_entry = {
+            "url": first_url,
+            "slug": "first_item",
+            "title": "First Item",
+            "pub_date": "2026-08-08T09:00:00+08:00",
+            "wistia_id": "s9r5knrzoe",
+        }
+        conflict_sets = [
+            [
+                first_entry,
+                {
+                    "url": second_url,
+                    "slug": "second_item",
+                    "title": "Second Item",
+                    "pub_date": "2026-08-09T09:00:00+08:00",
+                    "wistia_id": "s9r5knrzoe",
+                },
+            ],
+            [
+                first_entry,
+                {
+                    **first_entry,
+                    "wistia_id": "wrong12345",
+                },
+            ],
+        ]
+        for sources in conflict_sets:
+            for ordered_sources in (sources, list(reversed(sources))):
+                with self.subTest(sources=ordered_sources):
+                    with tempfile.TemporaryDirectory() as tmp:
+                        ledger = Path(tmp) / "wistia_sources.json"
+                        ledger.write_text(json.dumps({
+                            "schema_version": 1,
+                            "sources": ordered_sources,
+                        }), encoding="utf-8")
+                        candidates = process_ark_videos.ledger_wistia_candidates(
+                            {
+                                "url": first_url,
+                                "slug": "first_item",
+                                "title": "First Item",
+                                "pub_date": "2026-08-08T09:00:00+08:00",
+                            },
+                            ledger,
+                        )
+
+                    self.assertEqual(candidates, [])
+
+    def test_tavily_exact_page_extract_request_and_response(self) -> None:
+        page_url = "https://www.ark-invest.com/videos/market-commentary/august-itk"
+        response = mock.MagicMock()
+        response.__enter__.return_value = response
+        response.read.return_value = json.dumps({
+            "results": [{
+                "url": page_url + "/",
+                "raw_content": "https://fast.wistia.com/embed/medias/s9r5knrzoe.m3u8",
+            }],
+            "failed_results": [],
+            "request_id": "request-123",
+            "usage": {"credits": 2},
+        }).encode("utf-8")
+        with mock.patch.object(process_ark_videos.urllib.request, "urlopen", return_value=response) as urlopen:
+            content = process_ark_videos.fetch_ark_page_with_tavily(
+                page_url,
+                "tvly-test-key",
+            )
+
+        request = urlopen.call_args.args[0]
+        request_payload = json.loads(request.data)
+        self.assertEqual(request.full_url, process_ark_videos.TAVILY_EXTRACT_URL)
+        self.assertEqual(request.get_header("Authorization"), "Bearer tvly-test-key")
+        self.assertEqual(request_payload["urls"], page_url)
+        self.assertEqual(request_payload["extract_depth"], "advanced")
+        self.assertIn("s9r5knrzoe", content)
+
+    def test_tavily_http_error_does_not_echo_response_body(self) -> None:
+        page_url = "https://www.ark-invest.com/videos/market-commentary/august-itk"
+        error = process_ark_videos.urllib.error.HTTPError(
+            process_ark_videos.TAVILY_EXTRACT_URL,
+            401,
+            "Unauthorized",
+            {},
+            None,
+        )
+        error.read = mock.Mock(return_value=b"server echoed tvly-test-key")
+        with mock.patch.object(
+            process_ark_videos.urllib.request,
+            "urlopen",
+            side_effect=error,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "Tavily Extract HTTP 401") as raised:
+                process_ark_videos.fetch_ark_page_with_tavily(page_url, "tvly-test-key")
+
+        self.assertNotIn("tvly-test-key", str(raised.exception))
+        error.read.assert_not_called()
+
+    def test_tavily_discovery_avoids_headless_after_ark_and_reader_403(self) -> None:
+        page_url = "https://www.ark-invest.com/videos/market-commentary/august-itk"
+        with tempfile.TemporaryDirectory() as tmp:
+            with (
+                mock.patch.object(
+                    process_ark_videos,
+                    "fetch_text_direct",
+                    side_effect=process_ark_videos.FetchError("HTTP 403"),
+                ),
+                mock.patch.object(
+                    process_ark_videos,
+                    "fetch_ark_page_with_tavily",
+                    return_value="https://fast.wistia.com/embed/medias/s9r5knrzoe.m3u8",
+                ),
+                mock.patch.object(
+                    process_ark_videos,
+                    "fetch_ark_page_with_headless_chrome",
+                ) as headless,
+            ):
+                candidates = process_ark_videos.discover_ark_wistia_candidates(
+                    page_url,
+                    Path(tmp),
+                    tavily_api_key="test-key",
+                )
+
+        headless.assert_not_called()
+        self.assertEqual(candidates, [{"media_id": "s9r5knrzoe", "provenance": "tavily_extract"}])
+
+    def test_source_ledger_updates_only_verified_wistia_successes_idempotently(self) -> None:
+        success = {
+            "status": "success",
+            "media_provider": "wistia",
+            "url": "https://www.ark-invest.com/videos/market-commentary/august-itk",
+            "guid": "https://www.ark-invest.com/videos/market-commentary/august-itk",
+            "slug": "august_itk",
+            "source_title": "August In The Know Jobs Update",
+            "pub_date": "2026-08-08T09:00:00+08:00",
+            "wistia_id": "s9r5knrzoe",
+            "wistia_media_name": "ITK August",
+            "wistia_media_created_at": 1786152080,
+            "wistia_provenance": "tavily_extract",
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger = Path(tmp) / "wistia_sources.json"
+            process_ark_videos.update_wistia_source_ledger(ledger, [success])
+            first = ledger.read_bytes()
+            process_ark_videos.update_wistia_source_ledger(ledger, [success])
+            second = ledger.read_bytes()
+            process_ark_videos.update_wistia_source_ledger(
+                ledger,
+                [{**success, "media_provider": "youtube", "wistia_id": ""}],
+            )
+            payload = json.loads(ledger.read_text(encoding="utf-8"))
+
+        self.assertEqual(first, second)
+        self.assertEqual(len(payload["sources"]), 1)
+        self.assertEqual(payload["sources"][0]["wistia_id"], "s9r5knrzoe")
+
+    def test_source_ledger_writer_preserves_malformed_and_conflicting_files(self) -> None:
+        success = {
+            "status": "success",
+            "media_provider": "wistia",
+            "url": "https://www.ark-invest.com/videos/market-commentary/new-item",
+            "slug": "new_item",
+            "source_title": "New Item",
+            "pub_date": "2026-08-10T09:00:00+08:00",
+            "wistia_id": "newid12345",
+        }
+        first_url = "https://www.ark-invest.com/videos/market-commentary/first-item"
+        second_url = "https://www.ark-invest.com/videos/market-commentary/second-item"
+        conflicting = json.dumps({
+            "schema_version": 1,
+            "sources": [
+                {"url": first_url, "wistia_id": "s9r5knrzoe"},
+                {"url": second_url, "wistia_id": "s9r5knrzoe"},
+            ],
+        }).encode("utf-8")
+        for original in (b"{broken json", conflicting):
+            with self.subTest(original=original):
+                with tempfile.TemporaryDirectory() as tmp:
+                    ledger = Path(tmp) / "wistia_sources.json"
+                    ledger.write_bytes(original)
+                    process_ark_videos.update_wistia_source_ledger(ledger, [success])
+                    preserved = ledger.read_bytes()
+
+                self.assertEqual(preserved, original)
 
     def test_download_wistia_video_uses_progressive_asset(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

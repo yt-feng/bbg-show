@@ -329,12 +329,17 @@ therefore does not make the same clip publishable again.
 Invest feed, resolves the official Wistia media embedded on the matching ARK article, and renders
 a translated KC Desktop clip. YouTube is a secondary source, not the primary delivery path.
 
-- Source discovery first requests the canonical ARK page, then uses the text-only Jina reader for
-  the same public page when ARK's edge returns HTTP 403, and finally has an isolated headless
-  Chrome fallback. Chrome setup is best-effort because direct/Jina discovery runs first. The
-  reader/browser is used only to discover Wistia media IDs; all candidates are checked against
-  the RSS title/date before selection, and all video, metadata, and captions come from ARK's
-  official Wistia player and CDN.
+- `rendered-clips/ark-invest/wistia_sources.json` is the durable, committed source ledger. It maps
+  an exact canonical ARK article URL/guid, RSS slug, title, and publication date to a previously
+  verified Wistia media ID. A ledger hit is still checked against live official Wistia metadata;
+  mismatched or conflicting entries are ignored rather than guessed or overwritten.
+- On a new ledger miss, discovery requests the canonical ARK page and the text-only Jina reader,
+  then makes one Tavily Extract request for that exact public article. Tavily is only a discovery
+  transport: its result URL must canonicalize to the requested ARK URL, and it can supply only a
+  candidate Wistia ID. An isolated headless Chrome fetch is the final discovery fallback. Every
+  candidate is checked against official Wistia metadata plus the RSS title/series/date, with a
+  minimum positive binding and winner margin before selection. All video bytes, metadata, and
+  captions come from ARK's official Wistia player and CDN.
 - `fast.wistia.com/embed/medias/<id>.json` supplies progressive MP4 assets. The processor selects
   the highest public asset at or below 720p, downloads it with resumable curl retries, and falls
   back to Wistia's official HLS master if the progressive asset fails validation. Both paths must
@@ -355,6 +360,9 @@ a translated KC Desktop clip. YouTube is a secondary source, not the primary del
   step; no personal browser cookies are copied into the repository or Action.
 - `rendered-clips/ark-invest/processed_urls.json` is updated only for successful videos. A failed
   source remains eligible for the next scheduled retry.
+- A newly discovered Wistia mapping is written atomically to the source ledger only after the
+  full source validation, transcript/planning, render, and final MP4 checks succeed. Repeated
+  mappings are byte-stable; URL-to-ID and ID-to-URL conflicts are never automatically replaced.
 - Multiple selected videos are isolated: any successful video is retained and recorded; the
   processor exits non-zero only when a non-empty batch has zero successes.
 - The workflow uses a one-commit checkout and initially fetches only recent main history before

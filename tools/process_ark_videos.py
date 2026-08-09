@@ -12,6 +12,8 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
@@ -50,9 +52,10 @@ SENSITIVE_SKIP_MARKERS = (
     "no non-sensitive-topic clips remained after title refinement",
 )
 WISTIA_MEDIA_ID_PATTERNS = (
-    re.compile(r"fast\.wistia\.(?:com|net)/embed/(?:medias|iframe)/([a-z0-9]+)", re.IGNORECASE),
-    re.compile(r"\bwistia_async_([a-z0-9]+)\b", re.IGNORECASE),
-    re.compile(r"\bwistia-([a-z0-9]+)-\d+\b", re.IGNORECASE),
+    re.compile(r"fast\.wistia\.(?:com|net)/embed/(?:medias|iframe)/([a-z0-9]{10})", re.IGNORECASE),
+    re.compile(r"\bwistia_async_([a-z0-9]{10})\b", re.IGNORECASE),
+    re.compile(r"\bwistia-([a-z0-9]{10})-\d+\b", re.IGNORECASE),
+    re.compile(r"\bmedia-id=[\"']([a-z0-9]{10})[\"']", re.IGNORECASE),
 )
 WISTIA_VIDEO_TYPES = {
     "iphone_video",
@@ -77,6 +80,8 @@ WISTIA_IDENTITY_STOPWORDS = {
 }
 MIN_WISTIA_BINDING_SCORE = 8
 MIN_WISTIA_IDENTITY_MARGIN = 8
+WISTIA_IDENTITY_VERSION = 1
+TAVILY_EXTRACT_URL = "https://api.tavily.com/extract"
 
 
 def run_date_default() -> str:
@@ -216,6 +221,171 @@ def extract_wistia_media_id(text: str) -> str:
     return media_ids[0] if media_ids else ""
 
 
+def canonical_ark_url(value: str) -> str:
+    parsed = urlsplit(clean_text(value))
+    host = (parsed.hostname or "").casefold()
+    if not (host == "ark-invest.com" or host.endswith(".ark-invest.com")):
+        return ""
+    if host == "ark-invest.com":
+        host = "www.ark-invest.com"
+    path = re.sub(r"/{2,}", "/", parsed.path or "/").rstrip("/") or "/"
+    return f"https://{host}{path}"
+
+
+def normalized_item_date(item: dict[str, Any]) -> str:
+    value = clean_text(str(item.get("pub_date") or item.get("updated") or ""))
+    return value[:10] if re.match(r"^\d{4}-\d{2}-\d{2}", value) else ""
+
+
+def read_wistia_source_ledger(path: Path) -> tuple[dict[str, Any], bool]:
+    if not path.exists():
+        return {"schema_version": 1, "sources": []}, True
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"::warning::Ignoring invalid ARK Wistia source ledger {path}: {exc}", flush=True)
+        return {"schema_version": 1, "sources": []}, False
+    if not isinstance(payload, dict) or payload.get("schema_version") != 1:
+        print(f"::warning::Ignoring unsupported ARK Wistia source ledger {path}", flush=True)
+        return {"schema_version": 1, "sources": []}, False
+    sources = payload.get("sources")
+    if not isinstance(sources, list):
+        print(f"::warning::Ignoring malformed ARK Wistia source ledger {path}", flush=True)
+        return {"schema_version": 1, "sources": []}, False
+    return payload, True
+
+
+def load_wistia_source_ledger(path: Path) -> dict[str, Any]:
+    payload, _writable = read_wistia_source_ledger(path)
+    return payload
+
+
+def ledger_wistia_candidates(item: dict[str, Any], path: Path) -> list[dict[str, Any]]:
+    wanted_urls = {
+        url
+        for url in (
+            canonical_ark_url(str(item.get("url", ""))),
+            canonical_ark_url(str(item.get("guid", ""))),
+        )
+        if url
+    }
+    if not wanted_urls:
+        return []
+    wanted_title = clean_text(str(item.get("title", ""))).casefold()
+    wanted_slug = clean_text(str(item.get("slug", ""))).casefold()
+    wanted_date = normalized_item_date(item)
+    payload = load_wistia_source_ledger(path)
+    candidates: list[dict[str, Any]] = []
+    candidate_ids: set[str] = set()
+    valid_entries: list[tuple[dict[str, Any], str, str]] = []
+    urls_by_media_id: dict[str, set[str]] = {}
+    media_ids_by_url: dict[str, set[str]] = {}
+    for raw in payload.get("sources", []):
+        if not isinstance(raw, dict):
+            continue
+        article_url = canonical_ark_url(str(raw.get("url") or raw.get("guid") or ""))
+        media_id = clean_text(str(raw.get("wistia_id", ""))).casefold()
+        if not article_url or not re.fullmatch(r"[a-z0-9]{10}", media_id):
+            continue
+        valid_entries.append((raw, article_url, media_id))
+        urls_by_media_id.setdefault(media_id, set()).add(article_url)
+        media_ids_by_url.setdefault(article_url, set()).add(media_id)
+
+    reported_conflicts: set[tuple[str, str]] = set()
+    for raw, article_url, media_id in valid_entries:
+        if len(urls_by_media_id[media_id]) > 1 or len(media_ids_by_url[article_url]) > 1:
+            conflict_key = (article_url, media_id)
+            if conflict_key in reported_conflicts:
+                continue
+            reported_conflicts.add(conflict_key)
+            print(
+                f"::warning::Ignoring conflicting Wistia ledger mapping {article_url} -> {media_id}",
+                flush=True,
+            )
+            continue
+        if article_url not in wanted_urls:
+            continue
+        ledger_title = clean_text(str(raw.get("title", ""))).casefold()
+        ledger_slug = clean_text(str(raw.get("slug", ""))).casefold()
+        ledger_date = clean_text(str(raw.get("pub_date", "")))[:10]
+        if wanted_title and ledger_title != wanted_title:
+            print(f"::warning::Ignoring Wistia ledger title mismatch for {article_url}", flush=True)
+            continue
+        if wanted_slug and ledger_slug != wanted_slug:
+            print(f"::warning::Ignoring Wistia ledger slug mismatch for {article_url}", flush=True)
+            continue
+        if wanted_date and ledger_date != wanted_date:
+            print(f"::warning::Ignoring Wistia ledger date mismatch for {article_url}", flush=True)
+            continue
+        if media_id not in candidate_ids:
+            candidates.append({"media_id": media_id, "provenance": "ledger"})
+            candidate_ids.add(media_id)
+    if candidates:
+        print(
+            "[ark] Found verified Wistia media candidate(s) in the exact source ledger: "
+            + ", ".join(candidate["media_id"] for candidate in candidates),
+            flush=True,
+        )
+    return candidates
+
+
+def fetch_ark_page_with_tavily(page_url: str, api_key: str, timeout: int = 45) -> str:
+    if not clean_text(api_key):
+        raise RuntimeError("Tavily API key is not configured")
+    request_payload = json.dumps({
+        "urls": page_url,
+        "extract_depth": "advanced",
+        "format": "markdown",
+        "include_images": False,
+        "include_usage": True,
+        "timeout": min(60, max(1, timeout)),
+    }).encode("utf-8")
+    request = urllib.request.Request(
+        TAVILY_EXTRACT_URL,
+        data=request_payload,
+        method="POST",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": "bbg-show-ark-source-discovery/1.0",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout + 10) as response:
+            response_text = response.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        raise RuntimeError(f"Tavily Extract HTTP {exc.code}") from exc
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        raise RuntimeError(f"Tavily Extract request failed: {exc}") from exc
+    try:
+        payload = json.loads(response_text)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"Tavily Extract returned invalid JSON: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise RuntimeError("Tavily Extract returned a non-object response")
+    matching_content: list[str] = []
+    results = payload.get("results")
+    for result in (results if isinstance(results, list) else []):
+        if not isinstance(result, dict):
+            continue
+        if canonical_ark_url(str(result.get("url", ""))) != canonical_ark_url(page_url):
+            continue
+        raw_content = result.get("raw_content")
+        if isinstance(raw_content, str) and raw_content.strip():
+            matching_content.append(raw_content)
+    usage = payload.get("usage") if isinstance(payload.get("usage"), dict) else {}
+    print(
+        f"[ark] Tavily Extract request {clean_text(str(payload.get('request_id', 'unknown')))} "
+        f"used {usage.get('credits', 'unknown')} credit(s)",
+        flush=True,
+    )
+    if not matching_content:
+        failures = payload.get("failed_results")
+        failure_count = len(failures) if isinstance(failures, list) else 0
+        raise RuntimeError(f"Tavily Extract returned no exact-page content ({failure_count} failure(s))")
+    return "\n".join(matching_content)
+
+
 def fetch_ark_page_with_headless_chrome(
     page_url: str,
     work_dir: Path,
@@ -271,17 +441,25 @@ def fetch_ark_page_with_headless_chrome(
     return proc.stdout
 
 
-def discover_ark_wistia_media_ids(
+def discover_ark_wistia_candidates(
     page_url: str,
     work_dir: Path,
     configured_chrome: str = "",
-) -> list[str]:
+    tavily_api_key: str = "",
+) -> list[dict[str, Any]]:
     host = urlsplit(page_url).netloc.casefold()
     if not (host == "ark-invest.com" or host.endswith(".ark-invest.com")):
         raise RuntimeError(f"Not an ARK Invest page URL: {page_url}")
 
     errors: list[str] = []
-    discovered: list[str] = []
+    discovered: dict[str, list[str]] = {}
+
+    def record_candidates(media_ids: list[str], provenance: str) -> None:
+        for media_id in media_ids:
+            sources = discovered.setdefault(media_id, [])
+            if provenance not in sources:
+                sources.append(provenance)
+
     sources = [
         ("direct", page_url, "ark_page_direct.html"),
         ("reader", f"https://r.jina.ai/{page_url}", "ark_page_reader.txt"),
@@ -300,40 +478,83 @@ def discover_ark_wistia_media_ids(
                 f"via {label} page fetch",
                 flush=True,
             )
-            for media_id in media_ids:
-                if media_id not in discovered:
-                    discovered.append(media_id)
+            record_candidates(media_ids, label)
         else:
             errors.append(f"{label}: no Wistia media ID")
 
-    if discovered:
-        return discovered
+    if clean_text(tavily_api_key):
+        try:
+            page_text = fetch_ark_page_with_tavily(page_url, tavily_api_key)
+        except RuntimeError as exc:
+            errors.append(f"tavily: {exc}")
+        else:
+            media_ids = extract_wistia_media_ids(page_text)
+            if media_ids:
+                print(
+                    f"[ark] Found official Wistia media candidate(s) {', '.join(media_ids)} "
+                    "via Tavily exact-page extraction",
+                    flush=True,
+                )
+                record_candidates(media_ids, "tavily_extract")
+            else:
+                errors.append("tavily: no Wistia media ID")
 
-    try:
-        page_text = fetch_ark_page_with_headless_chrome(page_url, work_dir, configured_chrome)
-    except RuntimeError as exc:
-        errors.append(f"headless: {exc}")
-    else:
-        (work_dir / "ark_page_headless.html").write_text(page_text, encoding="utf-8")
-        media_ids = extract_wistia_media_ids(page_text)
-        if media_ids:
-            print(
-                f"[ark] Found official Wistia media candidate(s) {', '.join(media_ids)} "
-                "via headless Chrome",
-                flush=True,
-            )
-            return media_ids
-        errors.append("headless: no Wistia media ID")
+    if not discovered:
+        try:
+            page_text = fetch_ark_page_with_headless_chrome(page_url, work_dir, configured_chrome)
+        except RuntimeError as exc:
+            errors.append(f"headless: {exc}")
+        else:
+            (work_dir / "ark_page_headless.html").write_text(page_text, encoding="utf-8")
+            media_ids = extract_wistia_media_ids(page_text)
+            if media_ids:
+                print(
+                    f"[ark] Found official Wistia media candidate(s) {', '.join(media_ids)} "
+                    "via headless Chrome",
+                    flush=True,
+                )
+                record_candidates(media_ids, "headless")
+            else:
+                errors.append("headless: no Wistia media ID")
+
+    if discovered:
+        return [
+            {"media_id": media_id, "provenance": "+".join(provenance)}
+            for media_id, provenance in discovered.items()
+        ]
 
     raise RuntimeError("Could not discover official ARK Wistia media: " + "; ".join(errors))
+
+
+def discover_ark_wistia_media_ids(
+    page_url: str,
+    work_dir: Path,
+    configured_chrome: str = "",
+    tavily_api_key: str = "",
+) -> list[str]:
+    return [
+        candidate["media_id"]
+        for candidate in discover_ark_wistia_candidates(
+            page_url,
+            work_dir,
+            configured_chrome,
+            tavily_api_key,
+        )
+    ]
 
 
 def discover_ark_wistia_media_id(
     page_url: str,
     work_dir: Path,
     configured_chrome: str = "",
+    tavily_api_key: str = "",
 ) -> str:
-    return discover_ark_wistia_media_ids(page_url, work_dir, configured_chrome)[0]
+    return discover_ark_wistia_media_ids(
+        page_url,
+        work_dir,
+        configured_chrome,
+        tavily_api_key,
+    )[0]
 
 
 def wistia_asset_candidates(media: dict[str, Any], max_height: int) -> list[dict[str, Any]]:
@@ -453,17 +674,20 @@ def fetch_wistia_media(media_id: str, work_dir: Path) -> tuple[dict[str, Any], s
     return media, metadata_text, metadata_url
 
 
-def resolve_wistia_source(
+def select_wistia_source(
     item: dict[str, Any],
     work_dir: Path,
-    configured_chrome: str = "",
-    max_height: int = 720,
+    media_candidates: list[dict[str, Any]],
+    max_height: int,
 ) -> dict[str, Any]:
-    page_url = clean_text(str(item.get("url", "")))
-    media_ids = discover_ark_wistia_media_ids(page_url, work_dir, configured_chrome)
-    scored_media: list[tuple[int, int, str, dict[str, Any], str, str]] = []
+    scored_media: list[tuple[int, int, str, str, dict[str, Any], str, str]] = []
     metadata_errors: list[str] = []
-    for media_id in media_ids:
+    for candidate in media_candidates:
+        media_id = clean_text(str(candidate.get("media_id", ""))).casefold()
+        provenance = clean_text(str(candidate.get("provenance", "unknown"))) or "unknown"
+        if not re.fullmatch(r"[a-z0-9]{10}", media_id):
+            metadata_errors.append(f"{media_id or 'empty'}: invalid media ID")
+            continue
         try:
             media, metadata_text, metadata_url = fetch_wistia_media(media_id, work_dir)
         except (FetchError, RuntimeError) as exc:
@@ -473,6 +697,7 @@ def resolve_wistia_source(
             wistia_identity_score(media, item),
             wistia_binding_score(media, item),
             media_id,
+            provenance,
             media,
             metadata_text,
             metadata_url,
@@ -493,7 +718,15 @@ def resolve_wistia_source(
             f"{row[2]} (score={row[0]}, binding={row[1]})" for row in scored_media[:3]
         )
         raise RuntimeError(f"Ambiguous Wistia media identity for ARK page: {contenders}")
-    identity_score, binding_score, media_id, media, metadata_text, metadata_url = scored_media[0]
+    (
+        identity_score,
+        binding_score,
+        media_id,
+        provenance,
+        media,
+        metadata_text,
+        metadata_url,
+    ) = scored_media[0]
     (work_dir / "wistia_media.json").write_text(metadata_text, encoding="utf-8")
 
     assets = wistia_asset_candidates(media, max_height)
@@ -508,6 +741,7 @@ def resolve_wistia_source(
         "media_id": media_id,
         "identity_score": identity_score,
         "binding_score": binding_score,
+        "provenance": provenance,
         "url": asset_url or hls_url,
         "asset_url": asset_url,
         "hls_url": hls_url,
@@ -515,6 +749,7 @@ def resolve_wistia_source(
         "title": clean_text(str(media.get("name", ""))) or item.get("title", ""),
         "channel": "ARK Invest",
         "duration": media.get("duration"),
+        "media_created_at": media.get("createdAt"),
         "height": asset.get("height") if asset else None,
         "metadata_url": metadata_url,
     }
@@ -525,10 +760,40 @@ def resolve_wistia_source(
     quality = f"{source['height']}p" if source.get("height") else "HLS"
     print(
         f"[ark] Selected official Wistia source: {media_id} / {quality} / "
-        f"identity score {identity_score} / binding score {binding_score} / {source['url']}",
+        f"identity score {identity_score} / binding score {binding_score} / "
+        f"provenance {provenance} / {source['url']}",
         flush=True,
     )
     return source
+
+
+def resolve_wistia_source(
+    item: dict[str, Any],
+    work_dir: Path,
+    configured_chrome: str = "",
+    max_height: int = 720,
+    source_ledger: Path | None = None,
+    tavily_api_key: str = "",
+) -> dict[str, Any]:
+    page_url = clean_text(str(item.get("url", "")))
+    if source_ledger is not None:
+        ledger_candidates = ledger_wistia_candidates(item, source_ledger)
+        if ledger_candidates:
+            try:
+                return select_wistia_source(item, work_dir, ledger_candidates, max_height)
+            except RuntimeError as exc:
+                print(
+                    f"::warning::Verified Wistia ledger entry was not usable ({exc}); "
+                    "trying live source discovery.",
+                    flush=True,
+                )
+    media_candidates = discover_ark_wistia_candidates(
+        page_url,
+        work_dir,
+        configured_chrome,
+        tavily_api_key,
+    )
+    return select_wistia_source(item, work_dir, media_candidates, max_height)
 
 
 def download_wistia_video(
@@ -933,6 +1198,8 @@ def resolve_ark_source(
             work_dir,
             args.ark_chrome_bin,
             args.wistia_max_height,
+            args.wistia_source_ledger,
+            args.tavily_api_key,
         )
     except Exception as exc:  # noqa: BLE001 - preserve YouTube as a secondary source
         print(
@@ -1068,6 +1335,123 @@ def update_state(path: Path, successes: list[dict[str, Any]]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def update_wistia_source_ledger(path: Path, successes: list[dict[str, Any]]) -> None:
+    wistia_successes = [
+        result
+        for result in successes
+        if result.get("media_provider") == "wistia"
+        and re.fullmatch(r"[a-z0-9]{10}", clean_text(str(result.get("wistia_id", ""))).casefold())
+    ]
+    if not wistia_successes:
+        return
+    payload, writable = read_wistia_source_ledger(path)
+    if not writable:
+        print(
+            f"::warning::Preserving unreadable Wistia source ledger {path}; new mappings were not recorded.",
+            flush=True,
+        )
+        return
+    raw_sources = payload.get("sources", [])
+    if any(not isinstance(entry, dict) for entry in raw_sources):
+        print(
+            f"::warning::Preserving malformed Wistia source ledger {path}; new mappings were not recorded.",
+            flush=True,
+        )
+        return
+    sources: list[dict[str, Any]] = list(raw_sources)
+    by_url: dict[str, dict[str, Any]] = {}
+    by_media_id: dict[str, str] = {}
+    urls_by_media_id: dict[str, set[str]] = {}
+    media_ids_by_url: dict[str, set[str]] = {}
+    for entry in sources:
+        article_url = canonical_ark_url(str(entry.get("url") or entry.get("guid") or ""))
+        media_id = clean_text(str(entry.get("wistia_id", ""))).casefold()
+        if not article_url or not re.fullmatch(r"[a-z0-9]{10}", media_id):
+            print(
+                f"::warning::Preserving malformed Wistia source ledger {path}; "
+                "new mappings were not recorded.",
+                flush=True,
+            )
+            return
+        urls_by_media_id.setdefault(media_id, set()).add(article_url)
+        media_ids_by_url.setdefault(article_url, set()).add(media_id)
+        by_url.setdefault(article_url, entry)
+        by_media_id.setdefault(media_id, article_url)
+    if any(len(urls) > 1 for urls in urls_by_media_id.values()) or any(
+        len(media_ids) > 1 for media_ids in media_ids_by_url.values()
+    ):
+        print(
+            f"::warning::Preserving conflicting Wistia source ledger {path}; "
+            "new mappings were not recorded.",
+            flush=True,
+        )
+        return
+
+    verified_at = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+    changed = False
+    for result in wistia_successes:
+        article_url = canonical_ark_url(str(result.get("url") or result.get("guid") or ""))
+        media_id = clean_text(str(result.get("wistia_id", ""))).casefold()
+        if not article_url:
+            print("::warning::Not recording Wistia source with an invalid ARK URL", flush=True)
+            continue
+        existing = by_url.get(article_url)
+        if existing is not None:
+            existing_media_id = clean_text(str(existing.get("wistia_id", ""))).casefold()
+            if existing_media_id != media_id:
+                print(
+                    f"::warning::Not overwriting conflicting Wistia source mapping for {article_url}: "
+                    f"{existing_media_id} vs {media_id}",
+                    flush=True,
+                )
+            continue
+        previous_url = by_media_id.get(media_id)
+        if previous_url and previous_url != article_url:
+            print(
+                f"::warning::Not reusing Wistia media {media_id} for a different ARK article: "
+                f"{previous_url} vs {article_url}",
+                flush=True,
+            )
+            continue
+        entry = {
+            "url": article_url,
+            "guid": canonical_ark_url(str(result.get("guid", ""))) or article_url,
+            "slug": clean_text(str(result.get("slug", ""))),
+            "title": clean_text(str(result.get("source_title") or result.get("title") or "")),
+            "pub_date": clean_text(str(result.get("pub_date", ""))),
+            "wistia_id": media_id,
+            "media_name": clean_text(str(result.get("wistia_media_name", ""))),
+            "media_created_at": result.get("wistia_media_created_at"),
+            "provenance": clean_text(str(result.get("wistia_provenance", ""))) or "verified_render",
+            "identity_version": WISTIA_IDENTITY_VERSION,
+            "verified_at": verified_at,
+        }
+        sources.append(entry)
+        by_url[article_url] = entry
+        by_media_id[media_id] = article_url
+        changed = True
+        print(f"[ark] Recorded verified Wistia source {media_id} for {article_url}", flush=True)
+
+    if not changed:
+        return
+    output = {
+        "schema_version": 1,
+        "updated_at": verified_at,
+        "sources": sorted(
+            sources,
+            key=lambda entry: (
+                clean_text(str(entry.get("pub_date", ""))),
+                canonical_ark_url(str(entry.get("url", ""))),
+            ),
+            reverse=True,
+        ),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
 def process_one(
     item: dict[str, Any],
     index: int,
@@ -1176,6 +1560,9 @@ def process_one(
         "media_provider": selected_source.get("provider", "youtube"),
         "source_media_url": selected_source.get("url", ""),
         "wistia_id": selected_source.get("media_id", ""),
+        "wistia_media_name": selected_source.get("title", "") if selected_source.get("provider") == "wistia" else "",
+        "wistia_media_created_at": selected_source.get("media_created_at") if selected_source.get("provider") == "wistia" else None,
+        "wistia_provenance": selected_source.get("provenance", "") if selected_source.get("provider") == "wistia" else "",
         "youtube_url": selected_source.get("url", "") if selected_source.get("provider") == "youtube" else "",
         "youtube_title": selected_source.get("title", "") if selected_source.get("provider") == "youtube" else "",
         "youtube_channel": selected_source.get("channel", "") if selected_source.get("provider") == "youtube" else "",
@@ -1206,6 +1593,12 @@ def main() -> None:
     parser.add_argument("--out-root", type=Path, default=ROOT / "rendered-clips")
     parser.add_argument("--work-root", type=Path, default=ROOT / "work" / "ark-invest")
     parser.add_argument("--state", type=Path, default=ROOT / "rendered-clips" / "ark-invest" / "processed_urls.json")
+    parser.add_argument(
+        "--wistia-source-ledger",
+        type=Path,
+        default=ROOT / "rendered-clips" / "ark-invest" / "wistia_sources.json",
+        help="Verified exact ARK article to Wistia media mappings.",
+    )
     parser.add_argument("--search-results", type=int, default=5)
     parser.add_argument("--threads", type=int, default=2)
     parser.add_argument("--whisper-model", default="base")
@@ -1221,6 +1614,11 @@ def main() -> None:
         type=int,
         default=720,
         help="Maximum progressive/HLS height for the official ARK Wistia source.",
+    )
+    parser.add_argument(
+        "--tavily-api-key",
+        default=os.environ.get("TAVILY_API_KEY", ""),
+        help=argparse.SUPPRESS,
     )
     parser.add_argument("--yt-dlp-proxy-mode", choices=("auto", "never", "always"), default="auto")
     parser.add_argument(
@@ -1279,6 +1677,7 @@ def main() -> None:
 
     successes = [item for item in results if item.get("status") == "success"]
     update_state(args.state, successes)
+    update_wistia_source_ledger(args.wistia_source_ledger, successes)
 
     summary = {
         "run_date": run_date,
