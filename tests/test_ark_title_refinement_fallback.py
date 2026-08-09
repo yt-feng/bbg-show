@@ -19,7 +19,7 @@ import process_ark_videos  # noqa: E402
 
 
 class ArkTitleRefinementFallbackTests(unittest.TestCase):
-    def test_ytdlp_search_enables_node_runtime(self) -> None:
+    def test_ytdlp_search_enables_node_runtime_and_pot_provider(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             work_dir = Path(tmp)
             candidate = {
@@ -49,13 +49,15 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
                     work_dir,
                     5,
                     "node",
+                    "http://127.0.0.1:4416/",
                 )
 
         command = run.call_args.args[0]
         self.assertEqual(command[1:3], ["--js-runtimes", "node"])
+        self.assertIn("youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416", command)
         self.assertEqual(selected["url"], "https://www.youtube.com/watch?v=COmxq7bh-fM")
 
-    def test_ytdlp_download_enables_node_runtime(self) -> None:
+    def test_ytdlp_download_tries_mweb_with_node_runtime_and_pot_provider(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             work_dir = Path(tmp) / "work"
             work_dir.mkdir()
@@ -63,6 +65,7 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
             args = argparse.Namespace(
                 yt_dlp_proxy_mode="never",
                 yt_dlp_js_runtime="node",
+                yt_dlp_pot_provider_url="http://127.0.0.1:4416",
             )
             with (
                 mock.patch.object(process_ark_videos, "ytdlp_command", return_value=["yt-dlp"]),
@@ -77,6 +80,42 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
 
         command = run.call_args.args[0]
         self.assertEqual(command[1:3], ["--js-runtimes", "node"])
+        self.assertIn("youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416", command)
+        self.assertIn("youtube:player_client=mweb", command)
+
+    def test_ytdlp_download_falls_back_after_mweb_without_empty_provider_arg(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            work_dir = Path(tmp) / "work"
+            work_dir.mkdir()
+            output = Path(tmp) / "video.mp4"
+            args = argparse.Namespace(
+                yt_dlp_proxy_mode="never",
+                yt_dlp_js_runtime="node",
+                yt_dlp_pot_provider_url="",
+            )
+            mweb_failure = subprocess.CalledProcessError(1, ["yt-dlp"])
+            with (
+                mock.patch.object(process_ark_videos, "ytdlp_command", return_value=["yt-dlp"]),
+                mock.patch.object(
+                    process_ark_videos,
+                    "run",
+                    side_effect=[mweb_failure, None],
+                ) as run,
+            ):
+                process_ark_videos.download_video(
+                    "https://www.youtube.com/watch?v=COmxq7bh-fM",
+                    output,
+                    work_dir,
+                    args,
+                )
+
+        commands = [call.args[0] for call in run.call_args_list]
+        self.assertEqual(len(commands), 2)
+        self.assertIn("youtube:player_client=mweb", commands[0])
+        self.assertNotIn("youtube:player_client=mweb", commands[1])
+        self.assertFalse(
+            any("youtubepot-bgutilhttp" in argument for command in commands for argument in command)
+        )
 
     def test_sensitive_skip_detection_requires_a_terminal_marker(self) -> None:
         mixed_technical_failure = (
@@ -125,6 +164,7 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
                 work_root=root / "work",
                 search_results=5,
                 yt_dlp_js_runtime="node",
+                yt_dlp_pot_provider_url="http://127.0.0.1:4416",
                 min_video_seconds=30.0,
                 max_clip_seconds=110.0,
                 threads=1,

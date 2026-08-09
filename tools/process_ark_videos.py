@@ -147,6 +147,16 @@ def ytdlp_js_runtime_args(runtime: str) -> list[str]:
     return ["--js-runtimes", runtime] if runtime else []
 
 
+def ytdlp_pot_provider_args(base_url: str) -> list[str]:
+    base_url = clean_text(base_url).rstrip("/")
+    if not base_url:
+        return []
+    return [
+        "--extractor-args",
+        f"youtubepot-bgutilhttp:base_url={base_url}",
+    ]
+
+
 def proxy_args(args: argparse.Namespace, source_url: str) -> argparse.Namespace:
     return SimpleNamespace(
         subscription=args.proxy_subscription,
@@ -266,12 +276,14 @@ def resolve_youtube_url(
     work_dir: Path,
     max_search_results: int,
     js_runtime: str = "node",
+    pot_provider_url: str = "",
 ) -> dict[str, Any]:
     query = item["download_query"]
     search_url = f"ytsearch{max_search_results}:{query}"
     command = [
         *ytdlp_command(),
         *ytdlp_js_runtime_args(js_runtime),
+        *ytdlp_pot_provider_args(pot_provider_url),
         "--dump-json",
         "--skip-download",
         "--flat-playlist",
@@ -333,6 +345,7 @@ def resolve_youtube_url(
 def download_video(source_url: str, output: Path, work_dir: Path, args: argparse.Namespace) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     attempts = [
+        ("mweb-pot", ["--extractor-args", "youtube:player_client=mweb"]),
         ("default", []),
         ("web-embedded", ["--extractor-args", "youtube:player_client=web_embedded,default"]),
         ("android-web", ["--extractor-args", "youtube:player_client=android,web"]),
@@ -368,6 +381,7 @@ def download_video(source_url: str, output: Path, work_dir: Path, args: argparse
                 command = [
                     *ytdlp_command(),
                     *ytdlp_js_runtime_args(args.yt_dlp_js_runtime),
+                    *ytdlp_pot_provider_args(args.yt_dlp_pot_provider_url),
                     "--no-playlist",
                     "--retries", "5",
                     "--fragment-retries", "5",
@@ -477,6 +491,7 @@ def process_one(
         work_dir,
         args.search_results,
         args.yt_dlp_js_runtime,
+        args.yt_dlp_pot_provider_url,
     )
     download_video(selected_source["url"], video_path, work_dir, args)
 
@@ -595,6 +610,11 @@ def main() -> None:
         "--yt-dlp-js-runtime",
         default="node",
         help="JavaScript runtime passed to yt-dlp for YouTube challenge solving.",
+    )
+    parser.add_argument(
+        "--yt-dlp-pot-provider-url",
+        default="",
+        help="Optional bgutil HTTP PO-token provider base URL passed to yt-dlp.",
     )
     parser.add_argument("--proxy-subscription", type=Path, default=DEFAULT_SUBSCRIPTION)
     parser.add_argument("--proxy-subscription-url", default="")

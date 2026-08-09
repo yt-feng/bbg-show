@@ -333,6 +333,12 @@ KC Desktop clip.
   runtime and `--js-runtimes node` for both search and download commands. This runtime is part of
   the workflow contract because current YouTube extraction requires external JavaScript
   challenge solving.
+- When the feed contains a processable video, the workflow starts the pinned
+  `bgutil-ytdlp-pot-provider:1.3.1` service on runner-local port 4416 and installs the matching
+  Python plugin. Search and download commands point the plugin at that local service, and the
+  downloader tries yt-dlp's `mweb` client first so the provider can supply the PO token used to
+  pass YouTube's datacenter-address challenge. The container is stopped in an `always()` cleanup
+  step; no personal browser cookies are copied into the repository or Action.
 - `rendered-clips/ark-invest/processed_urls.json` is updated only for successful videos. A failed
   source remains eligible for the next scheduled retry.
 - Multiple selected videos are isolated: any successful video is retained and recorded; the
