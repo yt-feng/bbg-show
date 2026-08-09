@@ -80,6 +80,13 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Set up isolated Chrome for ARK source discovery
+        id: setup_chrome
+        uses: browser-actions/setup-chrome@v2
+        continue-on-error: true
+        with:
+          chrome-version: stable
+
       - name: Cache Whisper model
         uses: actions/cache@v4
         with:
@@ -186,6 +193,7 @@ jobs:
           BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
           YOUTUBE_POT_PROVIDER_URL: ${{ steps.pot_provider.outputs.provider_url }}
+          ARK_CHROME_BIN: ${{ steps.setup_chrome.outputs.chrome-path }}
         run: |
           POT_ARGS=()
           if [ -n "$YOUTUBE_POT_PROVIDER_URL" ]; then
@@ -200,6 +208,8 @@ jobs:
             --work-root work/ark-invest \
             --state "$STATE_FILE" \
             --threads 2 \
+            --ark-chrome-bin "$ARK_CHROME_BIN" \
+            --wistia-max-height 720 \
             --yt-dlp-proxy-mode auto \
             --yt-dlp-js-runtime node \
             "${POT_ARGS[@]}" \

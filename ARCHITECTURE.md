@@ -326,13 +326,27 @@ therefore does not make the same clip publishable again.
 ### Daily ARK Invest Videos
 
 `.github/workflows/daily-ark-invest-videos.yml` discovers new Cathie Wood videos from the ARK
-Invest feed, resolves the matching official ARK Invest YouTube upload, and renders a translated
-KC Desktop clip.
+Invest feed, resolves the official Wistia media embedded on the matching ARK article, and renders
+a translated KC Desktop clip. YouTube is a secondary source, not the primary delivery path.
+
+- Source discovery first requests the canonical ARK page, then uses the text-only Jina reader for
+  the same public page when ARK's edge returns HTTP 403, and finally has an isolated headless
+  Chrome fallback. Chrome setup is best-effort because direct/Jina discovery runs first. The
+  reader/browser is used only to discover Wistia media IDs; all candidates are checked against
+  the RSS title/date before selection, and all video, metadata, and captions come from ARK's
+  official Wistia player and CDN.
+- `fast.wistia.com/embed/medias/<id>.json` supplies progressive MP4 assets. The processor selects
+  the highest public asset at or below 720p, downloads it with resumable curl retries, and falls
+  back to Wistia's official HLS master if the progressive asset fails validation. Both paths must
+  pass ffprobe video-stream and duration checks; a complete Wistia failure activates the YouTube
+  fallback rather than ending the item early.
+- Official timed English Wistia captions are converted directly to the repository transcript JSON
+  format. Whisper remains the fallback when captions are absent or malformed.
 
 - YouTube extraction uses `yt-dlp[default]`, including `yt-dlp-ejs`, with an explicit Node.js 24
-  runtime and `--js-runtimes node` for both search and download commands. This runtime is part of
-  the workflow contract because current YouTube extraction requires external JavaScript
-  challenge solving.
+  runtime and `--js-runtimes node` for both search and download commands when Wistia resolution
+  is unavailable. This runtime is part of the YouTube fallback contract because current YouTube
+  extraction requires external JavaScript challenge solving.
 - When the feed contains a processable video, the workflow starts the pinned
   `bgutil-ytdlp-pot-provider:1.3.1` service on runner-local port 4416 and installs the matching
   Python plugin. Search and download commands point the plugin at that local service, and the

@@ -163,6 +163,8 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
             args = argparse.Namespace(
                 work_root=root / "work",
                 search_results=5,
+                ark_chrome_bin="",
+                wistia_max_height=720,
                 yt_dlp_js_runtime="node",
                 yt_dlp_pot_provider_url="http://127.0.0.1:4416",
                 min_video_seconds=30.0,
@@ -189,15 +191,16 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
             with (
                 mock.patch.object(
                     process_ark_videos,
-                    "resolve_youtube_url",
+                    "resolve_ark_source",
                     return_value={
+                        "provider": "youtube",
                         "url": "https://youtube.com/watch?v=test",
                         "title": "YouTube title",
                         "channel": "ARK Invest",
                     },
                 ),
-                mock.patch.object(process_ark_videos, "download_video"),
-                mock.patch.object(process_ark_videos, "ffprobe_duration", return_value=600.0),
+                mock.patch.object(process_ark_videos, "download_selected_source"),
+                mock.patch.object(process_ark_videos, "validate_downloaded_source", return_value=600.0),
                 mock.patch.object(process_ark_videos, "run", side_effect=fake_run),
                 mock.patch.object(
                     process_ark_videos,
