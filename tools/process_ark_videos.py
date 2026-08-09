@@ -142,6 +142,11 @@ def ytdlp_command() -> list[str]:
     return [sys.executable, "-m", "yt_dlp"]
 
 
+def ytdlp_js_runtime_args(runtime: str) -> list[str]:
+    runtime = clean_text(runtime)
+    return ["--js-runtimes", runtime] if runtime else []
+
+
 def proxy_args(args: argparse.Namespace, source_url: str) -> argparse.Namespace:
     return SimpleNamespace(
         subscription=args.proxy_subscription,
@@ -256,11 +261,17 @@ def candidate_score(candidate: dict[str, Any], source_title: str) -> int:
     return score
 
 
-def resolve_youtube_url(item: dict[str, Any], work_dir: Path, max_search_results: int) -> dict[str, Any]:
+def resolve_youtube_url(
+    item: dict[str, Any],
+    work_dir: Path,
+    max_search_results: int,
+    js_runtime: str = "node",
+) -> dict[str, Any]:
     query = item["download_query"]
     search_url = f"ytsearch{max_search_results}:{query}"
     command = [
         *ytdlp_command(),
+        *ytdlp_js_runtime_args(js_runtime),
         "--dump-json",
         "--skip-download",
         "--flat-playlist",
@@ -356,6 +367,7 @@ def download_video(source_url: str, output: Path, work_dir: Path, args: argparse
             for attempt_index, (attempt_name, extra_args) in enumerate(attempts, start=1):
                 command = [
                     *ytdlp_command(),
+                    *ytdlp_js_runtime_args(args.yt_dlp_js_runtime),
                     "--no-playlist",
                     "--retries", "5",
                     "--fragment-retries", "5",
@@ -460,7 +472,12 @@ def process_one(
     print(f"\n=== ARK video {index}: {title} ===", flush=True)
     print(url, flush=True)
 
-    selected_source = resolve_youtube_url(item, work_dir, args.search_results)
+    selected_source = resolve_youtube_url(
+        item,
+        work_dir,
+        args.search_results,
+        args.yt_dlp_js_runtime,
+    )
     download_video(selected_source["url"], video_path, work_dir, args)
 
     duration = ffprobe_duration(video_path)
@@ -574,6 +591,11 @@ def main() -> None:
     parser.add_argument("--min-video-seconds", type=float, default=30.0)
     parser.add_argument("--max-clip-seconds", type=float, default=110.0)
     parser.add_argument("--yt-dlp-proxy-mode", choices=("auto", "never", "always"), default="auto")
+    parser.add_argument(
+        "--yt-dlp-js-runtime",
+        default="node",
+        help="JavaScript runtime passed to yt-dlp for YouTube challenge solving.",
+    )
     parser.add_argument("--proxy-subscription", type=Path, default=DEFAULT_SUBSCRIPTION)
     parser.add_argument("--proxy-subscription-url", default="")
     parser.add_argument("--proxy-subscription-url-file", type=Path, default=DEFAULT_SUBSCRIPTION_URL_FILE)

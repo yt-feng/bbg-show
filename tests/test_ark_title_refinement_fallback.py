@@ -19,6 +19,65 @@ import process_ark_videos  # noqa: E402
 
 
 class ArkTitleRefinementFallbackTests(unittest.TestCase):
+    def test_ytdlp_search_enables_node_runtime(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            work_dir = Path(tmp)
+            candidate = {
+                "id": "COmxq7bh-fM",
+                "url": "COmxq7bh-fM",
+                "webpage_url": "https://www.youtube.com/watch?v=COmxq7bh-fM",
+                "ie_key": "Youtube",
+                "title": "Why This Jobs Report Might Be Good News",
+                "channel": "ARK Invest",
+            }
+            completed = subprocess.CompletedProcess(
+                ["yt-dlp"],
+                0,
+                stdout=json.dumps(candidate) + "\n",
+                stderr="",
+            )
+            with (
+                mock.patch.object(process_ark_videos, "ytdlp_command", return_value=["yt-dlp"]),
+                mock.patch.object(process_ark_videos.subprocess, "run", return_value=completed) as run,
+                mock.patch.object(process_ark_videos, "is_trump_related", return_value=False),
+            ):
+                selected = process_ark_videos.resolve_youtube_url(
+                    {
+                        "download_query": "ARK Invest Cathie Wood jobs report",
+                        "title": "Why This Jobs Report Might Be Good News",
+                    },
+                    work_dir,
+                    5,
+                    "node",
+                )
+
+        command = run.call_args.args[0]
+        self.assertEqual(command[1:3], ["--js-runtimes", "node"])
+        self.assertEqual(selected["url"], "https://www.youtube.com/watch?v=COmxq7bh-fM")
+
+    def test_ytdlp_download_enables_node_runtime(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            work_dir = Path(tmp) / "work"
+            work_dir.mkdir()
+            output = Path(tmp) / "video.mp4"
+            args = argparse.Namespace(
+                yt_dlp_proxy_mode="never",
+                yt_dlp_js_runtime="node",
+            )
+            with (
+                mock.patch.object(process_ark_videos, "ytdlp_command", return_value=["yt-dlp"]),
+                mock.patch.object(process_ark_videos, "run") as run,
+            ):
+                process_ark_videos.download_video(
+                    "https://www.youtube.com/watch?v=COmxq7bh-fM",
+                    output,
+                    work_dir,
+                    args,
+                )
+
+        command = run.call_args.args[0]
+        self.assertEqual(command[1:3], ["--js-runtimes", "node"])
+
     def test_sensitive_skip_detection_requires_a_terminal_marker(self) -> None:
         mixed_technical_failure = (
             "Removed 1 sensitive-topic clip(s) before title refinement\n"
@@ -65,6 +124,7 @@ class ArkTitleRefinementFallbackTests(unittest.TestCase):
             args = argparse.Namespace(
                 work_root=root / "work",
                 search_results=5,
+                yt_dlp_js_runtime="node",
                 min_video_seconds=30.0,
                 max_clip_seconds=110.0,
                 threads=1,

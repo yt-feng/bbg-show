@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import call, patch
 from zoneinfo import ZoneInfo
 
 
@@ -190,6 +191,20 @@ class WeekendResolverTests(unittest.TestCase):
             processed_dates=processed_dates,
         )
 
+    def test_probe_normalizes_http_410_as_permanently_unavailable(self) -> None:
+        completed = subprocess.CompletedProcess(
+            ["curl"],
+            22,
+            stdout="",
+            stderr="curl: (22) The requested URL returned error: 410",
+        )
+        with patch.object(resolver.subprocess, "run", return_value=completed):
+            available, reason = resolver.probe_weekend_url("2026-05-10", 1)
+
+        self.assertFalse(available)
+        self.assertEqual(reason, "HTTP 410")
+        self.assertTrue(resolver.permanent_weekend_probe_failure(reason))
+
     def test_available_current_weekend_is_preferred_over_backlog(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -207,7 +222,7 @@ class WeekendResolverTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             backlog = self.write_backlog(root)
-            with patch.object(resolver, "probe_weekend_url") as probe:
+            with patch.object(resolver, "probe_weekend_url", return_value=(True, "available")) as probe:
                 selected = self.choose(
                     backlog,
                     root / "rendered",
@@ -218,7 +233,7 @@ class WeekendResolverTests(unittest.TestCase):
         assert selected is not None
         self.assertEqual(selected["date"], "2026-05-16")
         self.assertEqual(selected["source"], "weekend-backlog")
-        probe.assert_not_called()
+        probe.assert_called_once_with("2026-05-16", 1)
 
     def test_existing_mp4_dates_are_skipped(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -227,7 +242,7 @@ class WeekendResolverTests(unittest.TestCase):
             (rendered_root / "2026-05-10").mkdir(parents=True)
             (rendered_root / "2026-05-10" / "clip.mp4").touch()
             backlog = self.write_backlog(root)
-            with patch.object(resolver, "probe_weekend_url"):
+            with patch.object(resolver, "probe_weekend_url", return_value=(True, "available")):
                 selected = self.choose(
                     backlog,
                     rendered_root,
@@ -237,6 +252,49 @@ class WeekendResolverTests(unittest.TestCase):
         self.assertIsNotNone(selected)
         assert selected is not None
         self.assertEqual(selected["date"], "2026-05-16")
+
+    def test_permanent_404_backlog_candidate_is_skipped_in_same_run(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            backlog = self.write_backlog(root)
+            with patch.object(
+                resolver,
+                "probe_weekend_url",
+                side_effect=[(False, "HTTP 404"), (True, "available")],
+            ) as probe:
+                selected = self.choose(
+                    backlog,
+                    root / "rendered",
+                    processed_dates={"2026-07-11"},
+                )
+
+        self.assertIsNotNone(selected)
+        assert selected is not None
+        self.assertEqual(selected["date"], "2026-05-16")
+        self.assertEqual(
+            probe.call_args_list,
+            [call("2026-05-10", 1), call("2026-05-16", 1)],
+        )
+
+    def test_inconclusive_backlog_probe_uses_full_downloader(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            backlog = self.write_backlog(root)
+            with patch.object(
+                resolver,
+                "probe_weekend_url",
+                return_value=(False, "curl timed out"),
+            ) as probe:
+                selected = self.choose(
+                    backlog,
+                    root / "rendered",
+                    processed_dates={"2026-07-11"},
+                )
+
+        self.assertIsNotNone(selected)
+        assert selected is not None
+        self.assertEqual(selected["date"], "2026-05-10")
+        probe.assert_called_once_with("2026-05-10", 1)
 
     def test_explicit_weekend_date_can_rerun_even_when_terminal(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

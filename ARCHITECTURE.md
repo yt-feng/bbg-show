@@ -289,6 +289,13 @@ Show duplicate state is durable:
 - `rendered-clips/weekend/processed_shows.json` additionally records terminal Bloomberg Weekend
   outcomes, including shows with no eligible speakers or clips, so the weekend backlog is not
   selected repeatedly.
+- Configured Weekend backlog entries receive a lightweight BRP availability probe before the
+  expensive download stage. Confirmed HTTP 404/410 entries are skipped within the same run so
+  one removed episode cannot block the backlog queue; timeouts and other inconclusive probe
+  results still go through the full downloader.
+- The Show workflow uses a one-commit checkout and initially fetches only recent commit history
+  before rebasing a publication commit. If a long run outlives that shallow window, it deepens to
+  the complete commit graph with `blob:none`, so historical MP4 blobs are still not downloaded.
 
 ### Daily Bloomberg Top Videos
 
@@ -316,11 +323,28 @@ content fingerprints, is backfilled from complete Git history, and is checked bo
 historical publications and within the current batch. Renaming a title or rediscovering a source
 therefore does not make the same clip publishable again.
 
+### Daily ARK Invest Videos
+
+`.github/workflows/daily-ark-invest-videos.yml` discovers new Cathie Wood videos from the ARK
+Invest feed, resolves the matching official ARK Invest YouTube upload, and renders a translated
+KC Desktop clip.
+
+- YouTube extraction uses `yt-dlp[default]`, including `yt-dlp-ejs`, with an explicit Node.js 24
+  runtime and `--js-runtimes node` for both search and download commands. This runtime is part of
+  the workflow contract because current YouTube extraction requires external JavaScript
+  challenge solving.
+- `rendered-clips/ark-invest/processed_urls.json` is updated only for successful videos. A failed
+  source remains eligible for the next scheduled retry.
+- Multiple selected videos are isolated: any successful video is retained and recorded; the
+  processor exits non-zero only when a non-empty batch has zero successes.
+- The workflow uses a one-commit checkout and initially fetches only recent main history before
+  rebasing a publication commit, with the same metadata-only unshallow fallback used by Show.
+
 ### Immediate WebDAV Reconciliation
 
-Both workflows invoke `tools/sync_rendered_clips_to_jianguoyun.py` immediately after the
-`rendered-clips/` commit step. The script recursively discovers MP4s in the workflow's source
-directory and flattens them into the appropriate category directory:
+The Show and Top Videos workflows invoke `tools/sync_rendered_clips_to_jianguoyun.py`
+immediately after the `rendered-clips/` commit step. The script recursively discovers MP4s in
+the workflow's source directory and flattens them into the appropriate category directory:
 
 ```text
 /我的坚果云/KCdesk/Ops/<delivery-date>/BBG Show/<clip>.mp4

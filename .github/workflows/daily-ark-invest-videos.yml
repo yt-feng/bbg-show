@@ -68,12 +68,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+
+      - name: Set up Node.js for yt-dlp
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
 
       - name: Cache Whisper model
         uses: actions/cache@v4
@@ -159,6 +164,7 @@ jobs:
             --state "$STATE_FILE" \
             --threads 2 \
             --yt-dlp-proxy-mode auto \
+            --yt-dlp-js-runtime node \
             --max-clip-seconds 110
 
       - name: Verify rendered ARK clips
@@ -187,5 +193,14 @@ jobs:
             exit 0
           fi
           git commit -m "chore: publish ARK Invest videos ${RUN_DATE}"
-          git pull --rebase origin main
+          git fetch --depth=20 --filter=blob:none origin +refs/heads/main:refs/remotes/origin/main
+          if ! git merge-base HEAD^ origin/main >/dev/null; then
+            echo "main advanced beyond the shallow history; fetching commit history without media blobs."
+            if [ "$(git rev-parse --is-shallow-repository)" != "true" ]; then
+              echo "No merge base exists between the publication commit and origin/main." >&2
+              exit 1
+            fi
+            git fetch --unshallow --filter=blob:none origin +refs/heads/main:refs/remotes/origin/main
+          fi
+          git rebase origin/main
           git push origin HEAD:main

@@ -165,8 +165,9 @@ def probe_weekend_url(show_date: str, timeout: int) -> tuple[bool, str]:
         if proc.returncode == 0:
             return classify_weekend_probe_content(proc.stdout)
         curl_error = (proc.stderr or proc.stdout or f"curl exited {proc.returncode}").strip()
-        if "404" in curl_error:
-            return False, "HTTP 404"
+        permanent_status = re.search(r"\b(?:HTTP Error |error:\s*)(404|410)\b", curl_error, re.IGNORECASE)
+        if permanent_status:
+            return False, f"HTTP {permanent_status.group(1)}"
         return False, curl_error or f"curl exited {proc.returncode}"
     except (FileNotFoundError, subprocess.TimeoutExpired) as exc:
         return False, str(exc)
@@ -180,6 +181,10 @@ def classify_weekend_probe_content(content: str, status: int = 200) -> tuple[boo
     if not UUID_RE.search(content) and "media-manifest" not in content and ".m3u8" not in content:
         return False, "no video asset marker"
     return True, "available"
+
+
+def permanent_weekend_probe_failure(reason: str) -> bool:
+    return bool(re.search(r"\bHTTP\s+(?:404|410)\b", reason, flags=re.IGNORECASE))
 
 
 def iter_older_weekend_items(start_date: date, days: int, seen_dates: set[str]) -> list[dict[str, str]]:
@@ -274,8 +279,26 @@ def choose_weekend_backlog_item(
         if has_rendered_mp4(rendered_root, item["date"]):
             print(f"Skipping Weekend candidate {item['date']}: rendered MP4 already exists", flush=True)
             continue
-        should_probe = probe_availability and item.get("source") == "weekend-history"
-        if should_probe:
+        source = item.get("source")
+        if probe_availability and source == "weekend-backlog":
+            available, reason = probe_weekend_url(item["date"], probe_timeout)
+            print(f"Weekend configured backlog candidate {item['date']}: {reason}", flush=True)
+            if available:
+                return item
+            if permanent_weekend_probe_failure(reason):
+                print(
+                    f"Skipping Weekend configured backlog candidate {item['date']}: permanently unavailable",
+                    flush=True,
+                )
+                continue
+            print(
+                f"Weekend configured backlog probe for {item['date']} was inconclusive; "
+                "letting the full downloader verify it.",
+                flush=True,
+            )
+            return item
+
+        if probe_availability and source == "weekend-history":
             if history_probes >= max_history_probes:
                 print(f"Weekend history probe cap reached ({max_history_probes}); stopping scan.", flush=True)
                 break

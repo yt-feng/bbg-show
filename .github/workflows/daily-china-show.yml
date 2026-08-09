@@ -78,7 +78,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -364,7 +364,16 @@ jobs:
             exit 0
           fi
           git commit -m "chore: finalize ${SHOW_TYPE} show ${SHOW_DATE}"
-          git pull --rebase origin main
+          git fetch --depth=20 --filter=blob:none origin +refs/heads/main:refs/remotes/origin/main
+          if ! git merge-base HEAD^ origin/main >/dev/null; then
+            echo "main advanced beyond the shallow history; fetching commit history without media blobs."
+            if [ "$(git rev-parse --is-shallow-repository)" != "true" ]; then
+              echo "No merge base exists between the publication commit and origin/main." >&2
+              exit 1
+            fi
+            git fetch --unshallow --filter=blob:none origin +refs/heads/main:refs/remotes/origin/main
+          fi
+          git rebase origin/main
           git push origin HEAD:main
 
       - name: Sync rendered clips to Jianguoyun
