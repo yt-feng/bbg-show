@@ -1,0 +1,1312 @@
+{
+  "timestamp_utc": "2026-08-12T23:05:39.959052+00:00",
+  "plan_path": "work/top-videos/08_teflon_inflation_won_t_stick_jpmorgan_s_kelly_says/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "David Kelly",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "David Kelly",
+        "preferred_en": "David Kelly",
+        "official_zh": "戴维·凯利",
+        "common_zh": "戴维·凯利",
+        "title_label": "戴维·凯利",
+        "preferred_zh": "戴维·凯利",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple sources identify David Kelly as JPMorgan Asset Management's chief global strategist; Chinese financial media commonly use 戴维·凯利."
+      },
+      {
+        "source_text": "JPMorgan Asset Management",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "JPMorgan Asset Management",
+        "preferred_en": "JPMorgan Asset Management",
+        "official_zh": "摩根资产管理",
+        "common_zh": "摩根资产管理",
+        "title_label": "摩根大通",
+        "preferred_zh": "摩根资产管理",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official J.P. Morgan Asset Management site and Yahoo Finance confirm the entity; Chinese media commonly use 摩根大通 for JPMorgan Chase & Co., but for the asset management arm, 摩根资产管理 is standard."
+      },
+      {
+        "source_text": "JPMorgan",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "JPMorgan Chase & Co.",
+        "preferred_en": "JPMorgan Chase & Co.",
+        "official_zh": "摩根大通公司",
+        "common_zh": "摩根大通",
+        "title_label": "摩根大通",
+        "preferred_zh": "摩根大通",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly referred to as 摩根大通 in Chinese financial media."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg is universally known as 彭博 in Chinese media."
+      },
+      {
+        "source_text": "Federal Reserve",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve System",
+        "preferred_en": "Federal Reserve System",
+        "official_zh": "美国联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly abbreviated as 美联储 in Chinese financial media."
+      },
+      {
+        "source_text": "Strait of Hormuz",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Strait of Hormuz",
+        "preferred_en": "Strait of Hormuz",
+        "official_zh": "霍尔木兹海峡",
+        "common_zh": "霍尔木兹海峡",
+        "title_label": "霍尔木兹海峡",
+        "preferred_zh": "霍尔木兹海峡",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese name for the Strait of Hormuz."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "CPI",
+        "clip_indexes": [],
+        "context": "US inflation data",
+        "sense": "Consumer Price Index",
+        "preferred_zh": "消费者价格指数",
+        "title_label": "CPI",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "disinflation",
+        "clip_indexes": [],
+        "context": "US inflation trend",
+        "sense": "a decrease in the rate of inflation",
+        "preferred_zh": "通胀放缓",
+        "title_label": "通胀放缓",
+        "avoid_zh": [
+          "通货紧缩"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Teflon inflation",
+        "clip_indexes": [],
+        "context": "US inflation",
+        "sense": "inflation that does not stick or persist",
+        "preferred_zh": "不粘通胀",
+        "title_label": "不粘通胀",
+        "avoid_zh": [
+          "特氟龙通胀"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "There is a clear disinflationary trend in the US, with lower tariff costs and oil prices eventually coming down.",
+        "public_baseline": "US CPI data shows inflation around 2.7% annually, with housing costs rising 3.2% and energy gains 2.3%.",
+        "surprise_gap": "The claim of a clear disinflationary trend is consistent with the public data, but the specific prediction of lower tariff costs and oil prices is not directly supported by the public snippets.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker states: 'I think there is a clear disinflationary trend.'"
+          },
+          {
+            "kind": "public",
+            "query": "US CPI disinflationary trend energy housing 2025",
+            "url": "https://www.wichitaliberty.org/economics/december-2025-cpi-report-inflation-analysis/",
+            "fact": "December 2025 CPI shows inflation steady at 2.7% annually, housing costs rise 3.2%, food up 3.1%, energy gains 2.3%."
+          }
+        ],
+        "forbidden_claims": [
+          "David Kelly predicts a specific CPI number.",
+          "David Kelly says inflation will definitely not stick."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The clip title 'Teflon Inflation Won't Stick' is a metaphor; the Chinese translation '不粘通胀' is literal but may not be widely recognized."
+    ],
+    "research_queries": [
+      {
+        "query": "JPMorgan Kelly Teflon inflation won't stick",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact speaker and his public stance on inflation."
+      },
+      {
+        "query": "JPMorgan David Kelly inflation outlook 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish Kelly's known position on inflation to compare with the clip's claims."
+      },
+      {
+        "query": "US CPI disinflationary trend energy housing 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check the consensus on US CPI components to see if the claim of disinflation is standard."
+      },
+      {
+        "query": "JPMorgan Kelly wage growth inflation",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that wage growth is key to inflation stickiness."
+      },
+      {
+        "query": "JPMorgan Kelly tariff costs lower 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about lower tariff costs going forward."
+      },
+      {
+        "query": "oil price forecast 2025 JPMorgan",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check if JPMorgan's oil price forecast aligns with the claim that oil will come down."
+      },
+      {
+        "query": "Bloomberg Teflon' Inflation Won't Stick established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Teflon' Inflation Won't Stick 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 8,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-08-12T23:05:36.852551+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says",
+          "source_title": "Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says",
+          "show_date": "",
+          "current_title": "通胀粘性不足？摩根大通：工资涨不动是关键",
+          "current_title_lines": [
+            "摩根大通：通胀粘性不足",
+            "工资涨幅低于CPI",
+            "美国工人难获加薪"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "那么，你对这次CPI数据有何看法？",
+              "en": "So, what's your take on this bang-and-line CPI print?",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "表面之下，能源价格带来通缩压力，而住房等领域存在通胀压力。",
+              "en": "You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.",
+              "relative_start": 3.4,
+              "relative_end": 8.8
+            },
+            {
+              "index": 3,
+              "zh": "首先，看CPI报告时，实际上它几乎总是与分析师的预期一致，因为已有大量数据。",
+              "en": "Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,",
+              "relative_start": 8.8,
+              "relative_end": 17.3
+            },
+            {
+              "index": 4,
+              "zh": "因此很难出现大的意外，所以我们不感到意外并不奇怪。",
+              "en": "which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.",
+              "relative_start": 17.3,
+              "relative_end": 21.8
+            },
+            {
+              "index": 5,
+              "zh": "尽管如此，我认为存在明显的通缩趋势。",
+              "en": "Having said that, I think there is a clear disinflationary trend.",
+              "relative_start": 21.8,
+              "relative_end": 25.4
+            },
+            {
+              "index": 6,
+              "zh": "今天早间数据中有许多交叉波动，比如机票价格上涨，但烟草价格涨幅不如上月。",
+              "en": "There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,",
+              "relative_start": 25.4,
+              "relative_end": 37.0
+            },
+            {
+              "index": 7,
+              "zh": "医疗商品和服务也存在差异。",
+              "en": "the differences in medical commodities and services.",
+              "relative_start": 37.0,
+              "relative_end": 40.0
+            },
+            {
+              "index": 8,
+              "zh": "但总体来看，有几点值得注意：未来关税成本将低于一年前，因为新关税不会完全取代原有关税。",
+              "en": "But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs",
+              "relative_start": 40.0,
+              "relative_end": 48.0
+            },
+            {
+              "index": 9,
+              "zh": "其次，我认为油价最终会下跌，因为最终只有一个解决方案。",
+              "en": "are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,",
+              "relative_start": 48.0,
+              "relative_end": 57.3
+            },
+            {
+              "index": 10,
+              "zh": "每个人都会摆脱当前的困境，我相信会如此。",
+              "en": "and everybody's always going to get out of the straight of our moves, and I think it will.",
+              "relative_start": 57.3,
+              "relative_end": 61.2
+            },
+            {
+              "index": 11,
+              "zh": "但对我来说最重要的是，这是工资涨幅连续第四个月低于CPI通胀。",
+              "en": "But the biggest thing to me is, this is the fourth consecutive month in which wages have gone up by less than CPI inflation.",
+              "relative_start": 61.2,
+              "relative_end": 66.8
+            },
+            {
+              "index": 12,
+              "zh": "工资同比上涨3.2%，CPI同比上涨3.4%。",
+              "en": "3.2% year-over-year on wages, 3.4% on CPI.",
+              "relative_start": 66.8,
+              "relative_end": 70.9
+            },
+            {
+              "index": 13,
+              "zh": "这告诉我，美国工人无法获得加薪。",
+              "en": "And what that tells me is American workers can't get a raise.",
+              "relative_start": 70.9,
+              "relative_end": 74.0
+            },
+            {
+              "index": 14,
+              "zh": "如果他们不能，你就不会有粘性通胀。我们基本上在美国有了特氟龙通胀。",
+              "en": "And if they can't, you cannot have sticky inflation. We've essentially got Teflon inflation in America.",
+              "relative_start": 74.0,
+              "relative_end": 79.2
+            },
+            {
+              "index": 15,
+              "zh": "它不会粘住，因为它不会粘住，因为你无法得到价格-工资螺旋，如果工资不反应。",
+              "en": "It won't stick, and it won't stick because you can't get a price-wage spar or go, and if the wages won't react.",
+              "relative_start": 79.2,
+              "relative_end": 84.8
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"source_title\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"通胀粘性不足？摩根大通：工资涨不动是关键\",\n    \"current_title_lines\": [\n      \"摩根大通：通胀粘性不足\",\n      \"工资涨幅低于CPI\",\n      \"美国工人难获加薪\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"那么，你对这次CPI数据有何看法？\",\n        \"en\": \"So, what's your take on this bang-and-line CPI print?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"表面之下，能源价格带来通缩压力，而住房等领域存在通胀压力。\",\n        \"en\": \"You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 8.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"首先，看CPI报告时，实际上它几乎总是与分析师的预期一致，因为已有大量数据。\",\n        \"en\": \"Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,\",\n        \"relative_start\": 8.8,\n        \"relative_end\": 17.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此很难出现大的意外，所以我们不感到意外并不奇怪。\",\n        \"en\": \"which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.\",\n        \"relative_start\": 17.3,\n        \"relative_end\": 21.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管如此，我认为存在明显的通缩趋势。\",\n        \"en\": \"Having said that, I think there is a clear disinflationary trend.\",\n        \"relative_start\": 21.8,\n        \"relative_end\": 25.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"今天早间数据中有许多交叉波动，比如机票价格上涨，但烟草价格涨幅不如上月。\",\n        \"en\": \"There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,\",\n        \"relative_start\": 25.4,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"医疗商品和服务也存在差异。\",\n        \"en\": \"the differences in medical commodities and services.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 40.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但总体来看，有几点值得注意：未来关税成本将低于一年前，因为新关税不会完全取代原有关税。\",\n        \"en\": \"But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs\",\n        \"relative_start\": 40.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"其次，我认为油价最终会下跌，因为最终只有一个解决方案。\",\n        \"en\": \"are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 57.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"每个人都会摆脱当前的困境，我相信会如此。\",\n        \"en\": \"and everybody's always going to get out of the straight of our moves, and I think it will.\",\n        \"relative_start\": 57.3,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但对我来说最重要的是，这是工资涨幅连续第四个月低于CPI通胀。\",\n        \"en\": \"But the biggest thing to me is, this is the fourth consecutive month in which wages have gone up by less than CPI inflation.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 66.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"工资同比上涨3.2%，CPI同比上涨3.4%。\",\n        \"en\": \"3.2% year-over-year on wages, 3.4% on CPI.\",\n        \"relative_start\": 66.8,\n        \"relative_end\": 70.9\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这告诉我，美国工人无法获得加薪。\",\n        \"en\": \"And what that tells me is American workers can't get a raise.\",\n        \"relative_start\": 70.9,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"如果他们不能，你就不会有粘性通胀。我们基本上在美国有了特氟龙通胀。\",\n        \"en\": \"And if they can't, you cannot have sticky inflation. We've essentially got Teflon inflation in America.\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 79.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它不会粘住，因为它不会粘住，因为你无法得到价格-工资螺旋，如果工资不反应。\",\n        \"en\": \"It won't stick, and it won't stick because you can't get a price-wage spar or go, and if the wages won't react.\",\n        \"relative_start\": 79.2,\n        \"relative_end\": 84.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"There is a clear disinflationary trend in the US, with lower tariff costs and oil prices eventually coming down.\",\n      \"public_baseline\": \"US CPI data shows inflation around 2.7% annually, with housing costs rising 3.2% and energy gains 2.3%.\",\n      \"surprise_gap\": \"The claim of a clear disinflationary trend is consistent with the public data, but the specific prediction of lower tariff costs and oil prices is not directly supported by the public snippets.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states: 'I think there is a clear disinflationary trend.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US CPI disinflationary trend energy housing 2025\",\n          \"url\": \"https://www.wichitaliberty.org/economics/december-2025-cpi-report-inflation-analysis/\",\n          \"fact\": \"December 2025 CPI shows inflation steady at 2.7% annually, housing costs rise 3.2%, food up 3.1%, energy gains 2.3%.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"David Kelly predicts a specific CPI number.\",\n        \"David Kelly says inflation will definitely not stick.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title 'Teflon Inflation Won't Stick' is a metaphor; the Chinese translation '不粘通胀' is literal but may not be widely recognized.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "美国工资连续第四个月涨幅低于CPI，工资同比涨3.2%，CPI同比涨3.4%，摩根大通认为这意味着不会形成工资-价格螺旋，通胀不会粘住。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "通胀粘不住？工资连月跑输CPI",
+                "title_lines": [
+                  "通胀粘不住",
+                  "工资连月跑输CPI",
+                  "摩根大通点破"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI",
+                  "public: 美国CPI年率约2.7%，住房成本上涨3.2%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "摩根大通：美国工人加薪难，通胀难粘",
+                "title_lines": [
+                  "美国工人加薪难",
+                  "通胀难粘住",
+                  "摩根大通直言"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 美国工人无法获得加薪，因此不会有粘性通胀",
+                  "speaker_relation: foreign_expert"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "工资涨不动，通胀还能撑多久？",
+                "title_lines": [
+                  "工资涨不动",
+                  "通胀还能撑多久",
+                  "数据给出答案"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 工资涨幅连续第四个月低于CPI，3.2% vs 3.4%",
+                  "public: CPI年率2.7%，住房成本上涨3.2%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "通胀粘性不足？工资数据揭示真相",
+                "title_lines": [
+                  "通胀粘性不足",
+                  "工资数据揭示真相",
+                  "摩根大通给出判断"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 摩根大通认为通胀粘性不足，工资涨幅低于CPI",
+                  "speaker_context: JPMorgan's Kelly"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"source_title\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"通胀粘性不足？摩根大通：工资涨不动是关键\",\n    \"current_title_lines\": [\n      \"摩根大通：通胀粘性不足\",\n      \"工资涨幅低于CPI\",\n      \"美国工人难获加薪\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"那么，你对这次CPI数据有何看法？\",\n        \"en\": \"So, what's your take on this bang-and-line CPI print?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"表面之下，能源价格带来通缩压力，而住房等领域存在通胀压力。\",\n        \"en\": \"You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 8.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"首先，看CPI报告时，实际上它几乎总是与分析师的预期一致，因为已有大量数据。\",\n        \"en\": \"Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,\",\n        \"relative_start\": 8.8,\n        \"relative_end\": 17.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此很难出现大的意外，所以我们不感到意外并不奇怪。\",\n        \"en\": \"which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.\",\n        \"relative_start\": 17.3,\n        \"relative_end\": 21.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管如此，我认为存在明显的通缩趋势。\",\n        \"en\": \"Having said that, I think there is a clear disinflationary trend.\",\n        \"relative_start\": 21.8,\n        \"relative_end\": 25.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"今天早间数据中有许多交叉波动，比如机票价格上涨，但烟草价格涨幅不如上月。\",\n        \"en\": \"There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,\",\n        \"relative_start\": 25.4,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"医疗商品和服务也存在差异。\",\n        \"en\": \"the differences in medical commodities and services.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 40.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但总体来看，有几点值得注意：未来关税成本将低于一年前，因为新关税不会完全取代原有关税。\",\n        \"en\": \"But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs\",\n        \"relative_start\": 40.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"其次，我认为油价最终会下跌，因为最终只有一个解决方案。\",\n        \"en\": \"are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 57.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"每个人都会摆脱当前的困境，我相信会如此。\",\n        \"en\": \"and everybody's always going to get out of the straight of our moves, and I think it will.\",\n        \"relative_start\": 57.3,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但对我来说最重要的是，这是工资涨幅连续第四个月低于CPI通胀。\",\n        \"en\": \"But the biggest thing to me is, this is the fourth consecutive month in which wages have gone up by less than CPI inflation.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 66.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"工资同比上涨3.2%，CPI同比上涨3.4%。\",\n        \"en\": \"3.2% year-over-year on wages, 3.4% on CPI.\",\n        \"relative_start\": 66.8,\n        \"relative_end\": 70.9\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这告诉我，美国工人无法获得加薪。\",\n        \"en\": \"And what that tells me is American workers can't get a raise.\",\n        \"relative_start\": 70.9,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"如果他们不能，你就不会有粘性通胀。我们基本上在美国有了特氟龙通胀。\",\n        \"en\": \"And if they can't, you cannot have sticky inflation. We've essentially got Teflon inflation in America.\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 79.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它不会粘住，因为它不会粘住，因为你无法得到价格-工资螺旋，如果工资不反应。\",\n        \"en\": \"It won't stick, and it won't stick because you can't get a price-wage spar or go, and if the wages won't react.\",\n        \"relative_start\": 79.2,\n        \"relative_end\": 84.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"There is a clear disinflationary trend in the US, with lower tariff costs and oil prices eventually coming down.\",\n      \"public_baseline\": \"US CPI data shows inflation around 2.7% annually, with housing costs rising 3.2% and energy gains 2.3%.\",\n      \"surprise_gap\": \"The claim of a clear disinflationary trend is consistent with the public data, but the specific prediction of lower tariff costs and oil prices is not directly supported by the public snippets.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states: 'I think there is a clear disinflationary trend.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US CPI disinflationary trend energy housing 2025\",\n          \"url\": \"https://www.wichitaliberty.org/economics/december-2025-cpi-report-inflation-analysis/\",\n          \"fact\": \"December 2025 CPI shows inflation steady at 2.7% annually, housing costs rise 3.2%, food up 3.1%, energy gains 2.3%.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"David Kelly predicts a specific CPI number.\",\n        \"David Kelly says inflation will definitely not stick.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title 'Teflon Inflation Won't Stick' is a metaphor; the Chinese translation '不粘通胀' is literal but may not be widely recognized.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国工资连续第四个月涨幅低于CPI，工资同比涨3.2%，CPI同比涨3.4%，摩根大通认为这意味着不会形成工资-价格螺旋，通胀不会粘住。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"通胀粘不住？工资连月跑输CPI\",\n          \"title_lines\": [\n            \"通胀粘不住\",\n            \"工资连月跑输CPI\",\n            \"摩根大通点破\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI\",\n            \"public: 美国CPI年率约2.7%，住房成本上涨3.2%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"摩根大通：美国工人加薪难，通胀难粘\",\n          \"title_lines\": [\n            \"美国工人加薪难\",\n            \"通胀难粘住\",\n            \"摩根大通直言\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 美国工人无法获得加薪，因此不会有粘性通胀\",\n            \"speaker_relation: foreign_expert\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"工资涨不动，通胀还能撑多久？\",\n          \"title_lines\": [\n            \"工资涨不动\",\n            \"通胀还能撑多久\",\n            \"数据给出答案\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 工资涨幅连续第四个月低于CPI，3.2% vs 3.4%\",\n            \"public: CPI年率2.7%，住房成本上涨3.2%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"通胀粘性不足？工资数据揭示真相\",\n          \"title_lines\": [\n            \"通胀粘性不足\",\n            \"工资数据揭示真相\",\n            \"摩根大通给出判断\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 摩根大通认为通胀粘性不足，工资涨幅低于CPI\",\n            \"speaker_context: JPMorgan's Kelly\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI",
+              "public: 美国CPI年率约2.7%，住房成本上涨3.2%"
+            ],
+            "title": "通胀粘不住？工资连月跑输CPI",
+            "title_lines": [
+              "通胀粘不住",
+              "工资连月跑输CPI",
+              "摩根大通点破"
+            ],
+            "title_highlights": [
+              "通胀粘不住",
+              "工资连月跑输CPI"
+            ],
+            "runner_up_titles": [
+              "摩根大通：美国工人加薪难，通胀难粘",
+              "工资涨不动，通胀还能撑多久？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：工资涨幅连续四个月低于CPI，通胀粘性存疑，关注后续就业数据。",
+            "comment_highlights": [
+              "工资涨幅连续四个月低于CPI"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：CPI数据出炉，市场关注通胀走向。",
+                "comment_highlights": [
+                  "CPI数据"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：能源通缩与住房通胀并存，结构分化明显。",
+                "comment_highlights": [
+                  "能源通缩",
+                  "住房通胀"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：分析师预期充分，数据难有意外。",
+                "comment_highlights": [
+                  "分析师预期"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：市场对CPI反应平淡，符合预期。",
+                "comment_highlights": [
+                  "符合预期"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：通缩趋势明确，但需观察持续性。",
+                "comment_highlights": [
+                  "通缩趋势"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：机票与烟草价格波动，显示分项差异。",
+                "comment_highlights": [
+                  "机票价格",
+                  "烟草价格"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：医疗商品与服务价格变化需关注。",
+                "comment_highlights": [
+                  "医疗商品"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：关税成本预期下降，或缓解通胀压力。",
+                "comment_highlights": [
+                  "关税成本"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：油价有望回落，进一步压低通胀。",
+                "comment_highlights": [
+                  "油价"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：市场将逐步消化当前压力。",
+                "comment_highlights": [
+                  "消化压力"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：工资涨幅连续四月低于CPI，关键信号。",
+                "comment_highlights": [
+                  "工资涨幅连续四月低于CPI"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：工资与CPI差距扩大，实际购买力承压。",
+                "comment_highlights": [
+                  "工资与CPI差距"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：工人加薪难，或影响消费动力。",
+                "comment_highlights": [
+                  "加薪难"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：通胀粘性不足，特氟龙效应显现。",
+                "comment_highlights": [
+                  "通胀粘性不足"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：工资不涨，价格螺旋难形成。",
+                "comment_highlights": [
+                  "工资不涨"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"source_title\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"通胀粘性不足？摩根大通：工资涨不动是关键\",\n    \"current_title_lines\": [\n      \"摩根大通：通胀粘性不足\",\n      \"工资涨幅低于CPI\",\n      \"美国工人难获加薪\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"那么，你对这次CPI数据有何看法？\",\n        \"en\": \"So, what's your take on this bang-and-line CPI print?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"表面之下，能源价格带来通缩压力，而住房等领域存在通胀压力。\",\n        \"en\": \"You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 8.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"首先，看CPI报告时，实际上它几乎总是与分析师的预期一致，因为已有大量数据。\",\n        \"en\": \"Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,\",\n        \"relative_start\": 8.8,\n        \"relative_end\": 17.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此很难出现大的意外，所以我们不感到意外并不奇怪。\",\n        \"en\": \"which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.\",\n        \"relative_start\": 17.3,\n        \"relative_end\": 21.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管如此，我认为存在明显的通缩趋势。\",\n        \"en\": \"Having said that, I think there is a clear disinflationary trend.\",\n        \"relative_start\": 21.8,\n        \"relative_end\": 25.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"今天早间数据中有许多交叉波动，比如机票价格上涨，但烟草价格涨幅不如上月。\",\n        \"en\": \"There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,\",\n        \"relative_start\": 25.4,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"医疗商品和服务也存在差异。\",\n        \"en\": \"the differences in medical commodities and services.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 40.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但总体来看，有几点值得注意：未来关税成本将低于一年前，因为新关税不会完全取代原有关税。\",\n        \"en\": \"But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs\",\n        \"relative_start\": 40.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"其次，我认为油价最终会下跌，因为最终只有一个解决方案。\",\n        \"en\": \"are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 57.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"每个人都会摆脱当前的困境，我相信会如此。\",\n        \"en\": \"and everybody's always going to get out of the straight of our moves, and I think it will.\",\n        \"relative_start\": 57.3,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但对我来说最重要的是，这是工资涨幅连续第四个月低于CPI通胀。\",\n        \"en\": \"But the biggest thing to me is, this is the fourth consecutive month in which wages have gone up by less than CPI inflation.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 66.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"工资同比上涨3.2%，CPI同比上涨3.4%。\",\n        \"en\": \"3.2% year-over-year on wages, 3.4% on CPI.\",\n        \"relative_start\": 66.8,\n        \"relative_end\": 70.9\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这告诉我，美国工人无法获得加薪。\",\n        \"en\": \"And what that tells me is American workers can't get a raise.\",\n        \"relative_start\": 70.9,\n        \"relative_end\": 74.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"如果他们不能，你就不会有粘性通胀。我们基本上在美国有了特氟龙通胀。\",\n        \"en\": \"And if they can't, you cannot have sticky inflation. We've essentially got Teflon inflation in America.\",\n        \"relative_start\": 74.0,\n        \"relative_end\": 79.2\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"它不会粘住，因为它不会粘住，因为你无法得到价格-工资螺旋，如果工资不反应。\",\n        \"en\": \"It won't stick, and it won't stick because you can't get a price-wage spar or go, and if the wages won't react.\",\n        \"relative_start\": 79.2,\n        \"relative_end\": 84.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"There is a clear disinflationary trend in the US, with lower tariff costs and oil prices eventually coming down.\",\n      \"public_baseline\": \"US CPI data shows inflation around 2.7% annually, with housing costs rising 3.2% and energy gains 2.3%.\",\n      \"surprise_gap\": \"The claim of a clear disinflationary trend is consistent with the public data, but the specific prediction of lower tariff costs and oil prices is not directly supported by the public snippets.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states: 'I think there is a clear disinflationary trend.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US CPI disinflationary trend energy housing 2025\",\n          \"url\": \"https://www.wichitaliberty.org/economics/december-2025-cpi-report-inflation-analysis/\",\n          \"fact\": \"December 2025 CPI shows inflation steady at 2.7% annually, housing costs rise 3.2%, food up 3.1%, energy gains 2.3%.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"David Kelly predicts a specific CPI number.\",\n        \"David Kelly says inflation will definitely not stick.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title 'Teflon Inflation Won't Stick' is a metaphor; the Chinese translation '不粘通胀' is literal but may not be widely recognized.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国工资连续第四个月涨幅低于CPI，工资同比涨3.2%，CPI同比涨3.4%，摩根大通认为这意味着不会形成工资-价格螺旋，通胀不会粘住。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"通胀粘不住？工资连月跑输CPI\",\n          \"title_lines\": [\n            \"通胀粘不住\",\n            \"工资连月跑输CPI\",\n            \"摩根大通点破\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI\",\n            \"public: 美国CPI年率约2.7%，住房成本上涨3.2%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"摩根大通：美国工人加薪难，通胀难粘\",\n          \"title_lines\": [\n            \"美国工人加薪难\",\n            \"通胀难粘住\",\n            \"摩根大通直言\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 美国工人无法获得加薪，因此不会有粘性通胀\",\n            \"speaker_relation: foreign_expert\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"工资涨不动，通胀还能撑多久？\",\n          \"title_lines\": [\n            \"工资涨不动\",\n            \"通胀还能撑多久\",\n            \"数据给出答案\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 工资涨幅连续第四个月低于CPI，3.2% vs 3.4%\",\n            \"public: CPI年率2.7%，住房成本上涨3.2%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"通胀粘性不足？工资数据揭示真相\",\n          \"title_lines\": [\n            \"通胀粘性不足\",\n            \"工资数据揭示真相\",\n            \"摩根大通给出判断\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 摩根大通认为通胀粘性不足，工资涨幅低于CPI\",\n            \"speaker_context: JPMorgan's Kelly\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"通胀粘不住：工资连月跑输CPI，摩根大通点破\",\n      \"title_lines\": [\n        \"通胀粘不住\",\n        \"工资连月跑输CPI\",\n        \"摩根大通点破\"\n      ],\n      \"title_highlights\": [\n        \"通胀粘不住\",\n        \"工资连月跑输CPI\"\n      ],\n      \"comment\": \"KC评论：工资涨幅连续四个月低于CPI，通胀粘性存疑，关注后续就业数据\",\n      \"comment_highlights\": [\n        \"工资涨幅连续四个月低于CPI\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：CPI数据出炉，市场关注通胀走向\",\n          \"comment_highlights\": [\n            \"CPI数据\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：能源通缩与住房通胀并存，结构分化明显\",\n          \"comment_highlights\": [\n            \"能源通缩\",\n            \"住房通胀\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：分析师预期充分，数据难有意外\",\n          \"comment_highlights\": [\n            \"分析师预期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：市场对CPI反应平淡，符合预期\",\n          \"comment_highlights\": [\n            \"符合预期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：通缩趋势明确，但需观察持续性\",\n          \"comment_highlights\": [\n            \"通缩趋势\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：机票与烟草价格波动，显示分项差异\",\n          \"comment_highlights\": [\n            \"烟草价格\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：医疗商品与服务价格变化需关注\",\n          \"comment_highlights\": [\n            \"医疗商品\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：关税成本预期下降，或缓解通胀压力\",\n          \"comment_highlights\": [\n            \"关税成本\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：油价有望回落，进一步压低通胀\",\n          \"comment_highlights\": [\n            \"油价\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：市场将逐步消化当前压力\",\n          \"comment_highlights\": [\n            \"市场将逐步消化当\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：工资涨幅连续四月低于CPI，关键信号\",\n          \"comment_highlights\": [\n            \"工资涨幅连续四月低于CPI\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：工资与CPI差距扩大，实际购买力承压\",\n          \"comment_highlights\": [\n            \"工资与CPI差距\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：工人加薪难，或影响消费动力\",\n          \"comment_highlights\": [\n            \"加薪难\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：通胀粘性不足，特氟龙效应显现\",\n          \"comment_highlights\": [\n            \"通胀粘性不足\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：工资不涨，价格螺旋难形成\",\n          \"comment_highlights\": [\n            \"工资不涨\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI\",\n        \"public: 美国CPI年率约2.7%，住房成本上涨3.2%\"\n      ],\n      \"runner_up_titles\": [\n        \"摩根大通：美国工人加薪难，通胀难粘\",\n        \"工资涨不动，通胀还能撑多久？\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 8,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 83,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"make_china_direction_constructive_or_positive\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 8,\n          \"curiosity_gap\": 7,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"make_china_direction_constructive_or_positive\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI",
+                  "public: 美国CPI年率约2.7%，住房成本上涨3.2%"
+                ],
+                "title": "工资连月跑输CPI，通胀粘不住？",
+                "title_lines": [
+                  "工资连月跑输CPI",
+                  "通胀粘不住？",
+                  "摩根大通点破"
+                ],
+                "title_highlights": [
+                  "工资连月跑输CPI",
+                  "通胀粘不住"
+                ],
+                "runner_up_titles": [
+                  "摩根大通：美国工人加薪难，通胀难粘",
+                  "工资涨不动，通胀还能撑多久？"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：工资涨幅连续四月低于CPI，通胀粘性存疑，关注后续就业数据",
+                "comment_highlights": [
+                  "工资涨幅连续四月低于CPI"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：CPI数据出炉，市场关注通胀走向",
+                    "comment_highlights": [
+                      "CPI数据"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：能源通缩与住房通胀并存，结构分化明显",
+                    "comment_highlights": [
+                      "能源通缩",
+                      "住房通胀"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：分析师预期充分，数据难有意外",
+                    "comment_highlights": [
+                      "分析师预期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：市场对CPI反应平淡，符合预期",
+                    "comment_highlights": [
+                      "符合预期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：通缩趋势明确，但需观察持续性",
+                    "comment_highlights": [
+                      "通缩趋势"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：机票与烟草价格波动，显示分项差异",
+                    "comment_highlights": [
+                      "烟草价格"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：医疗商品与服务价格变化需关注",
+                    "comment_highlights": [
+                      "医疗商品"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：关税成本预期下降，或缓解通胀压力",
+                    "comment_highlights": [
+                      "关税成本"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：油价有望回落，进一步压低通胀",
+                    "comment_highlights": [
+                      "油价"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：市场将逐步消化当前压力",
+                    "comment_highlights": [
+                      "市场将逐步消化当"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：工资涨幅连续四月低于CPI，关键信号",
+                    "comment_highlights": [
+                      "工资涨幅连续四月低于CPI"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：工资与CPI差距扩大，实际购买力承压",
+                    "comment_highlights": [
+                      "工资与CPI差距"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：工人加薪难，或影响消费动力",
+                    "comment_highlights": [
+                      "加薪难"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：通胀粘性不足，特氟龙效应显现",
+                    "comment_highlights": [
+                      "通胀粘性不足"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：工资不涨，价格螺旋难形成",
+                    "comment_highlights": [
+                      "工资不涨"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "工资连月跑输CPI：通胀粘不住？，摩根大通点破",
+          "title_lines": [
+            "工资连月跑输CPI",
+            "通胀粘不住？",
+            "摩根大通点破"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 93,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_china_direction_constructive_or_positive"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：工资涨幅连续四月低于CPI，通胀粘性存疑，关注后续就业数据"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-12T23:05:39.950923+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says",
+          "source_title": "Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says",
+          "show_date": "",
+          "current_title": "通胀粘性不足？摩根大通：工资涨不动是关键",
+          "current_title_lines": [
+            "摩根大通：通胀粘性不足",
+            "工资涨幅低于CPI",
+            "美国工人难获加薪"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "那么，你对这次CPI数据有何看法？",
+              "en": "So, what's your take on this bang-and-line CPI print?",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "表面之下，能源价格带来通缩压力，而住房等领域存在通胀压力。",
+              "en": "You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.",
+              "relative_start": 3.4,
+              "relative_end": 8.8
+            },
+            {
+              "index": 3,
+              "zh": "首先，看CPI报告时，实际上它几乎总是与分析师的预期一致，因为已有大量数据。",
+              "en": "Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,",
+              "relative_start": 8.8,
+              "relative_end": 17.3
+            },
+            {
+              "index": 4,
+              "zh": "因此很难出现大的意外，所以我们不感到意外并不奇怪。",
+              "en": "which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.",
+              "relative_start": 17.3,
+              "relative_end": 21.8
+            },
+            {
+              "index": 5,
+              "zh": "尽管如此，我认为存在明显的通缩趋势。",
+              "en": "Having said that, I think there is a clear disinflationary trend.",
+              "relative_start": 21.8,
+              "relative_end": 25.4
+            },
+            {
+              "index": 6,
+              "zh": "今天早间数据中有许多交叉波动，比如机票价格上涨，但烟草价格涨幅不如上月。",
+              "en": "There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,",
+              "relative_start": 25.4,
+              "relative_end": 37.0
+            },
+            {
+              "index": 7,
+              "zh": "医疗商品和服务也存在差异。",
+              "en": "the differences in medical commodities and services.",
+              "relative_start": 37.0,
+              "relative_end": 40.0
+            },
+            {
+              "index": 8,
+              "zh": "但总体来看，有几点值得注意：未来关税成本将低于一年前，因为新关税不会完全取代原有关税。",
+              "en": "But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs",
+              "relative_start": 40.0,
+              "relative_end": 48.0
+            },
+            {
+              "index": 9,
+              "zh": "其次，我认为油价最终会下跌，因为最终只有一个解决方案。",
+              "en": "are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,",
+              "relative_start": 48.0,
+              "relative_end": 57.3
+            },
+            {
+              "index": 10,
+              "zh": "每个人都会摆脱当前的困境，我相信会如此。",
+              "en": "and everybody's always going to get out of the straight of our moves, and I think it will.",
+              "relative_start": 57.3,
+              "relative_end": 61.2
+            },
+            {
+              "index": 11,
+              "zh": "但对我来说最重要的是，这是工资涨幅连续第四个月低于CPI通胀。",
+              "en": "But the biggest thing to me is, this is the fourth consecutive month in which wages have gone up by less than CPI inflation.",
+              "relative_start": 61.2,
+              "relative_end": 66.8
+            },
+            {
+              "index": 12,
+              "zh": "工资同比上涨3.2%，CPI同比上涨3.4%。",
+              "en": "3.2% year-over-year on wages, 3.4% on CPI.",
+              "relative_start": 66.8,
+              "relative_end": 70.9
+            },
+            {
+              "index": 13,
+              "zh": "这告诉我，美国工人无法获得加薪。",
+              "en": "And what that tells me is American workers can't get a raise.",
+              "relative_start": 70.9,
+              "relative_end": 74.0
+            },
+            {
+              "index": 14,
+              "zh": "如果他们不能，你就不会有粘性通胀。我们基本上在美国有了特氟龙通胀。",
+              "en": "And if they can't, you cannot have sticky inflation. We've essentially got Teflon inflation in America.",
+              "relative_start": 74.0,
+              "relative_end": 79.2
+            },
+            {
+              "index": 15,
+              "zh": "它不会粘住，因为它不会粘住，因为你无法得到价格-工资螺旋，如果工资不反应。",
+              "en": "It won't stick, and it won't stick because you can't get a price-wage spar or go, and if the wages won't react.",
+              "relative_start": 79.2,
+              "relative_end": 84.8
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n  \"source_title\": \"Duration: 5:40 'Teflon' Inflation Won't Stick, JPMorgan's Kelly Says\",\n  \"current_title\": \"通胀粘性不足？摩根大通：工资涨不动是关键\",\n  \"source_claims\": [\n    \"So, what's your take on this bang-and-line CPI print?\",\n    \"You could see under the hood there's disinflation coming from energy, and there's some inflationary pressure coming from housing and elsewhere.\",\n    \"Well, first of all, when you look at an employment reporter, CPI report, the truth is CPI is almost always about the analysts think, because we have a lot of data going into it,\",\n    \"which just makes it very hard to have a big surprise. So, not surprise, that we're not surprised.\",\n    \"Having said that, I think there is a clear disinflationary trend.\",\n    \"There are a lot of cross-currents, a lot of cross-waves in the day to this morning, things like airline fare is up, but tobacco prices, not moving as much as it did last month,\",\n    \"the differences in medical commodities and services.\",\n    \"But beneath it all, I think there are a few things to bear in mind. One, we're going to have lower tariff costs going forward that we've had a year ago, because the new tariffs\",\n    \"are not going to fully replace the AEPA tariffs. Second, I do think that eventually oil price will come down, because eventually, there's only one solution to this thing,\",\n    \"and everybody's always going to get out of the straight of our moves, and I think it will.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"There is a clear disinflationary trend in the US, with lower tariff costs and oil prices eventually coming down.\",\n      \"public_baseline\": \"US CPI data shows inflation around 2.7% annually, with housing costs rising 3.2% and energy gains 2.3%.\",\n      \"surprise_gap\": \"The claim of a clear disinflationary trend is consistent with the public data, but the specific prediction of lower tariff costs and oil prices is not directly supported by the public snippets.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states: 'I think there is a clear disinflationary trend.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US CPI disinflationary trend energy housing 2025\",\n          \"url\": \"https://www.wichitaliberty.org/economics/december-2025-cpi-report-inflation-analysis/\",\n          \"fact\": \"December 2025 CPI shows inflation steady at 2.7% annually, housing costs rise 3.2%, food up 3.1%, energy gains 2.3%.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"David Kelly predicts a specific CPI number.\",\n        \"David Kelly says inflation will definitely not stick.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title 'Teflon Inflation Won't Stick' is a metaphor; the Chinese translation '不粘通胀' is literal but may not be widely recognized.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"工资连月跑输CPI：通胀粘不住？，摩根大通点破\",\n  \"title_lines\": [\n    \"工资连月跑输CPI\",\n    \"通胀粘不住？\",\n    \"摩根大通点破\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI\",\n    \"public: 美国CPI年率约2.7%，住房成本上涨3.2%\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 8,\n    \"curiosity_gap\": 7,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"make_china_direction_constructive_or_positive\"]\n\nMandatory clip-specific repair rules:\n- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, or foreign competitor response, the title must present that fact directly and constructively. Do not replace it with a generic market or negotiation summary.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "outsider_candor",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "原来如此",
+            "evidence_basis": [
+              "transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI",
+              "public: 美国CPI年率约2.7%，住房成本上涨3.2%"
+            ],
+            "title": "工资涨幅连续低于CPI，通胀粘性不足？摩根大通：能源与关税将压低物价",
+            "title_lines": [
+              "工资涨幅连续低于CPI",
+              "通胀粘性不足？",
+              "摩根大通：能源与关税将压低物价"
+            ],
+            "title_highlights": [
+              "工资涨幅连续低于CPI",
+              "通胀粘性不足？",
+              "摩根大通：能源与关税将压低物价"
+            ],
+            "runner_up_titles": [
+              "工资涨幅连续低于CPI，通胀粘性存疑，摩根大通：能源与关税将压低物价"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 8
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "工资涨幅连续低于CPI：通胀粘性不足？，摩根大通能源与关税将压低物价",
+        "title_lines": [
+          "工资涨幅连续低于CPI",
+          "通胀粘性不足？",
+          "摩根大通能源与关税将压低物价"
+        ],
+        "title_highlights": [
+          "工资涨幅连续低于CPI",
+          "通胀粘性不足？"
+        ],
+        "comment": "KC评论：工资涨幅连续四月低于CPI，通胀粘性存疑，关注后续就业数据",
+        "comment_highlights": [
+          "工资涨幅连续四月低于CPI"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：CPI数据出炉，市场关注通胀走向",
+            "comment_highlights": [
+              "CPI数据"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：能源通缩与住房通胀并存，结构分化明显",
+            "comment_highlights": [
+              "能源通缩",
+              "住房通胀"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：分析师预期充分，数据难有意外",
+            "comment_highlights": [
+              "分析师预期"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：市场对CPI反应平淡，符合预期",
+            "comment_highlights": [
+              "符合预期"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：通缩趋势明确，但需观察持续性",
+            "comment_highlights": [
+              "通缩趋势"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：机票与烟草价格波动，显示分项差异",
+            "comment_highlights": [
+              "烟草价格"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：医疗商品与服务价格变化需关注",
+            "comment_highlights": [
+              "医疗商品"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：关税成本预期下降，或缓解通胀压力",
+            "comment_highlights": [
+              "关税成本"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：油价有望回落，进一步压低通胀",
+            "comment_highlights": [
+              "油价"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：市场将逐步消化当前压力",
+            "comment_highlights": [
+              "市场将逐步消化当"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：工资涨幅连续四月低于CPI，关键信号",
+            "comment_highlights": [
+              "工资涨幅连续四月低于CPI"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：工资与CPI差距扩大，实际购买力承压",
+            "comment_highlights": [
+              "工资与CPI差距"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：工人加薪难，或影响消费动力",
+            "comment_highlights": [
+              "加薪难"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：通胀粘性不足，特氟龙效应显现",
+            "comment_highlights": [
+              "通胀粘性不足"
+            ]
+          },
+          {
+            "subtitle_index": 15,
+            "comment": "KC评论：工资不涨，价格螺旋难形成",
+            "comment_highlights": [
+              "工资不涨"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "outsider_candor",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "原来如此",
+        "evidence_basis": [
+          "transcript: 工资同比上涨3.2%，CPI同比上涨3.4%，连续第四个月工资涨幅低于CPI",
+          "public: 美国CPI年率约2.7%，住房成本上涨3.2%"
+        ],
+        "runner_up_titles": [
+          "工资涨幅连续低于CPI，通胀粘性存疑，摩根大通：能源与关税将压低物价"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 8
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:outsider_candor",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded",
+            "china_positive_resonance"
+          ],
+          "fixes": [
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 8
+          }
+        }
+      }
+    }
+  ]
+}
