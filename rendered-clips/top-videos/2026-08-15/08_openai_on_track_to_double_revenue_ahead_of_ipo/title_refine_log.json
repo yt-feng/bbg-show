@@ -1,0 +1,1165 @@
+{
+  "timestamp_utc": "2026-08-14T22:47:12.654513+00:00",
+  "plan_path": "work/top-videos/08_openai_on_track_to_double_revenue_ahead_of_ipo/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "OpenAI",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "OpenAI",
+        "preferred_en": "OpenAI",
+        "official_zh": "OpenAI",
+        "common_zh": "OpenAI",
+        "title_label": "OpenAI",
+        "preferred_zh": "OpenAI",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://en.wikipedia.org/wiki/OpenAI",
+          "https://www.bloomberg.com/profile/company/1554630D:US"
+        ],
+        "evidence": "OpenAI is widely known by its English name in Chinese media; no official Chinese name is established."
+      },
+      {
+        "source_text": "Anthropic",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Anthropic",
+        "preferred_en": "Anthropic",
+        "official_zh": "Anthropic",
+        "common_zh": "Anthropic",
+        "title_label": "Anthropic",
+        "preferred_zh": "Anthropic",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.founderland.ai/articles/anthropics-claude-code-hits-1b-revenue-fastest-ai-tool-ever-mi9d3b19",
+          "https://taptwicedigital.com/stats/anthropic"
+        ],
+        "evidence": "Anthropic is commonly referred to by its English name in Chinese financial media."
+      },
+      {
+        "source_text": "Rachel Madz",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rachel Madz",
+        "preferred_en": "Rachel Madz",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Rachel Madz",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No established Chinese name found for this reporter."
+      },
+      {
+        "source_text": "Greg Brockman",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Greg Brockman",
+        "preferred_en": "Greg Brockman",
+        "official_zh": "格雷格·布罗克曼",
+        "common_zh": "格雷格·布罗克曼",
+        "title_label": "格雷格·布罗克曼",
+        "preferred_zh": "格雷格·布罗克曼",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Greg Brockman is a known OpenAI executive; Chinese media commonly use this transliteration."
+      },
+      {
+        "source_text": "Codex",
+        "entity_type": "product",
+        "clip_indexes": [],
+        "canonical_en": "Codex",
+        "preferred_en": "Codex",
+        "official_zh": "Codex",
+        "common_zh": "Codex",
+        "title_label": "Codex",
+        "preferred_zh": "Codex",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Codex is a product name commonly used as-is in Chinese tech media."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "annualized revenue run rate",
+        "clip_indexes": [],
+        "context": "OpenAI's revenue projection",
+        "sense": "annualized revenue based on current performance",
+        "preferred_zh": "年化收入运行率",
+        "title_label": "年化收入",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "IPO",
+        "clip_indexes": [
+          1
+        ],
+        "context": "OpenAI's potential public offering",
+        "sense": "initial public offering",
+        "preferred_zh": "首次公开募股",
+        "title_label": "IPO",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/",
+          "https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo"
+        ]
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "OpenAI is on track to generate annualized revenue of more than $40 billion, roughly doubling its run rate from the end of 2025.",
+        "public_baseline": "Public reports confirm OpenAI's annualized revenue run rate topped $40 billion, doubling from end of 2025.",
+        "surprise_gap": "",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "OpenAI annualized revenue run rate 2025 2026 double",
+            "url": "https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/",
+            "fact": "OpenAI's annualized revenue run rate tops $40 billion, roughly double from end of 2025."
+          },
+          {
+            "kind": "public",
+            "query": "OpenAI annualized revenue run rate 2025 2026 double",
+            "url": "https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo",
+            "fact": "Bloomberg reports OpenAI on track for $40 billion+ annualized revenue, doubling from 2025."
+          }
+        ],
+        "forbidden_claims": [
+          "OpenAI's revenue doubling is surprising or unexpected.",
+          "Anthropic has overtaken OpenAI in overall revenue."
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip's revenue claim is consistent with public reports; no surprise gap identified.",
+      "Entity names like OpenAI and Anthropic are used as-is in Chinese media; no official Chinese names exist."
+    ],
+    "research_queries": [
+      {
+        "query": "OpenAI annualized revenue run rate 2025 2026 double",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the baseline revenue run rate and the claim of doubling to assess if the source claim is consistent with public reports."
+      },
+      {
+        "query": "OpenAI 1 billion weekly active users 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim of passing 1 billion weekly active users, a key driver of revenue growth."
+      },
+      {
+        "query": "Anthropic coding assistant revenue growth 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Anthropic outpaced OpenAI on coding, providing context for the competitive comparison."
+      },
+      {
+        "query": "OpenAI Codex revenue contribution 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the role of Codex in driving business revenue, as mentioned in the transcript."
+      },
+      {
+        "query": "OpenAI IPO plans 2025 2026",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify OpenAI's IPO timeline and revenue targets to assess the accuracy of the source's claims."
+      },
+      {
+        "query": "OpenAI expenses 2025 cost structure",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the bottom line and expense claims to provide a balanced view of the revenue growth."
+      },
+      {
+        "query": "OpenAI 中国 营收 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search for any China-related revenue or market data to compare with OpenAI's global performance, as the title suggests AI competition in China."
+      },
+      {
+        "query": "中国 AI 公司 营收 2025 对比 OpenAI",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese AI companies' revenue figures to compare with OpenAI's, supporting the title's 'AI赛道竞争白热化' angle."
+      },
+      {
+        "query": "Bloomberg OpenAI established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "OpenAI 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Track 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "OpenAI年收入：冲400亿美元，翻倍靠什么？",
+      "title_lines": [
+        "OpenAI年收入",
+        "冲400亿美元",
+        "翻倍靠什么？"
+      ],
+      "formula_id": "concrete_stakes",
+      "angle_id": "concrete_stakes",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然翻倍了",
+      "evidence_basis": [
+        "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+        "public: Bloomberg报道证实该数字"
+      ],
+      "runner_up_titles": [
+        "OpenAI年收入翻倍至400亿美元，靠什么？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 9,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:concrete_stakes",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-14T22:47:09.371887+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO",
+          "source_title": "Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO",
+          "show_date": "",
+          "current_title": "OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化",
+          "current_title_lines": [
+            "OpenAI营收翻倍",
+            "冲刺IPO",
+            "AI赛道竞争白热化"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "据消息人士透露，OpenAI有望实现年化收入超过该数字。",
+              "en": "Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.",
+              "relative_start": 0.0,
+              "relative_end": 4.9
+            },
+            {
+              "index": 2,
+              "zh": "这将使其运行率较2025年底翻倍。我们请来彭博社AI记者Rachel Madz，她率先报道了此事。Rachel，哪些产品推动了这一增长？",
+              "en": "That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual",
+              "relative_start": 4.9,
+              "relative_end": 15.5
+            },
+            {
+              "index": 3,
+              "zh": "据我们报道，这实际上涉及多个方面。公司的消费者业务仍是其最大业务，最近他们宣布周活跃用户突破10亿，这是他们长期追求的目标。",
+              "en": "ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still",
+              "relative_start": 15.5,
+              "relative_end": 26.4
+            },
+            {
+              "index": 4,
+              "zh": "因此，消费者端付费用户增多，同时使用其服务的企业也更多，这在一定程度上得益于其编程助手Codex。",
+              "en": "by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more",
+              "relative_start": 26.4,
+              "relative_end": 37.8
+            },
+            {
+              "index": 5,
+              "zh": "我们不能孤立地看待OpenAI。与主要竞争对手Anthropic相比，情况如何？他们似乎不相上下。",
+              "en": "paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about",
+              "relative_start": 37.8,
+              "relative_end": 48.5
+            },
+            {
+              "index": 6,
+              "zh": "我不想说谁胜谁负，因为我认为这远不止于此，这个生态系统中还有很多公司。但Anthropic在过去一年确实证明了自己是强劲的对手。",
+              "en": "this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like",
+              "relative_start": 48.5,
+              "relative_end": 59.5
+            },
+            {
+              "index": 7,
+              "zh": "尤其在编程方面，他们有时确实超越了OpenAI，但OpenAI的收入增长表明客户也愿意为其产品付费。",
+              "en": "it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved",
+              "relative_start": 59.5,
+              "relative_end": 69.6
+            },
+            {
+              "index": 8,
+              "zh": "我们谈的是营收，那利润和成本方面呢？",
+              "en": "over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as",
+              "relative_start": 69.6,
+              "relative_end": 81.1
+            },
+            {
+              "index": 9,
+              "zh": "收入增长，客户也愿意为其产品付费。我们谈的是营收，那利润和成本方面呢？",
+              "en": "revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of",
+              "relative_start": 81.1,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"source_title\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"show_date\": \"\",\n    \"current_title\": \"OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化\",\n    \"current_title_lines\": [\n      \"OpenAI营收翻倍\",\n      \"冲刺IPO\",\n      \"AI赛道竞争白热化\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"据消息人士透露，OpenAI有望实现年化收入超过该数字。\",\n        \"en\": \"Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这将使其运行率较2025年底翻倍。我们请来彭博社AI记者Rachel Madz，她率先报道了此事。Rachel，哪些产品推动了这一增长？\",\n        \"en\": \"That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual\",\n        \"relative_start\": 4.9,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"据我们报道，这实际上涉及多个方面。公司的消费者业务仍是其最大业务，最近他们宣布周活跃用户突破10亿，这是他们长期追求的目标。\",\n        \"en\": \"ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 26.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此，消费者端付费用户增多，同时使用其服务的企业也更多，这在一定程度上得益于其编程助手Codex。\",\n        \"en\": \"by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more\",\n        \"relative_start\": 26.4,\n        \"relative_end\": 37.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们不能孤立地看待OpenAI。与主要竞争对手Anthropic相比，情况如何？他们似乎不相上下。\",\n        \"en\": \"paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about\",\n        \"relative_start\": 37.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我不想说谁胜谁负，因为我认为这远不止于此，这个生态系统中还有很多公司。但Anthropic在过去一年确实证明了自己是强劲的对手。\",\n        \"en\": \"this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"尤其在编程方面，他们有时确实超越了OpenAI，但OpenAI的收入增长表明客户也愿意为其产品付费。\",\n        \"en\": \"it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved\",\n        \"relative_start\": 59.5,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"收入增长，客户也愿意为其产品付费。我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"OpenAI\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://en.wikipedia.org/wiki/OpenAI\",\n        \"https://www.bloomberg.com/profile/company/1554630D:US\"\n      ],\n      \"evidence\": \"OpenAI is widely known by its English name in Chinese media; no official Chinese name is established.\"\n    },\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"Anthropic\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.founderland.ai/articles/anthropics-claude-code-hits-1b-revenue-fastest-ai-tool-ever-mi9d3b19\",\n        \"https://taptwicedigital.com/stats/anthropic\"\n      ],\n      \"evidence\": \"Anthropic is commonly referred to by its English name in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"IPO\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"OpenAI's potential public offering\",\n      \"sense\": \"initial public offering\",\n      \"preferred_zh\": \"首次公开募股\",\n      \"title_label\": \"IPO\",\n      \"avoid_zh\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n        \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"OpenAI is on track to generate annualized revenue of more than $40 billion, roughly doubling its run rate from the end of 2025.\",\n      \"public_baseline\": \"Public reports confirm OpenAI's annualized revenue run rate topped $40 billion, doubling from end of 2025.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n          \"fact\": \"OpenAI's annualized revenue run rate tops $40 billion, roughly double from end of 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\",\n          \"fact\": \"Bloomberg reports OpenAI on track for $40 billion+ annualized revenue, doubling from 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"OpenAI's revenue doubling is surprising or unexpected.\",\n        \"Anthropic has overtaken OpenAI in overall revenue.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's revenue claim is consistent with public reports; no surprise gap identified.\",\n    \"Entity names like OpenAI and Anthropic are used as-is in Chinese media; no official Chinese names exist.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "OpenAI年化收入运行率预计突破400亿美元，较2025年底翻倍，主要受消费者业务和编程助手Codex推动。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然翻倍了",
+                "title": "OpenAI年收入冲400亿美元",
+                "title_lines": [
+                  "OpenAI年收入",
+                  "冲400亿美元",
+                  "翻倍靠什么"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+                  "public: Bloomberg报道证实该数字"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "这数字可靠吗",
+                "title": "彭博社曝OpenAI年收入翻倍",
+                "title_lines": [
+                  "彭博社曝",
+                  "OpenAI年收入翻倍",
+                  "为何此刻公开"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 彭博社AI记者率先报道",
+                  "public: 彭博社文章确认"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "没想到这么快",
+                "title": "OpenAI周活破10亿",
+                "title_lines": [
+                  "OpenAI周活破10亿",
+                  "收入翻倍",
+                  "对手压力陡增"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 消费者业务周活跃用户突破10亿",
+                  "transcript: 收入运行率翻倍"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "编程助手这么赚钱",
+                "title": "编程助手Codex成OpenAI新引擎",
+                "title_lines": [
+                  "编程助手Codex",
+                  "成OpenAI新引擎",
+                  "企业付费激增"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 编程助手Codex推动企业业务增长",
+                  "transcript: 更多企业使用OpenAI服务"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"source_title\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"show_date\": \"\",\n    \"current_title\": \"OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化\",\n    \"current_title_lines\": [\n      \"OpenAI营收翻倍\",\n      \"冲刺IPO\",\n      \"AI赛道竞争白热化\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"据消息人士透露，OpenAI有望实现年化收入超过该数字。\",\n        \"en\": \"Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这将使其运行率较2025年底翻倍。我们请来彭博社AI记者Rachel Madz，她率先报道了此事。Rachel，哪些产品推动了这一增长？\",\n        \"en\": \"That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual\",\n        \"relative_start\": 4.9,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"据我们报道，这实际上涉及多个方面。公司的消费者业务仍是其最大业务，最近他们宣布周活跃用户突破10亿，这是他们长期追求的目标。\",\n        \"en\": \"ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 26.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此，消费者端付费用户增多，同时使用其服务的企业也更多，这在一定程度上得益于其编程助手Codex。\",\n        \"en\": \"by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more\",\n        \"relative_start\": 26.4,\n        \"relative_end\": 37.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们不能孤立地看待OpenAI。与主要竞争对手Anthropic相比，情况如何？他们似乎不相上下。\",\n        \"en\": \"paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about\",\n        \"relative_start\": 37.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我不想说谁胜谁负，因为我认为这远不止于此，这个生态系统中还有很多公司。但Anthropic在过去一年确实证明了自己是强劲的对手。\",\n        \"en\": \"this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"尤其在编程方面，他们有时确实超越了OpenAI，但OpenAI的收入增长表明客户也愿意为其产品付费。\",\n        \"en\": \"it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved\",\n        \"relative_start\": 59.5,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"收入增长，客户也愿意为其产品付费。我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"OpenAI\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://en.wikipedia.org/wiki/OpenAI\",\n        \"https://www.bloomberg.com/profile/company/1554630D:US\"\n      ],\n      \"evidence\": \"OpenAI is widely known by its English name in Chinese media; no official Chinese name is established.\"\n    },\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"Anthropic\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.founderland.ai/articles/anthropics-claude-code-hits-1b-revenue-fastest-ai-tool-ever-mi9d3b19\",\n        \"https://taptwicedigital.com/stats/anthropic\"\n      ],\n      \"evidence\": \"Anthropic is commonly referred to by its English name in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"IPO\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"OpenAI's potential public offering\",\n      \"sense\": \"initial public offering\",\n      \"preferred_zh\": \"首次公开募股\",\n      \"title_label\": \"IPO\",\n      \"avoid_zh\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n        \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"OpenAI is on track to generate annualized revenue of more than $40 billion, roughly doubling its run rate from the end of 2025.\",\n      \"public_baseline\": \"Public reports confirm OpenAI's annualized revenue run rate topped $40 billion, doubling from end of 2025.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n          \"fact\": \"OpenAI's annualized revenue run rate tops $40 billion, roughly double from end of 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\",\n          \"fact\": \"Bloomberg reports OpenAI on track for $40 billion+ annualized revenue, doubling from 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"OpenAI's revenue doubling is surprising or unexpected.\",\n        \"Anthropic has overtaken OpenAI in overall revenue.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's revenue claim is consistent with public reports; no surprise gap identified.\",\n    \"Entity names like OpenAI and Anthropic are used as-is in Chinese media; no official Chinese names exist.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"OpenAI年化收入运行率预计突破400亿美元，较2025年底翻倍，主要受消费者业务和编程助手Codex推动。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然翻倍了\",\n          \"title\": \"OpenAI年收入冲400亿美元\",\n          \"title_lines\": [\n            \"OpenAI年收入\",\n            \"冲400亿美元\",\n            \"翻倍靠什么\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍\",\n            \"public: Bloomberg报道证实该数字\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"这数字可靠吗\",\n          \"title\": \"彭博社曝OpenAI年收入翻倍\",\n          \"title_lines\": [\n            \"彭博社曝\",\n            \"OpenAI年收入翻倍\",\n            \"为何此刻公开\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 彭博社AI记者率先报道\",\n            \"public: 彭博社文章确认\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"没想到这么快\",\n          \"title\": \"OpenAI周活破10亿\",\n          \"title_lines\": [\n            \"OpenAI周活破10亿\",\n            \"收入翻倍\",\n            \"对手压力陡增\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 消费者业务周活跃用户突破10亿\",\n            \"transcript: 收入运行率翻倍\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"编程助手这么赚钱\",\n          \"title\": \"编程助手Codex成OpenAI新引擎\",\n          \"title_lines\": [\n            \"编程助手Codex\",\n            \"成OpenAI新引擎\",\n            \"企业付费激增\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 编程助手Codex推动企业业务增长\",\n            \"transcript: 更多企业使用OpenAI服务\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "concrete_stakes",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然翻倍了",
+            "evidence_basis": [
+              "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+              "public: Bloomberg报道证实该数字"
+            ],
+            "title": "OpenAI年收入冲400亿美元",
+            "title_lines": [
+              "OpenAI年收入",
+              "冲400亿美元",
+              "翻倍靠什么"
+            ],
+            "title_highlights": [
+              "400亿美元",
+              "翻倍"
+            ],
+            "runner_up_titles": [
+              "彭博社曝OpenAI年收入翻倍",
+              "OpenAI周活破10亿，收入翻倍"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期，关注IPO前估值重估。",
+            "comment_highlights": [
+              "400亿美元",
+              "IPO"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：年化收入突破400亿美元，较2025年底翻倍，增长引擎何在？",
+                "comment_highlights": [
+                  "400亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：彭博社率先报道，消费者业务仍是最大收入来源。",
+                "comment_highlights": [
+                  "彭博社"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：周活跃用户破10亿，付费转化推动收入增长。",
+                "comment_highlights": [
+                  "10亿"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：企业端增长受编程助手Codex驱动，AI应用场景持续拓宽。",
+                "comment_highlights": [
+                  "Codex"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：与Anthropic竞争激烈，但OpenAI收入增长显示客户付费意愿强。",
+                "comment_highlights": [
+                  "Anthropic"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：Anthropic在编程领域表现强劲，但OpenAI整体收入领先。",
+                "comment_highlights": [
+                  "编程"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：客户愿意为OpenAI产品付费，收入增长验证商业模式。",
+                "comment_highlights": [
+                  "付费"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：关注利润与成本，收入增长能否转化为盈利是关键。",
+                "comment_highlights": [
+                  "利润"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：收入增长强劲，但成本结构决定长期竞争力。",
+                "comment_highlights": [
+                  "成本"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"source_title\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n    \"show_date\": \"\",\n    \"current_title\": \"OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化\",\n    \"current_title_lines\": [\n      \"OpenAI营收翻倍\",\n      \"冲刺IPO\",\n      \"AI赛道竞争白热化\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"据消息人士透露，OpenAI有望实现年化收入超过该数字。\",\n        \"en\": \"Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这将使其运行率较2025年底翻倍。我们请来彭博社AI记者Rachel Madz，她率先报道了此事。Rachel，哪些产品推动了这一增长？\",\n        \"en\": \"That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual\",\n        \"relative_start\": 4.9,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"据我们报道，这实际上涉及多个方面。公司的消费者业务仍是其最大业务，最近他们宣布周活跃用户突破10亿，这是他们长期追求的目标。\",\n        \"en\": \"ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 26.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"因此，消费者端付费用户增多，同时使用其服务的企业也更多，这在一定程度上得益于其编程助手Codex。\",\n        \"en\": \"by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more\",\n        \"relative_start\": 26.4,\n        \"relative_end\": 37.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们不能孤立地看待OpenAI。与主要竞争对手Anthropic相比，情况如何？他们似乎不相上下。\",\n        \"en\": \"paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about\",\n        \"relative_start\": 37.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我不想说谁胜谁负，因为我认为这远不止于此，这个生态系统中还有很多公司。但Anthropic在过去一年确实证明了自己是强劲的对手。\",\n        \"en\": \"this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"尤其在编程方面，他们有时确实超越了OpenAI，但OpenAI的收入增长表明客户也愿意为其产品付费。\",\n        \"en\": \"it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved\",\n        \"relative_start\": 59.5,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"收入增长，客户也愿意为其产品付费。我们谈的是营收，那利润和成本方面呢？\",\n        \"en\": \"revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"OpenAI\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://en.wikipedia.org/wiki/OpenAI\",\n        \"https://www.bloomberg.com/profile/company/1554630D:US\"\n      ],\n      \"evidence\": \"OpenAI is widely known by its English name in Chinese media; no official Chinese name is established.\"\n    },\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"Anthropic\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.founderland.ai/articles/anthropics-claude-code-hits-1b-revenue-fastest-ai-tool-ever-mi9d3b19\",\n        \"https://taptwicedigital.com/stats/anthropic\"\n      ],\n      \"evidence\": \"Anthropic is commonly referred to by its English name in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"IPO\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"OpenAI's potential public offering\",\n      \"sense\": \"initial public offering\",\n      \"preferred_zh\": \"首次公开募股\",\n      \"title_label\": \"IPO\",\n      \"avoid_zh\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n        \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"OpenAI is on track to generate annualized revenue of more than $40 billion, roughly doubling its run rate from the end of 2025.\",\n      \"public_baseline\": \"Public reports confirm OpenAI's annualized revenue run rate topped $40 billion, doubling from end of 2025.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n          \"fact\": \"OpenAI's annualized revenue run rate tops $40 billion, roughly double from end of 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\",\n          \"fact\": \"Bloomberg reports OpenAI on track for $40 billion+ annualized revenue, doubling from 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"OpenAI's revenue doubling is surprising or unexpected.\",\n        \"Anthropic has overtaken OpenAI in overall revenue.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's revenue claim is consistent with public reports; no surprise gap identified.\",\n    \"Entity names like OpenAI and Anthropic are used as-is in Chinese media; no official Chinese names exist.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"OpenAI年化收入运行率预计突破400亿美元，较2025年底翻倍，主要受消费者业务和编程助手Codex推动。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然翻倍了\",\n          \"title\": \"OpenAI年收入冲400亿美元\",\n          \"title_lines\": [\n            \"OpenAI年收入\",\n            \"冲400亿美元\",\n            \"翻倍靠什么\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍\",\n            \"public: Bloomberg报道证实该数字\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"这数字可靠吗\",\n          \"title\": \"彭博社曝OpenAI年收入翻倍\",\n          \"title_lines\": [\n            \"彭博社曝\",\n            \"OpenAI年收入翻倍\",\n            \"为何此刻公开\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 彭博社AI记者率先报道\",\n            \"public: 彭博社文章确认\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"没想到这么快\",\n          \"title\": \"OpenAI周活破10亿\",\n          \"title_lines\": [\n            \"OpenAI周活破10亿\",\n            \"收入翻倍\",\n            \"对手压力陡增\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 消费者业务周活跃用户突破10亿\",\n            \"transcript: 收入运行率翻倍\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"编程助手这么赚钱\",\n          \"title\": \"编程助手Codex成OpenAI新引擎\",\n          \"title_lines\": [\n            \"编程助手Codex\",\n            \"成OpenAI新引擎\",\n            \"企业付费激增\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 编程助手Codex推动企业业务增长\",\n            \"transcript: 更多企业使用OpenAI服务\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"OpenAI年收入：冲400亿美元，翻倍靠什么\",\n      \"title_lines\": [\n        \"OpenAI年收入\",\n        \"冲400亿美元\",\n        \"翻倍靠什么\"\n      ],\n      \"title_highlights\": [\n        \"400亿美元\",\n        \"翻倍\"\n      ],\n      \"comment\": \"KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期\",\n      \"comment_highlights\": [\n        \"400亿美元\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：年化收入突破400亿美元，较2025年底翻倍，增长引擎何在？\",\n          \"comment_highlights\": [\n            \"400亿美元\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：彭博社率先报道，消费者业务仍是最大收入来源\",\n          \"comment_highlights\": [\n            \"彭博社\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：周活跃用户破10亿，付费转化推动收入增长\",\n          \"comment_highlights\": [\n            \"10亿\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：企业端增长受编程助手Codex驱动，AI应用场景持续拓宽\",\n          \"comment_highlights\": [\n            \"Codex\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：与Anthropic竞争激烈，但OpenAI收入增长显示客户付费意愿\",\n          \"comment_highlights\": [\n            \"Anthropic\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：Anthropic在编程领域表现强劲，但OpenAI整体收入领先\",\n          \"comment_highlights\": [\n            \"编程\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：客户愿意为OpenAI产品付费，收入增长验证商业模式\",\n          \"comment_highlights\": [\n            \"付费\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：关注利润与成本，收入增长能否转化为盈利是关键\",\n          \"comment_highlights\": [\n            \"利润\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：收入增长强劲，但成本结构决定长期竞争力\",\n          \"comment_highlights\": [\n            \"成本\"\n          ]\n        }\n      ],\n      \"formula_id\": \"concrete_stakes\",\n      \"angle_id\": \"concrete_stakes\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然翻倍了\",\n      \"evidence_basis\": [\n        \"transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍\",\n        \"public: Bloomberg报道证实该数字\"\n      ],\n      \"runner_up_titles\": [\n        \"彭博社曝OpenAI年收入翻倍\",\n        \"OpenAI周活破10亿，收入翻倍\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 9,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:concrete_stakes\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 9,\n          \"curiosity_gap\": 7,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "concrete_stakes",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然翻倍了",
+                "evidence_basis": [
+                  "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+                  "public: Bloomberg报道证实该数字"
+                ],
+                "title": "OpenAI年收入冲400亿美元，翻倍靠什么",
+                "title_lines": [
+                  "OpenAI年收入",
+                  "冲400亿美元",
+                  "翻倍靠什么"
+                ],
+                "title_highlights": [
+                  "400亿美元",
+                  "翻倍"
+                ],
+                "runner_up_titles": [
+                  "彭博社曝OpenAI年收入翻倍",
+                  "OpenAI周活破10亿，收入翻倍"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期",
+                "comment_highlights": [
+                  "400亿美元"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：年化收入突破400亿美元，较2025年底翻倍，增长引擎何在？",
+                    "comment_highlights": [
+                      "400亿美元"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：彭博社率先报道，消费者业务仍是最大收入来源",
+                    "comment_highlights": [
+                      "彭博社"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：周活跃用户破10亿，付费转化推动收入增长",
+                    "comment_highlights": [
+                      "10亿"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：企业端增长受编程助手Codex驱动，AI应用场景持续拓宽",
+                    "comment_highlights": [
+                      "Codex"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：与Anthropic竞争激烈，但OpenAI收入增长显示客户付费意愿",
+                    "comment_highlights": [
+                      "Anthropic"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：Anthropic在编程领域表现强劲，但OpenAI整体收入领先",
+                    "comment_highlights": [
+                      "编程"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：客户愿意为OpenAI产品付费，收入增长验证商业模式",
+                    "comment_highlights": [
+                      "付费"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：关注利润与成本，收入增长能否转化为盈利是关键",
+                    "comment_highlights": [
+                      "利润"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：收入增长强劲，但成本结构决定长期竞争力",
+                    "comment_highlights": [
+                      "成本"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "OpenAI年收入：冲400亿美元，翻倍靠什么",
+          "title_lines": [
+            "OpenAI年收入",
+            "冲400亿美元",
+            "翻倍靠什么"
+          ],
+          "formula_id": "concrete_stakes",
+          "angle_id": "concrete_stakes",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然翻倍了",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:concrete_stakes",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-14T22:47:11.655660+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO",
+          "source_title": "Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO",
+          "show_date": "",
+          "current_title": "OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化",
+          "current_title_lines": [
+            "OpenAI营收翻倍",
+            "冲刺IPO",
+            "AI赛道竞争白热化"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "据消息人士透露，OpenAI有望实现年化收入超过该数字。",
+              "en": "Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.",
+              "relative_start": 0.0,
+              "relative_end": 4.9
+            },
+            {
+              "index": 2,
+              "zh": "这将使其运行率较2025年底翻倍。我们请来彭博社AI记者Rachel Madz，她率先报道了此事。Rachel，哪些产品推动了这一增长？",
+              "en": "That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual",
+              "relative_start": 4.9,
+              "relative_end": 15.5
+            },
+            {
+              "index": 3,
+              "zh": "据我们报道，这实际上涉及多个方面。公司的消费者业务仍是其最大业务，最近他们宣布周活跃用户突破10亿，这是他们长期追求的目标。",
+              "en": "ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still",
+              "relative_start": 15.5,
+              "relative_end": 26.4
+            },
+            {
+              "index": 4,
+              "zh": "因此，消费者端付费用户增多，同时使用其服务的企业也更多，这在一定程度上得益于其编程助手Codex。",
+              "en": "by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more",
+              "relative_start": 26.4,
+              "relative_end": 37.8
+            },
+            {
+              "index": 5,
+              "zh": "我们不能孤立地看待OpenAI。与主要竞争对手Anthropic相比，情况如何？他们似乎不相上下。",
+              "en": "paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about",
+              "relative_start": 37.8,
+              "relative_end": 48.5
+            },
+            {
+              "index": 6,
+              "zh": "我不想说谁胜谁负，因为我认为这远不止于此，这个生态系统中还有很多公司。但Anthropic在过去一年确实证明了自己是强劲的对手。",
+              "en": "this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like",
+              "relative_start": 48.5,
+              "relative_end": 59.5
+            },
+            {
+              "index": 7,
+              "zh": "尤其在编程方面，他们有时确实超越了OpenAI，但OpenAI的收入增长表明客户也愿意为其产品付费。",
+              "en": "it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved",
+              "relative_start": 59.5,
+              "relative_end": 69.6
+            },
+            {
+              "index": 8,
+              "zh": "我们谈的是营收，那利润和成本方面呢？",
+              "en": "over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as",
+              "relative_start": 69.6,
+              "relative_end": 81.1
+            },
+            {
+              "index": 9,
+              "zh": "收入增长，客户也愿意为其产品付费。我们谈的是营收，那利润和成本方面呢？",
+              "en": "revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of",
+              "relative_start": 81.1,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n  \"source_title\": \"Duration: 2:13 OpenAI on Track to Double Revenue Ahead of IPO\",\n  \"current_title\": \"OpenAI营收翻倍冲刺IPO，AI赛道竞争白热化\",\n  \"source_claims\": [\n    \"Open AI is on track to generate analyzed revenue that tops that number. That's according to sources.\",\n    \"That would roughly double its run rate from the end of 2025. I want to bring in Bloomberg's AI reporter, Rachel Madz, who broke this story. Rachel, what specific products are driving this annual\",\n    \"ized revenue run rate that is such a jump from last year? So according to what we've been told in our reporting, it's actually kind of a range of things. The company's consumer business is still\",\n    \"by far its largest business, and they recently announced that they had passed this one billion active weekly user mark, which they've been pushing toward for a long time. So they've got more\",\n    \"paying users on the consumer side. They also have a lot more businesses that are using it, and this is driven in some part by Codex, which is its coding assistant. Okay, well, we can't talk about\",\n    \"this as the open AI in a vacuum. How does it compare to what the latest is from Anthropic? It's chief rival. I mean, they're they've been that sort of neck and neck in a way. Okay, I hate to say like\",\n    \"it's one versus the other because I think that it's like much much bigger and broader than that, and there are a lot of companies here in this ecosystem. But I think Anthropic definitely has proved\",\n    \"over the last year or so that they're a really handy rival to this company, and they have, especially on the coding front, they in some ways really outpaced open AI, but opening AI is showing us as\",\n    \"revenues going up that customers are also willing to pay for its products as well. Okay, we're talking top line here. Do we know anything about the bottom line and what expenses are in cost of\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"OpenAI\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://en.wikipedia.org/wiki/OpenAI\",\n        \"https://www.bloomberg.com/profile/company/1554630D:US\"\n      ],\n      \"evidence\": \"OpenAI is widely known by its English name in Chinese media; no official Chinese name is established.\"\n    },\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"Anthropic\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.founderland.ai/articles/anthropics-claude-code-hits-1b-revenue-fastest-ai-tool-ever-mi9d3b19\",\n        \"https://taptwicedigital.com/stats/anthropic\"\n      ],\n      \"evidence\": \"Anthropic is commonly referred to by its English name in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"IPO\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"OpenAI's potential public offering\",\n      \"sense\": \"initial public offering\",\n      \"preferred_zh\": \"首次公开募股\",\n      \"title_label\": \"IPO\",\n      \"avoid_zh\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n        \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"OpenAI is on track to generate annualized revenue of more than $40 billion, roughly doubling its run rate from the end of 2025.\",\n      \"public_baseline\": \"Public reports confirm OpenAI's annualized revenue run rate topped $40 billion, doubling from end of 2025.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.pymnts.com/news/artificial-intelligence/2026/openais-revenue-run-rate-tops-40-billion-as-ipo-nears/\",\n          \"fact\": \"OpenAI's annualized revenue run rate tops $40 billion, roughly double from end of 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI annualized revenue run rate 2025 2026 double\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo\",\n          \"fact\": \"Bloomberg reports OpenAI on track for $40 billion+ annualized revenue, doubling from 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"OpenAI's revenue doubling is surprising or unexpected.\",\n        \"Anthropic has overtaken OpenAI in overall revenue.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's revenue claim is consistent with public reports; no surprise gap identified.\",\n    \"Entity names like OpenAI and Anthropic are used as-is in Chinese media; no official Chinese names exist.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"OpenAI年收入：冲400亿美元，翻倍靠什么\",\n  \"title_lines\": [\n    \"OpenAI年收入\",\n    \"冲400亿美元\",\n    \"翻倍靠什么\"\n  ],\n  \"angle_id\": \"concrete_stakes\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然翻倍了\",\n  \"evidence_basis\": [\n    \"transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍\",\n    \"public: Bloomberg报道证实该数字\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 9,\n    \"curiosity_gap\": 7,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然翻倍了",
+            "evidence_basis": [
+              "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+              "public: Bloomberg报道证实该数字"
+            ],
+            "title": "OpenAI年收入冲400亿美元，翻倍靠什么？",
+            "title_lines": [
+              "OpenAI年收入",
+              "冲400亿美元",
+              "翻倍靠什么？"
+            ],
+            "title_highlights": [
+              "冲400亿美元",
+              "翻倍靠什么？"
+            ],
+            "runner_up_titles": [
+              "OpenAI年收入翻倍至400亿美元，靠什么？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "OpenAI年收入：冲400亿美元，翻倍靠什么？",
+        "title_lines": [
+          "OpenAI年收入",
+          "冲400亿美元",
+          "翻倍靠什么？"
+        ],
+        "title_highlights": [
+          "冲400亿美元",
+          "翻倍靠什么？"
+        ],
+        "comment": "KC评论：年化收入翻倍至400亿美元，AI商业化速度超预期",
+        "comment_highlights": [
+          "400亿美元"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：年化收入突破400亿美元，较2025年底翻倍，增长引擎何在？",
+            "comment_highlights": [
+              "400亿美元"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：彭博社率先报道，消费者业务仍是最大收入来源",
+            "comment_highlights": [
+              "彭博社"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：周活跃用户破10亿，付费转化推动收入增长",
+            "comment_highlights": [
+              "10亿"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：企业端增长受编程助手Codex驱动，AI应用场景持续拓宽",
+            "comment_highlights": [
+              "Codex"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：与Anthropic竞争激烈，但OpenAI收入增长显示客户付费意愿",
+            "comment_highlights": [
+              "Anthropic"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：Anthropic在编程领域表现强劲，但OpenAI整体收入领先",
+            "comment_highlights": [
+              "编程"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：客户愿意为OpenAI产品付费，收入增长验证商业模式",
+            "comment_highlights": [
+              "付费"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：关注利润与成本，收入增长能否转化为盈利是关键",
+            "comment_highlights": [
+              "利润"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：收入增长强劲，但成本结构决定长期竞争力",
+            "comment_highlights": [
+              "成本"
+            ]
+          }
+        ],
+        "formula_id": "concrete_stakes",
+        "angle_id": "concrete_stakes",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然翻倍了",
+        "evidence_basis": [
+          "transcript: OpenAI年化收入运行率超过400亿美元，较2025年底翻倍",
+          "public: Bloomberg报道证实该数字"
+        ],
+        "runner_up_titles": [
+          "OpenAI年收入翻倍至400亿美元，靠什么？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:concrete_stakes",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          }
+        }
+      }
+    }
+  ]
+}

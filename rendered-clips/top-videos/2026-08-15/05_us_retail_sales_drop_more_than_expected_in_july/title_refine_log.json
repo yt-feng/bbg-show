@@ -1,0 +1,649 @@
+{
+  "timestamp_utc": "2026-08-14T22:40:08.620954+00:00",
+  "plan_path": "work/top-videos/05_us_retail_sales_drop_more_than_expected_in_july/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's official Chinese name is 彭博, confirmed by Bloomberg's own social media and Wikipedia."
+      }
+    ],
+    "terms": [],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "US retail sales fell 0.6% in July, much worse than the 0.1% forecast, and the control group declined 0.4%, adding to market expectations that the Fed will not raise rates.",
+        "public_baseline": "Economists had expected a 0.1% increase, and the actual decline was 0.6%, the largest since May 2025. The control group fell 0.4% versus expectations of a 0.3% gain.",
+        "surprise_gap": "The decline was significantly larger than the consensus forecast, and the control group also missed expectations, reinforcing dovish Fed expectations.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "US retail sales July 2024 decline 0.6% forecast",
+            "url": "https://www.barrons.com/articles/retail-sales-report-july-spending-9530c5c3",
+            "fact": "Economists had expected retail sales to rise 0.1% month over month in July."
+          },
+          {
+            "kind": "public",
+            "query": "US retail sales July 2024 decline 0.6% forecast",
+            "url": "https://www.wsj.com/economy/consumers/retail-sales-fell-last-month-78fdf39a",
+            "fact": "Retail sales fell 0.6% in July to $763.6 billion, versus 0.2% growth in June."
+          },
+          {
+            "kind": "public",
+            "query": "US retail sales July 2024 decline 0.6% forecast",
+            "url": "https://apnews.com/article/retail-inflation-consumer-sentiment-economy-3e2bc5807d7396b8e6c5f599941cb2a9",
+            "fact": "Retail sales fell 0.6% in July, the biggest decrease since May 2025, compared with a revised gain of 0.2% in June."
+          },
+          {
+            "kind": "public",
+            "query": "retail sales control group July 2024 -0.4%",
+            "url": "https://assets.realclear.com/files/2024/08/2503_retail_sales_30.pdf",
+            "fact": "Control retail sales rose by 0.3% in July, not -0.4% as claimed in the clip."
+          }
+        ],
+        "forbidden_claims": [
+          "The control group fell 0.4% in July 2024 (public data shows a 0.3% rise).",
+          "The Fed will definitely not raise rates (only market speculation)."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The clip's control group figure (-0.4%) conflicts with public data for July 2024 (which shows +0.3%). This discrepancy should be flagged in the title or article.",
+      "The clip mentions 'do not raise rates' but the market context in 2024 was about rate cuts, not hikes. The title should avoid implying a rate hike was expected."
+    ],
+    "research_queries": [
+      {
+        "query": "US retail sales July 2024 decline 0.6% forecast",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the actual retail sales figure and consensus forecast to confirm the claim of a larger-than-expected drop."
+      },
+      {
+        "query": "retail sales control group July 2024 -0.4%",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the control group decline, which feeds into GDP, to assess the significance of the report."
+      },
+      {
+        "query": "Fed rate cut expectations September 2024 after retail sales",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the market's baseline for Fed policy to see if the claim about 'do not raise rates' is consistent with consensus."
+      },
+      {
+        "query": "2-year Treasury yield 4.099% July 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific yield level mentioned to confirm the market reaction described."
+      },
+      {
+        "query": "Bloomberg Expected established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Expected 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "July 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "US 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 8,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "美国零售意外大跌：美联储按兵不动，降息预期升温",
+      "title_lines": [
+        "美国零售意外大跌",
+        "美联储按兵不动",
+        "降息预期升温"
+      ],
+      "formula_id": "surprise-reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 零售销售下降0.6%，预期上升0.1%",
+        "public: 实际降幅为2025年5月以来最大"
+      ],
+      "runner_up_titles": [
+        "零售数据爆冷，美债收益率应声走低",
+        "消费疲软信号？美联储还会加息吗"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 7,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：零售数据意外走弱，市场对美联储政策路径的押注正在生变"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-14T22:40:07.236374+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:13 US Retail Sales Drop More Than Expected in July",
+          "source_title": "Duration: 4:13 US Retail Sales Drop More Than Expected in July",
+          "show_date": "",
+          "current_title": "美国零售数据意外下滑，市场押注美联储按兵不动",
+          "current_title_lines": [
+            "美国零售数据意外下滑",
+            "市场押注美联储按兵不动",
+            "降息预期升温，美债收益率走低"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "零售销售数据令人失望，我们原本预期会略低，但实际低得多。总体零售销售下降0.6%，而预期为上升0.1%。",
+              "en": "Well retail sales data are disappointing we thought they might be a little bit lower and they're a lot bit lower retail sales on a headline basis. Down by six tenths of a percent the forecast was for a one-tenth percent rise.",
+              "relative_start": 0.7,
+              "relative_end": 14.1
+            },
+            {
+              "index": 2,
+              "zh": "扣除汽车的零售销售下降0.3%，扣除汽车和汽油的销售下降0.2%。当然，当月汽油价格有所下跌。",
+              "en": "Retail sales ex-auto down three tenths, raise sales ex-auto and gas down two tenths. Now of course gasoline prices were lower during the month.",
+              "relative_start": 14.1,
+              "relative_end": 24.1
+            },
+            {
+              "index": 3,
+              "zh": "零售销售控制组，即计入GDP的部分，经济学家关注的部分，下降了0.4%，而前一个月未经修正的数据为上升0.5%。",
+              "en": "And retail sales control the part that goes into GDP the part that economists tend to watch is down by four tenths it was up by half a percent last month at least on an un revised basis.",
+              "relative_start": 24.1,
+              "relative_end": 36.1
+            },
+            {
+              "index": 4,
+              "zh": "所以我们需要进一步核实数据，但这无疑是一份令人失望的报告，可能加剧华尔街对于不加息的预期。",
+              "en": "So we're going to have to check into see what where the week this is in this but it's definitely a disappointing report and it may add to some of the do not raise rates thoughts that people are having on Wall Street right now.",
+              "relative_start": 36.1,
+              "relative_end": 49.7
+            },
+            {
+              "index": 5,
+              "zh": "是的，Mike，你来分析细节，我来说说市场反应。可以看到股指期货仍然普遍上涨，并没有出现负面解读。",
+              "en": "Yeah Mike I'll let you dig through some of the details and just give you a read of markets you can see equity futures still positive pretty much across the board you are seeing not necessarily some sort of read through in terms of negativit",
+              "relative_start": 49.7,
+              "relative_end": 61.7
+            },
+            {
+              "index": 6,
+              "zh": "实际上，标普500期货上涨0.1%，纳斯达克期货上涨0.25%，罗素2000期货也转为小幅上涨。",
+              "en": "In fact if anything a more positive up a tenth of a percent in the S&P futures NASDAQ up a quarter percent Russell 2000 now turning just marginally positive.",
+              "relative_start": 61.7,
+              "relative_end": 69.7
+            },
+            {
+              "index": 7,
+              "zh": "10年期和30年期国债收益率更有意思，正如Mike所说，这增加了美联储维持利率不变的可能性。",
+              "en": "2010s and 30s a little bit more interesting as Mike was saying giving a little bit more heft the idea that this Fed can remain on hold.",
+              "relative_start": 69.7,
+              "relative_end": 76.7
+            },
+            {
+              "index": 8,
+              "zh": "现在两年期收益率下降4个基点至4.099%，我们是否会看到收益率在9月会议前再次跌破4%？10年期收益率下降近2个基点至4.63%。",
+              "en": "Now we're looking at that two-year yield lower by four basis points 4.099% we are we going to see these yields fall below 4% once again before that September meeting 10-year yields lower by almost two basis points 4.63%.",
+              "relative_start": 76.7,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:13 US Retail Sales Drop More Than Expected in July\",\n    \"source_title\": \"Duration: 4:13 US Retail Sales Drop More Than Expected in July\",\n    \"show_date\": \"\",\n    \"current_title\": \"美国零售数据意外下滑，市场押注美联储按兵不动\",\n    \"current_title_lines\": [\n      \"美国零售数据意外下滑\",\n      \"市场押注美联储按兵不动\",\n      \"降息预期升温，美债收益率走低\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"零售销售数据令人失望，我们原本预期会略低，但实际低得多。总体零售销售下降0.6%，而预期为上升0.1%。\",\n        \"en\": \"Well retail sales data are disappointing we thought they might be a little bit lower and they're a lot bit lower retail sales on a headline basis. Down by six tenths of a percent the forecast was for a one-tenth percent rise.\",\n        \"relative_start\": 0.7,\n        \"relative_end\": 14.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"扣除汽车的零售销售下降0.3%，扣除汽车和汽油的销售下降0.2%。当然，当月汽油价格有所下跌。\",\n        \"en\": \"Retail sales ex-auto down three tenths, raise sales ex-auto and gas down two tenths. Now of course gasoline prices were lower during the month.\",\n        \"relative_start\": 14.1,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"零售销售控制组，即计入GDP的部分，经济学家关注的部分，下降了0.4%，而前一个月未经修正的数据为上升0.5%。\",\n        \"en\": \"And retail sales control the part that goes into GDP the part that economists tend to watch is down by four tenths it was up by half a percent last month at least on an un revised basis.\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 36.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以我们需要进一步核实数据，但这无疑是一份令人失望的报告，可能加剧华尔街对于不加息的预期。\",\n        \"en\": \"So we're going to have to check into see what where the week this is in this but it's definitely a disappointing report and it may add to some of the do not raise rates thoughts that people are having on Wall Street right now.\",\n        \"relative_start\": 36.1,\n        \"relative_end\": 49.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，Mike，你来分析细节，我来说说市场反应。可以看到股指期货仍然普遍上涨，并没有出现负面解读。\",\n        \"en\": \"Yeah Mike I'll let you dig through some of the details and just give you a read of markets you can see equity futures still positive pretty much across the board you are seeing not necessarily some sort of read through in terms of negativit\",\n        \"relative_start\": 49.7,\n        \"relative_end\": 61.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"实际上，标普500期货上涨0.1%，纳斯达克期货上涨0.25%，罗素2000期货也转为小幅上涨。\",\n        \"en\": \"In fact if anything a more positive up a tenth of a percent in the S&P futures NASDAQ up a quarter percent Russell 2000 now turning just marginally positive.\",\n        \"relative_start\": 61.7,\n        \"relative_end\": 69.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"10年期和30年期国债收益率更有意思，正如Mike所说，这增加了美联储维持利率不变的可能性。\",\n        \"en\": \"2010s and 30s a little bit more interesting as Mike was saying giving a little bit more heft the idea that this Fed can remain on hold.\",\n        \"relative_start\": 69.7,\n        \"relative_end\": 76.7\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"现在两年期收益率下降4个基点至4.099%，我们是否会看到收益率在9月会议前再次跌破4%？10年期收益率下降近2个基点至4.63%。\",\n        \"en\": \"Now we're looking at that two-year yield lower by four basis points 4.099% we are we going to see these yields fall below 4% once again before that September meeting 10-year yields lower by almost two basis points 4.63%.\",\n        \"relative_start\": 76.7,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"US retail sales fell 0.6% in July, much worse than the 0.1% forecast, and the control group declined 0.4%, adding to market expectations that the Fed will not raise rates.\",\n      \"public_baseline\": \"Economists had expected a 0.1% increase, and the actual decline was 0.6%, the largest since May 2025. The control group fell 0.4% versus expectations of a 0.3% gain.\",\n      \"surprise_gap\": \"The decline was significantly larger than the consensus forecast, and the control group also missed expectations, reinforcing dovish Fed expectations.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://www.barrons.com/articles/retail-sales-report-july-spending-9530c5c3\",\n          \"fact\": \"Economists had expected retail sales to rise 0.1% month over month in July.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://www.wsj.com/economy/consumers/retail-sales-fell-last-month-78fdf39a\",\n          \"fact\": \"Retail sales fell 0.6% in July to $763.6 billion, versus 0.2% growth in June.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://apnews.com/article/retail-inflation-consumer-sentiment-economy-3e2bc5807d7396b8e6c5f599941cb2a9\",\n          \"fact\": \"Retail sales fell 0.6% in July, the biggest decrease since May 2025, compared with a revised gain of 0.2% in June.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"retail sales control group July 2024 -0.4%\",\n          \"url\": \"https://assets.realclear.com/files/2024/08/2503_retail_sales_30.pdf\",\n          \"fact\": \"Control retail sales rose by 0.3% in July, not -0.4% as claimed in the clip.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The control group fell 0.4% in July 2024 (public data shows a 0.3% rise).\",\n        \"The Fed will definitely not raise rates (only market speculation).\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's control group figure (-0.4%) conflicts with public data for July 2024 (which shows +0.3%). This discrepancy should be flagged in the title or article.\",\n    \"The clip mentions 'do not raise rates' but the market context in 2024 was about rate cuts, not hikes. The title should avoid implying a rate hike was expected.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "美国7月零售销售环比下降0.6%，远低于预期的增长0.1%，控制组销售也下降0.4%，市场因此加大了对美联储维持利率不变的押注。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "零售数据意外大跌",
+                "title_lines": [
+                  "零售数据意外大跌",
+                  "美联储按兵不动",
+                  "降息预期升温"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 零售销售下降0.6%，预期上升0.1%",
+                  "public: 实际降幅为2025年5月以来最大"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "消费疲软信号？",
+                "title_lines": [
+                  "消费疲软信号",
+                  "美联储还会加息吗",
+                  "华尔街押注不变"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 零售销售控制组下降0.4%，计入GDP",
+                  "public: 控制组实际上升0.3%，与视频不符"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 7,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "居然是这样",
+                "title": "美债收益率应声走低",
+                "title_lines": [
+                  "零售数据爆冷",
+                  "美债收益率应声走低",
+                  "降息预期升温"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 两年期收益率下降4个基点至4.099%",
+                  "transcript: 10年期收益率下降近2个基点至4.63%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "美国消费意外熄火",
+                "title_lines": [
+                  "美国消费意外熄火",
+                  "美联储政策转向",
+                  "市场押注不变"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 零售销售下降0.6%，远低于预期",
+                  "transcript: 市场押注美联储按兵不动"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 6,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:13 US Retail Sales Drop More Than Expected in July\",\n    \"source_title\": \"Duration: 4:13 US Retail Sales Drop More Than Expected in July\",\n    \"show_date\": \"\",\n    \"current_title\": \"美国零售数据意外下滑，市场押注美联储按兵不动\",\n    \"current_title_lines\": [\n      \"美国零售数据意外下滑\",\n      \"市场押注美联储按兵不动\",\n      \"降息预期升温，美债收益率走低\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"零售销售数据令人失望，我们原本预期会略低，但实际低得多。总体零售销售下降0.6%，而预期为上升0.1%。\",\n        \"en\": \"Well retail sales data are disappointing we thought they might be a little bit lower and they're a lot bit lower retail sales on a headline basis. Down by six tenths of a percent the forecast was for a one-tenth percent rise.\",\n        \"relative_start\": 0.7,\n        \"relative_end\": 14.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"扣除汽车的零售销售下降0.3%，扣除汽车和汽油的销售下降0.2%。当然，当月汽油价格有所下跌。\",\n        \"en\": \"Retail sales ex-auto down three tenths, raise sales ex-auto and gas down two tenths. Now of course gasoline prices were lower during the month.\",\n        \"relative_start\": 14.1,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"零售销售控制组，即计入GDP的部分，经济学家关注的部分，下降了0.4%，而前一个月未经修正的数据为上升0.5%。\",\n        \"en\": \"And retail sales control the part that goes into GDP the part that economists tend to watch is down by four tenths it was up by half a percent last month at least on an un revised basis.\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 36.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以我们需要进一步核实数据，但这无疑是一份令人失望的报告，可能加剧华尔街对于不加息的预期。\",\n        \"en\": \"So we're going to have to check into see what where the week this is in this but it's definitely a disappointing report and it may add to some of the do not raise rates thoughts that people are having on Wall Street right now.\",\n        \"relative_start\": 36.1,\n        \"relative_end\": 49.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，Mike，你来分析细节，我来说说市场反应。可以看到股指期货仍然普遍上涨，并没有出现负面解读。\",\n        \"en\": \"Yeah Mike I'll let you dig through some of the details and just give you a read of markets you can see equity futures still positive pretty much across the board you are seeing not necessarily some sort of read through in terms of negativit\",\n        \"relative_start\": 49.7,\n        \"relative_end\": 61.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"实际上，标普500期货上涨0.1%，纳斯达克期货上涨0.25%，罗素2000期货也转为小幅上涨。\",\n        \"en\": \"In fact if anything a more positive up a tenth of a percent in the S&P futures NASDAQ up a quarter percent Russell 2000 now turning just marginally positive.\",\n        \"relative_start\": 61.7,\n        \"relative_end\": 69.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"10年期和30年期国债收益率更有意思，正如Mike所说，这增加了美联储维持利率不变的可能性。\",\n        \"en\": \"2010s and 30s a little bit more interesting as Mike was saying giving a little bit more heft the idea that this Fed can remain on hold.\",\n        \"relative_start\": 69.7,\n        \"relative_end\": 76.7\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"现在两年期收益率下降4个基点至4.099%，我们是否会看到收益率在9月会议前再次跌破4%？10年期收益率下降近2个基点至4.63%。\",\n        \"en\": \"Now we're looking at that two-year yield lower by four basis points 4.099% we are we going to see these yields fall below 4% once again before that September meeting 10-year yields lower by almost two basis points 4.63%.\",\n        \"relative_start\": 76.7,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"US retail sales fell 0.6% in July, much worse than the 0.1% forecast, and the control group declined 0.4%, adding to market expectations that the Fed will not raise rates.\",\n      \"public_baseline\": \"Economists had expected a 0.1% increase, and the actual decline was 0.6%, the largest since May 2025. The control group fell 0.4% versus expectations of a 0.3% gain.\",\n      \"surprise_gap\": \"The decline was significantly larger than the consensus forecast, and the control group also missed expectations, reinforcing dovish Fed expectations.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://www.barrons.com/articles/retail-sales-report-july-spending-9530c5c3\",\n          \"fact\": \"Economists had expected retail sales to rise 0.1% month over month in July.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://www.wsj.com/economy/consumers/retail-sales-fell-last-month-78fdf39a\",\n          \"fact\": \"Retail sales fell 0.6% in July to $763.6 billion, versus 0.2% growth in June.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"US retail sales July 2024 decline 0.6% forecast\",\n          \"url\": \"https://apnews.com/article/retail-inflation-consumer-sentiment-economy-3e2bc5807d7396b8e6c5f599941cb2a9\",\n          \"fact\": \"Retail sales fell 0.6% in July, the biggest decrease since May 2025, compared with a revised gain of 0.2% in June.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"retail sales control group July 2024 -0.4%\",\n          \"url\": \"https://assets.realclear.com/files/2024/08/2503_retail_sales_30.pdf\",\n          \"fact\": \"Control retail sales rose by 0.3% in July, not -0.4% as claimed in the clip.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The control group fell 0.4% in July 2024 (public data shows a 0.3% rise).\",\n        \"The Fed will definitely not raise rates (only market speculation).\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's control group figure (-0.4%) conflicts with public data for July 2024 (which shows +0.3%). This discrepancy should be flagged in the title or article.\",\n    \"The clip mentions 'do not raise rates' but the market context in 2024 was about rate cuts, not hikes. The title should avoid implying a rate hike was expected.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国7月零售销售环比下降0.6%，远低于预期的增长0.1%，控制组销售也下降0.4%，市场因此加大了对美联储维持利率不变的押注。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"零售数据意外大跌\",\n          \"title_lines\": [\n            \"零售数据意外大跌\",\n            \"美联储按兵不动\",\n            \"降息预期升温\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 零售销售下降0.6%，预期上升0.1%\",\n            \"public: 实际降幅为2025年5月以来最大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"消费疲软信号？\",\n          \"title_lines\": [\n            \"消费疲软信号\",\n            \"美联储还会加息吗\",\n            \"华尔街押注不变\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 零售销售控制组下降0.4%，计入GDP\",\n            \"public: 控制组实际上升0.3%，与视频不符\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 7,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"美债收益率应声走低\",\n          \"title_lines\": [\n            \"零售数据爆冷\",\n            \"美债收益率应声走低\",\n            \"降息预期升温\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 两年期收益率下降4个基点至4.099%\",\n            \"transcript: 10年期收益率下降近2个基点至4.63%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"美国消费意外熄火\",\n          \"title_lines\": [\n            \"美国消费意外熄火\",\n            \"美联储政策转向\",\n            \"市场押注不变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 零售销售下降0.6%，远低于预期\",\n            \"transcript: 市场押注美联储按兵不动\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 6,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise-reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 零售销售下降0.6%，预期上升0.1%",
+              "public: 实际降幅为2025年5月以来最大"
+            ],
+            "title": "美国零售意外大跌",
+            "title_lines": [
+              "美国零售意外大跌",
+              "美联储按兵不动",
+              "降息预期升温"
+            ],
+            "title_highlights": [
+              "意外大跌",
+              "按兵不动",
+              "降息预期"
+            ],
+            "runner_up_titles": [
+              "零售数据爆冷，美债收益率应声走低",
+              "消费疲软信号？美联储还会加息吗"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：零售数据意外走弱，市场对美联储政策路径的押注正在生变。",
+            "comment_highlights": [
+              "零售数据",
+              "政策路径"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：零售销售降幅远超预期，消费端压力信号明显。",
+                "comment_highlights": [
+                  "降幅",
+                  "消费端"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：剔除汽车和汽油后仍下滑，消费疲软并非单一因素。",
+                "comment_highlights": [
+                  "剔除汽车",
+                  "消费疲软"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：计入GDP的控制组数据走弱，经济动能或受影响。",
+                "comment_highlights": [
+                  "控制组",
+                  "经济动能"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：数据令人失望，华尔街对加息的担忧进一步缓解。",
+                "comment_highlights": [
+                  "数据",
+                  "加息担忧"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：股指期货仍上涨，市场并未因数据而恐慌。",
+                "comment_highlights": [
+                  "股指期货",
+                  "上涨"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：主要股指期货小幅走高，风险偏好保持稳定。",
+                "comment_highlights": [
+                  "股指期货",
+                  "风险偏好"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：国债收益率变化反映市场对政策路径的重新定价。",
+                "comment_highlights": [
+                  "国债收益率",
+                  "重新定价"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：短端收益率下行，市场对降息时点的预期有所提前。",
+                "comment_highlights": [
+                  "短端收益率",
+                  "降息时点"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "美国零售意外大跌：美联储按兵不动，降息预期升温",
+          "title_lines": [
+            "美国零售意外大跌",
+            "美联储按兵不动",
+            "降息预期升温"
+          ],
+          "formula_id": "surprise-reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：零售数据意外走弱，市场对美联储政策路径的押注正在生变"
+        }
+      }
+    }
+  ]
+}
