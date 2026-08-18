@@ -1,0 +1,1220 @@
+{
+  "timestamp_utc": "2026-08-18T22:34:25.810262+00:00",
+  "plan_path": "work/top-videos/02_fed_should_just_hike_and_move_on_with_it_jpm_s_herr/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Kay Herr",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Kay Herr",
+        "preferred_en": "Kay Herr",
+        "official_zh": "",
+        "common_zh": "凯·赫尔",
+        "title_label": "凯·赫尔",
+        "preferred_zh": "凯·赫尔",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg video title and JPMorgan official team page confirm Kay Herr as US GFICC CIO at JPMorgan Asset Management."
+      },
+      {
+        "source_text": "JPMorgan Asset Management",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "JPMorgan Asset Management",
+        "preferred_en": "JPMorgan Asset Management",
+        "official_zh": "摩根资产管理",
+        "common_zh": "摩根大通资产管理",
+        "title_label": "摩根大通",
+        "preferred_zh": "摩根大通资产管理",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official JPMorgan page and Bloomberg video confirm entity; Chinese media commonly use 摩根大通 for JPMorgan."
+      },
+      {
+        "source_text": "Federal Reserve",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve",
+        "preferred_en": "Federal Reserve",
+        "official_zh": "美国联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official Fed site and Investopedia confirm entity; Chinese media universally use 美联储."
+      },
+      {
+        "source_text": "Kevin Warsh",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Kevin Warsh",
+        "preferred_en": "Kevin Warsh",
+        "official_zh": "",
+        "common_zh": "凯文·沃什",
+        "title_label": "沃什",
+        "preferred_zh": "凯文·沃什",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Public snippets mention Kevin Warsh in Fed context; Chinese media commonly use 沃什."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "forward guidance",
+        "clip_indexes": [],
+        "context": "Federal Reserve monetary policy communication",
+        "sense": "central bank communication about future policy intentions",
+        "preferred_zh": "前瞻性指引",
+        "title_label": "前瞻指引",
+        "avoid_zh": [
+          "前瞻指导"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "long end",
+        "clip_indexes": [],
+        "context": "Treasury yield curve",
+        "sense": "long-term maturity bonds, typically 10-year and 30-year",
+        "preferred_zh": "长端收益率",
+        "title_label": "长端",
+        "avoid_zh": [
+          "长期端"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "I don't think it matters what the Fed does. You know we've had a view that the Fed's on hold. You know what at this point I'm like go ahead just hike and move on with it.",
+        "public_baseline": "JPMorgan Asset Management's Kay Herr is a fixed income CIO; her comments reflect market concerns about Fed's lack of forward guidance and long-end yield backup.",
+        "surprise_gap": "The claim that the Fed should 'just hike and move on' is a direct, somewhat impatient stance from a major asset manager, contrasting with typical cautious commentary.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Herr says 'I don't think it matters what the Fed does' and 'just hike and move on with it'."
+          },
+          {
+            "kind": "public",
+            "query": "JPMorgan Herr Fed hike move on with it",
+            "url": "https://www.bloomberg.com/news/videos/2026-08-18/fed-should-just-hike-and-move-on-with-it-jpm-s-herr-video",
+            "fact": "Bloomberg video title confirms Herr's quote and stance."
+          },
+          {
+            "kind": "public",
+            "query": "Michael Herr JPMorgan chief global strategist Fed",
+            "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/media/global-fixed-income-currency-and-commodities-team",
+            "fact": "JPMorgan official page confirms Kay Herr's role as US GFICC CIO."
+          }
+        ],
+        "forbidden_claims": [
+          "Herr represents JPMorgan's official stance",
+          "Herr changed his position on Fed policy",
+          "Herr is criticizing the Fed's credibility"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "Kay Herr is female; use 她 in Chinese titles if needed.",
+      "The clip mentions 'Warsh' but not in a way that establishes a direct quote; treat as a reference to Fed leadership."
+    ],
+    "research_queries": [
+      {
+        "query": "JPMorgan Herr Fed hike move on with it",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact quote and stance of JPMorgan's Herr on Fed rate hike."
+      },
+      {
+        "query": "Michael Herr JPMorgan chief global strategist Fed",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the full name and title of the JPMorgan strategist."
+      },
+      {
+        "query": "Fed forward guidance market reaction long end",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the general market view on Fed forward guidance and long-end yields."
+      },
+      {
+        "query": "JPMorgan Fed rate hike forecast 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check JPMorgan's official stance on Fed rate hikes to see if Herr's comment aligns."
+      },
+      {
+        "query": "Warsh Fed chair candidate long end influence",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify Warsh and his potential influence on long-term rates."
+      },
+      {
+        "query": "Fed minutes dissenters three",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the context of three dissenters in Fed minutes."
+      },
+      {
+        "query": "Bloomberg Fed Should established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Fed Should 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Just Hike and Move 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "With It 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 10,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-08-18T22:34:22.967217+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr",
+          "source_title": "Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr",
+          "show_date": "",
+          "current_title": "美联储该加息就加息？摩根大通策略师：别拖了",
+          "current_title_lines": [
+            "摩根大通策略师喊话美联储",
+            "加息宜早不宜迟 别拖了",
+            "市场缺指引 长端利率压力大"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "市场担心什么？美联储的反应机制如何？",
+              "en": "What markets are worried about, what's the reaction function of the Fed?",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "市场不喜欢缺乏前瞻指引。",
+              "en": "Market doesn't really love the fact that we don't have forward guidance.",
+              "relative_start": 3.4,
+              "relative_end": 6.9
+            },
+            {
+              "index": 3,
+              "zh": "有趣的是，上周我休假时，两年期国债上涨，而30年期持续下跌，还有软件CPI数据。",
+              "en": "And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had",
+              "relative_start": 6.9,
+              "relative_end": 18.5
+            },
+            {
+              "index": 4,
+              "zh": "还有软件就业数据，我认为美联储做什么并不重要。",
+              "en": "a software employment number, and, you know, I don't think it matters what the Fed does.",
+              "relative_start": 18.5,
+              "relative_end": 24.3
+            },
+            {
+              "index": 5,
+              "zh": "我们一直认为美联储按兵不动，但现在我觉得，干脆加息吧，因为长端利率在上升。",
+              "en": "You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,",
+              "relative_start": 24.3,
+              "relative_end": 32.9
+            },
+            {
+              "index": 6,
+              "zh": "他们几乎在逼他加息。你认为他们对长端利率有多大影响？",
+              "en": "and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?",
+              "relative_start": 32.9,
+              "relative_end": 38.7
+            },
+            {
+              "index": 7,
+              "zh": "这正是问题所在：市场在缺乏前瞻指引和通胀政策清晰度的情况下担忧。",
+              "en": "Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and",
+              "relative_start": 38.7,
+              "relative_end": 49.6
+            },
+            {
+              "index": 8,
+              "zh": "关于美联储如何定义通胀的担忧，两年期上涨让人以为下月不会加息，但长端因担忧而上升。",
+              "en": "the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,",
+              "relative_start": 49.6,
+              "relative_end": 61.1
+            },
+            {
+              "index": 9,
+              "zh": "长端上升正是出于这些担忧。",
+              "en": "but the long end comes up, because of concerns about that.",
+              "relative_start": 61.1,
+              "relative_end": 65.2
+            },
+            {
+              "index": 10,
+              "zh": "我认为沃什有能力，本周美联储会议纪要将显示三位反对者的情况。",
+              "en": "And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people",
+              "relative_start": 65.2,
+              "relative_end": 74.4
+            },
+            {
+              "index": 11,
+              "zh": "那些认为今年利率会更高、应该在今年某个时候加息的人，他们的构成是怎样的？",
+              "en": "who thought that rates will be higher this year, that they should hike sometime this year, what is the composition of that?",
+              "relative_start": 74.4,
+              "relative_end": 81.6
+            },
+            {
+              "index": 12,
+              "zh": "这些人是明年加入FOMC并成为投票委员的联储主席吗？",
+              "en": "Are those Fed presidents that are coming on to the committee FOMC as voting members next year?",
+              "relative_start": 81.6,
+              "relative_end": 86.8
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"source_title\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"show_date\": \"\",\n    \"current_title\": \"美联储该加息就加息？摩根大通策略师：别拖了\",\n    \"current_title_lines\": [\n      \"摩根大通策略师喊话美联储\",\n      \"加息宜早不宜迟 别拖了\",\n      \"市场缺指引 长端利率压力大\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"市场担心什么？美联储的反应机制如何？\",\n        \"en\": \"What markets are worried about, what's the reaction function of the Fed?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场不喜欢缺乏前瞻指引。\",\n        \"en\": \"Market doesn't really love the fact that we don't have forward guidance.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 6.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有趣的是，上周我休假时，两年期国债上涨，而30年期持续下跌，还有软件CPI数据。\",\n        \"en\": \"And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had\",\n        \"relative_start\": 6.9,\n        \"relative_end\": 18.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"还有软件就业数据，我认为美联储做什么并不重要。\",\n        \"en\": \"a software employment number, and, you know, I don't think it matters what the Fed does.\",\n        \"relative_start\": 18.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们一直认为美联储按兵不动，但现在我觉得，干脆加息吧，因为长端利率在上升。\",\n        \"en\": \"You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 32.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他们几乎在逼他加息。你认为他们对长端利率有多大影响？\",\n        \"en\": \"and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?\",\n        \"relative_start\": 32.9,\n        \"relative_end\": 38.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这正是问题所在：市场在缺乏前瞻指引和通胀政策清晰度的情况下担忧。\",\n        \"en\": \"Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and\",\n        \"relative_start\": 38.7,\n        \"relative_end\": 49.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"关于美联储如何定义通胀的担忧，两年期上涨让人以为下月不会加息，但长端因担忧而上升。\",\n        \"en\": \"the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,\",\n        \"relative_start\": 49.6,\n        \"relative_end\": 61.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"长端上升正是出于这些担忧。\",\n        \"en\": \"but the long end comes up, because of concerns about that.\",\n        \"relative_start\": 61.1,\n        \"relative_end\": 65.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我认为沃什有能力，本周美联储会议纪要将显示三位反对者的情况。\",\n        \"en\": \"And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people\",\n        \"relative_start\": 65.2,\n        \"relative_end\": 74.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那些认为今年利率会更高、应该在今年某个时候加息的人，他们的构成是怎样的？\",\n        \"en\": \"who thought that rates will be higher this year, that they should hike sometime this year, what is the composition of that?\",\n        \"relative_start\": 74.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这些人是明年加入FOMC并成为投票委员的联储主席吗？\",\n        \"en\": \"Are those Fed presidents that are coming on to the committee FOMC as voting members next year?\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"I don't think it matters what the Fed does. You know we've had a view that the Fed's on hold. You know what at this point I'm like go ahead just hike and move on with it.\",\n      \"public_baseline\": \"JPMorgan Asset Management's Kay Herr is a fixed income CIO; her comments reflect market concerns about Fed's lack of forward guidance and long-end yield backup.\",\n      \"surprise_gap\": \"The claim that the Fed should 'just hike and move on' is a direct, somewhat impatient stance from a major asset manager, contrasting with typical cautious commentary.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Herr says 'I don't think it matters what the Fed does' and 'just hike and move on with it'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"JPMorgan Herr Fed hike move on with it\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-08-18/fed-should-just-hike-and-move-on-with-it-jpm-s-herr-video\",\n          \"fact\": \"Bloomberg video title confirms Herr's quote and stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michael Herr JPMorgan chief global strategist Fed\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/institutional/media/global-fixed-income-currency-and-commodities-team\",\n          \"fact\": \"JPMorgan official page confirms Kay Herr's role as US GFICC CIO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Herr represents JPMorgan's official stance\",\n        \"Herr changed his position on Fed policy\",\n        \"Herr is criticizing the Fed's credibility\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"Kay Herr is female; use 她 in Chinese titles if needed.\",\n    \"The clip mentions 'Warsh' but not in a way that establishes a direct quote; treat as a reference to Fed leadership.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "摩根大通全球固定收益首席投资官Kay Herr表示，美联储缺乏前瞻指引，长端利率上行压力大，她认为美联储不如干脆加息然后继续前进。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说出了市场的心里话",
+                "title": "摩根大通首席：美联储别拖了，直接加息",
+                "title_lines": [
+                  "摩根大通首席",
+                  "喊话美联储",
+                  "别拖了直接加息"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Herr说'go ahead, just hike and move on with it'",
+                  "public: Bloomberg视频标题确认此立场"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "为什么长端利率在涨？",
+                "title": "市场逼美联储加息？长端利率为何持续上行",
+                "title_lines": [
+                  "市场逼美联储",
+                  "加息？",
+                  "长端利率为何上行"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升",
+                  "transcript: 两年期上涨但30年期持续下跌"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然有机构建议美联储加息",
+                "title": "摩根大通罕见建议：美联储该加息就加息",
+                "title_lines": [
+                  "摩根大通罕见建议",
+                  "美联储",
+                  "该加息就加息"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Herr说'go ahead, just hike and move on with it'",
+                  "public: Bloomberg视频标题确认"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "美联储按兵不动，但市场却逼它加息？",
+                "title": "美联储按兵不动，市场却逼它加息？",
+                "title_lines": [
+                  "美联储按兵不动",
+                  "市场却逼它加息？",
+                  "长端利率给出答案"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升",
+                  "transcript: Herr说'go ahead, just hike and move on with it'"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"source_title\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"show_date\": \"\",\n    \"current_title\": \"美联储该加息就加息？摩根大通策略师：别拖了\",\n    \"current_title_lines\": [\n      \"摩根大通策略师喊话美联储\",\n      \"加息宜早不宜迟 别拖了\",\n      \"市场缺指引 长端利率压力大\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"市场担心什么？美联储的反应机制如何？\",\n        \"en\": \"What markets are worried about, what's the reaction function of the Fed?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场不喜欢缺乏前瞻指引。\",\n        \"en\": \"Market doesn't really love the fact that we don't have forward guidance.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 6.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有趣的是，上周我休假时，两年期国债上涨，而30年期持续下跌，还有软件CPI数据。\",\n        \"en\": \"And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had\",\n        \"relative_start\": 6.9,\n        \"relative_end\": 18.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"还有软件就业数据，我认为美联储做什么并不重要。\",\n        \"en\": \"a software employment number, and, you know, I don't think it matters what the Fed does.\",\n        \"relative_start\": 18.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们一直认为美联储按兵不动，但现在我觉得，干脆加息吧，因为长端利率在上升。\",\n        \"en\": \"You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 32.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他们几乎在逼他加息。你认为他们对长端利率有多大影响？\",\n        \"en\": \"and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?\",\n        \"relative_start\": 32.9,\n        \"relative_end\": 38.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这正是问题所在：市场在缺乏前瞻指引和通胀政策清晰度的情况下担忧。\",\n        \"en\": \"Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and\",\n        \"relative_start\": 38.7,\n        \"relative_end\": 49.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"关于美联储如何定义通胀的担忧，两年期上涨让人以为下月不会加息，但长端因担忧而上升。\",\n        \"en\": \"the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,\",\n        \"relative_start\": 49.6,\n        \"relative_end\": 61.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"长端上升正是出于这些担忧。\",\n        \"en\": \"but the long end comes up, because of concerns about that.\",\n        \"relative_start\": 61.1,\n        \"relative_end\": 65.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我认为沃什有能力，本周美联储会议纪要将显示三位反对者的情况。\",\n        \"en\": \"And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people\",\n        \"relative_start\": 65.2,\n        \"relative_end\": 74.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那些认为今年利率会更高、应该在今年某个时候加息的人，他们的构成是怎样的？\",\n        \"en\": \"who thought that rates will be higher this year, that they should hike sometime this year, what is the composition of that?\",\n        \"relative_start\": 74.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这些人是明年加入FOMC并成为投票委员的联储主席吗？\",\n        \"en\": \"Are those Fed presidents that are coming on to the committee FOMC as voting members next year?\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"I don't think it matters what the Fed does. You know we've had a view that the Fed's on hold. You know what at this point I'm like go ahead just hike and move on with it.\",\n      \"public_baseline\": \"JPMorgan Asset Management's Kay Herr is a fixed income CIO; her comments reflect market concerns about Fed's lack of forward guidance and long-end yield backup.\",\n      \"surprise_gap\": \"The claim that the Fed should 'just hike and move on' is a direct, somewhat impatient stance from a major asset manager, contrasting with typical cautious commentary.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Herr says 'I don't think it matters what the Fed does' and 'just hike and move on with it'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"JPMorgan Herr Fed hike move on with it\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-08-18/fed-should-just-hike-and-move-on-with-it-jpm-s-herr-video\",\n          \"fact\": \"Bloomberg video title confirms Herr's quote and stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michael Herr JPMorgan chief global strategist Fed\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/institutional/media/global-fixed-income-currency-and-commodities-team\",\n          \"fact\": \"JPMorgan official page confirms Kay Herr's role as US GFICC CIO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Herr represents JPMorgan's official stance\",\n        \"Herr changed his position on Fed policy\",\n        \"Herr is criticizing the Fed's credibility\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"Kay Herr is female; use 她 in Chinese titles if needed.\",\n    \"The clip mentions 'Warsh' but not in a way that establishes a direct quote; treat as a reference to Fed leadership.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"摩根大通全球固定收益首席投资官Kay Herr表示，美联储缺乏前瞻指引，长端利率上行压力大，她认为美联储不如干脆加息然后继续前进。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说出了市场的心里话\",\n          \"title\": \"摩根大通首席：美联储别拖了，直接加息\",\n          \"title_lines\": [\n            \"摩根大通首席\",\n            \"喊话美联储\",\n            \"别拖了直接加息\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Herr说'go ahead, just hike and move on with it'\",\n            \"public: Bloomberg视频标题确认此立场\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"为什么长端利率在涨？\",\n          \"title\": \"市场逼美联储加息？长端利率为何持续上行\",\n          \"title_lines\": [\n            \"市场逼美联储\",\n            \"加息？\",\n            \"长端利率为何上行\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升\",\n            \"transcript: 两年期上涨但30年期持续下跌\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然有机构建议美联储加息\",\n          \"title\": \"摩根大通罕见建议：美联储该加息就加息\",\n          \"title_lines\": [\n            \"摩根大通罕见建议\",\n            \"美联储\",\n            \"该加息就加息\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Herr说'go ahead, just hike and move on with it'\",\n            \"public: Bloomberg视频标题确认\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"美联储按兵不动，但市场却逼它加息？\",\n          \"title\": \"美联储按兵不动，市场却逼它加息？\",\n          \"title_lines\": [\n            \"美联储按兵不动\",\n            \"市场却逼它加息？\",\n            \"长端利率给出答案\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升\",\n            \"transcript: Herr说'go ahead, just hike and move on with it'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority-candor",
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "viewer_reaction": "终于有人说出了市场的心里话",
+            "evidence_basis": [
+              "transcript: Herr说'go ahead, just hike and move on with it'",
+              "public: Bloomberg视频标题确认此立场"
+            ],
+            "title": "摩根大通首席：美联储别拖了，直接加息",
+            "title_lines": [
+              "摩根大通首席",
+              "喊话美联储",
+              "别拖了直接加息"
+            ],
+            "title_highlights": [
+              "摩根大通首席",
+              "美联储",
+              "别拖了直接加息"
+            ],
+            "runner_up_titles": [
+              "市场逼美联储加息？长端利率为何持续上行",
+              "美联储按兵不动，市场却逼它加息？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：摩根大通首席直言美联储缺乏前瞻指引，长端利率上行压力大，市场正等待明确信号。",
+            "comment_highlights": [
+              "摩根大通首席",
+              "前瞻指引",
+              "长端利率"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：市场担忧美联储反应机制，缺乏清晰指引。",
+                "comment_highlights": [
+                  "市场担忧",
+                  "美联储反应机制"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：市场不喜欢缺乏前瞻指引，不确定性推升波动。",
+                "comment_highlights": [
+                  "前瞻指引",
+                  "不确定性"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：两年期与30年期分化，反映市场对通胀和政策的担忧。",
+                "comment_highlights": [
+                  "两年期",
+                  "30年期",
+                  "分化"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：摩根大通首席认为美联储行动与否并非关键，市场已自行定价。",
+                "comment_highlights": [
+                  "摩根大通首席",
+                  "市场自行定价"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：她建议干脆加息并继续前进，因长端利率上行压力大。",
+                "comment_highlights": [
+                  "加息",
+                  "长端利率上行"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：市场几乎在逼美联储加息，但长端利率影响有限。",
+                "comment_highlights": [
+                  "市场逼美联储",
+                  "长端利率"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：缺乏前瞻指引和通胀政策清晰度，市场担忧加剧。",
+                "comment_highlights": [
+                  "前瞻指引",
+                  "通胀政策清晰度"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：两年期上涨暗示不加息预期，但长端因担忧而上升。",
+                "comment_highlights": [
+                  "两年期上涨",
+                  "长端上升"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：长端利率上升正是市场对通胀和政策不确定性的定价。",
+                "comment_highlights": [
+                  "长端利率",
+                  "不确定性"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：本周美联储会议纪要或揭示内部反对加息的声音。",
+                "comment_highlights": [
+                  "美联储会议纪要",
+                  "反对加息"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：关注今年支持加息的委员构成，或影响未来政策路径。",
+                "comment_highlights": [
+                  "委员构成",
+                  "政策路径"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：明年FOMC投票委员变化可能改变加息节奏。",
+                "comment_highlights": [
+                  "FOMC",
+                  "投票委员",
+                  "加息节奏"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"source_title\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n    \"show_date\": \"\",\n    \"current_title\": \"美联储该加息就加息？摩根大通策略师：别拖了\",\n    \"current_title_lines\": [\n      \"摩根大通策略师喊话美联储\",\n      \"加息宜早不宜迟 别拖了\",\n      \"市场缺指引 长端利率压力大\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"市场担心什么？美联储的反应机制如何？\",\n        \"en\": \"What markets are worried about, what's the reaction function of the Fed?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场不喜欢缺乏前瞻指引。\",\n        \"en\": \"Market doesn't really love the fact that we don't have forward guidance.\",\n        \"relative_start\": 3.4,\n        \"relative_end\": 6.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有趣的是，上周我休假时，两年期国债上涨，而30年期持续下跌，还有软件CPI数据。\",\n        \"en\": \"And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had\",\n        \"relative_start\": 6.9,\n        \"relative_end\": 18.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"还有软件就业数据，我认为美联储做什么并不重要。\",\n        \"en\": \"a software employment number, and, you know, I don't think it matters what the Fed does.\",\n        \"relative_start\": 18.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们一直认为美联储按兵不动，但现在我觉得，干脆加息吧，因为长端利率在上升。\",\n        \"en\": \"You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 32.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他们几乎在逼他加息。你认为他们对长端利率有多大影响？\",\n        \"en\": \"and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?\",\n        \"relative_start\": 32.9,\n        \"relative_end\": 38.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这正是问题所在：市场在缺乏前瞻指引和通胀政策清晰度的情况下担忧。\",\n        \"en\": \"Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and\",\n        \"relative_start\": 38.7,\n        \"relative_end\": 49.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"关于美联储如何定义通胀的担忧，两年期上涨让人以为下月不会加息，但长端因担忧而上升。\",\n        \"en\": \"the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,\",\n        \"relative_start\": 49.6,\n        \"relative_end\": 61.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"长端上升正是出于这些担忧。\",\n        \"en\": \"but the long end comes up, because of concerns about that.\",\n        \"relative_start\": 61.1,\n        \"relative_end\": 65.2\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我认为沃什有能力，本周美联储会议纪要将显示三位反对者的情况。\",\n        \"en\": \"And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people\",\n        \"relative_start\": 65.2,\n        \"relative_end\": 74.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那些认为今年利率会更高、应该在今年某个时候加息的人，他们的构成是怎样的？\",\n        \"en\": \"who thought that rates will be higher this year, that they should hike sometime this year, what is the composition of that?\",\n        \"relative_start\": 74.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这些人是明年加入FOMC并成为投票委员的联储主席吗？\",\n        \"en\": \"Are those Fed presidents that are coming on to the committee FOMC as voting members next year?\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"I don't think it matters what the Fed does. You know we've had a view that the Fed's on hold. You know what at this point I'm like go ahead just hike and move on with it.\",\n      \"public_baseline\": \"JPMorgan Asset Management's Kay Herr is a fixed income CIO; her comments reflect market concerns about Fed's lack of forward guidance and long-end yield backup.\",\n      \"surprise_gap\": \"The claim that the Fed should 'just hike and move on' is a direct, somewhat impatient stance from a major asset manager, contrasting with typical cautious commentary.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Herr says 'I don't think it matters what the Fed does' and 'just hike and move on with it'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"JPMorgan Herr Fed hike move on with it\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-08-18/fed-should-just-hike-and-move-on-with-it-jpm-s-herr-video\",\n          \"fact\": \"Bloomberg video title confirms Herr's quote and stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michael Herr JPMorgan chief global strategist Fed\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/institutional/media/global-fixed-income-currency-and-commodities-team\",\n          \"fact\": \"JPMorgan official page confirms Kay Herr's role as US GFICC CIO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Herr represents JPMorgan's official stance\",\n        \"Herr changed his position on Fed policy\",\n        \"Herr is criticizing the Fed's credibility\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"Kay Herr is female; use 她 in Chinese titles if needed.\",\n    \"The clip mentions 'Warsh' but not in a way that establishes a direct quote; treat as a reference to Fed leadership.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"摩根大通全球固定收益首席投资官Kay Herr表示，美联储缺乏前瞻指引，长端利率上行压力大，她认为美联储不如干脆加息然后继续前进。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说出了市场的心里话\",\n          \"title\": \"摩根大通首席：美联储别拖了，直接加息\",\n          \"title_lines\": [\n            \"摩根大通首席\",\n            \"喊话美联储\",\n            \"别拖了直接加息\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Herr说'go ahead, just hike and move on with it'\",\n            \"public: Bloomberg视频标题确认此立场\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"为什么长端利率在涨？\",\n          \"title\": \"市场逼美联储加息？长端利率为何持续上行\",\n          \"title_lines\": [\n            \"市场逼美联储\",\n            \"加息？\",\n            \"长端利率为何上行\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升\",\n            \"transcript: 两年期上涨但30年期持续下跌\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然有机构建议美联储加息\",\n          \"title\": \"摩根大通罕见建议：美联储该加息就加息\",\n          \"title_lines\": [\n            \"摩根大通罕见建议\",\n            \"美联储\",\n            \"该加息就加息\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Herr说'go ahead, just hike and move on with it'\",\n            \"public: Bloomberg视频标题确认\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"美联储按兵不动，但市场却逼它加息？\",\n          \"title\": \"美联储按兵不动，市场却逼它加息？\",\n          \"title_lines\": [\n            \"美联储按兵不动\",\n            \"市场却逼它加息？\",\n            \"长端利率给出答案\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 市场在缺乏前瞻指引下担忧，长端因担忧而上升\",\n            \"transcript: Herr说'go ahead, just hike and move on with it'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"摩根大通首席：喊话美联储，别拖了直接加息\",\n      \"title_lines\": [\n        \"摩根大通首席\",\n        \"喊话美联储\",\n        \"别拖了直接加息\"\n      ],\n      \"title_highlights\": [\n        \"摩根大通首席\",\n        \"美联储\",\n        \"别拖了直接加息\"\n      ],\n      \"comment\": \"KC评论：摩根大通首席直言美联储缺乏前瞻指引，长端利率上行压力大\",\n      \"comment_highlights\": [\n        \"摩根大通首席\",\n        \"前瞻指引\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：市场担忧美联储反应机制，缺乏清晰指引\",\n          \"comment_highlights\": [\n            \"市场担忧\",\n            \"美联储反应机制\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：市场不喜欢缺乏前瞻指引，不确定性推升波动\",\n          \"comment_highlights\": [\n            \"前瞻指引\",\n            \"不确定性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：两年期与30年期分化，反映市场对通胀和政策的担忧\",\n          \"comment_highlights\": [\n            \"两年期\",\n            \"30年期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：摩根大通首席认为美联储行动与否并非关键，市场已自行定价\",\n          \"comment_highlights\": [\n            \"摩根大通首席\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：她建议干脆加息并继续前进，因长端利率上行压力大\",\n          \"comment_highlights\": [\n            \"加息\",\n            \"长端利率上行\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：市场几乎在逼美联储加息，但长端利率影响有限\",\n          \"comment_highlights\": [\n            \"长端利率\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：缺乏前瞻指引和通胀政策清晰度，市场担忧加剧\",\n          \"comment_highlights\": [\n            \"前瞻指引\",\n            \"通胀政策清晰度\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：两年期上涨暗示不加息预期，但长端因担忧而上升\",\n          \"comment_highlights\": [\n            \"两年期上涨\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：长端利率上升正是市场对通胀和政策不确定性的定价\",\n          \"comment_highlights\": [\n            \"长端利率\",\n            \"不确定性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：本周美联储会议纪要或揭示内部反对加息的声音\",\n          \"comment_highlights\": [\n            \"美联储会议纪要\",\n            \"反对加息\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：关注今年支持加息的委员构成，或影响未来政策路径\",\n          \"comment_highlights\": [\n            \"委员构成\",\n            \"政策路径\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：明年FOMC投票委员变化可能改变加息节奏\",\n          \"comment_highlights\": [\n            \"FOMC\",\n            \"投票委员\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority-candor\",\n      \"angle_id\": \"outsider_candor\",\n      \"emotion_pole\": \"终于有人说\",\n      \"viewer_reaction\": \"终于有人说出了市场的心里话\",\n      \"evidence_basis\": [\n        \"transcript: Herr说'go ahead, just hike and move on with it'\",\n        \"public: Bloomberg视频标题确认此立场\"\n      ],\n      \"runner_up_titles\": [\n        \"市场逼美联储加息？长端利率为何持续上行\",\n        \"美联储按兵不动，市场却逼它加息？\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:outsider_candor\",\n          \"emotion:终于有人说\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 7,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority-candor",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说出了市场的心里话",
+                "evidence_basis": [
+                  "transcript: Herr说'go ahead, just hike and move on with it'",
+                  "public: Bloomberg视频标题确认此立场"
+                ],
+                "title": "摩根大通首席：美联储别拖了，直接加息",
+                "title_lines": [
+                  "摩根大通首席",
+                  "喊话美联储",
+                  "别拖了直接加息"
+                ],
+                "title_highlights": [
+                  "摩根大通首席",
+                  "美联储",
+                  "别拖了直接加息"
+                ],
+                "runner_up_titles": [
+                  "市场逼美联储加息？长端利率为何持续上行",
+                  "美联储按兵不动，市场却逼它加息？"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：摩根大通首席直言美联储缺乏前瞻指引，长端利率上行压力大",
+                "comment_highlights": [
+                  "摩根大通首席",
+                  "前瞻指引"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：市场担忧美联储反应机制，缺乏清晰指引",
+                    "comment_highlights": [
+                      "市场担忧",
+                      "美联储反应机制"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：市场不喜欢缺乏前瞻指引，不确定性推升波动",
+                    "comment_highlights": [
+                      "前瞻指引",
+                      "不确定性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：两年期与30年期分化，反映市场对通胀和政策的担忧",
+                    "comment_highlights": [
+                      "两年期",
+                      "30年期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：摩根大通首席认为美联储行动与否并非关键，市场已自行定价",
+                    "comment_highlights": [
+                      "摩根大通首席"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：她建议干脆加息并继续前进，因长端利率上行压力大",
+                    "comment_highlights": [
+                      "加息",
+                      "长端利率上行"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：市场几乎在逼美联储加息，但长端利率影响有限",
+                    "comment_highlights": [
+                      "长端利率"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：缺乏前瞻指引和通胀政策清晰度，市场担忧加剧",
+                    "comment_highlights": [
+                      "前瞻指引",
+                      "通胀政策清晰度"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：两年期上涨暗示不加息预期，但长端因担忧而上升",
+                    "comment_highlights": [
+                      "两年期上涨"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：长端利率上升正是市场对通胀和政策不确定性的定价",
+                    "comment_highlights": [
+                      "长端利率",
+                      "不确定性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：本周美联储会议纪要或揭示内部反对加息的声音",
+                    "comment_highlights": [
+                      "美联储会议纪要",
+                      "反对加息"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：关注今年支持加息的委员构成，或影响未来政策路径",
+                    "comment_highlights": [
+                      "委员构成",
+                      "政策路径"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：明年FOMC投票委员变化可能改变加息节奏",
+                    "comment_highlights": [
+                      "FOMC",
+                      "投票委员"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "摩根大通首席：喊话美联储，别拖了直接加息",
+          "title_lines": [
+            "摩根大通首席",
+            "喊话美联储",
+            "别拖了直接加息"
+          ],
+          "formula_id": "authority-candor",
+          "angle_id": "outsider_candor",
+          "emotion_pole": "终于有人说",
+          "viewer_reaction": "终于有人说出了市场的心里话",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 7,
+            "factual_fidelity": 10,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:outsider_candor",
+              "emotion:终于有人说",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：摩根大通首席直言美联储缺乏前瞻指引，长端利率上行压力大"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-18T22:34:25.793907+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr",
+          "source_title": "Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr",
+          "show_date": "",
+          "current_title": "美联储该加息就加息？摩根大通策略师：别拖了",
+          "current_title_lines": [
+            "摩根大通策略师喊话美联储",
+            "加息宜早不宜迟 别拖了",
+            "市场缺指引 长端利率压力大"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "市场担心什么？美联储的反应机制如何？",
+              "en": "What markets are worried about, what's the reaction function of the Fed?",
+              "relative_start": 0.0,
+              "relative_end": 3.4
+            },
+            {
+              "index": 2,
+              "zh": "市场不喜欢缺乏前瞻指引。",
+              "en": "Market doesn't really love the fact that we don't have forward guidance.",
+              "relative_start": 3.4,
+              "relative_end": 6.9
+            },
+            {
+              "index": 3,
+              "zh": "有趣的是，上周我休假时，两年期国债上涨，而30年期持续下跌，还有软件CPI数据。",
+              "en": "And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had",
+              "relative_start": 6.9,
+              "relative_end": 18.5
+            },
+            {
+              "index": 4,
+              "zh": "还有软件就业数据，我认为美联储做什么并不重要。",
+              "en": "a software employment number, and, you know, I don't think it matters what the Fed does.",
+              "relative_start": 18.5,
+              "relative_end": 24.3
+            },
+            {
+              "index": 5,
+              "zh": "我们一直认为美联储按兵不动，但现在我觉得，干脆加息吧，因为长端利率在上升。",
+              "en": "You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,",
+              "relative_start": 24.3,
+              "relative_end": 32.9
+            },
+            {
+              "index": 6,
+              "zh": "他们几乎在逼他加息。你认为他们对长端利率有多大影响？",
+              "en": "and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?",
+              "relative_start": 32.9,
+              "relative_end": 38.7
+            },
+            {
+              "index": 7,
+              "zh": "这正是问题所在：市场在缺乏前瞻指引和通胀政策清晰度的情况下担忧。",
+              "en": "Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and",
+              "relative_start": 38.7,
+              "relative_end": 49.6
+            },
+            {
+              "index": 8,
+              "zh": "关于美联储如何定义通胀的担忧，两年期上涨让人以为下月不会加息，但长端因担忧而上升。",
+              "en": "the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,",
+              "relative_start": 49.6,
+              "relative_end": 61.1
+            },
+            {
+              "index": 9,
+              "zh": "长端上升正是出于这些担忧。",
+              "en": "but the long end comes up, because of concerns about that.",
+              "relative_start": 61.1,
+              "relative_end": 65.2
+            },
+            {
+              "index": 10,
+              "zh": "我认为沃什有能力，本周美联储会议纪要将显示三位反对者的情况。",
+              "en": "And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people",
+              "relative_start": 65.2,
+              "relative_end": 74.4
+            },
+            {
+              "index": 11,
+              "zh": "那些认为今年利率会更高、应该在今年某个时候加息的人，他们的构成是怎样的？",
+              "en": "who thought that rates will be higher this year, that they should hike sometime this year, what is the composition of that?",
+              "relative_start": 74.4,
+              "relative_end": 81.6
+            },
+            {
+              "index": 12,
+              "zh": "这些人是明年加入FOMC并成为投票委员的联储主席吗？",
+              "en": "Are those Fed presidents that are coming on to the committee FOMC as voting members next year?",
+              "relative_start": 81.6,
+              "relative_end": 86.8
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n  \"source_title\": \"Duration: 1:31 Fed Should ‘Just Hike and Move on With It,’ Says JPMorgan’s Herr\",\n  \"current_title\": \"美联储该加息就加息？摩根大通策略师：别拖了\",\n  \"source_claims\": [\n    \"What markets are worried about, what's the reaction function of the Fed?\",\n    \"Market doesn't really love the fact that we don't have forward guidance.\",\n    \"And what's interesting, I said, I was off last week, you saw, you got a rally in twos and a continued sell-off in the 30-year, on software data, we had software CPI data, we had\",\n    \"a software employment number, and, you know, I don't think it matters what the Fed does.\",\n    \"You know, we've had a view that the Fed's on hold, you know what, at this point I'm like, go ahead, just hike and move on with it, because you've got this, the long end backing up,\",\n    \"and they're almost trying to bully him into hiding it. How much influence do you think they have over the long end?\",\n    \"Well, I think that's exactly the problem, is that the markets are worrying in the absence of forward guidance, in the absence of clarity of what the Fed will do with inflation, and\",\n    \"the concerns about how the Fed's going to define inflation, you know, you get a rally in twos and think, okay, maybe the market's not going to, maybe we're not going to get a hike next month,\",\n    \"but the long end comes up, because of concerns about that.\",\n    \"And I think that, Warsh has it in his power, it'll be interesting this week, tomorrow, we'll have the Fed minutes, we'll be able to see, okay, the three dissenters, well, of the nine people\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"I don't think it matters what the Fed does. You know we've had a view that the Fed's on hold. You know what at this point I'm like go ahead just hike and move on with it.\",\n      \"public_baseline\": \"JPMorgan Asset Management's Kay Herr is a fixed income CIO; her comments reflect market concerns about Fed's lack of forward guidance and long-end yield backup.\",\n      \"surprise_gap\": \"The claim that the Fed should 'just hike and move on' is a direct, somewhat impatient stance from a major asset manager, contrasting with typical cautious commentary.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Herr says 'I don't think it matters what the Fed does' and 'just hike and move on with it'.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"JPMorgan Herr Fed hike move on with it\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-08-18/fed-should-just-hike-and-move-on-with-it-jpm-s-herr-video\",\n          \"fact\": \"Bloomberg video title confirms Herr's quote and stance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michael Herr JPMorgan chief global strategist Fed\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/institutional/media/global-fixed-income-currency-and-commodities-team\",\n          \"fact\": \"JPMorgan official page confirms Kay Herr's role as US GFICC CIO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Herr represents JPMorgan's official stance\",\n        \"Herr changed his position on Fed policy\",\n        \"Herr is criticizing the Fed's credibility\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"Kay Herr is female; use 她 in Chinese titles if needed.\",\n    \"The clip mentions 'Warsh' but not in a way that establishes a direct quote; treat as a reference to Fed leadership.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"摩根大通首席：喊话美联储，别拖了直接加息\",\n  \"title_lines\": [\n    \"摩根大通首席\",\n    \"喊话美联储\",\n    \"别拖了直接加息\"\n  ],\n  \"angle_id\": \"outsider_candor\",\n  \"emotion_pole\": \"终于有人说\",\n  \"viewer_reaction\": \"终于有人说出了市场的心里话\",\n  \"evidence_basis\": [\n    \"transcript: Herr说'go ahead, just hike and move on with it'\",\n    \"public: Bloomberg视频标题确认此立场\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 7,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "viewer_reaction": "终于有人说出了市场的心里话",
+            "evidence_basis": [
+              "transcript: Herr说'go ahead, just hike and move on with it'",
+              "public: Bloomberg视频标题确认此立场"
+            ],
+            "title": "摩根大通首席：喊话美联储，别拖了直接加息，长端利率还要涨多少？",
+            "title_lines": [
+              "摩根大通首席",
+              "喊话美联储",
+              "别拖了直接加息，长端利率还要涨多少？"
+            ],
+            "title_highlights": [
+              "摩根大通首席",
+              "别拖了直接加息",
+              "长端利率还要涨多少？"
+            ],
+            "runner_up_titles": [
+              "摩根大通首席：别拖了，直接加息，长端利率还要涨多少？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "摩根大通首席：喊话美联储，别拖了直接加息，长端利率还要涨多少？",
+        "title_lines": [
+          "摩根大通首席",
+          "喊话美联储",
+          "别拖了直接加息，长端利率还要涨多少？"
+        ],
+        "title_highlights": [
+          "摩根大通首席",
+          "别拖了直接加息",
+          "长端利率还要涨多少？"
+        ],
+        "comment": "KC评论：摩根大通首席直言美联储缺乏前瞻指引，长端利率上行压力大",
+        "comment_highlights": [
+          "摩根大通首席",
+          "前瞻指引"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：市场担忧美联储反应机制，缺乏清晰指引",
+            "comment_highlights": [
+              "市场担忧",
+              "美联储反应机制"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：市场不喜欢缺乏前瞻指引，不确定性推升波动",
+            "comment_highlights": [
+              "前瞻指引",
+              "不确定性"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：两年期与30年期分化，反映市场对通胀和政策的担忧",
+            "comment_highlights": [
+              "两年期",
+              "30年期"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：摩根大通首席认为美联储行动与否并非关键，市场已自行定价",
+            "comment_highlights": [
+              "摩根大通首席"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：她建议干脆加息并继续前进，因长端利率上行压力大",
+            "comment_highlights": [
+              "加息",
+              "长端利率上行"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：市场几乎在逼美联储加息，但长端利率影响有限",
+            "comment_highlights": [
+              "长端利率"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：缺乏前瞻指引和通胀政策清晰度，市场担忧加剧",
+            "comment_highlights": [
+              "前瞻指引",
+              "通胀政策清晰度"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：两年期上涨暗示不加息预期，但长端因担忧而上升",
+            "comment_highlights": [
+              "两年期上涨"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：长端利率上升正是市场对通胀和政策不确定性的定价",
+            "comment_highlights": [
+              "长端利率",
+              "不确定性"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：本周美联储会议纪要或揭示内部反对加息的声音",
+            "comment_highlights": [
+              "美联储会议纪要",
+              "反对加息"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：关注今年支持加息的委员构成，或影响未来政策路径",
+            "comment_highlights": [
+              "委员构成",
+              "政策路径"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：明年FOMC投票委员变化可能改变加息节奏",
+            "comment_highlights": [
+              "FOMC",
+              "投票委员"
+            ]
+          }
+        ],
+        "formula_id": "authority-candor",
+        "angle_id": "outsider_candor",
+        "emotion_pole": "终于有人说",
+        "viewer_reaction": "终于有人说出了市场的心里话",
+        "evidence_basis": [
+          "transcript: Herr说'go ahead, just hike and move on with it'",
+          "public: Bloomberg视频标题确认此立场"
+        ],
+        "runner_up_titles": [
+          "摩根大通首席：别拖了，直接加息，长端利率还要涨多少？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 97,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:outsider_candor",
+            "emotion:终于有人说",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          }
+        }
+      }
+    }
+  ]
+}
