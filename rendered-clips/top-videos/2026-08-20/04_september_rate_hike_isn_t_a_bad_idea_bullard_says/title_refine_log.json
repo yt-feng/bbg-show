@@ -1,0 +1,807 @@
+{
+  "timestamp_utc": "2026-08-19T22:41:58.404520+00:00",
+  "plan_path": "work/top-videos/04_september_rate_hike_isn_t_a_bad_idea_bullard_says/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "James Bullard",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "James Bullard",
+        "preferred_en": "James Bullard",
+        "official_zh": "詹姆斯·布拉德",
+        "common_zh": "布拉德",
+        "title_label": "布拉德",
+        "preferred_zh": "布拉德",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple sources identify James Bullard as former St. Louis Fed president and dean of Purdue's business school; Chinese media commonly use 布拉德."
+      },
+      {
+        "source_text": "Federal Reserve",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve",
+        "preferred_en": "Federal Reserve",
+        "official_zh": "美国联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard translation; widely used in Chinese financial media."
+      },
+      {
+        "source_text": "St. Louis Fed",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve Bank of St. Louis",
+        "preferred_en": "Federal Reserve Bank of St. Louis",
+        "official_zh": "圣路易斯联邦储备银行",
+        "common_zh": "圣路易斯联储",
+        "title_label": "圣路易斯联储",
+        "preferred_zh": "圣路易斯联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Common Chinese translation for the regional Fed bank."
+      },
+      {
+        "source_text": "Purdue University",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Purdue University",
+        "preferred_en": "Purdue University",
+        "official_zh": "普渡大学",
+        "common_zh": "普渡大学",
+        "title_label": "普渡大学",
+        "preferred_zh": "普渡大学",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese name for Purdue University."
+      },
+      {
+        "source_text": "Mitch Daniels School of Business",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Mitch Daniels School of Business",
+        "preferred_en": "Mitch Daniels School of Business",
+        "official_zh": "米奇·丹尼尔斯商学院",
+        "common_zh": "米奇·丹尼尔斯商学院",
+        "title_label": "米奇·丹尼尔斯商学院",
+        "preferred_zh": "米奇·丹尼尔斯商学院",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Name appears in sources; Chinese translation is straightforward."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese name for Bloomberg."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "Core PCE",
+        "clip_indexes": [],
+        "context": "Inflation measure",
+        "sense": "Core Personal Consumption Expenditures price index",
+        "preferred_zh": "核心个人消费支出价格指数",
+        "title_label": "核心PCE",
+        "avoid_zh": [
+          "核心PCE指数"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "GDP",
+        "clip_indexes": [],
+        "context": "Economic growth",
+        "sense": "Gross Domestic Product",
+        "preferred_zh": "国内生产总值",
+        "title_label": "GDP",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "unemployment rate",
+        "clip_indexes": [],
+        "context": "Labor market",
+        "sense": "Percentage of unemployed workers in the labor force",
+        "preferred_zh": "失业率",
+        "title_label": "失业率",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "initial claims",
+        "clip_indexes": [],
+        "context": "Labor market",
+        "sense": "Initial unemployment insurance claims",
+        "preferred_zh": "首次申请失业救济人数",
+        "title_label": "初请失业金人数",
+        "avoid_zh": [
+          "初次申请"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "wealth to disposable income ratio",
+        "clip_indexes": [],
+        "context": "Household finances",
+        "sense": "Ratio of household wealth to disposable income",
+        "preferred_zh": "财富与可支配收入之比",
+        "title_label": "财富收入比",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Core PCE is projected to be above 3% at the end of this year, and the Fed must take action to convince markets it wants to get inflation back down to 2%.",
+        "public_baseline": "Bullard is a former Fed official known for hawkish views; he has previously advocated for rate hikes to combat inflation.",
+        "surprise_gap": "The clip suggests a September rate hike is not too bad, which may contrast with market expectations of a hold or cut.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "James Bullard September rate hike 2026 Fed",
+            "url": "https://stocktwits.com/news-articles/markets/equity/former-st-louis-fed-chief-bullard-supports-a-september-rate-hike-good-time-to-re-establish-credibility-on-inflation-fighting/cZYdYA7RJll",
+            "fact": "Bullard supports a September rate hike to re-establish credibility on inflation fighting."
+          },
+          {
+            "kind": "public",
+            "query": "James Bullard inflation target 3% Fed credibility",
+            "url": "https://finance.yahoo.com/economy/policy/articles/former-fed-president-core-inflation-025013443.html",
+            "fact": "Bullard flagged core inflation exceeding 3% as a credibility threat to the Fed's 2% target."
+          }
+        ],
+        "forbidden_claims": [
+          "Bullard is currently a Fed official",
+          "The Fed has decided to hike in September",
+          "Bullard's views represent the Fed's official stance"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip is from Bloomberg, and the speaker is James Bullard, former St. Louis Fed president, now dean at Purdue. His views are personal, not official Fed policy."
+    ],
+    "research_queries": [
+      {
+        "query": "James Bullard September rate hike 2026 Fed",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Bullard's public stance on September rate hike and his role at the Fed."
+      },
+      {
+        "query": "James Bullard inflation target 3% Fed credibility",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Bullard's claim about core PCE above 3% and need for action to maintain credibility."
+      },
+      {
+        "query": "James Bullard GDP growth Q3 2026 unemployment claims",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check economic indicators cited by Bullard to see if they align with public data."
+      },
+      {
+        "query": "James Bullard 2027 inflation headache Fed policy",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Bullard's forward-looking statement about potential 2027 inflation issues."
+      },
+      {
+        "query": "Bloomberg September Rate Hike Isn't Too Bad established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "September Rate Hike Isn't Too Bad 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Idea 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 7,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "美联储前主席：9月加息不是坏主意，市场在赌什么？",
+      "title_lines": [
+        "美联储前主席",
+        "9月加息不是坏主意",
+        "市场在赌什么？"
+      ],
+      "formula_id": "authority-breaks-consensus",
+      "angle_id": "authority_breaks_consensus",
+      "emotion_pole": "强疑惑",
+      "viewer_reaction": "美联储真敢加息？",
+      "evidence_basis": [
+        "transcript: Bullard说9月加息并非坏事",
+        "public: Bullard支持9月加息以重建抗通胀信誉"
+      ],
+      "runner_up_titles": [
+        "通胀顽固，美联储前官员却喊话：9月加息正当时",
+        "美联储前高官：现在加息，是为了避免2027年的麻烦"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 9,
+        "factual_fidelity": 10,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:authority_breaks_consensus",
+          "emotion:强疑惑",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 10,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：前官员罕见支持加息，市场预期或面临重估"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-19T22:41:57.153619+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says",
+          "source_title": "Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says",
+          "show_date": "",
+          "current_title": "美联储官员：9月加息并非坏事",
+          "current_title_lines": [
+            "美联储官员：9月加息并非坏事",
+            "通胀顽固，市场期待行动",
+            "经济强劲，正是重建信誉时"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "美联储在其中扮演什么角色？这是您面临的重要问题。",
+              "en": "What's the role of the Fed in all of this? That's the important question for you, sir.",
+              "relative_start": 0.0,
+              "relative_end": 3.8
+            },
+            {
+              "index": 2,
+              "zh": "美联储是否应该发挥作用来帮助稳定债券市场？",
+              "en": "Does the Fed have a role to play here to help stabilize this bond market?",
+              "relative_start": 3.8,
+              "relative_end": 7.5
+            },
+            {
+              "index": 3,
+              "zh": "当然。委员会预计今年年底核心PCE将高于3%，这与2023年、2024年、2025年以及现在的2026年相同。",
+              "en": "Oh, absolutely. I think that the fact that the committee is projecting Core PC to be above 3% at the end of this year, that would be the same as in 2023, 2024, 2025, and now 2026.",
+              "relative_start": 9.4,
+              "relative_end": 25.8
+            },
+            {
+              "index": 4,
+              "zh": "所以这看起来像是3%的通胀目标。他们必须采取行动让市场相信他们真的想让通胀回到2%，而华盛顿主席在表示这是他的目标方面做得很好。",
+              "en": "So that looks like a 3% inflation target. They have to take action to convince markets that they really want to get inflation back down to 2%, and Chairman Washington did a good job in",
+              "relative_start": 26.3,
+              "relative_end": 38.2
+            },
+            {
+              "index": 5,
+              "zh": "但市场希望看到实际行动。",
+              "en": "saying that that's what he wants to do, but the market is going to want to see action.",
+              "relative_start": 38.2,
+              "relative_end": 41.8
+            },
+            {
+              "index": 6,
+              "zh": "为什么不采取行动呢？现在第三季度GDP增长高达4%，而且",
+              "en": "And why not take action? GDP now for the third quarter, you know, up at 4%, you've got",
+              "relative_start": 42.7,
+              "relative_end": 51.0
+            },
+            {
+              "index": 7,
+              "zh": "财富与可支配收入之比处于历史高位，这正在推动消费，失业率很低，初请失业金人数也很低。",
+              "en": "equity or, let's say, wealth to disposable income ratio at all time highs. That's feeling",
+              "relative_start": 51.9,
+              "relative_end": 59.4
+            },
+            {
+              "index": 8,
+              "zh": "所以看起来劳动力市场表现良好。因此，现在是重建抗通胀信誉的好时机，并且继续采取行动。",
+              "en": "ongoing consumption, unemployment rate, very low claims, initial claims very low.",
+              "relative_start": 59.4,
+              "relative_end": 67.1
+            },
+            {
+              "index": 9,
+              "zh": "现在可能不需要做太多，",
+              "en": "So it looks like you have a good labor market. So it's a good time to reestablish credibility on inflation fighting, and go ahead and make a move. You probably wouldn't have to do too much now,",
+              "relative_start": 68.0,
+              "relative_end": 79.3
+            },
+            {
+              "index": 10,
+              "zh": "这样就能避免2027年可能出现的麻烦。",
+              "en": "and then that'll save you from a headache that you might develop for 2027.",
+              "relative_start": 79.3,
+              "relative_end": 84.9
+            },
+            {
+              "index": 11,
+              "zh": "所以你是说他们应该在九月加息吗？",
+              "en": "So are you saying that they should hike in September?",
+              "relative_start": 84.9,
+              "relative_end": 87.1
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says\",\n    \"source_title\": \"Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"美联储官员：9月加息并非坏事\",\n    \"current_title_lines\": [\n      \"美联储官员：9月加息并非坏事\",\n      \"通胀顽固，市场期待行动\",\n      \"经济强劲，正是重建信誉时\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"美联储在其中扮演什么角色？这是您面临的重要问题。\",\n        \"en\": \"What's the role of the Fed in all of this? That's the important question for you, sir.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"美联储是否应该发挥作用来帮助稳定债券市场？\",\n        \"en\": \"Does the Fed have a role to play here to help stabilize this bond market?\",\n        \"relative_start\": 3.8,\n        \"relative_end\": 7.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"当然。委员会预计今年年底核心PCE将高于3%，这与2023年、2024年、2025年以及现在的2026年相同。\",\n        \"en\": \"Oh, absolutely. I think that the fact that the committee is projecting Core PC to be above 3% at the end of this year, that would be the same as in 2023, 2024, 2025, and now 2026.\",\n        \"relative_start\": 9.4,\n        \"relative_end\": 25.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以这看起来像是3%的通胀目标。他们必须采取行动让市场相信他们真的想让通胀回到2%，而华盛顿主席在表示这是他的目标方面做得很好。\",\n        \"en\": \"So that looks like a 3% inflation target. They have to take action to convince markets that they really want to get inflation back down to 2%, and Chairman Washington did a good job in\",\n        \"relative_start\": 26.3,\n        \"relative_end\": 38.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但市场希望看到实际行动。\",\n        \"en\": \"saying that that's what he wants to do, but the market is going to want to see action.\",\n        \"relative_start\": 38.2,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"为什么不采取行动呢？现在第三季度GDP增长高达4%，而且\",\n        \"en\": \"And why not take action? GDP now for the third quarter, you know, up at 4%, you've got\",\n        \"relative_start\": 42.7,\n        \"relative_end\": 51.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"财富与可支配收入之比处于历史高位，这正在推动消费，失业率很低，初请失业金人数也很低。\",\n        \"en\": \"equity or, let's say, wealth to disposable income ratio at all time highs. That's feeling\",\n        \"relative_start\": 51.9,\n        \"relative_end\": 59.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以看起来劳动力市场表现良好。因此，现在是重建抗通胀信誉的好时机，并且继续采取行动。\",\n        \"en\": \"ongoing consumption, unemployment rate, very low claims, initial claims very low.\",\n        \"relative_start\": 59.4,\n        \"relative_end\": 67.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"现在可能不需要做太多，\",\n        \"en\": \"So it looks like you have a good labor market. So it's a good time to reestablish credibility on inflation fighting, and go ahead and make a move. You probably wouldn't have to do too much now,\",\n        \"relative_start\": 68.0,\n        \"relative_end\": 79.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"这样就能避免2027年可能出现的麻烦。\",\n        \"en\": \"and then that'll save you from a headache that you might develop for 2027.\",\n        \"relative_start\": 79.3,\n        \"relative_end\": 84.9\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"所以你是说他们应该在九月加息吗？\",\n        \"en\": \"So are you saying that they should hike in September?\",\n        \"relative_start\": 84.9,\n        \"relative_end\": 87.1\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Core PCE is projected to be above 3% at the end of this year, and the Fed must take action to convince markets it wants to get inflation back down to 2%.\",\n      \"public_baseline\": \"Bullard is a former Fed official known for hawkish views; he has previously advocated for rate hikes to combat inflation.\",\n      \"surprise_gap\": \"The clip suggests a September rate hike is not too bad, which may contrast with market expectations of a hold or cut.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"James Bullard September rate hike 2026 Fed\",\n          \"url\": \"https://stocktwits.com/news-articles/markets/equity/former-st-louis-fed-chief-bullard-supports-a-september-rate-hike-good-time-to-re-establish-credibility-on-inflation-fighting/cZYdYA7RJll\",\n          \"fact\": \"Bullard supports a September rate hike to re-establish credibility on inflation fighting.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"James Bullard inflation target 3% Fed credibility\",\n          \"url\": \"https://finance.yahoo.com/economy/policy/articles/former-fed-president-core-inflation-025013443.html\",\n          \"fact\": \"Bullard flagged core inflation exceeding 3% as a credibility threat to the Fed's 2% target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Bullard is currently a Fed official\",\n        \"The Fed has decided to hike in September\",\n        \"Bullard's views represent the Fed's official stance\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from Bloomberg, and the speaker is James Bullard, former St. Louis Fed president, now dean at Purdue. His views are personal, not official Fed policy.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Bullard认为当前经济强劲，是重建抗通胀信誉的好时机，9月加息并非坏事。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "美联储真敢加息？",
+                "title": "美联储前主席：9月加息不是坏主意",
+                "title_lines": [
+                  "美联储前主席",
+                  "9月加息不是坏主意",
+                  "市场在赌什么？"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Bullard说9月加息并非坏事",
+                  "public: Bullard支持9月加息以重建抗通胀信誉"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "加息居然被说成好事",
+                "title": "通胀顽固，美联储前官员却喊话：9月加息正当时",
+                "title_lines": [
+                  "通胀顽固",
+                  "美联储前官员却喊话",
+                  "9月加息正当时"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 核心PCE预计高于3%，Bullard认为应行动",
+                  "public: Bullard认为通胀超3%是信誉威胁"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "原来加息是为了避免更麻烦",
+                "title": "美联储前高官：现在加息，是为了避免2027年的麻烦",
+                "title_lines": [
+                  "美联储前高官",
+                  "现在加息",
+                  "避免2027年麻烦"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 现在行动能避免2027年可能出现的麻烦",
+                  "public: Bullard支持9月加息"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "前官员把话说透了",
+                "title": "美联储前官员说透：通胀目标3%，市场需要行动",
+                "title_lines": [
+                  "美联储前官员说透",
+                  "通胀目标3%",
+                  "市场需要行动"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 委员会预计核心PCE高于3%，需行动让市场相信回到2%",
+                  "public: Bullard是前美联储官员，观点个人"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says\",\n    \"source_title\": \"Duration: 2:37 September Rate Hike Isn't Too Bad of an Idea, Bullard Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"美联储官员：9月加息并非坏事\",\n    \"current_title_lines\": [\n      \"美联储官员：9月加息并非坏事\",\n      \"通胀顽固，市场期待行动\",\n      \"经济强劲，正是重建信誉时\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"美联储在其中扮演什么角色？这是您面临的重要问题。\",\n        \"en\": \"What's the role of the Fed in all of this? That's the important question for you, sir.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 3.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"美联储是否应该发挥作用来帮助稳定债券市场？\",\n        \"en\": \"Does the Fed have a role to play here to help stabilize this bond market?\",\n        \"relative_start\": 3.8,\n        \"relative_end\": 7.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"当然。委员会预计今年年底核心PCE将高于3%，这与2023年、2024年、2025年以及现在的2026年相同。\",\n        \"en\": \"Oh, absolutely. I think that the fact that the committee is projecting Core PC to be above 3% at the end of this year, that would be the same as in 2023, 2024, 2025, and now 2026.\",\n        \"relative_start\": 9.4,\n        \"relative_end\": 25.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"所以这看起来像是3%的通胀目标。他们必须采取行动让市场相信他们真的想让通胀回到2%，而华盛顿主席在表示这是他的目标方面做得很好。\",\n        \"en\": \"So that looks like a 3% inflation target. They have to take action to convince markets that they really want to get inflation back down to 2%, and Chairman Washington did a good job in\",\n        \"relative_start\": 26.3,\n        \"relative_end\": 38.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但市场希望看到实际行动。\",\n        \"en\": \"saying that that's what he wants to do, but the market is going to want to see action.\",\n        \"relative_start\": 38.2,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"为什么不采取行动呢？现在第三季度GDP增长高达4%，而且\",\n        \"en\": \"And why not take action? GDP now for the third quarter, you know, up at 4%, you've got\",\n        \"relative_start\": 42.7,\n        \"relative_end\": 51.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"财富与可支配收入之比处于历史高位，这正在推动消费，失业率很低，初请失业金人数也很低。\",\n        \"en\": \"equity or, let's say, wealth to disposable income ratio at all time highs. That's feeling\",\n        \"relative_start\": 51.9,\n        \"relative_end\": 59.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以看起来劳动力市场表现良好。因此，现在是重建抗通胀信誉的好时机，并且继续采取行动。\",\n        \"en\": \"ongoing consumption, unemployment rate, very low claims, initial claims very low.\",\n        \"relative_start\": 59.4,\n        \"relative_end\": 67.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"现在可能不需要做太多，\",\n        \"en\": \"So it looks like you have a good labor market. So it's a good time to reestablish credibility on inflation fighting, and go ahead and make a move. You probably wouldn't have to do too much now,\",\n        \"relative_start\": 68.0,\n        \"relative_end\": 79.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"这样就能避免2027年可能出现的麻烦。\",\n        \"en\": \"and then that'll save you from a headache that you might develop for 2027.\",\n        \"relative_start\": 79.3,\n        \"relative_end\": 84.9\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"所以你是说他们应该在九月加息吗？\",\n        \"en\": \"So are you saying that they should hike in September?\",\n        \"relative_start\": 84.9,\n        \"relative_end\": 87.1\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Core PCE is projected to be above 3% at the end of this year, and the Fed must take action to convince markets it wants to get inflation back down to 2%.\",\n      \"public_baseline\": \"Bullard is a former Fed official known for hawkish views; he has previously advocated for rate hikes to combat inflation.\",\n      \"surprise_gap\": \"The clip suggests a September rate hike is not too bad, which may contrast with market expectations of a hold or cut.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"James Bullard September rate hike 2026 Fed\",\n          \"url\": \"https://stocktwits.com/news-articles/markets/equity/former-st-louis-fed-chief-bullard-supports-a-september-rate-hike-good-time-to-re-establish-credibility-on-inflation-fighting/cZYdYA7RJll\",\n          \"fact\": \"Bullard supports a September rate hike to re-establish credibility on inflation fighting.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"James Bullard inflation target 3% Fed credibility\",\n          \"url\": \"https://finance.yahoo.com/economy/policy/articles/former-fed-president-core-inflation-025013443.html\",\n          \"fact\": \"Bullard flagged core inflation exceeding 3% as a credibility threat to the Fed's 2% target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Bullard is currently a Fed official\",\n        \"The Fed has decided to hike in September\",\n        \"Bullard's views represent the Fed's official stance\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from Bloomberg, and the speaker is James Bullard, former St. Louis Fed president, now dean at Purdue. His views are personal, not official Fed policy.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Bullard认为当前经济强劲，是重建抗通胀信誉的好时机，9月加息并非坏事。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"美联储真敢加息？\",\n          \"title\": \"美联储前主席：9月加息不是坏主意\",\n          \"title_lines\": [\n            \"美联储前主席\",\n            \"9月加息不是坏主意\",\n            \"市场在赌什么？\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Bullard说9月加息并非坏事\",\n            \"public: Bullard支持9月加息以重建抗通胀信誉\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"加息居然被说成好事\",\n          \"title\": \"通胀顽固，美联储前官员却喊话：9月加息正当时\",\n          \"title_lines\": [\n            \"通胀顽固\",\n            \"美联储前官员却喊话\",\n            \"9月加息正当时\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 核心PCE预计高于3%，Bullard认为应行动\",\n            \"public: Bullard认为通胀超3%是信誉威胁\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"原来加息是为了避免更麻烦\",\n          \"title\": \"美联储前高官：现在加息，是为了避免2027年的麻烦\",\n          \"title_lines\": [\n            \"美联储前高官\",\n            \"现在加息\",\n            \"避免2027年麻烦\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 现在行动能避免2027年可能出现的麻烦\",\n            \"public: Bullard支持9月加息\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"前官员把话说透了\",\n          \"title\": \"美联储前官员说透：通胀目标3%，市场需要行动\",\n          \"title_lines\": [\n            \"美联储前官员说透\",\n            \"通胀目标3%\",\n            \"市场需要行动\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 委员会预计核心PCE高于3%，需行动让市场相信回到2%\",\n            \"public: Bullard是前美联储官员，观点个人\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority-breaks-consensus",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "美联储真敢加息？",
+            "evidence_basis": [
+              "transcript: Bullard说9月加息并非坏事",
+              "public: Bullard支持9月加息以重建抗通胀信誉"
+            ],
+            "title": "美联储前主席：9月加息不是坏主意",
+            "title_lines": [
+              "美联储前主席",
+              "9月加息不是坏主意",
+              "市场在赌什么？"
+            ],
+            "title_highlights": [
+              "美联储前主席",
+              "9月加息不是坏主意"
+            ],
+            "runner_up_titles": [
+              "通胀顽固，美联储前官员却喊话：9月加息正当时",
+              "美联储前高官：现在加息，是为了避免2027年的麻烦"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：前官员罕见支持加息，市场预期或面临重估。",
+            "comment_highlights": [
+              "前官员罕见支持加息"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：美联储角色成焦点，市场紧盯政策动向。",
+                "comment_highlights": [
+                  "美联储角色"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：债券市场波动，美联储是否出手引猜测。",
+                "comment_highlights": [
+                  "债券市场波动"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：核心PCE预期超3%，通胀目标受质疑。",
+                "comment_highlights": [
+                  "核心PCE预期超3%"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：市场需要行动，而非口头承诺。",
+                "comment_highlights": [
+                  "市场需要行动"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：行动信号缺失，市场耐心有限。",
+                "comment_highlights": [
+                  "行动信号缺失"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：GDP增长强劲，为加息提供支撑。",
+                "comment_highlights": [
+                  "GDP增长强劲"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：财富效应推动消费，劳动力市场稳健。",
+                "comment_highlights": [
+                  "财富效应"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：低失业率与低初请，经济韧性显现。",
+                "comment_highlights": [
+                  "低失业率"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：重建信誉正当时，小幅行动或足够。",
+                "comment_highlights": [
+                  "重建信誉"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：提前行动，避免未来更大麻烦。",
+                "comment_highlights": [
+                  "提前行动"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：加息时机争议，市场等待明确信号。",
+                "comment_highlights": [
+                  "加息时机"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "美联储前主席：9月加息不是坏主意，市场在赌什么？",
+          "title_lines": [
+            "美联储前主席",
+            "9月加息不是坏主意",
+            "市场在赌什么？"
+          ],
+          "formula_id": "authority-breaks-consensus",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "美联储真敢加息？",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 10,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:authority_breaks_consensus",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：前官员罕见支持加息，市场预期或面临重估"
+        }
+      }
+    }
+  ]
+}
