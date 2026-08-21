@@ -1,0 +1,848 @@
+{
+  "timestamp_utc": "2026-08-21T22:46:28.344077+00:00",
+  "plan_path": "work/top-videos/07_hobbies_are_winning_the_battle_for_americans_paychecks/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "PNC",
+        "entity_type": "organization",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "PNC Financial Services Group Inc.",
+        "preferred_en": "PNC Financial Services Group Inc.",
+        "official_zh": "PNC金融服务集团",
+        "common_zh": "PNC",
+        "title_label": "PNC",
+        "preferred_zh": "PNC",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html",
+          "https://www.pnc.com/insights/personal-finance/spend/consumer-health-check.html"
+        ],
+        "evidence": "Public snippets confirm PNC Financial Services Group Inc. as the data source for hobby spending growth."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg is widely known as 彭博 in Chinese financial media."
+      },
+      {
+        "source_text": "Julia Fanzeras",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Julia Fanzeras",
+        "preferred_en": "Julia Fanzeras",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Julia Fanzeras",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable Chinese name found in public snippets."
+      },
+      {
+        "source_text": "Tom Keynes",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Tom Keynes",
+        "preferred_en": "Tom Keynes",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Tom Keynes",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable Chinese name found; likely a mispronunciation or mishearing in transcript."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "hobby spending",
+        "clip_indexes": [],
+        "context": "consumer spending on hobbies",
+        "sense": "expenditure on leisure activities",
+        "preferred_zh": "爱好消费",
+        "title_label": "爱好消费",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "discretionary purchases",
+        "clip_indexes": [],
+        "context": "consumer spending categories",
+        "sense": "non-essential goods and services",
+        "preferred_zh": "可自由支配支出",
+        "title_label": "可自由支配支出",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "personal savings rate",
+        "clip_indexes": [],
+        "context": "macroeconomic indicator",
+        "sense": "personal saving as a percentage of disposable income",
+        "preferred_zh": "个人储蓄率",
+        "title_label": "个人储蓄率",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "junk journaling",
+        "clip_indexes": [],
+        "context": "hobby activity",
+        "sense": "creative journaling using various ephemera",
+        "preferred_zh": "垃圾手账",
+        "title_label": "垃圾手账",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Personal savings are out of four-year low right now",
+        "public_baseline": "The U.S. personal saving rate was 3.60% as of Dec 2025, which is indeed a low level, but the specific 'four-year low' claim is not directly confirmed in the snippets.",
+        "surprise_gap": "The claim of a four-year low is plausible but not explicitly verified in the provided snippets.",
+        "speaker_relation": "media_source",
+        "supported_angles": [],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "US personal savings rate four-year low 2025",
+            "url": "https://www.zogby.com/data/personal-savings-rate/",
+            "fact": "The U.S. personal savings rate is 3.60% as of Dec 2025."
+          },
+          {
+            "kind": "public",
+            "query": "PNC credit card data hobby spending growth 2025",
+            "url": "https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html",
+            "fact": "Card data compiled by PNC shows year-over-year growth in hobby spending in every month since April 2025."
+          }
+        ],
+        "forbidden_claims": [
+          "Personal savings rate is at a four-year low (not directly verified).",
+          "Hobby spending growth is definitively outpacing discretionary purchases (only one source)."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The transcript contains a possible mispronunciation 'Tom Keynes' which may refer to a generation label; treat with caution.",
+      "The claim about personal savings rate being at a four-year low is not directly confirmed by the provided snippets; only a specific rate is given."
+    ],
+    "research_queries": [
+      {
+        "query": "US personal savings rate four-year low 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that personal savings rate is at a four-year low, establishing the factual baseline."
+      },
+      {
+        "query": "PNC credit card data hobby spending growth 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific data source (PNC) and the claim of year-over-year growth in hobby spending since April 2025."
+      },
+      {
+        "query": "hobby spending growth outpacing discretionary purchases 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that hobby spending growth is outpacing overall discretionary purchases."
+      },
+      {
+        "query": "junk journaling sticker spending $300 a month",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the anecdotal example of sticker spending for junk journaling, which is a specific claim in the transcript."
+      },
+      {
+        "query": "China personal savings rate 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish a comparison point for savings rates between the US and China, as the title implies a contrast."
+      },
+      {
+        "query": "China consumer spending hobbies 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Investigate whether Chinese consumers are also spending on hobbies, to provide a factual contrast for the title."
+      },
+      {
+        "query": "Bloomberg Hobbies Are Winning the Battle established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Hobbies Are Winning the Battle 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Americans’ Paychecks Bloomberg Money 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 9,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "美国人不存钱了？：钱都花在贴纸上，月花300美元",
+      "title_lines": [
+        "美国人不存钱了？",
+        "钱都花在贴纸上",
+        "月花300美元"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "PNC信用卡数据显示爱好支出每月同比增长",
+        "个人储蓄率处于四年低点"
+      ],
+      "runner_up_titles": [
+        "储蓄率四年新低，美国人却为爱好花钱",
+        "从贴纸到高尔夫，美国人的钱都去哪了"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 9,
+        "specificity": 9,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：储蓄率走低背后，爱好消费成新引擎，值得关注后续数据"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-21T22:46:27.031296+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 83.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money",
+          "source_title": "Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money",
+          "show_date": "",
+          "current_title": "美国人的钱都花在爱好上了？个人储蓄率创四年新低",
+          "current_title_lines": [
+            "美国人的钱都花在爱好上了？",
+            "个人储蓄率创四年新低",
+            "从贴纸到高尔夫，消费新趋势"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "PNC的信用卡数据显示，自2025年4月以来，每月爱好支出同比增长，且过去几年的增速超过了整体可自由支配支出。",
+              "en": "There's data from PNC, credit card data, that show year-over-year growth in hobby spending in every month since April of 2025, and this increase in the past years outpacing discretionary",
+              "relative_start": 0.0,
+              "relative_end": 10.1
+            },
+            {
+              "index": 2,
+              "zh": "而且，这一趋势跨越所有年龄段，从婴儿潮一代到最年轻的Z世代。",
+              "en": "purchases overall. And guess what? It spans across all generations, from Tom Keynes, baby boomers to the youngest Gen Zers.",
+              "relative_start": 10.1,
+              "relative_end": 17.9
+            },
+            {
+              "index": 3,
+              "zh": "这表明消费者在预算中为爱好留出了更多空间。",
+              "en": "And what it suggests is that consumers are making more room for their past times in their budget.",
+              "relative_start": 17.9,
+              "relative_end": 23.0
+            },
+            {
+              "index": 4,
+              "zh": "彭博社的Julia Fanzeras加入我们讨论。有时他们为了给自己买点享受而减少储蓄。",
+              "en": "Bloomberg's Julia Fanzeras joins us now to discuss. I mean, sometimes they're not saving as much in order to spend on treats for themselves.",
+              "relative_start": 23.0,
+              "relative_end": 30.3
+            },
+            {
+              "index": 5,
+              "zh": "没错。个人储蓄率目前处于四年低点，人们说，在物价高昂的时候，想要快乐，就要在爱好上多花钱。",
+              "en": "Absolutely. Personal savings are out of four-year low right now, and people are saying, you know, at a time where everything's very expensive and you want to be happy, we're going to spend",
+              "relative_start": 30.3,
+              "relative_end": 38.6
+            },
+            {
+              "index": 6,
+              "zh": "大量花钱在这些爱好上。",
+              "en": "a lot and splurge on these hobbies.",
+              "relative_start": 38.6,
+              "relative_end": 41.8
+            },
+            {
+              "index": 7,
+              "zh": "我们说的是哪些爱好？比如做音乐、运动。",
+              "en": "What kind of hobbies are we talking about? I mean, there's like, you know, making music, playing sports.",
+              "relative_start": 41.8,
+              "relative_end": 45.8
+            },
+            {
+              "index": 8,
+              "zh": "这些不是大额支出项目，对吧？",
+              "en": "I mean, these are not big budget items, or are they?",
+              "relative_start": 45.8,
+              "relative_end": 49.4
+            },
+            {
+              "index": 9,
+              "zh": "有趣的是，爱好入门门槛低，但一旦深入，花费就上去了。",
+              "en": "Well, the funny thing about hobbies is sometimes when you start it, it's a very low entryway, but when you get very into it, that's when it gets expensive.",
+              "relative_start": 49.4,
+              "relative_end": 56.5
+            },
+            {
+              "index": 10,
+              "zh": "我们采访了一些人，他们从买贴纸开始，现在每月花300美元在贴纸上，用于做手账。",
+              "en": "So, we chatted with people who, you know, they started off buying sticker sheets and now they're spending $300 a month on stickers, yes, to do junk journaling.",
+              "relative_start": 56.5,
+              "relative_end": 63.1
+            },
+            {
+              "index": 11,
+              "zh": "你知道吗？是贴纸。你敢信吗？",
+              "en": "I know what? On stickers. Can you believe it?",
+              "relative_start": 63.1,
+              "relative_end": 66.1
+            },
+            {
+              "index": 12,
+              "zh": "贴纸？就像那种贴的。我妈管那叫绿票，能换些便宜货。",
+              "en": "Stickers? Like, stickers, just what you put. My mother called those green stamps, and she could buy, you know, cheap junk with it.",
+              "relative_start": 66.1,
+              "relative_end": 72.2
+            },
+            {
+              "index": 13,
+              "zh": "她每月花300美元在那上面。但以前，我们有时间搞爱好。",
+              "en": "She was spending $300 a month on that. But in the old days, we had time for hobbies.",
+              "relative_start": 72.2,
+              "relative_end": 76.4
+            },
+            {
+              "index": 14,
+              "zh": "比如，有人有艘48英尺的帆船，或者每周打三次高尔夫。",
+              "en": "Like, somebody had a 48-foot hink, or a hinkley bermuda, where you play golf three times a week.",
+              "relative_start": 76.4,
+              "relative_end": 82.0
+            },
+            {
+              "index": 15,
+              "zh": "我们现在不那样了，对吧？",
+              "en": "We're not doing that anymore, are we?",
+              "relative_start": 82.0,
+              "relative_end": 83.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 83.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money\",\n    \"source_title\": \"Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"美国人的钱都花在爱好上了？个人储蓄率创四年新低\",\n    \"current_title_lines\": [\n      \"美国人的钱都花在爱好上了？\",\n      \"个人储蓄率创四年新低\",\n      \"从贴纸到高尔夫，消费新趋势\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"PNC的信用卡数据显示，自2025年4月以来，每月爱好支出同比增长，且过去几年的增速超过了整体可自由支配支出。\",\n        \"en\": \"There's data from PNC, credit card data, that show year-over-year growth in hobby spending in every month since April of 2025, and this increase in the past years outpacing discretionary\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"而且，这一趋势跨越所有年龄段，从婴儿潮一代到最年轻的Z世代。\",\n        \"en\": \"purchases overall. And guess what? It spans across all generations, from Tom Keynes, baby boomers to the youngest Gen Zers.\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 17.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这表明消费者在预算中为爱好留出了更多空间。\",\n        \"en\": \"And what it suggests is that consumers are making more room for their past times in their budget.\",\n        \"relative_start\": 17.9,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"彭博社的Julia Fanzeras加入我们讨论。有时他们为了给自己买点享受而减少储蓄。\",\n        \"en\": \"Bloomberg's Julia Fanzeras joins us now to discuss. I mean, sometimes they're not saving as much in order to spend on treats for themselves.\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 30.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"没错。个人储蓄率目前处于四年低点，人们说，在物价高昂的时候，想要快乐，就要在爱好上多花钱。\",\n        \"en\": \"Absolutely. Personal savings are out of four-year low right now, and people are saying, you know, at a time where everything's very expensive and you want to be happy, we're going to spend\",\n        \"relative_start\": 30.3,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"大量花钱在这些爱好上。\",\n        \"en\": \"a lot and splurge on these hobbies.\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们说的是哪些爱好？比如做音乐、运动。\",\n        \"en\": \"What kind of hobbies are we talking about? I mean, there's like, you know, making music, playing sports.\",\n        \"relative_start\": 41.8,\n        \"relative_end\": 45.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这些不是大额支出项目，对吧？\",\n        \"en\": \"I mean, these are not big budget items, or are they?\",\n        \"relative_start\": 45.8,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"有趣的是，爱好入门门槛低，但一旦深入，花费就上去了。\",\n        \"en\": \"Well, the funny thing about hobbies is sometimes when you start it, it's a very low entryway, but when you get very into it, that's when it gets expensive.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 56.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我们采访了一些人，他们从买贴纸开始，现在每月花300美元在贴纸上，用于做手账。\",\n        \"en\": \"So, we chatted with people who, you know, they started off buying sticker sheets and now they're spending $300 a month on stickers, yes, to do junk journaling.\",\n        \"relative_start\": 56.5,\n        \"relative_end\": 63.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"你知道吗？是贴纸。你敢信吗？\",\n        \"en\": \"I know what? On stickers. Can you believe it?\",\n        \"relative_start\": 63.1,\n        \"relative_end\": 66.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"贴纸？就像那种贴的。我妈管那叫绿票，能换些便宜货。\",\n        \"en\": \"Stickers? Like, stickers, just what you put. My mother called those green stamps, and she could buy, you know, cheap junk with it.\",\n        \"relative_start\": 66.1,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"她每月花300美元在那上面。但以前，我们有时间搞爱好。\",\n        \"en\": \"She was spending $300 a month on that. But in the old days, we had time for hobbies.\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 76.4\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"比如，有人有艘48英尺的帆船，或者每周打三次高尔夫。\",\n        \"en\": \"Like, somebody had a 48-foot hink, or a hinkley bermuda, where you play golf three times a week.\",\n        \"relative_start\": 76.4,\n        \"relative_end\": 82.0\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我们现在不那样了，对吧？\",\n        \"en\": \"We're not doing that anymore, are we?\",\n        \"relative_start\": 82.0,\n        \"relative_end\": 83.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"PNC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"PNC Financial Services Group Inc.\",\n      \"preferred_en\": \"PNC Financial Services Group Inc.\",\n      \"official_zh\": \"PNC金融服务集团\",\n      \"common_zh\": \"PNC\",\n      \"title_label\": \"PNC\",\n      \"preferred_zh\": \"PNC\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html\",\n        \"https://www.pnc.com/insights/personal-finance/spend/consumer-health-check.html\"\n      ],\n      \"evidence\": \"Public snippets confirm PNC Financial Services Group Inc. as the data source for hobby spending growth.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Personal savings are out of four-year low right now\",\n      \"public_baseline\": \"The U.S. personal saving rate was 3.60% as of Dec 2025, which is indeed a low level, but the specific 'four-year low' claim is not directly confirmed in the snippets.\",\n      \"surprise_gap\": \"The claim of a four-year low is plausible but not explicitly verified in the provided snippets.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"US personal savings rate four-year low 2025\",\n          \"url\": \"https://www.zogby.com/data/personal-savings-rate/\",\n          \"fact\": \"The U.S. personal savings rate is 3.60% as of Dec 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"PNC credit card data hobby spending growth 2025\",\n          \"url\": \"https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html\",\n          \"fact\": \"Card data compiled by PNC shows year-over-year growth in hobby spending in every month since April 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Personal savings rate is at a four-year low (not directly verified).\",\n        \"Hobby spending growth is definitively outpacing discretionary purchases (only one source).\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript contains a possible mispronunciation 'Tom Keynes' which may refer to a generation label; treat with caution.\",\n    \"The claim about personal savings rate being at a four-year low is not directly confirmed by the provided snippets; only a specific rate is given.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "PNC信用卡数据显示，自2025年4月以来，美国消费者每月爱好支出同比增长，且增速超过整体可自由支配支出；同期个人储蓄率处于四年低点。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "美国人不存钱了？钱都花在贴纸上",
+                "title_lines": [
+                  "美国人不存钱了？",
+                  "钱都花在贴纸上",
+                  "月花300美元"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "PNC信用卡数据显示爱好支出每月同比增长",
+                  "个人储蓄率处于四年低点"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "储蓄率四年新低，美国人却为爱好花钱",
+                "title_lines": [
+                  "储蓄率四年新低",
+                  "美国人却为爱好花钱",
+                  "贴纸月花300美元"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "个人储蓄率处于四年低点",
+                  "PNC数据显示爱好支出增长"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "彭博社：美国人宁愿不存钱也要玩爱好",
+                "title_lines": [
+                  "彭博社：美国人",
+                  "宁愿不存钱",
+                  "也要玩爱好"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "彭博社报道个人储蓄率四年低点",
+                  "PNC数据显示爱好支出增长"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "从贴纸到高尔夫，美国人的钱都去哪了",
+                "title_lines": [
+                  "从贴纸到高尔夫",
+                  "美国人的钱",
+                  "都去哪了"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "PNC数据显示爱好支出增长",
+                  "视频中提到贴纸月花300美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 83.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money\",\n    \"source_title\": \"Duration: 2:27 Hobbies Are Winning the Battle for Americans’ Paychecks Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"美国人的钱都花在爱好上了？个人储蓄率创四年新低\",\n    \"current_title_lines\": [\n      \"美国人的钱都花在爱好上了？\",\n      \"个人储蓄率创四年新低\",\n      \"从贴纸到高尔夫，消费新趋势\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"PNC的信用卡数据显示，自2025年4月以来，每月爱好支出同比增长，且过去几年的增速超过了整体可自由支配支出。\",\n        \"en\": \"There's data from PNC, credit card data, that show year-over-year growth in hobby spending in every month since April of 2025, and this increase in the past years outpacing discretionary\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"而且，这一趋势跨越所有年龄段，从婴儿潮一代到最年轻的Z世代。\",\n        \"en\": \"purchases overall. And guess what? It spans across all generations, from Tom Keynes, baby boomers to the youngest Gen Zers.\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 17.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这表明消费者在预算中为爱好留出了更多空间。\",\n        \"en\": \"And what it suggests is that consumers are making more room for their past times in their budget.\",\n        \"relative_start\": 17.9,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"彭博社的Julia Fanzeras加入我们讨论。有时他们为了给自己买点享受而减少储蓄。\",\n        \"en\": \"Bloomberg's Julia Fanzeras joins us now to discuss. I mean, sometimes they're not saving as much in order to spend on treats for themselves.\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 30.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"没错。个人储蓄率目前处于四年低点，人们说，在物价高昂的时候，想要快乐，就要在爱好上多花钱。\",\n        \"en\": \"Absolutely. Personal savings are out of four-year low right now, and people are saying, you know, at a time where everything's very expensive and you want to be happy, we're going to spend\",\n        \"relative_start\": 30.3,\n        \"relative_end\": 38.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"大量花钱在这些爱好上。\",\n        \"en\": \"a lot and splurge on these hobbies.\",\n        \"relative_start\": 38.6,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们说的是哪些爱好？比如做音乐、运动。\",\n        \"en\": \"What kind of hobbies are we talking about? I mean, there's like, you know, making music, playing sports.\",\n        \"relative_start\": 41.8,\n        \"relative_end\": 45.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这些不是大额支出项目，对吧？\",\n        \"en\": \"I mean, these are not big budget items, or are they?\",\n        \"relative_start\": 45.8,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"有趣的是，爱好入门门槛低，但一旦深入，花费就上去了。\",\n        \"en\": \"Well, the funny thing about hobbies is sometimes when you start it, it's a very low entryway, but when you get very into it, that's when it gets expensive.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 56.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我们采访了一些人，他们从买贴纸开始，现在每月花300美元在贴纸上，用于做手账。\",\n        \"en\": \"So, we chatted with people who, you know, they started off buying sticker sheets and now they're spending $300 a month on stickers, yes, to do junk journaling.\",\n        \"relative_start\": 56.5,\n        \"relative_end\": 63.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"你知道吗？是贴纸。你敢信吗？\",\n        \"en\": \"I know what? On stickers. Can you believe it?\",\n        \"relative_start\": 63.1,\n        \"relative_end\": 66.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"贴纸？就像那种贴的。我妈管那叫绿票，能换些便宜货。\",\n        \"en\": \"Stickers? Like, stickers, just what you put. My mother called those green stamps, and she could buy, you know, cheap junk with it.\",\n        \"relative_start\": 66.1,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"她每月花300美元在那上面。但以前，我们有时间搞爱好。\",\n        \"en\": \"She was spending $300 a month on that. But in the old days, we had time for hobbies.\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 76.4\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"比如，有人有艘48英尺的帆船，或者每周打三次高尔夫。\",\n        \"en\": \"Like, somebody had a 48-foot hink, or a hinkley bermuda, where you play golf three times a week.\",\n        \"relative_start\": 76.4,\n        \"relative_end\": 82.0\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我们现在不那样了，对吧？\",\n        \"en\": \"We're not doing that anymore, are we?\",\n        \"relative_start\": 82.0,\n        \"relative_end\": 83.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"PNC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"PNC Financial Services Group Inc.\",\n      \"preferred_en\": \"PNC Financial Services Group Inc.\",\n      \"official_zh\": \"PNC金融服务集团\",\n      \"common_zh\": \"PNC\",\n      \"title_label\": \"PNC\",\n      \"preferred_zh\": \"PNC\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html\",\n        \"https://www.pnc.com/insights/personal-finance/spend/consumer-health-check.html\"\n      ],\n      \"evidence\": \"Public snippets confirm PNC Financial Services Group Inc. as the data source for hobby spending growth.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Personal savings are out of four-year low right now\",\n      \"public_baseline\": \"The U.S. personal saving rate was 3.60% as of Dec 2025, which is indeed a low level, but the specific 'four-year low' claim is not directly confirmed in the snippets.\",\n      \"surprise_gap\": \"The claim of a four-year low is plausible but not explicitly verified in the provided snippets.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"US personal savings rate four-year low 2025\",\n          \"url\": \"https://www.zogby.com/data/personal-savings-rate/\",\n          \"fact\": \"The U.S. personal savings rate is 3.60% as of Dec 2025.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"PNC credit card data hobby spending growth 2025\",\n          \"url\": \"https://us.fashionnetwork.com/news/Crafts-and-hobbies-are-winning-the-battle-for-americans-paychecks,1859313.html\",\n          \"fact\": \"Card data compiled by PNC shows year-over-year growth in hobby spending in every month since April 2025.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Personal savings rate is at a four-year low (not directly verified).\",\n        \"Hobby spending growth is definitively outpacing discretionary purchases (only one source).\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript contains a possible mispronunciation 'Tom Keynes' which may refer to a generation label; treat with caution.\",\n    \"The claim about personal savings rate being at a four-year low is not directly confirmed by the provided snippets; only a specific rate is given.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"PNC信用卡数据显示，自2025年4月以来，美国消费者每月爱好支出同比增长，且增速超过整体可自由支配支出；同期个人储蓄率处于四年低点。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"美国人不存钱了？钱都花在贴纸上\",\n          \"title_lines\": [\n            \"美国人不存钱了？\",\n            \"钱都花在贴纸上\",\n            \"月花300美元\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"PNC信用卡数据显示爱好支出每月同比增长\",\n            \"个人储蓄率处于四年低点\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"储蓄率四年新低，美国人却为爱好花钱\",\n          \"title_lines\": [\n            \"储蓄率四年新低\",\n            \"美国人却为爱好花钱\",\n            \"贴纸月花300美元\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"个人储蓄率处于四年低点\",\n            \"PNC数据显示爱好支出增长\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"彭博社：美国人宁愿不存钱也要玩爱好\",\n          \"title_lines\": [\n            \"彭博社：美国人\",\n            \"宁愿不存钱\",\n            \"也要玩爱好\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"彭博社报道个人储蓄率四年低点\",\n            \"PNC数据显示爱好支出增长\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"从贴纸到高尔夫，美国人的钱都去哪了\",\n          \"title_lines\": [\n            \"从贴纸到高尔夫\",\n            \"美国人的钱\",\n            \"都去哪了\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"PNC数据显示爱好支出增长\",\n            \"视频中提到贴纸月花300美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "PNC信用卡数据显示爱好支出每月同比增长",
+              "个人储蓄率处于四年低点"
+            ],
+            "title": "美国人不存钱了？钱都花在贴纸上",
+            "title_lines": [
+              "美国人不存钱了？",
+              "钱都花在贴纸上",
+              "月花300美元"
+            ],
+            "title_highlights": [
+              "不存钱",
+              "贴纸",
+              "300美元"
+            ],
+            "runner_up_titles": [
+              "储蓄率四年新低，美国人却为爱好花钱",
+              "从贴纸到高尔夫，美国人的钱都去哪了"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：储蓄率走低背后，爱好消费成新引擎，值得关注后续数据。",
+            "comment_highlights": [
+              "储蓄率",
+              "爱好消费"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：PNC数据揭示爱好支出持续增长，消费结构在变。",
+                "comment_highlights": [
+                  "PNC",
+                  "爱好支出"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：全年龄段都爱花钱，趋势覆盖面广。",
+                "comment_highlights": [
+                  "全年龄段"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：消费者为爱好腾出预算，储蓄让位。",
+                "comment_highlights": [
+                  "预算",
+                  "储蓄"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：减少储蓄换享受，个人财务选择转向。",
+                "comment_highlights": [
+                  "减少储蓄"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：储蓄率四年低点，物价高企下快乐优先。",
+                "comment_highlights": [
+                  "储蓄率",
+                  "四年低点"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：大量花钱在爱好，消费意愿强烈。",
+                "comment_highlights": [
+                  "花钱",
+                  "爱好"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：音乐运动等爱好，门槛不高但投入可观。",
+                "comment_highlights": [
+                  "音乐",
+                  "运动"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：看似小支出，深入后花费惊人。",
+                "comment_highlights": [
+                  "小支出",
+                  "花费"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：低门槛入坑，深度爱好成本飙升。",
+                "comment_highlights": [
+                  "低门槛",
+                  "成本"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：贴纸月花300美元，手账消费超预期。",
+                "comment_highlights": [
+                  "贴纸",
+                  "300美元"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：贴纸消费令人意外，爱好支出潜力大。",
+                "comment_highlights": [
+                  "贴纸",
+                  "意外"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：贴纸类比绿票，消费习惯代际差异。",
+                "comment_highlights": [
+                  "贴纸",
+                  "绿票"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：月花300美元，过去有时间玩爱好。",
+                "comment_highlights": [
+                  "300美元",
+                  "爱好"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：帆船高尔夫曾是爱好，现在消费更分散。",
+                "comment_highlights": [
+                  "帆船",
+                  "高尔夫"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：消费模式变迁，爱好支出成新趋势。",
+                "comment_highlights": [
+                  "消费模式",
+                  "爱好支出"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "美国人不存钱了？：钱都花在贴纸上，月花300美元",
+          "title_lines": [
+            "美国人不存钱了？",
+            "钱都花在贴纸上",
+            "月花300美元"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：储蓄率走低背后，爱好消费成新引擎，值得关注后续数据"
+        }
+      }
+    }
+  ]
+}
