@@ -1,0 +1,846 @@
+{
+  "timestamp_utc": "2026-08-23T22:31:03.042361+00:00",
+  "plan_path": "work/top-videos/02_treasury_buybacks_fail_to_calm_bond_market/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Tom Keane",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Tom Keene",
+        "preferred_en": "Tom Keene",
+        "official_zh": "",
+        "common_zh": "汤姆·基恩",
+        "title_label": "汤姆·基恩",
+        "preferred_zh": "汤姆·基恩",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg anchor and editor-at-large; Chinese media commonly use 汤姆·基恩."
+      },
+      {
+        "source_text": "Tony Crescenzi",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Tony Crescenzi",
+        "preferred_en": "Tony Crescenzi",
+        "official_zh": "",
+        "common_zh": "托尼·克雷申齐",
+        "title_label": "托尼·克雷申齐",
+        "preferred_zh": "托尼·克雷申齐",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "PIMCO executive vice president and market strategist; Chinese financial media use 托尼·克雷申齐."
+      },
+      {
+        "source_text": "PIMCO",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Pacific Investment Management Company",
+        "preferred_en": "Pacific Investment Management Company",
+        "official_zh": "太平洋投资管理公司",
+        "common_zh": "品浩",
+        "title_label": "品浩",
+        "preferred_zh": "品浩",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "PIMCO's official Chinese name is 品浩; widely used in Chinese financial media."
+      },
+      {
+        "source_text": "Treasury Secretary",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Scott Bessent",
+        "preferred_en": "Scott Bessent",
+        "official_zh": "斯科特·贝森特",
+        "common_zh": "贝森特",
+        "title_label": "贝森特",
+        "preferred_zh": "贝森特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Scott Bessent is the Treasury Secretary; Chinese media use 贝森特."
+      },
+      {
+        "source_text": "Treasury buyback program",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "Treasury buyback program",
+        "preferred_en": "Treasury buyback program",
+        "official_zh": "美国国债回购计划",
+        "common_zh": "美债回购计划",
+        "title_label": "美债回购",
+        "preferred_zh": "美债回购计划",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly referred to as 美债回购 in Chinese financial media."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "10-year note",
+        "clip_indexes": [],
+        "context": "US Treasury bond market",
+        "sense": "10-year Treasury note",
+        "preferred_zh": "10年期美债",
+        "title_label": "10年期美债",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "30-year bond",
+        "clip_indexes": [],
+        "context": "US Treasury bond market",
+        "sense": "30-year Treasury bond",
+        "preferred_zh": "30年期美债",
+        "title_label": "30年期美债",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Treasury buybacks are a stabilizer, but investors must still determine fair value of 10-year and 30-year bonds.",
+        "public_baseline": "The Treasury announced doubling of buyback sizes to at least $4 billion per operation for 10- to 30-year securities, aiming to stabilize the bond market after a selloff.",
+        "surprise_gap": "The clip frames the buyback as a stabilizer but emphasizes that investors still need to do the math, suggesting the market may not be fully calmed.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Tony Crescenzi calls the buyback a stabilizer and says investors must determine fair value."
+          },
+          {
+            "kind": "public",
+            "query": "Treasury buyback program Bessent announcement 2025",
+            "url": "https://www.reuters.com/world/us-treasury-double-sizes-some-debt-buyback-operations-least-4-billion-2026-08-19/",
+            "fact": "Treasury doubles buyback sizes to at least $4 billion per operation for 10- to 30-year securities."
+          },
+          {
+            "kind": "public",
+            "query": "Treasury buyback program Bessent announcement 2025",
+            "url": "https://www.cnbc.com/2026/08/20/treasury-bond-buybacks-long-term-yields.html",
+            "fact": "Long-term Treasury yields fell sharply after the announcement before edging higher."
+          }
+        ],
+        "forbidden_claims": [
+          "The buyback program has failed to calm the bond market.",
+          "Tony Crescenzi criticized the Treasury's action."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The clip title suggests the buyback failed to calm the market, but the transcript only shows Crescenzi calling it a stabilizer and emphasizing the need for investors to do the math"
+    ],
+    "research_queries": [
+      {
+        "query": "Tony Crescenzi PIMCO portfolio manager",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact name and title of Tony Crescenzi at PIMCO."
+      },
+      {
+        "query": "Treasury buyback program Bessent announcement 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline of the Treasury buyback program announcement and market reaction."
+      },
+      {
+        "query": "PIMCO Tony Crescenzi bond market outlook 2025",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Crescenzi's public stance on bond market to compare with his comments in the clip."
+      },
+      {
+        "query": "Tom Keane bond market commentary 2025",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Keane's typical commentary on bond market to assess if his views are consistent."
+      },
+      {
+        "query": "10-year Treasury yield fair value PIMCO 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the consensus on fair value for 10-year Treasury to understand Crescenzi's approach."
+      },
+      {
+        "query": "Bessant Treasury Secretary bond buyback program reaction",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the market reaction and expert commentary on Bessent's intervention."
+      },
+      {
+        "query": "Bloomberg Treasury Buybacks Fail established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Treasury Buybacks Fail 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Calm Bond Market 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 9,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "回购加码：难平波动，十年美债定价看通胀",
+      "title_lines": [
+        "回购加码",
+        "难平波动",
+        "十年美债定价看通胀"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然回购也压不住，问题出在哪？",
+      "evidence_basis": [
+        "transcript: 回购是稳定器，但投资者必须计算公允价值",
+        "public: 财政部将回购规模翻倍至每次至少40亿美元，但长端收益率先跌后升"
+      ],
+      "runner_up_titles": [
+        "美债回购只是安慰 真正定价在通胀假设",
+        "通胀2.5%假设 决定十年美债合理价"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 1
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 1
+        }
+      },
+      "comment": "KC评论：回购规模翻倍仍难稳市场，长端收益率先跌后升，通胀预期成关键变量"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-23T22:31:02.024588+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market",
+          "source_title": "Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market",
+          "show_date": "",
+          "current_title": "美债回购难平市场波动 收益率走向何方",
+          "current_title_lines": [
+            "Bloomberg Top",
+            "Duration: 12:49 Treasu",
+            "Fail to Calm Bond Mark"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "首先来谈谈债券市场。今天我们很荣幸请到一位无需多介绍的人士。",
+              "en": "I'm going to talk about the bond market first. And grateful to have with us here. A man who needs no introduction.",
+              "relative_start": 0.0,
+              "relative_end": 4.6
+            },
+            {
+              "index": 2,
+              "zh": "汤姆·基恩，彭博观察和彭博财经的联合主播。",
+              "en": "One Tom Keane, of course, the co-anchor of Bloomberg surveillance, Bloomberg money, as well.",
+              "relative_start": 4.6,
+              "relative_end": 8.8
+            },
+            {
+              "index": 3,
+              "zh": "还有托尼·克雷森齐，太平洋**管理公司的**组合经理。",
+              "en": "Tony Cressenzi joins us as well, portfolio manager at PIMCO.",
+              "relative_start": 8.8,
+              "relative_end": 12.9
+            },
+            {
+              "index": 4,
+              "zh": "托尼，先请你谈谈看法。几天前财政部长意外宣布调整债券回购计划，你怎么看？",
+              "en": "Tony, let me start with you. I just want to get your perspective here. It's been a couple of days since we had the surprise intervention by the Treasury Secretary announcing these changes to the bond",
+              "relative_start": 12.9,
+              "relative_end": 20.9
+            },
+            {
+              "index": 5,
+              "zh": "你如何解读这一举措？",
+              "en": "by-back program. How are you processing it?",
+              "relative_start": 20.9,
+              "relative_end": 24.2
+            },
+            {
+              "index": 6,
+              "zh": "你如何思考？这传递了贝森特先生管理美国经济的什么信号？",
+              "en": "How are you thinking about it? What is it's signal about Mr. Besson's approach here to stewarding the US economy?",
+              "relative_start": 24.2,
+              "relative_end": 31.5
+            },
+            {
+              "index": 7,
+              "zh": "嗯，这是一个稳定器。这可能是最好的理解方式。",
+              "en": "Well, it's a stabilizer. It's probably the best way to think about it.",
+              "relative_start": 31.5,
+              "relative_end": 34.6
+            },
+            {
+              "index": 8,
+              "zh": "作为市场参与者，我们思考行动时，必须从**原则和公允价值出发。",
+              "en": "And when we think as investors about what to do, we have to really start with the principle of how to invest and what the fair value is.",
+              "relative_start": 34.6,
+              "relative_end": 42.9
+            },
+            {
+              "index": 9,
+              "zh": "那么，如何确定十年期国债和三十年期国债的合理水平？",
+              "en": "So how do you determine where a 10-year note should be, where 30 a bond should be?",
+              "relative_start": 42.9,
+              "relative_end": 47.0
+            },
+            {
+              "index": 10,
+              "zh": "债券市场参与者实际怎么想？头条很多，但我们仍需计算。",
+              "en": "What does a bond investor actually think? There are a lot of headlines, but we have to still do the math.",
+              "relative_start": 47.0,
+              "relative_end": 52.8
+            },
+            {
+              "index": 11,
+              "zh": "想想电影《火星救援》，他说，开始干活，算好数学。",
+              "en": "Think of the movie, The Martian. Remember, he says, just get to work and do the math.",
+              "relative_start": 52.8,
+              "relative_end": 57.5
+            },
+            {
+              "index": 12,
+              "zh": "市场参与者每天考虑债券收益率的三个组成部分。",
+              "en": "There's really three components of a bond yield that an investor thinks about each and every day.",
+              "relative_start": 57.5,
+              "relative_end": 63.2
+            },
+            {
+              "index": 13,
+              "zh": "我们当然关注技术操作，但最重要的变量是通胀部分。",
+              "en": "We're focusing a lot, of course, on this technical operation. But the most important variable in that and I'll go through each one really quickly",
+              "relative_start": 63.2,
+              "relative_end": 70.8
+            },
+            {
+              "index": 14,
+              "zh": "作为长期证券市场参与者，我们需要补偿这些变量。",
+              "en": "is the inflation component. So these variables, when we think about what we should be compensated against as investors in a long-term security,",
+              "relative_start": 70.8,
+              "relative_end": 78.8
+            },
+            {
+              "index": 15,
+              "zh": "因为**期限长，比如10年、30年。",
+              "en": "because you are in it for a while, 10-year, 30-year period.",
+              "relative_start": 78.8,
+              "relative_end": 82.7
+            },
+            {
+              "index": 16,
+              "zh": "如果美联储认真对待通胀，2.5%是合理的。",
+              "en": "A 2.5 is pretty reasonable if you think the federal reserve is serious about inflation.",
+              "relative_start": 82.7,
+              "relative_end": 88.8
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market\",\n    \"source_title\": \"Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market\",\n    \"show_date\": \"\",\n    \"current_title\": \"美债回购难平市场波动 收益率走向何方\",\n    \"current_title_lines\": [\n      \"Bloomberg Top\",\n      \"Duration: 12:49 Treasu\",\n      \"Fail to Calm Bond Mark\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"首先来谈谈债券市场。今天我们很荣幸请到一位无需多介绍的人士。\",\n        \"en\": \"I'm going to talk about the bond market first. And grateful to have with us here. A man who needs no introduction.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"汤姆·基恩，彭博观察和彭博财经的联合主播。\",\n        \"en\": \"One Tom Keane, of course, the co-anchor of Bloomberg surveillance, Bloomberg money, as well.\",\n        \"relative_start\": 4.6,\n        \"relative_end\": 8.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"还有托尼·克雷森齐，太平洋**管理公司的**组合经理。\",\n        \"en\": \"Tony Cressenzi joins us as well, portfolio manager at PIMCO.\",\n        \"relative_start\": 8.8,\n        \"relative_end\": 12.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"托尼，先请你谈谈看法。几天前财政部长意外宣布调整债券回购计划，你怎么看？\",\n        \"en\": \"Tony, let me start with you. I just want to get your perspective here. It's been a couple of days since we had the surprise intervention by the Treasury Secretary announcing these changes to the bond\",\n        \"relative_start\": 12.9,\n        \"relative_end\": 20.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"你如何解读这一举措？\",\n        \"en\": \"by-back program. How are you processing it?\",\n        \"relative_start\": 20.9,\n        \"relative_end\": 24.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你如何思考？这传递了贝森特先生管理美国经济的什么信号？\",\n        \"en\": \"How are you thinking about it? What is it's signal about Mr. Besson's approach here to stewarding the US economy?\",\n        \"relative_start\": 24.2,\n        \"relative_end\": 31.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"嗯，这是一个稳定器。这可能是最好的理解方式。\",\n        \"en\": \"Well, it's a stabilizer. It's probably the best way to think about it.\",\n        \"relative_start\": 31.5,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"作为市场参与者，我们思考行动时，必须从**原则和公允价值出发。\",\n        \"en\": \"And when we think as investors about what to do, we have to really start with the principle of how to invest and what the fair value is.\",\n        \"relative_start\": 34.6,\n        \"relative_end\": 42.9\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"那么，如何确定十年期国债和三十年期国债的合理水平？\",\n        \"en\": \"So how do you determine where a 10-year note should be, where 30 a bond should be?\",\n        \"relative_start\": 42.9,\n        \"relative_end\": 47.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"债券市场参与者实际怎么想？头条很多，但我们仍需计算。\",\n        \"en\": \"What does a bond investor actually think? There are a lot of headlines, but we have to still do the math.\",\n        \"relative_start\": 47.0,\n        \"relative_end\": 52.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"想想电影《火星救援》，他说，开始干活，算好数学。\",\n        \"en\": \"Think of the movie, The Martian. Remember, he says, just get to work and do the math.\",\n        \"relative_start\": 52.8,\n        \"relative_end\": 57.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"市场参与者每天考虑债券收益率的三个组成部分。\",\n        \"en\": \"There's really three components of a bond yield that an investor thinks about each and every day.\",\n        \"relative_start\": 57.5,\n        \"relative_end\": 63.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我们当然关注技术操作，但最重要的变量是通胀部分。\",\n        \"en\": \"We're focusing a lot, of course, on this technical operation. But the most important variable in that and I'll go through each one really quickly\",\n        \"relative_start\": 63.2,\n        \"relative_end\": 70.8\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"作为长期证券市场参与者，我们需要补偿这些变量。\",\n        \"en\": \"is the inflation component. So these variables, when we think about what we should be compensated against as investors in a long-term security,\",\n        \"relative_start\": 70.8,\n        \"relative_end\": 78.8\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"因为**期限长，比如10年、30年。\",\n        \"en\": \"because you are in it for a while, 10-year, 30-year period.\",\n        \"relative_start\": 78.8,\n        \"relative_end\": 82.7\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"如果美联储认真对待通胀，2.5%是合理的。\",\n        \"en\": \"A 2.5 is pretty reasonable if you think the federal reserve is serious about inflation.\",\n        \"relative_start\": 82.7,\n        \"relative_end\": 88.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Treasury buybacks are a stabilizer, but investors must still determine fair value of 10-year and 30-year bonds.\",\n      \"public_baseline\": \"The Treasury announced doubling of buyback sizes to at least $4 billion per operation for 10- to 30-year securities, aiming to stabilize the bond market after a selloff.\",\n      \"surprise_gap\": \"The clip frames the buyback as a stabilizer but emphasizes that investors still need to do the math, suggesting the market may not be fully calmed.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tony Crescenzi calls the buyback a stabilizer and says investors must determine fair value.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Treasury buyback program Bessent announcement 2025\",\n          \"url\": \"https://www.reuters.com/world/us-treasury-double-sizes-some-debt-buyback-operations-least-4-billion-2026-08-19/\",\n          \"fact\": \"Treasury doubles buyback sizes to at least $4 billion per operation for 10- to 30-year securities.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Treasury buyback program Bessent announcement 2025\",\n          \"url\": \"https://www.cnbc.com/2026/08/20/treasury-bond-buybacks-long-term-yields.html\",\n          \"fact\": \"Long-term Treasury yields fell sharply after the announcement before edging higher.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The buyback program has failed to calm the bond market.\",\n        \"Tony Crescenzi criticized the Treasury's action.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title suggests the buyback failed to calm the market, but the transcript only shows Crescenzi calling it a stabilizer and emphasizing the need for investors to do the math\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "美国财政部意外宣布扩大回购规模，但PIMCO组合经理仍坚持要按通胀和久期计算10年与30年国债的公允价值。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然回购也压不住，问题出在哪？",
+                "title": "回购加码难平波动 十年美债定价看通胀",
+                "title_lines": [
+                  "回购加码",
+                  "难平波动",
+                  "十年美债定价看通胀"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 回购是稳定器，但投资者必须计算公允价值",
+                  "public: 财政部将回购规模翻倍至每次至少40亿美元，但长端收益率先跌后升"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人把美债定价的底牌说透了",
+                "title": "美债回购只是安慰 真正定价在通胀假设",
+                "title_lines": [
+                  "美债回购",
+                  "只是安慰",
+                  "真正定价在通胀假设"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: PIMCO组合经理称回购是稳定器，但强调通胀是最重要变量",
+                  "public: 财政部回购计划未能完全平息市场，长端收益率波动"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "2.5%的通胀假设到底靠不靠谱？",
+                "title": "通胀2.5%假设 决定十年美债合理价",
+                "title_lines": [
+                  "通胀2.5%假设",
+                  "决定十年美债",
+                  "合理价"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 若美联储认真对待通胀，2.5%是合理的",
+                  "transcript: 投资者必须计算公允价值"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "官方说回购是稳定器，但市场真的买账吗？",
+                "title": "财政部称回购稳市 但市场仍在算账",
+                "title_lines": [
+                  "财政部称回购稳市",
+                  "但市场",
+                  "仍在算账"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 回购是稳定器，但投资者必须做数学题",
+                  "public: 长端收益率先跌后升，市场未完全平静"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market\",\n    \"source_title\": \"Duration: 12:49 Treasury Buybacks Fail to Calm Bond Market\",\n    \"show_date\": \"\",\n    \"current_title\": \"美债回购难平市场波动 收益率走向何方\",\n    \"current_title_lines\": [\n      \"Bloomberg Top\",\n      \"Duration: 12:49 Treasu\",\n      \"Fail to Calm Bond Mark\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"首先来谈谈债券市场。今天我们很荣幸请到一位无需多介绍的人士。\",\n        \"en\": \"I'm going to talk about the bond market first. And grateful to have with us here. A man who needs no introduction.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"汤姆·基恩，彭博观察和彭博财经的联合主播。\",\n        \"en\": \"One Tom Keane, of course, the co-anchor of Bloomberg surveillance, Bloomberg money, as well.\",\n        \"relative_start\": 4.6,\n        \"relative_end\": 8.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"还有托尼·克雷森齐，太平洋**管理公司的**组合经理。\",\n        \"en\": \"Tony Cressenzi joins us as well, portfolio manager at PIMCO.\",\n        \"relative_start\": 8.8,\n        \"relative_end\": 12.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"托尼，先请你谈谈看法。几天前财政部长意外宣布调整债券回购计划，你怎么看？\",\n        \"en\": \"Tony, let me start with you. I just want to get your perspective here. It's been a couple of days since we had the surprise intervention by the Treasury Secretary announcing these changes to the bond\",\n        \"relative_start\": 12.9,\n        \"relative_end\": 20.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"你如何解读这一举措？\",\n        \"en\": \"by-back program. How are you processing it?\",\n        \"relative_start\": 20.9,\n        \"relative_end\": 24.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你如何思考？这传递了贝森特先生管理美国经济的什么信号？\",\n        \"en\": \"How are you thinking about it? What is it's signal about Mr. Besson's approach here to stewarding the US economy?\",\n        \"relative_start\": 24.2,\n        \"relative_end\": 31.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"嗯，这是一个稳定器。这可能是最好的理解方式。\",\n        \"en\": \"Well, it's a stabilizer. It's probably the best way to think about it.\",\n        \"relative_start\": 31.5,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"作为市场参与者，我们思考行动时，必须从**原则和公允价值出发。\",\n        \"en\": \"And when we think as investors about what to do, we have to really start with the principle of how to invest and what the fair value is.\",\n        \"relative_start\": 34.6,\n        \"relative_end\": 42.9\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"那么，如何确定十年期国债和三十年期国债的合理水平？\",\n        \"en\": \"So how do you determine where a 10-year note should be, where 30 a bond should be?\",\n        \"relative_start\": 42.9,\n        \"relative_end\": 47.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"债券市场参与者实际怎么想？头条很多，但我们仍需计算。\",\n        \"en\": \"What does a bond investor actually think? There are a lot of headlines, but we have to still do the math.\",\n        \"relative_start\": 47.0,\n        \"relative_end\": 52.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"想想电影《火星救援》，他说，开始干活，算好数学。\",\n        \"en\": \"Think of the movie, The Martian. Remember, he says, just get to work and do the math.\",\n        \"relative_start\": 52.8,\n        \"relative_end\": 57.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"市场参与者每天考虑债券收益率的三个组成部分。\",\n        \"en\": \"There's really three components of a bond yield that an investor thinks about each and every day.\",\n        \"relative_start\": 57.5,\n        \"relative_end\": 63.2\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我们当然关注技术操作，但最重要的变量是通胀部分。\",\n        \"en\": \"We're focusing a lot, of course, on this technical operation. But the most important variable in that and I'll go through each one really quickly\",\n        \"relative_start\": 63.2,\n        \"relative_end\": 70.8\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"作为长期证券市场参与者，我们需要补偿这些变量。\",\n        \"en\": \"is the inflation component. So these variables, when we think about what we should be compensated against as investors in a long-term security,\",\n        \"relative_start\": 70.8,\n        \"relative_end\": 78.8\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"因为**期限长，比如10年、30年。\",\n        \"en\": \"because you are in it for a while, 10-year, 30-year period.\",\n        \"relative_start\": 78.8,\n        \"relative_end\": 82.7\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"如果美联储认真对待通胀，2.5%是合理的。\",\n        \"en\": \"A 2.5 is pretty reasonable if you think the federal reserve is serious about inflation.\",\n        \"relative_start\": 82.7,\n        \"relative_end\": 88.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Treasury buybacks are a stabilizer, but investors must still determine fair value of 10-year and 30-year bonds.\",\n      \"public_baseline\": \"The Treasury announced doubling of buyback sizes to at least $4 billion per operation for 10- to 30-year securities, aiming to stabilize the bond market after a selloff.\",\n      \"surprise_gap\": \"The clip frames the buyback as a stabilizer but emphasizes that investors still need to do the math, suggesting the market may not be fully calmed.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tony Crescenzi calls the buyback a stabilizer and says investors must determine fair value.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Treasury buyback program Bessent announcement 2025\",\n          \"url\": \"https://www.reuters.com/world/us-treasury-double-sizes-some-debt-buyback-operations-least-4-billion-2026-08-19/\",\n          \"fact\": \"Treasury doubles buyback sizes to at least $4 billion per operation for 10- to 30-year securities.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Treasury buyback program Bessent announcement 2025\",\n          \"url\": \"https://www.cnbc.com/2026/08/20/treasury-bond-buybacks-long-term-yields.html\",\n          \"fact\": \"Long-term Treasury yields fell sharply after the announcement before edging higher.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The buyback program has failed to calm the bond market.\",\n        \"Tony Crescenzi criticized the Treasury's action.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip title suggests the buyback failed to calm the market, but the transcript only shows Crescenzi calling it a stabilizer and emphasizing the need for investors to do the math\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国财政部意外宣布扩大回购规模，但PIMCO组合经理仍坚持要按通胀和久期计算10年与30年国债的公允价值。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然回购也压不住，问题出在哪？\",\n          \"title\": \"回购加码难平波动 十年美债定价看通胀\",\n          \"title_lines\": [\n            \"回购加码\",\n            \"难平波动\",\n            \"十年美债定价看通胀\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 回购是稳定器，但投资者必须计算公允价值\",\n            \"public: 财政部将回购规模翻倍至每次至少40亿美元，但长端收益率先跌后升\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人把美债定价的底牌说透了\",\n          \"title\": \"美债回购只是安慰 真正定价在通胀假设\",\n          \"title_lines\": [\n            \"美债回购\",\n            \"只是安慰\",\n            \"真正定价在通胀假设\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: PIMCO组合经理称回购是稳定器，但强调通胀是最重要变量\",\n            \"public: 财政部回购计划未能完全平息市场，长端收益率波动\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"2.5%的通胀假设到底靠不靠谱？\",\n          \"title\": \"通胀2.5%假设 决定十年美债合理价\",\n          \"title_lines\": [\n            \"通胀2.5%假设\",\n            \"决定十年美债\",\n            \"合理价\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 若美联储认真对待通胀，2.5%是合理的\",\n            \"transcript: 投资者必须计算公允价值\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"官方说回购是稳定器，但市场真的买账吗？\",\n          \"title\": \"财政部称回购稳市 但市场仍在算账\",\n          \"title_lines\": [\n            \"财政部称回购稳市\",\n            \"但市场\",\n            \"仍在算账\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 回购是稳定器，但投资者必须做数学题\",\n            \"public: 长端收益率先跌后升，市场未完全平静\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然回购也压不住，问题出在哪？",
+            "evidence_basis": [
+              "transcript: 回购是稳定器，但投资者必须计算公允价值",
+              "public: 财政部将回购规模翻倍至每次至少40亿美元，但长端收益率先跌后升"
+            ],
+            "title": "回购加码难平波动 十年美债定价看通胀",
+            "title_lines": [
+              "回购加码",
+              "难平波动",
+              "十年美债定价看通胀"
+            ],
+            "title_highlights": [
+              "回购加码",
+              "难平波动",
+              "十年美债定价看通胀"
+            ],
+            "runner_up_titles": [
+              "美债回购只是安慰 真正定价在通胀假设",
+              "通胀2.5%假设 决定十年美债合理价"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 1
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：回购规模翻倍仍难稳市场，长端收益率先跌后升，通胀预期成关键变量。",
+            "comment_highlights": [
+              "回购规模翻倍",
+              "长端收益率先跌后升",
+              "通胀预期"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：债券市场波动成为焦点，嘉宾身份凸显话题分量。",
+                "comment_highlights": [
+                  "债券市场波动"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：彭博主播加盟，提升讨论权威性。",
+                "comment_highlights": [
+                  "彭博主播"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：PIMCO组合经理参与，机构视角值得关注。",
+                "comment_highlights": [
+                  "PIMCO组合经理"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：财政部长意外调整回购计划，市场反应待观察。",
+                "comment_highlights": [
+                  "意外调整回购计划"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：解读举措背后信号，投资者需理性分析。",
+                "comment_highlights": [
+                  "解读举措"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：贝森特管理经济思路引发关注。",
+                "comment_highlights": [
+                  "贝森特"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：稳定器定位明确，但市场实际效果待验证。",
+                "comment_highlights": [
+                  "稳定器"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：从原则和公允价值出发，投资决策需理性。",
+                "comment_highlights": [
+                  "公允价值"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：十年期与三十年期国债合理水平成焦点。",
+                "comment_highlights": [
+                  "十年期",
+                  "三十年期"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：头条之外，计算仍是核心。",
+                "comment_highlights": [
+                  "计算"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：火星救援比喻，强调务实计算。",
+                "comment_highlights": [
+                  "火星救援"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：债券收益率三部分构成，通胀最关键。",
+                "comment_highlights": [
+                  "债券收益率"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：技术操作受关注，但通胀变量更重要。",
+                "comment_highlights": [
+                  "通胀变量"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：长期投资者需补偿通胀风险。",
+                "comment_highlights": [
+                  "通胀风险"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：期限长，通胀假设影响大。",
+                "comment_highlights": [
+                  "期限长"
+                ]
+              },
+              {
+                "subtitle_index": 16,
+                "comment": "KC评论：2.5%通胀假设成定价关键。",
+                "comment_highlights": [
+                  "2.5%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "回购加码：难平波动，十年美债定价看通胀",
+          "title_lines": [
+            "回购加码",
+            "难平波动",
+            "十年美债定价看通胀"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然回购也压不住，问题出在哪？",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 1
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 1
+            }
+          },
+          "comment": "KC评论：回购规模翻倍仍难稳市场，长端收益率先跌后升，通胀预期成关键变量"
+        }
+      }
+    }
+  ]
+}
