@@ -1,0 +1,670 @@
+{
+  "timestamp_utc": "2026-08-25T22:49:39.768676+00:00",
+  "plan_path": "work/top-videos/07_sec_looks_into_trading_at_situational_awareness/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Situational Awareness",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Situational Awareness",
+        "preferred_en": "Situational Awareness",
+        "official_zh": "",
+        "common_zh": "情境感知",
+        "title_label": "情境感知基金",
+        "preferred_zh": "情境感知",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple sources refer to the hedge fund as 'Situational Awareness' and describe it as AI-focused. Chinese media commonly translate the term as '情境感知'."
+      },
+      {
+        "source_text": "SEC",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "U.S. Securities and Exchange Commission",
+        "preferred_en": "U.S. Securities and Exchange Commission",
+        "official_zh": "美国证券交易委员会",
+        "common_zh": "美国证监会",
+        "title_label": "美国证监会",
+        "preferred_zh": "美国证监会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "SEC is widely known as 美国证券交易委员会 or 美国证监会 in Chinese financial media."
+      },
+      {
+        "source_text": "Leopold Aschenbrenner",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Leopold Aschenbrenner",
+        "preferred_en": "Leopold Aschenbrenner",
+        "official_zh": "",
+        "common_zh": "利奥波德·阿申布伦纳",
+        "title_label": "利奥波德·阿申布伦纳",
+        "preferred_zh": "利奥波德·阿申布伦纳",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Name appears in multiple sources; Chinese transliteration is consistent with common practice."
+      },
+      {
+        "source_text": "Citadel",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Citadel LLC",
+        "preferred_en": "Citadel LLC",
+        "official_zh": "城堡投资集团",
+        "common_zh": "城堡投资",
+        "title_label": "城堡投资",
+        "preferred_zh": "城堡投资",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Citadel is commonly referred to as 城堡投资 in Chinese financial media."
+      }
+    ],
+    "terms": [],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "The SEC is examining what was something of a pretty huge hedge fund blow up; the firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10.",
+        "public_baseline": "Public reports confirm that Situational Awareness, an AI-focused hedge fund, suffered a dramatic decline in assets from $45 billion to approximately $10 billion after leveraged bets unraveled, and the SEC is investigating.",
+        "surprise_gap": "The clip's claim aligns with public reports; no significant gap.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "SEC investigation hedge fund trading Situational Awareness",
+            "url": "https://www.upi.com/Top_News/US/2026/08/25/sec-investigates-situational-awareness/8161787664248",
+            "fact": "SEC is investigating Situational Awareness, an AI-focused hedge fund."
+          },
+          {
+            "kind": "public",
+            "query": "Situational Awareness hedge fund assets under management 45 billion 10 billion",
+            "url": "https://www.cnbc.com/2026/07/31/leopold-aschenbrenner-situational-awareness-fund-fire-sale.html",
+            "fact": "Fund collapsed from $45 billion to around $10 billion in assets."
+          }
+        ],
+        "forbidden_claims": [
+          "The SEC has accused the fund of wrongdoing.",
+          "The fund has completely ceased operations."
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip references 'situational' as shorthand for the fund; ensure title uses full name for clarity.",
+      "The fund's name 'Situational Awareness' is translated as '情境感知' in Chinese media; use '情境感知基金' for title."
+    ],
+    "research_queries": [
+      {
+        "query": "SEC investigation hedge fund trading Situational Awareness",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact name of the hedge fund and the SEC probe."
+      },
+      {
+        "query": "Situational Awareness hedge fund assets under management 45 billion 10 billion",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the reported decline in assets from $45B to $10B."
+      },
+      {
+        "query": "hedge fund performance anomaly hundreds percent gains losses",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish industry norms for hedge fund performance to assess the claim of anomaly."
+      },
+      {
+        "query": "SEC protecting retail investors hedge fund blowup",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the SEC's stated mission to protect smaller investors."
+      },
+      {
+        "query": "Bloomberg SEC Looks Into Trading established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "SEC Looks Into Trading 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Situational Awareness 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "SEC 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 8,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "450亿缩至100亿：SEC调查情境感知产品，对冲产品罕见巨变",
+      "title_lines": [
+        "450亿缩至100亿",
+        "SEC调查情境感知产品",
+        "对冲产品罕见巨变"
+      ],
+      "formula_id": "concrete_stakes",
+      "angle_id": "concrete_stakes",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然缩水这么多",
+      "evidence_basis": [
+        "transcript: assets declined from 45 billion to about 10 billion",
+        "public: CNBC report confirms decline"
+      ],
+      "runner_up_titles": [
+        "SEC罕见介入 调查AI对冲产品爆仓",
+        "对冲产品收益上千% 却被SEC盯上"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 9,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:concrete_stakes",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：监管介入罕见，但更罕见的是规模骤降速度，后续动作值得紧盯"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-25T22:49:38.801283+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 80.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:29 SEC Looks Into Trading at Situational Awareness",
+          "source_title": "Duration: 2:29 SEC Looks Into Trading at Situational Awareness",
+          "show_date": "",
+          "current_title": "SEC调查知名对冲产品异常交易",
+          "current_title_lines": [
+            "SEC启动调查",
+            "知名对冲产品异常交易",
+            "杠杆过高引发关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "艾玛，我猜这就是监管机构在如此大规模抛售之后你希望看到和期待的行动吧？",
+              "en": "Emma, I would just kind of assume like this is what you would want to see and hope to see from regulators after such a monument to sell off?",
+              "relative_start": 0.0,
+              "relative_end": 7.0
+            },
+            {
+              "index": 2,
+              "zh": "是的，SEC以保护小市场参与者为傲，而Situational Awareness的市场参与者中散户或创始人个人占比远高于大型机构。",
+              "en": "Yes. I mean, the SEC prides itself on really protecting the smaller investors and if you look at situational, it had a lot more regular people or founders or individuals investing in it than say bigger institutions.",
+              "relative_start": 7.0,
+              "relative_end": 20.0
+            },
+            {
+              "index": 3,
+              "zh": "所以这次调查，虽然还处于早期阶段，可能不会导致实际执法，但确实表明SEC在审视一起大型对冲基金的爆仓事件。",
+              "en": "So this probe, you know, and we will say that it is in this early stages and it may not result in any actual enforcement but it does show that the SEC is examining what was something of a pretty huge hedge fund blow up.",
+              "relative_start": 20.0,
+              "relative_end": 32.0
+            },
+            {
+              "index": 4,
+              "zh": "该公司仍然存在，仍有数十亿美元资产，但从450亿降至约100亿，这在我们行业确实相当罕见。",
+              "en": "The firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10 is something that's kind of wild in our space for sure.",
+              "relative_start": 32.0,
+              "relative_end": 43.0
+            },
+            {
+              "index": 5,
+              "zh": "确实，你对此进行了连续报道。我们看到交易爆仓，这到底有多严重？在业内是异常现象，还是仅仅因为创始人及支持者使其成为头条而备受关注？",
+              "en": "It definitely is well and you've published scoop after scoop on this. I mean, we've seen trades blow up so how big of a deal is this and how much of an anomaly is this in the industry or is it just, you know, one of those that are because i",
+              "relative_start": 43.0,
+              "relative_end": 60.0
+            },
+            {
+              "index": 6,
+              "zh": "这在业内算是相当大的异常。对冲基金不应该出现这样的业绩亏损，也不应该出现这样的收益。",
+              "en": "So it was something of a pretty sizable anomaly in the space. The hedge fund shouldn't lose the kind of performance it has lost and it shouldn't also have these kind of gains.",
+              "relative_start": 60.0,
+              "relative_end": 71.0
+            },
+            {
+              "index": 7,
+              "zh": "数千或数百个百分点的收益，这两种情况通常都不是对冲基金应有的表现，但我们也见过一些例外。",
+              "en": "Thousands or hundreds of percent gains, both of those things are not typically what you would like to see from a hedge fund in its performance but we have seen some outliers as well too.",
+              "relative_start": 71.0,
+              "relative_end": 80.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 80.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:29 SEC Looks Into Trading at Situational Awareness\",\n    \"source_title\": \"Duration: 2:29 SEC Looks Into Trading at Situational Awareness\",\n    \"show_date\": \"\",\n    \"current_title\": \"SEC调查知名对冲产品异常交易\",\n    \"current_title_lines\": [\n      \"SEC启动调查\",\n      \"知名对冲产品异常交易\",\n      \"杠杆过高引发关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"艾玛，我猜这就是监管机构在如此大规模抛售之后你希望看到和期待的行动吧？\",\n        \"en\": \"Emma, I would just kind of assume like this is what you would want to see and hope to see from regulators after such a monument to sell off?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，SEC以保护小市场参与者为傲，而Situational Awareness的市场参与者中散户或创始人个人占比远高于大型机构。\",\n        \"en\": \"Yes. I mean, the SEC prides itself on really protecting the smaller investors and if you look at situational, it had a lot more regular people or founders or individuals investing in it than say bigger institutions.\",\n        \"relative_start\": 7.0,\n        \"relative_end\": 20.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以这次调查，虽然还处于早期阶段，可能不会导致实际执法，但确实表明SEC在审视一起大型对冲基金的爆仓事件。\",\n        \"en\": \"So this probe, you know, and we will say that it is in this early stages and it may not result in any actual enforcement but it does show that the SEC is examining what was something of a pretty huge hedge fund blow up.\",\n        \"relative_start\": 20.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"该公司仍然存在，仍有数十亿美元资产，但从450亿降至约100亿，这在我们行业确实相当罕见。\",\n        \"en\": \"The firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10 is something that's kind of wild in our space for sure.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 43.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"确实，你对此进行了连续报道。我们看到交易爆仓，这到底有多严重？在业内是异常现象，还是仅仅因为创始人及支持者使其成为头条而备受关注？\",\n        \"en\": \"It definitely is well and you've published scoop after scoop on this. I mean, we've seen trades blow up so how big of a deal is this and how much of an anomaly is this in the industry or is it just, you know, one of those that are because i\",\n        \"relative_start\": 43.0,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这在业内算是相当大的异常。对冲基金不应该出现这样的业绩亏损，也不应该出现这样的收益。\",\n        \"en\": \"So it was something of a pretty sizable anomaly in the space. The hedge fund shouldn't lose the kind of performance it has lost and it shouldn't also have these kind of gains.\",\n        \"relative_start\": 60.0,\n        \"relative_end\": 71.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"数千或数百个百分点的收益，这两种情况通常都不是对冲基金应有的表现，但我们也见过一些例外。\",\n        \"en\": \"Thousands or hundreds of percent gains, both of those things are not typically what you would like to see from a hedge fund in its performance but we have seen some outliers as well too.\",\n        \"relative_start\": 71.0,\n        \"relative_end\": 80.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The SEC is examining what was something of a pretty huge hedge fund blow up; the firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10.\",\n      \"public_baseline\": \"Public reports confirm that Situational Awareness, an AI-focused hedge fund, suffered a dramatic decline in assets from $45 billion to approximately $10 billion after leveraged bets unraveled, and the SEC is investigating.\",\n      \"surprise_gap\": \"The clip's claim aligns with public reports; no significant gap.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"SEC investigation hedge fund trading Situational Awareness\",\n          \"url\": \"https://www.upi.com/Top_News/US/2026/08/25/sec-investigates-situational-awareness/8161787664248\",\n          \"fact\": \"SEC is investigating Situational Awareness, an AI-focused hedge fund.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Situational Awareness hedge fund assets under management 45 billion 10 billion\",\n          \"url\": \"https://www.cnbc.com/2026/07/31/leopold-aschenbrenner-situational-awareness-fund-fire-sale.html\",\n          \"fact\": \"Fund collapsed from $45 billion to around $10 billion in assets.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The SEC has accused the fund of wrongdoing.\",\n        \"The fund has completely ceased operations.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip references 'situational' as shorthand for the fund; ensure title uses full name for clarity.\",\n    \"The fund's name 'Situational Awareness' is translated as '情境感知' in Chinese media; use '情境感知基金' for title.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "SEC is investigating the hedge fund Situational Awareness after its assets collapsed from $45 billion to about $10 billion, a dramatic decline that is rare in the industry.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然缩水这么多",
+                "title": "SEC调查情境感知基金 450亿缩至100亿",
+                "title_lines": [
+                  "SEC启动调查",
+                  "450亿缩至100亿",
+                  "对冲基金罕见巨变"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: assets declined from 45 billion to about 10 billion",
+                  "public: CNBC report confirms decline"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "这也能算对冲基金",
+                "title": "对冲基金收益上千% 却被SEC盯上",
+                "title_lines": [
+                  "收益上千%",
+                  "却被SEC调查",
+                  "背后发生了什么"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: thousands or hundreds of percent gains are not typical",
+                  "public: SEC investigation confirmed"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "监管终于出手了",
+                "title": "SEC罕见介入 调查AI对冲基金爆仓",
+                "title_lines": [
+                  "SEC罕见介入",
+                  "调查AI对冲基金",
+                  "散户为何被保护"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: SEC prides itself on protecting smaller investors",
+                  "public: SEC investigation confirmed"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 7,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "缩水速度太吓人",
+                "title": "450亿到100亿 这家基金经历了什么",
+                "title_lines": [
+                  "450亿到100亿",
+                  "基金规模骤降",
+                  "SEC介入调查"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: assets declined from 45 billion to about 10 billion",
+                  "public: CNBC report confirms decline"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 80.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:29 SEC Looks Into Trading at Situational Awareness\",\n    \"source_title\": \"Duration: 2:29 SEC Looks Into Trading at Situational Awareness\",\n    \"show_date\": \"\",\n    \"current_title\": \"SEC调查知名对冲产品异常交易\",\n    \"current_title_lines\": [\n      \"SEC启动调查\",\n      \"知名对冲产品异常交易\",\n      \"杠杆过高引发关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"艾玛，我猜这就是监管机构在如此大规模抛售之后你希望看到和期待的行动吧？\",\n        \"en\": \"Emma, I would just kind of assume like this is what you would want to see and hope to see from regulators after such a monument to sell off?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，SEC以保护小市场参与者为傲，而Situational Awareness的市场参与者中散户或创始人个人占比远高于大型机构。\",\n        \"en\": \"Yes. I mean, the SEC prides itself on really protecting the smaller investors and if you look at situational, it had a lot more regular people or founders or individuals investing in it than say bigger institutions.\",\n        \"relative_start\": 7.0,\n        \"relative_end\": 20.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以这次调查，虽然还处于早期阶段，可能不会导致实际执法，但确实表明SEC在审视一起大型对冲基金的爆仓事件。\",\n        \"en\": \"So this probe, you know, and we will say that it is in this early stages and it may not result in any actual enforcement but it does show that the SEC is examining what was something of a pretty huge hedge fund blow up.\",\n        \"relative_start\": 20.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"该公司仍然存在，仍有数十亿美元资产，但从450亿降至约100亿，这在我们行业确实相当罕见。\",\n        \"en\": \"The firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10 is something that's kind of wild in our space for sure.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 43.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"确实，你对此进行了连续报道。我们看到交易爆仓，这到底有多严重？在业内是异常现象，还是仅仅因为创始人及支持者使其成为头条而备受关注？\",\n        \"en\": \"It definitely is well and you've published scoop after scoop on this. I mean, we've seen trades blow up so how big of a deal is this and how much of an anomaly is this in the industry or is it just, you know, one of those that are because i\",\n        \"relative_start\": 43.0,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这在业内算是相当大的异常。对冲基金不应该出现这样的业绩亏损，也不应该出现这样的收益。\",\n        \"en\": \"So it was something of a pretty sizable anomaly in the space. The hedge fund shouldn't lose the kind of performance it has lost and it shouldn't also have these kind of gains.\",\n        \"relative_start\": 60.0,\n        \"relative_end\": 71.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"数千或数百个百分点的收益，这两种情况通常都不是对冲基金应有的表现，但我们也见过一些例外。\",\n        \"en\": \"Thousands or hundreds of percent gains, both of those things are not typically what you would like to see from a hedge fund in its performance but we have seen some outliers as well too.\",\n        \"relative_start\": 71.0,\n        \"relative_end\": 80.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The SEC is examining what was something of a pretty huge hedge fund blow up; the firm still exists, it still has multi-billion dollars but that declined from 45 billion assets down to about 10.\",\n      \"public_baseline\": \"Public reports confirm that Situational Awareness, an AI-focused hedge fund, suffered a dramatic decline in assets from $45 billion to approximately $10 billion after leveraged bets unraveled, and the SEC is investigating.\",\n      \"surprise_gap\": \"The clip's claim aligns with public reports; no significant gap.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"SEC investigation hedge fund trading Situational Awareness\",\n          \"url\": \"https://www.upi.com/Top_News/US/2026/08/25/sec-investigates-situational-awareness/8161787664248\",\n          \"fact\": \"SEC is investigating Situational Awareness, an AI-focused hedge fund.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Situational Awareness hedge fund assets under management 45 billion 10 billion\",\n          \"url\": \"https://www.cnbc.com/2026/07/31/leopold-aschenbrenner-situational-awareness-fund-fire-sale.html\",\n          \"fact\": \"Fund collapsed from $45 billion to around $10 billion in assets.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The SEC has accused the fund of wrongdoing.\",\n        \"The fund has completely ceased operations.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip references 'situational' as shorthand for the fund; ensure title uses full name for clarity.\",\n    \"The fund's name 'Situational Awareness' is translated as '情境感知' in Chinese media; use '情境感知基金' for title.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"SEC is investigating the hedge fund Situational Awareness after its assets collapsed from $45 billion to about $10 billion, a dramatic decline that is rare in the industry.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然缩水这么多\",\n          \"title\": \"SEC调查情境感知基金 450亿缩至100亿\",\n          \"title_lines\": [\n            \"SEC启动调查\",\n            \"450亿缩至100亿\",\n            \"对冲基金罕见巨变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: assets declined from 45 billion to about 10 billion\",\n            \"public: CNBC report confirms decline\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"这也能算对冲基金\",\n          \"title\": \"对冲基金收益上千% 却被SEC盯上\",\n          \"title_lines\": [\n            \"收益上千%\",\n            \"却被SEC调查\",\n            \"背后发生了什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: thousands or hundreds of percent gains are not typical\",\n            \"public: SEC investigation confirmed\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"监管终于出手了\",\n          \"title\": \"SEC罕见介入 调查AI对冲基金爆仓\",\n          \"title_lines\": [\n            \"SEC罕见介入\",\n            \"调查AI对冲基金\",\n            \"散户为何被保护\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: SEC prides itself on protecting smaller investors\",\n            \"public: SEC investigation confirmed\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"缩水速度太吓人\",\n          \"title\": \"450亿到100亿 这家基金经历了什么\",\n          \"title_lines\": [\n            \"450亿到100亿\",\n            \"基金规模骤降\",\n            \"SEC介入调查\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: assets declined from 45 billion to about 10 billion\",\n            \"public: CNBC report confirms decline\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "concrete_stakes",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然缩水这么多",
+            "evidence_basis": [
+              "transcript: assets declined from 45 billion to about 10 billion",
+              "public: CNBC report confirms decline"
+            ],
+            "title": "450亿缩至100亿 SEC调查情境感知基金",
+            "title_lines": [
+              "450亿缩至100亿",
+              "SEC调查情境感知基金",
+              "对冲基金罕见巨变"
+            ],
+            "title_highlights": [
+              "450亿缩至100亿",
+              "SEC调查",
+              "情境感知基金"
+            ],
+            "runner_up_titles": [
+              "SEC罕见介入 调查AI对冲基金爆仓",
+              "对冲基金收益上千% 却被SEC盯上"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：监管介入罕见，但更罕见的是规模骤降速度，后续动作值得紧盯。",
+            "comment_highlights": [
+              "监管介入",
+              "规模骤降"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：监管行动往往滞后，但这次抛售规模确实罕见。",
+                "comment_highlights": [
+                  "监管行动",
+                  "抛售规模"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：SEC保护散户的立场，让这次调查更具看点。",
+                "comment_highlights": [
+                  "SEC",
+                  "散户"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：早期调查未必有结果，但信号意义已足够。",
+                "comment_highlights": [
+                  "早期调查",
+                  "信号意义"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：450亿到100亿，缩水速度在业内实属罕见。",
+                "comment_highlights": [
+                  "450亿",
+                  "100亿"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：爆仓事件频发，但这家为何引发连续报道？",
+                "comment_highlights": [
+                  "爆仓",
+                  "连续报道"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：业绩异常波动，正是监管关注的焦点。",
+                "comment_highlights": [
+                  "业绩异常",
+                  "监管"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：高收益与高亏损并存，对冲基金罕见现象。",
+                "comment_highlights": [
+                  "高收益",
+                  "高亏损"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "450亿缩至100亿：SEC调查情境感知产品，对冲产品罕见巨变",
+          "title_lines": [
+            "450亿缩至100亿",
+            "SEC调查情境感知产品",
+            "对冲产品罕见巨变"
+          ],
+          "formula_id": "concrete_stakes",
+          "angle_id": "concrete_stakes",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然缩水这么多",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:concrete_stakes",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：监管介入罕见，但更罕见的是规模骤降速度，后续动作值得紧盯"
+        }
+      }
+    }
+  ]
+}
