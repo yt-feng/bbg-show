@@ -1,0 +1,1294 @@
+{
+  "timestamp_utc": "2026-08-28T06:08:12.370876+00:00",
+  "plan_path": "work/top-videos/04_china_calls_for_all_out_rescue_in_tibet_after_flood/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg",
+        "preferred_en": "Bloomberg",
+        "official_zh": "彭博",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg is widely known as 彭博 in Chinese media."
+      },
+      {
+        "source_text": "Lucille Liu",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Lucille Liu",
+        "preferred_en": "Lucille Liu",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No established Chinese name found in public snippets."
+      },
+      {
+        "source_text": "China",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "China",
+        "preferred_en": "China",
+        "official_zh": "中国",
+        "common_zh": "中国",
+        "title_label": "中国",
+        "preferred_zh": "中国",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Tibet",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Tibet",
+        "preferred_en": "Tibet",
+        "official_zh": "西藏",
+        "common_zh": "西藏",
+        "title_label": "西藏",
+        "preferred_zh": "西藏",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Nepal",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Nepal",
+        "preferred_en": "Nepal",
+        "official_zh": "尼泊尔",
+        "common_zh": "尼泊尔",
+        "title_label": "尼泊尔",
+        "preferred_zh": "尼泊尔",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard translation."
+      },
+      {
+        "source_text": "Gyirong County",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Gyirong County",
+        "preferred_en": "Gyirong County",
+        "official_zh": "吉隆县",
+        "common_zh": "吉隆县",
+        "title_label": "吉隆县",
+        "preferred_zh": "吉隆县",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources consistently use 吉隆县."
+      },
+      {
+        "source_text": "Gyirong land port",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Gyirong land port",
+        "preferred_en": "Gyirong land port",
+        "official_zh": "吉隆口岸",
+        "common_zh": "吉隆口岸",
+        "title_label": "吉隆口岸",
+        "preferred_zh": "吉隆口岸",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 吉隆口岸."
+      },
+      {
+        "source_text": "China-Nepal border",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "China-Nepal border",
+        "preferred_en": "China-Nepal border",
+        "official_zh": "中尼边境",
+        "common_zh": "中尼边境",
+        "title_label": "中尼边境",
+        "preferred_zh": "中尼边境",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 中尼边境."
+      },
+      {
+        "source_text": "flash flood",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "flash flood",
+        "preferred_en": "flash flood",
+        "official_zh": "山洪",
+        "common_zh": "山洪",
+        "title_label": "山洪",
+        "preferred_zh": "山洪",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 山洪."
+      },
+      {
+        "source_text": "glacier",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "glacier",
+        "preferred_en": "glacier",
+        "official_zh": "冰川",
+        "common_zh": "冰川",
+        "title_label": "冰川",
+        "preferred_zh": "冰川",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 冰川."
+      },
+      {
+        "source_text": "secondary flooding",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "secondary flooding",
+        "preferred_en": "secondary flooding",
+        "official_zh": "次生洪水",
+        "common_zh": "次生洪水",
+        "title_label": "次生洪水",
+        "preferred_zh": "次生洪水",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources mention 次生灾害, but 次生洪水 is a reasonable translation."
+      },
+      {
+        "source_text": "natural dams",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "natural dams",
+        "preferred_en": "natural dams",
+        "official_zh": "堰塞坝",
+        "common_zh": "堰塞坝",
+        "title_label": "堰塞坝",
+        "preferred_zh": "堰塞坝",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 堰塞湖, but 堰塞坝 is a direct translation."
+      },
+      {
+        "source_text": "rescue efforts",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "rescue efforts",
+        "preferred_en": "rescue efforts",
+        "official_zh": "救援工作",
+        "common_zh": "救援",
+        "title_label": "救援",
+        "preferred_zh": "救援",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 救援."
+      },
+      {
+        "source_text": "death toll",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "death toll",
+        "preferred_en": "death toll",
+        "official_zh": "死亡人数",
+        "common_zh": "遇难人数",
+        "title_label": "遇难人数",
+        "preferred_zh": "遇难人数",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 遇难人数."
+      },
+      {
+        "source_text": "missing",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "missing",
+        "preferred_en": "missing",
+        "official_zh": "失联",
+        "common_zh": "失联",
+        "title_label": "失联",
+        "preferred_zh": "失联",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese sources use 失联."
+      }
+    ],
+    "terms": [],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "1,200 people remain missing after a flash flood tore through the China-Nepal border region.",
+        "public_baseline": "Public reports indicate that the number of missing in Tibet's Gyirong County was 558 (including 260 foreign nationals) as of a certain date, with additional missing in Nepal. The total missing across both sides is often cited as over 1,000, but the specific figure of 1,200 is not consistently confirmed.",
+        "surprise_gap": "The source claim of 1,200 missing is higher than the commonly cited figure of 558 missing in Tibet alone, but it may include Nepal's missing. The discrepancy is not necessarily a contradiction but a difference in scope.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "China Tibet flash flood 2025 death toll missing 1200",
+            "url": "https://www.channelnewsasia.com/asia/nepal-tibet-landslide-flash-floods-missing-tourists-glacier-collapse-6344631",
+            "fact": "The tally of missing in Tibet's Gyirong County was 558, including 260 foreign nationals."
+          },
+          {
+            "kind": "public",
+            "query": "China Tibet flash flood 2025 death toll missing 1200",
+            "url": "https://www.yahoo.com/news/world/articles/more-550-missing-tibet-floods-024844944.html",
+            "fact": "Another 910 people are reported to be missing in Nepal."
+          },
+          {
+            "kind": "public",
+            "query": "西藏 洪水 失联 人数 2025",
+            "url": "https://www.tinhn.com/zh/xizang-jilong-nishiliu/",
+            "fact": "中方通报3人遇难、558人失联，尼泊尔一侧遇难已达469人、失联超1400人，中尼两国合计已致472人遇难、近2000人失联。"
+          }
+        ],
+        "forbidden_claims": [
+          "The death toll is exactly 380.",
+          "The missing count is exactly 1,200 on the Chinese side only."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The source clip's claim of 1,200 missing is plausible when combining both sides, but the exact figure is not consistently confirmed in public sources.",
+      "The death toll of 380 in the clip is higher than the Chinese official count of 3, but may include Nepal's toll; public reports indicate Nepal's toll is around 469, so the total cou",
+      "The clip mentions secondary risks such as natural dams and new rivers, which are consistent with public reports of landslide dam risks."
+    ],
+    "research_queries": [
+      {
+        "query": "China Tibet flash flood 2025 death toll missing 1200",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the baseline death toll and missing count for the Tibet flood to assess the source claim's accuracy."
+      },
+      {
+        "query": "西藏 洪水 失联 人数 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check Chinese official reports on the number of missing people in the Tibet flood."
+      },
+      {
+        "query": "China Nepal border flood 2025 rescue efforts",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the location and rescue efforts mentioned in the source claim."
+      },
+      {
+        "query": "China Tibet flood secondary risks natural dams",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the secondary risks mentioned by experts in the source claim."
+      },
+      {
+        "query": "西藏 洪水 次生灾害 风险",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check Chinese official warnings about secondary risks after the flood."
+      },
+      {
+        "query": "China Tibet flood death toll 380",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the death toll figure of 380 mentioned in the source claim."
+      },
+      {
+        "query": "西藏 洪水 死亡人数 380",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check Chinese official death toll figures for the Tibet flood."
+      },
+      {
+        "query": "China Tibet flood tourists missing foreigners",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that tourists from various countries were affected."
+      },
+      {
+        "query": "西藏 洪水 游客 失联 外国人",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check Chinese reports on foreign tourists affected by the flood."
+      },
+      {
+        "query": "China Tibet flood glacier lake outburst",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the cause of the flood as related to a glacier, as mentioned in the source."
+      },
+      {
+        "query": "Bloomberg China Calls established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "西藏洪水失联人数：官方558，外媒1200，为何差距如此大？",
+      "title_lines": [
+        "西藏洪水失联人数",
+        "官方558，外媒1200",
+        "为何差距如此大？"
+      ],
+      "formula_id": "concrete_stakes",
+      "angle_id": "concrete_stakes",
+      "emotion_pole": "强疑惑",
+      "viewer_reaction": "数字对不上，到底怎么回事",
+      "evidence_basis": [
+        "transcript: 1,200 missing, at least 380 dead",
+        "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+      ],
+      "runner_up_titles": [
+        "西藏洪水失联人数：官方558，外媒1200，救援面临哪些新风险？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 7,
+        "curiosity_gap": 7,
+        "factual_fidelity": 9,
+        "china_resonance": 8
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:concrete_stakes",
+          "emotion:强疑惑",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded",
+          "china_positive_resonance"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 8
+        }
+      },
+      "comment": "KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-28T06:08:08.049791+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood",
+          "source_title": "Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood",
+          "show_date": "",
+          "current_title": "西藏洪水救援：总理亲赴一线，失联人数仍超千",
+          "current_title_lines": [
+            "西藏洪水救援：总理亲赴一线",
+            "失联人数仍超千，救援争分夺秒",
+            "极端天气频发，防灾警钟再响"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "山洪席卷中尼边境地区后，仍有1200人失踪。",
+              "en": "1,200 people remain missing after a flash flood tore through the China-Napal border region.",
+              "relative_start": 0.0,
+              "relative_end": 5.8
+            },
+            {
+              "index": 2,
+              "zh": "灾害已致至少380人遇难。救援队搜寻幸存者之际，当局警告该地区面临新的风险。",
+              "en": "At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government",
+              "relative_start": 5.8,
+              "relative_end": 15.9
+            },
+            {
+              "index": 3,
+              "zh": "我们连线彭博社中国政府和经济学记者Lucille Liu。这是令人痛心的消息，请介绍救援进展及次生风险。",
+              "en": "and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now",
+              "relative_start": 15.9,
+              "relative_end": 26.7
+            },
+            {
+              "index": 4,
+              "zh": "Yvonne，这确实是一场影响深远的悲剧。",
+              "en": "from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so",
+              "relative_start": 26.7,
+              "relative_end": 35.5
+            },
+            {
+              "index": 5,
+              "zh": "我们看到来自马来西亚、印度、澳大利亚、美国、英国等地的游客、访客和朝圣者，全球各地的人们都受到影响，家属正在寻找亲人。",
+              "en": "many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family",
+              "relative_start": 35.5,
+              "relative_end": 48.4
+            },
+            {
+              "index": 6,
+              "zh": "鉴于部分画面，随着搜救继续，预计死亡人数将迅速上升。",
+              "en": "searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.",
+              "relative_start": 48.4,
+              "relative_end": 60.0
+            },
+            {
+              "index": 7,
+              "zh": "专家警告次生风险，因为冰川融水大量涌入，存在再次发生洪水的风险。",
+              "en": "There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts",
+              "relative_start": 60.7,
+              "relative_end": 73.5
+            },
+            {
+              "index": 8,
+              "zh": "专家警告，若出现强降雨，可能造成严重破坏。新形成的天然水坝和河流也可能决堤。",
+              "en": "are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,",
+              "relative_start": 73.5,
+              "relative_end": 84.8
+            },
+            {
+              "index": 9,
+              "zh": "因此，所有人都屏息以待，充满担忧。",
+              "en": "everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of",
+              "relative_start": 84.8,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"source_title\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"show_date\": \"\",\n    \"current_title\": \"西藏洪水救援：总理亲赴一线，失联人数仍超千\",\n    \"current_title_lines\": [\n      \"西藏洪水救援：总理亲赴一线\",\n      \"失联人数仍超千，救援争分夺秒\",\n      \"极端天气频发，防灾警钟再响\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"山洪席卷中尼边境地区后，仍有1200人失踪。\",\n        \"en\": \"1,200 people remain missing after a flash flood tore through the China-Napal border region.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"灾害已致至少380人遇难。救援队搜寻幸存者之际，当局警告该地区面临新的风险。\",\n        \"en\": \"At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government\",\n        \"relative_start\": 5.8,\n        \"relative_end\": 15.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们连线彭博社中国政府和经济学记者Lucille Liu。这是令人痛心的消息，请介绍救援进展及次生风险。\",\n        \"en\": \"and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now\",\n        \"relative_start\": 15.9,\n        \"relative_end\": 26.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"Yvonne，这确实是一场影响深远的悲剧。\",\n        \"en\": \"from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 35.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们看到来自马来西亚、印度、澳大利亚、美国、英国等地的游客、访客和朝圣者，全球各地的人们都受到影响，家属正在寻找亲人。\",\n        \"en\": \"many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family\",\n        \"relative_start\": 35.5,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"鉴于部分画面，随着搜救继续，预计死亡人数将迅速上升。\",\n        \"en\": \"searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"专家警告次生风险，因为冰川融水大量涌入，存在再次发生洪水的风险。\",\n        \"en\": \"There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts\",\n        \"relative_start\": 60.7,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"专家警告，若出现强降雨，可能造成严重破坏。新形成的天然水坝和河流也可能决堤。\",\n        \"en\": \"are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 84.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"因此，所有人都屏息以待，充满担忧。\",\n        \"en\": \"everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of\",\n        \"relative_start\": 84.8,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"1,200 people remain missing after a flash flood tore through the China-Nepal border region.\",\n      \"public_baseline\": \"Public reports indicate that the number of missing in Tibet's Gyirong County was 558 (including 260 foreign nationals) as of a certain date, with additional missing in Nepal. The total missing across both sides is often cited as over 1,000, but the specific figure of 1,200 is not consistently confirmed.\",\n      \"surprise_gap\": \"The source claim of 1,200 missing is higher than the commonly cited figure of 558 missing in Tibet alone, but it may include Nepal's missing. The discrepancy is not necessarily a contradiction but a difference in scope.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.channelnewsasia.com/asia/nepal-tibet-landslide-flash-floods-missing-tourists-glacier-collapse-6344631\",\n          \"fact\": \"The tally of missing in Tibet's Gyirong County was 558, including 260 foreign nationals.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.yahoo.com/news/world/articles/more-550-missing-tibet-floods-024844944.html\",\n          \"fact\": \"Another 910 people are reported to be missing in Nepal.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"西藏 洪水 失联 人数 2025\",\n          \"url\": \"https://www.tinhn.com/zh/xizang-jilong-nishiliu/\",\n          \"fact\": \"中方通报3人遇难、558人失联，尼泊尔一侧遇难已达469人、失联超1400人，中尼两国合计已致472人遇难、近2000人失联。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The death toll is exactly 380.\",\n        \"The missing count is exactly 1,200 on the Chinese side only.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip's claim of 1,200 missing is plausible when combining both sides, but the exact figure is not consistently confirmed in public sources.\",\n    \"The death toll of 380 in the clip is higher than the Chinese official count of 3, but may include Nepal's toll; public reports indicate Nepal's toll is around 469, so the total cou\",\n    \"The clip mentions secondary risks such as natural dams and new rivers, which are consistent with public reports of landslide dam risks.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "中尼边境山洪已致至少380人遇难，仍有1200人失联，救援持续，专家警告存在二次洪水风险。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "数字对不上，到底怎么回事",
+                "title": "失联1200人，遇难380，官方通报为何不同",
+                "title_lines": [
+                  "失联1200人",
+                  "遇难380人",
+                  "官方通报为何不同"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 1,200 missing, at least 380 dead",
+                  "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "外媒把不敢说的数字说出来了",
+                "title": "外媒报西藏洪水：失联超千，或还有二次洪水",
+                "title_lines": [
+                  "外媒报西藏洪水",
+                  "失联超千人",
+                  "或还有二次洪水"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: foreign media reports 1,200 missing, secondary flooding risks",
+                  "public evidence: missing count combines both sides, official Chinese count lower"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "失联人数差这么多，救援到底怎么算的",
+                "title": "西藏洪水失联人数：官方558，外媒1200",
+                "title_lines": [
+                  "西藏洪水失联人数",
+                  "官方558",
+                  "外媒1200"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 1,200 missing",
+                  "public evidence: Chinese official count 558 missing in Gyirong"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "为什么遇难人数差距这么大",
+                "title": "西藏洪水遇难380，官方仅报3人，差在哪",
+                "title_lines": [
+                  "西藏洪水遇难380",
+                  "官方仅报3人",
+                  "差在哪"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: at least 380 dead",
+                  "public evidence: Chinese official count 3 dead in Gyirong, Nepal side 469 dead"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"source_title\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"show_date\": \"\",\n    \"current_title\": \"西藏洪水救援：总理亲赴一线，失联人数仍超千\",\n    \"current_title_lines\": [\n      \"西藏洪水救援：总理亲赴一线\",\n      \"失联人数仍超千，救援争分夺秒\",\n      \"极端天气频发，防灾警钟再响\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"山洪席卷中尼边境地区后，仍有1200人失踪。\",\n        \"en\": \"1,200 people remain missing after a flash flood tore through the China-Napal border region.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"灾害已致至少380人遇难。救援队搜寻幸存者之际，当局警告该地区面临新的风险。\",\n        \"en\": \"At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government\",\n        \"relative_start\": 5.8,\n        \"relative_end\": 15.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们连线彭博社中国政府和经济学记者Lucille Liu。这是令人痛心的消息，请介绍救援进展及次生风险。\",\n        \"en\": \"and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now\",\n        \"relative_start\": 15.9,\n        \"relative_end\": 26.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"Yvonne，这确实是一场影响深远的悲剧。\",\n        \"en\": \"from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 35.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们看到来自马来西亚、印度、澳大利亚、美国、英国等地的游客、访客和朝圣者，全球各地的人们都受到影响，家属正在寻找亲人。\",\n        \"en\": \"many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family\",\n        \"relative_start\": 35.5,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"鉴于部分画面，随着搜救继续，预计死亡人数将迅速上升。\",\n        \"en\": \"searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"专家警告次生风险，因为冰川融水大量涌入，存在再次发生洪水的风险。\",\n        \"en\": \"There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts\",\n        \"relative_start\": 60.7,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"专家警告，若出现强降雨，可能造成严重破坏。新形成的天然水坝和河流也可能决堤。\",\n        \"en\": \"are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 84.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"因此，所有人都屏息以待，充满担忧。\",\n        \"en\": \"everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of\",\n        \"relative_start\": 84.8,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"1,200 people remain missing after a flash flood tore through the China-Nepal border region.\",\n      \"public_baseline\": \"Public reports indicate that the number of missing in Tibet's Gyirong County was 558 (including 260 foreign nationals) as of a certain date, with additional missing in Nepal. The total missing across both sides is often cited as over 1,000, but the specific figure of 1,200 is not consistently confirmed.\",\n      \"surprise_gap\": \"The source claim of 1,200 missing is higher than the commonly cited figure of 558 missing in Tibet alone, but it may include Nepal's missing. The discrepancy is not necessarily a contradiction but a difference in scope.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.channelnewsasia.com/asia/nepal-tibet-landslide-flash-floods-missing-tourists-glacier-collapse-6344631\",\n          \"fact\": \"The tally of missing in Tibet's Gyirong County was 558, including 260 foreign nationals.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.yahoo.com/news/world/articles/more-550-missing-tibet-floods-024844944.html\",\n          \"fact\": \"Another 910 people are reported to be missing in Nepal.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"西藏 洪水 失联 人数 2025\",\n          \"url\": \"https://www.tinhn.com/zh/xizang-jilong-nishiliu/\",\n          \"fact\": \"中方通报3人遇难、558人失联，尼泊尔一侧遇难已达469人、失联超1400人，中尼两国合计已致472人遇难、近2000人失联。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The death toll is exactly 380.\",\n        \"The missing count is exactly 1,200 on the Chinese side only.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip's claim of 1,200 missing is plausible when combining both sides, but the exact figure is not consistently confirmed in public sources.\",\n    \"The death toll of 380 in the clip is higher than the Chinese official count of 3, but may include Nepal's toll; public reports indicate Nepal's toll is around 469, so the total cou\",\n    \"The clip mentions secondary risks such as natural dams and new rivers, which are consistent with public reports of landslide dam risks.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"中尼边境山洪已致至少380人遇难，仍有1200人失联，救援持续，专家警告存在二次洪水风险。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"数字对不上，到底怎么回事\",\n          \"title\": \"失联1200人，遇难380，官方通报为何不同\",\n          \"title_lines\": [\n            \"失联1200人\",\n            \"遇难380人\",\n            \"官方通报为何不同\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 1,200 missing, at least 380 dead\",\n            \"public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"外媒把不敢说的数字说出来了\",\n          \"title\": \"外媒报西藏洪水：失联超千，或还有二次洪水\",\n          \"title_lines\": [\n            \"外媒报西藏洪水\",\n            \"失联超千人\",\n            \"或还有二次洪水\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: foreign media reports 1,200 missing, secondary flooding risks\",\n            \"public evidence: missing count combines both sides, official Chinese count lower\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"失联人数差这么多，救援到底怎么算的\",\n          \"title\": \"西藏洪水失联人数：官方558，外媒1200\",\n          \"title_lines\": [\n            \"西藏洪水失联人数\",\n            \"官方558\",\n            \"外媒1200\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 1,200 missing\",\n            \"public evidence: Chinese official count 558 missing in Gyirong\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"为什么遇难人数差距这么大\",\n          \"title\": \"西藏洪水遇难380，官方仅报3人，差在哪\",\n          \"title_lines\": [\n            \"西藏洪水遇难380\",\n            \"官方仅报3人\",\n            \"差在哪\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: at least 380 dead\",\n            \"public evidence: Chinese official count 3 dead in Gyirong, Nepal side 469 dead\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "concrete_stakes",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "数字对不上，到底怎么回事",
+            "evidence_basis": [
+              "transcript: 1,200 missing, at least 380 dead",
+              "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+            ],
+            "title": "西藏洪水失联人数：官方558，外媒1200",
+            "title_lines": [
+              "西藏洪水失联人数",
+              "官方558",
+              "外媒1200"
+            ],
+            "title_highlights": [
+              "官方558",
+              "外媒1200"
+            ],
+            "runner_up_titles": [
+              "失联1200人，遇难380，官方通报为何不同",
+              "外媒报西藏洪水：失联超千，或还有二次洪水"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 6
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险。",
+            "comment_highlights": [
+              "统计口径"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：1200人失联，数字背后是无数家庭的等待。",
+                "comment_highlights": [
+                  "1200人失联"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：380人遇难，救援与风险并存。",
+                "comment_highlights": [
+                  "380人遇难"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：连线记者，关注救援进展与次生风险。",
+                "comment_highlights": [
+                  "次生风险"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：悲剧影响深远，全球关注。",
+                "comment_highlights": [
+                  "全球关注"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：多国游客受影响，家属寻亲牵动人心。",
+                "comment_highlights": [
+                  "家属寻亲"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：死亡人数或上升，救援争分夺秒。",
+                "comment_highlights": [
+                  "死亡人数或上升"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：冰川融水涌入，二次洪水风险需警惕。",
+                "comment_highlights": [
+                  "二次洪水风险"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：强降雨或致严重破坏，新水坝隐患重重。",
+                "comment_highlights": [
+                  "新水坝隐患"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：所有人屏息以待，担忧情绪蔓延。",
+                "comment_highlights": [
+                  "担忧情绪"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"source_title\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n    \"show_date\": \"\",\n    \"current_title\": \"西藏洪水救援：总理亲赴一线，失联人数仍超千\",\n    \"current_title_lines\": [\n      \"西藏洪水救援：总理亲赴一线\",\n      \"失联人数仍超千，救援争分夺秒\",\n      \"极端天气频发，防灾警钟再响\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"山洪席卷中尼边境地区后，仍有1200人失踪。\",\n        \"en\": \"1,200 people remain missing after a flash flood tore through the China-Napal border region.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"灾害已致至少380人遇难。救援队搜寻幸存者之际，当局警告该地区面临新的风险。\",\n        \"en\": \"At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government\",\n        \"relative_start\": 5.8,\n        \"relative_end\": 15.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们连线彭博社中国政府和经济学记者Lucille Liu。这是令人痛心的消息，请介绍救援进展及次生风险。\",\n        \"en\": \"and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now\",\n        \"relative_start\": 15.9,\n        \"relative_end\": 26.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"Yvonne，这确实是一场影响深远的悲剧。\",\n        \"en\": \"from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 35.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们看到来自马来西亚、印度、澳大利亚、美国、英国等地的游客、访客和朝圣者，全球各地的人们都受到影响，家属正在寻找亲人。\",\n        \"en\": \"many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family\",\n        \"relative_start\": 35.5,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"鉴于部分画面，随着搜救继续，预计死亡人数将迅速上升。\",\n        \"en\": \"searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 60.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"专家警告次生风险，因为冰川融水大量涌入，存在再次发生洪水的风险。\",\n        \"en\": \"There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts\",\n        \"relative_start\": 60.7,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"专家警告，若出现强降雨，可能造成严重破坏。新形成的天然水坝和河流也可能决堤。\",\n        \"en\": \"are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 84.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"因此，所有人都屏息以待，充满担忧。\",\n        \"en\": \"everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of\",\n        \"relative_start\": 84.8,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"1,200 people remain missing after a flash flood tore through the China-Nepal border region.\",\n      \"public_baseline\": \"Public reports indicate that the number of missing in Tibet's Gyirong County was 558 (including 260 foreign nationals) as of a certain date, with additional missing in Nepal. The total missing across both sides is often cited as over 1,000, but the specific figure of 1,200 is not consistently confirmed.\",\n      \"surprise_gap\": \"The source claim of 1,200 missing is higher than the commonly cited figure of 558 missing in Tibet alone, but it may include Nepal's missing. The discrepancy is not necessarily a contradiction but a difference in scope.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.channelnewsasia.com/asia/nepal-tibet-landslide-flash-floods-missing-tourists-glacier-collapse-6344631\",\n          \"fact\": \"The tally of missing in Tibet's Gyirong County was 558, including 260 foreign nationals.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.yahoo.com/news/world/articles/more-550-missing-tibet-floods-024844944.html\",\n          \"fact\": \"Another 910 people are reported to be missing in Nepal.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"西藏 洪水 失联 人数 2025\",\n          \"url\": \"https://www.tinhn.com/zh/xizang-jilong-nishiliu/\",\n          \"fact\": \"中方通报3人遇难、558人失联，尼泊尔一侧遇难已达469人、失联超1400人，中尼两国合计已致472人遇难、近2000人失联。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The death toll is exactly 380.\",\n        \"The missing count is exactly 1,200 on the Chinese side only.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip's claim of 1,200 missing is plausible when combining both sides, but the exact figure is not consistently confirmed in public sources.\",\n    \"The death toll of 380 in the clip is higher than the Chinese official count of 3, but may include Nepal's toll; public reports indicate Nepal's toll is around 469, so the total cou\",\n    \"The clip mentions secondary risks such as natural dams and new rivers, which are consistent with public reports of landslide dam risks.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"中尼边境山洪已致至少380人遇难，仍有1200人失联，救援持续，专家警告存在二次洪水风险。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"数字对不上，到底怎么回事\",\n          \"title\": \"失联1200人，遇难380，官方通报为何不同\",\n          \"title_lines\": [\n            \"失联1200人\",\n            \"遇难380人\",\n            \"官方通报为何不同\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 1,200 missing, at least 380 dead\",\n            \"public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"外媒把不敢说的数字说出来了\",\n          \"title\": \"外媒报西藏洪水：失联超千，或还有二次洪水\",\n          \"title_lines\": [\n            \"外媒报西藏洪水\",\n            \"失联超千人\",\n            \"或还有二次洪水\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: foreign media reports 1,200 missing, secondary flooding risks\",\n            \"public evidence: missing count combines both sides, official Chinese count lower\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"失联人数差这么多，救援到底怎么算的\",\n          \"title\": \"西藏洪水失联人数：官方558，外媒1200\",\n          \"title_lines\": [\n            \"西藏洪水失联人数\",\n            \"官方558\",\n            \"外媒1200\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 1,200 missing\",\n            \"public evidence: Chinese official count 558 missing in Gyirong\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"为什么遇难人数差距这么大\",\n          \"title\": \"西藏洪水遇难380，官方仅报3人，差在哪\",\n          \"title_lines\": [\n            \"西藏洪水遇难380\",\n            \"官方仅报3人\",\n            \"差在哪\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: at least 380 dead\",\n            \"public evidence: Chinese official count 3 dead in Gyirong, Nepal side 469 dead\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"西藏洪水失联人数：官方558，外媒1200\",\n      \"title_lines\": [\n        \"西藏洪水失联人数\",\n        \"官方558\",\n        \"外媒1200\"\n      ],\n      \"title_highlights\": [\n        \"官方558\",\n        \"外媒1200\"\n      ],\n      \"comment\": \"KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险\",\n      \"comment_highlights\": [\n        \"统计口径\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：1200人失联，数字背后是无数家庭的等待\",\n          \"comment_highlights\": [\n            \"1200人失联\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：380人遇难，救援与风险并存\",\n          \"comment_highlights\": [\n            \"380人遇难\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：连线记者，关注救援进展与次生风险\",\n          \"comment_highlights\": [\n            \"次生风险\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：悲剧影响深远，全球关注\",\n          \"comment_highlights\": [\n            \"全球关注\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：多国游客受影响，家属寻亲牵动人心\",\n          \"comment_highlights\": [\n            \"家属寻亲\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：死亡人数或上升，救援争分夺秒\",\n          \"comment_highlights\": [\n            \"死亡人数或上升\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：冰川融水涌入，二次洪水风险需警惕\",\n          \"comment_highlights\": [\n            \"二次洪水风险\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：强降雨或致严重破坏，新水坝隐患重重\",\n          \"comment_highlights\": [\n            \"新水坝隐患\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：所有人屏息以待，担忧情绪蔓延\",\n          \"comment_highlights\": [\n            \"担忧情绪\"\n          ]\n        }\n      ],\n      \"formula_id\": \"concrete_stakes\",\n      \"angle_id\": \"concrete_stakes\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"数字对不上，到底怎么回事\",\n      \"evidence_basis\": [\n        \"transcript: 1,200 missing, at least 380 dead\",\n        \"public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing\"\n      ],\n      \"runner_up_titles\": [\n        \"失联1200人，遇难380，官方通报为何不同\",\n        \"外媒报西藏洪水：失联超千，或还有二次洪水\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 6\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 83,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:concrete_stakes\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"make_china_direction_constructive_or_positive\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 6\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"make_china_direction_constructive_or_positive\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "concrete_stakes",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "数字差这么多，到底哪个是真的？",
+                "evidence_basis": [
+                  "transcript: 1,200 missing, at least 380 dead",
+                  "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+                ],
+                "title": "西藏洪水失联人数：官方558，外媒1200",
+                "title_lines": [
+                  "西藏洪水失联人数",
+                  "官方558",
+                  "外媒1200"
+                ],
+                "title_highlights": [
+                  "官方558",
+                  "外媒1200"
+                ],
+                "runner_up_titles": [
+                  "失联1200人，遇难380，官方通报为何不同",
+                  "外媒报西藏洪水：失联超千，或还有二次洪水"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险",
+                "comment_highlights": [
+                  "统计口径"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：1200人失联，数字背后是无数家庭的等待",
+                    "comment_highlights": [
+                      "1200人失联"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：380人遇难，救援与风险并存",
+                    "comment_highlights": [
+                      "380人遇难"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：连线记者，关注救援进展与次生风险",
+                    "comment_highlights": [
+                      "次生风险"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：悲剧影响深远，全球关注",
+                    "comment_highlights": [
+                      "全球关注"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：多国游客受影响，家属寻亲牵动人心",
+                    "comment_highlights": [
+                      "家属寻亲"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：死亡人数或上升，救援争分夺秒",
+                    "comment_highlights": [
+                      "死亡人数或上升"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：冰川融水涌入，二次洪水风险需警惕",
+                    "comment_highlights": [
+                      "二次洪水风险"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：强降雨或致严重破坏，新水坝隐患重重",
+                    "comment_highlights": [
+                      "新水坝隐患"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：所有人屏息以待，担忧情绪蔓延",
+                    "comment_highlights": [
+                      "担忧情绪"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "西藏洪水失联人数：官方558，外媒1200",
+          "title_lines": [
+            "西藏洪水失联人数",
+            "官方558",
+            "外媒1200"
+          ],
+          "formula_id": "concrete_stakes",
+          "angle_id": "concrete_stakes",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "数字对不上，到底怎么回事",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 6
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 83,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:concrete_stakes",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "make_china_direction_constructive_or_positive"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 6
+            }
+          },
+          "comment": "KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-08-28T06:08:11.046687+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood",
+          "source_title": "Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood",
+          "show_date": "",
+          "current_title": "西藏洪水救援：总理亲赴一线，失联人数仍超千",
+          "current_title_lines": [
+            "西藏洪水救援：总理亲赴一线",
+            "失联人数仍超千，救援争分夺秒",
+            "极端天气频发，防灾警钟再响"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "山洪席卷中尼边境地区后，仍有1200人失踪。",
+              "en": "1,200 people remain missing after a flash flood tore through the China-Napal border region.",
+              "relative_start": 0.0,
+              "relative_end": 5.8
+            },
+            {
+              "index": 2,
+              "zh": "灾害已致至少380人遇难。救援队搜寻幸存者之际，当局警告该地区面临新的风险。",
+              "en": "At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government",
+              "relative_start": 5.8,
+              "relative_end": 15.9
+            },
+            {
+              "index": 3,
+              "zh": "我们连线彭博社中国政府和经济学记者Lucille Liu。这是令人痛心的消息，请介绍救援进展及次生风险。",
+              "en": "and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now",
+              "relative_start": 15.9,
+              "relative_end": 26.7
+            },
+            {
+              "index": 4,
+              "zh": "Yvonne，这确实是一场影响深远的悲剧。",
+              "en": "from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so",
+              "relative_start": 26.7,
+              "relative_end": 35.5
+            },
+            {
+              "index": 5,
+              "zh": "我们看到来自马来西亚、印度、澳大利亚、美国、英国等地的游客、访客和朝圣者，全球各地的人们都受到影响，家属正在寻找亲人。",
+              "en": "many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family",
+              "relative_start": 35.5,
+              "relative_end": 48.4
+            },
+            {
+              "index": 6,
+              "zh": "鉴于部分画面，随着搜救继续，预计死亡人数将迅速上升。",
+              "en": "searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.",
+              "relative_start": 48.4,
+              "relative_end": 60.0
+            },
+            {
+              "index": 7,
+              "zh": "专家警告次生风险，因为冰川融水大量涌入，存在再次发生洪水的风险。",
+              "en": "There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts",
+              "relative_start": 60.7,
+              "relative_end": 73.5
+            },
+            {
+              "index": 8,
+              "zh": "专家警告，若出现强降雨，可能造成严重破坏。新形成的天然水坝和河流也可能决堤。",
+              "en": "are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,",
+              "relative_start": 73.5,
+              "relative_end": 84.8
+            },
+            {
+              "index": 9,
+              "zh": "因此，所有人都屏息以待，充满担忧。",
+              "en": "everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of",
+              "relative_start": 84.8,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n  \"source_title\": \"Duration: 3:31 China Calls for All-Out Rescue in Tibet After Flood\",\n  \"current_title\": \"西藏洪水救援：总理亲赴一线，失联人数仍超千\",\n  \"source_claims\": [\n    \"1,200 people remain missing after a flash flood tore through the China-Napal border region.\",\n    \"At least 380 people have died in the disaster. And as rescue team and search for survivors, authorities are now warning of new risks in the region. Let's bring in our China government\",\n    \"and economics reporter Lucille Liu. She joins us now. It's such a devastating story. Just tell us what the status is in terms of rescue efforts. And what are some of these secondary risks now\",\n    \"from this flash flood? Yeah, Yvonne. I mean, it's just yeah, it's a tragedy that has affected so\",\n    \"many people. You know, we've seen tourists, visitors, pilgrims from, you know, everywhere from Malaysia to India, to Australia, the US, the UK. Just people over the world being affected and family\",\n    \"searching for loved ones. Obviously, because of given some of that footage, you know, we are expecting the death toll to go up rapidly as the search and rescue efforts continue.\",\n    \"There are warnings about the secondary risks because so much of, you know, water has come into this area from this glacier. And it's, you know, there are risks of secondary flooding. Experts\",\n    \"are warning that if there's heavy rainfall, that could be very devastating. There's sort of natural dams and these new rivers have formed that experts are also warning may flood. So, you know,\",\n    \"everyone is sort of holding their breath. And you know, there's a lot of, yeah, there's a lot of\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"1,200 people remain missing after a flash flood tore through the China-Nepal border region.\",\n      \"public_baseline\": \"Public reports indicate that the number of missing in Tibet's Gyirong County was 558 (including 260 foreign nationals) as of a certain date, with additional missing in Nepal. The total missing across both sides is often cited as over 1,000, but the specific figure of 1,200 is not consistently confirmed.\",\n      \"surprise_gap\": \"The source claim of 1,200 missing is higher than the commonly cited figure of 558 missing in Tibet alone, but it may include Nepal's missing. The discrepancy is not necessarily a contradiction but a difference in scope.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.channelnewsasia.com/asia/nepal-tibet-landslide-flash-floods-missing-tourists-glacier-collapse-6344631\",\n          \"fact\": \"The tally of missing in Tibet's Gyirong County was 558, including 260 foreign nationals.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"China Tibet flash flood 2025 death toll missing 1200\",\n          \"url\": \"https://www.yahoo.com/news/world/articles/more-550-missing-tibet-floods-024844944.html\",\n          \"fact\": \"Another 910 people are reported to be missing in Nepal.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"西藏 洪水 失联 人数 2025\",\n          \"url\": \"https://www.tinhn.com/zh/xizang-jilong-nishiliu/\",\n          \"fact\": \"中方通报3人遇难、558人失联，尼泊尔一侧遇难已达469人、失联超1400人，中尼两国合计已致472人遇难、近2000人失联。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The death toll is exactly 380.\",\n        \"The missing count is exactly 1,200 on the Chinese side only.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip's claim of 1,200 missing is plausible when combining both sides, but the exact figure is not consistently confirmed in public sources.\",\n    \"The death toll of 380 in the clip is higher than the Chinese official count of 3, but may include Nepal's toll; public reports indicate Nepal's toll is around 469, so the total cou\",\n    \"The clip mentions secondary risks such as natural dams and new rivers, which are consistent with public reports of landslide dam risks.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"西藏洪水失联人数：官方558，外媒1200\",\n  \"title_lines\": [\n    \"西藏洪水失联人数\",\n    \"官方558\",\n    \"外媒1200\"\n  ],\n  \"angle_id\": \"concrete_stakes\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"数字对不上，到底怎么回事\",\n  \"evidence_basis\": [\n    \"transcript: 1,200 missing, at least 380 dead\",\n    \"public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 6\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"make_china_direction_constructive_or_positive\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, or foreign competitor response, the title must present that fact directly and constructively. Do not replace it with a generic market or negotiation summary.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "数字对不上，到底怎么回事",
+            "evidence_basis": [
+              "transcript: 1,200 missing, at least 380 dead",
+              "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+            ],
+            "title": "西藏洪水失联人数：官方558，外媒1200，为何差距如此大？",
+            "title_lines": [
+              "西藏洪水失联人数",
+              "官方558，外媒1200",
+              "为何差距如此大？"
+            ],
+            "title_highlights": [
+              "官方558，外媒1200",
+              "为何差距如此大？"
+            ],
+            "runner_up_titles": [
+              "西藏洪水失联人数：官方558，外媒1200，救援面临哪些新风险？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 8
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "西藏洪水失联人数：官方558，外媒1200，为何差距如此大？",
+        "title_lines": [
+          "西藏洪水失联人数",
+          "官方558，外媒1200",
+          "为何差距如此大？"
+        ],
+        "title_highlights": [
+          "官方558，外媒1200",
+          "为何差距如此大？"
+        ],
+        "comment": "KC评论：数字差异或源于统计口径，关注后续官方更新与二次风险",
+        "comment_highlights": [
+          "统计口径"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：1200人失联，数字背后是无数家庭的等待",
+            "comment_highlights": [
+              "1200人失联"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：380人遇难，救援与风险并存",
+            "comment_highlights": [
+              "380人遇难"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：连线记者，关注救援进展与次生风险",
+            "comment_highlights": [
+              "次生风险"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：悲剧影响深远，全球关注",
+            "comment_highlights": [
+              "全球关注"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：多国游客受影响，家属寻亲牵动人心",
+            "comment_highlights": [
+              "家属寻亲"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：死亡人数或上升，救援争分夺秒",
+            "comment_highlights": [
+              "死亡人数或上升"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：冰川融水涌入，二次洪水风险需警惕",
+            "comment_highlights": [
+              "二次洪水风险"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：强降雨或致严重破坏，新水坝隐患重重",
+            "comment_highlights": [
+              "新水坝隐患"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：所有人屏息以待，担忧情绪蔓延",
+            "comment_highlights": [
+              "担忧情绪"
+            ]
+          }
+        ],
+        "formula_id": "concrete_stakes",
+        "angle_id": "concrete_stakes",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "数字对不上，到底怎么回事",
+        "evidence_basis": [
+          "transcript: 1,200 missing, at least 380 dead",
+          "public evidence: Chinese official count 3 dead, 558 missing in Gyirong; Nepal side 469 dead, over 1400 missing"
+        ],
+        "runner_up_titles": [
+          "西藏洪水失联人数：官方558，外媒1200，救援面临哪些新风险？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 8
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:concrete_stakes",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded",
+            "china_positive_resonance"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 8
+          }
+        }
+      }
+    }
+  ]
+}
