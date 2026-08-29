@@ -1,0 +1,740 @@
+{
+  "timestamp_utc": "2026-08-29T03:45:18.102630+00:00",
+  "plan_path": "work/top-videos/06_people_without_kids_now_utilize_529_accounts/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg",
+        "preferred_en": "Bloomberg",
+        "official_zh": "彭博",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg is widely known as 彭博 in Chinese financial media."
+      },
+      {
+        "source_text": "Sarah",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Sarah",
+        "preferred_en": "Sarah",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Sarah",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable Chinese name found for this individual."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "529 account",
+        "clip_indexes": [],
+        "context": "US education savings plan",
+        "sense": "A tax-advantaged savings plan for education expenses, now also usable for Roth IRA rollovers.",
+        "preferred_zh": "529教育储蓄计划",
+        "title_label": "529账户",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Roth IRA",
+        "clip_indexes": [],
+        "context": "US retirement account",
+        "sense": "A retirement account with after-tax contributions and tax-free withdrawals.",
+        "preferred_zh": "罗斯个人退休账户",
+        "title_label": "罗斯IRA",
+        "avoid_zh": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "SECURE 2.0 Act",
+        "clip_indexes": [],
+        "context": "US legislation",
+        "sense": "A law passed in 2022 that includes provisions for 529 to Roth IRA rollovers.",
+        "preferred_zh": "《安全2.0法案》",
+        "title_label": "安全2.0法案",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual limits for contributing to their retirement plans.",
+        "public_baseline": "529 plans are traditionally for education savings, but the SECURE 2.0 Act (passed in 2022) allows unused 529 funds to be rolled into a Roth IRA starting in 2024, subject to limits.",
+        "surprise_gap": "The claim highlights a novel use of 529 accounts by people without children as a backdoor to fund retirement, which is not the traditional purpose.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "529 plan Roth IRA rollover rules 2022 SECURE Act",
+            "url": "https://www.savingforcollege.com/article/roll-over-529-plan-funds-to-a-roth-ira",
+            "fact": "As of January 1, 2024, 529 plan account owners can roll over unused funds to a Roth IRA without incurring federal taxes or penalties, subject to certain limits."
+          },
+          {
+            "kind": "public",
+            "query": "529 plan Roth IRA rollover rules 2022 SECURE Act",
+            "url": "https://www.fidelity.com/learning-center/personal-finance/529-rollover-to-roth",
+            "fact": "The provision is part of the SECURE 2.0 Act, passed by Congress at the end of 2022."
+          }
+        ],
+        "forbidden_claims": [
+          "529 accounts are only for children",
+          "The rollover is unlimited",
+          "The rule applies to all 529 accounts without restrictions"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip discusses a new use of 529 accounts for retirement savings, which is supported by the SECURE 2.0 Act."
+    ],
+    "research_queries": [
+      {
+        "query": "529 plan Roth IRA rollover rules 2022 SECURE Act",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the baseline rule that 529 funds can be rolled into a Roth IRA after 2022, which is the factual basis for the claim."
+      },
+      {
+        "query": "529 account beneficiary non-family member rules",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm that 529 accounts can be opened for oneself or others, not just children, to establish the factual context."
+      },
+      {
+        "query": "529 plan contribution limits 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the annual contribution limits for 529 plans to assess the claim about hitting retirement plan limits first."
+      },
+      {
+        "query": "Roth IRA income limits 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the income limits for Roth IRA contributions, which is relevant to the backdoor strategy."
+      },
+      {
+        "query": "529 to Roth IRA rollover lifetime limit 35000",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific lifetime limit for 529-to-Roth IRA rollovers, a key detail in the claim."
+      },
+      {
+        "query": "financial advisors 529 retirement strategy caution",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find expert opinions on the complexity and advisability of using 529 for retirement, to compare with the source's stance."
+      },
+      {
+        "query": "529 plan for childless adults wealth building",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search for general coverage of this trend to see if it's widely reported or a novel claim."
+      },
+      {
+        "query": "Bloomberg People Without Kids Now Utilize established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "People Without Kids Now Utilize 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Accounts Bloomberg Money 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 10,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "无孩也存529？：退休金后门藏上限，35,000美元需等五年",
+      "title_lines": [
+        "无孩也存529？",
+        "退休金后门藏上限",
+        "35,000美元需等五年"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱",
+        "public: SECURE 2.0法案允许529资金转入罗斯IRA"
+      ],
+      "runner_up_titles": [
+        "529账户新用途：退休金后门？限制重重",
+        "529存五年才能转？35,000美元上限够吗"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 9,
+        "specificity": 8,
+        "curiosity_gap": 8,
+        "factual_fidelity": 10,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：529账户不再只是教育储蓄，规则调整后成退休金补充通道，但限制需看清"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-08-29T03:45:16.498513+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money",
+          "source_title": "Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money",
+          "show_date": "",
+          "current_title": "无子女者新玩法：529账户变身退休金后门",
+          "current_title_lines": [
+            "无子女者新玩法",
+            "529账户变身退休金后门",
+            "规则调整后，财富配置新思路"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "2022年国会调整了529计划规则后，没有孩子的人也可以在年度退休账户缴款限额用完后，向529账户存钱。",
+              "en": "After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual",
+              "relative_start": 0.0,
+              "relative_end": 8.6
+            },
+            {
+              "index": 2,
+              "zh": "因此，他们某种程度上把529当作资助罗斯IRA的后门。莎拉加入我们，背景音乐是爵士乐。",
+              "en": "limits for contributing to their retirement plans. So in a way, they treat the 529 as a backdoor for funding a Roth IRA. Sarah joins us along with Bloomberg, it's a jazz song. So,",
+              "relative_start": 8.6,
+              "relative_end": 19.0
+            },
+            {
+              "index": 3,
+              "zh": "莎拉，让我们先回顾一下。529账户是为你的孩子或未出生的孩子存大学学费，或者如果他们上私立学校，也可以存高中学费。",
+              "en": "Sarah, let's just back up a little bit. 529 accounts are for you to put money away for your child or unborn child's college savings, or maybe even their high school savings if they're going to,",
+              "relative_start": 19.0,
+              "relative_end": 29.0
+            },
+            {
+              "index": 4,
+              "zh": "但如果你是个热衷储蓄的人，你也可以用它来做其他事情。",
+              "en": "you know, go to a private school. But if you're an avid saver, you could use it for something else as well.",
+              "relative_start": 29.0,
+              "relative_end": 34.1
+            },
+            {
+              "index": 5,
+              "zh": "是的，我认为529真正有趣的地方在于，人们误以为它只适用于孩子。实际上，任何人都可以拥有自己的529账户。我可以为自己开一个。",
+              "en": "Yeah, I think what's really interesting about the 529 is kind of this misconception that it's actually for your children. Actually, anybody can have their own 529 account. I can open up one for yourself.",
+              "relative_start": 34.1,
+              "relative_end": 46.0
+            },
+            {
+              "index": 6,
+              "zh": "你也可以为你的孩子开一个，或者为侄女侄子开一个。",
+              "en": "You can open up one for your children as well. You know, open one up for a niece or a nephew.",
+              "relative_start": 46.0,
+              "relative_end": 50.6
+            },
+            {
+              "index": 7,
+              "zh": "我认为很多人发现，自从国会调整规则后，他们可以用它作为一种财富积累策略。",
+              "en": "And I think a lot of people are really discovering here that since Congress tweaked the rules, there's a new way that they can kind of use it as like a wealth building strategy.",
+              "relative_start": 51.1,
+              "relative_end": 61.0
+            },
+            {
+              "index": 8,
+              "zh": "我们采访了一些人，他们在有孩子之前或甚至不确定是否要孩子之前就开设529账户，因为他们想利用它来将多余资金转入罗斯IRA，如果这些资金未被使用的话。",
+              "en": "So we spoke with people who are either opening these 529 accounts before they have children or before they even know they want them because they're using it as a way to maybe kind of put extra funds",
+              "relative_start": 61.7,
+              "relative_end": 72.2
+            },
+            {
+              "index": 9,
+              "zh": "使用529账户为退休提供资金有哪些限制？",
+              "en": "into a Roth IRA if they go unused. What are the limitations to using a 529 account to fund retirement?",
+              "relative_start": 72.2,
+              "relative_end": 77.9
+            },
+            {
+              "index": 10,
+              "zh": "这是一个非常复杂的过程，我们采访的许多财务顾问表示，这应该在你已经用尽其他账户之后，最后才考虑。",
+              "en": "It's a very complicated process and a lot of the financial advisors that we spoke with say that it should probably kind of come in at the end, you know, after you've maxed out these other accounts,",
+              "relative_start": 77.9,
+              "relative_end": 87.4
+            },
+            {
+              "index": 11,
+              "zh": "但资金需在529计划中存放五年，且最多只能转出35,000美元。",
+              "en": "but you have to have the funds in your 529 plan for five years. You can only move up to 35,000 dollars",
+              "relative_start": 87.4,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money\",\n    \"source_title\": \"Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"无子女者新玩法：529账户变身退休金后门\",\n    \"current_title_lines\": [\n      \"无子女者新玩法\",\n      \"529账户变身退休金后门\",\n      \"规则调整后，财富配置新思路\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"2022年国会调整了529计划规则后，没有孩子的人也可以在年度退休账户缴款限额用完后，向529账户存钱。\",\n        \"en\": \"After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"因此，他们某种程度上把529当作资助罗斯IRA的后门。莎拉加入我们，背景音乐是爵士乐。\",\n        \"en\": \"limits for contributing to their retirement plans. So in a way, they treat the 529 as a backdoor for funding a Roth IRA. Sarah joins us along with Bloomberg, it's a jazz song. So,\",\n        \"relative_start\": 8.6,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"莎拉，让我们先回顾一下。529账户是为你的孩子或未出生的孩子存大学学费，或者如果他们上私立学校，也可以存高中学费。\",\n        \"en\": \"Sarah, let's just back up a little bit. 529 accounts are for you to put money away for your child or unborn child's college savings, or maybe even their high school savings if they're going to,\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 29.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但如果你是个热衷储蓄的人，你也可以用它来做其他事情。\",\n        \"en\": \"you know, go to a private school. But if you're an avid saver, you could use it for something else as well.\",\n        \"relative_start\": 29.0,\n        \"relative_end\": 34.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，我认为529真正有趣的地方在于，人们误以为它只适用于孩子。实际上，任何人都可以拥有自己的529账户。我可以为自己开一个。\",\n        \"en\": \"Yeah, I think what's really interesting about the 529 is kind of this misconception that it's actually for your children. Actually, anybody can have their own 529 account. I can open up one for yourself.\",\n        \"relative_start\": 34.1,\n        \"relative_end\": 46.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你也可以为你的孩子开一个，或者为侄女侄子开一个。\",\n        \"en\": \"You can open up one for your children as well. You know, open one up for a niece or a nephew.\",\n        \"relative_start\": 46.0,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我认为很多人发现，自从国会调整规则后，他们可以用它作为一种财富积累策略。\",\n        \"en\": \"And I think a lot of people are really discovering here that since Congress tweaked the rules, there's a new way that they can kind of use it as like a wealth building strategy.\",\n        \"relative_start\": 51.1,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们采访了一些人，他们在有孩子之前或甚至不确定是否要孩子之前就开设529账户，因为他们想利用它来将多余资金转入罗斯IRA，如果这些资金未被使用的话。\",\n        \"en\": \"So we spoke with people who are either opening these 529 accounts before they have children or before they even know they want them because they're using it as a way to maybe kind of put extra funds\",\n        \"relative_start\": 61.7,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"使用529账户为退休提供资金有哪些限制？\",\n        \"en\": \"into a Roth IRA if they go unused. What are the limitations to using a 529 account to fund retirement?\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 77.9\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"这是一个非常复杂的过程，我们采访的许多财务顾问表示，这应该在你已经用尽其他账户之后，最后才考虑。\",\n        \"en\": \"It's a very complicated process and a lot of the financial advisors that we spoke with say that it should probably kind of come in at the end, you know, after you've maxed out these other accounts,\",\n        \"relative_start\": 77.9,\n        \"relative_end\": 87.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但资金需在529计划中存放五年，且最多只能转出35,000美元。\",\n        \"en\": \"but you have to have the funds in your 529 plan for five years. You can only move up to 35,000 dollars\",\n        \"relative_start\": 87.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual limits for contributing to their retirement plans.\",\n      \"public_baseline\": \"529 plans are traditionally for education savings, but the SECURE 2.0 Act (passed in 2022) allows unused 529 funds to be rolled into a Roth IRA starting in 2024, subject to limits.\",\n      \"surprise_gap\": \"The claim highlights a novel use of 529 accounts by people without children as a backdoor to fund retirement, which is not the traditional purpose.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"529 plan Roth IRA rollover rules 2022 SECURE Act\",\n          \"url\": \"https://www.savingforcollege.com/article/roll-over-529-plan-funds-to-a-roth-ira\",\n          \"fact\": \"As of January 1, 2024, 529 plan account owners can roll over unused funds to a Roth IRA without incurring federal taxes or penalties, subject to certain limits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"529 plan Roth IRA rollover rules 2022 SECURE Act\",\n          \"url\": \"https://www.fidelity.com/learning-center/personal-finance/529-rollover-to-roth\",\n          \"fact\": \"The provision is part of the SECURE 2.0 Act, passed by Congress at the end of 2022.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"529 accounts are only for children\",\n        \"The rollover is unlimited\",\n        \"The rule applies to all 529 accounts without restrictions\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip discusses a new use of 529 accounts for retirement savings, which is supported by the SECURE 2.0 Act.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱，并可在满足条件后转入罗斯IRA（上限35,000美元，需存放5年）。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "无孩也存529？退休金后门新通道",
+                "title_lines": [
+                  "无孩也存529？",
+                  "退休金后门新通道",
+                  "35,000美元上限藏玄机"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱",
+                  "public: SECURE 2.0法案允许529资金转入罗斯IRA"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "529账户新用途：退休金后门？限制重重",
+                "title_lines": [
+                  "529账户新用途",
+                  "退休金后门？",
+                  "限制重重藏门槛"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 资金需存放5年，最多转35,000美元",
+                  "transcript: 财务顾问建议最后考虑"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "财务顾问说透：529后门非首选",
+                "title_lines": [
+                  "财务顾问说透",
+                  "529后门非首选",
+                  "存满其他账户再考虑"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 许多财务顾问表示应最后考虑",
+                  "transcript: 这是一个非常复杂的过程"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "529存五年才能转？35,000美元上限够吗",
+                "title_lines": [
+                  "529存五年才能转？",
+                  "35,000美元上限",
+                  "退休金后门够用吗"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 资金需在529计划中存放五年，最多只能转出35,000美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money\",\n    \"source_title\": \"Duration: 1:43 People Without Kids Now Utilize 529 Accounts Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"无子女者新玩法：529账户变身退休金后门\",\n    \"current_title_lines\": [\n      \"无子女者新玩法\",\n      \"529账户变身退休金后门\",\n      \"规则调整后，财富配置新思路\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"2022年国会调整了529计划规则后，没有孩子的人也可以在年度退休账户缴款限额用完后，向529账户存钱。\",\n        \"en\": \"After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"因此，他们某种程度上把529当作资助罗斯IRA的后门。莎拉加入我们，背景音乐是爵士乐。\",\n        \"en\": \"limits for contributing to their retirement plans. So in a way, they treat the 529 as a backdoor for funding a Roth IRA. Sarah joins us along with Bloomberg, it's a jazz song. So,\",\n        \"relative_start\": 8.6,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"莎拉，让我们先回顾一下。529账户是为你的孩子或未出生的孩子存大学学费，或者如果他们上私立学校，也可以存高中学费。\",\n        \"en\": \"Sarah, let's just back up a little bit. 529 accounts are for you to put money away for your child or unborn child's college savings, or maybe even their high school savings if they're going to,\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 29.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但如果你是个热衷储蓄的人，你也可以用它来做其他事情。\",\n        \"en\": \"you know, go to a private school. But if you're an avid saver, you could use it for something else as well.\",\n        \"relative_start\": 29.0,\n        \"relative_end\": 34.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，我认为529真正有趣的地方在于，人们误以为它只适用于孩子。实际上，任何人都可以拥有自己的529账户。我可以为自己开一个。\",\n        \"en\": \"Yeah, I think what's really interesting about the 529 is kind of this misconception that it's actually for your children. Actually, anybody can have their own 529 account. I can open up one for yourself.\",\n        \"relative_start\": 34.1,\n        \"relative_end\": 46.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你也可以为你的孩子开一个，或者为侄女侄子开一个。\",\n        \"en\": \"You can open up one for your children as well. You know, open one up for a niece or a nephew.\",\n        \"relative_start\": 46.0,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我认为很多人发现，自从国会调整规则后，他们可以用它作为一种财富积累策略。\",\n        \"en\": \"And I think a lot of people are really discovering here that since Congress tweaked the rules, there's a new way that they can kind of use it as like a wealth building strategy.\",\n        \"relative_start\": 51.1,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们采访了一些人，他们在有孩子之前或甚至不确定是否要孩子之前就开设529账户，因为他们想利用它来将多余资金转入罗斯IRA，如果这些资金未被使用的话。\",\n        \"en\": \"So we spoke with people who are either opening these 529 accounts before they have children or before they even know they want them because they're using it as a way to maybe kind of put extra funds\",\n        \"relative_start\": 61.7,\n        \"relative_end\": 72.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"使用529账户为退休提供资金有哪些限制？\",\n        \"en\": \"into a Roth IRA if they go unused. What are the limitations to using a 529 account to fund retirement?\",\n        \"relative_start\": 72.2,\n        \"relative_end\": 77.9\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"这是一个非常复杂的过程，我们采访的许多财务顾问表示，这应该在你已经用尽其他账户之后，最后才考虑。\",\n        \"en\": \"It's a very complicated process and a lot of the financial advisors that we spoke with say that it should probably kind of come in at the end, you know, after you've maxed out these other accounts,\",\n        \"relative_start\": 77.9,\n        \"relative_end\": 87.4\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但资金需在529计划中存放五年，且最多只能转出35,000美元。\",\n        \"en\": \"but you have to have the funds in your 529 plan for five years. You can only move up to 35,000 dollars\",\n        \"relative_start\": 87.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Congress tweaked the rules covering 529 plans in 2022, people without kids are now able to put money into those accounts after hitting the annual limits for contributing to their retirement plans.\",\n      \"public_baseline\": \"529 plans are traditionally for education savings, but the SECURE 2.0 Act (passed in 2022) allows unused 529 funds to be rolled into a Roth IRA starting in 2024, subject to limits.\",\n      \"surprise_gap\": \"The claim highlights a novel use of 529 accounts by people without children as a backdoor to fund retirement, which is not the traditional purpose.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"529 plan Roth IRA rollover rules 2022 SECURE Act\",\n          \"url\": \"https://www.savingforcollege.com/article/roll-over-529-plan-funds-to-a-roth-ira\",\n          \"fact\": \"As of January 1, 2024, 529 plan account owners can roll over unused funds to a Roth IRA without incurring federal taxes or penalties, subject to certain limits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"529 plan Roth IRA rollover rules 2022 SECURE Act\",\n          \"url\": \"https://www.fidelity.com/learning-center/personal-finance/529-rollover-to-roth\",\n          \"fact\": \"The provision is part of the SECURE 2.0 Act, passed by Congress at the end of 2022.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"529 accounts are only for children\",\n        \"The rollover is unlimited\",\n        \"The rule applies to all 529 accounts without restrictions\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip discusses a new use of 529 accounts for retirement savings, which is supported by the SECURE 2.0 Act.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱，并可在满足条件后转入罗斯IRA（上限35,000美元，需存放5年）。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"无孩也存529？退休金后门新通道\",\n          \"title_lines\": [\n            \"无孩也存529？\",\n            \"退休金后门新通道\",\n            \"35,000美元上限藏玄机\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱\",\n            \"public: SECURE 2.0法案允许529资金转入罗斯IRA\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"529账户新用途：退休金后门？限制重重\",\n          \"title_lines\": [\n            \"529账户新用途\",\n            \"退休金后门？\",\n            \"限制重重藏门槛\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 资金需存放5年，最多转35,000美元\",\n            \"transcript: 财务顾问建议最后考虑\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"财务顾问说透：529后门非首选\",\n          \"title_lines\": [\n            \"财务顾问说透\",\n            \"529后门非首选\",\n            \"存满其他账户再考虑\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 许多财务顾问表示应最后考虑\",\n            \"transcript: 这是一个非常复杂的过程\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"529存五年才能转？35,000美元上限够吗\",\n          \"title_lines\": [\n            \"529存五年才能转？\",\n            \"35,000美元上限\",\n            \"退休金后门够用吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 资金需在529计划中存放五年，最多只能转出35,000美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 2022年国会调整529规则后，无子女者可在退休账户缴款上限用完后向529存钱",
+              "public: SECURE 2.0法案允许529资金转入罗斯IRA"
+            ],
+            "title": "无孩也存529？退休金后门藏上限",
+            "title_lines": [
+              "无孩也存529？",
+              "退休金后门藏上限",
+              "35,000美元需等五年"
+            ],
+            "title_highlights": [
+              "无孩也存529",
+              "退休金后门",
+              "35,000美元"
+            ],
+            "runner_up_titles": [
+              "529账户新用途：退休金后门？限制重重",
+              "529存五年才能转？35,000美元上限够吗"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：529账户不再只是教育储蓄，规则调整后成退休金补充通道，但限制需看清。",
+            "comment_highlights": [
+              "529账户",
+              "退休金补充通道"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：2022年规则调整，无子女者也能利用529账户存钱。",
+                "comment_highlights": [
+                  "规则调整"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：529账户被当作罗斯IRA的后门，新用法引发关注。",
+                "comment_highlights": [
+                  "后门"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：传统上529用于教育储蓄，现在用途正在扩展。",
+                "comment_highlights": [
+                  "教育储蓄"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：热衷储蓄者可能发现529账户的新价值。",
+                "comment_highlights": [
+                  "新价值"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：任何人都可以拥有529账户，不限于有孩子的人。",
+                "comment_highlights": [
+                  "任何人"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：可以为孩子或亲属开设，灵活性较高。",
+                "comment_highlights": [
+                  "灵活性"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：规则调整后，529成为财富积累的新策略。",
+                "comment_highlights": [
+                  "财富积累"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：有人提前开设529，为未来可能转入罗斯IRA做准备。",
+                "comment_highlights": [
+                  "提前开设"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：使用529为退休提供资金存在限制，需了解清楚。",
+                "comment_highlights": [
+                  "限制"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：财务顾问建议在用尽其他账户后再考虑529转退休。",
+                "comment_highlights": [
+                  "财务顾问"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：资金需存放五年，且转出上限为35,000美元。",
+                "comment_highlights": [
+                  "五年",
+                  "35,000美元"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "无孩也存529？：退休金后门藏上限，35,000美元需等五年",
+          "title_lines": [
+            "无孩也存529？",
+            "退休金后门藏上限",
+            "35,000美元需等五年"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：529账户不再只是教育储蓄，规则调整后成退休金补充通道，但限制需看清"
+        }
+      }
+    }
+  ]
+}
