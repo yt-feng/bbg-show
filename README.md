@@ -112,3 +112,20 @@ rendered-clips/top-videos/YYYY-MM-DD/
 
 Manual dispatch accepts optional `run_date`, `page_url`, `max_videos`, and
 `font_preset` inputs. `run_date` defaults to today in `Asia/Shanghai`.
+
+## Encrypted transcript archive
+
+The daily Show, Top Videos, and ARK Invest workflows retain the full normalized
+transcript for each successfully published, non-duplicate source under:
+
+```text
+transcripts/{shows,top-videos,ark-invest}/YYYY-MM-DD/
+```
+
+Only authenticated OpenSSL CMS ciphertext is committed. Each source produces a
+content-addressed encrypted JSON file and an encrypted readable Markdown file;
+plaintext transcripts remain in the ignored runner workspace and are never
+staged. The repository contains only the public recipient certificate. The
+private key and its passphrase are local operator material and must never be
+added to this repository or to GitHub Actions secrets. See
+`transcripts/README.md` for the archive format and cryptographic profile.

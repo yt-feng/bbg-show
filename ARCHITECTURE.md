@@ -12,6 +12,14 @@ their plans, source identities, summaries, and duplicate-prevention ledgers unde
 `rendered-clips/` are intentionally committed to `main`. That committed tree is the publishing
 source of truth and the retryable input for downstream delivery.
 
+Full transcripts for final successful, non-duplicate Show, Top Videos, and ARK
+Invest sources are retained separately under `transcripts/`. This tree contains
+only CMS `AuthEnvelopedData` ciphertext encrypted with AES-256-GCM to the checked-in
+RSA-3072 public certificate. The private key remains on the operator's Mac and is
+not an Actions secret. GitHub runners necessarily handle plaintext while the
+existing transcription and planning jobs execute, but plaintext is confined to
+ignored `work/` paths and is never committed or uploaded as an artifact.
+
 ## Target Operating Mode
 
 The target operator experience is:
@@ -855,6 +863,8 @@ ffprobe -v error \
 - Keep proxy subscription files under `tmp/`.
 - Keep downloaded media under `downloads/`.
 - `.gitignore` excludes `tmp/`, `downloads/*.mp4`, `.DS_Store`, `yt-dlp` partials, remux temp files, and logs.
+- Keep transcript plaintext under ignored `work/` paths. Only validated `.cms` files belong under `transcripts/`.
+- Keep the transcript archive private key and passphrase off GitHub and out of this repository; only the recipient certificate is public.
 - Do not paste or commit decoded subscription contents, proxy credentials, HLS segment caches, or full media files.
 - Commit only helper scripts, documentation, and non-sensitive configuration.
 

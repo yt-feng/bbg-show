@@ -242,6 +242,7 @@ jobs:
             --out-root rendered-clips/top-videos \
             --work-root work/top-videos \
             --processed-sources rendered-clips/top-videos/processed_sources.json \
+            --transcript-recipient-cert config/transcript-archive-recipient-v1.pem \
             --download-backend auto \
             --workers 32 \
             --threads 2 \
@@ -452,6 +453,12 @@ jobs:
             --output-dir "$OUTPUT_DIR" \
             --evaluate
 
+      - name: Promote encrypted top video transcripts
+        run: |
+          python tools/promote_encrypted_transcripts.py \
+            --staging-root "$OUTPUT_DIR" \
+            --output-dir "transcripts/top-videos/${RUN_DATE}"
+
       - name: Record successful source identities
         run: |
           python tools/collect_top_video_outputs.py \
@@ -488,9 +495,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A rendered-clips
+          python tools/verify_encrypted_transcript_tree.py --root transcripts
+          git add -A -- rendered-clips transcripts
           if git diff --cached --quiet; then
-            echo "No rendered top video changes to commit."
+            echo "No rendered top video or encrypted transcript changes to commit."
             exit 0
           fi
           git commit -m "chore: publish top videos ${RUN_DATE}"

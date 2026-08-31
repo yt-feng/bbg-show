@@ -220,6 +220,15 @@ jobs:
             --identity-output work/daily/source_identity.json \
             --github-output "$GITHUB_OUTPUT"
 
+      - name: Archive encrypted show transcript
+        if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true'
+        run: |
+          python tools/archive_encrypted_transcript.py \
+            --transcript work/daily/transcript.json \
+            --source-metadata work/daily/source_identity.json \
+            --recipient-cert config/transcript-archive-recipient-v1.pem \
+            --output-dir "transcripts/shows/${SHOW_DATE}"
+
       - name: Select keynote speakers
         if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true'
         id: select_speakers
@@ -358,9 +367,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A rendered-clips
+          python tools/verify_encrypted_transcript_tree.py --root transcripts
+          git add -A -- rendered-clips transcripts
           if git diff --cached --quiet; then
-            echo "No rendered clip changes to commit."
+            echo "No rendered clip or encrypted transcript changes to commit."
             exit 0
           fi
           git commit -m "chore: finalize ${SHOW_TYPE} show ${SHOW_DATE}"

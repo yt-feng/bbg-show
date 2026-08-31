@@ -15,6 +15,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from archive_encrypted_transcript import archive_transcript  # noqa: E402
 from content_fingerprint import (  # noqa: E402
     fingerprint_text,
     fingerprints_from_plan,
@@ -28,6 +29,7 @@ from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa:
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = Path(__file__).resolve().parent
+DEFAULT_TRANSCRIPT_RECIPIENT_CERT = ROOT / "config" / "transcript-archive-recipient-v1.pem"
 SENSITIVE_SKIP_MARKERS = (
     "source video skipped by sensitive topic filter",
     "no non-sensitive-topic clips remained after filtering",
@@ -403,6 +405,30 @@ def process_one(
         "highlight_plan": "highlight_plan.json",
         "rendered_files": [path.name for path in rendered],
     }
+    archive_source = {
+        "channel_id": str(item.get("channel_id", "")),
+        "kind": "top-video",
+        "published_at": str(item.get("published_at", "")),
+        "source": str(item.get("source", "bloomberg")),
+        "source_title": title,
+        "url": url,
+        "youtube_id": str(item.get("youtube_id", "")),
+    }
+    archive_source_path = work_dir / "transcript_archive_source.json"
+    archive_source_path.write_text(
+        json.dumps(archive_source, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    archive_result = archive_transcript(
+        transcript_path,
+        archive_source_path,
+        args.transcript_recipient_cert,
+        render_dir / "_transcript_archive",
+    )
+    metadata["encrypted_transcript_archives"] = [
+        archive_result.json_cms.name,
+        archive_result.markdown_cms.name,
+    ]
     (render_dir / "video.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(plan_path, render_dir / "highlight_plan.json")
     title_log = plan_path.with_name("title_refine_log.json")
@@ -430,6 +456,12 @@ def main() -> None:
     parser.add_argument("--min-video-seconds", type=float, default=15.0)
     parser.add_argument("--max-clip-seconds", type=float, default=90.0)
     parser.add_argument(
+        "--transcript-recipient-cert",
+        type=Path,
+        default=DEFAULT_TRANSCRIPT_RECIPIENT_CERT,
+        help="Public X.509 certificate used to encrypt successful source transcripts.",
+    )
+    parser.add_argument(
         "--processed-sources",
         type=Path,
         default=ROOT / "rendered-clips" / "top-videos" / "processed_sources.json",
@@ -443,6 +475,7 @@ def main() -> None:
         run_date = validate_run_date(args.run_date.strip() or run_date_default())
     except ValueError as exc:
         raise SystemExit(str(exc)) from exc
+    args.run_date = run_date
     output_dir = args.out_root / run_date
     if args.clean_output_dir and output_dir.exists():
         print(f"Cleaning output directory before processing: {output_dir}", flush=True)

@@ -7,3 +7,18 @@ downloads/*.part-*
 downloads/*.ytdl
 downloads/*.remuxing.mp4
 *.log
+__pycache__/
+*.py[cod]
+
+# The public repository may only retain encrypted transcript archives.
+/transcripts/**
+!/transcripts/**/
+!/transcripts/**/*.cms
+!/transcripts/README.md
+
+# The transcript recipient certificate is public; private key material is local only.
+/config/*private*
+/config/*passphrase*
+/config/*.key
+/config/*.p12
+/config/*.pfx

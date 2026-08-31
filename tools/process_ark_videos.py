@@ -22,6 +22,7 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from archive_encrypted_transcript import archive_transcript  # noqa: E402
 from download_bloomberg_video import (  # noqa: E402
     BROWSER_UA,
     DEFAULT_PROXY_CACHE,
@@ -45,6 +46,8 @@ from trump_filter import is_trump_related, remove_trump_clips_from_plan  # noqa:
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = Path(__file__).resolve().parent
+DEFAULT_TRANSCRIPT_RECIPIENT_CERT = ROOT / "config" / "transcript-archive-recipient-v1.pem"
+DEFAULT_TRANSCRIPT_ARCHIVE_ROOT = ROOT / "transcripts"
 SENSITIVE_SKIP_MARKERS = (
     "source video skipped by sensitive topic filter",
     "no non-sensitive-topic clips remained after filtering",
@@ -1335,6 +1338,58 @@ def update_state(path: Path, successes: list[dict[str, Any]]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def archive_successful_transcripts(
+    successes: list[dict[str, Any]],
+    *,
+    run_date: str,
+    work_root: Path,
+    archive_root: Path,
+    recipient_cert: Path,
+) -> int:
+    """Encrypt normalized transcripts for final successful ARK renders."""
+
+    if not successes:
+        return 0
+    source_root = work_root / "transcript-archive-sources"
+    source_root.mkdir(parents=True, exist_ok=True)
+    output_dir = archive_root / "ark-invest" / run_date
+    archived = 0
+    for result in successes:
+        try:
+            index = int(result.get("index", 0))
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Successful ARK result has an invalid index") from exc
+        transcript_path = Path(str(result.get("transcript", "")))
+        source_metadata = {
+            "guid": str(result.get("guid", "")),
+            "kind": "ark-invest",
+            "media_provider": str(result.get("media_provider", "")),
+            "pub_date": str(result.get("pub_date", "")),
+            "source_media_url": str(result.get("source_media_url", "")),
+            "source_title": str(result.get("source_title", "")),
+            "url": str(result.get("url", "")),
+            "wistia_id": str(result.get("wistia_id", "")),
+            "youtube_url": str(result.get("youtube_url", "")),
+        }
+        source_path = source_root / f"{index:02d}.json"
+        source_path.write_text(
+            json.dumps(source_metadata, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        archive_result = archive_transcript(
+            transcript_path,
+            source_path,
+            recipient_cert,
+            output_dir,
+        )
+        result["encrypted_transcript_archives"] = [
+            archive_result.json_cms.name,
+            archive_result.markdown_cms.name,
+        ]
+        archived += 1
+    return archived
+
+
 def update_wistia_source_ledger(path: Path, successes: list[dict[str, Any]]) -> None:
     wistia_successes = [
         result
@@ -1605,6 +1660,18 @@ def main() -> None:
     parser.add_argument("--min-video-seconds", type=float, default=30.0)
     parser.add_argument("--max-clip-seconds", type=float, default=110.0)
     parser.add_argument(
+        "--transcript-recipient-cert",
+        type=Path,
+        default=DEFAULT_TRANSCRIPT_RECIPIENT_CERT,
+        help="Public X.509 certificate used to encrypt successful source transcripts.",
+    )
+    parser.add_argument(
+        "--transcript-archive-root",
+        type=Path,
+        default=DEFAULT_TRANSCRIPT_ARCHIVE_ROOT,
+        help="Persistent root for encrypted transcript archives.",
+    )
+    parser.add_argument(
         "--ark-chrome-bin",
         default=os.environ.get("ARK_CHROME_BIN", ""),
         help="Optional isolated Chrome binary used only if direct ARK page discovery fails.",
@@ -1676,6 +1743,13 @@ def main() -> None:
         results.append(result)
 
     successes = [item for item in results if item.get("status") == "success"]
+    archive_successful_transcripts(
+        successes,
+        run_date=run_date,
+        work_root=args.work_root,
+        archive_root=args.transcript_archive_root,
+        recipient_cert=args.transcript_recipient_cert,
+    )
     update_state(args.state, successes)
     update_wistia_source_ledger(args.wistia_source_ledger, successes)
 
