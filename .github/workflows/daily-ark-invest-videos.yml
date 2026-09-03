@@ -262,5 +262,6 @@ jobs:
             fi
             git fetch --unshallow --filter=blob:none origin +refs/heads/main:refs/remotes/origin/main
           fi
-          git rebase origin/main
+          # Generated videos are independent files, even when their shared overlays look similar.
+          git -c merge.renames=false rebase origin/main
           git push origin HEAD:main

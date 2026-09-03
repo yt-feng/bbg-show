@@ -11,6 +11,11 @@ on:
         required: false
         type: string
         default: ""
+      recover_run_id:
+        description: "Optional completed run ID: publish its existing artifacts without generating videos again. Set run_date to that run's output date."
+        required: false
+        type: string
+        default: ""
       page_url:
         description: "Bloomberg videos page URL."
         required: false
@@ -34,6 +39,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: daily-bloomberg-top-videos-main
@@ -47,12 +53,15 @@ jobs:
     outputs:
       run_date: ${{ steps.resolve.outputs.run_date }}
       max_videos: ${{ steps.resolve.outputs.max_videos }}
-      total_videos: ${{ steps.resolve.outputs.total_videos }}
-      video_count: ${{ steps.scrape.outputs.video_count }}
+      total_videos: ${{ steps.manifest.outputs.total_videos }}
+      video_count: ${{ steps.manifest.outputs.video_count }}
       matrix: ${{ steps.matrix.outputs.matrix }}
+      artifact_run_id: ${{ steps.recovery.outputs.artifact_run_id || github.run_id }}
+      recovery_mode: ${{ steps.recovery.outputs.recovery_mode || 'false' }}
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       RUN_DATE_INPUT: ${{ github.event.inputs.run_date || '' }}
+      RECOVER_RUN_ID: ${{ github.event.inputs.recover_run_id || '' }}
       PAGE_URL: ${{ github.event.inputs.page_url || 'https://www.bloomberg.com/videos' }}
       MAX_VIDEOS_INPUT: ${{ github.event.inputs.max_videos || '9' }}
       YOUTUBE_BACKUP_VIDEOS: "3"
@@ -108,8 +117,28 @@ jobs:
           echo "MAX_VIDEOS=$MAX_VIDEOS"
           echo "TOTAL_VIDEOS=$TOTAL_VIDEOS"
 
+      - name: Validate recovery source
+        if: env.RECOVER_RUN_ID != ''
+        id: recovery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python tools/validate_top_video_recovery.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --run-id "$RECOVER_RUN_ID" \
+            --run-date "$RUN_DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Download existing scrape manifest
+        if: env.RECOVER_RUN_ID != ''
+        uses: actions/download-artifact@v5
+        with:
+          name: top-videos-manifest
+          path: work/top-videos
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.recovery.outputs.artifact_run_id }}
+
       - name: Scrape Bloomberg Top Videos
-        id: scrape
+        if: env.RECOVER_RUN_ID == ''
         env:
           PYTHONUNBUFFERED: "1"
           BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
@@ -124,14 +153,34 @@ jobs:
             --method auto \
             --out work/top-videos/top_videos.json
 
-          VIDEO_COUNT=$(python -c 'import json; print(json.load(open("work/top-videos/top_videos.json"))["count"])')
-          echo "video_count=$VIDEO_COUNT" >> "$GITHUB_OUTPUT"
-          echo "VIDEO_COUNT=$VIDEO_COUNT"
+      - name: Read scrape manifest
+        id: manifest
+        env:
+          RECOVERED_VIDEO_INDEXES: ${{ steps.recovery.outputs.video_indexes }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+
+          payload = json.load(open("work/top-videos/top_videos.json", encoding="utf-8"))
+          count = int(payload["count"])
+          if count != len(payload["videos"]) or not 0 <= count <= 12:
+              raise SystemExit("Scrape manifest count must match its videos and be between 0 and 12")
+          recovering = bool(os.environ["RECOVER_RUN_ID"])
+          if recovering:
+              indexes = json.loads(os.environ["RECOVERED_VIDEO_INDEXES"])
+              if any(index > count for index in indexes):
+                  raise SystemExit("Recovery artifact indexes do not match the scrape manifest")
+          total = count if recovering else int(os.environ["TOTAL_VIDEOS"])
+          print(f"video_count={count}")
+          print(f"total_videos={total}")
+          PY
 
       - name: Build processing matrix
         id: matrix
         env:
-          VIDEO_COUNT: ${{ steps.scrape.outputs.video_count }}
+          VIDEO_COUNT: ${{ steps.manifest.outputs.video_count }}
+          TOTAL_VIDEOS: ${{ steps.manifest.outputs.total_videos }}
         run: |
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
@@ -140,13 +189,14 @@ jobs:
           count = int(os.environ["VIDEO_COUNT"])
           total_videos = int(os.environ["TOTAL_VIDEOS"])
           indexes = list(range(1, min(count, total_videos) + 1))
-          if not indexes:
+          if os.environ["RECOVER_RUN_ID"] or not indexes:
               indexes = [0]
           print("matrix=" + json.dumps({"index": indexes}, separators=(",", ":")))
           print("indexes=" + ",".join(str(index) for index in indexes))
           PY
 
       - name: Upload scrape manifest
+        if: env.RECOVER_RUN_ID == ''
         uses: actions/upload-artifact@v5
         with:
           name: top-videos-manifest
@@ -157,7 +207,7 @@ jobs:
   process:
     name: Process Top Video ${{ matrix.index }}
     needs: scrape
-    if: needs.scrape.outputs.video_count != '0'
+    if: needs.scrape.outputs.recovery_mode != 'true' && needs.scrape.outputs.video_count != '0'
     # A single matrix runner may fail before it can write a summary. The collect
     # job fills in missing results and is the only place that decides whether
     # the whole batch failed (zero successful videos).
@@ -350,6 +400,8 @@ jobs:
         with:
           name: top-videos-manifest
           path: work/top-videos
+          github-token: ${{ github.token }}
+          run-id: ${{ needs.scrape.outputs.artifact_run_id }}
 
       - name: Preserve existing output directory
         run: |
@@ -372,6 +424,8 @@ jobs:
           pattern: top-video-${{ needs.scrape.outputs.run_date }}-*
           path: ${{ env.OUTPUT_DIR }}
           merge-multiple: true
+          github-token: ${{ github.token }}
+          run-id: ${{ needs.scrape.outputs.artifact_run_id }}
 
       - name: Prune unsuccessful output directories
         run: |
@@ -502,7 +556,8 @@ jobs:
             exit 0
           fi
           git commit -m "chore: publish top videos ${RUN_DATE}"
-          git pull --rebase origin main
+          # Daily cleanup and new outputs can otherwise be mistaken for renames.
+          git -c merge.renames=false pull --rebase origin main
           git push origin HEAD:main
 
       - name: Sync rendered clips to Jianguoyun
