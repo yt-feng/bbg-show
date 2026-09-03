@@ -118,7 +118,7 @@ class JianguoyunMappingTests(unittest.TestCase):
         )
         parts = [
             "我的坚果云",
-            "KCdesk",
+            "KC Desk Notes",
             "Ops",
             "2026-07-25",
             "BBG Show",
@@ -150,7 +150,7 @@ class JianguoyunWebDavTests(unittest.TestCase):
         def handler(call: RecordedRequest) -> FakeResponse:
             if call.method != "MKCOL":
                 self.fail(f"Unexpected method: {call.method}")
-            if call.url.endswith("/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/KCdesk"):
+            if call.url.endswith("/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/KC%20Desk%20Notes"):
                 raise http_error(call, 405)
             return FakeResponse(201)
 
@@ -159,10 +159,10 @@ class JianguoyunWebDavTests(unittest.TestCase):
 
         expected_parts = [
             ["我的坚果云"],
-            ["我的坚果云", "KCdesk"],
-            ["我的坚果云", "KCdesk", "Ops"],
-            ["我的坚果云", "KCdesk", "Ops", "2026-07-25"],
-            ["我的坚果云", "KCdesk", "Ops", "2026-07-25", "BBG Show"],
+            ["我的坚果云", "KC Desk Notes"],
+            ["我的坚果云", "KC Desk Notes", "Ops"],
+            ["我的坚果云", "KC Desk Notes", "Ops", "2026-07-25"],
+            ["我的坚果云", "KC Desk Notes", "Ops", "2026-07-25", "BBG Show"],
         ]
         self.assertEqual([call.method for call in opener.calls], ["MKCOL"] * 5)
         self.assertEqual(

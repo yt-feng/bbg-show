@@ -19,7 +19,7 @@ from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
 
-DEFAULT_REMOTE_ROOT = "/我的坚果云/KCdesk/Ops"
+DEFAULT_REMOTE_ROOT = "/我的坚果云/KC Desk Notes/Ops"
 KIND_CATEGORIES = {
     "show": "BBG Show",
     "top-videos": "BBG Top Videos",
