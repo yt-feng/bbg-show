@@ -1,0 +1,59 @@
+name: Consolidate Jianguoyun Delivery Folders
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Audit folders or apply the consolidation into KC Desk Notes."
+        required: true
+        type: choice
+        options:
+          - audit
+          - apply
+        default: audit
+      target_date:
+        description: "Optional YYYY-MM-DD date. Leave blank to include all dates."
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: jianguoyun-folder-consolidation
+  cancel-in-progress: false
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: tools
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Audit or consolidate known delivery folders
+        env:
+          JIANGUOYUN_WEBDAV_URL: ${{ secrets.JIANGUOYUN_WEBDAV_URL }}
+          JIANGUOYUN_WEBDAV_USERNAME: ${{ secrets.JIANGUOYUN_WEBDAV_USERNAME }}
+          JIANGUOYUN_WEBDAV_PASSWORD: ${{ secrets.JIANGUOYUN_WEBDAV_PASSWORD }}
+          MIGRATION_MODE: ${{ inputs.mode }}
+          MIGRATION_DATE: ${{ inputs.target_date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          case "$MIGRATION_MODE" in
+            audit) ;;
+            apply) args+=(--apply) ;;
+            *) echo 'Unsupported migration mode'; exit 1 ;;
+          esac
+          if [ -n "$MIGRATION_DATE" ]; then
+            args+=(--date "$MIGRATION_DATE")
+          fi
+          python tools/consolidate_jianguoyun_folders.py "${args[@]}"
