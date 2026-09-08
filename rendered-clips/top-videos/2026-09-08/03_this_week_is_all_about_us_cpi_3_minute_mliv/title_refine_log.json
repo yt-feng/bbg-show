@@ -1,0 +1,822 @@
+{
+  "timestamp_utc": "2026-09-08T00:10:33.080399+00:00",
+  "plan_path": "work/top-videos/03_this_week_is_all_about_us_cpi_3_minute_mliv/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg is widely known as 彭博 in Chinese financial media."
+      },
+      {
+        "source_text": "Fed",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve System",
+        "preferred_en": "Federal Reserve System",
+        "official_zh": "美国联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly referred to as 美联储 in Chinese financial media."
+      },
+      {
+        "source_text": "ECB",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "European Central Bank",
+        "preferred_en": "European Central Bank",
+        "official_zh": "欧洲中央银行",
+        "common_zh": "欧洲央行",
+        "title_label": "欧洲央行",
+        "preferred_zh": "欧洲央行",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly referred to as 欧洲央行 in Chinese financial media."
+      },
+      {
+        "source_text": "CPI",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Consumer Price Index",
+        "preferred_en": "Consumer Price Index",
+        "official_zh": "消费者物价指数",
+        "common_zh": "CPI",
+        "title_label": "CPI",
+        "preferred_zh": "CPI",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "CPI is widely used as is in Chinese financial media."
+      },
+      {
+        "source_text": "PPI",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Producer Price Index",
+        "preferred_en": "Producer Price Index",
+        "official_zh": "生产者物价指数",
+        "common_zh": "PPI",
+        "title_label": "PPI",
+        "preferred_zh": "PPI",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "PPI is widely used as is in Chinese financial media."
+      },
+      {
+        "source_text": "NFP",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Nonfarm Payrolls",
+        "preferred_en": "Nonfarm Payrolls",
+        "official_zh": "非农就业报告",
+        "common_zh": "非农",
+        "title_label": "非农",
+        "preferred_zh": "非农",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Commonly referred to as 非农 in Chinese financial media."
+      },
+      {
+        "source_text": "FOMC",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Open Market Committee",
+        "preferred_en": "Federal Open Market Committee",
+        "official_zh": "联邦公开市场委员会",
+        "common_zh": "FOMC",
+        "title_label": "FOMC",
+        "preferred_zh": "FOMC",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "FOMC is widely used as is in Chinese financial media."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "blackout period",
+        "clip_indexes": [],
+        "context": "Fed communication blackout before FOMC meetings",
+        "sense": "period when Fed officials refrain from public commentary",
+        "preferred_zh": "静默期",
+        "title_label": "静默期",
+        "avoid_zh": [
+          "封锁期"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "rate hike",
+        "clip_indexes": [],
+        "context": "central bank interest rate increase",
+        "sense": "increase in policy interest rate",
+        "preferred_zh": "加息",
+        "title_label": "加息",
+        "avoid_zh": [
+          "升息"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "curve steepening",
+        "clip_indexes": [],
+        "context": "yield curve steepening",
+        "sense": "increase in the slope of the yield curve",
+        "preferred_zh": "收益率曲线陡峭化",
+        "title_label": "收益率曲线陡峭化",
+        "avoid_zh": [
+          "曲线变陡"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "supply side driven inflation shock",
+        "clip_indexes": [],
+        "context": "inflation caused by supply constraints",
+        "sense": "inflation shock originating from supply side factors",
+        "preferred_zh": "供给侧驱动的通胀冲击",
+        "title_label": "供给侧通胀冲击",
+        "avoid_zh": [
+          "供应端通胀"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "A strong NFP report does not seal the deal for a September Fed hike; inflation data is the key focus.",
+        "public_baseline": "Market expectations around September 2023 were mixed; the Fed ultimately paused in September, but the possibility of a hike remained.",
+        "surprise_gap": "The speaker suggests that even a strong jobs report wouldn't guarantee a September hike, emphasizing the importance of inflation data, which aligns with the Fed's data-dependent approach.",
+        "speaker_relation": "media_source",
+        "supported_angles": [],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "public",
+            "query": "Fed September rate hike expectations market consensus 2023",
+            "url": "https://www.jpmorgan.com/insights/markets-and-economy/economy/fed-meeting-september-2023-hitting-pause-on-rate-hikes",
+            "fact": "The Fed kept rates unchanged in September 2023, but indicated a possible hike later in the year."
+          },
+          {
+            "kind": "public",
+            "query": "ECB rate hike September 2023 market expectations",
+            "url": "https://www.ecb.europa.eu/press/pr/date/2023/html/ecb.mp230914~aab39f8c21.en.html",
+            "fact": "The ECB raised rates in September 2023, as widely expected."
+          },
+          {
+            "kind": "public",
+            "query": "Fed blackout period September 2023",
+            "url": "https://www.federalreserve.gov/monetarypolicy/files/fomc-blackout-period-calendar.pdf",
+            "fact": "The Fed blackout period for the September 2023 FOMC meeting was in effect, preventing Fed officials from commenting."
+          }
+        ],
+        "forbidden_claims": [
+          "The Fed will definitely hike in September.",
+          "The ECB's rate hike is a done deal and will be the last one."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The clip is from Bloomberg's 'The Opening Trade' segment, discussing market expectations for CPI and Fed/ECB actions. The speaker is likely a Bloomberg analyst, but not identified "
+    ],
+    "research_queries": [
+      {
+        "query": "Fed September rate hike expectations market consensus 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the baseline market expectations for a September Fed hike around the time of the clip."
+      },
+      {
+        "query": "ECB rate hike September 2023 market expectations",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the market consensus that the ECB would hike in September 2023, as referenced in the clip."
+      },
+      {
+        "query": "Fed blackout period September 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the Fed blackout period timing to validate the speaker's claim about no Fed guidance."
+      },
+      {
+        "query": "energy prices impact ECB inflation supply side shock 2023",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that energy prices were a supply-side inflation shock for the ECB."
+      },
+      {
+        "query": "Bloomberg Expect From This Week's CPI The established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Expect From This Week's CPI The 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Opening Trade 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "CPI 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 8,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "强劲非农也白搭？：美联储只认通胀，九月加息悬念揭晓",
+      "title_lines": [
+        "强劲非农也白搭？",
+        "美联储只认通胀",
+        "九月加息悬念揭晓"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: strong NFP does not seal September hike, inflation is focus",
+        "public: Fed paused in September 2023"
+      ],
+      "runner_up_titles": [
+        "市场看透美联储：强劲CPI将锁死九月加息",
+        "通胀数据定生死：美联储九月加息概率几何？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：通胀数据将决定九月加息，市场静默期更敏感"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-08T00:10:31.780049+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 3:07 What to Expect From This Week's CPI The Opening Trade",
+          "source_title": "Duration: 3:07 What to Expect From This Week's CPI The Opening Trade",
+          "show_date": "",
+          "current_title": "CPI周前瞻：市场紧盯通胀数据，美联储九月加息悬念待解",
+          "current_title_lines": [
+            "CPI周前瞻：通胀数据成焦点",
+            "美联储九月加息悬念待解",
+            "市场紧盯PPI与CPI信号"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "非农数据非常强劲，这告诉我们什么？我们需要从中得到什么？是的，这意味着劳动力市场不会成为美联储按兵不动的理由。",
+              "en": "NFP let's take let it be very strong. What does that tell us going forward from here? What do we need to take away from that data? Yeah so it means that the latemark it is not going to be a reason",
+              "relative_start": 0.0,
+              "relative_end": 9.9
+            },
+            {
+              "index": 2,
+              "zh": "但也不会让我们确定加息10个基点。为此我们非常关注通胀，这显然是美联储目前关注的焦点。",
+              "en": "for the Fed to hold but also it doesn't reseal the deal for us at 10 per hike. For that we very much turn to inflation which is clearly the focus for the Fed at the moment in terms of choreography of this",
+              "relative_start": 9.9,
+              "relative_end": 19.5
+            },
+            {
+              "index": 3,
+              "zh": "本周我们先看到PPI，这为CPI定下基调，但CPI才是重头戏。我认为除非报告非常疲弱，否则市场可能对强劲报告更敏感。",
+              "en": "week we actually get PPI at first which was set the tone for CPI but CPI is of course the big one and I think absent a really weak report there's probably a mild bit of a symmetry where the market's",
+              "relative_start": 19.5,
+              "relative_end": 30.2
+            },
+            {
+              "index": 4,
+              "zh": "如果出现强劲报告，那几乎可以确定9月加息，市场会像美联储一样希望避免信誉问题或不利的市场反应。",
+              "en": "probably more sensitive to a hot report whereby that should pretty much seal the deal for September if we get one and the market as the Fed will kind of want to avoid any credibility concerns or adverse",
+              "relative_start": 30.2,
+              "relative_end": 40.2
+            },
+            {
+              "index": 5,
+              "zh": "所以你会看到自周五以来收益率曲线趋平的情况延续。如果数据温和或略弱，当然我们会看到一些加息预期的回落。",
+              "en": "market reactions so you'll probably see a bit of a continuation of the flattening that we've seen since Friday if you do get a milder slight softer one of course we'll see a bit of a scaling back",
+              "relative_start": 40.2,
+              "relative_end": 49.8
+            },
+            {
+              "index": 6,
+              "zh": "但我认为市场仍会抓住美联储可能加息的可能性。请记住，现在是美联储的静默期，我们不会得到美联储官员的任何指导。",
+              "en": "of some of those faired hike expectations but I still think the market will cling onto some possibility that the Fed will still go do bear in mind it's the Fed blackout period so we're not going",
+              "relative_start": 49.8,
+              "relative_end": 58.6
+            },
+            {
+              "index": 7,
+              "zh": "指导来自其他地方，因此任何收益率曲线陡峭化可能都会更温和，特别是考虑到能源市场的情况。",
+              "en": "to get any guidance from Fed officials the guide is elsewhere so any potential steepening of the curve may be a bit more milder particularly when you consider what we're seeing in energy markets.",
+              "relative_start": 58.6,
+              "relative_end": 68.3
+            },
+            {
+              "index": 8,
+              "zh": "好吧，欧洲央行，能源市场是欧洲央行周四会议的一个重要因素。是的，周四加息是板上钉钉的事，那不是交易方向所在。",
+              "en": "Well right the ECB, to where energy markets that's a big factor for the European Central Bank that's Thursday. Yes the Thursday situation itself is a lock that's not where the trade",
+              "relative_start": 68.3,
+              "relative_end": 76.9
+            },
+            {
+              "index": 9,
+              "zh": "我认为接下来会发生什么更有趣。市场上存在真正的分歧，经济学家认为本周加息后就会结束，因为这是供应侧驱动的通胀冲击，欧洲央行对此无能为力。",
+              "en": "and direction is going to be I think it's getting more interesting now about what comes next there's a real disparity in the market so economists think that this week it'll be then done once they've",
+              "relative_start": 76.9,
+              "relative_end": 85.3
+            },
+            {
+              "index": 10,
+              "zh": "而市场则认为他们可能会继续加息。",
+              "en": "hiked it's a supply side driven inflation shock ECB can't do a great deal about it whereas the market",
+              "relative_start": 85.3,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:07 What to Expect From This Week's CPI The Opening Trade\",\n    \"source_title\": \"Duration: 3:07 What to Expect From This Week's CPI The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"CPI周前瞻：市场紧盯通胀数据，美联储九月加息悬念待解\",\n    \"current_title_lines\": [\n      \"CPI周前瞻：通胀数据成焦点\",\n      \"美联储九月加息悬念待解\",\n      \"市场紧盯PPI与CPI信号\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"非农数据非常强劲，这告诉我们什么？我们需要从中得到什么？是的，这意味着劳动力市场不会成为美联储按兵不动的理由。\",\n        \"en\": \"NFP let's take let it be very strong. What does that tell us going forward from here? What do we need to take away from that data? Yeah so it means that the latemark it is not going to be a reason\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但也不会让我们确定加息10个基点。为此我们非常关注通胀，这显然是美联储目前关注的焦点。\",\n        \"en\": \"for the Fed to hold but also it doesn't reseal the deal for us at 10 per hike. For that we very much turn to inflation which is clearly the focus for the Fed at the moment in terms of choreography of this\",\n        \"relative_start\": 9.9,\n        \"relative_end\": 19.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"本周我们先看到PPI，这为CPI定下基调，但CPI才是重头戏。我认为除非报告非常疲弱，否则市场可能对强劲报告更敏感。\",\n        \"en\": \"week we actually get PPI at first which was set the tone for CPI but CPI is of course the big one and I think absent a really weak report there's probably a mild bit of a symmetry where the market's\",\n        \"relative_start\": 19.5,\n        \"relative_end\": 30.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"如果出现强劲报告，那几乎可以确定9月加息，市场会像美联储一样希望避免信誉问题或不利的市场反应。\",\n        \"en\": \"probably more sensitive to a hot report whereby that should pretty much seal the deal for September if we get one and the market as the Fed will kind of want to avoid any credibility concerns or adverse\",\n        \"relative_start\": 30.2,\n        \"relative_end\": 40.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以你会看到自周五以来收益率曲线趋平的情况延续。如果数据温和或略弱，当然我们会看到一些加息预期的回落。\",\n        \"en\": \"market reactions so you'll probably see a bit of a continuation of the flattening that we've seen since Friday if you do get a milder slight softer one of course we'll see a bit of a scaling back\",\n        \"relative_start\": 40.2,\n        \"relative_end\": 49.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但我认为市场仍会抓住美联储可能加息的可能性。请记住，现在是美联储的静默期，我们不会得到美联储官员的任何指导。\",\n        \"en\": \"of some of those faired hike expectations but I still think the market will cling onto some possibility that the Fed will still go do bear in mind it's the Fed blackout period so we're not going\",\n        \"relative_start\": 49.8,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"指导来自其他地方，因此任何收益率曲线陡峭化可能都会更温和，特别是考虑到能源市场的情况。\",\n        \"en\": \"to get any guidance from Fed officials the guide is elsewhere so any potential steepening of the curve may be a bit more milder particularly when you consider what we're seeing in energy markets.\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 68.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"好吧，欧洲央行，能源市场是欧洲央行周四会议的一个重要因素。是的，周四加息是板上钉钉的事，那不是交易方向所在。\",\n        \"en\": \"Well right the ECB, to where energy markets that's a big factor for the European Central Bank that's Thursday. Yes the Thursday situation itself is a lock that's not where the trade\",\n        \"relative_start\": 68.3,\n        \"relative_end\": 76.9\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为接下来会发生什么更有趣。市场上存在真正的分歧，经济学家认为本周加息后就会结束，因为这是供应侧驱动的通胀冲击，欧洲央行对此无能为力。\",\n        \"en\": \"and direction is going to be I think it's getting more interesting now about what comes next there's a real disparity in the market so economists think that this week it'll be then done once they've\",\n        \"relative_start\": 76.9,\n        \"relative_end\": 85.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"而市场则认为他们可能会继续加息。\",\n        \"en\": \"hiked it's a supply side driven inflation shock ECB can't do a great deal about it whereas the market\",\n        \"relative_start\": 85.3,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"A strong NFP report does not seal the deal for a September Fed hike; inflation data is the key focus.\",\n      \"public_baseline\": \"Market expectations around September 2023 were mixed; the Fed ultimately paused in September, but the possibility of a hike remained.\",\n      \"surprise_gap\": \"The speaker suggests that even a strong jobs report wouldn't guarantee a September hike, emphasizing the importance of inflation data, which aligns with the Fed's data-dependent approach.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fed September rate hike expectations market consensus 2023\",\n          \"url\": \"https://www.jpmorgan.com/insights/markets-and-economy/economy/fed-meeting-september-2023-hitting-pause-on-rate-hikes\",\n          \"fact\": \"The Fed kept rates unchanged in September 2023, but indicated a possible hike later in the year.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"ECB rate hike September 2023 market expectations\",\n          \"url\": \"https://www.ecb.europa.eu/press/pr/date/2023/html/ecb.mp230914~aab39f8c21.en.html\",\n          \"fact\": \"The ECB raised rates in September 2023, as widely expected.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fed blackout period September 2023\",\n          \"url\": \"https://www.federalreserve.gov/monetarypolicy/files/fomc-blackout-period-calendar.pdf\",\n          \"fact\": \"The Fed blackout period for the September 2023 FOMC meeting was in effect, preventing Fed officials from commenting.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The Fed will definitely hike in September.\",\n        \"The ECB's rate hike is a done deal and will be the last one.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from Bloomberg's 'The Opening Trade' segment, discussing market expectations for CPI and Fed/ECB actions. The speaker is likely a Bloomberg analyst, but not identified \"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "非农数据强劲，但美联储是否加息仍取决于通胀数据；市场对强劲CPI更为敏感。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "强劲非农也白搭？美联储只认通胀",
+                "title_lines": [
+                  "强劲非农也白搭？",
+                  "美联储只认通胀",
+                  "九月加息悬念揭晓"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: strong NFP does not seal September hike, inflation is focus",
+                  "public: Fed paused in September 2023"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "市场看透美联储：强劲CPI将锁死九月加息",
+                "title_lines": [
+                  "市场看透美联储",
+                  "强劲CPI将锁死",
+                  "九月加息悬念"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: market more sensitive to hot report, seals September hike",
+                  "public: Fed paused in September 2023, market expected possible hike"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "通胀数据定生死：美联储九月加息概率几何？",
+                "title_lines": [
+                  "通胀数据定生死",
+                  "美联储九月加息",
+                  "概率几何？"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: hot CPI seals September hike, weak report scales back expectations",
+                  "public: Fed kept rates unchanged in September 2023"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "美联储静默期，市场如何押注加息？",
+                "title_lines": [
+                  "美联储静默期",
+                  "市场如何押注",
+                  "加息？"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: Fed blackout period, no guidance from officials",
+                  "public: Fed blackout period was in effect"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:07 What to Expect From This Week's CPI The Opening Trade\",\n    \"source_title\": \"Duration: 3:07 What to Expect From This Week's CPI The Opening Trade\",\n    \"show_date\": \"\",\n    \"current_title\": \"CPI周前瞻：市场紧盯通胀数据，美联储九月加息悬念待解\",\n    \"current_title_lines\": [\n      \"CPI周前瞻：通胀数据成焦点\",\n      \"美联储九月加息悬念待解\",\n      \"市场紧盯PPI与CPI信号\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"非农数据非常强劲，这告诉我们什么？我们需要从中得到什么？是的，这意味着劳动力市场不会成为美联储按兵不动的理由。\",\n        \"en\": \"NFP let's take let it be very strong. What does that tell us going forward from here? What do we need to take away from that data? Yeah so it means that the latemark it is not going to be a reason\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但也不会让我们确定加息10个基点。为此我们非常关注通胀，这显然是美联储目前关注的焦点。\",\n        \"en\": \"for the Fed to hold but also it doesn't reseal the deal for us at 10 per hike. For that we very much turn to inflation which is clearly the focus for the Fed at the moment in terms of choreography of this\",\n        \"relative_start\": 9.9,\n        \"relative_end\": 19.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"本周我们先看到PPI，这为CPI定下基调，但CPI才是重头戏。我认为除非报告非常疲弱，否则市场可能对强劲报告更敏感。\",\n        \"en\": \"week we actually get PPI at first which was set the tone for CPI but CPI is of course the big one and I think absent a really weak report there's probably a mild bit of a symmetry where the market's\",\n        \"relative_start\": 19.5,\n        \"relative_end\": 30.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"如果出现强劲报告，那几乎可以确定9月加息，市场会像美联储一样希望避免信誉问题或不利的市场反应。\",\n        \"en\": \"probably more sensitive to a hot report whereby that should pretty much seal the deal for September if we get one and the market as the Fed will kind of want to avoid any credibility concerns or adverse\",\n        \"relative_start\": 30.2,\n        \"relative_end\": 40.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以你会看到自周五以来收益率曲线趋平的情况延续。如果数据温和或略弱，当然我们会看到一些加息预期的回落。\",\n        \"en\": \"market reactions so you'll probably see a bit of a continuation of the flattening that we've seen since Friday if you do get a milder slight softer one of course we'll see a bit of a scaling back\",\n        \"relative_start\": 40.2,\n        \"relative_end\": 49.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但我认为市场仍会抓住美联储可能加息的可能性。请记住，现在是美联储的静默期，我们不会得到美联储官员的任何指导。\",\n        \"en\": \"of some of those faired hike expectations but I still think the market will cling onto some possibility that the Fed will still go do bear in mind it's the Fed blackout period so we're not going\",\n        \"relative_start\": 49.8,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"指导来自其他地方，因此任何收益率曲线陡峭化可能都会更温和，特别是考虑到能源市场的情况。\",\n        \"en\": \"to get any guidance from Fed officials the guide is elsewhere so any potential steepening of the curve may be a bit more milder particularly when you consider what we're seeing in energy markets.\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 68.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"好吧，欧洲央行，能源市场是欧洲央行周四会议的一个重要因素。是的，周四加息是板上钉钉的事，那不是交易方向所在。\",\n        \"en\": \"Well right the ECB, to where energy markets that's a big factor for the European Central Bank that's Thursday. Yes the Thursday situation itself is a lock that's not where the trade\",\n        \"relative_start\": 68.3,\n        \"relative_end\": 76.9\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为接下来会发生什么更有趣。市场上存在真正的分歧，经济学家认为本周加息后就会结束，因为这是供应侧驱动的通胀冲击，欧洲央行对此无能为力。\",\n        \"en\": \"and direction is going to be I think it's getting more interesting now about what comes next there's a real disparity in the market so economists think that this week it'll be then done once they've\",\n        \"relative_start\": 76.9,\n        \"relative_end\": 85.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"而市场则认为他们可能会继续加息。\",\n        \"en\": \"hiked it's a supply side driven inflation shock ECB can't do a great deal about it whereas the market\",\n        \"relative_start\": 85.3,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"A strong NFP report does not seal the deal for a September Fed hike; inflation data is the key focus.\",\n      \"public_baseline\": \"Market expectations around September 2023 were mixed; the Fed ultimately paused in September, but the possibility of a hike remained.\",\n      \"surprise_gap\": \"The speaker suggests that even a strong jobs report wouldn't guarantee a September hike, emphasizing the importance of inflation data, which aligns with the Fed's data-dependent approach.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fed September rate hike expectations market consensus 2023\",\n          \"url\": \"https://www.jpmorgan.com/insights/markets-and-economy/economy/fed-meeting-september-2023-hitting-pause-on-rate-hikes\",\n          \"fact\": \"The Fed kept rates unchanged in September 2023, but indicated a possible hike later in the year.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"ECB rate hike September 2023 market expectations\",\n          \"url\": \"https://www.ecb.europa.eu/press/pr/date/2023/html/ecb.mp230914~aab39f8c21.en.html\",\n          \"fact\": \"The ECB raised rates in September 2023, as widely expected.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Fed blackout period September 2023\",\n          \"url\": \"https://www.federalreserve.gov/monetarypolicy/files/fomc-blackout-period-calendar.pdf\",\n          \"fact\": \"The Fed blackout period for the September 2023 FOMC meeting was in effect, preventing Fed officials from commenting.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"The Fed will definitely hike in September.\",\n        \"The ECB's rate hike is a done deal and will be the last one.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The clip is from Bloomberg's 'The Opening Trade' segment, discussing market expectations for CPI and Fed/ECB actions. The speaker is likely a Bloomberg analyst, but not identified \"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"非农数据强劲，但美联储是否加息仍取决于通胀数据；市场对强劲CPI更为敏感。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"强劲非农也白搭？美联储只认通胀\",\n          \"title_lines\": [\n            \"强劲非农也白搭？\",\n            \"美联储只认通胀\",\n            \"九月加息悬念揭晓\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: strong NFP does not seal September hike, inflation is focus\",\n            \"public: Fed paused in September 2023\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"市场看透美联储：强劲CPI将锁死九月加息\",\n          \"title_lines\": [\n            \"市场看透美联储\",\n            \"强劲CPI将锁死\",\n            \"九月加息悬念\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: market more sensitive to hot report, seals September hike\",\n            \"public: Fed paused in September 2023, market expected possible hike\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"通胀数据定生死：美联储九月加息概率几何？\",\n          \"title_lines\": [\n            \"通胀数据定生死\",\n            \"美联储九月加息\",\n            \"概率几何？\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: hot CPI seals September hike, weak report scales back expectations\",\n            \"public: Fed kept rates unchanged in September 2023\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"美联储静默期，市场如何押注加息？\",\n          \"title_lines\": [\n            \"美联储静默期\",\n            \"市场如何押注\",\n            \"加息？\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: Fed blackout period, no guidance from officials\",\n            \"public: Fed blackout period was in effect\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: strong NFP does not seal September hike, inflation is focus",
+              "public: Fed paused in September 2023"
+            ],
+            "title": "强劲非农也白搭？美联储只认通胀",
+            "title_lines": [
+              "强劲非农也白搭？",
+              "美联储只认通胀",
+              "九月加息悬念揭晓"
+            ],
+            "title_highlights": [
+              "强劲非农",
+              "美联储只认通胀"
+            ],
+            "runner_up_titles": [
+              "市场看透美联储：强劲CPI将锁死九月加息",
+              "通胀数据定生死：美联储九月加息概率几何？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：通胀数据将决定九月加息，市场静默期更敏感。",
+            "comment_highlights": [
+              "通胀数据",
+              "九月加息"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：强劲非农并未锁死加息，通胀才是关键。",
+                "comment_highlights": [
+                  "强劲非农",
+                  "通胀"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：美联储聚焦通胀，市场等待CPI指引。",
+                "comment_highlights": [
+                  "美联储",
+                  "通胀"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：PPI先行为CPI定调，但CPI才是重头戏。",
+                "comment_highlights": [
+                  "PPI",
+                  "CPI"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：强劲CPI或确认九月加息，市场警惕信誉风险。",
+                "comment_highlights": [
+                  "强劲CPI",
+                  "九月加息"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：数据温和则加息预期回落，但市场仍存悬念。",
+                "comment_highlights": [
+                  "加息预期",
+                  "悬念"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：静默期无官员指引，市场自行博弈。",
+                "comment_highlights": [
+                  "静默期",
+                  "博弈"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：能源市场影响曲线，加息路径更温和。",
+                "comment_highlights": [
+                  "能源市场",
+                  "加息路径"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：欧央行周四加息已定，关注后续指引。",
+                "comment_highlights": [
+                  "欧央行",
+                  "加息"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：经济学家认为加息或止步，市场预期分歧。",
+                "comment_highlights": [
+                  "经济学家",
+                  "分歧"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：市场押注欧央行继续加息，通胀压力未消。",
+                "comment_highlights": [
+                  "市场押注",
+                  "通胀压力"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "强劲非农也白搭？：美联储只认通胀，九月加息悬念揭晓",
+          "title_lines": [
+            "强劲非农也白搭？",
+            "美联储只认通胀",
+            "九月加息悬念揭晓"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：通胀数据将决定九月加息，市场静默期更敏感"
+        }
+      }
+    }
+  ]
+}
