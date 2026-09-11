@@ -1,0 +1,1404 @@
+{
+  "timestamp_utc": "2026-09-10T23:59:27.684491+00:00",
+  "plan_path": "work/top-videos/02_oracle_and_ai_earnings_better_than_feared_rbc_s_jaluria/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Oracle",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Oracle Corporation",
+        "preferred_en": "Oracle Corporation",
+        "official_zh": "甲骨文公司",
+        "common_zh": "甲骨文",
+        "title_label": "甲骨文",
+        "preferred_zh": "甲骨文",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "甲骨文 is the established Simplified Chinese name used by Oracle's own IR materials, Chinese brokerage research (国信证券), and Chinese-language earnings transcripts."
+      },
+      {
+        "source_text": "RBC",
+        "entity_type": "organization",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "RBC Capital Markets (Royal Bank of Canada)",
+        "preferred_en": "RBC Capital Markets (Royal Bank of Canada)",
+        "official_zh": "加拿大皇家银行资本市场",
+        "common_zh": "RBC",
+        "title_label": "RBC",
+        "preferred_zh": "RBC",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.bloomberg.com/news/videos/2026-06-10/oracle-s-earnings-really-strong-rbc-s-jaluria-video",
+          "https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl"
+        ],
+        "evidence": "Bloomberg and Globe and Mail both identify RBC Capital Markets as the employer of analyst Rishi Jaluria covering Oracle; Chinese financial media commonly keep the short form RBC."
+      },
+      {
+        "source_text": "Rishi Jaluria",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rishi Jaluria",
+        "preferred_en": "Rishi Jaluria",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "RBC分析师Jaluria",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg, Globe and Mail, and MarketBeat confirm Rishi Jaluria is an RBC Capital Markets software equity research managing director covering Oracle; no established Chinese transliteration found, so keep the surname in Latin script."
+      },
+      {
+        "source_text": "OCI",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Oracle Cloud Infrastructure",
+        "preferred_en": "Oracle Cloud Infrastructure",
+        "official_zh": "甲骨文云基础设施",
+        "common_zh": "OCI",
+        "title_label": "OCI",
+        "preferred_zh": "OCI",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Oracle IR and Chinese-language earnings coverage use OCI for Oracle Cloud Infrastructure; Chinese media typically retain the abbreviation OCI."
+      },
+      {
+        "source_text": "RPO",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Remaining Performance Obligations",
+        "preferred_en": "Remaining Performance Obligations",
+        "official_zh": "剩余履约义务",
+        "common_zh": "剩余履约义务",
+        "title_label": "剩余履约义务",
+        "preferred_zh": "剩余履约义务",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese-language Oracle earnings transcripts and analysis render RPO as 剩余履约义务."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "RPO",
+        "clip_indexes": [],
+        "context": "Oracle earnings: backlog of contracted but unrecognized revenue",
+        "sense": "remaining performance obligations",
+        "preferred_zh": "剩余履约义务",
+        "title_label": "剩余履约义务",
+        "avoid_zh": [
+          "剩余绩效义务",
+          "剩余表现义务"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "OCI",
+        "clip_indexes": [],
+        "context": "Oracle cloud segment driving the stock",
+        "sense": "Oracle Cloud Infrastructure (IaaS)",
+        "preferred_zh": "甲骨文云基础设施",
+        "title_label": "OCI",
+        "avoid_zh": [
+          "甲骨文云基建"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "RIF",
+        "clip_indexes": [],
+        "context": "Speaker mentions 'RIFS layering' on Oracle's application software revenue",
+        "sense": "reduction in force (layoffs)",
+        "preferred_zh": "裁员",
+        "title_label": "裁员",
+        "avoid_zh": [
+          "RIFS"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Sector Perform",
+        "clip_indexes": [],
+        "context": "RBC's rating on Oracle stock",
+        "sense": "sell-side rating roughly equivalent to neutral/hold",
+        "preferred_zh": "与大盘持平",
+        "title_label": "与大盘持平",
+        "avoid_zh": [
+          "板块表现"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Oracle's numbers across the board were better than feared, with OCI over-achievement and a raised guide temporarily putting financing and RPO-conversion worries to rest.",
+        "public_baseline": "Oracle's reported quarter showed double-digit revenue growth, RPO around $138B (+41% YoY) with a sequential increase, and cloud revenue growth; the stock trades largely on OCI and RPO.",
+        "surprise_gap": "The transcript frames results as beating low expectations, while public coverage describes record/strong results; the 'better than feared' framing is the analyst's characterization rather than a documented consensus miss.",
+        "speaker_relation": "analyst",
+        "supported_angles": [
+          "surprise_reversal",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says numbers across the board were better than feared and OCI over-achieved with a raised guide."
+          },
+          {
+            "kind": "public",
+            "query": "甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务",
+            "url": "https://reportify.cn/transcripts/1130428539825426432",
+            "fact": "Q4 total revenue and EPS beat guidance; RPO reached $138B, up $8B sequentially and +41% YoY."
+          },
+          {
+            "kind": "public",
+            "query": "RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating",
+            "url": "https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl",
+            "fact": "RBC's Rishi Jaluria maintained a Hold rating on Oracle with a $190 price target."
+          }
+        ],
+        "forbidden_claims": [
+          "Oracle missed consensus expectations",
+          "Oracle's RPO declined",
+          "RBC upgraded Oracle to Buy",
+          "Oracle announced layoffs (RIF) in this clip"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Public snippets mix fiscal years (FY2025 Q4 vs FY2026 Q4) and dates; do not merge figures across them without checking the fiscal period.",
+      "No reliable Chinese transliteration exists for Rishi Jaluria; keep the Latin surname in title labels.",
+      "RIF interpretation is low-confidence and should not be used in a title without further sourcing."
+    ],
+    "research_queries": [
+      {
+        "query": "甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Oracle's reported OCI revenue growth and RPO backlog figures for the quarter to establish whether the 'better than feared' claim is supported by actual results."
+      },
+      {
+        "query": "Oracle raised guidance OCI RPO fiscal 2026 outlook",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm whether Oracle actually raised its OCI guidance, as claimed in the transcript, and the exact magnitude."
+      },
+      {
+        "query": "RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Rishi Jaluria's exact role, employer, and coverage of Oracle to confirm the speaker's identity and institutional affiliation."
+      },
+      {
+        "query": "甲骨文 应用软件 收入 下滑 传统软件 疲软 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Oracle's application software and traditional software revenue have shown weakness, to assess whether the analyst's concern is grounded in reported data."
+      },
+      {
+        "query": "Oracle restructuring RIF layoffs 2025 impact on applications revenue",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Oracle has undertaken a reduction in force (RIF) that could affect application software revenue, as the analyst speculates."
+      },
+      {
+        "query": "Oracle stock sector perform RBC Capital Markets price target 2025",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify RBC's actual rating and price target on Oracle to confirm the analyst's stated 'sector perform' stance and whether it has changed."
+      },
+      {
+        "query": "Rishi Jaluria Oracle stock rating change 2024 2025",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Determine whether Rishi Jaluria or RBC has changed its Oracle rating or stance over time, to check for a possible position shift."
+      },
+      {
+        "query": "Oracle OCI revenue growth rate Q4 2025 earnings call",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Obtain the exact OCI revenue growth rate reported by Oracle to verify the 'over-achievement' claim."
+      },
+      {
+        "query": "甲骨文 剩余履约义务 RPO 转化 收入 时间线 担忧",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the existence of market concerns about the timeline for converting Oracle's RPO backlog into revenue, as mentioned by the analyst."
+      },
+      {
+        "query": "Oracle application software revenue decline fiscal 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm whether Oracle's application software revenue has actually declined, supporting the analyst's specific concern."
+      },
+      {
+        "query": "RBC Capital Markets Oracle sector perform rating history",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check the duration and history of RBC's sector perform rating on Oracle to verify the analyst's claim of 'at least a couple of years'."
+      },
+      {
+        "query": "Oracle Q4 2025 earnings OCI revenue RPO backlog results",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find official Oracle earnings results to verify the headline numbers and the 'better than feared' assessment."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-09-10T23:59:25.487126+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says",
+          "source_title": "Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says",
+          "show_date": "",
+          "current_title": "甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓",
+          "current_title_lines": [
+            "甲骨文AI业绩出炉",
+            "RBC分析师称好于担忧",
+            "OCI与RPO成市场焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这些头条数字里，有什么让你对Rishi产生疑虑的地方吗？",
+              "en": "Anything here that you equiple that Rishi with the guards of some of these headline numbers?",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "谢谢邀请，很高兴来。整体数字确实比担心的要好。",
+              "en": "Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.",
+              "relative_start": 5.0,
+              "relative_end": 11.8
+            },
+            {
+              "index": 3,
+              "zh": "之前有融资方面的担忧，也有关于RPO积压订单转化为收入时间线的担忧，",
+              "en": "There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,",
+              "relative_start": 11.8,
+              "relative_end": 20.5
+            },
+            {
+              "index": 4,
+              "zh": "但本季度OCI超预期，且指引上调，",
+              "en": "clearly with the over-achievement on OCI in the quarter and the raised guide.",
+              "relative_start": 20.5,
+              "relative_end": 25.5
+            },
+            {
+              "index": 5,
+              "zh": "这些担忧可能暂时缓解了。",
+              "en": "I think that some of those worries might be temporarily put to rest.",
+              "relative_start": 25.5,
+              "relative_end": 29.7
+            },
+            {
+              "index": 6,
+              "zh": "如果要挑刺，可能是在应用软件收入上。",
+              "en": "If I were to say, what am I poking at here? Probably it's the app's revenue.",
+              "relative_start": 29.7,
+              "relative_end": 34.2
+            },
+            {
+              "index": 7,
+              "zh": "他们的应用软件和传统软件已经出现疲软。",
+              "en": "There has already been weakness in their application software and some of their traditional software.",
+              "relative_start": 34.2,
+              "relative_end": 38.8
+            },
+            {
+              "index": 8,
+              "zh": "现在可能还有裁员的影响叠加。",
+              "en": "And now you have maybe potentially the impact of RIFS layering on that.",
+              "relative_start": 38.8,
+              "relative_end": 43.6
+            },
+            {
+              "index": 9,
+              "zh": "所以这条线可能进一步放缓。但很明显，当前股价几乎完全取决于OCI和RPO。",
+              "en": "So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.",
+              "relative_start": 43.6,
+              "relative_end": 51.8
+            },
+            {
+              "index": 10,
+              "zh": "我很好奇，这只权益资产至少跑赢板块两三年了，甚至更久。",
+              "en": "Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.",
+              "relative_start": 51.8,
+              "relative_end": 58.6
+            },
+            {
+              "index": 11,
+              "zh": "那么请谈谈，潜在的上行空间在哪里。",
+              "en": "So give me a sense here as to what any potential upside is.",
+              "relative_start": 58.6,
+              "relative_end": 62.2
+            },
+            {
+              "index": 12,
+              "zh": "信不信由你，一年前的今天，这只权益资产创下了历史新高。",
+              "en": "I mean, this stock hit a record high, believe it or not, on this day one year ago.",
+              "relative_start": 62.2,
+              "relative_end": 66.5
+            },
+            {
+              "index": 13,
+              "zh": "当然，此后就再也没有接近过那个高点。",
+              "en": "And of course, hasn't been anywhere near that record high since.",
+              "relative_start": 66.5,
+              "relative_end": 70.3
+            },
+            {
+              "index": 14,
+              "zh": "是的，你看，我持怀疑态度的一部分原因，也是我一直观望的原因，即便在星际之门大交易的高峰期，也主要是围绕增长的持久性。",
+              "en": "Yeah, look, I think part of my skepticism and why I've been on the sidelines even at the peak of the large Stargate deal was really around kind of the durability of growth.",
+              "relative_start": 70.3,
+              "relative_end": 79.6
+            },
+            {
+              "index": 15,
+              "zh": "我们确实预计，仅仅因为甲骨文云基础设施有过剩产能，就会有一些顺风。",
+              "en": "We definitely expected that just by having excess capacity on Oracle Cloud infrastructure, that there would be some tailwinds.",
+              "relative_start": 79.6,
+              "relative_end": 86.6
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"source_title\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓\",\n    \"current_title_lines\": [\n      \"甲骨文AI业绩出炉\",\n      \"RBC分析师称好于担忧\",\n      \"OCI与RPO成市场焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这些头条数字里，有什么让你对Rishi产生疑虑的地方吗？\",\n        \"en\": \"Anything here that you equiple that Rishi with the guards of some of these headline numbers?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"谢谢邀请，很高兴来。整体数字确实比担心的要好。\",\n        \"en\": \"Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"之前有融资方面的担忧，也有关于RPO积压订单转化为收入时间线的担忧，\",\n        \"en\": \"There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,\",\n        \"relative_start\": 11.8,\n        \"relative_end\": 20.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但本季度OCI超预期，且指引上调，\",\n        \"en\": \"clearly with the over-achievement on OCI in the quarter and the raised guide.\",\n        \"relative_start\": 20.5,\n        \"relative_end\": 25.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这些担忧可能暂时缓解了。\",\n        \"en\": \"I think that some of those worries might be temporarily put to rest.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 29.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果要挑刺，可能是在应用软件收入上。\",\n        \"en\": \"If I were to say, what am I poking at here? Probably it's the app's revenue.\",\n        \"relative_start\": 29.7,\n        \"relative_end\": 34.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们的应用软件和传统软件已经出现疲软。\",\n        \"en\": \"There has already been weakness in their application software and some of their traditional software.\",\n        \"relative_start\": 34.2,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"现在可能还有裁员的影响叠加。\",\n        \"en\": \"And now you have maybe potentially the impact of RIFS layering on that.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以这条线可能进一步放缓。但很明显，当前股价几乎完全取决于OCI和RPO。\",\n        \"en\": \"So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我很好奇，这只权益资产至少跑赢板块两三年了，甚至更久。\",\n        \"en\": \"Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.\",\n        \"relative_start\": 51.8,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么请谈谈，潜在的上行空间在哪里。\",\n        \"en\": \"So give me a sense here as to what any potential upside is.\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 62.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"信不信由你，一年前的今天，这只权益资产创下了历史新高。\",\n        \"en\": \"I mean, this stock hit a record high, believe it or not, on this day one year ago.\",\n        \"relative_start\": 62.2,\n        \"relative_end\": 66.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"当然，此后就再也没有接近过那个高点。\",\n        \"en\": \"And of course, hasn't been anywhere near that record high since.\",\n        \"relative_start\": 66.5,\n        \"relative_end\": 70.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"是的，你看，我持怀疑态度的一部分原因，也是我一直观望的原因，即便在星际之门大交易的高峰期，也主要是围绕增长的持久性。\",\n        \"en\": \"Yeah, look, I think part of my skepticism and why I've been on the sidelines even at the peak of the large Stargate deal was really around kind of the durability of growth.\",\n        \"relative_start\": 70.3,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我们确实预计，仅仅因为甲骨文云基础设施有过剩产能，就会有一些顺风。\",\n        \"en\": \"We definitely expected that just by having excess capacity on Oracle Cloud infrastructure, that there would be some tailwinds.\",\n        \"relative_start\": 79.6,\n        \"relative_end\": 86.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"preferred_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"official_zh\": \"加拿大皇家银行资本市场\",\n      \"common_zh\": \"RBC\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"RBC\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.bloomberg.com/news/videos/2026-06-10/oracle-s-earnings-really-strong-rbc-s-jaluria-video\",\n        \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\"\n      ],\n      \"evidence\": \"Bloomberg and Globe and Mail both identify RBC Capital Markets as the employer of analyst Rishi Jaluria covering Oracle; Chinese financial media commonly keep the short form RBC.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Oracle's numbers across the board were better than feared, with OCI over-achievement and a raised guide temporarily putting financing and RPO-conversion worries to rest.\",\n      \"public_baseline\": \"Oracle's reported quarter showed double-digit revenue growth, RPO around $138B (+41% YoY) with a sequential increase, and cloud revenue growth; the stock trades largely on OCI and RPO.\",\n      \"surprise_gap\": \"The transcript frames results as beating low expectations, while public coverage describes record/strong results; the 'better than feared' framing is the analyst's characterization rather than a documented consensus miss.\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says numbers across the board were better than feared and OCI over-achieved with a raised guide.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务\",\n          \"url\": \"https://reportify.cn/transcripts/1130428539825426432\",\n          \"fact\": \"Q4 total revenue and EPS beat guidance; RPO reached $138B, up $8B sequentially and +41% YoY.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating\",\n          \"url\": \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\",\n          \"fact\": \"RBC's Rishi Jaluria maintained a Hold rating on Oracle with a $190 price target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Oracle missed consensus expectations\",\n        \"Oracle's RPO declined\",\n        \"RBC upgraded Oracle to Buy\",\n        \"Oracle announced layoffs (RIF) in this clip\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Public snippets mix fiscal years (FY2025 Q4 vs FY2026 Q4) and dates; do not merge figures across them without checking the fiscal period.\",\n    \"No reliable Chinese transliteration exists for Rishi Jaluria; keep the Latin surname in title labels.\",\n    \"RIF interpretation is low-confidence and should not be used in a title without further sourcing.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "RBC分析师Rishi Jaluria称甲骨文整体数字好于担忧，OCI超预期且指引上调，暂时缓解了融资和RPO转化担忧；但应用软件疲软，权益资产几乎完全取决于OCI和RPO。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "甲骨文财报好于担忧\nOCI超预期指引上调\n但应用软件还在拖后腿",
+                "title_lines": [
+                  "甲骨文财报好于担忧",
+                  "OCI超预期指引上调",
+                  "应用软件还在拖后腿"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: numbers across the board were better than feared",
+                  "transcript: over-achievement on OCI in the quarter and the raised guide",
+                  "transcript: weakness in their application software and some of their traditional software"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "RBC分析师拆解甲骨文\nOCI和RPO撑住全场\n应用软件却继续疲软",
+                "title_lines": [
+                  "RBC分析师拆解甲骨文",
+                  "OCI和RPO撑住全场",
+                  "应用软件却继续疲软"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+                  "transcript: weakness in their application software and some of their traditional software",
+                  "research entity: RBC title_label"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "原来关键在这里",
+                "title": "甲骨文权益资产看什么\nOCI和RPO决定方向\n应用软件疲软被暂时搁置",
+                "title_lines": [
+                  "甲骨文权益资产看什么",
+                  "OCI和RPO决定方向",
+                  "应用软件疲软被暂时搁置"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+                  "transcript: weakness in their application software",
+                  "transcript: worries might be temporarily put to rest"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "RBC分析师直言甲骨文\nOCI超预期暂时缓解担忧\n应用软件疲软才是挑刺点",
+                "title_lines": [
+                  "RBC分析师直言甲骨文",
+                  "OCI超预期暂时缓解担忧",
+                  "应用软件疲软才是挑刺点"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: if I were to say, what am I poking at here? Probably it's the app's revenue",
+                  "transcript: over-achievement on OCI in the quarter and the raised guide",
+                  "transcript: worries might be temporarily put to rest"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"source_title\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓\",\n    \"current_title_lines\": [\n      \"甲骨文AI业绩出炉\",\n      \"RBC分析师称好于担忧\",\n      \"OCI与RPO成市场焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这些头条数字里，有什么让你对Rishi产生疑虑的地方吗？\",\n        \"en\": \"Anything here that you equiple that Rishi with the guards of some of these headline numbers?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"谢谢邀请，很高兴来。整体数字确实比担心的要好。\",\n        \"en\": \"Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"之前有融资方面的担忧，也有关于RPO积压订单转化为收入时间线的担忧，\",\n        \"en\": \"There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,\",\n        \"relative_start\": 11.8,\n        \"relative_end\": 20.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但本季度OCI超预期，且指引上调，\",\n        \"en\": \"clearly with the over-achievement on OCI in the quarter and the raised guide.\",\n        \"relative_start\": 20.5,\n        \"relative_end\": 25.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这些担忧可能暂时缓解了。\",\n        \"en\": \"I think that some of those worries might be temporarily put to rest.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 29.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果要挑刺，可能是在应用软件收入上。\",\n        \"en\": \"If I were to say, what am I poking at here? Probably it's the app's revenue.\",\n        \"relative_start\": 29.7,\n        \"relative_end\": 34.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们的应用软件和传统软件已经出现疲软。\",\n        \"en\": \"There has already been weakness in their application software and some of their traditional software.\",\n        \"relative_start\": 34.2,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"现在可能还有裁员的影响叠加。\",\n        \"en\": \"And now you have maybe potentially the impact of RIFS layering on that.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以这条线可能进一步放缓。但很明显，当前股价几乎完全取决于OCI和RPO。\",\n        \"en\": \"So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我很好奇，这只权益资产至少跑赢板块两三年了，甚至更久。\",\n        \"en\": \"Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.\",\n        \"relative_start\": 51.8,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么请谈谈，潜在的上行空间在哪里。\",\n        \"en\": \"So give me a sense here as to what any potential upside is.\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 62.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"信不信由你，一年前的今天，这只权益资产创下了历史新高。\",\n        \"en\": \"I mean, this stock hit a record high, believe it or not, on this day one year ago.\",\n        \"relative_start\": 62.2,\n        \"relative_end\": 66.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"当然，此后就再也没有接近过那个高点。\",\n        \"en\": \"And of course, hasn't been anywhere near that record high since.\",\n        \"relative_start\": 66.5,\n        \"relative_end\": 70.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"是的，你看，我持怀疑态度的一部分原因，也是我一直观望的原因，即便在星际之门大交易的高峰期，也主要是围绕增长的持久性。\",\n        \"en\": \"Yeah, look, I think part of my skepticism and why I've been on the sidelines even at the peak of the large Stargate deal was really around kind of the durability of growth.\",\n        \"relative_start\": 70.3,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我们确实预计，仅仅因为甲骨文云基础设施有过剩产能，就会有一些顺风。\",\n        \"en\": \"We definitely expected that just by having excess capacity on Oracle Cloud infrastructure, that there would be some tailwinds.\",\n        \"relative_start\": 79.6,\n        \"relative_end\": 86.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"preferred_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"official_zh\": \"加拿大皇家银行资本市场\",\n      \"common_zh\": \"RBC\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"RBC\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.bloomberg.com/news/videos/2026-06-10/oracle-s-earnings-really-strong-rbc-s-jaluria-video\",\n        \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\"\n      ],\n      \"evidence\": \"Bloomberg and Globe and Mail both identify RBC Capital Markets as the employer of analyst Rishi Jaluria covering Oracle; Chinese financial media commonly keep the short form RBC.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Oracle's numbers across the board were better than feared, with OCI over-achievement and a raised guide temporarily putting financing and RPO-conversion worries to rest.\",\n      \"public_baseline\": \"Oracle's reported quarter showed double-digit revenue growth, RPO around $138B (+41% YoY) with a sequential increase, and cloud revenue growth; the stock trades largely on OCI and RPO.\",\n      \"surprise_gap\": \"The transcript frames results as beating low expectations, while public coverage describes record/strong results; the 'better than feared' framing is the analyst's characterization rather than a documented consensus miss.\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says numbers across the board were better than feared and OCI over-achieved with a raised guide.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务\",\n          \"url\": \"https://reportify.cn/transcripts/1130428539825426432\",\n          \"fact\": \"Q4 total revenue and EPS beat guidance; RPO reached $138B, up $8B sequentially and +41% YoY.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating\",\n          \"url\": \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\",\n          \"fact\": \"RBC's Rishi Jaluria maintained a Hold rating on Oracle with a $190 price target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Oracle missed consensus expectations\",\n        \"Oracle's RPO declined\",\n        \"RBC upgraded Oracle to Buy\",\n        \"Oracle announced layoffs (RIF) in this clip\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Public snippets mix fiscal years (FY2025 Q4 vs FY2026 Q4) and dates; do not merge figures across them without checking the fiscal period.\",\n    \"No reliable Chinese transliteration exists for Rishi Jaluria; keep the Latin surname in title labels.\",\n    \"RIF interpretation is low-confidence and should not be used in a title without further sourcing.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"RBC分析师Rishi Jaluria称甲骨文整体数字好于担忧，OCI超预期且指引上调，暂时缓解了融资和RPO转化担忧；但应用软件疲软，权益资产几乎完全取决于OCI和RPO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"甲骨文财报好于担忧\\nOCI超预期指引上调\\n但应用软件还在拖后腿\",\n          \"title_lines\": [\n            \"甲骨文财报好于担忧\",\n            \"OCI超预期指引上调\",\n            \"应用软件还在拖后腿\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: numbers across the board were better than feared\",\n            \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n            \"transcript: weakness in their application software and some of their traditional software\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"RBC分析师拆解甲骨文\\nOCI和RPO撑住全场\\n应用软件却继续疲软\",\n          \"title_lines\": [\n            \"RBC分析师拆解甲骨文\",\n            \"OCI和RPO撑住全场\",\n            \"应用软件却继续疲软\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n            \"transcript: weakness in their application software and some of their traditional software\",\n            \"research entity: RBC title_label\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"原来关键在这里\",\n          \"title\": \"甲骨文权益资产看什么\\nOCI和RPO决定方向\\n应用软件疲软被暂时搁置\",\n          \"title_lines\": [\n            \"甲骨文权益资产看什么\",\n            \"OCI和RPO决定方向\",\n            \"应用软件疲软被暂时搁置\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n            \"transcript: weakness in their application software\",\n            \"transcript: worries might be temporarily put to rest\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"RBC分析师直言甲骨文\\nOCI超预期暂时缓解担忧\\n应用软件疲软才是挑刺点\",\n          \"title_lines\": [\n            \"RBC分析师直言甲骨文\",\n            \"OCI超预期暂时缓解担忧\",\n            \"应用软件疲软才是挑刺点\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: if I were to say, what am I poking at here? Probably it's the app's revenue\",\n            \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n            \"transcript: worries might be temporarily put to rest\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_breaks_consensus",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: numbers across the board were definitely better than feared",
+              "transcript: over-achievement on OCI in the quarter and the raised guide",
+              "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+              "transcript: weakness in their application software and some of their traditional software",
+              "research entity: RBC title_label"
+            ],
+            "title": "RBC分析师拆解甲骨文\nOCI和RPO撑住全场\n应用软件却继续疲软",
+            "title_lines": [
+              "RBC分析师拆解甲骨文",
+              "OCI和RPO撑住全场",
+              "应用软件却继续疲软"
+            ],
+            "title_highlights": [
+              "RBC分析师",
+              "OCI和RPO",
+              "应用软件却继续疲软"
+            ],
+            "runner_up_titles": [
+              "甲骨文财报好于担忧\nOCI超预期指引上调\n但应用软件还在拖后腿",
+              "甲骨文权益资产看什么\nOCI和RPO决定方向\n应用软件疲软被暂时搁置"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：OCI和RPO撑住估值，应用软件疲软被暂时搁置，后续看转化节奏。",
+            "comment_highlights": [
+              "OCI和RPO撑住估值",
+              "应用软件疲软被暂时搁置"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：主持人先追问疑虑，为后面拆解埋下伏笔。",
+                "comment_highlights": [
+                  "先追问疑虑"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：分析师定调好于担忧，但用了暂时缓解的措辞。",
+                "comment_highlights": [
+                  "好于担忧",
+                  "暂时缓解"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：融资和RPO转化时间线是此前两大担忧来源。",
+                "comment_highlights": [
+                  "融资和RPO转化时间线"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：OCI超预期且指引上调，是本次财报最直接的支撑。",
+                "comment_highlights": [
+                  "OCI超预期",
+                  "指引上调"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：担忧暂时缓解，但暂时二字暗示持续性仍待观察。",
+                "comment_highlights": [
+                  "暂时缓解",
+                  "持续性仍待观察"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：分析师主动挑刺，指向应用软件收入。",
+                "comment_highlights": [
+                  "主动挑刺",
+                  "应用软件收入"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：应用软件和传统软件已经出现疲软迹象。",
+                "comment_highlights": [
+                  "应用软件和传统软件",
+                  "疲软迹象"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：裁员影响可能叠加，但该说法在研究中置信度较低。",
+                "comment_highlights": [
+                  "裁员影响可能叠加",
+                  "置信度较低"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：当前权益资产几乎完全取决于OCI和RPO两条线。",
+                "comment_highlights": [
+                  "OCI和RPO两条线"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：主持人提到该权益资产已跑赢板块两三年。",
+                "comment_highlights": [
+                  "跑赢板块两三年"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：主持人追问上行空间，把话题引向增长持久性。",
+                "comment_highlights": [
+                  "上行空间",
+                  "增长持久性"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：一年前创下历史新高，此后走势明显分化。",
+                "comment_highlights": [
+                  "历史新高",
+                  "走势明显分化"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：股价再未接近前高，市场对增长持续性存疑。",
+                "comment_highlights": [
+                  "再未接近前高",
+                  "增长持续性存疑"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：分析师称即便星际之门高峰期也保持观望，关注增长持久性。",
+                "comment_highlights": [
+                  "保持观望",
+                  "增长持久性"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：甲骨文云基础设施过剩产能可能带来阶段性顺风。",
+                "comment_highlights": [
+                  "过剩产能",
+                  "阶段性顺风"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"source_title\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓\",\n    \"current_title_lines\": [\n      \"甲骨文AI业绩出炉\",\n      \"RBC分析师称好于担忧\",\n      \"OCI与RPO成市场焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这些头条数字里，有什么让你对Rishi产生疑虑的地方吗？\",\n        \"en\": \"Anything here that you equiple that Rishi with the guards of some of these headline numbers?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"谢谢邀请，很高兴来。整体数字确实比担心的要好。\",\n        \"en\": \"Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"之前有融资方面的担忧，也有关于RPO积压订单转化为收入时间线的担忧，\",\n        \"en\": \"There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,\",\n        \"relative_start\": 11.8,\n        \"relative_end\": 20.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但本季度OCI超预期，且指引上调，\",\n        \"en\": \"clearly with the over-achievement on OCI in the quarter and the raised guide.\",\n        \"relative_start\": 20.5,\n        \"relative_end\": 25.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这些担忧可能暂时缓解了。\",\n        \"en\": \"I think that some of those worries might be temporarily put to rest.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 29.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果要挑刺，可能是在应用软件收入上。\",\n        \"en\": \"If I were to say, what am I poking at here? Probably it's the app's revenue.\",\n        \"relative_start\": 29.7,\n        \"relative_end\": 34.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们的应用软件和传统软件已经出现疲软。\",\n        \"en\": \"There has already been weakness in their application software and some of their traditional software.\",\n        \"relative_start\": 34.2,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"现在可能还有裁员的影响叠加。\",\n        \"en\": \"And now you have maybe potentially the impact of RIFS layering on that.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以这条线可能进一步放缓。但很明显，当前股价几乎完全取决于OCI和RPO。\",\n        \"en\": \"So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我很好奇，这只权益资产至少跑赢板块两三年了，甚至更久。\",\n        \"en\": \"Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.\",\n        \"relative_start\": 51.8,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么请谈谈，潜在的上行空间在哪里。\",\n        \"en\": \"So give me a sense here as to what any potential upside is.\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 62.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"信不信由你，一年前的今天，这只权益资产创下了历史新高。\",\n        \"en\": \"I mean, this stock hit a record high, believe it or not, on this day one year ago.\",\n        \"relative_start\": 62.2,\n        \"relative_end\": 66.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"当然，此后就再也没有接近过那个高点。\",\n        \"en\": \"And of course, hasn't been anywhere near that record high since.\",\n        \"relative_start\": 66.5,\n        \"relative_end\": 70.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"是的，你看，我持怀疑态度的一部分原因，也是我一直观望的原因，即便在星际之门大交易的高峰期，也主要是围绕增长的持久性。\",\n        \"en\": \"Yeah, look, I think part of my skepticism and why I've been on the sidelines even at the peak of the large Stargate deal was really around kind of the durability of growth.\",\n        \"relative_start\": 70.3,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我们确实预计，仅仅因为甲骨文云基础设施有过剩产能，就会有一些顺风。\",\n        \"en\": \"We definitely expected that just by having excess capacity on Oracle Cloud infrastructure, that there would be some tailwinds.\",\n        \"relative_start\": 79.6,\n        \"relative_end\": 86.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"preferred_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"official_zh\": \"加拿大皇家银行资本市场\",\n      \"common_zh\": \"RBC\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"RBC\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.bloomberg.com/news/videos/2026-06-10/oracle-s-earnings-really-strong-rbc-s-jaluria-video\",\n        \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\"\n      ],\n      \"evidence\": \"Bloomberg and Globe and Mail both identify RBC Capital Markets as the employer of analyst Rishi Jaluria covering Oracle; Chinese financial media commonly keep the short form RBC.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Oracle's numbers across the board were better than feared, with OCI over-achievement and a raised guide temporarily putting financing and RPO-conversion worries to rest.\",\n      \"public_baseline\": \"Oracle's reported quarter showed double-digit revenue growth, RPO around $138B (+41% YoY) with a sequential increase, and cloud revenue growth; the stock trades largely on OCI and RPO.\",\n      \"surprise_gap\": \"The transcript frames results as beating low expectations, while public coverage describes record/strong results; the 'better than feared' framing is the analyst's characterization rather than a documented consensus miss.\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says numbers across the board were better than feared and OCI over-achieved with a raised guide.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务\",\n          \"url\": \"https://reportify.cn/transcripts/1130428539825426432\",\n          \"fact\": \"Q4 total revenue and EPS beat guidance; RPO reached $138B, up $8B sequentially and +41% YoY.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating\",\n          \"url\": \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\",\n          \"fact\": \"RBC's Rishi Jaluria maintained a Hold rating on Oracle with a $190 price target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Oracle missed consensus expectations\",\n        \"Oracle's RPO declined\",\n        \"RBC upgraded Oracle to Buy\",\n        \"Oracle announced layoffs (RIF) in this clip\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Public snippets mix fiscal years (FY2025 Q4 vs FY2026 Q4) and dates; do not merge figures across them without checking the fiscal period.\",\n    \"No reliable Chinese transliteration exists for Rishi Jaluria; keep the Latin surname in title labels.\",\n    \"RIF interpretation is low-confidence and should not be used in a title without further sourcing.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"RBC分析师Rishi Jaluria称甲骨文整体数字好于担忧，OCI超预期且指引上调，暂时缓解了融资和RPO转化担忧；但应用软件疲软，权益资产几乎完全取决于OCI和RPO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"甲骨文财报好于担忧\\nOCI超预期指引上调\\n但应用软件还在拖后腿\",\n          \"title_lines\": [\n            \"甲骨文财报好于担忧\",\n            \"OCI超预期指引上调\",\n            \"应用软件还在拖后腿\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: numbers across the board were better than feared\",\n            \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n            \"transcript: weakness in their application software and some of their traditional software\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"RBC分析师拆解甲骨文\\nOCI和RPO撑住全场\\n应用软件却继续疲软\",\n          \"title_lines\": [\n            \"RBC分析师拆解甲骨文\",\n            \"OCI和RPO撑住全场\",\n            \"应用软件却继续疲软\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n            \"transcript: weakness in their application software and some of their traditional software\",\n            \"research entity: RBC title_label\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"原来关键在这里\",\n          \"title\": \"甲骨文权益资产看什么\\nOCI和RPO决定方向\\n应用软件疲软被暂时搁置\",\n          \"title_lines\": [\n            \"甲骨文权益资产看什么\",\n            \"OCI和RPO决定方向\",\n            \"应用软件疲软被暂时搁置\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n            \"transcript: weakness in their application software\",\n            \"transcript: worries might be temporarily put to rest\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"RBC分析师直言甲骨文\\nOCI超预期暂时缓解担忧\\n应用软件疲软才是挑刺点\",\n          \"title_lines\": [\n            \"RBC分析师直言甲骨文\",\n            \"OCI超预期暂时缓解担忧\",\n            \"应用软件疲软才是挑刺点\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: if I were to say, what am I poking at here? Probably it's the app's revenue\",\n            \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n            \"transcript: worries might be temporarily put to rest\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件却继续疲软\",\n      \"title_lines\": [\n        \"RBC分析师拆解甲骨文\",\n        \"OCI和RPO撑住全场\",\n        \"应用软件却继续疲软\"\n      ],\n      \"title_highlights\": [\n        \"RBC分析师\",\n        \"OCI和RPO\",\n        \"应用软件却继续疲软\"\n      ],\n      \"comment\": \"KC评论：OCI和RPO撑住估值，应用软件疲软被暂时搁置，后续看转化节奏\",\n      \"comment_highlights\": [\n        \"OCI和RPO撑住估值\",\n        \"应用软件疲软被暂时搁置\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：主持人先追问疑虑，为后面拆解埋下伏笔\",\n          \"comment_highlights\": [\n            \"先追问疑虑\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：分析师定调好于担忧，但用了暂时缓解的措辞\",\n          \"comment_highlights\": [\n            \"好于担忧\",\n            \"暂时缓解\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：融资和RPO转化时间线是此前两大担忧来源\",\n          \"comment_highlights\": [\n            \"融资和RPO转化时间线\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：OCI超预期且指引上调，是本次财报最直接的支撑\",\n          \"comment_highlights\": [\n            \"OCI超预期\",\n            \"指引上调\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：担忧暂时缓解，但暂时二字暗示持续性仍待观察\",\n          \"comment_highlights\": [\n            \"暂时缓解\",\n            \"持续性仍待观察\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：分析师主动挑刺，指向应用软件收入\",\n          \"comment_highlights\": [\n            \"主动挑刺\",\n            \"应用软件收入\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：应用软件和传统软件已经出现疲软迹象\",\n          \"comment_highlights\": [\n            \"应用软件和传统软件\",\n            \"疲软迹象\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：裁员影响可能叠加，但该说法在研究中置信度较低\",\n          \"comment_highlights\": [\n            \"裁员影响可能叠加\",\n            \"置信度较低\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：当前权益资产几乎完全取决于OCI和RPO两条线\",\n          \"comment_highlights\": [\n            \"OCI和RPO两条线\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：主持人提到该权益资产已跑赢板块两三年\",\n          \"comment_highlights\": [\n            \"跑赢板块两三年\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：主持人追问上行空间，把话题引向增长持久性\",\n          \"comment_highlights\": [\n            \"上行空间\",\n            \"增长持久性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：一年前创下历史新高，此后走势明显分化\",\n          \"comment_highlights\": [\n            \"历史新高\",\n            \"走势明显分化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：股价再未接近前高，市场对增长持续性存疑\",\n          \"comment_highlights\": [\n            \"再未接近前高\",\n            \"增长持续性存疑\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：分析师称即便星际之门高峰期也保持观望，关注增长持久性\",\n          \"comment_highlights\": [\n            \"保持观望\",\n            \"增长持久性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：甲骨文云基础设施过剩产能可能带来阶段性顺风\",\n          \"comment_highlights\": [\n            \"过剩产能\",\n            \"阶段性顺风\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority_breaks_consensus\",\n      \"angle_id\": \"authority_breaks_consensus\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"他说的是真的吗\",\n      \"evidence_basis\": [\n        \"transcript: numbers across the board were definitely better than feared\",\n        \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n        \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n        \"transcript: weakness in their application software and some of their traditional software\",\n        \"research entity: RBC title_label\"\n      ],\n      \"runner_up_titles\": [\n        \"甲骨文财报好于担忧 OCI超预期指引上调 但应用软件还在拖后腿\",\n        \"甲骨文权益资产看什么 OCI和RPO决定方向 应用软件疲软被暂时搁置\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 8,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:authority_breaks_consensus\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 8,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority_breaks_consensus",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "evidence_basis": [
+                  "transcript: numbers across the board were definitely better than feared",
+                  "transcript: over-achievement on OCI in the quarter and the raised guide",
+                  "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+                  "transcript: weakness in their application software and some of their traditional software",
+                  "research entity: RBC title_label"
+                ],
+                "title": "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件却继续疲软",
+                "title_lines": [
+                  "RBC分析师拆解甲骨文",
+                  "OCI和RPO撑住全场",
+                  "应用软件却继续疲软"
+                ],
+                "title_highlights": [
+                  "RBC分析师",
+                  "OCI和RPO",
+                  "应用软件却继续疲软"
+                ],
+                "runner_up_titles": [
+                  "甲骨文财报好于担忧 OCI超预期指引上调 但应用软件还在拖后腿",
+                  "甲骨文权益资产看什么 OCI和RPO决定方向 应用软件疲软被暂时搁置"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：OCI和RPO撑住估值，应用软件疲软被暂时搁置，后续看转化节奏",
+                "comment_highlights": [
+                  "OCI和RPO撑住估值",
+                  "应用软件疲软被暂时搁置"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：主持人先追问疑虑，为后面拆解埋下伏笔",
+                    "comment_highlights": [
+                      "先追问疑虑"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：分析师定调好于担忧，但用了暂时缓解的措辞",
+                    "comment_highlights": [
+                      "好于担忧",
+                      "暂时缓解"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：融资和RPO转化时间线是此前两大担忧来源",
+                    "comment_highlights": [
+                      "融资和RPO转化时间线"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：OCI超预期且指引上调，是本次财报最直接的支撑",
+                    "comment_highlights": [
+                      "OCI超预期",
+                      "指引上调"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：担忧暂时缓解，但暂时二字暗示持续性仍待观察",
+                    "comment_highlights": [
+                      "暂时缓解",
+                      "持续性仍待观察"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：分析师主动挑刺，指向应用软件收入",
+                    "comment_highlights": [
+                      "主动挑刺",
+                      "应用软件收入"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：应用软件和传统软件已经出现疲软迹象",
+                    "comment_highlights": [
+                      "应用软件和传统软件",
+                      "疲软迹象"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：裁员影响可能叠加，但该说法在研究中置信度较低",
+                    "comment_highlights": [
+                      "裁员影响可能叠加",
+                      "置信度较低"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：当前权益资产几乎完全取决于OCI和RPO两条线",
+                    "comment_highlights": [
+                      "OCI和RPO两条线"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：主持人提到该权益资产已跑赢板块两三年",
+                    "comment_highlights": [
+                      "跑赢板块两三年"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：主持人追问上行空间，把话题引向增长持久性",
+                    "comment_highlights": [
+                      "上行空间",
+                      "增长持久性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：一年前创下历史新高，此后走势明显分化",
+                    "comment_highlights": [
+                      "历史新高",
+                      "走势明显分化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：股价再未接近前高，市场对增长持续性存疑",
+                    "comment_highlights": [
+                      "再未接近前高",
+                      "增长持续性存疑"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：分析师称即便星际之门高峰期也保持观望，关注增长持久性",
+                    "comment_highlights": [
+                      "保持观望",
+                      "增长持久性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：甲骨文云基础设施过剩产能可能带来阶段性顺风",
+                    "comment_highlights": [
+                      "过剩产能",
+                      "阶段性顺风"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件却继续疲软",
+          "title_lines": [
+            "RBC分析师拆解甲骨文",
+            "OCI和RPO撑住全场",
+            "应用软件却继续疲软"
+          ],
+          "formula_id": "authority_breaks_consensus",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "他说的是真的吗",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 87,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:authority_breaks_consensus",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：OCI和RPO撑住估值，应用软件疲软被暂时搁置，后续看转化节奏"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-10T23:59:27.667508+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says",
+          "source_title": "Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says",
+          "show_date": "",
+          "current_title": "甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓",
+          "current_title_lines": [
+            "甲骨文AI业绩出炉",
+            "RBC分析师称好于担忧",
+            "OCI与RPO成市场焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这些头条数字里，有什么让你对Rishi产生疑虑的地方吗？",
+              "en": "Anything here that you equiple that Rishi with the guards of some of these headline numbers?",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "谢谢邀请，很高兴来。整体数字确实比担心的要好。",
+              "en": "Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.",
+              "relative_start": 5.0,
+              "relative_end": 11.8
+            },
+            {
+              "index": 3,
+              "zh": "之前有融资方面的担忧，也有关于RPO积压订单转化为收入时间线的担忧，",
+              "en": "There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,",
+              "relative_start": 11.8,
+              "relative_end": 20.5
+            },
+            {
+              "index": 4,
+              "zh": "但本季度OCI超预期，且指引上调，",
+              "en": "clearly with the over-achievement on OCI in the quarter and the raised guide.",
+              "relative_start": 20.5,
+              "relative_end": 25.5
+            },
+            {
+              "index": 5,
+              "zh": "这些担忧可能暂时缓解了。",
+              "en": "I think that some of those worries might be temporarily put to rest.",
+              "relative_start": 25.5,
+              "relative_end": 29.7
+            },
+            {
+              "index": 6,
+              "zh": "如果要挑刺，可能是在应用软件收入上。",
+              "en": "If I were to say, what am I poking at here? Probably it's the app's revenue.",
+              "relative_start": 29.7,
+              "relative_end": 34.2
+            },
+            {
+              "index": 7,
+              "zh": "他们的应用软件和传统软件已经出现疲软。",
+              "en": "There has already been weakness in their application software and some of their traditional software.",
+              "relative_start": 34.2,
+              "relative_end": 38.8
+            },
+            {
+              "index": 8,
+              "zh": "现在可能还有裁员的影响叠加。",
+              "en": "And now you have maybe potentially the impact of RIFS layering on that.",
+              "relative_start": 38.8,
+              "relative_end": 43.6
+            },
+            {
+              "index": 9,
+              "zh": "所以这条线可能进一步放缓。但很明显，当前股价几乎完全取决于OCI和RPO。",
+              "en": "So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.",
+              "relative_start": 43.6,
+              "relative_end": 51.8
+            },
+            {
+              "index": 10,
+              "zh": "我很好奇，这只权益资产至少跑赢板块两三年了，甚至更久。",
+              "en": "Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.",
+              "relative_start": 51.8,
+              "relative_end": 58.6
+            },
+            {
+              "index": 11,
+              "zh": "那么请谈谈，潜在的上行空间在哪里。",
+              "en": "So give me a sense here as to what any potential upside is.",
+              "relative_start": 58.6,
+              "relative_end": 62.2
+            },
+            {
+              "index": 12,
+              "zh": "信不信由你，一年前的今天，这只权益资产创下了历史新高。",
+              "en": "I mean, this stock hit a record high, believe it or not, on this day one year ago.",
+              "relative_start": 62.2,
+              "relative_end": 66.5
+            },
+            {
+              "index": 13,
+              "zh": "当然，此后就再也没有接近过那个高点。",
+              "en": "And of course, hasn't been anywhere near that record high since.",
+              "relative_start": 66.5,
+              "relative_end": 70.3
+            },
+            {
+              "index": 14,
+              "zh": "是的，你看，我持怀疑态度的一部分原因，也是我一直观望的原因，即便在星际之门大交易的高峰期，也主要是围绕增长的持久性。",
+              "en": "Yeah, look, I think part of my skepticism and why I've been on the sidelines even at the peak of the large Stargate deal was really around kind of the durability of growth.",
+              "relative_start": 70.3,
+              "relative_end": 79.6
+            },
+            {
+              "index": 15,
+              "zh": "我们确实预计，仅仅因为甲骨文云基础设施有过剩产能，就会有一些顺风。",
+              "en": "We definitely expected that just by having excess capacity on Oracle Cloud infrastructure, that there would be some tailwinds.",
+              "relative_start": 79.6,
+              "relative_end": 86.6
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n  \"source_title\": \"Duration: 4:53 Oracle and AI Earnings Are Better Than Feared, RBC's Jaluria Says\",\n  \"current_title\": \"甲骨文AI业绩好于担忧 RBC分析师称担忧暂缓\",\n  \"source_claims\": [\n    \"Anything here that you equiple that Rishi with the guards of some of these headline numbers?\",\n    \"Yeah, look, and thanks much for having me. Always a pleasure to be here. Look, I think the numbers across the board were definitely better than feared.\",\n    \"There were concerns around financing, concerns around the timeline of being able to turn the backlog that's sitting in RPO into revenue,\",\n    \"clearly with the over-achievement on OCI in the quarter and the raised guide.\",\n    \"I think that some of those worries might be temporarily put to rest.\",\n    \"If I were to say, what am I poking at here? Probably it's the app's revenue.\",\n    \"There has already been weakness in their application software and some of their traditional software.\",\n    \"And now you have maybe potentially the impact of RIFS layering on that.\",\n    \"So we might see further deceleration in that line. But I think very clear right now, the stock trades almost entirely on OCI and RPO at these levels.\",\n    \"Well, I am curious. I mean, you've had a sector perform on the stock for at least a couple of years, or maybe even more than that.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"preferred_en\": \"RBC Capital Markets (Royal Bank of Canada)\",\n      \"official_zh\": \"加拿大皇家银行资本市场\",\n      \"common_zh\": \"RBC\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"RBC\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.bloomberg.com/news/videos/2026-06-10/oracle-s-earnings-really-strong-rbc-s-jaluria-video\",\n        \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\"\n      ],\n      \"evidence\": \"Bloomberg and Globe and Mail both identify RBC Capital Markets as the employer of analyst Rishi Jaluria covering Oracle; Chinese financial media commonly keep the short form RBC.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Oracle's numbers across the board were better than feared, with OCI over-achievement and a raised guide temporarily putting financing and RPO-conversion worries to rest.\",\n      \"public_baseline\": \"Oracle's reported quarter showed double-digit revenue growth, RPO around $138B (+41% YoY) with a sequential increase, and cloud revenue growth; the stock trades largely on OCI and RPO.\",\n      \"surprise_gap\": \"The transcript frames results as beating low expectations, while public coverage describes record/strong results; the 'better than feared' framing is the analyst's characterization rather than a documented consensus miss.\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says numbers across the board were better than feared and OCI over-achieved with a raised guide.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"甲骨文 Oracle 2025财年第四季度 财报 OCI 营收 增长 RPO 剩余履约义务\",\n          \"url\": \"https://reportify.cn/transcripts/1130428539825426432\",\n          \"fact\": \"Q4 total revenue and EPS beat guidance; RPO reached $138B, up $8B sequentially and +41% YoY.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC Capital Markets analyst Rishi Jaluria Oracle coverage rating\",\n          \"url\": \"https://www.theglobeandmail.com/investing/markets/stocks/ORCL/pressreleases/4459846/rbc-capital-sticks-to-its-hold-rating-for-oracle-orcl\",\n          \"fact\": \"RBC's Rishi Jaluria maintained a Hold rating on Oracle with a $190 price target.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Oracle missed consensus expectations\",\n        \"Oracle's RPO declined\",\n        \"RBC upgraded Oracle to Buy\",\n        \"Oracle announced layoffs (RIF) in this clip\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Public snippets mix fiscal years (FY2025 Q4 vs FY2026 Q4) and dates; do not merge figures across them without checking the fiscal period.\",\n    \"No reliable Chinese transliteration exists for Rishi Jaluria; keep the Latin surname in title labels.\",\n    \"RIF interpretation is low-confidence and should not be used in a title without further sourcing.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件却继续疲软\",\n  \"title_lines\": [\n    \"RBC分析师拆解甲骨文\",\n    \"OCI和RPO撑住全场\",\n    \"应用软件却继续疲软\"\n  ],\n  \"angle_id\": \"authority_breaks_consensus\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"他说的是真的吗\",\n  \"evidence_basis\": [\n    \"transcript: numbers across the board were definitely better than feared\",\n    \"transcript: over-achievement on OCI in the quarter and the raised guide\",\n    \"transcript: the stock trades almost entirely on OCI and RPO at these levels\",\n    \"transcript: weakness in their application software and some of their traditional software\",\n    \"research entity: RBC title_label\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 8,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: numbers across the board were definitely better than feared",
+              "transcript: over-achievement on OCI in the quarter and the raised guide",
+              "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+              "transcript: weakness in their application software and some of their traditional software",
+              "research entity: RBC title_label"
+            ],
+            "title": "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件疲软会拖累后续业绩吗？",
+            "title_lines": [
+              "RBC分析师拆解甲骨文",
+              "OCI和RPO撑住全场",
+              "应用软件疲软会拖累后续业绩吗？"
+            ],
+            "title_highlights": [
+              "RBC分析师拆解甲骨文",
+              "OCI和RPO撑住全场",
+              "应用软件疲软会拖累后续业绩吗？"
+            ],
+            "runner_up_titles": [
+              "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件疲软会拖累后续业绩吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件疲软会拖累后续业绩吗？",
+        "title_lines": [
+          "RBC分析师拆解甲骨文",
+          "OCI和RPO撑住全场",
+          "应用软件疲软会拖累后续业绩吗？"
+        ],
+        "title_highlights": [
+          "RBC分析师拆解甲骨文",
+          "OCI和RPO撑住全场",
+          "应用软件疲软会拖累后续业绩吗？"
+        ],
+        "comment": "KC评论：OCI和RPO撑住估值，应用软件疲软被暂时搁置，后续看转化节奏",
+        "comment_highlights": [
+          "OCI和RPO撑住估值",
+          "应用软件疲软被暂时搁置"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：主持人先追问疑虑，为后面拆解埋下伏笔",
+            "comment_highlights": [
+              "先追问疑虑"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：分析师定调好于担忧，但用了暂时缓解的措辞",
+            "comment_highlights": [
+              "好于担忧",
+              "暂时缓解"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：融资和RPO转化时间线是此前两大担忧来源",
+            "comment_highlights": [
+              "融资和RPO转化时间线"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：OCI超预期且指引上调，是本次财报最直接的支撑",
+            "comment_highlights": [
+              "OCI超预期",
+              "指引上调"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：担忧暂时缓解，但暂时二字暗示持续性仍待观察",
+            "comment_highlights": [
+              "暂时缓解",
+              "持续性仍待观察"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：分析师主动挑刺，指向应用软件收入",
+            "comment_highlights": [
+              "主动挑刺",
+              "应用软件收入"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：应用软件和传统软件已经出现疲软迹象",
+            "comment_highlights": [
+              "应用软件和传统软件",
+              "疲软迹象"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：裁员影响可能叠加，但该说法在研究中置信度较低",
+            "comment_highlights": [
+              "裁员影响可能叠加",
+              "置信度较低"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：当前权益资产几乎完全取决于OCI和RPO两条线",
+            "comment_highlights": [
+              "OCI和RPO两条线"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：主持人提到该权益资产已跑赢板块两三年",
+            "comment_highlights": [
+              "跑赢板块两三年"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：主持人追问上行空间，把话题引向增长持久性",
+            "comment_highlights": [
+              "上行空间",
+              "增长持久性"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：一年前创下历史新高，此后走势明显分化",
+            "comment_highlights": [
+              "历史新高",
+              "走势明显分化"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：股价再未接近前高，市场对增长持续性存疑",
+            "comment_highlights": [
+              "再未接近前高",
+              "增长持续性存疑"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：分析师称即便星际之门高峰期也保持观望，关注增长持久性",
+            "comment_highlights": [
+              "保持观望",
+              "增长持久性"
+            ]
+          },
+          {
+            "subtitle_index": 15,
+            "comment": "KC评论：甲骨文云基础设施过剩产能可能带来阶段性顺风",
+            "comment_highlights": [
+              "过剩产能",
+              "阶段性顺风"
+            ]
+          }
+        ],
+        "formula_id": "authority_breaks_consensus",
+        "angle_id": "authority_breaks_consensus",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "他说的是真的吗",
+        "evidence_basis": [
+          "transcript: numbers across the board were definitely better than feared",
+          "transcript: over-achievement on OCI in the quarter and the raised guide",
+          "transcript: the stock trades almost entirely on OCI and RPO at these levels",
+          "transcript: weakness in their application software and some of their traditional software",
+          "research entity: RBC title_label"
+        ],
+        "runner_up_titles": [
+          "RBC分析师拆解甲骨文：OCI和RPO撑住全场，应用软件疲软会拖累后续业绩吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:authority_breaks_consensus",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
