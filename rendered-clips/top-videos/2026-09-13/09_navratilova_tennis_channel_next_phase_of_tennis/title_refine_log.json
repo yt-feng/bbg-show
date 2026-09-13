@@ -1,0 +1,1182 @@
+{
+  "timestamp_utc": "2026-09-13T00:08:18.143563+00:00",
+  "plan_path": "work/top-videos/09_navratilova_tennis_channel_next_phase_of_tennis/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Martina Navratilova",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Martina Navratilova",
+        "preferred_en": "Martina Navratilova",
+        "official_zh": "玛蒂娜·纳芙拉蒂洛娃",
+        "common_zh": "纳芙拉蒂洛娃",
+        "title_label": "纳芙拉蒂洛娃",
+        "preferred_zh": "纳芙拉蒂洛娃",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 3,
+        "evidence_urls": [
+          "https://zh.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83",
+          "https://baike.baidu.com/item/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83/1577186",
+          "https://wuu.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83"
+        ],
+        "evidence": "Chinese Wikipedia, Baidu Baike, Wu Wikipedia and Apple TV HK all render the name as 玛蒂娜·纳芙拉蒂洛娃; short form 纳芙拉蒂洛娃 is the standard media short form."
+      },
+      {
+        "source_text": "Wimbledon",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "Wimbledon Championships",
+        "preferred_en": "Wimbledon Championships",
+        "official_zh": "温布尔登网球锦标赛",
+        "common_zh": "温网",
+        "title_label": "温网",
+        "preferred_zh": "温网",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese Wikipedia uses 温布尔登网球锦标赛 and the short form 温网; Baidu Baike uses 温网 in the same context."
+      },
+      {
+        "source_text": "US Open",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "US Open (tennis)",
+        "preferred_en": "US Open (tennis)",
+        "official_zh": "美国网球公开赛",
+        "common_zh": "美网",
+        "title_label": "美网",
+        "preferred_zh": "美网",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese Wikipedia and Baidu Baike both use 美网 as the standard short form for the US Open in tennis contexts."
+      },
+      {
+        "source_text": "Bob Bryan",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Bob Bryan",
+        "preferred_en": "Bob Bryan",
+        "official_zh": "鲍勃·布莱恩",
+        "common_zh": "布莱恩兄弟",
+        "title_label": "布莱恩兄弟",
+        "preferred_zh": "布莱恩兄弟",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese Wikipedia and Baidu Baike reference Bob Bryan in the context of Navratilova's 2006 US Open mixed doubles title; the pair is commonly referred to as 布莱恩兄弟 in Chinese media."
+      },
+      {
+        "source_text": "Grand Slam",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "Grand Slam (tennis)",
+        "preferred_en": "Grand Slam (tennis)",
+        "official_zh": "大满贯",
+        "common_zh": "大满贯",
+        "title_label": "大满贯",
+        "preferred_zh": "大满贯",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Both Chinese Wikipedia and Baidu Baike use 大满贯 as the standard translation for Grand Slam in tennis."
+      },
+      {
+        "source_text": "Bloomberg Power Players",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg Power Players",
+        "preferred_en": "Bloomberg Power Players",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Bloomberg Power Players",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No public snippet confirms an established Simplified Chinese name for this Bloomberg event series; keep the English label."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "Grand Slam singles titles",
+        "clip_indexes": [],
+        "context": "tennis career statistics",
+        "sense": "number of Grand Slam singles championships won",
+        "preferred_zh": "大满贯单打冠军",
+        "title_label": "大满贯单打冠军",
+        "avoid_zh": [
+          "大满贯单打头衔"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "mixed doubles",
+        "clip_indexes": [],
+        "context": "tennis",
+        "sense": "mixed doubles competition",
+        "preferred_zh": "混合双打",
+        "title_label": "混双",
+        "avoid_zh": [
+          "男女混合双打"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Open Era",
+        "clip_indexes": [],
+        "context": "tennis history",
+        "sense": "the era of professional tennis beginning in 1968",
+        "preferred_zh": "公开赛年代",
+        "title_label": "公开赛年代",
+        "avoid_zh": [
+          "开放时代"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Martina Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, totaling 59 major titles, a record in the Open Era for any man or woman.",
+        "public_baseline": "Public records confirm Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, and 10 mixed doubles titles, totaling 59 major titles, an Open Era record.",
+        "surprise_gap": "",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker states Navratilova has 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, 59 major titles total."
+          },
+          {
+            "kind": "public",
+            "query": "Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles",
+            "url": "https://en.wikipedia.org/wiki/Martina_Navratilova",
+            "fact": "Wikipedia confirms 59 major titles: 18 singles, 31 women's doubles, 10 mixed doubles."
+          },
+          {
+            "kind": "public",
+            "query": "Martina Navratilova final Wimbledon singles final age 37 1994",
+            "url": "https://en.wikipedia.org/wiki/Martina_Navratilova",
+            "fact": "Wikipedia confirms Navratilova reached the 1994 Wimbledon final at age 37, losing to Conchita Martínez."
+          }
+        ],
+        "forbidden_claims": [
+          "Navratilova holds the record for most Grand Slam singles titles (she does not; Margaret Court and Serena Williams have more).",
+          "Navratilova won her final major title at age 49 (the transcript says 49, but public records show her last major title was the 2006 US Open mixed doubles at age 49; this is accurate but should not be confused with singles)."
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The transcript claim about winning a final major title at age 49 in mixed doubles at the US Open with Bob Bryan is consistent with public records (2006 US Open mixed doubles).",
+      "No Chinese financial media sources were found for Bloomberg Power Players; keep English label."
+    ],
+    "research_queries": [
+      {
+        "query": "玛蒂娜·纳芙拉蒂洛娃 中文名 网球",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Martina Navratilova"
+      },
+      {
+        "query": "Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact Grand Slam title counts cited in the transcript"
+      },
+      {
+        "query": "Martina Navratilova final Wimbledon singles final age 37 1994",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that she reached her final Wimbledon singles final at age 37"
+      },
+      {
+        "query": "Martina Navratilova 2006 US Open mixed doubles title Bob Bryan age 49",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that she won her final major title in mixed doubles at the 2006 US Open with Bob Bryan at age 49"
+      },
+      {
+        "query": "Martina Navratilova singles match Wimbledon age 47 2004",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that she played a singles match at Wimbledon at age 47"
+      },
+      {
+        "query": "Martina Navratilova 59 major titles open era record man or woman",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that 59 major titles is a record in the open era for any man or woman"
+      },
+      {
+        "query": "纳芙拉蒂洛娃 网球 新阶段 新一代球员",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese media usage of the translated title and topic framing"
+      },
+      {
+        "query": "Bloomberg Tennis Hall established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Tennis Hall 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Famer Martina Navratilova 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Next Phase 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？",
+      "title_lines": [
+        "59冠纳芙拉蒂洛娃",
+        "我本可打到39岁",
+        "背部问题是否唯一阻碍？"
+      ],
+      "formula_id": "传奇数字+年龄反差",
+      "angle_id": "concrete_stakes",
+      "emotion_pole": "意外",
+      "viewer_reaction": "原来她本可以打得更久",
+      "evidence_basis": [
+        "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+        "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman",
+        "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'"
+      ],
+      "runner_up_titles": [
+        "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 7,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 10,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:concrete_stakes",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-13T00:08:13.544332+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York",
+          "source_title": "Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York",
+          "show_date": "",
+          "current_title": "纳芙拉蒂洛娃谈网球新阶段与新一代球员",
+          "current_title_lines": [
+            "纳芙拉蒂洛娃亮相纽约",
+            "谈网球运动新阶段",
+            "传奇视角看新一代球员"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "再次感谢各位到场，也感谢接下来与这位传奇人物、这位商界人士的对话。抱歉。",
+              "en": "Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry",
+              "relative_start": 0.1,
+              "relative_end": 11.1
+            },
+            {
+              "index": 2,
+              "zh": "你在频道要做的事或许会成就你的传奇。我们稍后聊这个。我喜欢你的思路。玛蒂娜，18个大满贯单打冠军。",
+              "en": "Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles",
+              "relative_start": 15.2,
+              "relative_end": 25.9
+            },
+            {
+              "index": 3,
+              "zh": "31个女双冠军，10个混双冠军，59个大赛冠军，59个大满贯赛事冠军。",
+              "en": "31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all",
+              "relative_start": 26.7,
+              "relative_end": 34.6
+            },
+            {
+              "index": 4,
+              "zh": "这是公开赛时代男女选手中的纪录。你会不会厌倦总是要谈这些？继续。",
+              "en": "Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?",
+              "relative_start": 35.2,
+              "relative_end": 43.6
+            },
+            {
+              "index": 5,
+              "zh": "我想我追求的就是这个方向。你47岁时还想在温网打单打比赛。",
+              "en": "Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47",
+              "relative_start": 46.1,
+              "relative_end": 55.4
+            },
+            {
+              "index": 6,
+              "zh": "你37岁时打进最后一个温网单打决赛，49岁时与鲍勃·布莱恩在美国公开赛赢得最后一个大满贯混双冠军。",
+              "en": "You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian",
+              "relative_start": 55.5,
+              "relative_end": 71.2
+            },
+            {
+              "index": 7,
+              "zh": "所以，我们说的是没有背部问题，39岁左右还在打球。嗯，我本可以做到。",
+              "en": "So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that",
+              "relative_start": 71.9,
+              "relative_end": 79.6
+            },
+            {
+              "index": 8,
+              "zh": "你如何思考，在你的职业生涯中你如何考虑如何继续，为什么最终推动你？我的目标是成为最年轻的赢得某事的选手。",
+              "en": "How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something",
+              "relative_start": 81.1,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"source_title\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"show_date\": \"\",\n    \"current_title\": \"纳芙拉蒂洛娃谈网球新阶段与新一代球员\",\n    \"current_title_lines\": [\n      \"纳芙拉蒂洛娃亮相纽约\",\n      \"谈网球运动新阶段\",\n      \"传奇视角看新一代球员\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"再次感谢各位到场，也感谢接下来与这位传奇人物、这位商界人士的对话。抱歉。\",\n        \"en\": \"Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry\",\n        \"relative_start\": 0.1,\n        \"relative_end\": 11.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"你在频道要做的事或许会成就你的传奇。我们稍后聊这个。我喜欢你的思路。玛蒂娜，18个大满贯单打冠军。\",\n        \"en\": \"Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"31个女双冠军，10个混双冠军，59个大赛冠军，59个大满贯赛事冠军。\",\n        \"en\": \"31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这是公开赛时代男女选手中的纪录。你会不会厌倦总是要谈这些？继续。\",\n        \"en\": \"Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我追求的就是这个方向。你47岁时还想在温网打单打比赛。\",\n        \"en\": \"Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 55.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你37岁时打进最后一个温网单打决赛，49岁时与鲍勃·布莱恩在美国公开赛赢得最后一个大满贯混双冠军。\",\n        \"en\": \"You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 71.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以，我们说的是没有背部问题，39岁左右还在打球。嗯，我本可以做到。\",\n        \"en\": \"So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that\",\n        \"relative_start\": 71.9,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你如何思考，在你的职业生涯中你如何考虑如何继续，为什么最终推动你？我的目标是成为最年轻的赢得某事的选手。\",\n        \"en\": \"How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Martina Navratilova\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Martina Navratilova\",\n      \"preferred_en\": \"Martina Navratilova\",\n      \"official_zh\": \"玛蒂娜·纳芙拉蒂洛娃\",\n      \"common_zh\": \"纳芙拉蒂洛娃\",\n      \"title_label\": \"纳芙拉蒂洛娃\",\n      \"preferred_zh\": \"纳芙拉蒂洛娃\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\",\n        \"https://baike.baidu.com/item/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83/1577186\",\n        \"https://wuu.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\"\n      ],\n      \"evidence\": \"Chinese Wikipedia, Baidu Baike, Wu Wikipedia and Apple TV HK all render the name as 玛蒂娜·纳芙拉蒂洛娃; short form 纳芙拉蒂洛娃 is the standard media short form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Martina Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, totaling 59 major titles, a record in the Open Era for any man or woman.\",\n      \"public_baseline\": \"Public records confirm Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, and 10 mixed doubles titles, totaling 59 major titles, an Open Era record.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states Navratilova has 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, 59 major titles total.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms 59 major titles: 18 singles, 31 women's doubles, 10 mixed doubles.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova final Wimbledon singles final age 37 1994\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms Navratilova reached the 1994 Wimbledon final at age 37, losing to Conchita Martínez.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Navratilova holds the record for most Grand Slam singles titles (she does not; Margaret Court and Serena Williams have more).\",\n        \"Navratilova won her final major title at age 49 (the transcript says 49, but public records show her last major title was the 2006 US Open mixed doubles at age 49; this is accurate but should not be confused with singles).\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript claim about winning a final major title at age 49 in mixed doubles at the US Open with Bob Bryan is consistent with public records (2006 US Open mixed doubles).\",\n    \"No Chinese financial media sources were found for Bloomberg Power Players; keep English label.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "纳芙拉蒂洛娃赢得18个大满贯单打冠军、31个女双冠军、10个混双冠军，总计59个大满贯冠军，是公开赛时代男女选手中的纪录；她在37岁打进最后一个温网单打决赛，49岁赢得最后一个大满贯混双冠军。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "59冠传奇自曝：我本可打到39岁",
+                "title_lines": [
+                  "59冠传奇自曝",
+                  "我本可打到39岁",
+                  "背部问题成唯一阻碍"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+                  "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "37岁进温网决赛 49岁还拿大满贯",
+                "title_lines": [
+                  "37岁进温网决赛",
+                  "49岁还拿大满贯",
+                  "她如何定义运动寿命"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'",
+                  "Public record: Navratilova reached the 1994 Wimbledon final at age 37 and won the 2006 US Open mixed doubles at age 49"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 10,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "18个大满贯单打冠军 却更看重双打",
+                "title_lines": [
+                  "18个大满贯单打冠军",
+                  "却更看重双打",
+                  "59冠背后隐藏什么"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: '31 women's doubles titles 10 mixed doubles titles 59 major title'",
+                  "Public record: Navratilova has 18 singles, 31 women's doubles, and 10 mixed doubles major titles"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "纳芙拉蒂洛娃：我的目标是成为最年轻冠军",
+                "title_lines": [
+                  "纳芙拉蒂洛娃：",
+                  "我的目标是成为",
+                  "最年轻冠军"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: 'in my goal was to be the youngest to win something'",
+                  "Speaker is Martina Navratilova, a tennis legend with 59 major titles"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"source_title\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"show_date\": \"\",\n    \"current_title\": \"纳芙拉蒂洛娃谈网球新阶段与新一代球员\",\n    \"current_title_lines\": [\n      \"纳芙拉蒂洛娃亮相纽约\",\n      \"谈网球运动新阶段\",\n      \"传奇视角看新一代球员\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"再次感谢各位到场，也感谢接下来与这位传奇人物、这位商界人士的对话。抱歉。\",\n        \"en\": \"Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry\",\n        \"relative_start\": 0.1,\n        \"relative_end\": 11.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"你在频道要做的事或许会成就你的传奇。我们稍后聊这个。我喜欢你的思路。玛蒂娜，18个大满贯单打冠军。\",\n        \"en\": \"Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"31个女双冠军，10个混双冠军，59个大赛冠军，59个大满贯赛事冠军。\",\n        \"en\": \"31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这是公开赛时代男女选手中的纪录。你会不会厌倦总是要谈这些？继续。\",\n        \"en\": \"Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我追求的就是这个方向。你47岁时还想在温网打单打比赛。\",\n        \"en\": \"Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 55.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你37岁时打进最后一个温网单打决赛，49岁时与鲍勃·布莱恩在美国公开赛赢得最后一个大满贯混双冠军。\",\n        \"en\": \"You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 71.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以，我们说的是没有背部问题，39岁左右还在打球。嗯，我本可以做到。\",\n        \"en\": \"So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that\",\n        \"relative_start\": 71.9,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你如何思考，在你的职业生涯中你如何考虑如何继续，为什么最终推动你？我的目标是成为最年轻的赢得某事的选手。\",\n        \"en\": \"How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Martina Navratilova\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Martina Navratilova\",\n      \"preferred_en\": \"Martina Navratilova\",\n      \"official_zh\": \"玛蒂娜·纳芙拉蒂洛娃\",\n      \"common_zh\": \"纳芙拉蒂洛娃\",\n      \"title_label\": \"纳芙拉蒂洛娃\",\n      \"preferred_zh\": \"纳芙拉蒂洛娃\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\",\n        \"https://baike.baidu.com/item/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83/1577186\",\n        \"https://wuu.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\"\n      ],\n      \"evidence\": \"Chinese Wikipedia, Baidu Baike, Wu Wikipedia and Apple TV HK all render the name as 玛蒂娜·纳芙拉蒂洛娃; short form 纳芙拉蒂洛娃 is the standard media short form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Martina Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, totaling 59 major titles, a record in the Open Era for any man or woman.\",\n      \"public_baseline\": \"Public records confirm Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, and 10 mixed doubles titles, totaling 59 major titles, an Open Era record.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states Navratilova has 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, 59 major titles total.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms 59 major titles: 18 singles, 31 women's doubles, 10 mixed doubles.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova final Wimbledon singles final age 37 1994\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms Navratilova reached the 1994 Wimbledon final at age 37, losing to Conchita Martínez.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Navratilova holds the record for most Grand Slam singles titles (she does not; Margaret Court and Serena Williams have more).\",\n        \"Navratilova won her final major title at age 49 (the transcript says 49, but public records show her last major title was the 2006 US Open mixed doubles at age 49; this is accurate but should not be confused with singles).\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript claim about winning a final major title at age 49 in mixed doubles at the US Open with Bob Bryan is consistent with public records (2006 US Open mixed doubles).\",\n    \"No Chinese financial media sources were found for Bloomberg Power Players; keep English label.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"纳芙拉蒂洛娃赢得18个大满贯单打冠军、31个女双冠军、10个混双冠军，总计59个大满贯冠军，是公开赛时代男女选手中的纪录；她在37岁打进最后一个温网单打决赛，49岁赢得最后一个大满贯混双冠军。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"59冠传奇自曝：我本可打到39岁\",\n          \"title_lines\": [\n            \"59冠传奇自曝\",\n            \"我本可打到39岁\",\n            \"背部问题成唯一阻碍\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'\",\n            \"Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"37岁进温网决赛 49岁还拿大满贯\",\n          \"title_lines\": [\n            \"37岁进温网决赛\",\n            \"49岁还拿大满贯\",\n            \"她如何定义运动寿命\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'\",\n            \"Public record: Navratilova reached the 1994 Wimbledon final at age 37 and won the 2006 US Open mixed doubles at age 49\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"18个大满贯单打冠军 却更看重双打\",\n          \"title_lines\": [\n            \"18个大满贯单打冠军\",\n            \"却更看重双打\",\n            \"59冠背后隐藏什么\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: '31 women's doubles titles 10 mixed doubles titles 59 major title'\",\n            \"Public record: Navratilova has 18 singles, 31 women's doubles, and 10 mixed doubles major titles\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"纳芙拉蒂洛娃：我的目标是成为最年轻冠军\",\n          \"title_lines\": [\n            \"纳芙拉蒂洛娃：\",\n            \"我的目标是成为\",\n            \"最年轻冠军\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'in my goal was to be the youngest to win something'\",\n            \"Speaker is Martina Navratilova, a tennis legend with 59 major titles\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "传奇数字+年龄反差",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+              "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman",
+              "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'"
+            ],
+            "title": "59冠传奇自曝：我本可打到39岁",
+            "title_lines": [
+              "59冠传奇自曝",
+              "我本可打到39岁",
+              "背部问题成唯一阻碍"
+            ],
+            "title_highlights": [
+              "59冠传奇",
+              "我本可打到39岁"
+            ],
+            "runner_up_titles": [
+              "37岁进温网决赛 49岁还拿大满贯",
+              "18个大满贯单打冠军 却更看重双打"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍。",
+            "comment_highlights": [
+              "59冠",
+              "背部问题"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：开场介绍传奇人物，对话即将展开。",
+                "comment_highlights": [
+                  "传奇人物"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：18个大满贯单打冠军，数字本身就是传奇。",
+                "comment_highlights": [
+                  "18个大满贯单打冠军"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：31个女双、10个混双，总计59冠，公开赛时代纪录。",
+                "comment_highlights": [
+                  "59冠",
+                  "公开赛时代纪录"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：被问是否厌倦谈纪录，她选择继续。",
+                "comment_highlights": [
+                  "厌倦谈纪录"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：47岁还想打温网单打，追求从未停止。",
+                "comment_highlights": [
+                  "47岁",
+                  "温网单打"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：37岁进温网决赛，49岁拿大满贯混双，运动寿命惊人。",
+                "comment_highlights": [
+                  "37岁",
+                  "49岁"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：她坦言若无背部问题，本可打到39岁。",
+                "comment_highlights": [
+                  "背部问题",
+                  "39岁"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：最初目标是成为最年轻冠军，驱动整个生涯。",
+                "comment_highlights": [
+                  "最年轻冠军"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"source_title\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n    \"show_date\": \"\",\n    \"current_title\": \"纳芙拉蒂洛娃谈网球新阶段与新一代球员\",\n    \"current_title_lines\": [\n      \"纳芙拉蒂洛娃亮相纽约\",\n      \"谈网球运动新阶段\",\n      \"传奇视角看新一代球员\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"再次感谢各位到场，也感谢接下来与这位传奇人物、这位商界人士的对话。抱歉。\",\n        \"en\": \"Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry\",\n        \"relative_start\": 0.1,\n        \"relative_end\": 11.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"你在频道要做的事或许会成就你的传奇。我们稍后聊这个。我喜欢你的思路。玛蒂娜，18个大满贯单打冠军。\",\n        \"en\": \"Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles\",\n        \"relative_start\": 15.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"31个女双冠军，10个混双冠军，59个大赛冠军，59个大满贯赛事冠军。\",\n        \"en\": \"31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all\",\n        \"relative_start\": 26.7,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这是公开赛时代男女选手中的纪录。你会不会厌倦总是要谈这些？继续。\",\n        \"en\": \"Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我追求的就是这个方向。你47岁时还想在温网打单打比赛。\",\n        \"en\": \"Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 55.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你37岁时打进最后一个温网单打决赛，49岁时与鲍勃·布莱恩在美国公开赛赢得最后一个大满贯混双冠军。\",\n        \"en\": \"You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 71.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以，我们说的是没有背部问题，39岁左右还在打球。嗯，我本可以做到。\",\n        \"en\": \"So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that\",\n        \"relative_start\": 71.9,\n        \"relative_end\": 79.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你如何思考，在你的职业生涯中你如何考虑如何继续，为什么最终推动你？我的目标是成为最年轻的赢得某事的选手。\",\n        \"en\": \"How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Martina Navratilova\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Martina Navratilova\",\n      \"preferred_en\": \"Martina Navratilova\",\n      \"official_zh\": \"玛蒂娜·纳芙拉蒂洛娃\",\n      \"common_zh\": \"纳芙拉蒂洛娃\",\n      \"title_label\": \"纳芙拉蒂洛娃\",\n      \"preferred_zh\": \"纳芙拉蒂洛娃\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\",\n        \"https://baike.baidu.com/item/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83/1577186\",\n        \"https://wuu.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\"\n      ],\n      \"evidence\": \"Chinese Wikipedia, Baidu Baike, Wu Wikipedia and Apple TV HK all render the name as 玛蒂娜·纳芙拉蒂洛娃; short form 纳芙拉蒂洛娃 is the standard media short form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Martina Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, totaling 59 major titles, a record in the Open Era for any man or woman.\",\n      \"public_baseline\": \"Public records confirm Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, and 10 mixed doubles titles, totaling 59 major titles, an Open Era record.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states Navratilova has 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, 59 major titles total.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms 59 major titles: 18 singles, 31 women's doubles, 10 mixed doubles.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova final Wimbledon singles final age 37 1994\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms Navratilova reached the 1994 Wimbledon final at age 37, losing to Conchita Martínez.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Navratilova holds the record for most Grand Slam singles titles (she does not; Margaret Court and Serena Williams have more).\",\n        \"Navratilova won her final major title at age 49 (the transcript says 49, but public records show her last major title was the 2006 US Open mixed doubles at age 49; this is accurate but should not be confused with singles).\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript claim about winning a final major title at age 49 in mixed doubles at the US Open with Bob Bryan is consistent with public records (2006 US Open mixed doubles).\",\n    \"No Chinese financial media sources were found for Bloomberg Power Players; keep English label.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"纳芙拉蒂洛娃赢得18个大满贯单打冠军、31个女双冠军、10个混双冠军，总计59个大满贯冠军，是公开赛时代男女选手中的纪录；她在37岁打进最后一个温网单打决赛，49岁赢得最后一个大满贯混双冠军。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"59冠传奇自曝：我本可打到39岁\",\n          \"title_lines\": [\n            \"59冠传奇自曝\",\n            \"我本可打到39岁\",\n            \"背部问题成唯一阻碍\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'\",\n            \"Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"37岁进温网决赛 49岁还拿大满贯\",\n          \"title_lines\": [\n            \"37岁进温网决赛\",\n            \"49岁还拿大满贯\",\n            \"她如何定义运动寿命\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'\",\n            \"Public record: Navratilova reached the 1994 Wimbledon final at age 37 and won the 2006 US Open mixed doubles at age 49\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"18个大满贯单打冠军 却更看重双打\",\n          \"title_lines\": [\n            \"18个大满贯单打冠军\",\n            \"却更看重双打\",\n            \"59冠背后隐藏什么\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: '31 women's doubles titles 10 mixed doubles titles 59 major title'\",\n            \"Public record: Navratilova has 18 singles, 31 women's doubles, and 10 mixed doubles major titles\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"纳芙拉蒂洛娃：我的目标是成为最年轻冠军\",\n          \"title_lines\": [\n            \"纳芙拉蒂洛娃：\",\n            \"我的目标是成为\",\n            \"最年轻冠军\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: 'in my goal was to be the youngest to win something'\",\n            \"Speaker is Martina Navratilova, a tennis legend with 59 major titles\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"59冠传奇自曝：我本可打到39岁，背部问题成唯一阻碍\",\n      \"title_lines\": [\n        \"59冠传奇自曝\",\n        \"我本可打到39岁\",\n        \"背部问题成唯一阻碍\"\n      ],\n      \"title_highlights\": [\n        \"59冠传奇\",\n        \"我本可打到39岁\"\n      ],\n      \"comment\": \"KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍\",\n      \"comment_highlights\": [\n        \"59冠\",\n        \"背部问题\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：开场介绍传奇人物，对话即将展开\",\n          \"comment_highlights\": [\n            \"传奇人物\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：18个大满贯单打冠军，数字本身就是传奇\",\n          \"comment_highlights\": [\n            \"18个大满贯单打冠军\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：31个女双、10个混双，总计59冠，公开赛时代纪录\",\n          \"comment_highlights\": [\n            \"59冠\",\n            \"公开赛时代纪录\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：被问是否厌倦谈纪录，她选择继续\",\n          \"comment_highlights\": [\n            \"厌倦谈纪录\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：47岁还想打温网单打，追求从未停止\",\n          \"comment_highlights\": [\n            \"47岁\",\n            \"温网单打\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：37岁进温网决赛，49岁拿大满贯混双，运动寿命惊人\",\n          \"comment_highlights\": [\n            \"37岁\",\n            \"49岁\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：她坦言若无背部问题，本可打到39岁\",\n          \"comment_highlights\": [\n            \"背部问题\",\n            \"39岁\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：最初目标是成为最年轻冠军，驱动整个生涯\",\n          \"comment_highlights\": [\n            \"最年轻冠军\"\n          ]\n        }\n      ],\n      \"formula_id\": \"传奇数字+年龄反差\",\n      \"angle_id\": \"concrete_stakes\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'\",\n        \"Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman\",\n        \"Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'\"\n      ],\n      \"runner_up_titles\": [\n        \"37岁进温网决赛 49岁还拿大满贯\",\n        \"18个大满贯单打冠军 却更看重双打\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:concrete_stakes\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "传奇数字+年龄反差+未竟遗憾",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+                  "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman",
+                  "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'"
+                ],
+                "title": "59冠传奇：我本可打到39岁，背部问题成唯一阻碍",
+                "title_lines": [
+                  "59冠传奇自曝",
+                  "我本可打到39岁",
+                  "背部问题成唯一阻碍"
+                ],
+                "title_highlights": [
+                  "59冠传奇",
+                  "我本可打到39岁"
+                ],
+                "runner_up_titles": [
+                  "37岁进温网决赛 49岁还拿大满贯",
+                  "18个大满贯单打冠军 却更看重双打"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍",
+                "comment_highlights": [
+                  "59冠",
+                  "背部问题"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：开场介绍传奇人物，对话即将展开",
+                    "comment_highlights": [
+                      "传奇人物"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：18个大满贯单打冠军，数字本身就是传奇",
+                    "comment_highlights": [
+                      "18个大满贯单打冠军"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：31个女双、10个混双，总计59冠，公开赛时代纪录",
+                    "comment_highlights": [
+                      "59冠",
+                      "公开赛时代纪录"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：被问是否厌倦谈纪录，她选择继续",
+                    "comment_highlights": [
+                      "厌倦谈纪录"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：47岁还想打温网单打，追求从未停止",
+                    "comment_highlights": [
+                      "47岁",
+                      "温网单打"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：37岁进温网决赛，49岁拿大满贯混双，运动寿命惊人",
+                    "comment_highlights": [
+                      "37岁",
+                      "49岁"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：她坦言若无背部问题，本可打到39岁",
+                    "comment_highlights": [
+                      "背部问题",
+                      "39岁"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：最初目标是成为最年轻冠军，驱动整个生涯",
+                    "comment_highlights": [
+                      "最年轻冠军"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "59冠传奇自曝：我本可打到39岁，背部问题成唯一阻碍",
+          "title_lines": [
+            "59冠传奇自曝",
+            "我本可打到39岁",
+            "背部问题成唯一阻碍"
+          ],
+          "formula_id": "传奇数字+年龄反差",
+          "angle_id": "concrete_stakes",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:concrete_stakes",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-13T00:08:16.550929+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York",
+          "source_title": "Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York",
+          "show_date": "",
+          "current_title": "纳芙拉蒂洛娃谈网球新阶段与新一代球员",
+          "current_title_lines": [
+            "纳芙拉蒂洛娃亮相纽约",
+            "谈网球运动新阶段",
+            "传奇视角看新一代球员"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "再次感谢各位到场，也感谢接下来与这位传奇人物、这位商界人士的对话。抱歉。",
+              "en": "Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry",
+              "relative_start": 0.1,
+              "relative_end": 11.1
+            },
+            {
+              "index": 2,
+              "zh": "你在频道要做的事或许会成就你的传奇。我们稍后聊这个。我喜欢你的思路。玛蒂娜，18个大满贯单打冠军。",
+              "en": "Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles",
+              "relative_start": 15.2,
+              "relative_end": 25.9
+            },
+            {
+              "index": 3,
+              "zh": "31个女双冠军，10个混双冠军，59个大赛冠军，59个大满贯赛事冠军。",
+              "en": "31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all",
+              "relative_start": 26.7,
+              "relative_end": 34.6
+            },
+            {
+              "index": 4,
+              "zh": "这是公开赛时代男女选手中的纪录。你会不会厌倦总是要谈这些？继续。",
+              "en": "Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?",
+              "relative_start": 35.2,
+              "relative_end": 43.6
+            },
+            {
+              "index": 5,
+              "zh": "我想我追求的就是这个方向。你47岁时还想在温网打单打比赛。",
+              "en": "Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47",
+              "relative_start": 46.1,
+              "relative_end": 55.4
+            },
+            {
+              "index": 6,
+              "zh": "你37岁时打进最后一个温网单打决赛，49岁时与鲍勃·布莱恩在美国公开赛赢得最后一个大满贯混双冠军。",
+              "en": "You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian",
+              "relative_start": 55.5,
+              "relative_end": 71.2
+            },
+            {
+              "index": 7,
+              "zh": "所以，我们说的是没有背部问题，39岁左右还在打球。嗯，我本可以做到。",
+              "en": "So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that",
+              "relative_start": 71.9,
+              "relative_end": 79.6
+            },
+            {
+              "index": 8,
+              "zh": "你如何思考，在你的职业生涯中你如何考虑如何继续，为什么最终推动你？我的目标是成为最年轻的赢得某事的选手。",
+              "en": "How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something",
+              "relative_start": 81.1,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n  \"source_title\": \"Duration: 24:57 Tennis Hall of Famer Martina Navratilova on the Next Phase of the Game Bloomberg Power Players New York\",\n  \"current_title\": \"纳芙拉蒂洛娃谈网球新阶段与新一代球员\",\n  \"source_claims\": [\n    \"Thank you all again for being here and for this conversation that we're going to have with a legend and someone and a businessman and a business man. Sorry\",\n    \"Well, what you're going to do at the channel may create your your legend. So we'll get into that. I like how you think So Martina 18 Grand Slam singles titles\",\n    \"31 women's doubles titles 10 mixed doubles titles 59 major title 59 majors the Grand Slam's in all\",\n    \"Which is a record in the open era for any man or woman Do you ever get tired of having to talk about this keep going?\",\n    \"Here's I think I courted that's where I wanted to go with this you want a singles match at Wimbledon at age 47\",\n    \"You reach your final you reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian\",\n    \"So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that\",\n    \"How do how do you think about and how did you think about in your career how you Wanted to continue it and why did you what was it that pushed you to ultimately in my goal was to be the youngest to win something\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Martina Navratilova\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Martina Navratilova\",\n      \"preferred_en\": \"Martina Navratilova\",\n      \"official_zh\": \"玛蒂娜·纳芙拉蒂洛娃\",\n      \"common_zh\": \"纳芙拉蒂洛娃\",\n      \"title_label\": \"纳芙拉蒂洛娃\",\n      \"preferred_zh\": \"纳芙拉蒂洛娃\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\",\n        \"https://baike.baidu.com/item/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83/1577186\",\n        \"https://wuu.wikipedia.org/wiki/%E7%8E%9B%E8%92%82%E5%A8%9C%C2%B7%E7%BA%B3%E8%8A%99%E6%8B%89%E8%92%82%E6%B4%9B%E5%A8%83\"\n      ],\n      \"evidence\": \"Chinese Wikipedia, Baidu Baike, Wu Wikipedia and Apple TV HK all render the name as 玛蒂娜·纳芙拉蒂洛娃; short form 纳芙拉蒂洛娃 is the standard media short form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Martina Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, totaling 59 major titles, a record in the Open Era for any man or woman.\",\n      \"public_baseline\": \"Public records confirm Navratilova won 18 Grand Slam singles titles, 31 women's doubles titles, and 10 mixed doubles titles, totaling 59 major titles, an Open Era record.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker states Navratilova has 18 Grand Slam singles titles, 31 women's doubles titles, 10 mixed doubles titles, 59 major titles total.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova 18 Grand Slam singles titles 31 women's doubles 10 mixed doubles 59 major titles\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms 59 major titles: 18 singles, 31 women's doubles, 10 mixed doubles.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Martina Navratilova final Wimbledon singles final age 37 1994\",\n          \"url\": \"https://en.wikipedia.org/wiki/Martina_Navratilova\",\n          \"fact\": \"Wikipedia confirms Navratilova reached the 1994 Wimbledon final at age 37, losing to Conchita Martínez.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Navratilova holds the record for most Grand Slam singles titles (she does not; Margaret Court and Serena Williams have more).\",\n        \"Navratilova won her final major title at age 49 (the transcript says 49, but public records show her last major title was the 2006 US Open mixed doubles at age 49; this is accurate but should not be confused with singles).\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The transcript claim about winning a final major title at age 49 in mixed doubles at the US Open with Bob Bryan is consistent with public records (2006 US Open mixed doubles).\",\n    \"No Chinese financial media sources were found for Bloomberg Power Players; keep English label.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"59冠传奇自曝：我本可打到39岁，背部问题成唯一阻碍\",\n  \"title_lines\": [\n    \"59冠传奇自曝\",\n    \"我本可打到39岁\",\n    \"背部问题成唯一阻碍\"\n  ],\n  \"angle_id\": \"concrete_stakes\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'\",\n    \"Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman\",\n    \"Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "原来她本可以打得更久",
+            "evidence_basis": [
+              "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+              "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman",
+              "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'"
+            ],
+            "title": "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？",
+            "title_lines": [
+              "59冠纳芙拉蒂洛娃",
+              "我本可打到39岁",
+              "背部问题是否唯一阻碍？"
+            ],
+            "title_highlights": [
+              "59冠纳芙拉蒂洛娃",
+              "我本可打到39岁",
+              "背部问题是否唯一阻碍？"
+            ],
+            "runner_up_titles": [
+              "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？",
+        "title_lines": [
+          "59冠纳芙拉蒂洛娃",
+          "我本可打到39岁",
+          "背部问题是否唯一阻碍？"
+        ],
+        "title_highlights": [
+          "59冠纳芙拉蒂洛娃",
+          "我本可打到39岁",
+          "背部问题是否唯一阻碍？"
+        ],
+        "comment": "KC评论：59冠背后，她自认本可多打几年，背部问题成唯一阻碍",
+        "comment_highlights": [
+          "59冠",
+          "背部问题"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：开场介绍传奇人物，对话即将展开",
+            "comment_highlights": [
+              "传奇人物"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：18个大满贯单打冠军，数字本身就是传奇",
+            "comment_highlights": [
+              "18个大满贯单打冠军"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：31个女双、10个混双，总计59冠，公开赛时代纪录",
+            "comment_highlights": [
+              "59冠",
+              "公开赛时代纪录"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：被问是否厌倦谈纪录，她选择继续",
+            "comment_highlights": [
+              "厌倦谈纪录"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：47岁还想打温网单打，追求从未停止",
+            "comment_highlights": [
+              "47岁",
+              "温网单打"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：37岁进温网决赛，49岁拿大满贯混双，运动寿命惊人",
+            "comment_highlights": [
+              "37岁",
+              "49岁"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：她坦言若无背部问题，本可打到39岁",
+            "comment_highlights": [
+              "背部问题",
+              "39岁"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：最初目标是成为最年轻冠军，驱动整个生涯",
+            "comment_highlights": [
+              "最年轻冠军"
+            ]
+          }
+        ],
+        "formula_id": "传奇数字+年龄反差",
+        "angle_id": "concrete_stakes",
+        "emotion_pole": "意外",
+        "viewer_reaction": "原来她本可以打得更久",
+        "evidence_basis": [
+          "Transcript: 'So you know, we're talking about no back Still being around at sort of 39. Well, you know, I could have been there done that'",
+          "Public record: Navratilova won 59 major titles, a record in the Open Era for any man or woman",
+          "Transcript: 'You reach your final Wimbledon singles final at 37 and at 49 you won your final major title and mixed doubles at the US Open with Bob Brian'"
+        ],
+        "runner_up_titles": [
+          "59冠纳芙拉蒂洛娃：我本可打到39岁，背部问题是否唯一阻碍？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:concrete_stakes",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}

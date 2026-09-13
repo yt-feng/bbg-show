@@ -1,0 +1,917 @@
+{
+  "timestamp_utc": "2026-09-13T00:03:11.446700+00:00",
+  "plan_path": "work/top-videos/07_yankees_vanderbilt_on_the_evolution_of_college_sports/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Randy Levine",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Randy Levine",
+        "preferred_en": "Randy Levine",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Randy Levine",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg video description identifies Randy Levine as President of the New York Yankees; no reliable Chinese display form found."
+      },
+      {
+        "source_text": "Candace (Candice Storey Lee)",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Candice Storey Lee",
+        "preferred_en": "Candice Storey Lee",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Candice Storey Lee",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg, Vanderbilt official site, and Wikipedia confirm Candice Storey Lee as Vanderbilt Vice Chancellor for Athletics and Athletic Director; no established Chinese name found."
+      },
+      {
+        "source_text": "Vanderbilt",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Vanderbilt University",
+        "preferred_en": "Vanderbilt University",
+        "official_zh": "范德堡大学",
+        "common_zh": "范德堡大学",
+        "title_label": "范德堡大学",
+        "preferred_zh": "范德堡大学",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Vanderbilt official athletics site and Wikipedia confirm the institution; 范德堡大学 is the standard Chinese rendering, though not co-occurring in the retrieved snippets."
+      },
+      {
+        "source_text": "New York Yankees",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "New York Yankees",
+        "preferred_en": "New York Yankees",
+        "official_zh": "纽约洋基队",
+        "common_zh": "纽约洋基队",
+        "title_label": "纽约洋基队",
+        "preferred_zh": "纽约洋基队",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg video description names Randy Levine as President of the New York Yankees; 纽约洋基队 is the established Chinese name."
+      },
+      {
+        "source_text": "LSU (Louisiana State University)",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Louisiana State University",
+        "preferred_en": "Louisiana State University",
+        "official_zh": "路易斯安那州立大学",
+        "common_zh": "路易斯安那州立大学",
+        "title_label": "路易斯安那州立大学",
+        "preferred_zh": "路易斯安那州立大学",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "CBS Sports and USA Today confirm LSU as the school involved; 路易斯安那州立大学 is the standard Chinese name."
+      },
+      {
+        "source_text": "SEC (Southeastern Conference)",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Southeastern Conference",
+        "preferred_en": "Southeastern Conference",
+        "official_zh": "东南联盟",
+        "common_zh": "东南联盟",
+        "title_label": "东南联盟",
+        "preferred_zh": "东南联盟",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "CBS Sports and FOX Sports confirm the SEC as the conference in the LSU dispute; 东南联盟 is the standard Chinese rendering."
+      },
+      {
+        "source_text": "Lane Kiffin",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Lane Kiffin",
+        "preferred_en": "Lane Kiffin",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Lane Kiffin",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 3,
+        "evidence_urls": [
+          "https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/",
+          "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/03/sec-lawsuit-lsu-lane-kiffin-nfl-eligibility-case/91595446007/",
+          "https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/"
+        ],
+        "evidence": "CBS Sports, USA Today, and The Athletic confirm Lane Kiffin as LSU football coach; no established Chinese name found."
+      },
+      {
+        "source_text": "Protect College Sports Act",
+        "entity_type": "event",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Protect College Sports Act",
+        "preferred_en": "Protect College Sports Act",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Protect College Sports Act",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.commerce.senate.gov/press/dem/release/updated-bipartisan-protect-college-sports-act-will-stabilize-college-sports-codify-athletes-rights-protections-in-law-expand-athlete-compensation-opportunities/",
+          "https://www.govtrack.us/congress/bills/119/hr9137/text"
+        ],
+        "evidence": "Congress.gov, Senate Commerce Committee, and GovTrack confirm the bill's existence; no established Chinese name found."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "NIL",
+        "clip_indexes": [],
+        "context": "US college sports",
+        "sense": "name, image and likeness rights",
+        "preferred_zh": "姓名、形象与肖像权",
+        "title_label": "NIL权益",
+        "avoid_zh": [
+          "likeness权"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "revenue share agreements",
+        "clip_indexes": [],
+        "context": "US college sports",
+        "sense": "direct revenue-sharing deals between schools and athletes",
+        "preferred_zh": "收入分成协议",
+        "title_label": "收入分成",
+        "avoid_zh": [
+          "营收共享"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "student athletes",
+        "clip_indexes": [],
+        "context": "US college sports",
+        "sense": "college athletes with amateur/student status",
+        "preferred_zh": "学生运动员",
+        "title_label": "学生运动员",
+        "avoid_zh": [
+          "学生选手"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Lane Kiffin attempted to bring back players from the NFL to his LSU roster, and the SEC has threatened to kick the school out of the conference.",
+        "public_baseline": "Public reporting confirms the SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players, and the SEC threatened LSU expulsion; LSU later ended its quest to add ex-NFL players.",
+        "surprise_gap": "The transcript frames the dispute as ongoing ('may be resolved now'), while public reporting indicates LSU already ended the attempt and the SEC filed a lawsuit, suggesting the situation has moved beyond the panel's framing.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "concrete_stakes",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference."
+          },
+          {
+            "kind": "public",
+            "query": "Lane Kiffin LSU SEC threatened kick out conference NFL players",
+            "url": "https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/",
+            "fact": "SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players."
+          },
+          {
+            "kind": "public",
+            "query": "Lane Kiffin LSU SEC threatened kick out conference NFL players",
+            "url": "https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/",
+            "fact": "LSU ended its quest to add ex-NFL players to its roster."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim the SEC actually expelled LSU.",
+          "Do not claim the dispute is fully resolved.",
+          "Do not claim Kiffin successfully added NFL players."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "No reliable Chinese common names were found for Randy Levine, Candice Storey Lee, or Lane Kiffin; title labels retain original English per rules.",
+      "The Protect College Sports Act has no established Chinese name in retrieved sources; title label retains original English.",
+      "Chinese names for Vanderbilt, LSU, SEC, and New York Yankees are standard renderings but were not co-occurring in the retrieved snippets, so confidence is medium."
+    ],
+    "research_queries": [
+      {
+        "query": "Randy Vanderbilt athletic director college sports",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the identity and exact institution of 'Randy' referenced as a Vanderbilt expert on the Bloomberg panel."
+      },
+      {
+        "query": "Protect College Sports Act congressional bill 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the existence, status, and content of the Protect College Sports Act mentioned as a congressional bill."
+      },
+      {
+        "query": "Lane Kiffin LSU SEC threatened kick out conference NFL players",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Lane Kiffin attempted to bring NFL players back to his LSU roster and the SEC threatened to expel the school."
+      },
+      {
+        "query": "NCAA revenue sharing agreements players 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that athletic directors signed revenue share agreements with players in the past year."
+      },
+      {
+        "query": "college sports NIL chaos Wild West student athletes professional athletes debate",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline framing of college sports as chaotic or the Wild West and the student vs professional athlete debate."
+      },
+      {
+        "query": "SEC expulsion rules member school violation Kiffin LSU",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether the SEC has actual rules or precedent to kick a school out of the conference over player recruitment."
+      },
+      {
+        "query": "中国 大学体育 学生运动员 职业化 边界",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language context on the boundary between student athletes and professionalization in college sports for comparative framing."
+      },
+      {
+        "query": "中国 体教融合 学生运动员 职业化 政策",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify China's official policy on integrating education and sports and the student-athlete versus professionalization boundary."
+      },
+      {
+        "query": "Bloomberg Yankees established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Yankees 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Vanderbilt 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "SEC威胁踢出LSU：只因教练想签NFL球员，保护法案能挡住吗",
+      "title_lines": [
+        "SEC威胁踢出LSU",
+        "只因教练想签NFL球员",
+        "保护法案能挡住吗"
+      ],
+      "formula_id": "权威冲突+具体动作+未解悬念",
+      "angle_id": "concrete_stakes",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "Transcript: Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.",
+        "Public: SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.",
+        "Public: LSU ended its quest to add ex-NFL players to its roster."
+      ],
+      "runner_up_titles": [
+        "大学体育界被称狂野西部",
+        "一年前签收入分成"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 2
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:concrete_stakes",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        }
+      },
+      "comment": "KC评论：SEC已起诉LSU，但踢出联盟的威胁是否解除仍待观察"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-13T00:03:09.996172+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York",
+          "source_title": "Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York",
+          "show_date": "",
+          "current_title": "大学体育格局演变 学生运动员与职业化边界引关注",
+          "current_title_lines": [
+            "大学体育联盟与名校代表",
+            "学生运动员与职业化边界",
+            "保护法案能否化解结构性压力"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "去年在Power Players的大学体育论坛上，我们请到体育总监讨论与球员签署收入分成协议。",
+              "en": "Last year at my college sports panel at Power Players, we had athletic directors talking about just signing revenue share agreements with players.",
+              "relative_start": 0.4,
+              "relative_end": 10.5
+            },
+            {
+              "index": 2,
+              "zh": "自那以后变化很大。一年间变化太多，终于有了一项国会法案，我们稍后会谈到。",
+              "en": "A lot has changed since then. So much in one year, there's finally a congressional bill that we will get to.",
+              "relative_start": 10.5,
+              "relative_end": 18.6
+            },
+            {
+              "index": 3,
+              "zh": "如今的大学体育界被称为混乱、狂野西部，我们有两位专家来讨论大学体育的格局。",
+              "en": "Today's world of college sports has been called chaotic, the Wild West, and we have two experts here to talk about the landscape of college sports.",
+              "relative_start": 18.6,
+              "relative_end": 29.3
+            },
+            {
+              "index": 4,
+              "zh": "感谢Randy和Candace加入我们。",
+              "en": "Thank you, Randy and Candace for joining us.",
+              "relative_start": 29.3,
+              "relative_end": 32.5
+            },
+            {
+              "index": 5,
+              "zh": "大学体育界的所有目光都集中在路易斯安那州立大学、教练Lane Kiffin和SEC，Candace，这是你的联盟。",
+              "en": "So all eyes in the college sports world have been on Louisiana State and coach Lane Kiffin and the SEC, your conference Candace.",
+              "relative_start": 32.5,
+              "relative_end": 41.5
+            },
+            {
+              "index": 6,
+              "zh": "众所周知，Kiffin试图将NFL球员带回他的阵容，而SEC威胁",
+              "en": "As you all know, Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened",
+              "relative_start": 41.5,
+              "relative_end": 49.4
+            },
+            {
+              "index": 7,
+              "zh": "将该学校踢出联盟。这可能已经解决，但仍有很多可谈。",
+              "en": "to kick the school out of the conference. That may be resolved now, but it still gives us a lot to talk about.",
+              "relative_start": 49.4,
+              "relative_end": 56.3
+            },
+            {
+              "index": 8,
+              "zh": "Randy，这带来了什么问题？",
+              "en": "Randy, what problem does this pose?",
+              "relative_start": 56.3,
+              "relative_end": 59.6
+            },
+            {
+              "index": 9,
+              "zh": "我认为这凸显了为什么需要《保护大学体育法案》，因为存在根本问题。",
+              "en": "Well, I think it highlighted the whole reason you need the Protect College Sports Act, because there's the fundamental issue.",
+              "relative_start": 59.6,
+              "relative_end": 68.3
+            },
+            {
+              "index": 10,
+              "zh": "我们将有学生运动员还是职业运动员？",
+              "en": "Are we going to have student athletes or professional athletes?",
+              "relative_start": 68.3,
+              "relative_end": 72.1
+            },
+            {
+              "index": 11,
+              "zh": "两者之间的壁垒已经打破。",
+              "en": "The wall between the two has broken down.",
+              "relative_start": 72.1,
+              "relative_end": 76.6
+            },
+            {
+              "index": 12,
+              "zh": "大学运动员中成为职业选手的很少，但他们往往成为出色的领导者。",
+              "en": "Very few people who are college athletes become professional, but they come great leaders.",
+              "relative_start": 76.6,
+              "relative_end": 82.4
+            },
+            {
+              "index": 13,
+              "zh": "这是一个很好的训练场。这就是为什么学生运动员的概念如此重要。",
+              "en": "It's a great training ground. And that's why the concept of student athletes is so important.",
+              "relative_start": 82.4,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York\",\n    \"source_title\": \"Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York\",\n    \"show_date\": \"\",\n    \"current_title\": \"大学体育格局演变 学生运动员与职业化边界引关注\",\n    \"current_title_lines\": [\n      \"大学体育联盟与名校代表\",\n      \"学生运动员与职业化边界\",\n      \"保护法案能否化解结构性压力\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"去年在Power Players的大学体育论坛上，我们请到体育总监讨论与球员签署收入分成协议。\",\n        \"en\": \"Last year at my college sports panel at Power Players, we had athletic directors talking about just signing revenue share agreements with players.\",\n        \"relative_start\": 0.4,\n        \"relative_end\": 10.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"自那以后变化很大。一年间变化太多，终于有了一项国会法案，我们稍后会谈到。\",\n        \"en\": \"A lot has changed since then. So much in one year, there's finally a congressional bill that we will get to.\",\n        \"relative_start\": 10.5,\n        \"relative_end\": 18.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"如今的大学体育界被称为混乱、狂野西部，我们有两位专家来讨论大学体育的格局。\",\n        \"en\": \"Today's world of college sports has been called chaotic, the Wild West, and we have two experts here to talk about the landscape of college sports.\",\n        \"relative_start\": 18.6,\n        \"relative_end\": 29.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"感谢Randy和Candace加入我们。\",\n        \"en\": \"Thank you, Randy and Candace for joining us.\",\n        \"relative_start\": 29.3,\n        \"relative_end\": 32.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"大学体育界的所有目光都集中在路易斯安那州立大学、教练Lane Kiffin和SEC，Candace，这是你的联盟。\",\n        \"en\": \"So all eyes in the college sports world have been on Louisiana State and coach Lane Kiffin and the SEC, your conference Candace.\",\n        \"relative_start\": 32.5,\n        \"relative_end\": 41.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"众所周知，Kiffin试图将NFL球员带回他的阵容，而SEC威胁\",\n        \"en\": \"As you all know, Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened\",\n        \"relative_start\": 41.5,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"将该学校踢出联盟。这可能已经解决，但仍有很多可谈。\",\n        \"en\": \"to kick the school out of the conference. That may be resolved now, but it still gives us a lot to talk about.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 56.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Randy，这带来了什么问题？\",\n        \"en\": \"Randy, what problem does this pose?\",\n        \"relative_start\": 56.3,\n        \"relative_end\": 59.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为这凸显了为什么需要《保护大学体育法案》，因为存在根本问题。\",\n        \"en\": \"Well, I think it highlighted the whole reason you need the Protect College Sports Act, because there's the fundamental issue.\",\n        \"relative_start\": 59.6,\n        \"relative_end\": 68.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我们将有学生运动员还是职业运动员？\",\n        \"en\": \"Are we going to have student athletes or professional athletes?\",\n        \"relative_start\": 68.3,\n        \"relative_end\": 72.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"两者之间的壁垒已经打破。\",\n        \"en\": \"The wall between the two has broken down.\",\n        \"relative_start\": 72.1,\n        \"relative_end\": 76.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"大学运动员中成为职业选手的很少，但他们往往成为出色的领导者。\",\n        \"en\": \"Very few people who are college athletes become professional, but they come great leaders.\",\n        \"relative_start\": 76.6,\n        \"relative_end\": 82.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这是一个很好的训练场。这就是为什么学生运动员的概念如此重要。\",\n        \"en\": \"It's a great training ground. And that's why the concept of student athletes is so important.\",\n        \"relative_start\": 82.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Lane Kiffin\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Lane Kiffin\",\n      \"preferred_en\": \"Lane Kiffin\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"\",\n      \"title_label\": \"Lane Kiffin\",\n      \"preferred_zh\": \"\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/\",\n        \"https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/03/sec-lawsuit-lsu-lane-kiffin-nfl-eligibility-case/91595446007/\",\n        \"https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/\"\n      ],\n      \"evidence\": \"CBS Sports, USA Today, and The Athletic confirm Lane Kiffin as LSU football coach; no established Chinese name found.\"\n    },\n    {\n      \"source_text\": \"Protect College Sports Act\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Protect College Sports Act\",\n      \"preferred_en\": \"Protect College Sports Act\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"\",\n      \"title_label\": \"Protect College Sports Act\",\n      \"preferred_zh\": \"\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.commerce.senate.gov/press/dem/release/updated-bipartisan-protect-college-sports-act-will-stabilize-college-sports-codify-athletes-rights-protections-in-law-expand-athlete-compensation-opportunities/\",\n        \"https://www.govtrack.us/congress/bills/119/hr9137/text\"\n      ],\n      \"evidence\": \"Congress.gov, Senate Commerce Committee, and GovTrack confirm the bill's existence; no established Chinese name found.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Lane Kiffin attempted to bring back players from the NFL to his LSU roster, and the SEC has threatened to kick the school out of the conference.\",\n      \"public_baseline\": \"Public reporting confirms the SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players, and the SEC threatened LSU expulsion; LSU later ended its quest to add ex-NFL players.\",\n      \"surprise_gap\": \"The transcript frames the dispute as ongoing ('may be resolved now'), while public reporting indicates LSU already ended the attempt and the SEC filed a lawsuit, suggesting the situation has moved beyond the panel's framing.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Lane Kiffin LSU SEC threatened kick out conference NFL players\",\n          \"url\": \"https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/\",\n          \"fact\": \"SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Lane Kiffin LSU SEC threatened kick out conference NFL players\",\n          \"url\": \"https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/\",\n          \"fact\": \"LSU ended its quest to add ex-NFL players to its roster.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the SEC actually expelled LSU.\",\n        \"Do not claim the dispute is fully resolved.\",\n        \"Do not claim Kiffin successfully added NFL players.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese common names were found for Randy Levine, Candice Storey Lee, or Lane Kiffin; title labels retain original English per rules.\",\n    \"The Protect College Sports Act has no established Chinese name in retrieved sources; title label retains original English.\",\n    \"Chinese names for Vanderbilt, LSU, SEC, and New York Yankees are standard renderings but were not co-occurring in the retrieved snippets, so confidence is medium.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Lane Kiffin attempted to bring back players from the NFL to his LSU roster, and the SEC threatened to kick the school out of the conference; the Protect College Sports Act is proposed to address the fundamental issue of student athletes versus professional athletes.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "SEC威胁踢出LSU",
+                "title_lines": [
+                  "SEC威胁踢出LSU",
+                  "只因教练想签NFL球员",
+                  "保护法案能挡住吗"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.",
+                  "Public: SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.",
+                  "Public: LSU ended its quest to add ex-NFL players to its roster."
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "大学体育界被称狂野西部",
+                "title_lines": [
+                  "大学体育界被称狂野西部",
+                  "学生运动员还是职业运动员",
+                  "保护法案能划清边界吗"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Transcript: Today's world of college sports has been called chaotic, the Wild West.",
+                  "Transcript: Are we going to have student athletes or professional athletes?",
+                  "Transcript: The wall between the two has broken down."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "一年前签收入分成",
+                "title_lines": [
+                  "一年前签收入分成",
+                  "如今SEC威胁踢出学校",
+                  "大学体育变化太快"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Last year at Power Players, athletic directors talked about signing revenue share agreements with players.",
+                  "Transcript: A lot has changed since then. So much in one year.",
+                  "Transcript: The SEC has threatened to kick the school out of the conference."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "保护法案能解决根本问题吗",
+                "title_lines": [
+                  "保护法案能解决根本问题吗",
+                  "学生运动员与职业运动员",
+                  "壁垒已经打破"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Transcript: I think it highlighted the whole reason you need the Protect College Sports Act, because there's the fundamental issue.",
+                  "Transcript: Are we going to have student athletes or professional athletes?",
+                  "Transcript: The wall between the two has broken down."
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York\",\n    \"source_title\": \"Duration: 19:20 Yankees, Vanderbilt on the Evolution of College Sports Bloomberg Power Players New York\",\n    \"show_date\": \"\",\n    \"current_title\": \"大学体育格局演变 学生运动员与职业化边界引关注\",\n    \"current_title_lines\": [\n      \"大学体育联盟与名校代表\",\n      \"学生运动员与职业化边界\",\n      \"保护法案能否化解结构性压力\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"去年在Power Players的大学体育论坛上，我们请到体育总监讨论与球员签署收入分成协议。\",\n        \"en\": \"Last year at my college sports panel at Power Players, we had athletic directors talking about just signing revenue share agreements with players.\",\n        \"relative_start\": 0.4,\n        \"relative_end\": 10.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"自那以后变化很大。一年间变化太多，终于有了一项国会法案，我们稍后会谈到。\",\n        \"en\": \"A lot has changed since then. So much in one year, there's finally a congressional bill that we will get to.\",\n        \"relative_start\": 10.5,\n        \"relative_end\": 18.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"如今的大学体育界被称为混乱、狂野西部，我们有两位专家来讨论大学体育的格局。\",\n        \"en\": \"Today's world of college sports has been called chaotic, the Wild West, and we have two experts here to talk about the landscape of college sports.\",\n        \"relative_start\": 18.6,\n        \"relative_end\": 29.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"感谢Randy和Candace加入我们。\",\n        \"en\": \"Thank you, Randy and Candace for joining us.\",\n        \"relative_start\": 29.3,\n        \"relative_end\": 32.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"大学体育界的所有目光都集中在路易斯安那州立大学、教练Lane Kiffin和SEC，Candace，这是你的联盟。\",\n        \"en\": \"So all eyes in the college sports world have been on Louisiana State and coach Lane Kiffin and the SEC, your conference Candace.\",\n        \"relative_start\": 32.5,\n        \"relative_end\": 41.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"众所周知，Kiffin试图将NFL球员带回他的阵容，而SEC威胁\",\n        \"en\": \"As you all know, Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened\",\n        \"relative_start\": 41.5,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"将该学校踢出联盟。这可能已经解决，但仍有很多可谈。\",\n        \"en\": \"to kick the school out of the conference. That may be resolved now, but it still gives us a lot to talk about.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 56.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Randy，这带来了什么问题？\",\n        \"en\": \"Randy, what problem does this pose?\",\n        \"relative_start\": 56.3,\n        \"relative_end\": 59.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为这凸显了为什么需要《保护大学体育法案》，因为存在根本问题。\",\n        \"en\": \"Well, I think it highlighted the whole reason you need the Protect College Sports Act, because there's the fundamental issue.\",\n        \"relative_start\": 59.6,\n        \"relative_end\": 68.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我们将有学生运动员还是职业运动员？\",\n        \"en\": \"Are we going to have student athletes or professional athletes?\",\n        \"relative_start\": 68.3,\n        \"relative_end\": 72.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"两者之间的壁垒已经打破。\",\n        \"en\": \"The wall between the two has broken down.\",\n        \"relative_start\": 72.1,\n        \"relative_end\": 76.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"大学运动员中成为职业选手的很少，但他们往往成为出色的领导者。\",\n        \"en\": \"Very few people who are college athletes become professional, but they come great leaders.\",\n        \"relative_start\": 76.6,\n        \"relative_end\": 82.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这是一个很好的训练场。这就是为什么学生运动员的概念如此重要。\",\n        \"en\": \"It's a great training ground. And that's why the concept of student athletes is so important.\",\n        \"relative_start\": 82.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Lane Kiffin\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Lane Kiffin\",\n      \"preferred_en\": \"Lane Kiffin\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"\",\n      \"title_label\": \"Lane Kiffin\",\n      \"preferred_zh\": \"\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/\",\n        \"https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/03/sec-lawsuit-lsu-lane-kiffin-nfl-eligibility-case/91595446007/\",\n        \"https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/\"\n      ],\n      \"evidence\": \"CBS Sports, USA Today, and The Athletic confirm Lane Kiffin as LSU football coach; no established Chinese name found.\"\n    },\n    {\n      \"source_text\": \"Protect College Sports Act\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Protect College Sports Act\",\n      \"preferred_en\": \"Protect College Sports Act\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"\",\n      \"title_label\": \"Protect College Sports Act\",\n      \"preferred_zh\": \"\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.commerce.senate.gov/press/dem/release/updated-bipartisan-protect-college-sports-act-will-stabilize-college-sports-codify-athletes-rights-protections-in-law-expand-athlete-compensation-opportunities/\",\n        \"https://www.govtrack.us/congress/bills/119/hr9137/text\"\n      ],\n      \"evidence\": \"Congress.gov, Senate Commerce Committee, and GovTrack confirm the bill's existence; no established Chinese name found.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Lane Kiffin attempted to bring back players from the NFL to his LSU roster, and the SEC has threatened to kick the school out of the conference.\",\n      \"public_baseline\": \"Public reporting confirms the SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players, and the SEC threatened LSU expulsion; LSU later ended its quest to add ex-NFL players.\",\n      \"surprise_gap\": \"The transcript frames the dispute as ongoing ('may be resolved now'), while public reporting indicates LSU already ended the attempt and the SEC filed a lawsuit, suggesting the situation has moved beyond the panel's framing.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Lane Kiffin LSU SEC threatened kick out conference NFL players\",\n          \"url\": \"https://www.cbssports.com/college-football/news/sec-lawsuit-lsu-lane-kiffin-nfl-players/\",\n          \"fact\": \"SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Lane Kiffin LSU SEC threatened kick out conference NFL players\",\n          \"url\": \"https://www.nytimes.com/athletic/7575515/2026/09/08/lane-kiffin-lsu-sec-explusion/\",\n          \"fact\": \"LSU ended its quest to add ex-NFL players to its roster.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the SEC actually expelled LSU.\",\n        \"Do not claim the dispute is fully resolved.\",\n        \"Do not claim Kiffin successfully added NFL players.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese common names were found for Randy Levine, Candice Storey Lee, or Lane Kiffin; title labels retain original English per rules.\",\n    \"The Protect College Sports Act has no established Chinese name in retrieved sources; title label retains original English.\",\n    \"Chinese names for Vanderbilt, LSU, SEC, and New York Yankees are standard renderings but were not co-occurring in the retrieved snippets, so confidence is medium.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Lane Kiffin attempted to bring back players from the NFL to his LSU roster, and the SEC threatened to kick the school out of the conference; the Protect College Sports Act is proposed to address the fundamental issue of student athletes versus professional athletes.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"SEC威胁踢出LSU\",\n          \"title_lines\": [\n            \"SEC威胁踢出LSU\",\n            \"只因教练想签NFL球员\",\n            \"保护法案能挡住吗\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.\",\n            \"Public: SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.\",\n            \"Public: LSU ended its quest to add ex-NFL players to its roster.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"大学体育界被称狂野西部\",\n          \"title_lines\": [\n            \"大学体育界被称狂野西部\",\n            \"学生运动员还是职业运动员\",\n            \"保护法案能划清边界吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: Today's world of college sports has been called chaotic, the Wild West.\",\n            \"Transcript: Are we going to have student athletes or professional athletes?\",\n            \"Transcript: The wall between the two has broken down.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"一年前签收入分成\",\n          \"title_lines\": [\n            \"一年前签收入分成\",\n            \"如今SEC威胁踢出学校\",\n            \"大学体育变化太快\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Last year at Power Players, athletic directors talked about signing revenue share agreements with players.\",\n            \"Transcript: A lot has changed since then. So much in one year.\",\n            \"Transcript: The SEC has threatened to kick the school out of the conference.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"保护法案能解决根本问题吗\",\n          \"title_lines\": [\n            \"保护法案能解决根本问题吗\",\n            \"学生运动员与职业运动员\",\n            \"壁垒已经打破\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: I think it highlighted the whole reason you need the Protect College Sports Act, because there's the fundamental issue.\",\n            \"Transcript: Are we going to have student athletes or professional athletes?\",\n            \"Transcript: The wall between the two has broken down.\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "权威冲突+具体动作+未解悬念",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Transcript: Kiffin attempted to bring back players from the NFL to his roster, and the SEC has threatened to kick the school out of the conference.",
+              "Public: SEC filed a lawsuit against LSU and Lane Kiffin over attempted use of NFL players.",
+              "Public: LSU ended its quest to add ex-NFL players to its roster."
+            ],
+            "title": "SEC威胁踢出LSU",
+            "title_lines": [
+              "SEC威胁踢出LSU",
+              "只因教练想签NFL球员",
+              "保护法案能挡住吗"
+            ],
+            "title_highlights": [
+              "SEC威胁踢出LSU",
+              "NFL球员",
+              "保护法案"
+            ],
+            "runner_up_titles": [
+              "大学体育界被称狂野西部",
+              "一年前签收入分成"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：SEC已起诉LSU，但踢出联盟的威胁是否解除仍待观察。",
+            "comment_highlights": [
+              "SEC已起诉LSU",
+              "踢出联盟"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：一年前还在谈收入分成，如今已升级到联盟诉讼。",
+                "comment_highlights": [
+                  "收入分成",
+                  "联盟诉讼"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：国会法案终于出现，但能否跟上变化速度仍是未知数。",
+                "comment_highlights": [
+                  "国会法案",
+                  "变化速度"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：狂野西部这个比喻，点出了大学体育当前的无序状态。",
+                "comment_highlights": [
+                  "狂野西部",
+                  "无序状态"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：两位专家到场，接下来要看他们如何拆解这个乱局。",
+                "comment_highlights": [
+                  "两位专家",
+                  "拆解乱局"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：LSU和SEC成为焦点，教练Kiffin的动作牵动整个联盟。",
+                "comment_highlights": [
+                  "LSU和SEC",
+                  "教练Kiffin"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：Kiffin试图从NFL带回球员，SEC的回应是威胁踢出。",
+                "comment_highlights": [
+                  "NFL带回球员",
+                  "威胁踢出"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：事情可能已解决，但联盟规则与学校自主权的矛盾仍在。",
+                "comment_highlights": [
+                  "可能已解决",
+                  "矛盾仍在"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：Randy被问及问题所在，答案指向根本性的身份界定。",
+                "comment_highlights": [
+                  "问题所在",
+                  "身份界定"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：保护法案被提上日程，因为学生运动员与职业运动员的界限已模糊。",
+                "comment_highlights": [
+                  "保护法案",
+                  "界限已模糊"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：学生运动员还是职业运动员，这个根本问题决定了法案的方向。",
+                "comment_highlights": [
+                  "学生运动员",
+                  "职业运动员"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：壁垒已经打破，大学体育的商业化再也回不到过去。",
+                "comment_highlights": [
+                  "壁垒已经打破",
+                  "商业化"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：多数大学运动员不会成为职业选手，但领导力培养才是关键。",
+                "comment_highlights": [
+                  "不会成为职业选手",
+                  "领导力培养"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：训练场的价值在于塑造人，而不仅仅是产出职业球员。",
+                "comment_highlights": [
+                  "训练场的价值",
+                  "塑造人"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "SEC威胁踢出LSU：只因教练想签NFL球员，保护法案能挡住吗",
+          "title_lines": [
+            "SEC威胁踢出LSU",
+            "只因教练想签NFL球员",
+            "保护法案能挡住吗"
+          ],
+          "formula_id": "权威冲突+具体动作+未解悬念",
+          "angle_id": "concrete_stakes",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:concrete_stakes",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：SEC已起诉LSU，但踢出联盟的威胁是否解除仍待观察"
+        }
+      }
+    }
+  ]
+}
