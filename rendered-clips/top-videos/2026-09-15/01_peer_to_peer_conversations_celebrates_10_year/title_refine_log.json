@@ -1,0 +1,1253 @@
+{
+  "timestamp_utc": "2026-09-15T00:28:22.947533+00:00",
+  "plan_path": "work/top-videos/01_peer_to_peer_conversations_celebrates_10_year/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "David Rubenstein",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "David Rubenstein",
+        "preferred_en": "David Rubenstein",
+        "official_zh": "大卫·鲁宾斯坦",
+        "common_zh": "鲁宾斯坦",
+        "title_label": "鲁宾斯坦",
+        "preferred_zh": "鲁宾斯坦",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and Apple Podcasts both confirm David Rubenstein as host of The David Rubenstein Show: Peer-to-Peer Conversations; Chinese media commonly render the surname as 鲁宾斯坦."
+      },
+      {
+        "source_text": "The David Rubenstein Show: Peer to Peer Conversations",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "The David Rubenstein Show: Peer to Peer Conversations",
+        "preferred_en": "The David Rubenstein Show: Peer to Peer Conversations",
+        "official_zh": "",
+        "common_zh": "鲁宾斯坦对话节目",
+        "title_label": "鲁宾斯坦对话节目",
+        "preferred_zh": "鲁宾斯坦对话节目",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's official podcast and show pages confirm the program name; Chinese media commonly refer to it as 鲁宾斯坦对话节目."
+      },
+      {
+        "source_text": "Bloomberg TV",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg Television",
+        "preferred_en": "Bloomberg Television",
+        "official_zh": "彭博电视",
+        "common_zh": "彭博电视",
+        "title_label": "彭博电视",
+        "preferred_zh": "彭博电视",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's own pages confirm the network; 彭博电视 is the established Simplified Chinese name."
+      },
+      {
+        "source_text": "Wilson Coin Operated Machine Company",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Wilson Coin-Operated Machine Company",
+        "preferred_en": "Wilson Coin-Operated Machine Company",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Wilson Coin-Operated Machine Company",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable Chinese translation found; keep original English."
+      },
+      {
+        "source_text": "American Airlines",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "American Airlines",
+        "preferred_en": "American Airlines",
+        "official_zh": "美国航空",
+        "common_zh": "美国航空",
+        "title_label": "美国航空",
+        "preferred_zh": "美国航空",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "American Airlines is widely known in Chinese as 美国航空; no conflicting variant found."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "pinball machine",
+        "clip_indexes": [],
+        "context": "Rubenstein's early business anecdote",
+        "sense": "coin-operated arcade game",
+        "preferred_zh": "弹珠机",
+        "title_label": "弹珠机",
+        "avoid_zh": [
+          "弹球机"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "flippers",
+        "clip_indexes": [],
+        "context": "pinball machine feature",
+        "sense": "paddles used to hit the ball",
+        "preferred_zh": "弹珠机挡板",
+        "title_label": "弹珠机挡板",
+        "avoid_zh": [
+          "脚蹼"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "global consumer bank",
+        "clip_indexes": [],
+        "context": "banking division",
+        "sense": "retail banking division",
+        "preferred_zh": "全球消费者银行",
+        "title_label": "全球消费者银行",
+        "avoid_zh": [
+          "全球消费银行"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "The best business we had was the pinball machine business, which was the Wilson Coin Operated Machine Company, named after the high school my partner and I went to.",
+        "public_baseline": "Public records and interviews confirm Rubenstein's early pinball machine business, the Wilson Coin-Operated Machine Company name, and the high school origin claim.",
+        "surprise_gap": "",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Rubenstein describes his early pinball machine business, Wilson Coin Operated Machine Company, named after his high school."
+          },
+          {
+            "kind": "public",
+            "query": "Wilson coin operated machine company pinball David Rubenstein partner high school",
+            "url": "https://finance.yahoo.com/video/david-rubenstein-show-peer-peer-174234646.html",
+            "fact": "Yahoo Finance video confirms the same anecdote about the Wilson Coin-Operated Machine Company."
+          }
+        ],
+        "forbidden_claims": [
+          "Rubenstein started the pinball business with Warren Buffett",
+          "The business was named after a person named Wilson"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "No reliable Chinese translation found for 'Wilson Coin Operated Machine Company'; keep original English.",
+      "The term 'flippers' in pinball context has no established Chinese translation; use descriptive term or keep English."
+    ],
+    "research_queries": [
+      {
+        "query": "David Rubenstein 中文名 彭博 鲁宾斯坦 对话节目",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for David Rubenstein and the Chinese rendering of his Bloomberg TV program."
+      },
+      {
+        "query": "Wilson coin operated machine company pinball David Rubenstein partner high school",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Rubenstein's early pinball machine business, the Wilson Coin Operated Machine Company name, and the high school origin claim."
+      },
+      {
+        "query": "David Rubenstein pinball machine business barbershops flippers $350 obsolete machine $25",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific anecdote details: barbershop placements, flipper machines costing $350, and obsolete machines costing $25."
+      },
+      {
+        "query": "Citigroup global consumer bank head retail banking credit card",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact institution and title of the global consumer bank head at Citi mentioned in the clip."
+      },
+      {
+        "query": "花旗集团 全球消费者银行 负责人 零售银行 信用卡",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Citigroup's global consumer bank and its head."
+      },
+      {
+        "query": "Citi American Airlines credit card black card gold card frequent flyer miles",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Citi credit card product tiers and American Airlines partnership referenced in the exchange about black versus gold cards."
+      },
+      {
+        "query": "David Rubenstein Citi credit card frequent flyer miles American Airlines",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Rubenstein has publicly discussed his Citi credit card or frequent flyer miles, to assess the candor and specificity of the exchange."
+      },
+      {
+        "query": "David Rubenstein Carlyle Group co-founder business career Washington",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish Rubenstein's main business career baseline to contextualize the pinball machine origin story."
+      },
+      {
+        "query": "Citi global consumer bank head 2024 2025 name",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify the current or recent head of Citi's global consumer bank to match the speaker in the clip."
+      },
+      {
+        "query": "Wilson Coin Operated Machine Company Rubenstein high school name",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact high school name that the Wilson company was named after, as claimed by Rubenstein."
+      },
+      {
+        "query": "Bloomberg Watch Now established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "最好的生意：竟是弹球机，350美元逼出神秘先生？",
+      "title_lines": [
+        "最好的生意",
+        "竟是弹球机",
+        "350美元逼出神秘先生？"
+      ],
+      "formula_id": "名人早年反差",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+        "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量",
+        "transcript: 公司以他和合伙人的高中命名"
+      ],
+      "runner_up_titles": [
+        "最好的生意：竟是弹球机，350美元逼出神秘先生？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 9,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 10,
+        "china_resonance": 2
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 2
+        }
+      },
+      "comment": "KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-15T00:28:20.704068+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "鲁宾斯坦对话节目十周年回顾",
+          "current_title_lines": [
+            "鲁宾斯坦对话节目迎来十周年",
+            "回顾全球商业领袖经典对谈",
+            "从弹球机生意到利率话题的精彩瞬间"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我是大卫·鲁宾斯坦，在彭博电视主持《大卫·鲁宾斯坦面对面》节目。",
+              "en": "I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.",
+              "relative_start": 0.0,
+              "relative_end": 6.2
+            },
+            {
+              "index": 2,
+              "zh": "在我们庆祝与全球最具影响力和趣味的领袖对话十周年之际，我们回顾一些我最喜欢的时刻。",
+              "en": "As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.",
+              "relative_start": 6.2,
+              "relative_end": 14.8
+            },
+            {
+              "index": 3,
+              "zh": "你是如何在华盛顿开始商业生涯的，涉及各种弹球机或高尔夫生意？是的，我确实如此，但有几个生意在进行，而我们最好的生意",
+              "en": "How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had",
+              "relative_start": 17.9,
+              "relative_end": 27.6
+            },
+            {
+              "index": 4,
+              "zh": "是弹球机生意，即威尔逊投币机公司。那是以我和合伙人就读的高中命名的。我们在理发店放置了机器，",
+              "en": "was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,",
+              "relative_start": 27.6,
+              "relative_end": 36.4
+            },
+            {
+              "index": 5,
+              "zh": "理发师总是想让我们放置带翻转器的机器，那时刚出现。",
+              "en": "and the barbers always wanted to put us in machines with flippers, which were just coming in.",
+              "relative_start": 36.4,
+              "relative_end": 40.4
+            },
+            {
+              "index": 6,
+              "zh": "但那些机器要350美元，而旧过时的机器只要25美元。所以我们总是告诉他们我们会和威尔逊先生商量，神秘的威尔逊先生。他是个难对付的家伙。",
+              "en": "But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.",
+              "relative_start": 40.4,
+              "relative_end": 50.6
+            },
+            {
+              "index": 7,
+              "zh": "我得告诉你。而你是全球消费者银行的负责人。那是什么？在花旗，全球消费者银行？那就是零售银行。那是信用卡，我相信你是一张花旗信用卡的骄傲持有者，大卫。",
+              "en": "I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud",
+              "relative_start": 50.6,
+              "relative_end": 62.5
+            },
+            {
+              "index": 8,
+              "zh": "嗯，不过我的飞行里程不够。",
+              "en": "owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.",
+              "relative_start": 62.5,
+              "relative_end": 66.6
+            },
+            {
+              "index": 9,
+              "zh": "我试图，你告诉我我不符合飞行里程资格，但是。是的，你拿错卡了。这是你能得到的最好的信用卡吗？大卫，你有一张所有",
+              "en": "I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all",
+              "relative_start": 66.6,
+              "relative_end": 75.5
+            },
+            {
+              "index": 10,
+              "zh": "美国航空的精彩合作伙伴。然后他们，他们，他们，你有一张。但这是黑色的。为什么我的是金色的？为什么我没有这个？哪个更好？你必须",
+              "en": "wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to",
+              "relative_start": 75.5,
+              "relative_end": 84.2
+            },
+            {
+              "index": 11,
+              "zh": "问吧，David。哦，好的。行。虽然我猜你可能不太常坐商业航班。对。你在晚餐时从朋友那里得到过建议吗？这个",
+              "en": "ask for it, David. Oh, okay. All right. Well, although I suspect you may not be flying quite as much on the commercial airline. Yeah. Do you ever get suggestions from your friends at dinner? This",
+              "relative_start": 84.2,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"鲁宾斯坦对话节目十周年回顾\",\n    \"current_title_lines\": [\n      \"鲁宾斯坦对话节目迎来十周年\",\n      \"回顾全球商业领袖经典对谈\",\n      \"从弹球机生意到利率话题的精彩瞬间\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我是大卫·鲁宾斯坦，在彭博电视主持《大卫·鲁宾斯坦面对面》节目。\",\n        \"en\": \"I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"在我们庆祝与全球最具影响力和趣味的领袖对话十周年之际，我们回顾一些我最喜欢的时刻。\",\n        \"en\": \"As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 14.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"你是如何在华盛顿开始商业生涯的，涉及各种弹球机或高尔夫生意？是的，我确实如此，但有几个生意在进行，而我们最好的生意\",\n        \"en\": \"How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had\",\n        \"relative_start\": 17.9,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"是弹球机生意，即威尔逊投币机公司。那是以我和合伙人就读的高中命名的。我们在理发店放置了机器，\",\n        \"en\": \"was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 36.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"理发师总是想让我们放置带翻转器的机器，那时刚出现。\",\n        \"en\": \"and the barbers always wanted to put us in machines with flippers, which were just coming in.\",\n        \"relative_start\": 36.4,\n        \"relative_end\": 40.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但那些机器要350美元，而旧过时的机器只要25美元。所以我们总是告诉他们我们会和威尔逊先生商量，神秘的威尔逊先生。他是个难对付的家伙。\",\n        \"en\": \"But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.\",\n        \"relative_start\": 40.4,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我得告诉你。而你是全球消费者银行的负责人。那是什么？在花旗，全球消费者银行？那就是零售银行。那是信用卡，我相信你是一张花旗信用卡的骄傲持有者，大卫。\",\n        \"en\": \"I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 62.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嗯，不过我的飞行里程不够。\",\n        \"en\": \"owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.\",\n        \"relative_start\": 62.5,\n        \"relative_end\": 66.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试图，你告诉我我不符合飞行里程资格，但是。是的，你拿错卡了。这是你能得到的最好的信用卡吗？大卫，你有一张所有\",\n        \"en\": \"I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all\",\n        \"relative_start\": 66.6,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美国航空的精彩合作伙伴。然后他们，他们，他们，你有一张。但这是黑色的。为什么我的是金色的？为什么我没有这个？哪个更好？你必须\",\n        \"en\": \"wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 84.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"问吧，David。哦，好的。行。虽然我猜你可能不太常坐商业航班。对。你在晚餐时从朋友那里得到过建议吗？这个\",\n        \"en\": \"ask for it, David. Oh, okay. All right. Well, although I suspect you may not be flying quite as much on the commercial airline. Yeah. Do you ever get suggestions from your friends at dinner? This\",\n        \"relative_start\": 84.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The best business we had was the pinball machine business, which was the Wilson Coin Operated Machine Company, named after the high school my partner and I went to.\",\n      \"public_baseline\": \"Public records and interviews confirm Rubenstein's early pinball machine business, the Wilson Coin-Operated Machine Company name, and the high school origin claim.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Rubenstein describes his early pinball machine business, Wilson Coin Operated Machine Company, named after his high school.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Wilson coin operated machine company pinball David Rubenstein partner high school\",\n          \"url\": \"https://finance.yahoo.com/video/david-rubenstein-show-peer-peer-174234646.html\",\n          \"fact\": \"Yahoo Finance video confirms the same anecdote about the Wilson Coin-Operated Machine Company.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Rubenstein started the pinball business with Warren Buffett\",\n        \"The business was named after a person named Wilson\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese translation found for 'Wilson Coin Operated Machine Company'; keep original English.\",\n    \"The term 'flippers' in pinball context has no established Chinese translation; use descriptive term or keep English.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "鲁宾斯坦在访谈中回忆，他早年最好的生意是弹球机公司 Wilson Coin Operated Machine Company，公司名字来自他和合伙人就读的高中，理发师想要带翻转器的机器，但新机器350美元，旧机器只要25美元，他们总说要和神秘的威尔逊先生商量。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "彭博名主持早年生意",
+                "title_lines": [
+                  "最好的生意",
+                  "竟是弹球机",
+                  "350美元逼出神秘先生"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+                  "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "350美元机器没人要",
+                "title_lines": [
+                  "理发师要新机器",
+                  "他搬出威尔逊先生",
+                  "高中名字成了公司名"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 理发师想要带翻转器的机器，新机器350美元，旧机器25美元",
+                  "transcript: 公司以他和合伙人的高中命名"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 10,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "全球商业领袖对谈十年",
+                "title_lines": [
+                  "鲁宾斯坦回顾",
+                  "最赚的生意",
+                  "藏在理发店里"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 鲁宾斯坦主持对话节目十周年，回顾最喜欢的时刻",
+                  "transcript: 早期生意在理发店放置弹球机"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "他亲口说早年生意",
+                "title_lines": [
+                  "不是高尔夫",
+                  "是弹球机",
+                  "25美元旧机器撑起公司"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 鲁宾斯坦亲口描述早期弹球机生意",
+                  "transcript: 旧机器25美元，新机器350美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"鲁宾斯坦对话节目十周年回顾\",\n    \"current_title_lines\": [\n      \"鲁宾斯坦对话节目迎来十周年\",\n      \"回顾全球商业领袖经典对谈\",\n      \"从弹球机生意到利率话题的精彩瞬间\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我是大卫·鲁宾斯坦，在彭博电视主持《大卫·鲁宾斯坦面对面》节目。\",\n        \"en\": \"I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"在我们庆祝与全球最具影响力和趣味的领袖对话十周年之际，我们回顾一些我最喜欢的时刻。\",\n        \"en\": \"As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 14.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"你是如何在华盛顿开始商业生涯的，涉及各种弹球机或高尔夫生意？是的，我确实如此，但有几个生意在进行，而我们最好的生意\",\n        \"en\": \"How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had\",\n        \"relative_start\": 17.9,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"是弹球机生意，即威尔逊投币机公司。那是以我和合伙人就读的高中命名的。我们在理发店放置了机器，\",\n        \"en\": \"was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 36.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"理发师总是想让我们放置带翻转器的机器，那时刚出现。\",\n        \"en\": \"and the barbers always wanted to put us in machines with flippers, which were just coming in.\",\n        \"relative_start\": 36.4,\n        \"relative_end\": 40.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但那些机器要350美元，而旧过时的机器只要25美元。所以我们总是告诉他们我们会和威尔逊先生商量，神秘的威尔逊先生。他是个难对付的家伙。\",\n        \"en\": \"But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.\",\n        \"relative_start\": 40.4,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我得告诉你。而你是全球消费者银行的负责人。那是什么？在花旗，全球消费者银行？那就是零售银行。那是信用卡，我相信你是一张花旗信用卡的骄傲持有者，大卫。\",\n        \"en\": \"I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 62.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嗯，不过我的飞行里程不够。\",\n        \"en\": \"owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.\",\n        \"relative_start\": 62.5,\n        \"relative_end\": 66.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试图，你告诉我我不符合飞行里程资格，但是。是的，你拿错卡了。这是你能得到的最好的信用卡吗？大卫，你有一张所有\",\n        \"en\": \"I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all\",\n        \"relative_start\": 66.6,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美国航空的精彩合作伙伴。然后他们，他们，他们，你有一张。但这是黑色的。为什么我的是金色的？为什么我没有这个？哪个更好？你必须\",\n        \"en\": \"wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 84.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"问吧，David。哦，好的。行。虽然我猜你可能不太常坐商业航班。对。你在晚餐时从朋友那里得到过建议吗？这个\",\n        \"en\": \"ask for it, David. Oh, okay. All right. Well, although I suspect you may not be flying quite as much on the commercial airline. Yeah. Do you ever get suggestions from your friends at dinner? This\",\n        \"relative_start\": 84.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The best business we had was the pinball machine business, which was the Wilson Coin Operated Machine Company, named after the high school my partner and I went to.\",\n      \"public_baseline\": \"Public records and interviews confirm Rubenstein's early pinball machine business, the Wilson Coin-Operated Machine Company name, and the high school origin claim.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Rubenstein describes his early pinball machine business, Wilson Coin Operated Machine Company, named after his high school.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Wilson coin operated machine company pinball David Rubenstein partner high school\",\n          \"url\": \"https://finance.yahoo.com/video/david-rubenstein-show-peer-peer-174234646.html\",\n          \"fact\": \"Yahoo Finance video confirms the same anecdote about the Wilson Coin-Operated Machine Company.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Rubenstein started the pinball business with Warren Buffett\",\n        \"The business was named after a person named Wilson\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese translation found for 'Wilson Coin Operated Machine Company'; keep original English.\",\n    \"The term 'flippers' in pinball context has no established Chinese translation; use descriptive term or keep English.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"鲁宾斯坦在访谈中回忆，他早年最好的生意是弹球机公司 Wilson Coin Operated Machine Company，公司名字来自他和合伙人就读的高中，理发师想要带翻转器的机器，但新机器350美元，旧机器只要25美元，他们总说要和神秘的威尔逊先生商量。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"彭博名主持早年生意\",\n          \"title_lines\": [\n            \"最好的生意\",\n            \"竟是弹球机\",\n            \"350美元逼出神秘先生\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 最好的生意是弹球机生意，即威尔逊投币机公司\",\n            \"transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"350美元机器没人要\",\n          \"title_lines\": [\n            \"理发师要新机器\",\n            \"他搬出威尔逊先生\",\n            \"高中名字成了公司名\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 理发师想要带翻转器的机器，新机器350美元，旧机器25美元\",\n            \"transcript: 公司以他和合伙人的高中命名\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"全球商业领袖对谈十年\",\n          \"title_lines\": [\n            \"鲁宾斯坦回顾\",\n            \"最赚的生意\",\n            \"藏在理发店里\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 鲁宾斯坦主持对话节目十周年，回顾最喜欢的时刻\",\n            \"transcript: 早期生意在理发店放置弹球机\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"他亲口说早年生意\",\n          \"title_lines\": [\n            \"不是高尔夫\",\n            \"是弹球机\",\n            \"25美元旧机器撑起公司\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 鲁宾斯坦亲口描述早期弹球机生意\",\n            \"transcript: 旧机器25美元，新机器350美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "名人早年反差",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+              "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量",
+              "transcript: 公司以他和合伙人的高中命名"
+            ],
+            "title": "鲁宾斯坦最好的生意竟是弹球机",
+            "title_lines": [
+              "最好的生意",
+              "竟是弹球机",
+              "350美元逼出神秘先生"
+            ],
+            "title_highlights": [
+              "最好的生意",
+              "弹球机",
+              "350美元"
+            ],
+            "runner_up_titles": [
+              "350美元机器没人要",
+              "全球商业领袖对谈十年"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中，理发师要新机器，他总说和威尔逊先生商量。",
+            "comment_highlights": [
+              "弹球机公司",
+              "威尔逊先生"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：鲁宾斯坦主持彭博对话节目，身份是知名投资人。",
+                "comment_highlights": [
+                  "鲁宾斯坦"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：十周年回顾，他挑出最有趣的时刻，包括早年生意。",
+                "comment_highlights": [
+                  "十周年"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：他承认在华盛顿做过弹球机和高尔夫生意。",
+                "comment_highlights": [
+                  "弹球机"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：公司叫威尔逊投币机公司，名字来自他和合伙人的高中。",
+                "comment_highlights": [
+                  "威尔逊投币机公司"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：理发师想要带翻转器的新机器，那时刚出现。",
+                "comment_highlights": [
+                  "翻转器"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：新机器350美元，旧机器25美元，他们用神秘威尔逊先生当挡箭牌。",
+                "comment_highlights": [
+                  "350美元",
+                  "威尔逊先生"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：话题转到花旗全球消费者银行，鲁宾斯坦是信用卡用户。",
+                "comment_highlights": [
+                  "花旗"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：鲁宾斯坦调侃自己飞行里程不够。",
+                "comment_highlights": [
+                  "飞行里程"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：对方说他拿错卡，最好的信用卡需要申请。",
+                "comment_highlights": [
+                  "拿错卡"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：鲁宾斯坦问为什么自己的卡是金色，对方是黑色。",
+                "comment_highlights": [
+                  "金色",
+                  "黑色"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：对方调侃他可能不常坐商业航班，对话转向朋友建议。",
+                "comment_highlights": [
+                  "商业航班"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"鲁宾斯坦对话节目十周年回顾\",\n    \"current_title_lines\": [\n      \"鲁宾斯坦对话节目迎来十周年\",\n      \"回顾全球商业领袖经典对谈\",\n      \"从弹球机生意到利率话题的精彩瞬间\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我是大卫·鲁宾斯坦，在彭博电视主持《大卫·鲁宾斯坦面对面》节目。\",\n        \"en\": \"I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"在我们庆祝与全球最具影响力和趣味的领袖对话十周年之际，我们回顾一些我最喜欢的时刻。\",\n        \"en\": \"As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.\",\n        \"relative_start\": 6.2,\n        \"relative_end\": 14.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"你是如何在华盛顿开始商业生涯的，涉及各种弹球机或高尔夫生意？是的，我确实如此，但有几个生意在进行，而我们最好的生意\",\n        \"en\": \"How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had\",\n        \"relative_start\": 17.9,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"是弹球机生意，即威尔逊投币机公司。那是以我和合伙人就读的高中命名的。我们在理发店放置了机器，\",\n        \"en\": \"was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 36.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"理发师总是想让我们放置带翻转器的机器，那时刚出现。\",\n        \"en\": \"and the barbers always wanted to put us in machines with flippers, which were just coming in.\",\n        \"relative_start\": 36.4,\n        \"relative_end\": 40.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"但那些机器要350美元，而旧过时的机器只要25美元。所以我们总是告诉他们我们会和威尔逊先生商量，神秘的威尔逊先生。他是个难对付的家伙。\",\n        \"en\": \"But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.\",\n        \"relative_start\": 40.4,\n        \"relative_end\": 50.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我得告诉你。而你是全球消费者银行的负责人。那是什么？在花旗，全球消费者银行？那就是零售银行。那是信用卡，我相信你是一张花旗信用卡的骄傲持有者，大卫。\",\n        \"en\": \"I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud\",\n        \"relative_start\": 50.6,\n        \"relative_end\": 62.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嗯，不过我的飞行里程不够。\",\n        \"en\": \"owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.\",\n        \"relative_start\": 62.5,\n        \"relative_end\": 66.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我试图，你告诉我我不符合飞行里程资格，但是。是的，你拿错卡了。这是你能得到的最好的信用卡吗？大卫，你有一张所有\",\n        \"en\": \"I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all\",\n        \"relative_start\": 66.6,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美国航空的精彩合作伙伴。然后他们，他们，他们，你有一张。但这是黑色的。为什么我的是金色的？为什么我没有这个？哪个更好？你必须\",\n        \"en\": \"wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 84.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"问吧，David。哦，好的。行。虽然我猜你可能不太常坐商业航班。对。你在晚餐时从朋友那里得到过建议吗？这个\",\n        \"en\": \"ask for it, David. Oh, okay. All right. Well, although I suspect you may not be flying quite as much on the commercial airline. Yeah. Do you ever get suggestions from your friends at dinner? This\",\n        \"relative_start\": 84.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The best business we had was the pinball machine business, which was the Wilson Coin Operated Machine Company, named after the high school my partner and I went to.\",\n      \"public_baseline\": \"Public records and interviews confirm Rubenstein's early pinball machine business, the Wilson Coin-Operated Machine Company name, and the high school origin claim.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Rubenstein describes his early pinball machine business, Wilson Coin Operated Machine Company, named after his high school.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Wilson coin operated machine company pinball David Rubenstein partner high school\",\n          \"url\": \"https://finance.yahoo.com/video/david-rubenstein-show-peer-peer-174234646.html\",\n          \"fact\": \"Yahoo Finance video confirms the same anecdote about the Wilson Coin-Operated Machine Company.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Rubenstein started the pinball business with Warren Buffett\",\n        \"The business was named after a person named Wilson\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese translation found for 'Wilson Coin Operated Machine Company'; keep original English.\",\n    \"The term 'flippers' in pinball context has no established Chinese translation; use descriptive term or keep English.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"鲁宾斯坦在访谈中回忆，他早年最好的生意是弹球机公司 Wilson Coin Operated Machine Company，公司名字来自他和合伙人就读的高中，理发师想要带翻转器的机器，但新机器350美元，旧机器只要25美元，他们总说要和神秘的威尔逊先生商量。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"彭博名主持早年生意\",\n          \"title_lines\": [\n            \"最好的生意\",\n            \"竟是弹球机\",\n            \"350美元逼出神秘先生\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 最好的生意是弹球机生意，即威尔逊投币机公司\",\n            \"transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"350美元机器没人要\",\n          \"title_lines\": [\n            \"理发师要新机器\",\n            \"他搬出威尔逊先生\",\n            \"高中名字成了公司名\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 理发师想要带翻转器的机器，新机器350美元，旧机器25美元\",\n            \"transcript: 公司以他和合伙人的高中命名\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"全球商业领袖对谈十年\",\n          \"title_lines\": [\n            \"鲁宾斯坦回顾\",\n            \"最赚的生意\",\n            \"藏在理发店里\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 鲁宾斯坦主持对话节目十周年，回顾最喜欢的时刻\",\n            \"transcript: 早期生意在理发店放置弹球机\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"他亲口说早年生意\",\n          \"title_lines\": [\n            \"不是高尔夫\",\n            \"是弹球机\",\n            \"25美元旧机器撑起公司\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 鲁宾斯坦亲口描述早期弹球机生意\",\n            \"transcript: 旧机器25美元，新机器350美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"最好的生意：竟是弹球机，350美元逼出神秘先生\",\n      \"title_lines\": [\n        \"最好的生意\",\n        \"竟是弹球机\",\n        \"350美元逼出神秘先生\"\n      ],\n      \"title_highlights\": [\n        \"最好的生意\",\n        \"弹球机\",\n        \"350美元\"\n      ],\n      \"comment\": \"KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中\",\n      \"comment_highlights\": [\n        \"弹球机公司\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：鲁宾斯坦主持彭博对话节目，身份是知名**人\",\n          \"comment_highlights\": [\n            \"鲁宾斯坦\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：十周年回顾，他挑出最有趣的时刻，包括早年生意\",\n          \"comment_highlights\": [\n            \"十周年\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：他承认在华盛顿做过弹球机和高尔夫生意\",\n          \"comment_highlights\": [\n            \"弹球机\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：公司叫威尔逊投币机公司，名字来自他和合伙人的高中\",\n          \"comment_highlights\": [\n            \"威尔逊投币机公司\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：理发师想要带翻转器的新机器，那时刚出现\",\n          \"comment_highlights\": [\n            \"翻转器\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：新机器350美元，旧机器25美元，他们用神秘威尔逊先生当挡箭牌\",\n          \"comment_highlights\": [\n            \"350美元\",\n            \"威尔逊先生\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：话题转到花旗全球消费者银行，鲁宾斯坦是信用卡用户\",\n          \"comment_highlights\": [\n            \"花旗\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：鲁宾斯坦调侃自己飞行里程不够\",\n          \"comment_highlights\": [\n            \"飞行里程\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：对方说他拿错卡，最好的信用卡需要申请\",\n          \"comment_highlights\": [\n            \"拿错卡\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：鲁宾斯坦问为什么自己的卡是金色，对方是黑色\",\n          \"comment_highlights\": [\n            \"金色\",\n            \"黑色\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：对方调侃他可能不常坐商业航班，对话转向朋友建议\",\n          \"comment_highlights\": [\n            \"商业航班\"\n          ]\n        }\n      ],\n      \"formula_id\": \"名人早年反差\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 最好的生意是弹球机生意，即威尔逊投币机公司\",\n        \"transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量\",\n        \"transcript: 公司以他和合伙人的高中命名\"\n      ],\n      \"runner_up_titles\": [\n        \"350美元机器没人要\",\n        \"全球商业领袖对谈十年\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "名人早年反差",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+                  "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量",
+                  "transcript: 公司以他和合伙人的高中命名"
+                ],
+                "title": "最好的生意竟是弹球机，350美元逼出神秘先生",
+                "title_lines": [
+                  "最好的生意",
+                  "竟是弹球机",
+                  "350美元逼出神秘先生"
+                ],
+                "title_highlights": [
+                  "最好的生意",
+                  "弹球机",
+                  "350美元"
+                ],
+                "runner_up_titles": [
+                  "350美元机器没人要",
+                  "全球商业领袖对谈十年"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中",
+                "comment_highlights": [
+                  "弹球机公司"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：鲁宾斯坦主持彭博对话节目，身份是知名**人",
+                    "comment_highlights": [
+                      "鲁宾斯坦"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：十周年回顾，他挑出最有趣的时刻，包括早年生意",
+                    "comment_highlights": [
+                      "十周年"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：他承认在华盛顿做过弹球机和高尔夫生意",
+                    "comment_highlights": [
+                      "弹球机"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：公司叫威尔逊投币机公司，名字来自他和合伙人的高中",
+                    "comment_highlights": [
+                      "威尔逊投币机公司"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：理发师想要带翻转器的新机器，那时刚出现",
+                    "comment_highlights": [
+                      "翻转器"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：新机器350美元，旧机器25美元，他们用神秘威尔逊先生当挡箭牌",
+                    "comment_highlights": [
+                      "350美元",
+                      "威尔逊先生"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：话题转到花旗全球消费者银行，鲁宾斯坦是信用卡用户",
+                    "comment_highlights": [
+                      "花旗"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：鲁宾斯坦调侃自己飞行里程不够",
+                    "comment_highlights": [
+                      "飞行里程"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：对方说他拿错卡，最好的信用卡需要申请",
+                    "comment_highlights": [
+                      "拿错卡"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：鲁宾斯坦问为什么自己的卡是金色，对方是黑色",
+                    "comment_highlights": [
+                      "金色",
+                      "黑色"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：对方调侃他可能不常坐商业航班，对话转向朋友建议",
+                    "comment_highlights": [
+                      "商业航班"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "最好的生意：竟是弹球机，350美元逼出神秘先生",
+          "title_lines": [
+            "最好的生意",
+            "竟是弹球机",
+            "350美元逼出神秘先生"
+          ],
+          "formula_id": "名人早年反差",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-15T00:28:22.199462+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "鲁宾斯坦对话节目十周年回顾",
+          "current_title_lines": [
+            "鲁宾斯坦对话节目迎来十周年",
+            "回顾全球商业领袖经典对谈",
+            "从弹球机生意到利率话题的精彩瞬间"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我是大卫·鲁宾斯坦，在彭博电视主持《大卫·鲁宾斯坦面对面》节目。",
+              "en": "I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.",
+              "relative_start": 0.0,
+              "relative_end": 6.2
+            },
+            {
+              "index": 2,
+              "zh": "在我们庆祝与全球最具影响力和趣味的领袖对话十周年之际，我们回顾一些我最喜欢的时刻。",
+              "en": "As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.",
+              "relative_start": 6.2,
+              "relative_end": 14.8
+            },
+            {
+              "index": 3,
+              "zh": "你是如何在华盛顿开始商业生涯的，涉及各种弹球机或高尔夫生意？是的，我确实如此，但有几个生意在进行，而我们最好的生意",
+              "en": "How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had",
+              "relative_start": 17.9,
+              "relative_end": 27.6
+            },
+            {
+              "index": 4,
+              "zh": "是弹球机生意，即威尔逊投币机公司。那是以我和合伙人就读的高中命名的。我们在理发店放置了机器，",
+              "en": "was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,",
+              "relative_start": 27.6,
+              "relative_end": 36.4
+            },
+            {
+              "index": 5,
+              "zh": "理发师总是想让我们放置带翻转器的机器，那时刚出现。",
+              "en": "and the barbers always wanted to put us in machines with flippers, which were just coming in.",
+              "relative_start": 36.4,
+              "relative_end": 40.4
+            },
+            {
+              "index": 6,
+              "zh": "但那些机器要350美元，而旧过时的机器只要25美元。所以我们总是告诉他们我们会和威尔逊先生商量，神秘的威尔逊先生。他是个难对付的家伙。",
+              "en": "But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.",
+              "relative_start": 40.4,
+              "relative_end": 50.6
+            },
+            {
+              "index": 7,
+              "zh": "我得告诉你。而你是全球消费者银行的负责人。那是什么？在花旗，全球消费者银行？那就是零售银行。那是信用卡，我相信你是一张花旗信用卡的骄傲持有者，大卫。",
+              "en": "I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud",
+              "relative_start": 50.6,
+              "relative_end": 62.5
+            },
+            {
+              "index": 8,
+              "zh": "嗯，不过我的飞行里程不够。",
+              "en": "owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.",
+              "relative_start": 62.5,
+              "relative_end": 66.6
+            },
+            {
+              "index": 9,
+              "zh": "我试图，你告诉我我不符合飞行里程资格，但是。是的，你拿错卡了。这是你能得到的最好的信用卡吗？大卫，你有一张所有",
+              "en": "I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all",
+              "relative_start": 66.6,
+              "relative_end": 75.5
+            },
+            {
+              "index": 10,
+              "zh": "美国航空的精彩合作伙伴。然后他们，他们，他们，你有一张。但这是黑色的。为什么我的是金色的？为什么我没有这个？哪个更好？你必须",
+              "en": "wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to",
+              "relative_start": 75.5,
+              "relative_end": 84.2
+            },
+            {
+              "index": 11,
+              "zh": "问吧，David。哦，好的。行。虽然我猜你可能不太常坐商业航班。对。你在晚餐时从朋友那里得到过建议吗？这个",
+              "en": "ask for it, David. Oh, okay. All right. Well, although I suspect you may not be flying quite as much on the commercial airline. Yeah. Do you ever get suggestions from your friends at dinner? This",
+              "relative_start": 84.2,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Watch Now\",\n  \"source_title\": \"Watch Now\",\n  \"current_title\": \"鲁宾斯坦对话节目十周年回顾\",\n  \"source_claims\": [\n    \"I'm David Rubenstein. I'm the host of David Rubenstein peer-to-peer conversations on Bloomberg TV.\",\n    \"As we celebrate 10 years of conversations with some of the world's most interesting and influential leaders, we're looking back at a few of my favorite moments.\",\n    \"How did you start your business career in Washington with various pinball machines or golf businesses? Yeah, I was like that, but a couple of businesses going in, and the best business we had\",\n    \"was the pinball machine business, which was the Wilson coin operated in machine company. And that was named after the high school my partner and I went to. We had our machines and barbershops,\",\n    \"and the barbers always wanted to put us in machines with flippers, which were just coming in.\",\n    \"But those machines cost 350 bucks, whereas an old obsolete machine cost 25 bucks. So we always told them we'd take it up with Mr. Wilson, the smithical Mr. Wilson. He was one tough guy.\",\n    \"I got to tell you. And you're the head of the global consumer bank. What is that global consumer bank in city? So that's retail banking. That's a credit card, which I believe you are a proud\",\n    \"owner of a city credit card, David. Well, I don't have enough frequent flyer miles on it, though.\",\n    \"I'm trying to, you tell me I'm not qualified for my frequent flyer miles, but. Yeah, you've got the wrong card. Is it a, is this the best credit card you can get? David, you have the one with all\",\n    \"wonderful partner of American Airlines. And then they, they, they, they, you have one. But here's this black. How come mine's gold? How come I don't have this? Which is better? You've got to\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The best business we had was the pinball machine business, which was the Wilson Coin Operated Machine Company, named after the high school my partner and I went to.\",\n      \"public_baseline\": \"Public records and interviews confirm Rubenstein's early pinball machine business, the Wilson Coin-Operated Machine Company name, and the high school origin claim.\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Rubenstein describes his early pinball machine business, Wilson Coin Operated Machine Company, named after his high school.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Wilson coin operated machine company pinball David Rubenstein partner high school\",\n          \"url\": \"https://finance.yahoo.com/video/david-rubenstein-show-peer-peer-174234646.html\",\n          \"fact\": \"Yahoo Finance video confirms the same anecdote about the Wilson Coin-Operated Machine Company.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Rubenstein started the pinball business with Warren Buffett\",\n        \"The business was named after a person named Wilson\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Chinese translation found for 'Wilson Coin Operated Machine Company'; keep original English.\",\n    \"The term 'flippers' in pinball context has no established Chinese translation; use descriptive term or keep English.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"最好的生意：竟是弹球机，350美元逼出神秘先生\",\n  \"title_lines\": [\n    \"最好的生意\",\n    \"竟是弹球机\",\n    \"350美元逼出神秘先生\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 最好的生意是弹球机生意，即威尔逊投币机公司\",\n    \"transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量\",\n    \"transcript: 公司以他和合伙人的高中命名\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+              "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量",
+              "transcript: 公司以他和合伙人的高中命名"
+            ],
+            "title": "最好的生意：竟是弹球机，350美元逼出神秘先生？",
+            "title_lines": [
+              "最好的生意",
+              "竟是弹球机",
+              "350美元逼出神秘先生？"
+            ],
+            "title_highlights": [
+              "最好的生意",
+              "竟是弹球机",
+              "350美元逼出神秘先生？"
+            ],
+            "runner_up_titles": [
+              "最好的生意：竟是弹球机，350美元逼出神秘先生？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "最好的生意：竟是弹球机，350美元逼出神秘先生？",
+        "title_lines": [
+          "最好的生意",
+          "竟是弹球机",
+          "350美元逼出神秘先生？"
+        ],
+        "title_highlights": [
+          "最好的生意",
+          "竟是弹球机",
+          "350美元逼出神秘先生？"
+        ],
+        "comment": "KC评论：鲁宾斯坦亲口回忆，早年最好的生意是弹球机公司，名字来自高中",
+        "comment_highlights": [
+          "弹球机公司"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：鲁宾斯坦主持彭博对话节目，身份是知名**人",
+            "comment_highlights": [
+              "鲁宾斯坦"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：十周年回顾，他挑出最有趣的时刻，包括早年生意",
+            "comment_highlights": [
+              "十周年"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：他承认在华盛顿做过弹球机和高尔夫生意",
+            "comment_highlights": [
+              "弹球机"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：公司叫威尔逊投币机公司，名字来自他和合伙人的高中",
+            "comment_highlights": [
+              "威尔逊投币机公司"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：理发师想要带翻转器的新机器，那时刚出现",
+            "comment_highlights": [
+              "翻转器"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：新机器350美元，旧机器25美元，他们用神秘威尔逊先生当挡箭牌",
+            "comment_highlights": [
+              "350美元",
+              "威尔逊先生"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：话题转到花旗全球消费者银行，鲁宾斯坦是信用卡用户",
+            "comment_highlights": [
+              "花旗"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：鲁宾斯坦调侃自己飞行里程不够",
+            "comment_highlights": [
+              "飞行里程"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：对方说他拿错卡，最好的信用卡需要申请",
+            "comment_highlights": [
+              "拿错卡"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：鲁宾斯坦问为什么自己的卡是金色，对方是黑色",
+            "comment_highlights": [
+              "金色",
+              "黑色"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：对方调侃他可能不常坐商业航班，对话转向朋友建议",
+            "comment_highlights": [
+              "商业航班"
+            ]
+          }
+        ],
+        "formula_id": "名人早年反差",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "transcript: 最好的生意是弹球机生意，即威尔逊投币机公司",
+          "transcript: 新机器350美元，旧机器25美元，总说要和威尔逊先生商量",
+          "transcript: 公司以他和合伙人的高中命名"
+        ],
+        "runner_up_titles": [
+          "最好的生意：竟是弹球机，350美元逼出神秘先生？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
