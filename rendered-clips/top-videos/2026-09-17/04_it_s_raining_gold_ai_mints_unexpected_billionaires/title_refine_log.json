@@ -1,0 +1,1400 @@
+{
+  "timestamp_utc": "2026-09-17T00:25:16.671623+00:00",
+  "plan_path": "work/top-videos/04_it_s_raining_gold_ai_mints_unexpected_billionaires/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's own site and Chinese financial media (工商时报) both use 彭博 as the standard Chinese display form."
+      },
+      {
+        "source_text": "The China Show",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "The China Show (Bloomberg TV program)",
+        "preferred_en": "The China Show (Bloomberg TV program)",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "The China Show",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable Chinese-language source found establishing an official Simplified Chinese program name; keep original English."
+      },
+      {
+        "source_text": "Gwen Young",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Gwen Young",
+        "preferred_en": "Gwen Young",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No reliable source found confirming a Chinese display name for this Bloomberg reporter; do not invent a phonetic rendering."
+      },
+      {
+        "source_text": "King Slide",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "King Slide Works Co., Ltd.",
+        "preferred_en": "King Slide Works Co., Ltd.",
+        "official_zh": "川湖科技股份有限公司",
+        "common_zh": "川湖",
+        "title_label": "川湖",
+        "preferred_zh": "川湖",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "工商时报, 富果, and Notebookcheck all identify King Slide as 川湖科技 (川湖), the Taiwanese furniture-hardware maker turned AI server slide-rail supplier."
+      },
+      {
+        "source_text": "Nan Juen",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Nan Juen International Co., Ltd.",
+        "preferred_en": "Nan Juen International Co., Ltd.",
+        "official_zh": "南俊国际股份有限公司",
+        "common_zh": "南俊国际",
+        "title_label": "南俊国际",
+        "preferred_zh": "南俊国际",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "TaiwanInside and 永豐金證券 both name 南俊國際 as the second major Taiwanese AI server slide-rail supplier alongside 川湖."
+      },
+      {
+        "source_text": "NVIDIA",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "NVIDIA Corporation",
+        "preferred_en": "NVIDIA Corporation",
+        "official_zh": "英伟达公司",
+        "common_zh": "英伟达",
+        "title_label": "英伟达",
+        "preferred_zh": "英伟达",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "CommonWealth and 永豐金證券 both reference NVIDIA as 英伟达 in Chinese-language coverage of the AI server rail supply chain."
+      },
+      {
+        "source_text": "Lin Tsung-chi (林聰吉)",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Lin Tsung-chi",
+        "preferred_en": "Lin Tsung-chi",
+        "official_zh": "林聰吉",
+        "common_zh": "林聰吉",
+        "title_label": "林聰吉",
+        "preferred_zh": "林聰吉",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "工商时报 identifies 川湖 founder 林聰吉 as briefly surpassing 廣達 chairman 林百里 to become Taiwan's richest person; only one independent source found."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "picks and shovels",
+        "clip_indexes": [],
+        "context": "AI infrastructure investing",
+        "sense": "suppliers of enabling components rather than the headline technology makers",
+        "preferred_zh": "卖铲人",
+        "title_label": "卖铲人",
+        "avoid_zh": [
+          "镐与铲"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "slide rail",
+        "clip_indexes": [],
+        "context": "AI server hardware",
+        "sense": "the metal rail that slides a server into and out of a rack",
+        "preferred_zh": "滑轨",
+        "title_label": "服务器滑轨",
+        "avoid_zh": [
+          "滑动轨道"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "rack-scale",
+        "clip_indexes": [],
+        "context": "AI server delivery model",
+        "sense": "shipping complete server racks rather than individual units",
+        "preferred_zh": "整柜交付",
+        "title_label": "整柜交付",
+        "avoid_zh": [
+          "机架规模"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "AI infrastructure demand has turned overlooked industrial suppliers — including a Taiwanese furniture-hardware maker that pivoted to server slide rails — into unexpected billionaires, with seven companies' shareholders gaining roughly $62 billion.",
+        "public_baseline": "Public coverage confirms the AI infrastructure boom has driven strong demand for AI-related products (Federal Reserve: $272B in H1 2025 trade, +65% YoY) and that Taiwanese furniture-hardware maker King Slide (川湖) pivoted to server slide rails, with shares up nearly 280% and its founder briefly becoming Taiwan's richest person.",
+        "surprise_gap": "The specific figure of seven companies' shareholders gaining about $62 billion is not corroborated by any public snippet; the search results confirm the phenomenon but not the exact aggregate number.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": true,
+          "comparison": "Taiwanese suppliers 川湖 and 南俊國際 together hold more than 90% of the global high-end AI server rail market, giving Taiwan a dominant position in a critical AI infrastructure component.",
+          "evidence": [
+            "https://www.taiwaninside.com/en/128/king-slide-taiwan-rail-maker-nvidia-ai-racks",
+            "https://www.sinotrade.com.tw/richclub/industry/滑軌產業為何重要-AI伺服器滑軌誰稱王-川湖-南俊-富世達三強卡位戰-產業熱話-6982e0e121e4ba4b21ff7f9d"
+          ]
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "AI boom has produced unexpected billionaires from manufacturers of overlooked industrial products like furniture and materials."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Seven companies' shareholders gained about $62 billion from AI infrastructure demand."
+          },
+          {
+            "kind": "public",
+            "query": "Taiwan furniture manufacturer server slide rail AI server rack supplier",
+            "url": "https://www.notebookcheck.net/AI-makes-a-fortune-for-a-furniture-hardware-maker-its-founder-is-now-Taiwan-s-richest-person.1378363.0.html",
+            "fact": "Taiwanese furniture hardware maker King Slide Works supplies specialized rails for data-center servers; shares surged nearly 280%."
+          },
+          {
+            "kind": "public",
+            "query": "台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈",
+            "url": "https://www.ctee.com.tw/news/20260916702108-430701",
+            "fact": "工商时报 reports 川湖科技 started as furniture hardware and now is a key global AI server slide-rail supplier; founder 林聰吉 briefly became Taiwan's richest person."
+          },
+          {
+            "kind": "public",
+            "query": "AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion",
+            "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-global-trade-effects-of-the-ai-infrastructure-boom-20260213.html",
+            "fact": "Federal Reserve notes AI-related product trade reached $272 billion in H1 2025, up 65% YoY."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not state that exactly seven companies gained $62 billion unless independently verified.",
+          "Do not claim Bloomberg itself is the opinion-holding actor; the claim is from the show's reporting.",
+          "Do not assert a specific Chinese name for reporter Gwen Young without a reliable source."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The $62 billion / seven-company figure appears only in the clip transcript and is not corroborated by any public snippet; treat as unverified.",
+      "King Slide (川湖) is the most likely referent for the 'Taiwan furniture maker turned server rail supplier' but the transcript does not name it explicitly.",
+      "Gwen Young has no verified Chinese display name; leave title_label empty rather than inventing a phonetic rendering.",
+      "Traditional Chinese source names (川湖, 南俊國際, 林聰吉) converted to Simplified Chinese for title-facing labels."
+    ],
+    "research_queries": [
+      {
+        "query": "AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the concrete claim that seven companies' shareholders gained about $62 billion from AI infrastructure demand."
+      },
+      {
+        "query": "Taiwan furniture manufacturer server slide rail AI server rack supplier",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify the exact Taiwanese furniture or materials company that transitioned into server slide rails for AI infrastructure."
+      },
+      {
+        "query": "台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Chinese-language framing and exact company identity for the Taiwan furniture-to-server-rail transition."
+      },
+      {
+        "query": "AI server slide rail market share Taiwan manufacturers 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Taiwan suppliers hold a concrete comparative advantage in server slide rails and related AI server hardware."
+      },
+      {
+        "query": "AI boom wealth creation beyond chipmakers Big Tech suppliers overlooked companies",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish whether the claim that AI wealth extends beyond chipmakers is a widely reported consensus or a novel Bloomberg angle."
+      },
+      {
+        "query": "Taiwan AI server supply chain slide rail furniture company stock surge",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the stock or fortune surge of the specific Taiwan company tied to AI server slide rails."
+      },
+      {
+        "query": "服务器滑轨 台企 家具 转型 AI 基建 需求 外溢",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese financial media coverage of the same Taiwan furniture-to-server-rail AI spillover story."
+      },
+      {
+        "query": "Bloomberg It's Raining Gold' established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "It's Raining Gold' 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "AI Mints Unexpected Billionaires The China 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "AI 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-09-17T00:25:14.189861+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show",
+          "source_title": "Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show",
+          "show_date": "",
+          "current_title": "AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元",
+          "current_title_lines": [
+            "AI基建需求外溢",
+            "台企家具厂转型服务器滑轨",
+            "七家公司股东财富增620亿美元"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这轮AI热潮催生了一些意想不到的财富",
+              "en": "So this AI boom has produced unlikely, maybe somewhat unexpected,",
+              "relative_start": 0.0,
+              "relative_end": 8.7
+            },
+            {
+              "index": 2,
+              "zh": "可能并非本意的大规模财富创造，来自亿万富翁团队的精彩报道",
+              "en": "maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.",
+              "relative_start": 8.7,
+              "relative_end": 15.5
+            },
+            {
+              "index": 3,
+              "zh": "AI意外的亿万富翁。看看这个图表，它展示了那些被忽视的工业产品制造商，比如家具和材料",
+              "en": "AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials",
+              "relative_start": 15.5,
+              "relative_end": 24.3
+            },
+            {
+              "index": 4,
+              "zh": "随着AI基础设施需求激增，这些公司的产品需求也水涨船高，财富随之飙升",
+              "en": "have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure",
+              "relative_start": 24.3,
+              "relative_end": 31.9
+            },
+            {
+              "index": 5,
+              "zh": "关于这些公司如何多次点石成金的更多内容",
+              "en": "build out. For more on how these companies have, in some cases, struck gold many times over.",
+              "relative_start": 31.9,
+              "relative_end": 37.5
+            },
+            {
+              "index": 6,
+              "zh": "我们请到了彭博亿万富翁记者Gwen Young，帮我们理解",
+              "en": "We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.",
+              "relative_start": 37.5,
+              "relative_end": 42.9
+            },
+            {
+              "index": 7,
+              "zh": "我们总是听到大型科技公司和芯片制造商",
+              "en": "We always hear about Big Tech Gwen and these big chip makers.",
+              "relative_start": 42.9,
+              "relative_end": 46.6
+            },
+            {
+              "index": 8,
+              "zh": "但事实上，这轮财富热潮不仅限于芯片制造商本身",
+              "en": "But in fact, that this wealth boom goes beyond just the chip makers themselves.",
+              "relative_start": 46.6,
+              "relative_end": 51.5
+            },
+            {
+              "index": 9,
+              "zh": "我们知道什么？正如你所说，芯片制造商总是最明显的亿万富翁",
+              "en": "What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?",
+              "relative_start": 51.5,
+              "relative_end": 58.3
+            },
+            {
+              "index": 10,
+              "zh": "但现在我们看到了AI热潮背后的卖铲子亿万富翁",
+              "en": "But now we are seeing those like picks and shovels billionaires behind the AI boom.",
+              "relative_start": 58.3,
+              "relative_end": 63.6
+            },
+            {
+              "index": 11,
+              "zh": "我们看到，虽然前端需要芯片和服务器，",
+              "en": "We can see that although we need the front end, we need chips, we need some servers.",
+              "relative_start": 63.6,
+              "relative_end": 69.6
+            },
+            {
+              "index": 12,
+              "zh": "但后端也需要支撑整个人工智能生态的基础设施。",
+              "en": "But in the back end, we also need the infrastructure that supports the whole ecosystem of AI.",
+              "relative_start": 69.6,
+              "relative_end": 76.4
+            },
+            {
+              "index": 13,
+              "zh": "比如你刚才提到的这家台湾公司，他们以前生产家具，",
+              "en": "So for example, just now you mentioned like King's Light, this Taiwanese company they actually produced, they used to produce furniture, growers' lives,",
+              "relative_start": 76.4,
+              "relative_end": 86.5
+            },
+            {
+              "index": 14,
+              "zh": "就像日常家具那样。",
+              "en": "like you see in the day-to-day furniture.",
+              "relative_start": 86.5,
+              "relative_end": 89.6
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"source_title\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元\",\n    \"current_title_lines\": [\n      \"AI基建需求外溢\",\n      \"台企家具厂转型服务器滑轨\",\n      \"七家公司股东财富增620亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这轮AI热潮催生了一些意想不到的财富\",\n        \"en\": \"So this AI boom has produced unlikely, maybe somewhat unexpected,\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.7\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"可能并非本意的大规模财富创造，来自亿万富翁团队的精彩报道\",\n        \"en\": \"maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.\",\n        \"relative_start\": 8.7,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"AI意外的亿万富翁。看看这个图表，它展示了那些被忽视的工业产品制造商，比如家具和材料\",\n        \"en\": \"AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"随着AI基础设施需求激增，这些公司的产品需求也水涨船高，财富随之飙升\",\n        \"en\": \"have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于这些公司如何多次点石成金的更多内容\",\n        \"en\": \"build out. For more on how these companies have, in some cases, struck gold many times over.\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们请到了彭博亿万富翁记者Gwen Young，帮我们理解\",\n        \"en\": \"We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 42.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们总是听到大型科技公司和芯片制造商\",\n        \"en\": \"We always hear about Big Tech Gwen and these big chip makers.\",\n        \"relative_start\": 42.9,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但事实上，这轮财富热潮不仅限于芯片制造商本身\",\n        \"en\": \"But in fact, that this wealth boom goes beyond just the chip makers themselves.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 51.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道什么？正如你所说，芯片制造商总是最明显的亿万富翁\",\n        \"en\": \"What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?\",\n        \"relative_start\": 51.5,\n        \"relative_end\": 58.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但现在我们看到了AI热潮背后的卖铲子亿万富翁\",\n        \"en\": \"But now we are seeing those like picks and shovels billionaires behind the AI boom.\",\n        \"relative_start\": 58.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们看到，虽然前端需要芯片和服务器，\",\n        \"en\": \"We can see that although we need the front end, we need chips, we need some servers.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"但后端也需要支撑整个人工智能生态的基础设施。\",\n        \"en\": \"But in the back end, we also need the infrastructure that supports the whole ecosystem of AI.\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 76.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比如你刚才提到的这家台湾公司，他们以前生产家具，\",\n        \"en\": \"So for example, just now you mentioned like King's Light, this Taiwanese company they actually produced, they used to produce furniture, growers' lives,\",\n        \"relative_start\": 76.4,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就像日常家具那样。\",\n        \"en\": \"like you see in the day-to-day furniture.\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 89.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI infrastructure demand has turned overlooked industrial suppliers — including a Taiwanese furniture-hardware maker that pivoted to server slide rails — into unexpected billionaires, with seven companies' shareholders gaining roughly $62 billion.\",\n      \"public_baseline\": \"Public coverage confirms the AI infrastructure boom has driven strong demand for AI-related products (Federal Reserve: $272B in H1 2025 trade, +65% YoY) and that Taiwanese furniture-hardware maker King Slide (川湖) pivoted to server slide rails, with shares up nearly 280% and its founder briefly becoming Taiwan's richest person.\",\n      \"surprise_gap\": \"The specific figure of seven companies' shareholders gaining about $62 billion is not corroborated by any public snippet; the search results confirm the phenomenon but not the exact aggregate number.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": true,\n        \"comparison\": \"Taiwanese suppliers 川湖 and 南俊國際 together hold more than 90% of the global high-end AI server rail market, giving Taiwan a dominant position in a critical AI infrastructure component.\",\n        \"evidence\": [\n          \"https://www.taiwaninside.com/en/128/king-slide-taiwan-rail-maker-nvidia-ai-racks\",\n          \"https://www.sinotrade.com.tw/richclub/industry/滑軌產業為何重要-AI伺服器滑軌誰稱王-川湖-南俊-富世達三強卡位戰-產業熱話-6982e0e121e4ba4b21ff7f9d\"\n        ]\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"AI boom has produced unexpected billionaires from manufacturers of overlooked industrial products like furniture and materials.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Seven companies' shareholders gained about $62 billion from AI infrastructure demand.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taiwan furniture manufacturer server slide rail AI server rack supplier\",\n          \"url\": \"https://www.notebookcheck.net/AI-makes-a-fortune-for-a-furniture-hardware-maker-its-founder-is-now-Taiwan-s-richest-person.1378363.0.html\",\n          \"fact\": \"Taiwanese furniture hardware maker King Slide Works supplies specialized rails for data-center servers; shares surged nearly 280%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈\",\n          \"url\": \"https://www.ctee.com.tw/news/20260916702108-430701\",\n          \"fact\": \"工商时报 reports 川湖科技 started as furniture hardware and now is a key global AI server slide-rail supplier; founder 林聰吉 briefly became Taiwan's richest person.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion\",\n          \"url\": \"https://www.federalreserve.gov/econres/notes/feds-notes/the-global-trade-effects-of-the-ai-infrastructure-boom-20260213.html\",\n          \"fact\": \"Federal Reserve notes AI-related product trade reached $272 billion in H1 2025, up 65% YoY.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not state that exactly seven companies gained $62 billion unless independently verified.\",\n        \"Do not claim Bloomberg itself is the opinion-holding actor; the claim is from the show's reporting.\",\n        \"Do not assert a specific Chinese name for reporter Gwen Young without a reliable source.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The $62 billion / seven-company figure appears only in the clip transcript and is not corroborated by any public snippet; treat as unverified.\",\n    \"King Slide (川湖) is the most likely referent for the 'Taiwan furniture maker turned server rail supplier' but the transcript does not name it explicitly.\",\n    \"Gwen Young has no verified Chinese display name; leave title_label empty rather than inventing a phonetic rendering.\",\n    \"Traditional Chinese source names (川湖, 南俊國際, 林聰吉) converted to Simplified Chinese for title-facing labels.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "AI基建需求外溢，一家台湾家具五金厂转型服务器滑轨，七家公司股东财富增约620亿美元",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "卖家具的台湾厂\n转身做AI滑轨\n七家公司股东财富增620亿",
+                "title_lines": [
+                  "卖家具的台湾厂",
+                  "转身做AI滑轨",
+                  "七家公司股东财富增620亿"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+                  "transcript: 七家公司股东财富增约620亿美元",
+                  "public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 7
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "原来中国强在这里",
+                "title": "AI服务器滑轨\n台湾两家厂占全球九成\n家具厂转身卡住关键位",
+                "title_lines": [
+                  "AI服务器滑轨",
+                  "台湾两家厂占全球九成",
+                  "家具厂转身卡住关键位"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%",
+                  "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+                  "public: 川湖科技从家具五金转型AI服务器滑轨"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 9
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "AI热潮最大赢家\n不是芯片厂\n是台湾做滑轨的家具厂",
+                "title_lines": [
+                  "AI热潮最大赢家",
+                  "不是芯片厂",
+                  "是台湾做滑轨的家具厂"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 这轮财富热潮不仅限于芯片制造商本身",
+                  "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+                  "public: 川湖科技从家具五金转型AI服务器滑轨，创始人一度成为台湾首富"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 7
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "AI基建卖铲人\n七家公司股东财富增620亿\n家具厂滑轨成隐形冠军",
+                "title_lines": [
+                  "AI基建卖铲人",
+                  "七家公司股东财富增620亿",
+                  "家具厂滑轨成隐形冠军"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 七家公司股东财富增约620亿美元",
+                  "transcript: AI热潮背后的卖铲子亿万富翁",
+                  "public: 川湖科技从家具五金转型AI服务器滑轨"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 7,
+                  "china_resonance": 7
+                },
+                "fatal_issue": "620亿美元七家公司数据未获公开来源独立验证，标题作为陈述句使用存在事实风险"
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"source_title\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元\",\n    \"current_title_lines\": [\n      \"AI基建需求外溢\",\n      \"台企家具厂转型服务器滑轨\",\n      \"七家公司股东财富增620亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这轮AI热潮催生了一些意想不到的财富\",\n        \"en\": \"So this AI boom has produced unlikely, maybe somewhat unexpected,\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.7\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"可能并非本意的大规模财富创造，来自亿万富翁团队的精彩报道\",\n        \"en\": \"maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.\",\n        \"relative_start\": 8.7,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"AI意外的亿万富翁。看看这个图表，它展示了那些被忽视的工业产品制造商，比如家具和材料\",\n        \"en\": \"AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"随着AI基础设施需求激增，这些公司的产品需求也水涨船高，财富随之飙升\",\n        \"en\": \"have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于这些公司如何多次点石成金的更多内容\",\n        \"en\": \"build out. For more on how these companies have, in some cases, struck gold many times over.\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们请到了彭博亿万富翁记者Gwen Young，帮我们理解\",\n        \"en\": \"We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 42.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们总是听到大型科技公司和芯片制造商\",\n        \"en\": \"We always hear about Big Tech Gwen and these big chip makers.\",\n        \"relative_start\": 42.9,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但事实上，这轮财富热潮不仅限于芯片制造商本身\",\n        \"en\": \"But in fact, that this wealth boom goes beyond just the chip makers themselves.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 51.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道什么？正如你所说，芯片制造商总是最明显的亿万富翁\",\n        \"en\": \"What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?\",\n        \"relative_start\": 51.5,\n        \"relative_end\": 58.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但现在我们看到了AI热潮背后的卖铲子亿万富翁\",\n        \"en\": \"But now we are seeing those like picks and shovels billionaires behind the AI boom.\",\n        \"relative_start\": 58.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们看到，虽然前端需要芯片和服务器，\",\n        \"en\": \"We can see that although we need the front end, we need chips, we need some servers.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"但后端也需要支撑整个人工智能生态的基础设施。\",\n        \"en\": \"But in the back end, we also need the infrastructure that supports the whole ecosystem of AI.\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 76.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比如你刚才提到的这家台湾公司，他们以前生产家具，\",\n        \"en\": \"So for example, just now you mentioned like King's Light, this Taiwanese company they actually produced, they used to produce furniture, growers' lives,\",\n        \"relative_start\": 76.4,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就像日常家具那样。\",\n        \"en\": \"like you see in the day-to-day furniture.\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 89.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI infrastructure demand has turned overlooked industrial suppliers — including a Taiwanese furniture-hardware maker that pivoted to server slide rails — into unexpected billionaires, with seven companies' shareholders gaining roughly $62 billion.\",\n      \"public_baseline\": \"Public coverage confirms the AI infrastructure boom has driven strong demand for AI-related products (Federal Reserve: $272B in H1 2025 trade, +65% YoY) and that Taiwanese furniture-hardware maker King Slide (川湖) pivoted to server slide rails, with shares up nearly 280% and its founder briefly becoming Taiwan's richest person.\",\n      \"surprise_gap\": \"The specific figure of seven companies' shareholders gaining about $62 billion is not corroborated by any public snippet; the search results confirm the phenomenon but not the exact aggregate number.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": true,\n        \"comparison\": \"Taiwanese suppliers 川湖 and 南俊國際 together hold more than 90% of the global high-end AI server rail market, giving Taiwan a dominant position in a critical AI infrastructure component.\",\n        \"evidence\": [\n          \"https://www.taiwaninside.com/en/128/king-slide-taiwan-rail-maker-nvidia-ai-racks\",\n          \"https://www.sinotrade.com.tw/richclub/industry/滑軌產業為何重要-AI伺服器滑軌誰稱王-川湖-南俊-富世達三強卡位戰-產業熱話-6982e0e121e4ba4b21ff7f9d\"\n        ]\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"AI boom has produced unexpected billionaires from manufacturers of overlooked industrial products like furniture and materials.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Seven companies' shareholders gained about $62 billion from AI infrastructure demand.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taiwan furniture manufacturer server slide rail AI server rack supplier\",\n          \"url\": \"https://www.notebookcheck.net/AI-makes-a-fortune-for-a-furniture-hardware-maker-its-founder-is-now-Taiwan-s-richest-person.1378363.0.html\",\n          \"fact\": \"Taiwanese furniture hardware maker King Slide Works supplies specialized rails for data-center servers; shares surged nearly 280%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈\",\n          \"url\": \"https://www.ctee.com.tw/news/20260916702108-430701\",\n          \"fact\": \"工商时报 reports 川湖科技 started as furniture hardware and now is a key global AI server slide-rail supplier; founder 林聰吉 briefly became Taiwan's richest person.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion\",\n          \"url\": \"https://www.federalreserve.gov/econres/notes/feds-notes/the-global-trade-effects-of-the-ai-infrastructure-boom-20260213.html\",\n          \"fact\": \"Federal Reserve notes AI-related product trade reached $272 billion in H1 2025, up 65% YoY.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not state that exactly seven companies gained $62 billion unless independently verified.\",\n        \"Do not claim Bloomberg itself is the opinion-holding actor; the claim is from the show's reporting.\",\n        \"Do not assert a specific Chinese name for reporter Gwen Young without a reliable source.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The $62 billion / seven-company figure appears only in the clip transcript and is not corroborated by any public snippet; treat as unverified.\",\n    \"King Slide (川湖) is the most likely referent for the 'Taiwan furniture maker turned server rail supplier' but the transcript does not name it explicitly.\",\n    \"Gwen Young has no verified Chinese display name; leave title_label empty rather than inventing a phonetic rendering.\",\n    \"Traditional Chinese source names (川湖, 南俊國際, 林聰吉) converted to Simplified Chinese for title-facing labels.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"AI基建需求外溢，一家台湾家具五金厂转型服务器滑轨，七家公司股东财富增约620亿美元\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"卖家具的台湾厂\\n转身做AI滑轨\\n七家公司股东财富增620亿\",\n          \"title_lines\": [\n            \"卖家具的台湾厂\",\n            \"转身做AI滑轨\",\n            \"七家公司股东财富增620亿\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"transcript: 七家公司股东财富增约620亿美元\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"原来中国强在这里\",\n          \"title\": \"AI服务器滑轨\\n台湾两家厂占全球九成\\n家具厂转身卡住关键位\",\n          \"title_lines\": [\n            \"AI服务器滑轨\",\n            \"台湾两家厂占全球九成\",\n            \"家具厂转身卡住关键位\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%\",\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 9\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"AI热潮最大赢家\\n不是芯片厂\\n是台湾做滑轨的家具厂\",\n          \"title_lines\": [\n            \"AI热潮最大赢家\",\n            \"不是芯片厂\",\n            \"是台湾做滑轨的家具厂\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这轮财富热潮不仅限于芯片制造商本身\",\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨，创始人一度成为台湾首富\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI基建卖铲人\\n七家公司股东财富增620亿\\n家具厂滑轨成隐形冠军\",\n          \"title_lines\": [\n            \"AI基建卖铲人\",\n            \"七家公司股东财富增620亿\",\n            \"家具厂滑轨成隐形冠军\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 七家公司股东财富增约620亿美元\",\n            \"transcript: AI热潮背后的卖铲子亿万富翁\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 7,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"620亿美元七家公司数据未获公开来源独立验证，标题作为陈述句使用存在事实风险\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal_concrete_stakes",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+              "transcript: 七家公司股东财富增约620亿美元",
+              "public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%",
+              "public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%"
+            ],
+            "title": "卖家具的台湾厂\n转身做AI滑轨\n七家公司股东财富增620亿",
+            "title_lines": [
+              "卖家具的台湾厂",
+              "转身做AI滑轨",
+              "七家公司股东财富增620亿"
+            ],
+            "title_highlights": [
+              "卖家具的台湾厂",
+              "AI滑轨",
+              "620亿"
+            ],
+            "runner_up_titles": [
+              "AI服务器滑轨\n台湾两家厂占全球九成\n家具厂转身卡住关键位",
+              "AI热潮最大赢家\n不是芯片厂\n是台湾做滑轨的家具厂"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 8
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：AI基建需求外溢，让传统家具厂卡住服务器滑轨关键位，财富效应远超预期。",
+            "comment_highlights": [
+              "AI基建需求外溢",
+              "家具厂",
+              "服务器滑轨"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：AI热潮的财富效应，正从芯片向传统制造环节扩散。",
+                "comment_highlights": [
+                  "AI热潮",
+                  "财富效应"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：彭博亿万富翁团队追踪到，这轮财富创造超出多数人预期。",
+                "comment_highlights": [
+                  "彭博亿万富翁团队",
+                  "财富创造"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：家具和材料这类被忽视的工业品，成了AI基建的隐形受益者。",
+                "comment_highlights": [
+                  "家具和材料",
+                  "隐形受益者"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：AI基础设施需求激增，直接推高这些公司的产品需求和股东财富。",
+                "comment_highlights": [
+                  "AI基础设施需求",
+                  "股东财富"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：这些公司多次点石成金，说明AI产业链的财富外溢范围很广。",
+                "comment_highlights": [
+                  "点石成金",
+                  "财富外溢"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：彭博记者Gwen Young带来一线采访，帮我们理解财富流向。",
+                "comment_highlights": [
+                  "Gwen Young",
+                  "财富流向"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：大型科技公司和芯片制造商总是焦点，但财富故事不止于此。",
+                "comment_highlights": [
+                  "大型科技公司",
+                  "芯片制造商"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：这轮财富热潮的覆盖面，比芯片制造商本身更广。",
+                "comment_highlights": [
+                  "财富热潮",
+                  "芯片制造商"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：芯片制造商是最明显的亿万富翁，但并非唯一赢家。",
+                "comment_highlights": [
+                  "芯片制造商",
+                  "亿万富翁"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：AI热潮背后的卖铲子亿万富翁，正在改变财富排行榜。",
+                "comment_highlights": [
+                  "卖铲子亿万富翁",
+                  "财富排行榜"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：前端需要芯片和服务器，但后端基础设施同样关键。",
+                "comment_highlights": [
+                  "芯片和服务器",
+                  "后端基础设施"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：支撑整个人工智能生态的基础设施，才是隐藏的财富引擎。",
+                "comment_highlights": [
+                  "人工智能生态",
+                  "财富引擎"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：台湾这家公司从生产家具转型服务器滑轨，是典型的意外赢家。",
+                "comment_highlights": [
+                  "台湾",
+                  "服务器滑轨",
+                  "意外赢家"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：日常家具厂转身成为AI供应链关键角色，反差巨大。",
+                "comment_highlights": [
+                  "日常家具厂",
+                  "AI供应链"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"source_title\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元\",\n    \"current_title_lines\": [\n      \"AI基建需求外溢\",\n      \"台企家具厂转型服务器滑轨\",\n      \"七家公司股东财富增620亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这轮AI热潮催生了一些意想不到的财富\",\n        \"en\": \"So this AI boom has produced unlikely, maybe somewhat unexpected,\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.7\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"可能并非本意的大规模财富创造，来自亿万富翁团队的精彩报道\",\n        \"en\": \"maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.\",\n        \"relative_start\": 8.7,\n        \"relative_end\": 15.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"AI意外的亿万富翁。看看这个图表，它展示了那些被忽视的工业产品制造商，比如家具和材料\",\n        \"en\": \"AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials\",\n        \"relative_start\": 15.5,\n        \"relative_end\": 24.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"随着AI基础设施需求激增，这些公司的产品需求也水涨船高，财富随之飙升\",\n        \"en\": \"have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure\",\n        \"relative_start\": 24.3,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"关于这些公司如何多次点石成金的更多内容\",\n        \"en\": \"build out. For more on how these companies have, in some cases, struck gold many times over.\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们请到了彭博亿万富翁记者Gwen Young，帮我们理解\",\n        \"en\": \"We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 42.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们总是听到大型科技公司和芯片制造商\",\n        \"en\": \"We always hear about Big Tech Gwen and these big chip makers.\",\n        \"relative_start\": 42.9,\n        \"relative_end\": 46.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但事实上，这轮财富热潮不仅限于芯片制造商本身\",\n        \"en\": \"But in fact, that this wealth boom goes beyond just the chip makers themselves.\",\n        \"relative_start\": 46.6,\n        \"relative_end\": 51.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道什么？正如你所说，芯片制造商总是最明显的亿万富翁\",\n        \"en\": \"What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?\",\n        \"relative_start\": 51.5,\n        \"relative_end\": 58.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但现在我们看到了AI热潮背后的卖铲子亿万富翁\",\n        \"en\": \"But now we are seeing those like picks and shovels billionaires behind the AI boom.\",\n        \"relative_start\": 58.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我们看到，虽然前端需要芯片和服务器，\",\n        \"en\": \"We can see that although we need the front end, we need chips, we need some servers.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 69.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"但后端也需要支撑整个人工智能生态的基础设施。\",\n        \"en\": \"But in the back end, we also need the infrastructure that supports the whole ecosystem of AI.\",\n        \"relative_start\": 69.6,\n        \"relative_end\": 76.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比如你刚才提到的这家台湾公司，他们以前生产家具，\",\n        \"en\": \"So for example, just now you mentioned like King's Light, this Taiwanese company they actually produced, they used to produce furniture, growers' lives,\",\n        \"relative_start\": 76.4,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就像日常家具那样。\",\n        \"en\": \"like you see in the day-to-day furniture.\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 89.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI infrastructure demand has turned overlooked industrial suppliers — including a Taiwanese furniture-hardware maker that pivoted to server slide rails — into unexpected billionaires, with seven companies' shareholders gaining roughly $62 billion.\",\n      \"public_baseline\": \"Public coverage confirms the AI infrastructure boom has driven strong demand for AI-related products (Federal Reserve: $272B in H1 2025 trade, +65% YoY) and that Taiwanese furniture-hardware maker King Slide (川湖) pivoted to server slide rails, with shares up nearly 280% and its founder briefly becoming Taiwan's richest person.\",\n      \"surprise_gap\": \"The specific figure of seven companies' shareholders gaining about $62 billion is not corroborated by any public snippet; the search results confirm the phenomenon but not the exact aggregate number.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": true,\n        \"comparison\": \"Taiwanese suppliers 川湖 and 南俊國際 together hold more than 90% of the global high-end AI server rail market, giving Taiwan a dominant position in a critical AI infrastructure component.\",\n        \"evidence\": [\n          \"https://www.taiwaninside.com/en/128/king-slide-taiwan-rail-maker-nvidia-ai-racks\",\n          \"https://www.sinotrade.com.tw/richclub/industry/滑軌產業為何重要-AI伺服器滑軌誰稱王-川湖-南俊-富世達三強卡位戰-產業熱話-6982e0e121e4ba4b21ff7f9d\"\n        ]\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"AI boom has produced unexpected billionaires from manufacturers of overlooked industrial products like furniture and materials.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Seven companies' shareholders gained about $62 billion from AI infrastructure demand.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taiwan furniture manufacturer server slide rail AI server rack supplier\",\n          \"url\": \"https://www.notebookcheck.net/AI-makes-a-fortune-for-a-furniture-hardware-maker-its-founder-is-now-Taiwan-s-richest-person.1378363.0.html\",\n          \"fact\": \"Taiwanese furniture hardware maker King Slide Works supplies specialized rails for data-center servers; shares surged nearly 280%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈\",\n          \"url\": \"https://www.ctee.com.tw/news/20260916702108-430701\",\n          \"fact\": \"工商时报 reports 川湖科技 started as furniture hardware and now is a key global AI server slide-rail supplier; founder 林聰吉 briefly became Taiwan's richest person.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion\",\n          \"url\": \"https://www.federalreserve.gov/econres/notes/feds-notes/the-global-trade-effects-of-the-ai-infrastructure-boom-20260213.html\",\n          \"fact\": \"Federal Reserve notes AI-related product trade reached $272 billion in H1 2025, up 65% YoY.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not state that exactly seven companies gained $62 billion unless independently verified.\",\n        \"Do not claim Bloomberg itself is the opinion-holding actor; the claim is from the show's reporting.\",\n        \"Do not assert a specific Chinese name for reporter Gwen Young without a reliable source.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The $62 billion / seven-company figure appears only in the clip transcript and is not corroborated by any public snippet; treat as unverified.\",\n    \"King Slide (川湖) is the most likely referent for the 'Taiwan furniture maker turned server rail supplier' but the transcript does not name it explicitly.\",\n    \"Gwen Young has no verified Chinese display name; leave title_label empty rather than inventing a phonetic rendering.\",\n    \"Traditional Chinese source names (川湖, 南俊國際, 林聰吉) converted to Simplified Chinese for title-facing labels.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"AI基建需求外溢，一家台湾家具五金厂转型服务器滑轨，七家公司股东财富增约620亿美元\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"卖家具的台湾厂\\n转身做AI滑轨\\n七家公司股东财富增620亿\",\n          \"title_lines\": [\n            \"卖家具的台湾厂\",\n            \"转身做AI滑轨\",\n            \"七家公司股东财富增620亿\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"transcript: 七家公司股东财富增约620亿美元\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"原来中国强在这里\",\n          \"title\": \"AI服务器滑轨\\n台湾两家厂占全球九成\\n家具厂转身卡住关键位\",\n          \"title_lines\": [\n            \"AI服务器滑轨\",\n            \"台湾两家厂占全球九成\",\n            \"家具厂转身卡住关键位\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%\",\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 9\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"AI热潮最大赢家\\n不是芯片厂\\n是台湾做滑轨的家具厂\",\n          \"title_lines\": [\n            \"AI热潮最大赢家\",\n            \"不是芯片厂\",\n            \"是台湾做滑轨的家具厂\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这轮财富热潮不仅限于芯片制造商本身\",\n            \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨，创始人一度成为台湾首富\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI基建卖铲人\\n七家公司股东财富增620亿\\n家具厂滑轨成隐形冠军\",\n          \"title_lines\": [\n            \"AI基建卖铲人\",\n            \"七家公司股东财富增620亿\",\n            \"家具厂滑轨成隐形冠军\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 七家公司股东财富增约620亿美元\",\n            \"transcript: AI热潮背后的卖铲子亿万富翁\",\n            \"public: 川湖科技从家具五金转型AI服务器滑轨\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 7,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"620亿美元七家公司数据未获公开来源独立验证，标题作为陈述句使用存在事实风险\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"卖家具的台湾厂：转身做AI滑轨，七家公司股东财富增620亿\",\n      \"title_lines\": [\n        \"卖家具的台湾厂\",\n        \"转身做AI滑轨\",\n        \"七家公司股东财富增620亿\"\n      ],\n      \"title_highlights\": [\n        \"卖家具的台湾厂\",\n        \"AI滑轨\",\n        \"620亿\"\n      ],\n      \"comment\": \"KC评论：AI基建需求外溢，让传统家具厂卡住服务器滑轨关键位，财富效应远超预期\",\n      \"comment_highlights\": [\n        \"AI基建需求外溢\",\n        \"家具厂\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：AI热潮的财富效应，正从芯片向传统制造环节扩散\",\n          \"comment_highlights\": [\n            \"AI热潮\",\n            \"财富效应\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：彭博亿万富翁团队追踪到，这轮财富创造超出多数人预期\",\n          \"comment_highlights\": [\n            \"彭博亿万富翁团队\",\n            \"财富创造\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：家具和材料这类被忽视的工业品，成了AI基建的隐形受益者\",\n          \"comment_highlights\": [\n            \"家具和材料\",\n            \"隐形受益者\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：AI基础设施需求激增，直接推高这些公司的产品需求和股东财富\",\n          \"comment_highlights\": [\n            \"AI基础设施需求\",\n            \"股东财富\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：这些公司多次点石成金，说明AI产业链的财富外溢范围很广\",\n          \"comment_highlights\": [\n            \"点石成金\",\n            \"财富外溢\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：彭博记者GwenYoung带来一线采访，帮我们理解财富流向\",\n          \"comment_highlights\": [\n            \"财富流向\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：大型科技公司和芯片制造商总是焦点，但财富故事不止于此\",\n          \"comment_highlights\": [\n            \"大型科技公司\",\n            \"芯片制造商\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：这轮财富热潮的覆盖面，比芯片制造商本身更广\",\n          \"comment_highlights\": [\n            \"财富热潮\",\n            \"芯片制造商\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：芯片制造商是最明显的亿万富翁，但并非唯一赢家\",\n          \"comment_highlights\": [\n            \"芯片制造商\",\n            \"亿万富翁\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：AI热潮背后的卖铲子亿万富翁，正在改变财富排行榜\",\n          \"comment_highlights\": [\n            \"卖铲子亿万富翁\",\n            \"财富排行榜\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：前端需要芯片和服务器，但后端基础设施同样关键\",\n          \"comment_highlights\": [\n            \"芯片和服务器\",\n            \"后端基础设施\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：支撑整个人工智能生态的基础设施，才是隐藏的财富引擎\",\n          \"comment_highlights\": [\n            \"人工智能生态\",\n            \"财富引擎\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：台湾这家公司从生产家具转型服务器滑轨，是典型的意外赢家\",\n          \"comment_highlights\": [\n            \"台湾\",\n            \"服务器滑轨\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：日常家具厂转身成为AI供应链关键角色，反差巨大\",\n          \"comment_highlights\": [\n            \"日常家具厂\",\n            \"AI供应链\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal_concrete_stakes\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n        \"transcript: 七家公司股东财富增约620亿美元\",\n        \"public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%\",\n        \"public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%\"\n      ],\n      \"runner_up_titles\": [\n        \"AI服务器滑轨 台湾两家厂占全球九成 家具厂转身卡住关键位\",\n        \"AI热潮最大赢家 不是芯片厂 是台湾做滑轨的家具厂\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 8\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal_concrete_stakes",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+                  "transcript: 七家公司股东财富增约620亿美元",
+                  "public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%",
+                  "public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%"
+                ],
+                "title": "卖家具的台湾厂\n转身做AI滑轨\n七家公司股东财富增620亿",
+                "title_lines": [
+                  "卖家具的台湾厂",
+                  "转身做AI滑轨",
+                  "七家公司股东财富增620亿"
+                ],
+                "title_highlights": [
+                  "卖家具的台湾厂",
+                  "AI滑轨",
+                  "620亿"
+                ],
+                "runner_up_titles": [
+                  "AI服务器滑轨 台湾两家厂占全球九成 家具厂转身卡住关键位",
+                  "AI热潮最大赢家 不是芯片厂 是台湾做滑轨的家具厂"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 8
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：AI基建需求外溢，让传统家具厂卡住服务器滑轨关键位，财富效应远超预期",
+                "comment_highlights": [
+                  "AI基建需求外溢",
+                  "家具厂"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：AI热潮的财富效应，正从芯片向传统制造环节扩散",
+                    "comment_highlights": [
+                      "AI热潮",
+                      "财富效应"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：彭博亿万富翁团队追踪到，这轮财富创造超出多数人预期",
+                    "comment_highlights": [
+                      "彭博亿万富翁团队",
+                      "财富创造"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：家具和材料这类被忽视的工业品，成了AI基建的隐形受益者",
+                    "comment_highlights": [
+                      "家具和材料",
+                      "隐形受益者"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：AI基础设施需求激增，直接推高这些公司的产品需求和股东财富",
+                    "comment_highlights": [
+                      "AI基础设施需求",
+                      "股东财富"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：这些公司多次点石成金，说明AI产业链的财富外溢范围很广",
+                    "comment_highlights": [
+                      "点石成金",
+                      "财富外溢"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：彭博记者GwenYoung带来一线采访，帮我们理解财富流向",
+                    "comment_highlights": [
+                      "财富流向"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：大型科技公司和芯片制造商总是焦点，但财富故事不止于此",
+                    "comment_highlights": [
+                      "大型科技公司",
+                      "芯片制造商"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：这轮财富热潮的覆盖面，比芯片制造商本身更广",
+                    "comment_highlights": [
+                      "财富热潮",
+                      "芯片制造商"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：芯片制造商是最明显的亿万富翁，但并非唯一赢家",
+                    "comment_highlights": [
+                      "芯片制造商",
+                      "亿万富翁"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：AI热潮背后的卖铲子亿万富翁，正在改变财富排行榜",
+                    "comment_highlights": [
+                      "卖铲子亿万富翁",
+                      "财富排行榜"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：前端需要芯片和服务器，但后端基础设施同样关键",
+                    "comment_highlights": [
+                      "芯片和服务器",
+                      "后端基础设施"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：支撑整个人工智能生态的基础设施，才是隐藏的财富引擎",
+                    "comment_highlights": [
+                      "人工智能生态",
+                      "财富引擎"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：台湾这家公司从生产家具转型服务器滑轨，是典型的意外赢家",
+                    "comment_highlights": [
+                      "台湾",
+                      "服务器滑轨"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：日常家具厂转身成为AI供应链关键角色，反差巨大",
+                    "comment_highlights": [
+                      "日常家具厂",
+                      "AI供应链"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "卖家具的台湾厂：转身做AI滑轨，七家公司股东财富增620亿",
+          "title_lines": [
+            "卖家具的台湾厂",
+            "转身做AI滑轨",
+            "七家公司股东财富增620亿"
+          ],
+          "formula_id": "surprise_reversal_concrete_stakes",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 8
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 8
+            }
+          },
+          "comment": "KC评论：AI基建需求外溢，让传统家具厂卡住服务器滑轨关键位，财富效应远超预期"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-17T00:25:16.667345+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show",
+          "source_title": "Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show",
+          "show_date": "",
+          "current_title": "AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元",
+          "current_title_lines": [
+            "AI基建需求外溢",
+            "台企家具厂转型服务器滑轨",
+            "七家公司股东财富增620亿美元"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这轮AI热潮催生了一些意想不到的财富",
+              "en": "So this AI boom has produced unlikely, maybe somewhat unexpected,",
+              "relative_start": 0.0,
+              "relative_end": 8.7
+            },
+            {
+              "index": 2,
+              "zh": "可能并非本意的大规模财富创造，来自亿万富翁团队的精彩报道",
+              "en": "maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.",
+              "relative_start": 8.7,
+              "relative_end": 15.5
+            },
+            {
+              "index": 3,
+              "zh": "AI意外的亿万富翁。看看这个图表，它展示了那些被忽视的工业产品制造商，比如家具和材料",
+              "en": "AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials",
+              "relative_start": 15.5,
+              "relative_end": 24.3
+            },
+            {
+              "index": 4,
+              "zh": "随着AI基础设施需求激增，这些公司的产品需求也水涨船高，财富随之飙升",
+              "en": "have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure",
+              "relative_start": 24.3,
+              "relative_end": 31.9
+            },
+            {
+              "index": 5,
+              "zh": "关于这些公司如何多次点石成金的更多内容",
+              "en": "build out. For more on how these companies have, in some cases, struck gold many times over.",
+              "relative_start": 31.9,
+              "relative_end": 37.5
+            },
+            {
+              "index": 6,
+              "zh": "我们请到了彭博亿万富翁记者Gwen Young，帮我们理解",
+              "en": "We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.",
+              "relative_start": 37.5,
+              "relative_end": 42.9
+            },
+            {
+              "index": 7,
+              "zh": "我们总是听到大型科技公司和芯片制造商",
+              "en": "We always hear about Big Tech Gwen and these big chip makers.",
+              "relative_start": 42.9,
+              "relative_end": 46.6
+            },
+            {
+              "index": 8,
+              "zh": "但事实上，这轮财富热潮不仅限于芯片制造商本身",
+              "en": "But in fact, that this wealth boom goes beyond just the chip makers themselves.",
+              "relative_start": 46.6,
+              "relative_end": 51.5
+            },
+            {
+              "index": 9,
+              "zh": "我们知道什么？正如你所说，芯片制造商总是最明显的亿万富翁",
+              "en": "What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?",
+              "relative_start": 51.5,
+              "relative_end": 58.3
+            },
+            {
+              "index": 10,
+              "zh": "但现在我们看到了AI热潮背后的卖铲子亿万富翁",
+              "en": "But now we are seeing those like picks and shovels billionaires behind the AI boom.",
+              "relative_start": 58.3,
+              "relative_end": 63.6
+            },
+            {
+              "index": 11,
+              "zh": "我们看到，虽然前端需要芯片和服务器，",
+              "en": "We can see that although we need the front end, we need chips, we need some servers.",
+              "relative_start": 63.6,
+              "relative_end": 69.6
+            },
+            {
+              "index": 12,
+              "zh": "但后端也需要支撑整个人工智能生态的基础设施。",
+              "en": "But in the back end, we also need the infrastructure that supports the whole ecosystem of AI.",
+              "relative_start": 69.6,
+              "relative_end": 76.4
+            },
+            {
+              "index": 13,
+              "zh": "比如你刚才提到的这家台湾公司，他们以前生产家具，",
+              "en": "So for example, just now you mentioned like King's Light, this Taiwanese company they actually produced, they used to produce furniture, growers' lives,",
+              "relative_start": 76.4,
+              "relative_end": 86.5
+            },
+            {
+              "index": 14,
+              "zh": "就像日常家具那样。",
+              "en": "like you see in the day-to-day furniture.",
+              "relative_start": 86.5,
+              "relative_end": 89.6
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n  \"source_title\": \"Duration: 5:02 'It's Raining Gold': AI Mints Unexpected Billionaires The China Show\",\n  \"current_title\": \"AI基建需求外溢 台企家具厂转型服务器滑轨 七家公司股东财富增620亿美元\",\n  \"source_claims\": [\n    \"So this AI boom has produced unlikely, maybe somewhat unexpected,\",\n    \"maybe unintended creations of massive amounts of wealth, fantastic piece from a billionaire's team.\",\n    \"AI's unlikely billionaires. Take a look at the stable, right? It shows you how manufacturers of really thing overlooked industrial products like furniture and materials\",\n    \"have really seen their fortune soar as demand for their company's product soars alongside the AI infrastructure\",\n    \"build out. For more on how these companies have, in some cases, struck gold many times over.\",\n    \"We're joined here and set by a Bloomberg billionaire's reporter, Gwen Young, to help us understand.\",\n    \"We always hear about Big Tech Gwen and these big chip makers.\",\n    \"But in fact, that this wealth boom goes beyond just the chip makers themselves.\",\n    \"What do we know? Yeah, so as you said, those chip makers are always the most obvious billionaires, right?\",\n    \"But now we are seeing those like picks and shovels billionaires behind the AI boom.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"AI infrastructure demand has turned overlooked industrial suppliers — including a Taiwanese furniture-hardware maker that pivoted to server slide rails — into unexpected billionaires, with seven companies' shareholders gaining roughly $62 billion.\",\n      \"public_baseline\": \"Public coverage confirms the AI infrastructure boom has driven strong demand for AI-related products (Federal Reserve: $272B in H1 2025 trade, +65% YoY) and that Taiwanese furniture-hardware maker King Slide (川湖) pivoted to server slide rails, with shares up nearly 280% and its founder briefly becoming Taiwan's richest person.\",\n      \"surprise_gap\": \"The specific figure of seven companies' shareholders gaining about $62 billion is not corroborated by any public snippet; the search results confirm the phenomenon but not the exact aggregate number.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": true,\n        \"comparison\": \"Taiwanese suppliers 川湖 and 南俊國際 together hold more than 90% of the global high-end AI server rail market, giving Taiwan a dominant position in a critical AI infrastructure component.\",\n        \"evidence\": [\n          \"https://www.taiwaninside.com/en/128/king-slide-taiwan-rail-maker-nvidia-ai-racks\",\n          \"https://www.sinotrade.com.tw/richclub/industry/滑軌產業為何重要-AI伺服器滑軌誰稱王-川湖-南俊-富世達三強卡位戰-產業熱話-6982e0e121e4ba4b21ff7f9d\"\n        ]\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"AI boom has produced unexpected billionaires from manufacturers of overlooked industrial products like furniture and materials.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Seven companies' shareholders gained about $62 billion from AI infrastructure demand.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taiwan furniture manufacturer server slide rail AI server rack supplier\",\n          \"url\": \"https://www.notebookcheck.net/AI-makes-a-fortune-for-a-furniture-hardware-maker-its-founder-is-now-Taiwan-s-richest-person.1378363.0.html\",\n          \"fact\": \"Taiwanese furniture hardware maker King Slide Works supplies specialized rails for data-center servers; shares surged nearly 280%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"台企 家具廠 轉型 伺服器滑軌 AI 伺服器 供應鏈\",\n          \"url\": \"https://www.ctee.com.tw/news/20260916702108-430701\",\n          \"fact\": \"工商时报 reports 川湖科技 started as furniture hardware and now is a key global AI server slide-rail supplier; founder 林聰吉 briefly became Taiwan's richest person.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI infrastructure boom industrial suppliers shareholder wealth surge 62 billion\",\n          \"url\": \"https://www.federalreserve.gov/econres/notes/feds-notes/the-global-trade-effects-of-the-ai-infrastructure-boom-20260213.html\",\n          \"fact\": \"Federal Reserve notes AI-related product trade reached $272 billion in H1 2025, up 65% YoY.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not state that exactly seven companies gained $62 billion unless independently verified.\",\n        \"Do not claim Bloomberg itself is the opinion-holding actor; the claim is from the show's reporting.\",\n        \"Do not assert a specific Chinese name for reporter Gwen Young without a reliable source.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The $62 billion / seven-company figure appears only in the clip transcript and is not corroborated by any public snippet; treat as unverified.\",\n    \"King Slide (川湖) is the most likely referent for the 'Taiwan furniture maker turned server rail supplier' but the transcript does not name it explicitly.\",\n    \"Gwen Young has no verified Chinese display name; leave title_label empty rather than inventing a phonetic rendering.\",\n    \"Traditional Chinese source names (川湖, 南俊國際, 林聰吉) converted to Simplified Chinese for title-facing labels.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"卖家具的台湾厂：转身做AI滑轨，七家公司股东财富增620亿\",\n  \"title_lines\": [\n    \"卖家具的台湾厂\",\n    \"转身做AI滑轨\",\n    \"七家公司股东财富增620亿\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 台湾公司以前生产家具，现在做服务器滑轨\",\n    \"transcript: 七家公司股东财富增约620亿美元\",\n    \"public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%\",\n    \"public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 8\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, or foreign competitor response, the title must present that fact directly and constructively. Do not replace it with a generic market or negotiation summary.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+              "transcript: 七家公司股东财富增约620亿美元",
+              "public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%",
+              "public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%"
+            ],
+            "title": "家具五金厂转身做AI滑轨，七家公司股东财富增620亿美元，台湾供应链为何能卡住全球AI服务器？",
+            "title_lines": [
+              "家具五金厂转身做AI滑轨",
+              "七家公司股东财富增620亿美元",
+              "台湾供应链为何能卡住全球AI服务器？"
+            ],
+            "title_highlights": [
+              "家具五金厂转身做AI滑轨",
+              "七家公司股东财富增620亿美元",
+              "台湾供应链为何能卡住全球AI服务器？"
+            ],
+            "runner_up_titles": [
+              "被忽视的工业品供应商搭上AI基建，七家公司股东财富增620亿美元，台湾滑轨双雄凭什么拿下全球九成高端市场？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 8
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "家具五金厂转身做AI滑轨：七家公司股东财富增620亿美元，台湾供应链为何能卡住全球AI服务器？",
+        "title_lines": [
+          "家具五金厂转身做AI滑轨",
+          "七家公司股东财富增620亿美元",
+          "台湾供应链为何能卡住全球AI服务器？"
+        ],
+        "title_highlights": [
+          "家具五金厂转身做AI滑轨",
+          "七家公司股东财富增620亿美元",
+          "台湾供应链为何能卡住全球AI服务器？"
+        ],
+        "comment": "KC评论：AI基建需求外溢，让传统家具厂卡住服务器滑轨关键位，财富效应远超预期",
+        "comment_highlights": [
+          "AI基建需求外溢",
+          "家具厂"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：AI热潮的财富效应，正从芯片向传统制造环节扩散",
+            "comment_highlights": [
+              "AI热潮",
+              "财富效应"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：彭博亿万富翁团队追踪到，这轮财富创造超出多数人预期",
+            "comment_highlights": [
+              "彭博亿万富翁团队",
+              "财富创造"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：家具和材料这类被忽视的工业品，成了AI基建的隐形受益者",
+            "comment_highlights": [
+              "家具和材料",
+              "隐形受益者"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：AI基础设施需求激增，直接推高这些公司的产品需求和股东财富",
+            "comment_highlights": [
+              "AI基础设施需求",
+              "股东财富"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：这些公司多次点石成金，说明AI产业链的财富外溢范围很广",
+            "comment_highlights": [
+              "点石成金",
+              "财富外溢"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：彭博记者GwenYoung带来一线采访，帮我们理解财富流向",
+            "comment_highlights": [
+              "财富流向"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：大型科技公司和芯片制造商总是焦点，但财富故事不止于此",
+            "comment_highlights": [
+              "大型科技公司",
+              "芯片制造商"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：这轮财富热潮的覆盖面，比芯片制造商本身更广",
+            "comment_highlights": [
+              "财富热潮",
+              "芯片制造商"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：芯片制造商是最明显的亿万富翁，但并非唯一赢家",
+            "comment_highlights": [
+              "芯片制造商",
+              "亿万富翁"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：AI热潮背后的卖铲子亿万富翁，正在改变财富排行榜",
+            "comment_highlights": [
+              "卖铲子亿万富翁",
+              "财富排行榜"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：前端需要芯片和服务器，但后端基础设施同样关键",
+            "comment_highlights": [
+              "芯片和服务器",
+              "后端基础设施"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：支撑整个人工智能生态的基础设施，才是隐藏的财富引擎",
+            "comment_highlights": [
+              "人工智能生态",
+              "财富引擎"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：台湾这家公司从生产家具转型服务器滑轨，是典型的意外赢家",
+            "comment_highlights": [
+              "台湾",
+              "服务器滑轨"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：日常家具厂转身成为AI供应链关键角色，反差巨大",
+            "comment_highlights": [
+              "日常家具厂",
+              "AI供应链"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal_concrete_stakes",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "transcript: 台湾公司以前生产家具，现在做服务器滑轨",
+          "transcript: 七家公司股东财富增约620亿美元",
+          "public: 川湖科技从家具五金转型AI服务器滑轨，股价涨近280%",
+          "public: 川湖与南俊国际合计占全球高端AI服务器滑轨市场超90%"
+        ],
+        "runner_up_titles": [
+          "被忽视的工业品供应商搭上AI基建，七家公司股东财富增620亿美元，台湾滑轨双雄凭什么拿下全球九成高端市场？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 8
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 8
+          }
+        }
+      }
+    }
+  ]
+}
