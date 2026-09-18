@@ -1,0 +1,1295 @@
+{
+  "timestamp_utc": "2026-09-18T00:15:55.088552+00:00",
+  "plan_path": "work/top-videos/09_chelsea_owner_clearlake_capital_buys_out_boehly_walter/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Clearlake Capital",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Clearlake Capital Group, L.P.",
+        "preferred_en": "Clearlake Capital Group, L.P.",
+        "official_zh": "清湖资本集团",
+        "common_zh": "清湖资本",
+        "title_label": "清湖资本",
+        "preferred_zh": "清湖资本",
+        "aliases": [
+          "Clear Lake",
+          "Clearlake资本"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://news.qq.com/rain/a/20260917A02EL500",
+          "https://www.zaobao.com.sg/news/sports/story20260917-9690954"
+        ],
+        "evidence": "腾讯新闻、联合早报、搜狐均使用“清湖资本”，腾讯公告稿给出全称“清湖资本集团（Clearlake Capital Group, L.P.）”。"
+      },
+      {
+        "source_text": "Todd Boehly",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Todd Boehly",
+        "preferred_en": "Todd Boehly",
+        "official_zh": "",
+        "common_zh": "托德·伯利",
+        "title_label": "伯利",
+        "preferred_zh": "托德·伯利",
+        "aliases": [
+          "Todd Bowley",
+          "托德-伯利"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "腾讯新闻、联合早报、搜狐均使用“托德·伯利”，中文媒体常简称“伯利”。"
+      },
+      {
+        "source_text": "Mark Walter",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Mark Walter",
+        "preferred_en": "Mark Walter",
+        "official_zh": "",
+        "common_zh": "马克·沃尔特",
+        "title_label": "沃尔特",
+        "preferred_zh": "马克·沃尔特",
+        "aliases": [
+          "Mark Walters",
+          "马克·沃尔特斯"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "联合早报、腾讯新闻、搜狐均使用“马克·沃尔特”，中文媒体常简称“沃尔特”。"
+      },
+      {
+        "source_text": "Chelsea",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Chelsea Football Club",
+        "preferred_en": "Chelsea Football Club",
+        "official_zh": "切尔西足球俱乐部",
+        "common_zh": "切尔西",
+        "title_label": "切尔西",
+        "preferred_zh": "切尔西",
+        "aliases": [
+          "切尔西足球会"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "腾讯新闻、联合早报、搜狐均使用“切尔西”，官方公告稿使用“切尔西足球俱乐部”。"
+      },
+      {
+        "source_text": "Los Angeles Lakers",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles Lakers",
+        "preferred_en": "Los Angeles Lakers",
+        "official_zh": "洛杉矶湖人队",
+        "common_zh": "湖人",
+        "title_label": "湖人",
+        "preferred_zh": "湖人",
+        "aliases": [
+          "洛杉矶湖人"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "搜狐中文报道使用“前湖人老板沃尔特”；NYT 报道确认 Walter 与湖人交易背景。"
+      },
+      {
+        "source_text": "Dodgers",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles Dodgers",
+        "preferred_en": "Los Angeles Dodgers",
+        "official_zh": "洛杉矶道奇队",
+        "common_zh": "道奇",
+        "title_label": "道奇",
+        "preferred_zh": "道奇",
+        "aliases": [
+          "洛杉矶道奇"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "NY Post 报道称 Walter 自2012年起为道奇控股老板；中文常用“道奇”，但本次检索未取得两条独立中文来源。"
+      },
+      {
+        "source_text": "Guggenheim Partners",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Guggenheim Partners",
+        "preferred_en": "Guggenheim Partners",
+        "official_zh": "",
+        "common_zh": "古根海姆合伙公司",
+        "title_label": "古根海姆",
+        "preferred_zh": "古根海姆合伙公司",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "BBC 报道称 Walter 为全球金融公司 Guggenheim Partners 的联合所有人兼首席执行官；中文译名未在本次检索中获得两条独立来源。"
+      },
+      {
+        "source_text": "Cadillac F1",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Cadillac F1",
+        "preferred_en": "Cadillac F1",
+        "official_zh": "",
+        "common_zh": "凯迪拉克F1车队",
+        "title_label": "凯迪拉克F1",
+        "preferred_zh": "凯迪拉克F1车队",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "仅出现在转录中，公开检索未返回可验证的中文官方名称。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "enterprise value",
+        "clip_indexes": [],
+        "context": "Chelsea ownership transaction valuation",
+        "sense": "total value of a company including debt, minus cash",
+        "preferred_zh": "企业价值",
+        "title_label": "企业价值",
+        "avoid_zh": [
+          "公司价值",
+          "市值"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "fire sale",
+        "clip_indexes": [],
+        "context": "Mark Walter selling assets amid financial pressure",
+        "sense": "rapid sale of assets at heavily discounted prices",
+        "preferred_zh": "贱卖",
+        "title_label": "贱卖",
+        "avoid_zh": [
+          "火灾销售",
+          "火售"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Clearlake Capital buys out Todd Boehly and Mark Walter, gaining full control of Chelsea in a deal that sets the enterprise value at almost $7 billion.",
+        "public_baseline": "ESPN 报道称 Walter 与 Boehly 合计获得 9.5 亿英镑（约 13 亿美元），交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务；FT 报道同样给出 9.5 亿英镑。",
+        "surprise_gap": "转录称企业价值“近 70 亿美元”，与 ESPN/FT 报道的约 67 亿美元基本一致，但中文标题“近70亿美元”与部分中文报道的“10亿镑交易”口径存在差异，需注意估值口径（含债务 vs 股权对价）。",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes",
+          "surprise_reversal"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Clearlake 全面接管切尔西，交易企业价值近 70 亿美元；伯利与沃尔特出售股份。"
+          },
+          {
+            "kind": "public",
+            "query": "Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value",
+            "url": "https://www.espn.com/soccer/story/_/id/49960706/chelsea-clarlake-capital-todd-boehly-mark-walter-ownership",
+            "fact": "ESPN 报道 Walter 与 Boehly 合计获得 9.5 亿英镑，交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务。"
+          },
+          {
+            "kind": "public",
+            "query": "Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value",
+            "url": "https://www.ft.com/content/a9099b59-b5ed-47e2-bdf3-ae26f5dd7317?syn-25a6b1a6=1",
+            "fact": "FT 报道 Walter 与 Boehly 以 9.5 亿英镑出售切尔西股份给 Clearlake。"
+          },
+          {
+            "kind": "public",
+            "query": "Mark Walter sold Los Angeles Lakers minority stake 2021",
+            "url": "https://www.nytimes.com/athletic/7517341/2026/08/17/mark-walter-lakers-sale-federal-investigation/",
+            "fact": "NYT 报道 Walter 2021 年首次购入湖人少数股权，2025 年从 Buss 家族收购球队，当时估值创纪录达 100 亿美元。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得声称 Clearlake 以 70 亿美元现金收购切尔西",
+          "不得声称沃尔特出售湖人是因为财务危机（公开报道仅提及联邦调查背景，未证实因果关系）",
+          "不得声称切尔西日常运营将发生重大变化（俱乐部声明称无变化）"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "转录中“Todd Bowley”为“Todd Boehly”的拼写错误，已列入 aliases。",
+      "转录中“Clear Lake”为“Clearlake”的拼写错误，已列入 aliases。",
+      "转录中“Mark Walters”为“Mark Walter”的拼写错误，已列入 aliases。",
+      "中文标题“近70亿美元”与 ESPN/FT 报道的约 67 亿美元基本一致，但需注意估值口径差异。",
+      "“Cadillac F1”中文译名未获两条独立来源，confidence 为 low。"
+    ],
+    "research_queries": [
+      {
+        "query": "Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact transaction, parties, and reported $7 billion enterprise value for Chelsea."
+      },
+      {
+        "query": "切尔西 Clearlake Capital 全面接管 伯利 沃尔特 70亿美元",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify established Chinese names for Clearlake Capital, Todd Boehly, Mark Walter, and Chelsea in Chinese financial media."
+      },
+      {
+        "query": "Mark Walter sold Los Angeles Lakers minority stake 2021",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Mark Walter sold the Lakers and the public context around that sale."
+      },
+      {
+        "query": "Mark Walter Guggenheim Dodgers Cadillac F1 not selling statement",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Mark Walter or Dodgers president said they are not selling the Dodgers or Cadillac F1."
+      },
+      {
+        "query": "Todd Boehly Mark Walter Chelsea ownership dysfunction 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline on reported tension between Chelsea's ownership groups."
+      },
+      {
+        "query": "Chelsea FC financial losses money pit Premier League 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether Chelsea has been a financial money pit and the scale of losses."
+      },
+      {
+        "query": "Mark Walter empire financial turmoil 2025 Guggenheim",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about turmoil in Mark Walter's business empire as impetus for the sale."
+      },
+      {
+        "query": "Clearlake Capital Chelsea full control official announcement 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find official club or Clearlake statements confirming full control and management changes."
+      },
+      {
+        "query": "Todd Boehly Chelsea chairman role after Clearlake buyout",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Boehly's exact title and whether he remains chairman after the transaction."
+      },
+      {
+        "query": "Mark Walter sold Lakers fire sale speculation",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that when Mark Walter sold the Lakers, people expected a fire sale."
+      },
+      {
+        "query": "切尔西 伯利 清湖资本 估值 70亿美元 2025",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Chinese-language coverage of the Chelsea valuation and Clearlake takeover."
+      },
+      {
+        "query": "Bloomberg Chelsea Owner Clearlake Capital Buys Out established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元？",
+      "title_lines": [
+        "清湖资本全面接管",
+        "伯利沃尔特同时退出",
+        "估值近70亿美元？"
+      ],
+      "formula_id": "concrete_stakes_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "他说的是真的吗",
+      "evidence_basis": [
+        "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+        "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+        "transcript: 俱乐部买下主席伯利和董事沃尔特的股份",
+        "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+      ],
+      "runner_up_titles": [
+        "清湖资本全面接管切尔西：伯利沃尔特退出，近70亿美元估值合理吗？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-18T00:15:51.945426+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter",
+          "source_title": "Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter",
+          "show_date": "",
+          "current_title": "切尔西母公司Clearlake全面接管 交易估值近70亿美元",
+          "current_title_lines": [
+            "切尔西母公司Clearlake",
+            "全面接管俱乐部股权",
+            "交易估值近70亿美元"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "切尔西足球俱乐部进行多项管理层调整。俱乐部买下主席托德·伯利和董事马克·沃尔特的股份，交易对球队的企业估值接近",
+              "en": "Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost",
+              "relative_start": 0.0,
+              "relative_end": 10.2
+            },
+            {
+              "index": 2,
+              "zh": "70亿美元。清湖资本现在获得俱乐部完全控制权。彭博高级记者兰德尔·威廉姆斯在此，兰德尔，团队在报道这两大股东集团之间",
+              "en": "$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much",
+              "relative_start": 10.2,
+              "relative_end": 20.6
+            },
+            {
+              "index": 3,
+              "zh": "有多不满方面做得很好。伯利出售的推动力是什么？只是马克·沃尔特商业版图的动荡吗？这就是基础。当",
+              "en": "discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when",
+              "relative_start": 20.6,
+              "relative_end": 30.5
+            },
+            {
+              "index": 4,
+              "zh": "马克·沃尔特卖掉湖人时，大家都以为会有甩卖，我认为这就是原因，因为清湖交易，我觉得当你审视时",
+              "en": "Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it",
+              "relative_start": 30.5,
+              "relative_end": 41.4
+            },
+            {
+              "index": 5,
+              "zh": "道奇队总裁说过，看，我们不会卖道奇队，不会卖凯迪拉克F1，但这两样他处理掉了。我向你们俩提个问题，我",
+              "en": "he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I",
+              "relative_start": 41.4,
+              "relative_end": 51.4
+            },
+            {
+              "index": 6,
+              "zh": "应该说，我旁边坐的并非无利害关系的人，这事还在继续。我极度有偏见，我承认。这支球队近年有点混乱，对吧？",
+              "en": "should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?",
+              "relative_start": 51.4,
+              "relative_end": 59.7
+            },
+            {
+              "index": 7,
+              "zh": "是的，混乱，而且还是个烧钱的无底洞。公平地说，本赛季他们看起来强多了，但没错，他们在这家俱乐部投入了大量资金",
+              "en": "Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this",
+              "relative_start": 59.7,
+              "relative_end": 70.5
+            },
+            {
+              "index": 8,
+              "zh": "也很像。这和那些情况非常相似，你知道，你花很多钱在认为会成功的事情上，但并没有。所有权功能失调在体育界并不新鲜，但这事",
+              "en": "club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something",
+              "relative_start": 70.5,
+              "relative_end": 79.8
+            },
+            {
+              "index": 9,
+              "zh": "可能需要解决，随着马克·沃尔特那边持续发生的事情，你知道他获得一些额外资金来帮助解决那些问题，可能是个解决方案。很多火要扑灭。是的，没错，不是",
+              "en": "that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help",
+              "relative_start": 79.8,
+              "relative_end": 89.0
+            },
+            {
+              "index": 10,
+              "zh": "很多火要扑灭。是的，没错，不是",
+              "en": "throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a",
+              "relative_start": 89.0,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"source_title\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"show_date\": \"\",\n    \"current_title\": \"切尔西母公司Clearlake全面接管 交易估值近70亿美元\",\n    \"current_title_lines\": [\n      \"切尔西母公司Clearlake\",\n      \"全面接管俱乐部股权\",\n      \"交易估值近70亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"切尔西足球俱乐部进行多项管理层调整。俱乐部买下主席托德·伯利和董事马克·沃尔特的股份，交易对球队的企业估值接近\",\n        \"en\": \"Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"70亿美元。清湖资本现在获得俱乐部完全控制权。彭博高级记者兰德尔·威廉姆斯在此，兰德尔，团队在报道这两大股东集团之间\",\n        \"en\": \"$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有多不满方面做得很好。伯利出售的推动力是什么？只是马克·沃尔特商业版图的动荡吗？这就是基础。当\",\n        \"en\": \"discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when\",\n        \"relative_start\": 20.6,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"马克·沃尔特卖掉湖人时，大家都以为会有甩卖，我认为这就是原因，因为清湖交易，我觉得当你审视时\",\n        \"en\": \"Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"道奇队总裁说过，看，我们不会卖道奇队，不会卖凯迪拉克F1，但这两样他处理掉了。我向你们俩提个问题，我\",\n        \"en\": \"he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 51.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"应该说，我旁边坐的并非无利害关系的人，这事还在继续。我极度有偏见，我承认。这支球队近年有点混乱，对吧？\",\n        \"en\": \"should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?\",\n        \"relative_start\": 51.4,\n        \"relative_end\": 59.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"是的，混乱，而且还是个烧钱的无底洞。公平地说，本赛季他们看起来强多了，但没错，他们在这家俱乐部投入了大量资金\",\n        \"en\": \"Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this\",\n        \"relative_start\": 59.7,\n        \"relative_end\": 70.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"也很像。这和那些情况非常相似，你知道，你花很多钱在认为会成功的事情上，但并没有。所有权功能失调在体育界并不新鲜，但这事\",\n        \"en\": \"club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something\",\n        \"relative_start\": 70.5,\n        \"relative_end\": 79.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"可能需要解决，随着马克·沃尔特那边持续发生的事情，你知道他获得一些额外资金来帮助解决那些问题，可能是个解决方案。很多火要扑灭。是的，没错，不是\",\n        \"en\": \"that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help\",\n        \"relative_start\": 79.8,\n        \"relative_end\": 89.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"很多火要扑灭。是的，没错，不是\",\n        \"en\": \"throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a\",\n        \"relative_start\": 89.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Clearlake Capital\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Clearlake Capital Group, L.P.\",\n      \"preferred_en\": \"Clearlake Capital Group, L.P.\",\n      \"official_zh\": \"清湖资本集团\",\n      \"common_zh\": \"清湖资本\",\n      \"title_label\": \"清湖资本\",\n      \"preferred_zh\": \"清湖资本\",\n      \"aliases\": [\n        \"Clear Lake\",\n        \"Clearlake资本\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://news.qq.com/rain/a/20260917A02EL500\",\n        \"https://www.zaobao.com.sg/news/sports/story20260917-9690954\"\n      ],\n      \"evidence\": \"腾讯新闻、联合早报、搜狐均使用“清湖资本”，腾讯公告稿给出全称“清湖资本集团（Clearlake Capital Group, L.P.）”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Clearlake Capital buys out Todd Boehly and Mark Walter, gaining full control of Chelsea in a deal that sets the enterprise value at almost $7 billion.\",\n      \"public_baseline\": \"ESPN 报道称 Walter 与 Boehly 合计获得 9.5 亿英镑（约 13 亿美元），交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务；FT 报道同样给出 9.5 亿英镑。\",\n      \"surprise_gap\": \"转录称企业价值“近 70 亿美元”，与 ESPN/FT 报道的约 67 亿美元基本一致，但中文标题“近70亿美元”与部分中文报道的“10亿镑交易”口径存在差异，需注意估值口径（含债务 vs 股权对价）。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Clearlake 全面接管切尔西，交易企业价值近 70 亿美元；伯利与沃尔特出售股份。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.espn.com/soccer/story/_/id/49960706/chelsea-clarlake-capital-todd-boehly-mark-walter-ownership\",\n          \"fact\": \"ESPN 报道 Walter 与 Boehly 合计获得 9.5 亿英镑，交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.ft.com/content/a9099b59-b5ed-47e2-bdf3-ae26f5dd7317?syn-25a6b1a6=1\",\n          \"fact\": \"FT 报道 Walter 与 Boehly 以 9.5 亿英镑出售切尔西股份给 Clearlake。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers minority stake 2021\",\n          \"url\": \"https://www.nytimes.com/athletic/7517341/2026/08/17/mark-walter-lakers-sale-federal-investigation/\",\n          \"fact\": \"NYT 报道 Walter 2021 年首次购入湖人少数股权，2025 年从 Buss 家族收购球队，当时估值创纪录达 100 亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称 Clearlake 以 70 亿美元现金收购切尔西\",\n        \"不得声称沃尔特出售湖人是因为财务危机（公开报道仅提及联邦调查背景，未证实因果关系）\",\n        \"不得声称切尔西日常运营将发生重大变化（俱乐部声明称无变化）\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"转录中“Todd Bowley”为“Todd Boehly”的拼写错误，已列入 aliases。\",\n    \"转录中“Clear Lake”为“Clearlake”的拼写错误，已列入 aliases。\",\n    \"转录中“Mark Walters”为“Mark Walter”的拼写错误，已列入 aliases。\",\n    \"中文标题“近70亿美元”与 ESPN/FT 报道的约 67 亿美元基本一致，但需注意估值口径差异。\",\n    \"“Cadillac F1”中文译名未获两条独立来源，confidence 为 low。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "清湖资本买下伯利与沃尔特股份，获得切尔西完全控制权，交易企业价值接近70亿美元。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "切尔西估值近70亿美元",
+                "title_lines": [
+                  "清湖资本全面接管",
+                  "伯利沃尔特同时退出",
+                  "估值近70亿美元"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+                  "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "伯利退出切尔西",
+                "title_lines": [
+                  "清湖资本买下全部股份",
+                  "两大股东彻底分手",
+                  "到底发生了什么"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+                  "transcript: 俱乐部买下主席伯利和董事沃尔特的股份"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "切尔西烧钱时代结束",
+                "title_lines": [
+                  "清湖资本全面接管",
+                  "伯利沃尔特套现离场",
+                  "近70亿美元估值"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 他们在这家俱乐部投入了大量资金，是个烧钱的无底洞",
+                  "transcript: 交易企业估值接近70亿美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "切尔西管理层混乱多年",
+                "title_lines": [
+                  "清湖资本接管后",
+                  "记者直言俱乐部像无底洞",
+                  "近70亿美元交易落定"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 这支球队近年有点混乱，而且还是个烧钱的无底洞",
+                  "transcript: 所有权功能失调在体育界并不新鲜"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"source_title\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"show_date\": \"\",\n    \"current_title\": \"切尔西母公司Clearlake全面接管 交易估值近70亿美元\",\n    \"current_title_lines\": [\n      \"切尔西母公司Clearlake\",\n      \"全面接管俱乐部股权\",\n      \"交易估值近70亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"切尔西足球俱乐部进行多项管理层调整。俱乐部买下主席托德·伯利和董事马克·沃尔特的股份，交易对球队的企业估值接近\",\n        \"en\": \"Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"70亿美元。清湖资本现在获得俱乐部完全控制权。彭博高级记者兰德尔·威廉姆斯在此，兰德尔，团队在报道这两大股东集团之间\",\n        \"en\": \"$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有多不满方面做得很好。伯利出售的推动力是什么？只是马克·沃尔特商业版图的动荡吗？这就是基础。当\",\n        \"en\": \"discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when\",\n        \"relative_start\": 20.6,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"马克·沃尔特卖掉湖人时，大家都以为会有甩卖，我认为这就是原因，因为清湖交易，我觉得当你审视时\",\n        \"en\": \"Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"道奇队总裁说过，看，我们不会卖道奇队，不会卖凯迪拉克F1，但这两样他处理掉了。我向你们俩提个问题，我\",\n        \"en\": \"he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 51.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"应该说，我旁边坐的并非无利害关系的人，这事还在继续。我极度有偏见，我承认。这支球队近年有点混乱，对吧？\",\n        \"en\": \"should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?\",\n        \"relative_start\": 51.4,\n        \"relative_end\": 59.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"是的，混乱，而且还是个烧钱的无底洞。公平地说，本赛季他们看起来强多了，但没错，他们在这家俱乐部投入了大量资金\",\n        \"en\": \"Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this\",\n        \"relative_start\": 59.7,\n        \"relative_end\": 70.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"也很像。这和那些情况非常相似，你知道，你花很多钱在认为会成功的事情上，但并没有。所有权功能失调在体育界并不新鲜，但这事\",\n        \"en\": \"club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something\",\n        \"relative_start\": 70.5,\n        \"relative_end\": 79.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"可能需要解决，随着马克·沃尔特那边持续发生的事情，你知道他获得一些额外资金来帮助解决那些问题，可能是个解决方案。很多火要扑灭。是的，没错，不是\",\n        \"en\": \"that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help\",\n        \"relative_start\": 79.8,\n        \"relative_end\": 89.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"很多火要扑灭。是的，没错，不是\",\n        \"en\": \"throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a\",\n        \"relative_start\": 89.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Clearlake Capital\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Clearlake Capital Group, L.P.\",\n      \"preferred_en\": \"Clearlake Capital Group, L.P.\",\n      \"official_zh\": \"清湖资本集团\",\n      \"common_zh\": \"清湖资本\",\n      \"title_label\": \"清湖资本\",\n      \"preferred_zh\": \"清湖资本\",\n      \"aliases\": [\n        \"Clear Lake\",\n        \"Clearlake资本\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://news.qq.com/rain/a/20260917A02EL500\",\n        \"https://www.zaobao.com.sg/news/sports/story20260917-9690954\"\n      ],\n      \"evidence\": \"腾讯新闻、联合早报、搜狐均使用“清湖资本”，腾讯公告稿给出全称“清湖资本集团（Clearlake Capital Group, L.P.）”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Clearlake Capital buys out Todd Boehly and Mark Walter, gaining full control of Chelsea in a deal that sets the enterprise value at almost $7 billion.\",\n      \"public_baseline\": \"ESPN 报道称 Walter 与 Boehly 合计获得 9.5 亿英镑（约 13 亿美元），交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务；FT 报道同样给出 9.5 亿英镑。\",\n      \"surprise_gap\": \"转录称企业价值“近 70 亿美元”，与 ESPN/FT 报道的约 67 亿美元基本一致，但中文标题“近70亿美元”与部分中文报道的“10亿镑交易”口径存在差异，需注意估值口径（含债务 vs 股权对价）。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Clearlake 全面接管切尔西，交易企业价值近 70 亿美元；伯利与沃尔特出售股份。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.espn.com/soccer/story/_/id/49960706/chelsea-clarlake-capital-todd-boehly-mark-walter-ownership\",\n          \"fact\": \"ESPN 报道 Walter 与 Boehly 合计获得 9.5 亿英镑，交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.ft.com/content/a9099b59-b5ed-47e2-bdf3-ae26f5dd7317?syn-25a6b1a6=1\",\n          \"fact\": \"FT 报道 Walter 与 Boehly 以 9.5 亿英镑出售切尔西股份给 Clearlake。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers minority stake 2021\",\n          \"url\": \"https://www.nytimes.com/athletic/7517341/2026/08/17/mark-walter-lakers-sale-federal-investigation/\",\n          \"fact\": \"NYT 报道 Walter 2021 年首次购入湖人少数股权，2025 年从 Buss 家族收购球队，当时估值创纪录达 100 亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称 Clearlake 以 70 亿美元现金收购切尔西\",\n        \"不得声称沃尔特出售湖人是因为财务危机（公开报道仅提及联邦调查背景，未证实因果关系）\",\n        \"不得声称切尔西日常运营将发生重大变化（俱乐部声明称无变化）\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"转录中“Todd Bowley”为“Todd Boehly”的拼写错误，已列入 aliases。\",\n    \"转录中“Clear Lake”为“Clearlake”的拼写错误，已列入 aliases。\",\n    \"转录中“Mark Walters”为“Mark Walter”的拼写错误，已列入 aliases。\",\n    \"中文标题“近70亿美元”与 ESPN/FT 报道的约 67 亿美元基本一致，但需注意估值口径差异。\",\n    \"“Cadillac F1”中文译名未获两条独立来源，confidence 为 low。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"清湖资本买下伯利与沃尔特股份，获得切尔西完全控制权，交易企业价值接近70亿美元。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"切尔西估值近70亿美元\",\n          \"title_lines\": [\n            \"清湖资本全面接管\",\n            \"伯利沃尔特同时退出\",\n            \"估值近70亿美元\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元\",\n            \"ESPN/FT: 交易对俱乐部估值约50亿英镑含债务\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"伯利退出切尔西\",\n          \"title_lines\": [\n            \"清湖资本买下全部股份\",\n            \"两大股东彻底分手\",\n            \"到底发生了什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗\",\n            \"transcript: 俱乐部买下主席伯利和董事沃尔特的股份\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"切尔西烧钱时代结束\",\n          \"title_lines\": [\n            \"清湖资本全面接管\",\n            \"伯利沃尔特套现离场\",\n            \"近70亿美元估值\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 他们在这家俱乐部投入了大量资金，是个烧钱的无底洞\",\n            \"transcript: 交易企业估值接近70亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"切尔西管理层混乱多年\",\n          \"title_lines\": [\n            \"清湖资本接管后\",\n            \"记者直言俱乐部像无底洞\",\n            \"近70亿美元交易落定\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这支球队近年有点混乱，而且还是个烧钱的无底洞\",\n            \"transcript: 所有权功能失调在体育界并不新鲜\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "concrete_stakes_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+              "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+              "transcript: 俱乐部买下主席伯利和董事沃尔特的股份",
+              "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+            ],
+            "title": "清湖资本全面接管切尔西",
+            "title_lines": [
+              "清湖资本全面接管",
+              "伯利沃尔特同时退出",
+              "估值近70亿美元"
+            ],
+            "title_highlights": [
+              "清湖资本",
+              "伯利沃尔特同时退出",
+              "近70亿美元"
+            ],
+            "runner_up_titles": [
+              "切尔西估值近70亿美元",
+              "伯利退出切尔西"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注。",
+            "comment_highlights": [
+              "两大股东同时退出",
+              "完全控制权"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：俱乐部买下伯利和沃尔特股份，交易结构值得细看。",
+                "comment_highlights": [
+                  "买下伯利和沃尔特股份"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：清湖资本获得完全控制权，企业估值近70亿美元。",
+                "comment_highlights": [
+                  "完全控制权",
+                  "近70亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：记者追问伯利出售的推动力，指向沃尔特商业版图变化。",
+                "comment_highlights": [
+                  "沃尔特商业版图变化"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：沃尔特卖掉湖人时曾被猜测甩卖，如今清湖交易给出另一种解释。",
+                "comment_highlights": [
+                  "清湖交易"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：道奇队和凯迪拉克F1不卖，但这两项资产被处理掉了。",
+                "comment_highlights": [
+                  "这两项资产被处理掉了"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：记者承认自己有偏见，并直言俱乐部近年有点混乱。",
+                "comment_highlights": [
+                  "有点混乱"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：俱乐部被形容为烧钱的无底洞，但本赛季表现有所回升。",
+                "comment_highlights": [
+                  "烧钱的无底洞"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：所有权功能失调在体育界并不新鲜，投入与回报常不匹配。",
+                "comment_highlights": [
+                  "所有权功能失调"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：沃尔特获得额外资金，可能用于解决其他资产的问题。",
+                "comment_highlights": [
+                  "额外资金"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：很多火要扑灭，交易背后的资金安排仍是关键。",
+                "comment_highlights": [
+                  "很多火要扑灭"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"source_title\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n    \"show_date\": \"\",\n    \"current_title\": \"切尔西母公司Clearlake全面接管 交易估值近70亿美元\",\n    \"current_title_lines\": [\n      \"切尔西母公司Clearlake\",\n      \"全面接管俱乐部股权\",\n      \"交易估值近70亿美元\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"切尔西足球俱乐部进行多项管理层调整。俱乐部买下主席托德·伯利和董事马克·沃尔特的股份，交易对球队的企业估值接近\",\n        \"en\": \"Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"70亿美元。清湖资本现在获得俱乐部完全控制权。彭博高级记者兰德尔·威廉姆斯在此，兰德尔，团队在报道这两大股东集团之间\",\n        \"en\": \"$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much\",\n        \"relative_start\": 10.2,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"有多不满方面做得很好。伯利出售的推动力是什么？只是马克·沃尔特商业版图的动荡吗？这就是基础。当\",\n        \"en\": \"discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when\",\n        \"relative_start\": 20.6,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"马克·沃尔特卖掉湖人时，大家都以为会有甩卖，我认为这就是原因，因为清湖交易，我觉得当你审视时\",\n        \"en\": \"Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"道奇队总裁说过，看，我们不会卖道奇队，不会卖凯迪拉克F1，但这两样他处理掉了。我向你们俩提个问题，我\",\n        \"en\": \"he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 51.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"应该说，我旁边坐的并非无利害关系的人，这事还在继续。我极度有偏见，我承认。这支球队近年有点混乱，对吧？\",\n        \"en\": \"should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?\",\n        \"relative_start\": 51.4,\n        \"relative_end\": 59.7\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"是的，混乱，而且还是个烧钱的无底洞。公平地说，本赛季他们看起来强多了，但没错，他们在这家俱乐部投入了大量资金\",\n        \"en\": \"Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this\",\n        \"relative_start\": 59.7,\n        \"relative_end\": 70.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"也很像。这和那些情况非常相似，你知道，你花很多钱在认为会成功的事情上，但并没有。所有权功能失调在体育界并不新鲜，但这事\",\n        \"en\": \"club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something\",\n        \"relative_start\": 70.5,\n        \"relative_end\": 79.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"可能需要解决，随着马克·沃尔特那边持续发生的事情，你知道他获得一些额外资金来帮助解决那些问题，可能是个解决方案。很多火要扑灭。是的，没错，不是\",\n        \"en\": \"that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help\",\n        \"relative_start\": 79.8,\n        \"relative_end\": 89.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"很多火要扑灭。是的，没错，不是\",\n        \"en\": \"throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a\",\n        \"relative_start\": 89.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Clearlake Capital\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Clearlake Capital Group, L.P.\",\n      \"preferred_en\": \"Clearlake Capital Group, L.P.\",\n      \"official_zh\": \"清湖资本集团\",\n      \"common_zh\": \"清湖资本\",\n      \"title_label\": \"清湖资本\",\n      \"preferred_zh\": \"清湖资本\",\n      \"aliases\": [\n        \"Clear Lake\",\n        \"Clearlake资本\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://news.qq.com/rain/a/20260917A02EL500\",\n        \"https://www.zaobao.com.sg/news/sports/story20260917-9690954\"\n      ],\n      \"evidence\": \"腾讯新闻、联合早报、搜狐均使用“清湖资本”，腾讯公告稿给出全称“清湖资本集团（Clearlake Capital Group, L.P.）”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Clearlake Capital buys out Todd Boehly and Mark Walter, gaining full control of Chelsea in a deal that sets the enterprise value at almost $7 billion.\",\n      \"public_baseline\": \"ESPN 报道称 Walter 与 Boehly 合计获得 9.5 亿英镑（约 13 亿美元），交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务；FT 报道同样给出 9.5 亿英镑。\",\n      \"surprise_gap\": \"转录称企业价值“近 70 亿美元”，与 ESPN/FT 报道的约 67 亿美元基本一致，但中文标题“近70亿美元”与部分中文报道的“10亿镑交易”口径存在差异，需注意估值口径（含债务 vs 股权对价）。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Clearlake 全面接管切尔西，交易企业价值近 70 亿美元；伯利与沃尔特出售股份。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.espn.com/soccer/story/_/id/49960706/chelsea-clarlake-capital-todd-boehly-mark-walter-ownership\",\n          \"fact\": \"ESPN 报道 Walter 与 Boehly 合计获得 9.5 亿英镑，交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.ft.com/content/a9099b59-b5ed-47e2-bdf3-ae26f5dd7317?syn-25a6b1a6=1\",\n          \"fact\": \"FT 报道 Walter 与 Boehly 以 9.5 亿英镑出售切尔西股份给 Clearlake。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers minority stake 2021\",\n          \"url\": \"https://www.nytimes.com/athletic/7517341/2026/08/17/mark-walter-lakers-sale-federal-investigation/\",\n          \"fact\": \"NYT 报道 Walter 2021 年首次购入湖人少数股权，2025 年从 Buss 家族收购球队，当时估值创纪录达 100 亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称 Clearlake 以 70 亿美元现金收购切尔西\",\n        \"不得声称沃尔特出售湖人是因为财务危机（公开报道仅提及联邦调查背景，未证实因果关系）\",\n        \"不得声称切尔西日常运营将发生重大变化（俱乐部声明称无变化）\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"转录中“Todd Bowley”为“Todd Boehly”的拼写错误，已列入 aliases。\",\n    \"转录中“Clear Lake”为“Clearlake”的拼写错误，已列入 aliases。\",\n    \"转录中“Mark Walters”为“Mark Walter”的拼写错误，已列入 aliases。\",\n    \"中文标题“近70亿美元”与 ESPN/FT 报道的约 67 亿美元基本一致，但需注意估值口径差异。\",\n    \"“Cadillac F1”中文译名未获两条独立来源，confidence 为 low。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"清湖资本买下伯利与沃尔特股份，获得切尔西完全控制权，交易企业价值接近70亿美元。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"切尔西估值近70亿美元\",\n          \"title_lines\": [\n            \"清湖资本全面接管\",\n            \"伯利沃尔特同时退出\",\n            \"估值近70亿美元\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元\",\n            \"ESPN/FT: 交易对俱乐部估值约50亿英镑含债务\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"伯利退出切尔西\",\n          \"title_lines\": [\n            \"清湖资本买下全部股份\",\n            \"两大股东彻底分手\",\n            \"到底发生了什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗\",\n            \"transcript: 俱乐部买下主席伯利和董事沃尔特的股份\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"切尔西烧钱时代结束\",\n          \"title_lines\": [\n            \"清湖资本全面接管\",\n            \"伯利沃尔特套现离场\",\n            \"近70亿美元估值\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 他们在这家俱乐部投入了大量资金，是个烧钱的无底洞\",\n            \"transcript: 交易企业估值接近70亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"切尔西管理层混乱多年\",\n          \"title_lines\": [\n            \"清湖资本接管后\",\n            \"记者直言俱乐部像无底洞\",\n            \"近70亿美元交易落定\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这支球队近年有点混乱，而且还是个烧钱的无底洞\",\n            \"transcript: 所有权功能失调在体育界并不新鲜\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元\",\n      \"title_lines\": [\n        \"清湖资本全面接管\",\n        \"伯利沃尔特同时退出\",\n        \"估值近70亿美元\"\n      ],\n      \"title_highlights\": [\n        \"清湖资本\",\n        \"伯利沃尔特同时退出\",\n        \"近70亿美元\"\n      ],\n      \"comment\": \"KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注\",\n      \"comment_highlights\": [\n        \"两大股东同时退出\",\n        \"完全控制权\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：俱乐部买下伯利和沃尔特股份，交易结构值得细看\",\n          \"comment_highlights\": [\n            \"买下伯利和沃尔特股份\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：清湖资本获得完全控制权，企业估值近70亿美元\",\n          \"comment_highlights\": [\n            \"完全控制权\",\n            \"近70亿美元\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：记者追问伯利出售的推动力，指向沃尔特商业版图变化\",\n          \"comment_highlights\": [\n            \"沃尔特商业版图变化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：沃尔特卖掉湖人时曾被猜测甩卖，如今清湖交易给出另一种解释\",\n          \"comment_highlights\": [\n            \"清湖交易\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：道奇队和凯迪拉克F1不卖，但这两项资产被处理掉了\",\n          \"comment_highlights\": [\n            \"这两项资产被处理掉了\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：记者承认自己有偏见，并直言俱乐部近年有点混乱\",\n          \"comment_highlights\": [\n            \"有点混乱\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：俱乐部被形容为烧钱的无底洞，但本赛季表现有所回升\",\n          \"comment_highlights\": [\n            \"烧钱的无底洞\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：所有权功能失调在体育界并不新鲜，投入与回报常不匹配\",\n          \"comment_highlights\": [\n            \"所有权功能失调\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：沃尔特获得额外资金，可能用于解决其他资产的问题\",\n          \"comment_highlights\": [\n            \"额外资金\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：很多火要扑灭，交易背后的资金安排仍是关键\",\n          \"comment_highlights\": [\n            \"很多火要扑灭\"\n          ]\n        }\n      ],\n      \"formula_id\": \"concrete_stakes_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"他说的是真的吗\",\n      \"evidence_basis\": [\n        \"transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元\",\n        \"transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗\",\n        \"transcript: 俱乐部买下主席伯利和董事沃尔特的股份\",\n        \"ESPN/FT: 交易对俱乐部估值约50亿英镑含债务\"\n      ],\n      \"runner_up_titles\": [\n        \"切尔西估值近70亿美元\",\n        \"伯利退出切尔西\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "concrete_stakes_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "他说的是真的吗",
+                "evidence_basis": [
+                  "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+                  "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+                  "transcript: 俱乐部买下主席伯利和董事马克·沃尔特的股份",
+                  "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+                ],
+                "title": "清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元",
+                "title_lines": [
+                  "清湖资本全面接管",
+                  "伯利沃尔特同时退出",
+                  "估值近70亿美元"
+                ],
+                "title_highlights": [
+                  "清湖资本",
+                  "伯利沃尔特同时退出",
+                  "近70亿美元"
+                ],
+                "runner_up_titles": [
+                  "切尔西估值近70亿美元",
+                  "伯利退出切尔西"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注",
+                "comment_highlights": [
+                  "两大股东同时退出",
+                  "完全控制权"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：俱乐部买下伯利和沃尔特股份，交易结构值得细看",
+                    "comment_highlights": [
+                      "买下伯利和沃尔特股份"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：清湖资本获得完全控制权，企业估值近70亿美元",
+                    "comment_highlights": [
+                      "完全控制权",
+                      "近70亿美元"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：记者追问伯利出售的推动力，指向沃尔特商业版图变化",
+                    "comment_highlights": [
+                      "沃尔特商业版图变化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：沃尔特卖掉湖人时曾被猜测甩卖，如今清湖交易给出另一种解释",
+                    "comment_highlights": [
+                      "清湖交易"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：道奇队和凯迪拉克F1不卖，但这两项资产被处理掉了",
+                    "comment_highlights": [
+                      "这两项资产被处理掉了"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：记者承认自己有偏见，并直言俱乐部近年有点混乱",
+                    "comment_highlights": [
+                      "有点混乱"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：俱乐部被形容为烧钱的无底洞，但本赛季表现有所回升",
+                    "comment_highlights": [
+                      "烧钱的无底洞"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：所有权功能失调在体育界并不新鲜，投入与回报常不匹配",
+                    "comment_highlights": [
+                      "所有权功能失调"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：沃尔特获得额外资金，可能用于解决其他资产的问题",
+                    "comment_highlights": [
+                      "额外资金"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：很多火要扑灭，交易背后的资金安排仍是关键",
+                    "comment_highlights": [
+                      "很多火要扑灭"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元",
+          "title_lines": [
+            "清湖资本全面接管",
+            "伯利沃尔特同时退出",
+            "估值近70亿美元"
+          ],
+          "formula_id": "concrete_stakes_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "他说的是真的吗",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-18T00:15:54.104771+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter",
+          "source_title": "Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter",
+          "show_date": "",
+          "current_title": "切尔西母公司Clearlake全面接管 交易估值近70亿美元",
+          "current_title_lines": [
+            "切尔西母公司Clearlake",
+            "全面接管俱乐部股权",
+            "交易估值近70亿美元"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "切尔西足球俱乐部进行多项管理层调整。俱乐部买下主席托德·伯利和董事马克·沃尔特的股份，交易对球队的企业估值接近",
+              "en": "Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost",
+              "relative_start": 0.0,
+              "relative_end": 10.2
+            },
+            {
+              "index": 2,
+              "zh": "70亿美元。清湖资本现在获得俱乐部完全控制权。彭博高级记者兰德尔·威廉姆斯在此，兰德尔，团队在报道这两大股东集团之间",
+              "en": "$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much",
+              "relative_start": 10.2,
+              "relative_end": 20.6
+            },
+            {
+              "index": 3,
+              "zh": "有多不满方面做得很好。伯利出售的推动力是什么？只是马克·沃尔特商业版图的动荡吗？这就是基础。当",
+              "en": "discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when",
+              "relative_start": 20.6,
+              "relative_end": 30.5
+            },
+            {
+              "index": 4,
+              "zh": "马克·沃尔特卖掉湖人时，大家都以为会有甩卖，我认为这就是原因，因为清湖交易，我觉得当你审视时",
+              "en": "Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it",
+              "relative_start": 30.5,
+              "relative_end": 41.4
+            },
+            {
+              "index": 5,
+              "zh": "道奇队总裁说过，看，我们不会卖道奇队，不会卖凯迪拉克F1，但这两样他处理掉了。我向你们俩提个问题，我",
+              "en": "he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I",
+              "relative_start": 41.4,
+              "relative_end": 51.4
+            },
+            {
+              "index": 6,
+              "zh": "应该说，我旁边坐的并非无利害关系的人，这事还在继续。我极度有偏见，我承认。这支球队近年有点混乱，对吧？",
+              "en": "should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?",
+              "relative_start": 51.4,
+              "relative_end": 59.7
+            },
+            {
+              "index": 7,
+              "zh": "是的，混乱，而且还是个烧钱的无底洞。公平地说，本赛季他们看起来强多了，但没错，他们在这家俱乐部投入了大量资金",
+              "en": "Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this",
+              "relative_start": 59.7,
+              "relative_end": 70.5
+            },
+            {
+              "index": 8,
+              "zh": "也很像。这和那些情况非常相似，你知道，你花很多钱在认为会成功的事情上，但并没有。所有权功能失调在体育界并不新鲜，但这事",
+              "en": "club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something",
+              "relative_start": 70.5,
+              "relative_end": 79.8
+            },
+            {
+              "index": 9,
+              "zh": "可能需要解决，随着马克·沃尔特那边持续发生的事情，你知道他获得一些额外资金来帮助解决那些问题，可能是个解决方案。很多火要扑灭。是的，没错，不是",
+              "en": "that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help",
+              "relative_start": 79.8,
+              "relative_end": 89.0
+            },
+            {
+              "index": 10,
+              "zh": "很多火要扑灭。是的，没错，不是",
+              "en": "throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a",
+              "relative_start": 89.0,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n  \"source_title\": \"Duration: 1:54 Chelsea Owner Clearlake Capital Buys Out Boehly, Walter\",\n  \"current_title\": \"切尔西母公司Clearlake全面接管 交易估值近70亿美元\",\n  \"source_claims\": [\n    \"Chelsea football club making a number of management changes. The club is buying Chairman Todd Bowley and director Mark Walter and Deals that set the enterprise value for the team of almost\",\n    \"$7 billion. Clear Lake now gets full control of the club. Here with Moore's Bloomberg senior reporter Randall Williams and Randall Yun the team have been doing a great job of reporting just how much\",\n    \"discontent there had been between these two ownership groups. What is the impetus for Bowley selling? Is it just the turmoil in Mark Walter's empire? That's that's the basis of it. I mean when\",\n    \"Mark Walter sold the Lakers everyone thought that there was going to be a fire sale and I think this was the reason why because of because of the clear lake deal and and I think when you look at it\",\n    \"he has said in his the president of the Dodger said look we're not selling the Dodgers we're not selling Cadillac F1 but these two things he got rid of. Let me put a question to both you and I\",\n    \"should say I'm sitting next to somebody who's not a disinterested party and it's going on. I'm incredibly biased I will accept that. This is a franchise that's been kind of a mess in recent years no?\",\n    \"Yeah a mess and one that has been a money pit too. I think it's fair to say to be fair this season they're looking much stronger but yeah I mean this has been a lot of money that they've thrown at this\",\n    \"club too pretty. It's very similar to the meds and that you know you you spend a lot of money on things that you think will be successful and it hasn't been an ownership dysfunction is not something\",\n    \"that is new to sports but this is something that probably needed to be resolved and with the ongoing things that are happening in Mark Walters world you know him getting and some extra money to help\",\n    \"throw it those problems is probably a solution. A lot of fires to put out. Yeah exactly not a\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Clearlake Capital\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Clearlake Capital Group, L.P.\",\n      \"preferred_en\": \"Clearlake Capital Group, L.P.\",\n      \"official_zh\": \"清湖资本集团\",\n      \"common_zh\": \"清湖资本\",\n      \"title_label\": \"清湖资本\",\n      \"preferred_zh\": \"清湖资本\",\n      \"aliases\": [\n        \"Clear Lake\",\n        \"Clearlake资本\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://news.qq.com/rain/a/20260917A02EL500\",\n        \"https://www.zaobao.com.sg/news/sports/story20260917-9690954\"\n      ],\n      \"evidence\": \"腾讯新闻、联合早报、搜狐均使用“清湖资本”，腾讯公告稿给出全称“清湖资本集团（Clearlake Capital Group, L.P.）”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Clearlake Capital buys out Todd Boehly and Mark Walter, gaining full control of Chelsea in a deal that sets the enterprise value at almost $7 billion.\",\n      \"public_baseline\": \"ESPN 报道称 Walter 与 Boehly 合计获得 9.5 亿英镑（约 13 亿美元），交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务；FT 报道同样给出 9.5 亿英镑。\",\n      \"surprise_gap\": \"转录称企业价值“近 70 亿美元”，与 ESPN/FT 报道的约 67 亿美元基本一致，但中文标题“近70亿美元”与部分中文报道的“10亿镑交易”口径存在差异，需注意估值口径（含债务 vs 股权对价）。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Clearlake 全面接管切尔西，交易企业价值近 70 亿美元；伯利与沃尔特出售股份。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.espn.com/soccer/story/_/id/49960706/chelsea-clarlake-capital-todd-boehly-mark-walter-ownership\",\n          \"fact\": \"ESPN 报道 Walter 与 Boehly 合计获得 9.5 亿英镑，交易对俱乐部估值约 50 亿英镑（约 67 亿美元）含债务。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Clearlake Capital buys out Todd Boehly Mark Walter Chelsea $7 billion enterprise value\",\n          \"url\": \"https://www.ft.com/content/a9099b59-b5ed-47e2-bdf3-ae26f5dd7317?syn-25a6b1a6=1\",\n          \"fact\": \"FT 报道 Walter 与 Boehly 以 9.5 亿英镑出售切尔西股份给 Clearlake。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers minority stake 2021\",\n          \"url\": \"https://www.nytimes.com/athletic/7517341/2026/08/17/mark-walter-lakers-sale-federal-investigation/\",\n          \"fact\": \"NYT 报道 Walter 2021 年首次购入湖人少数股权，2025 年从 Buss 家族收购球队，当时估值创纪录达 100 亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称 Clearlake 以 70 亿美元现金收购切尔西\",\n        \"不得声称沃尔特出售湖人是因为财务危机（公开报道仅提及联邦调查背景，未证实因果关系）\",\n        \"不得声称切尔西日常运营将发生重大变化（俱乐部声明称无变化）\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"转录中“Todd Bowley”为“Todd Boehly”的拼写错误，已列入 aliases。\",\n    \"转录中“Clear Lake”为“Clearlake”的拼写错误，已列入 aliases。\",\n    \"转录中“Mark Walters”为“Mark Walter”的拼写错误，已列入 aliases。\",\n    \"中文标题“近70亿美元”与 ESPN/FT 报道的约 67 亿美元基本一致，但需注意估值口径差异。\",\n    \"“Cadillac F1”中文译名未获两条独立来源，confidence 为 low。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元\",\n  \"title_lines\": [\n    \"清湖资本全面接管\",\n    \"伯利沃尔特同时退出\",\n    \"估值近70亿美元\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"他说的是真的吗\",\n  \"evidence_basis\": [\n    \"transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元\",\n    \"transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗\",\n    \"transcript: 俱乐部买下主席伯利和董事沃尔特的股份\",\n    \"ESPN/FT: 交易对俱乐部估值约50亿英镑含债务\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+              "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+              "transcript: 俱乐部买下主席伯利和董事沃尔特的股份",
+              "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+            ],
+            "title": "清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元？",
+            "title_lines": [
+              "清湖资本全面接管",
+              "伯利沃尔特同时退出",
+              "估值近70亿美元？"
+            ],
+            "title_highlights": [
+              "清湖资本全面接管",
+              "伯利沃尔特同时退出",
+              "估值近70亿美元？"
+            ],
+            "runner_up_titles": [
+              "清湖资本全面接管切尔西：伯利沃尔特退出，近70亿美元估值合理吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "清湖资本全面接管：伯利沃尔特同时退出，估值近70亿美元？",
+        "title_lines": [
+          "清湖资本全面接管",
+          "伯利沃尔特同时退出",
+          "估值近70亿美元？"
+        ],
+        "title_highlights": [
+          "清湖资本全面接管",
+          "伯利沃尔特同时退出",
+          "估值近70亿美元？"
+        ],
+        "comment": "KC评论：两大股东同时退出，清湖资本拿下完全控制权，后续管理层是否调整值得关注",
+        "comment_highlights": [
+          "两大股东同时退出",
+          "完全控制权"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：俱乐部买下伯利和沃尔特股份，交易结构值得细看",
+            "comment_highlights": [
+              "买下伯利和沃尔特股份"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：清湖资本获得完全控制权，企业估值近70亿美元",
+            "comment_highlights": [
+              "完全控制权",
+              "近70亿美元"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：记者追问伯利出售的推动力，指向沃尔特商业版图变化",
+            "comment_highlights": [
+              "沃尔特商业版图变化"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：沃尔特卖掉湖人时曾被猜测甩卖，如今清湖交易给出另一种解释",
+            "comment_highlights": [
+              "清湖交易"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：道奇队和凯迪拉克F1不卖，但这两项资产被处理掉了",
+            "comment_highlights": [
+              "这两项资产被处理掉了"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：记者承认自己有偏见，并直言俱乐部近年有点混乱",
+            "comment_highlights": [
+              "有点混乱"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：俱乐部被形容为烧钱的无底洞，但本赛季表现有所回升",
+            "comment_highlights": [
+              "烧钱的无底洞"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：所有权功能失调在体育界并不新鲜，投入与回报常不匹配",
+            "comment_highlights": [
+              "所有权功能失调"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：沃尔特获得额外资金，可能用于解决其他资产的问题",
+            "comment_highlights": [
+              "额外资金"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：很多火要扑灭，交易背后的资金安排仍是关键",
+            "comment_highlights": [
+              "很多火要扑灭"
+            ]
+          }
+        ],
+        "formula_id": "concrete_stakes_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "他说的是真的吗",
+        "evidence_basis": [
+          "transcript: 清湖资本获得俱乐部完全控制权，交易企业价值近70亿美元",
+          "transcript: 伯利出售的推动力是什么，只是马克·沃尔特商业版图的动荡吗",
+          "transcript: 俱乐部买下主席伯利和董事沃尔特的股份",
+          "ESPN/FT: 交易对俱乐部估值约50亿英镑含债务"
+        ],
+        "runner_up_titles": [
+          "清湖资本全面接管切尔西：伯利沃尔特退出，近70亿美元估值合理吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
