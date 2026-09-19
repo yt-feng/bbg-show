@@ -1,0 +1,1283 @@
+{
+  "timestamp_utc": "2026-09-19T00:25:06.987789+00:00",
+  "plan_path": "work/top-videos/09_bny_chief_economist_on_fed_rate_hike_boj_outlook/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 5,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "BNY",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "BNY Mellon (The Bank of New York Mellon Corporation)",
+        "preferred_en": "BNY Mellon (The Bank of New York Mellon Corporation)",
+        "official_zh": "纽约梅隆银行",
+        "common_zh": "纽约梅隆银行",
+        "title_label": "纽约梅隆银行",
+        "preferred_zh": "纽约梅隆银行",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Public snippets reference BNY Mellon and BNY Investments but none co-occur with a verified Simplified Chinese display form in two independent reliable sources; official_zh kept as the widely used rendering but not confirmed by the returned snippets."
+      },
+      {
+        "source_text": "BNY Chief Economist",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Vincent Reinhart",
+        "preferred_en": "Vincent Reinhart",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "BNY首席经济学家",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg video page and Mellon PDF both identify Vincent Reinhart as BNY/BNY Investments Chief Economist; no reliable Chinese common name found, so title_label stays as the descriptive Chinese title."
+      },
+      {
+        "source_text": "Fed",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve (Federal Reserve System)",
+        "preferred_en": "Federal Reserve (Federal Reserve System)",
+        "official_zh": "联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese Wikipedia gives 联邦储备系统 as the formal name and 美联储 is used consistently in Chinese financial media (e.g., 财联社)."
+      },
+      {
+        "source_text": "BOJ",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bank of Japan",
+        "preferred_en": "Bank of Japan",
+        "official_zh": "日本银行",
+        "common_zh": "日本央行",
+        "title_label": "日本央行",
+        "preferred_zh": "日本央行",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "BOJ official site, NHK Chinese service, and 经济参考报 all use 日本央行 for the Bank of Japan."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "negative rates / negative rate policy",
+        "clip_indexes": [],
+        "context": "BOJ monetary policy",
+        "sense": "central bank policy of negative policy interest rates",
+        "preferred_zh": "负利率政策",
+        "title_label": "负利率",
+        "avoid_zh": [
+          "负利息政策"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "policy normalization",
+        "clip_indexes": [],
+        "context": "BOJ exit from ultra-loose policy",
+        "sense": "gradual return of monetary policy to conventional settings",
+        "preferred_zh": "货币政策正常化",
+        "title_label": "政策正常化",
+        "avoid_zh": [
+          "政策正常化进程化"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "exit (from negative rates)",
+        "clip_indexes": [],
+        "context": "BOJ ending negative rate policy",
+        "sense": "termination of the negative interest rate policy",
+        "preferred_zh": "退出负利率",
+        "title_label": "退出负利率",
+        "avoid_zh": [
+          "退出负利息"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "The speaker says he should apologize because his earlier papers on negative rate policy did not include sections on risks to the policy and how to exit, and that in retrospect it is hard to get out once you are in.",
+        "public_baseline": "The BOJ ended its negative rate policy in March 2024 (17-year first hike), and by September 2026 the policy rate was raised to about 1.25%, the highest since 1995.",
+        "surprise_gap": "The speaker frames the exit as unexpectedly difficult and admits his own earlier research omitted exit-risk analysis, while public data show the BOJ has in fact exited negative rates and continued hiking to around 1.25%.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says he should apologize because earlier papers did not include sections on risks to the policy and how to exit."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says the BOJ came out of negative rates in early 2024 and rates are still only in the 1% range."
+          },
+          {
+            "kind": "public",
+            "query": "日本央行 负利率 退出 2024年3月 政策正常化",
+            "url": "https://www.jjckb.cn/2024-03/20/c_1310768268.htm",
+            "fact": "经济参考报 reports the BOJ ended negative rates in March 2024, its first hike in 17 years."
+          },
+          {
+            "kind": "public",
+            "query": "日本央行 政策利率 1% 2024 2025",
+            "url": "https://www3.nhk.or.jp/nhkworld/zh/news/20260918de50987/",
+            "fact": "NHK Chinese reports the BOJ raised its policy rate from about 1% to about 1.25% on September 18."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim the speaker issued a formal public apology; the transcript shows a retrospective remark, not a documented apology.",
+          "Do not claim the BOJ has failed to exit negative rates; public evidence shows it exited in March 2024.",
+          "Do not claim the speaker predicted the BOJ would never raise rates.",
+          "Do not attribute the speaker's personal admission to BNY Mellon as an institutional position."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "No reliable Simplified Chinese common name was found for Vincent Reinhart in the returned snippets; title_label therefore uses the descriptive Chinese title 'BNY首席经济学家' rather than",
+      "The BNY/纽约梅隆银行 rendering is widely used but was not confirmed by two independent sources within the returned snippets, so confidence is medium and verified_source_count is 0.",
+      "The clip's 'apology' line is a retrospective remark in the transcript, not a documented public apology; downstream titles should avoid asserting a formal apology."
+    ],
+    "research_queries": [
+      {
+        "query": "BNY Mellon 首席经济学家 美联储 日本央行 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name and exact title for BNY (Bank of New York Mellon) and its chief economist, and the standard Chinese rendering of the Fed and BOJ."
+      },
+      {
+        "query": "Bank of New York Mellon chief economist Fed rate hike BOJ outlook 2024",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the identity of the BNY chief economist and the exact interview context on Fed rate decisions and BOJ policy normalization."
+      },
+      {
+        "query": "日本央行 负利率 退出 2024年3月 政策正常化",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline: when and how the BOJ exited negative rates in early 2024, and the consensus view on the pace of normalization."
+      },
+      {
+        "query": "日本央行 政策利率 1% 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Japanese policy rates remain only in the 1% range after exiting negative rates, and the timeline of any hikes."
+      },
+      {
+        "query": "BNY Mellon chief economist apology papers did not include risks exit negative rates",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the speaker's admission that their earlier papers on negative rates omitted sections on risks and exit, and whether this was a public apology or retrospective comment."
+      },
+      {
+        "query": "日本 负利率政策 论文 风险 退出 未包含 经济学家",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search for Chinese-language coverage or academic references to the same admission about missing risk sections in negative rate policy papers."
+      },
+      {
+        "query": "Japan leading macroeconomic distinctions ageing population central bank within society",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether the BNY chief economist has publicly framed Japan as leading in macroeconomic distinctions such as ageing population, and the context of that claim."
+      },
+      {
+        "query": "日本 老龄化 宏观经济 领先 央行 社会 定位",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese-language sources for the same framing of Japan's ageing population as a leading macroeconomic distinction and the central bank's role in society."
+      },
+      {
+        "query": "BOJ policy normalization progress 2024 2025 constructive success",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the consensus assessment of BOJ policy normalization progress since exiting negative rates, to test whether the speaker's 'enormous progress' framing is unusually positive."
+      },
+      {
+        "query": "BNY Mellon chief economist Japan BOJ constructive progress 2024",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search for prior public statements by the same BNY chief economist on Japan's monetary policy progress to check for consistency or change in position."
+      },
+      {
+        "query": "日本央行 政策正常化 进展 巨大 2024 2025 经济学家",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Look for Chinese comparative commentary on Japan's policy normalization progress, to see if the speaker's positive assessment contrasts with or aligns with Chinese expert views."
+      },
+      {
+        "query": "Bloomberg BNY Chief Economist established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-09-19T00:25:04.816200+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.4,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook",
+          "source_title": "Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook",
+          "show_date": "",
+          "current_title": "BNY首席经济学家解析美联储利率路径与日本央行政策正常化",
+          "current_title_lines": [
+            "BNY首席经济学家",
+            "美联储利率路径与日本央行政策正常化",
+            "政策退出节奏与市场信号成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "在明天做出决定之前，我想先回顾一下当年的艰难时期。",
+              "en": "Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.",
+              "relative_start": 0.0,
+              "relative_end": 7.2
+            },
+            {
+              "index": 2,
+              "zh": "这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分。",
+              "en": "Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks",
+              "relative_start": 7.2,
+              "relative_end": 17.1
+            },
+            {
+              "index": 3,
+              "zh": "好的。",
+              "en": "to the policy and how to exit. Okay.",
+              "relative_start": 17.1,
+              "relative_end": 20.1
+            },
+            {
+              "index": 4,
+              "zh": "回想起来，确实存在风险，尤其是一旦进入就很难退出。",
+              "en": "And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.",
+              "relative_start": 20.1,
+              "relative_end": 25.9
+            },
+            {
+              "index": 5,
+              "zh": "我们来谈谈退出。他们在2024年初终于走出了负利率。",
+              "en": "Well, let's talk about the exit. I mean, they finally came out of it in early 2024.",
+              "relative_start": 25.9,
+              "relative_end": 30.5
+            },
+            {
+              "index": 6,
+              "zh": "目前利率仍只在1%区间，但已经是巨大的转变。",
+              "en": "I mean, they're still only in the 1% range, but that's a huge turnaround.",
+              "relative_start": 30.5,
+              "relative_end": 34.8
+            },
+            {
+              "index": 7,
+              "zh": "评估他们取得的进展，特别是在货币政策方面，你认为迄今为止",
+              "en": "As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far",
+              "relative_start": 34.8,
+              "relative_end": 43.6
+            },
+            {
+              "index": 8,
+              "zh": "自退出负利率以来的两年半里，这些进展即使不算成功，也无疑是建设性的？",
+              "en": "in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?",
+              "relative_start": 43.6,
+              "relative_end": 51.3
+            },
+            {
+              "index": 9,
+              "zh": "这是巨大的进步，因为必须把央行放在整个社会背景中来看。",
+              "en": "It's enormous progress, because you have to put the central bank within society at large.",
+              "relative_start": 51.3,
+              "relative_end": 57.7
+            },
+            {
+              "index": 10,
+              "zh": "日本在大多数宏观经济特征上都走在前面，比如人口老龄化。",
+              "en": "And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.",
+              "relative_start": 57.7,
+              "relative_end": 68.1
+            },
+            {
+              "index": 11,
+              "zh": "对老龄化人口来说，低通胀或通缩并非坏事，因为它将收入从年轻人转移给老年人。",
+              "en": "And for an ageing population, low inflation or deflation isn't such a bad thing because it's transfer an income from the young to the old.",
+              "relative_start": 68.1,
+              "relative_end": 77.8
+            },
+            {
+              "index": 12,
+              "zh": "他们能长期如此并非偶然。",
+              "en": "It's not an accident that they lived so long without.",
+              "relative_start": 78.7,
+              "relative_end": 83.0
+            },
+            {
+              "index": 13,
+              "zh": "这是与之相伴的。",
+              "en": "It's with it.",
+              "relative_start": 83.6,
+              "relative_end": 84.4
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.4,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"source_title\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"show_date\": \"\",\n    \"current_title\": \"BNY首席经济学家解析美联储利率路径与日本央行政策正常化\",\n    \"current_title_lines\": [\n      \"BNY首席经济学家\",\n      \"美联储利率路径与日本央行政策正常化\",\n      \"政策退出节奏与市场信号成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在明天做出决定之前，我想先回顾一下当年的艰难时期。\",\n        \"en\": \"Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分。\",\n        \"en\": \"Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks\",\n        \"relative_start\": 7.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"好的。\",\n        \"en\": \"to the policy and how to exit. Okay.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"回想起来，确实存在风险，尤其是一旦进入就很难退出。\",\n        \"en\": \"And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们来谈谈退出。他们在2024年初终于走出了负利率。\",\n        \"en\": \"Well, let's talk about the exit. I mean, they finally came out of it in early 2024.\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"目前利率仍只在1%区间，但已经是巨大的转变。\",\n        \"en\": \"I mean, they're still only in the 1% range, but that's a huge turnaround.\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"评估他们取得的进展，特别是在货币政策方面，你认为迄今为止\",\n        \"en\": \"As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"自退出负利率以来的两年半里，这些进展即使不算成功，也无疑是建设性的？\",\n        \"en\": \"in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这是巨大的进步，因为必须把央行放在整个社会背景中来看。\",\n        \"en\": \"It's enormous progress, because you have to put the central bank within society at large.\",\n        \"relative_start\": 51.3,\n        \"relative_end\": 57.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"日本在大多数宏观经济特征上都走在前面，比如人口老龄化。\",\n        \"en\": \"And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.\",\n        \"relative_start\": 57.7,\n        \"relative_end\": 68.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"对老龄化人口来说，低通胀或通缩并非坏事，因为它将收入从年轻人转移给老年人。\",\n        \"en\": \"And for an ageing population, low inflation or deflation isn't such a bad thing because it's transfer an income from the young to the old.\",\n        \"relative_start\": 68.1,\n        \"relative_end\": 77.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"他们能长期如此并非偶然。\",\n        \"en\": \"It's not an accident that they lived so long without.\",\n        \"relative_start\": 78.7,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这是与之相伴的。\",\n        \"en\": \"It's with it.\",\n        \"relative_start\": 83.6,\n        \"relative_end\": 84.4\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The speaker says he should apologize because his earlier papers on negative rate policy did not include sections on risks to the policy and how to exit, and that in retrospect it is hard to get out once you are in.\",\n      \"public_baseline\": \"The BOJ ended its negative rate policy in March 2024 (17-year first hike), and by September 2026 the policy rate was raised to about 1.25%, the highest since 1995.\",\n      \"surprise_gap\": \"The speaker frames the exit as unexpectedly difficult and admits his own earlier research omitted exit-risk analysis, while public data show the BOJ has in fact exited negative rates and continued hiking to around 1.25%.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says he should apologize because earlier papers did not include sections on risks to the policy and how to exit.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the BOJ came out of negative rates in early 2024 and rates are still only in the 1% range.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 负利率 退出 2024年3月 政策正常化\",\n          \"url\": \"https://www.jjckb.cn/2024-03/20/c_1310768268.htm\",\n          \"fact\": \"经济参考报 reports the BOJ ended negative rates in March 2024, its first hike in 17 years.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 政策利率 1% 2024 2025\",\n          \"url\": \"https://www3.nhk.or.jp/nhkworld/zh/news/20260918de50987/\",\n          \"fact\": \"NHK Chinese reports the BOJ raised its policy rate from about 1% to about 1.25% on September 18.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the speaker issued a formal public apology; the transcript shows a retrospective remark, not a documented apology.\",\n        \"Do not claim the BOJ has failed to exit negative rates; public evidence shows it exited in March 2024.\",\n        \"Do not claim the speaker predicted the BOJ would never raise rates.\",\n        \"Do not attribute the speaker's personal admission to BNY Mellon as an institutional position.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Simplified Chinese common name was found for Vincent Reinhart in the returned snippets; title_label therefore uses the descriptive Chinese title 'BNY首席经济学家' rather than\",\n    \"The BNY/纽约梅隆银行 rendering is widely used but was not confirmed by two independent sources within the returned snippets, so confidence is medium and verified_source_count is 0.\",\n    \"The clip's 'apology' line is a retrospective remark in the transcript, not a documented public apology; downstream titles should avoid asserting a formal apology.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "BNY首席经济学家回顾负利率政策时表示，当年论文未包含政策风险与退出路径，事后看进入后很难退出；日本央行已于2024年初退出负利率，目前利率仍在1%区间，并继续向1.25%左右正常化。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "负利率退出比进入难",
+                "title_lines": [
+                  "负利率退出比进入难",
+                  "当年论文漏了退出风险",
+                  "日本央行已走到1%区间"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 论文没有包含政策风险以及如何退出的部分",
+                  "transcript: 一旦进入就很难退出",
+                  "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "他承认当年论文漏了退出风险",
+                "title_lines": [
+                  "他承认当年论文漏了退出风险",
+                  "负利率进去容易出来难",
+                  "日本央行已走到1%区间"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+                  "transcript: 一旦进入就很难退出",
+                  "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "日本央行退出负利率后利率仍仅1%",
+                "title_lines": [
+                  "日本央行退出负利率后",
+                  "利率仍仅1%区间",
+                  "下一步正常化还有多远"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 他们在2024年初终于走出了负利率",
+                  "transcript: 目前利率仍只在1%区间，但已经是巨大的转变",
+                  "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "首席经济学家回顾负利率政策风险",
+                "title_lines": [
+                  "首席经济学家回顾负利率政策风险",
+                  "当年论文没写如何退出",
+                  "日本央行已走到1%区间"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+                  "transcript: 一旦进入就很难退出",
+                  "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.4,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"source_title\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"show_date\": \"\",\n    \"current_title\": \"BNY首席经济学家解析美联储利率路径与日本央行政策正常化\",\n    \"current_title_lines\": [\n      \"BNY首席经济学家\",\n      \"美联储利率路径与日本央行政策正常化\",\n      \"政策退出节奏与市场信号成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在明天做出决定之前，我想先回顾一下当年的艰难时期。\",\n        \"en\": \"Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分。\",\n        \"en\": \"Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks\",\n        \"relative_start\": 7.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"好的。\",\n        \"en\": \"to the policy and how to exit. Okay.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"回想起来，确实存在风险，尤其是一旦进入就很难退出。\",\n        \"en\": \"And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们来谈谈退出。他们在2024年初终于走出了负利率。\",\n        \"en\": \"Well, let's talk about the exit. I mean, they finally came out of it in early 2024.\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"目前利率仍只在1%区间，但已经是巨大的转变。\",\n        \"en\": \"I mean, they're still only in the 1% range, but that's a huge turnaround.\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"评估他们取得的进展，特别是在货币政策方面，你认为迄今为止\",\n        \"en\": \"As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"自退出负利率以来的两年半里，这些进展即使不算成功，也无疑是建设性的？\",\n        \"en\": \"in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这是巨大的进步，因为必须把央行放在整个社会背景中来看。\",\n        \"en\": \"It's enormous progress, because you have to put the central bank within society at large.\",\n        \"relative_start\": 51.3,\n        \"relative_end\": 57.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"日本在大多数宏观经济特征上都走在前面，比如人口老龄化。\",\n        \"en\": \"And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.\",\n        \"relative_start\": 57.7,\n        \"relative_end\": 68.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"对老龄化人口来说，低通胀或通缩并非坏事，因为它将收入从年轻人转移给老年人。\",\n        \"en\": \"And for an ageing population, low inflation or deflation isn't such a bad thing because it's transfer an income from the young to the old.\",\n        \"relative_start\": 68.1,\n        \"relative_end\": 77.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"他们能长期如此并非偶然。\",\n        \"en\": \"It's not an accident that they lived so long without.\",\n        \"relative_start\": 78.7,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这是与之相伴的。\",\n        \"en\": \"It's with it.\",\n        \"relative_start\": 83.6,\n        \"relative_end\": 84.4\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The speaker says he should apologize because his earlier papers on negative rate policy did not include sections on risks to the policy and how to exit, and that in retrospect it is hard to get out once you are in.\",\n      \"public_baseline\": \"The BOJ ended its negative rate policy in March 2024 (17-year first hike), and by September 2026 the policy rate was raised to about 1.25%, the highest since 1995.\",\n      \"surprise_gap\": \"The speaker frames the exit as unexpectedly difficult and admits his own earlier research omitted exit-risk analysis, while public data show the BOJ has in fact exited negative rates and continued hiking to around 1.25%.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says he should apologize because earlier papers did not include sections on risks to the policy and how to exit.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the BOJ came out of negative rates in early 2024 and rates are still only in the 1% range.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 负利率 退出 2024年3月 政策正常化\",\n          \"url\": \"https://www.jjckb.cn/2024-03/20/c_1310768268.htm\",\n          \"fact\": \"经济参考报 reports the BOJ ended negative rates in March 2024, its first hike in 17 years.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 政策利率 1% 2024 2025\",\n          \"url\": \"https://www3.nhk.or.jp/nhkworld/zh/news/20260918de50987/\",\n          \"fact\": \"NHK Chinese reports the BOJ raised its policy rate from about 1% to about 1.25% on September 18.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the speaker issued a formal public apology; the transcript shows a retrospective remark, not a documented apology.\",\n        \"Do not claim the BOJ has failed to exit negative rates; public evidence shows it exited in March 2024.\",\n        \"Do not claim the speaker predicted the BOJ would never raise rates.\",\n        \"Do not attribute the speaker's personal admission to BNY Mellon as an institutional position.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Simplified Chinese common name was found for Vincent Reinhart in the returned snippets; title_label therefore uses the descriptive Chinese title 'BNY首席经济学家' rather than\",\n    \"The BNY/纽约梅隆银行 rendering is widely used but was not confirmed by two independent sources within the returned snippets, so confidence is medium and verified_source_count is 0.\",\n    \"The clip's 'apology' line is a retrospective remark in the transcript, not a documented public apology; downstream titles should avoid asserting a formal apology.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"BNY首席经济学家回顾负利率政策时表示，当年论文未包含政策风险与退出路径，事后看进入后很难退出；日本央行已于2024年初退出负利率，目前利率仍在1%区间，并继续向1.25%左右正常化。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"负利率退出比进入难\",\n          \"title_lines\": [\n            \"负利率退出比进入难\",\n            \"当年论文漏了退出风险\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 论文没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"他承认当年论文漏了退出风险\",\n          \"title_lines\": [\n            \"他承认当年论文漏了退出风险\",\n            \"负利率进去容易出来难\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"日本央行退出负利率后利率仍仅1%\",\n          \"title_lines\": [\n            \"日本央行退出负利率后\",\n            \"利率仍仅1%区间\",\n            \"下一步正常化还有多远\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 他们在2024年初终于走出了负利率\",\n            \"transcript: 目前利率仍只在1%区间，但已经是巨大的转变\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"首席经济学家回顾负利率政策风险\",\n          \"title_lines\": [\n            \"首席经济学家回顾负利率政策风险\",\n            \"当年论文没写如何退出\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "权威自省+退出难题",
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "viewer_reaction": "终于有人承认当年漏算了退出风险",
+            "evidence_basis": [
+              "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+              "transcript: 一旦进入就很难退出",
+              "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+            ],
+            "title": "他承认当年论文漏了退出风险",
+            "title_lines": [
+              "他承认当年论文漏了退出风险",
+              "负利率进去容易出来难",
+              "日本央行已走到1%区间"
+            ],
+            "title_highlights": [
+              "漏了退出风险",
+              "进去容易出来难",
+              "1%区间"
+            ],
+            "runner_up_titles": [
+              "负利率退出比进入难",
+              "日本央行退出负利率后利率仍仅1%"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：当年论文没写退出路径，如今日本央行已走到1%区间，下一步正常化节奏更值得盯。",
+            "comment_highlights": [
+              "退出路径",
+              "1%区间"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：先回顾艰难时期，为后面承认论文遗漏做铺垫。",
+                "comment_highlights": [
+                  "艰难时期"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：他明确说论文没包含政策风险和退出部分，这是核心自省。",
+                "comment_highlights": [
+                  "政策风险",
+                  "退出部分"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：简短回应，访谈节奏转向退出话题。",
+                "comment_highlights": [
+                  "退出话题"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：事后看进入容易退出难，点出政策路径依赖。",
+                "comment_highlights": [
+                  "进入容易退出难"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：日本央行2024年初走出负利率，是政策正常化起点。",
+                "comment_highlights": [
+                  "2024年初",
+                  "负利率"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：利率仍在1%区间，但已是巨大转变，正常化远未结束。",
+                "comment_highlights": [
+                  "1%区间",
+                  "巨大转变"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：主持人请嘉宾评估货币政策进展，引出建设性判断。",
+                "comment_highlights": [
+                  "货币政策进展"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：两年半来即使不算成功也算建设性，措辞留有余地。",
+                "comment_highlights": [
+                  "建设性"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：把央行放在社会大背景中看，老龄化是重要约束。",
+                "comment_highlights": [
+                  "社会大背景",
+                  "老龄化"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：日本在老龄化等宏观特征上走在前面，政策需适配。",
+                "comment_highlights": [
+                  "老龄化",
+                  "走在前面"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：对老龄化人口，低通胀或通缩并非坏事，收入转移给老年人。",
+                "comment_highlights": [
+                  "低通胀",
+                  "收入转移"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：长期低通胀并非偶然，与人口结构相伴。",
+                "comment_highlights": [
+                  "长期低通胀",
+                  "人口结构"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：收尾强调低通胀与老龄化相伴而生。",
+                "comment_highlights": [
+                  "相伴而生"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.4,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"source_title\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n    \"show_date\": \"\",\n    \"current_title\": \"BNY首席经济学家解析美联储利率路径与日本央行政策正常化\",\n    \"current_title_lines\": [\n      \"BNY首席经济学家\",\n      \"美联储利率路径与日本央行政策正常化\",\n      \"政策退出节奏与市场信号成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在明天做出决定之前，我想先回顾一下当年的艰难时期。\",\n        \"en\": \"Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分。\",\n        \"en\": \"Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks\",\n        \"relative_start\": 7.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"好的。\",\n        \"en\": \"to the policy and how to exit. Okay.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"回想起来，确实存在风险，尤其是一旦进入就很难退出。\",\n        \"en\": \"And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我们来谈谈退出。他们在2024年初终于走出了负利率。\",\n        \"en\": \"Well, let's talk about the exit. I mean, they finally came out of it in early 2024.\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 30.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"目前利率仍只在1%区间，但已经是巨大的转变。\",\n        \"en\": \"I mean, they're still only in the 1% range, but that's a huge turnaround.\",\n        \"relative_start\": 30.5,\n        \"relative_end\": 34.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"评估他们取得的进展，特别是在货币政策方面，你认为迄今为止\",\n        \"en\": \"As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far\",\n        \"relative_start\": 34.8,\n        \"relative_end\": 43.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"自退出负利率以来的两年半里，这些进展即使不算成功，也无疑是建设性的？\",\n        \"en\": \"in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?\",\n        \"relative_start\": 43.6,\n        \"relative_end\": 51.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"这是巨大的进步，因为必须把央行放在整个社会背景中来看。\",\n        \"en\": \"It's enormous progress, because you have to put the central bank within society at large.\",\n        \"relative_start\": 51.3,\n        \"relative_end\": 57.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"日本在大多数宏观经济特征上都走在前面，比如人口老龄化。\",\n        \"en\": \"And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.\",\n        \"relative_start\": 57.7,\n        \"relative_end\": 68.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"对老龄化人口来说，低通胀或通缩并非坏事，因为它将收入从年轻人转移给老年人。\",\n        \"en\": \"And for an ageing population, low inflation or deflation isn't such a bad thing because it's transfer an income from the young to the old.\",\n        \"relative_start\": 68.1,\n        \"relative_end\": 77.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"他们能长期如此并非偶然。\",\n        \"en\": \"It's not an accident that they lived so long without.\",\n        \"relative_start\": 78.7,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"这是与之相伴的。\",\n        \"en\": \"It's with it.\",\n        \"relative_start\": 83.6,\n        \"relative_end\": 84.4\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The speaker says he should apologize because his earlier papers on negative rate policy did not include sections on risks to the policy and how to exit, and that in retrospect it is hard to get out once you are in.\",\n      \"public_baseline\": \"The BOJ ended its negative rate policy in March 2024 (17-year first hike), and by September 2026 the policy rate was raised to about 1.25%, the highest since 1995.\",\n      \"surprise_gap\": \"The speaker frames the exit as unexpectedly difficult and admits his own earlier research omitted exit-risk analysis, while public data show the BOJ has in fact exited negative rates and continued hiking to around 1.25%.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says he should apologize because earlier papers did not include sections on risks to the policy and how to exit.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the BOJ came out of negative rates in early 2024 and rates are still only in the 1% range.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 负利率 退出 2024年3月 政策正常化\",\n          \"url\": \"https://www.jjckb.cn/2024-03/20/c_1310768268.htm\",\n          \"fact\": \"经济参考报 reports the BOJ ended negative rates in March 2024, its first hike in 17 years.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 政策利率 1% 2024 2025\",\n          \"url\": \"https://www3.nhk.or.jp/nhkworld/zh/news/20260918de50987/\",\n          \"fact\": \"NHK Chinese reports the BOJ raised its policy rate from about 1% to about 1.25% on September 18.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the speaker issued a formal public apology; the transcript shows a retrospective remark, not a documented apology.\",\n        \"Do not claim the BOJ has failed to exit negative rates; public evidence shows it exited in March 2024.\",\n        \"Do not claim the speaker predicted the BOJ would never raise rates.\",\n        \"Do not attribute the speaker's personal admission to BNY Mellon as an institutional position.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Simplified Chinese common name was found for Vincent Reinhart in the returned snippets; title_label therefore uses the descriptive Chinese title 'BNY首席经济学家' rather than\",\n    \"The BNY/纽约梅隆银行 rendering is widely used but was not confirmed by two independent sources within the returned snippets, so confidence is medium and verified_source_count is 0.\",\n    \"The clip's 'apology' line is a retrospective remark in the transcript, not a documented public apology; downstream titles should avoid asserting a formal apology.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"BNY首席经济学家回顾负利率政策时表示，当年论文未包含政策风险与退出路径，事后看进入后很难退出；日本央行已于2024年初退出负利率，目前利率仍在1%区间，并继续向1.25%左右正常化。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"负利率退出比进入难\",\n          \"title_lines\": [\n            \"负利率退出比进入难\",\n            \"当年论文漏了退出风险\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 论文没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"他承认当年论文漏了退出风险\",\n          \"title_lines\": [\n            \"他承认当年论文漏了退出风险\",\n            \"负利率进去容易出来难\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"日本央行退出负利率后利率仍仅1%\",\n          \"title_lines\": [\n            \"日本央行退出负利率后\",\n            \"利率仍仅1%区间\",\n            \"下一步正常化还有多远\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 他们在2024年初终于走出了负利率\",\n            \"transcript: 目前利率仍只在1%区间，但已经是巨大的转变\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"首席经济学家回顾负利率政策风险\",\n          \"title_lines\": [\n            \"首席经济学家回顾负利率政策风险\",\n            \"当年论文没写如何退出\",\n            \"日本央行已走到1%区间\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n            \"transcript: 一旦进入就很难退出\",\n            \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"他承认当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间\",\n      \"title_lines\": [\n        \"他承认当年论文漏了退出风险\",\n        \"负利率进去容易出来难\",\n        \"日本央行已走到1%区间\"\n      ],\n      \"title_highlights\": [\n        \"漏了退出风险\",\n        \"进去容易出来难\",\n        \"1%区间\"\n      ],\n      \"comment\": \"KC评论：当年论文没写退出路径，如今日本央行已走到1%区间\",\n      \"comment_highlights\": [\n        \"退出路径\",\n        \"1%区间\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：先回顾艰难时期，为后面承认论文遗漏做铺垫\",\n          \"comment_highlights\": [\n            \"艰难时期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：他明确说论文没包含政策风险和退出部分，这是核心自省\",\n          \"comment_highlights\": [\n            \"政策风险\",\n            \"退出部分\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：简短回应，访谈节奏转向退出话题\",\n          \"comment_highlights\": [\n            \"退出话题\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：事后看进入容易退出难，点出政策路径依赖\",\n          \"comment_highlights\": [\n            \"进入容易退出难\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：日本央行2024年初走出负利率，是政策正常化起点\",\n          \"comment_highlights\": [\n            \"2024年初\",\n            \"负利率\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：利率仍在1%区间，但已是巨大转变，正常化远未结束\",\n          \"comment_highlights\": [\n            \"1%区间\",\n            \"巨大转变\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：主持人请嘉宾评估货币政策进展，引出建设性判断\",\n          \"comment_highlights\": [\n            \"货币政策进展\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：两年半来即使不算成功也算建设性，措辞留有余地\",\n          \"comment_highlights\": [\n            \"建设性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：把央行放在社会大背景中看，老龄化是重要约束\",\n          \"comment_highlights\": [\n            \"社会大背景\",\n            \"老龄化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：日本在老龄化等宏观特征上走在前面，政策需适配\",\n          \"comment_highlights\": [\n            \"老龄化\",\n            \"走在前面\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：对老龄化人口，低通胀或通缩并非坏事，收入转移给老年人\",\n          \"comment_highlights\": [\n            \"低通胀\",\n            \"收入转移\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：长期低通胀并非偶然，与人口结构相伴\",\n          \"comment_highlights\": [\n            \"长期低通胀\",\n            \"人口结构\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：收尾强调低通胀与老龄化相伴而生\",\n          \"comment_highlights\": [\n            \"相伴而生\"\n          ]\n        }\n      ],\n      \"formula_id\": \"权威自省+退出难题\",\n      \"angle_id\": \"outsider_candor\",\n      \"emotion_pole\": \"终于有人说\",\n      \"viewer_reaction\": \"终于有人承认当年漏算了退出风险\",\n      \"evidence_basis\": [\n        \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n        \"transcript: 一旦进入就很难退出\",\n        \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n      ],\n      \"runner_up_titles\": [\n        \"负利率退出比进入难\",\n        \"日本央行退出负利率后利率仍仅1%\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:outsider_candor\",\n          \"emotion:终于有人说\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "权威自省+退出难题",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人承认当年论文漏算了退出风险",
+                "evidence_basis": [
+                  "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+                  "transcript: 一旦进入就很难退出",
+                  "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+                ],
+                "title": "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间",
+                "title_lines": [
+                  "当年论文漏了退出风险",
+                  "负利率进去容易出来难",
+                  "日本央行已走到1%区间"
+                ],
+                "title_highlights": [
+                  "漏了退出风险",
+                  "进去容易出来难",
+                  "1%区间"
+                ],
+                "runner_up_titles": [
+                  "负利率退出比进入难",
+                  "日本央行退出负利率后利率仍仅1%"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：当年论文没写退出路径，如今日本央行已走到1%区间",
+                "comment_highlights": [
+                  "退出路径",
+                  "1%区间"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：先回顾艰难时期，为后面承认论文遗漏做铺垫",
+                    "comment_highlights": [
+                      "艰难时期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：他明确说论文没包含政策风险和退出部分，这是核心自省",
+                    "comment_highlights": [
+                      "政策风险",
+                      "退出部分"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：简短回应，访谈节奏转向退出话题",
+                    "comment_highlights": [
+                      "退出话题"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：事后看进入容易退出难，点出政策路径依赖",
+                    "comment_highlights": [
+                      "进入容易退出难"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：日本央行2024年初走出负利率，是政策正常化起点",
+                    "comment_highlights": [
+                      "2024年初",
+                      "负利率"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：利率仍在1%区间，但已是巨大转变，正常化远未结束",
+                    "comment_highlights": [
+                      "1%区间",
+                      "巨大转变"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：主持人请嘉宾评估货币政策进展，引出建设性判断",
+                    "comment_highlights": [
+                      "货币政策进展"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：两年半来即使不算成功也算建设性，措辞留有余地",
+                    "comment_highlights": [
+                      "建设性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：把央行放在社会大背景中看，老龄化是重要约束",
+                    "comment_highlights": [
+                      "社会大背景",
+                      "老龄化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：日本在老龄化等宏观特征上走在前面，政策需适配",
+                    "comment_highlights": [
+                      "老龄化",
+                      "走在前面"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：对老龄化人口，低通胀或通缩并非坏事，收入转移给老年人",
+                    "comment_highlights": [
+                      "低通胀",
+                      "收入转移"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：长期低通胀并非偶然，与人口结构相伴",
+                    "comment_highlights": [
+                      "长期低通胀",
+                      "人口结构"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：收尾强调低通胀与老龄化相伴而生",
+                    "comment_highlights": [
+                      "相伴而生"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间",
+          "title_lines": [
+            "当年论文漏了退出风险",
+            "负利率进去容易出来难",
+            "日本央行已走到1%区间"
+          ],
+          "formula_id": "权威自省+退出难题",
+          "angle_id": "outsider_candor",
+          "emotion_pole": "终于有人说",
+          "viewer_reaction": "终于有人承认当年论文漏算了退出风险",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:outsider_candor",
+              "emotion:终于有人说",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：当年论文没写退出路径，如今日本央行已走到1%区间"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-19T00:25:06.977278+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.4,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook",
+          "source_title": "Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook",
+          "show_date": "",
+          "current_title": "BNY首席经济学家解析美联储利率路径与日本央行政策正常化",
+          "current_title_lines": [
+            "BNY首席经济学家",
+            "美联储利率路径与日本央行政策正常化",
+            "政策退出节奏与市场信号成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "在明天做出决定之前，我想先回顾一下当年的艰难时期。",
+              "en": "Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.",
+              "relative_start": 0.0,
+              "relative_end": 7.2
+            },
+            {
+              "index": 2,
+              "zh": "这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分。",
+              "en": "Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks",
+              "relative_start": 7.2,
+              "relative_end": 17.1
+            },
+            {
+              "index": 3,
+              "zh": "好的。",
+              "en": "to the policy and how to exit. Okay.",
+              "relative_start": 17.1,
+              "relative_end": 20.1
+            },
+            {
+              "index": 4,
+              "zh": "回想起来，确实存在风险，尤其是一旦进入就很难退出。",
+              "en": "And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.",
+              "relative_start": 20.1,
+              "relative_end": 25.9
+            },
+            {
+              "index": 5,
+              "zh": "我们来谈谈退出。他们在2024年初终于走出了负利率。",
+              "en": "Well, let's talk about the exit. I mean, they finally came out of it in early 2024.",
+              "relative_start": 25.9,
+              "relative_end": 30.5
+            },
+            {
+              "index": 6,
+              "zh": "目前利率仍只在1%区间，但已经是巨大的转变。",
+              "en": "I mean, they're still only in the 1% range, but that's a huge turnaround.",
+              "relative_start": 30.5,
+              "relative_end": 34.8
+            },
+            {
+              "index": 7,
+              "zh": "评估他们取得的进展，特别是在货币政策方面，你认为迄今为止",
+              "en": "As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far",
+              "relative_start": 34.8,
+              "relative_end": 43.6
+            },
+            {
+              "index": 8,
+              "zh": "自退出负利率以来的两年半里，这些进展即使不算成功，也无疑是建设性的？",
+              "en": "in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?",
+              "relative_start": 43.6,
+              "relative_end": 51.3
+            },
+            {
+              "index": 9,
+              "zh": "这是巨大的进步，因为必须把央行放在整个社会背景中来看。",
+              "en": "It's enormous progress, because you have to put the central bank within society at large.",
+              "relative_start": 51.3,
+              "relative_end": 57.7
+            },
+            {
+              "index": 10,
+              "zh": "日本在大多数宏观经济特征上都走在前面，比如人口老龄化。",
+              "en": "And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.",
+              "relative_start": 57.7,
+              "relative_end": 68.1
+            },
+            {
+              "index": 11,
+              "zh": "对老龄化人口来说，低通胀或通缩并非坏事，因为它将收入从年轻人转移给老年人。",
+              "en": "And for an ageing population, low inflation or deflation isn't such a bad thing because it's transfer an income from the young to the old.",
+              "relative_start": 68.1,
+              "relative_end": 77.8
+            },
+            {
+              "index": 12,
+              "zh": "他们能长期如此并非偶然。",
+              "en": "It's not an accident that they lived so long without.",
+              "relative_start": 78.7,
+              "relative_end": 83.0
+            },
+            {
+              "index": 13,
+              "zh": "这是与之相伴的。",
+              "en": "It's with it.",
+              "relative_start": 83.6,
+              "relative_end": 84.4
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n  \"source_title\": \"Duration: 7:41 BNY Chief Economist on Fed Rate Hike, BOJ Outlook\",\n  \"current_title\": \"BNY首席经济学家解析美联储利率路径与日本央行政策正常化\",\n  \"source_claims\": [\n    \"Before we get to the decision tomorrow, I do want to go back to kind of the battle days, if you will, of that sort of thing.\",\n    \"Remain is this is where you want me to make my apology, because we did write those papers, but we did not include sections on risks\",\n    \"to the policy and how to exit. Okay.\",\n    \"And I think in retrospect, there are risks and in particular, it's hard to get out once you're in.\",\n    \"Well, let's talk about the exit. I mean, they finally came out of it in early 2024.\",\n    \"I mean, they're still only in the 1% range, but that's a huge turnaround.\",\n    \"As you sort of grade the progress that they've made, particularly on the monetary policy side, do you think that what has happened so far\",\n    \"in this two and a half years since they came out of the negative rates has been, if not a success, certainly constructive?\",\n    \"It's enormous progress, because you have to put the central bank within society at large.\",\n    \"And Japan is leading the pack for most macroeconomic distinctions, so that is an ageing population.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"The speaker says he should apologize because his earlier papers on negative rate policy did not include sections on risks to the policy and how to exit, and that in retrospect it is hard to get out once you are in.\",\n      \"public_baseline\": \"The BOJ ended its negative rate policy in March 2024 (17-year first hike), and by September 2026 the policy rate was raised to about 1.25%, the highest since 1995.\",\n      \"surprise_gap\": \"The speaker frames the exit as unexpectedly difficult and admits his own earlier research omitted exit-risk analysis, while public data show the BOJ has in fact exited negative rates and continued hiking to around 1.25%.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says he should apologize because earlier papers did not include sections on risks to the policy and how to exit.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the BOJ came out of negative rates in early 2024 and rates are still only in the 1% range.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 负利率 退出 2024年3月 政策正常化\",\n          \"url\": \"https://www.jjckb.cn/2024-03/20/c_1310768268.htm\",\n          \"fact\": \"经济参考报 reports the BOJ ended negative rates in March 2024, its first hike in 17 years.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"日本央行 政策利率 1% 2024 2025\",\n          \"url\": \"https://www3.nhk.or.jp/nhkworld/zh/news/20260918de50987/\",\n          \"fact\": \"NHK Chinese reports the BOJ raised its policy rate from about 1% to about 1.25% on September 18.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the speaker issued a formal public apology; the transcript shows a retrospective remark, not a documented apology.\",\n        \"Do not claim the BOJ has failed to exit negative rates; public evidence shows it exited in March 2024.\",\n        \"Do not claim the speaker predicted the BOJ would never raise rates.\",\n        \"Do not attribute the speaker's personal admission to BNY Mellon as an institutional position.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable Simplified Chinese common name was found for Vincent Reinhart in the returned snippets; title_label therefore uses the descriptive Chinese title 'BNY首席经济学家' rather than\",\n    \"The BNY/纽约梅隆银行 rendering is widely used but was not confirmed by two independent sources within the returned snippets, so confidence is medium and verified_source_count is 0.\",\n    \"The clip's 'apology' line is a retrospective remark in the transcript, not a documented public apology; downstream titles should avoid asserting a formal apology.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间\",\n  \"title_lines\": [\n    \"当年论文漏了退出风险\",\n    \"负利率进去容易出来难\",\n    \"日本央行已走到1%区间\"\n  ],\n  \"angle_id\": \"outsider_candor\",\n  \"emotion_pole\": \"终于有人说\",\n  \"viewer_reaction\": \"终于有人承认当年论文漏算了退出风险\",\n  \"evidence_basis\": [\n    \"transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分\",\n    \"transcript: 一旦进入就很难退出\",\n    \"public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "outsider_candor",
+            "emotion_pole": "终于有人说",
+            "viewer_reaction": "终于有人承认当年论文漏算了退出风险，并追问日本央行下一步怎么走",
+            "evidence_basis": [
+              "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+              "transcript: 一旦进入就很难退出",
+              "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+            ],
+            "title": "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间，下一步还能继续加息吗？",
+            "title_lines": [
+              "当年论文漏了退出风险",
+              "负利率进去容易出来难",
+              "日本央行已走到1%区间，下一步还能继续加息吗？"
+            ],
+            "title_highlights": [
+              "当年论文漏了退出风险",
+              "负利率进去容易出来难",
+              "日本央行已走到1%区间，下一步还能继续加息吗？"
+            ],
+            "runner_up_titles": [
+              "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间，加息还能走多远？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间，下一步还能继续加息吗？",
+        "title_lines": [
+          "当年论文漏了退出风险",
+          "负利率进去容易出来难",
+          "日本央行已走到1%区间，下一步还能继续加息吗？"
+        ],
+        "title_highlights": [
+          "当年论文漏了退出风险",
+          "负利率进去容易出来难",
+          "日本央行已走到1%区间，下一步还能继续加息吗？"
+        ],
+        "comment": "KC评论：当年论文没写退出路径，如今日本央行已走到1%区间",
+        "comment_highlights": [
+          "退出路径",
+          "1%区间"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：先回顾艰难时期，为后面承认论文遗漏做铺垫",
+            "comment_highlights": [
+              "艰难时期"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：他明确说论文没包含政策风险和退出部分，这是核心自省",
+            "comment_highlights": [
+              "政策风险",
+              "退出部分"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：简短回应，访谈节奏转向退出话题",
+            "comment_highlights": [
+              "退出话题"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：事后看进入容易退出难，点出政策路径依赖",
+            "comment_highlights": [
+              "进入容易退出难"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：日本央行2024年初走出负利率，是政策正常化起点",
+            "comment_highlights": [
+              "2024年初",
+              "负利率"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：利率仍在1%区间，但已是巨大转变，正常化远未结束",
+            "comment_highlights": [
+              "1%区间",
+              "巨大转变"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：主持人请嘉宾评估货币政策进展，引出建设性判断",
+            "comment_highlights": [
+              "货币政策进展"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：两年半来即使不算成功也算建设性，措辞留有余地",
+            "comment_highlights": [
+              "建设性"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：把央行放在社会大背景中看，老龄化是重要约束",
+            "comment_highlights": [
+              "社会大背景",
+              "老龄化"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：日本在老龄化等宏观特征上走在前面，政策需适配",
+            "comment_highlights": [
+              "老龄化",
+              "走在前面"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：对老龄化人口，低通胀或通缩并非坏事，收入转移给老年人",
+            "comment_highlights": [
+              "低通胀",
+              "收入转移"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：长期低通胀并非偶然，与人口结构相伴",
+            "comment_highlights": [
+              "长期低通胀",
+              "人口结构"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：收尾强调低通胀与老龄化相伴而生",
+            "comment_highlights": [
+              "相伴而生"
+            ]
+          }
+        ],
+        "formula_id": "权威自省+退出难题",
+        "angle_id": "outsider_candor",
+        "emotion_pole": "终于有人说",
+        "viewer_reaction": "终于有人承认当年论文漏算了退出风险，并追问日本央行下一步怎么走",
+        "evidence_basis": [
+          "transcript: 这里需要我道歉，因为我们确实写了那些论文，但没有包含政策风险以及如何退出的部分",
+          "transcript: 一旦进入就很难退出",
+          "public: 日本央行2024年3月退出负利率，政策利率已升至约1.25%"
+        ],
+        "runner_up_titles": [
+          "当年论文漏了退出风险：负利率进去容易出来难，日本央行已走到1%区间，加息还能走多远？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:outsider_candor",
+            "emotion:终于有人说",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}

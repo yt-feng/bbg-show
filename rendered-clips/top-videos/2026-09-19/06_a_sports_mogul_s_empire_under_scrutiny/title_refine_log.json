@@ -1,0 +1,1489 @@
+{
+  "timestamp_utc": "2026-09-19T00:28:07.557633+00:00",
+  "plan_path": "work/top-videos/06_a_sports_mogul_s_empire_under_scrutiny/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Mark Walter",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Mark Richard Walter",
+        "preferred_en": "Mark Richard Walter",
+        "official_zh": "马克·理查德·沃尔特",
+        "common_zh": "马克·沃尔特",
+        "title_label": "马克·沃尔特",
+        "preferred_zh": "马克·沃尔特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科条目名与正文均作“马克·沃尔特”；繁体社群帖亦作“馬克·沃爾特”，简体化为“马克·沃尔特”。"
+      },
+      {
+        "source_text": "Los Angeles Dodgers",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles Dodgers",
+        "preferred_en": "Los Angeles Dodgers",
+        "official_zh": "洛杉矶道奇队",
+        "common_zh": "洛杉矶道奇队",
+        "title_label": "道奇队",
+        "preferred_zh": "洛杉矶道奇队",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "维基百科作“洛杉矶道奇队”；繁体帖作“道奇隊”，简体化为“道奇队”。"
+      },
+      {
+        "source_text": "Los Angeles Lakers",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles Lakers",
+        "preferred_en": "Los Angeles Lakers",
+        "official_zh": "洛杉矶湖人队",
+        "common_zh": "洛杉矶湖人队",
+        "title_label": "湖人队",
+        "preferred_zh": "洛杉矶湖人队",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "维基百科作“洛杉矶湖人队”；繁体帖作“洛杉磯湖人隊”，简体化为“洛杉矶湖人队”。"
+      },
+      {
+        "source_text": "Chelsea Football Club",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Chelsea Football Club",
+        "preferred_en": "Chelsea Football Club",
+        "official_zh": "切尔西足球俱乐部",
+        "common_zh": "切尔西",
+        "title_label": "切尔西",
+        "preferred_zh": "切尔西",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "维基百科作“英超俱乐部切尔西”；繁体帖作“切爾西”，简体化为“切尔西”。"
+      },
+      {
+        "source_text": "Cadillac F1 Team",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Cadillac Formula 1 Team",
+        "preferred_en": "Cadillac Formula 1 Team",
+        "official_zh": "",
+        "common_zh": "凯迪拉克F1车队",
+        "title_label": "凯迪拉克F1车队",
+        "preferred_zh": "凯迪拉克F1车队",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "繁体帖作“F1 凱迪拉克車隊”，简体化为“凯迪拉克F1车队”；英文媒体确认 Cadillac F1 team 由 TWG Motorsports 持多数股权。无官方简体中文名。"
+      },
+      {
+        "source_text": "Professional Women's Hockey League (PWHL)",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Professional Women's Hockey League",
+        "preferred_en": "Professional Women's Hockey League",
+        "official_zh": "",
+        "common_zh": "北美女子职业冰球联赛",
+        "title_label": "北美女子职业冰球联赛",
+        "preferred_zh": "北美女子职业冰球联赛",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科描述沃尔特为“北美女子职业冰球联赛的老板兼董事长”，未给出官方缩写译名。"
+      },
+      {
+        "source_text": "Walter Cup",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "Walter Cup",
+        "preferred_en": "Walter Cup",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "沃尔特杯",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未提供该奖杯的可靠简体中文定名；仅按人名“沃尔特”音译，属低置信度。"
+      },
+      {
+        "source_text": "Guggenheim Partners",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Guggenheim Partners",
+        "preferred_en": "Guggenheim Partners",
+        "official_zh": "古根海姆合伙人公司",
+        "common_zh": "古根海姆合伙人公司",
+        "title_label": "古根海姆",
+        "preferred_zh": "古根海姆合伙人公司",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科作“古根海姆合伙人公司（Guggenheim Partners）”。仅一个来源，故为 medium。"
+      },
+      {
+        "source_text": "TWG Global",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "TWG Global",
+        "preferred_en": "TWG Global",
+        "official_zh": "",
+        "common_zh": "TWG Global",
+        "title_label": "TWG Global",
+        "preferred_zh": "TWG Global",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基与 Sportico 均以英文原名 TWG Global 出现，无可靠简体中文定名，故保留英文。"
+      },
+      {
+        "source_text": "BlueCo",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "BlueCo",
+        "preferred_en": "BlueCo",
+        "official_zh": "",
+        "common_zh": "BlueCo",
+        "title_label": "BlueCo",
+        "preferred_zh": "BlueCo",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基与英文媒体均以 BlueCo 原名出现，无可靠简体中文定名。"
+      },
+      {
+        "source_text": "Group 1001",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Group 1001",
+        "preferred_en": "Group 1001",
+        "official_zh": "",
+        "common_zh": "Group 1001",
+        "title_label": "Group 1001",
+        "preferred_zh": "Group 1001",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "仅 briefs.co 片段提及 Group 1001 为沃尔特关联保险集团，无中文定名。"
+      },
+      {
+        "source_text": "Delaware Life Insurance Co.",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Delaware Life Insurance Company",
+        "preferred_en": "Delaware Life Insurance Company",
+        "official_zh": "",
+        "common_zh": "特拉华人寿保险",
+        "title_label": "特拉华人寿",
+        "preferred_zh": "特拉华人寿保险",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "仅一个英文来源提及 Delaware Life Insurance Co. 为沃尔特控制的保险公司；中文译名为直译，低置信度。"
+      },
+      {
+        "source_text": "Securities and Exchange Commission (SEC)",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "U.S. Securities and Exchange Commission",
+        "preferred_en": "U.S. Securities and Exchange Commission",
+        "official_zh": "美国证券交易委员会",
+        "common_zh": "美国证券交易委员会",
+        "title_label": "美国证交会",
+        "preferred_zh": "美国证券交易委员会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "多个英文来源均以 Securities and Exchange Commission (SEC) 出现；中文通用译名为“美国证券交易委员会”。"
+      },
+      {
+        "source_text": "Justice Department",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "U.S. Department of Justice",
+        "preferred_en": "U.S. Department of Justice",
+        "official_zh": "美国司法部",
+        "common_zh": "美国司法部",
+        "title_label": "美国司法部",
+        "preferred_zh": "美国司法部",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "多个英文来源均提及 Justice Department 与 SEC 联合调查；中文通用译名为“美国司法部”。"
+      },
+      {
+        "source_text": "Bob Iger",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Bob Iger",
+        "preferred_en": "Bob Iger",
+        "official_zh": "",
+        "common_zh": "鲍勃·艾格",
+        "title_label": "鲍勃·艾格",
+        "preferred_zh": "鲍勃·艾格",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "NYT 与 CNBC 均确认 Bob Iger 为湖人买家之一；中文媒体通用译名为“鲍勃·艾格”。"
+      },
+      {
+        "source_text": "Joshua Kushner",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Joshua Kushner",
+        "preferred_en": "Joshua Kushner",
+        "official_zh": "",
+        "common_zh": "约书亚·库什纳",
+        "title_label": "约书亚·库什纳",
+        "preferred_zh": "约书亚·库什纳",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "NYT 与 CNBC 均确认 Joshua Kushner 为湖人买家之一；中文通用译名为“约书亚·库什纳”。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "F1",
+        "clip_indexes": [
+          1
+        ],
+        "context": "motorsport, Cadillac F1 Team",
+        "sense": "Formula One world championship / team",
+        "preferred_zh": "一级方程式",
+        "title_label": "F1",
+        "avoid_zh": [
+          "方程式一"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.facebook.com/cjackchangc/posts/%E4%B8%80%E5%A0%B4%E6%B2%92%E6%9C%89%E4%BA%BA%E7%9C%8B%E5%A5%BD%E7%9A%84%E5%AD%A4%E7%8D%A8%E8%B1%AA%E8%B3%AD%E7%95%B6%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E5%8B%B8%E4%BD%A0%E5%8D%83%E8%90%AC%E5%88%A5%E7%A2%B0%E9%82%A3%E5%80%8B%E7%88%9B%E6%94%A4%E5%AD%90%E7%9A%84%E6%99%82%E5%80%99%E4%BD%A0%E6%95%A2%E4%B8%8D%E6%95%A2%E6%8E%8F%E5%87%BA-20-%E5%84%84%E7%BE%8E%E9%87%91%E8%B7%9F%E5%85%A8%E5%A4%A9%E4%B8%8B%E8%B3%AD%E4%B8%80%E6%8A%8A%E4%BD%A0%E5%8F%AF%E8%83%BD%E6",
+          "https://www.the-race.com/business/mark-walter-la-lakers-sale-what-it-could-mean-for-cadillac-f1-team"
+        ]
+      },
+      {
+        "source_term": "related-party loans",
+        "clip_indexes": [],
+        "context": "insurance regulation, DOJ/SEC probe into Walter-controlled insurers",
+        "sense": "loans between affiliated entities under common control",
+        "preferred_zh": "关联方贷款",
+        "title_label": "关联方贷款",
+        "avoid_zh": [
+          "相关方贷款",
+          "关联贷款方"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Federal Home Loan Bank (FHLB)",
+        "clip_indexes": [],
+        "context": "US insurance funding, Group 1001 borrowings",
+        "sense": "US government-chartered wholesale funding system for member financial institutions",
+        "preferred_zh": "联邦住房贷款银行",
+        "title_label": "联邦住房贷款银行",
+        "avoid_zh": [
+          "联邦家庭贷款银行"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "美国司法部与证券交易委员会正在调查马克·沃尔特控制的两家保险公司为何未能适当披露向关联企业提供的200亿美元贷款。",
+        "public_baseline": "公开报道确认联邦检察官与SEC正在调查沃尔特关联的四家企业，焦点是沃尔特控制的保险公司向关联企业发放的约200亿美元贷款是否被适当披露；同时沃尔特在2025年10月取得湖人控制权后，于2026年8月以125亿美元将湖人出售给鲍勃·艾格与约书亚·库什纳。",
+        "surprise_gap": "沃尔特2025年才买下湖人，不到一年即出售这支“皇冠明珠”球队，与其体育帝国扩张的公开形象形成反差；同时监管调查聚焦其保险子公司对关联方贷款的披露问题。",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "沃尔特拥有洛杉矶道奇、切尔西、凯迪拉克F1车队及北美女子职业冰球联赛等资产。"
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "沃尔特2025年才买下湖人，不到一年即出售。"
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款。"
+          },
+          {
+            "kind": "public",
+            "query": "Mark Walter sold Los Angeles Lakers 2025 buyer",
+            "url": "https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-from-mark-walter.html",
+            "fact": "CNBC确认沃尔特将湖人多数股权出售给鲍勃·艾格与约书亚·库什纳，估值125亿美元。"
+          },
+          {
+            "kind": "public",
+            "query": "Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation",
+            "url": "https://www.latimes.com/business/story/2026-08-05/why-related-party-loans-at-issue-in-mark-walter-probe-considered-risky",
+            "fact": "洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款。"
+          }
+        ],
+        "forbidden_claims": [
+          "沃尔特已因调查被定罪或正式起诉",
+          "沃尔特出售湖人是因为监管调查直接导致",
+          "道奇队或凯迪拉克F1车队正在被出售",
+          "沃尔特已完全退出切尔西"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "沃尔特杯（Walter Cup）无可靠简体中文定名，title_label 为低置信度音译，建议标题中保留英文或改用“PWHL冠军奖杯”。",
+      "Group 1001、Delaware Life Insurance Co. 的中文译名均为直译，公开来源仅一个，属低置信度。",
+      "TWG Global、BlueCo 无可靠简体中文定名，建议标题中保留英文原名。",
+      "公开片段显示繁体中文，已按要求转换为简体中文标签。"
+    ],
+    "research_queries": [
+      {
+        "query": "马克·沃尔特 Mark Walter 道奇 湖人 切尔西 凯迪拉克F1",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Mark Walter and the exact Chinese names of his sports holdings (LA Dodgers, LA Lakers, Chelsea FC, Cadillac F1 team, PWHL/Walter Cup)."
+      },
+      {
+        "query": "Mark Walter sold Los Angeles Lakers 2025 buyer",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Walter bought the Lakers in 2025 and then sold them within a year, and identify the buyer and timing."
+      },
+      {
+        "query": "Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the core claim that the Justice Department and SEC are investigating two insurers controlled by Walter over failure to disclose $20 billion in loans to affiliates."
+      },
+      {
+        "query": "Mark Walter insurance companies names subsidiaries",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify the exact names of the two insurers Walter controls so the Chinese title and story can name the institutions accurately."
+      },
+      {
+        "query": "Mark Walter Los Angeles Lakers purchase 2025 Buss family sale",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline on when and how Walter acquired the Lakers, to test whether a quick resale is genuinely unexpected."
+      },
+      {
+        "query": "Mark Walter Walter Cup PWHL professional women's hockey league ownership",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify that Walter owns the PWHL and that its championship trophy is called the Walter Cup, as stated in the clip."
+      },
+      {
+        "query": "Mark Walter Chelsea FC Cadillac F1 team ownership stakes",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Walter's ownership or investment in Chelsea Football Club and the Cadillac F1 team to confirm the breadth of his sports empire."
+      },
+      {
+        "query": "Mark Walter net worth business empire Guggenheim insurance",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline of Walter's business empire and insurance holdings to assess the significance of the reported federal scrutiny."
+      },
+      {
+        "query": "Mark Walter sold Lakers 2026 shock sports finance",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether the Lakers sale was reported as a shock and whether the timing matches the clip's claim of a sale within a year of purchase."
+      },
+      {
+        "query": "Mark Walter insurance $20 billion loans disclosure SEC filing",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Look for official SEC filings or disclosures by Walter-controlled insurers regarding the $20 billion in affiliate loans."
+      },
+      {
+        "query": "Mark Walter DOJ SEC investigation insurers 2025 2026",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether the DOJ and SEC investigations are confirmed by official statements or established financial media, and the exact scope."
+      },
+      {
+        "query": "Mark Walter Lakers sale price buyer 2025 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the reported sale price and buyer of the Lakers to confirm the claim that Walter sold a crown jewel within a year."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上？",
+      "title_lines": [
+        "刚买湖人就转手",
+        "沃尔特200亿关联贷款",
+        "司法部与SEC同时盯上？"
+      ],
+      "formula_id": "名人资产反转+监管数字",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+      "evidence_basis": [
+        "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+        "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+        "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+      ],
+      "runner_up_titles": [
+        "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC为何同时调查？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 5
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        }
+      },
+      "comment": "KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-19T00:28:04.415653+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context",
+          "source_title": "Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context",
+          "show_date": "",
+          "current_title": "体育大亨沃尔特旗下保障机构遭监管审查",
+          "current_title_lines": [
+            "体育大亨沃尔特商业版图受关注",
+            "旗下保障机构贷款披露引监管审查",
+            "华尔街进入保障领域后原则是否生变"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "华尔街财经，马克·沃尔特拥有多个顶级职业体育俱乐部。",
+              "en": "Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.",
+              "relative_start": 4.5,
+              "relative_end": 9.5
+            },
+            {
+              "index": 2,
+              "zh": "包括实力强劲的洛杉矶道奇队。",
+              "en": "There is the dominant Los Angeles Dodgers.",
+              "relative_start": 10.5,
+              "relative_end": 13.5
+            },
+            {
+              "index": 3,
+              "zh": "切尔西足球俱乐部、F1凯迪拉克车队，甚至整个职业女子冰球联盟，",
+              "en": "Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,",
+              "relative_start": 13.5,
+              "relative_end": 21.5
+            },
+            {
+              "index": 4,
+              "zh": "冠军球队争夺沃尔特杯。",
+              "en": "where the winner plays for the Walter Cup.",
+              "relative_start": 21.5,
+              "relative_end": 24.5
+            },
+            {
+              "index": 5,
+              "zh": "因此，当沃尔特突然出售其核心资产之一——洛杉矶湖人队时，体育界和金融界都为之震动。",
+              "en": "So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.",
+              "relative_start": 25.5,
+              "relative_end": 32.5
+            },
+            {
+              "index": 6,
+              "zh": "他在2025年才买下这支球队。",
+              "en": "It only bought the team in 2025.",
+              "relative_start": 34.5,
+              "relative_end": 37.5
+            },
+            {
+              "index": 7,
+              "zh": "不到一年就转手卖掉堪称其最耀眼的奖杯，这完全令人震惊。",
+              "en": "To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.",
+              "relative_start": 37.5,
+              "relative_end": 46.5
+            },
+            {
+              "index": 8,
+              "zh": "此后浮现的情况是，联邦检察官对马克·沃尔特的世界表现出浓厚兴趣，",
+              "en": "What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter",
+              "relative_start": 46.5,
+              "relative_end": 54.5
+            },
+            {
+              "index": 9,
+              "zh": "以及他庞大的商业帝国。目前，司法部和美国证券交易委员会正在调查沃尔特控制的两家保险公司",
+              "en": "and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls",
+              "relative_start": 54.5,
+              "relative_end": 63.5
+            },
+            {
+              "index": 10,
+              "zh": "为何未能适当披露向关联企业提供的200亿美元贷款。",
+              "en": "failed to properly disclose $20 billion in loans to affiliated businesses.",
+              "relative_start": 63.5,
+              "relative_end": 68.5
+            },
+            {
+              "index": 11,
+              "zh": "这个故事讲的是华尔街进入了一个常被视为乏味、沉寂、无聊的市场领域。",
+              "en": "This story is all about Wall Street moving into a part of the market that was often seen as unsexy, dormant, and boring.",
+              "relative_start": 69.5,
+              "relative_end": 77.5
+            },
+            {
+              "index": 12,
+              "zh": "那就是保险业。这很重要，因为长期以来，保险公司运营的前提是保单持有人的利益始终优先于保险公司自身利益。",
+              "en": "That is, insurance. This matters because for a very long time, insurance companies operate in the premise that policyholders' interests always come before the insurance company's interests.",
+              "relative_start": 77.5,
+              "relative_end": 89.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"source_title\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"show_date\": \"\",\n    \"current_title\": \"体育大亨沃尔特旗下保障机构遭监管审查\",\n    \"current_title_lines\": [\n      \"体育大亨沃尔特商业版图受关注\",\n      \"旗下保障机构贷款披露引监管审查\",\n      \"华尔街进入保障领域后原则是否生变\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"华尔街财经，马克·沃尔特拥有多个顶级职业体育俱乐部。\",\n        \"en\": \"Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.\",\n        \"relative_start\": 4.5,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"包括实力强劲的洛杉矶道奇队。\",\n        \"en\": \"There is the dominant Los Angeles Dodgers.\",\n        \"relative_start\": 10.5,\n        \"relative_end\": 13.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"切尔西足球俱乐部、F1凯迪拉克车队，甚至整个职业女子冰球联盟，\",\n        \"en\": \"Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,\",\n        \"relative_start\": 13.5,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"冠军球队争夺沃尔特杯。\",\n        \"en\": \"where the winner plays for the Walter Cup.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 24.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"因此，当沃尔特突然出售其核心资产之一——洛杉矶湖人队时，体育界和金融界都为之震动。\",\n        \"en\": \"So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 32.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他在2025年才买下这支球队。\",\n        \"en\": \"It only bought the team in 2025.\",\n        \"relative_start\": 34.5,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"不到一年就转手卖掉堪称其最耀眼的奖杯，这完全令人震惊。\",\n        \"en\": \"To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 46.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"此后浮现的情况是，联邦检察官对马克·沃尔特的世界表现出浓厚兴趣，\",\n        \"en\": \"What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter\",\n        \"relative_start\": 46.5,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以及他庞大的商业帝国。目前，司法部和美国证券交易委员会正在调查沃尔特控制的两家保险公司\",\n        \"en\": \"and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 63.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"为何未能适当披露向关联企业提供的200亿美元贷款。\",\n        \"en\": \"failed to properly disclose $20 billion in loans to affiliated businesses.\",\n        \"relative_start\": 63.5,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这个故事讲的是华尔街进入了一个常被视为乏味、沉寂、无聊的市场领域。\",\n        \"en\": \"This story is all about Wall Street moving into a part of the market that was often seen as unsexy, dormant, and boring.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 77.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"那就是保险业。这很重要，因为长期以来，保险公司运营的前提是保单持有人的利益始终优先于保险公司自身利益。\",\n        \"en\": \"That is, insurance. This matters because for a very long time, insurance companies operate in the premise that policyholders' interests always come before the insurance company's interests.\",\n        \"relative_start\": 77.5,\n        \"relative_end\": 89.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [\n    {\n      \"source_term\": \"F1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"motorsport, Cadillac F1 Team\",\n      \"sense\": \"Formula One world championship / team\",\n      \"preferred_zh\": \"一级方程式\",\n      \"title_label\": \"F1\",\n      \"avoid_zh\": [\n        \"方程式一\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.facebook.com/cjackchangc/posts/%E4%B8%80%E5%A0%B4%E6%B2%92%E6%9C%89%E4%BA%BA%E7%9C%8B%E5%A5%BD%E7%9A%84%E5%AD%A4%E7%8D%A8%E8%B1%AA%E8%B3%AD%E7%95%B6%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E5%8B%B8%E4%BD%A0%E5%8D%83%E8%90%AC%E5%88%A5%E7%A2%B0%E9%82%A3%E5%80%8B%E7%88%9B%E6%94%A4%E5%AD%90%E7%9A%84%E6%99%82%E5%80%99%E4%BD%A0%E6%95%A2%E4%B8%8D%E6%95%A2%E6%8E%8F%E5%87%BA-20-%E5%84%84%E7%BE%8E%E9%87%91%E8%B7%9F%E5%85%A8%E5%A4%A9%E4%B8%8B%E8%B3%AD%E4%B8%80%E6%8A%8A%E4%BD%A0%E5%8F%AF%E8%83%BD%E6\",\n        \"https://www.the-race.com/business/mark-walter-la-lakers-sale-what-it-could-mean-for-cadillac-f1-team\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"美国司法部与证券交易委员会正在调查马克·沃尔特控制的两家保险公司为何未能适当披露向关联企业提供的200亿美元贷款。\",\n      \"public_baseline\": \"公开报道确认联邦检察官与SEC正在调查沃尔特关联的四家企业，焦点是沃尔特控制的保险公司向关联企业发放的约200亿美元贷款是否被适当披露；同时沃尔特在2025年10月取得湖人控制权后，于2026年8月以125亿美元将湖人出售给鲍勃·艾格与约书亚·库什纳。\",\n      \"surprise_gap\": \"沃尔特2025年才买下湖人，不到一年即出售这支“皇冠明珠”球队，与其体育帝国扩张的公开形象形成反差；同时监管调查聚焦其保险子公司对关联方贷款的披露问题。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特拥有洛杉矶道奇、切尔西、凯迪拉克F1车队及北美女子职业冰球联赛等资产。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特2025年才买下湖人，不到一年即出售。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers 2025 buyer\",\n          \"url\": \"https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-from-mark-walter.html\",\n          \"fact\": \"CNBC确认沃尔特将湖人多数股权出售给鲍勃·艾格与约书亚·库什纳，估值125亿美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation\",\n          \"url\": \"https://www.latimes.com/business/story/2026-08-05/why-related-party-loans-at-issue-in-mark-walter-probe-considered-risky\",\n          \"fact\": \"洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"沃尔特已因调查被定罪或正式起诉\",\n        \"沃尔特出售湖人是因为监管调查直接导致\",\n        \"道奇队或凯迪拉克F1车队正在被出售\",\n        \"沃尔特已完全退出切尔西\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"沃尔特杯（Walter Cup）无可靠简体中文定名，title_label 为低置信度音译，建议标题中保留英文或改用“PWHL冠军奖杯”。\",\n    \"Group 1001、Delaware Life Insurance Co. 的中文译名均为直译，公开来源仅一个，属低置信度。\",\n    \"TWG Global、BlueCo 无可靠简体中文定名，建议标题中保留英文原名。\",\n    \"公开片段显示繁体中文，已按要求转换为简体中文标签。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "美国司法部与SEC正在调查马克·沃尔特控制的两家保险公司为何未适当披露向关联企业提供的200亿美元贷款，同时沃尔特2025年才买下湖人，不到一年即出售。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "刚买湖人就转手，沃尔特的200亿关联贷款藏不住了",
+                "title_lines": [
+                  "刚买湖人就转手",
+                  "旗下两家保障机构",
+                  "200亿关联贷款遭调查"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+                  "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "200亿贷款未披露，沃尔特两家保障机构被盯上",
+                "title_lines": [
+                  "200亿贷款未披露",
+                  "沃尔特两家保障机构",
+                  "司法部与SEC同时盯上"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+                  "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 10,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "体育大亨的保障机构被查，华尔街原则生变",
+                "title_lines": [
+                  "体育大亨的保障机构",
+                  "200亿关联贷款被查",
+                  "华尔街原则生变"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+                  "transcript fact: 保险公司运营的前提是保单持有人利益优先于保险公司自身利益"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "湖人转手背后，沃尔特200亿关联贷款被查",
+                "title_lines": [
+                  "湖人转手背后",
+                  "沃尔特200亿关联贷款",
+                  "司法部与SEC正在调查"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+                  "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"source_title\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"show_date\": \"\",\n    \"current_title\": \"体育大亨沃尔特旗下保障机构遭监管审查\",\n    \"current_title_lines\": [\n      \"体育大亨沃尔特商业版图受关注\",\n      \"旗下保障机构贷款披露引监管审查\",\n      \"华尔街进入保障领域后原则是否生变\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"华尔街财经，马克·沃尔特拥有多个顶级职业体育俱乐部。\",\n        \"en\": \"Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.\",\n        \"relative_start\": 4.5,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"包括实力强劲的洛杉矶道奇队。\",\n        \"en\": \"There is the dominant Los Angeles Dodgers.\",\n        \"relative_start\": 10.5,\n        \"relative_end\": 13.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"切尔西足球俱乐部、F1凯迪拉克车队，甚至整个职业女子冰球联盟，\",\n        \"en\": \"Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,\",\n        \"relative_start\": 13.5,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"冠军球队争夺沃尔特杯。\",\n        \"en\": \"where the winner plays for the Walter Cup.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 24.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"因此，当沃尔特突然出售其核心资产之一——洛杉矶湖人队时，体育界和金融界都为之震动。\",\n        \"en\": \"So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 32.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他在2025年才买下这支球队。\",\n        \"en\": \"It only bought the team in 2025.\",\n        \"relative_start\": 34.5,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"不到一年就转手卖掉堪称其最耀眼的奖杯，这完全令人震惊。\",\n        \"en\": \"To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 46.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"此后浮现的情况是，联邦检察官对马克·沃尔特的世界表现出浓厚兴趣，\",\n        \"en\": \"What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter\",\n        \"relative_start\": 46.5,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以及他庞大的商业帝国。目前，司法部和美国证券交易委员会正在调查沃尔特控制的两家保险公司\",\n        \"en\": \"and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 63.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"为何未能适当披露向关联企业提供的200亿美元贷款。\",\n        \"en\": \"failed to properly disclose $20 billion in loans to affiliated businesses.\",\n        \"relative_start\": 63.5,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这个故事讲的是华尔街进入了一个常被视为乏味、沉寂、无聊的市场领域。\",\n        \"en\": \"This story is all about Wall Street moving into a part of the market that was often seen as unsexy, dormant, and boring.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 77.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"那就是保险业。这很重要，因为长期以来，保险公司运营的前提是保单持有人的利益始终优先于保险公司自身利益。\",\n        \"en\": \"That is, insurance. This matters because for a very long time, insurance companies operate in the premise that policyholders' interests always come before the insurance company's interests.\",\n        \"relative_start\": 77.5,\n        \"relative_end\": 89.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [\n    {\n      \"source_term\": \"F1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"motorsport, Cadillac F1 Team\",\n      \"sense\": \"Formula One world championship / team\",\n      \"preferred_zh\": \"一级方程式\",\n      \"title_label\": \"F1\",\n      \"avoid_zh\": [\n        \"方程式一\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.facebook.com/cjackchangc/posts/%E4%B8%80%E5%A0%B4%E6%B2%92%E6%9C%89%E4%BA%BA%E7%9C%8B%E5%A5%BD%E7%9A%84%E5%AD%A4%E7%8D%A8%E8%B1%AA%E8%B3%AD%E7%95%B6%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E5%8B%B8%E4%BD%A0%E5%8D%83%E8%90%AC%E5%88%A5%E7%A2%B0%E9%82%A3%E5%80%8B%E7%88%9B%E6%94%A4%E5%AD%90%E7%9A%84%E6%99%82%E5%80%99%E4%BD%A0%E6%95%A2%E4%B8%8D%E6%95%A2%E6%8E%8F%E5%87%BA-20-%E5%84%84%E7%BE%8E%E9%87%91%E8%B7%9F%E5%85%A8%E5%A4%A9%E4%B8%8B%E8%B3%AD%E4%B8%80%E6%8A%8A%E4%BD%A0%E5%8F%AF%E8%83%BD%E6\",\n        \"https://www.the-race.com/business/mark-walter-la-lakers-sale-what-it-could-mean-for-cadillac-f1-team\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"美国司法部与证券交易委员会正在调查马克·沃尔特控制的两家保险公司为何未能适当披露向关联企业提供的200亿美元贷款。\",\n      \"public_baseline\": \"公开报道确认联邦检察官与SEC正在调查沃尔特关联的四家企业，焦点是沃尔特控制的保险公司向关联企业发放的约200亿美元贷款是否被适当披露；同时沃尔特在2025年10月取得湖人控制权后，于2026年8月以125亿美元将湖人出售给鲍勃·艾格与约书亚·库什纳。\",\n      \"surprise_gap\": \"沃尔特2025年才买下湖人，不到一年即出售这支“皇冠明珠”球队，与其体育帝国扩张的公开形象形成反差；同时监管调查聚焦其保险子公司对关联方贷款的披露问题。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特拥有洛杉矶道奇、切尔西、凯迪拉克F1车队及北美女子职业冰球联赛等资产。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特2025年才买下湖人，不到一年即出售。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers 2025 buyer\",\n          \"url\": \"https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-from-mark-walter.html\",\n          \"fact\": \"CNBC确认沃尔特将湖人多数股权出售给鲍勃·艾格与约书亚·库什纳，估值125亿美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation\",\n          \"url\": \"https://www.latimes.com/business/story/2026-08-05/why-related-party-loans-at-issue-in-mark-walter-probe-considered-risky\",\n          \"fact\": \"洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"沃尔特已因调查被定罪或正式起诉\",\n        \"沃尔特出售湖人是因为监管调查直接导致\",\n        \"道奇队或凯迪拉克F1车队正在被出售\",\n        \"沃尔特已完全退出切尔西\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"沃尔特杯（Walter Cup）无可靠简体中文定名，title_label 为低置信度音译，建议标题中保留英文或改用“PWHL冠军奖杯”。\",\n    \"Group 1001、Delaware Life Insurance Co. 的中文译名均为直译，公开来源仅一个，属低置信度。\",\n    \"TWG Global、BlueCo 无可靠简体中文定名，建议标题中保留英文原名。\",\n    \"公开片段显示繁体中文，已按要求转换为简体中文标签。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国司法部与SEC正在调查马克·沃尔特控制的两家保险公司为何未适当披露向关联企业提供的200亿美元贷款，同时沃尔特2025年才买下湖人，不到一年即出售。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"刚买湖人就转手，沃尔特的200亿关联贷款藏不住了\",\n          \"title_lines\": [\n            \"刚买湖人就转手\",\n            \"旗下两家保障机构\",\n            \"200亿关联贷款遭调查\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"200亿贷款未披露，沃尔特两家保障机构被盯上\",\n          \"title_lines\": [\n            \"200亿贷款未披露\",\n            \"沃尔特两家保障机构\",\n            \"司法部与SEC同时盯上\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n            \"public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"体育大亨的保障机构被查，华尔街原则生变\",\n          \"title_lines\": [\n            \"体育大亨的保障机构\",\n            \"200亿关联贷款被查\",\n            \"华尔街原则生变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n            \"transcript fact: 保险公司运营的前提是保单持有人利益优先于保险公司自身利益\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"湖人转手背后，沃尔特200亿关联贷款被查\",\n          \"title_lines\": [\n            \"湖人转手背后\",\n            \"沃尔特200亿关联贷款\",\n            \"司法部与SEC正在调查\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "名人资产反转+监管数字",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+            "evidence_basis": [
+              "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+              "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+              "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+            ],
+            "title": "刚买湖人就转手，沃尔特200亿关联贷款被查",
+            "title_lines": [
+              "刚买湖人就转手",
+              "沃尔特200亿关联贷款",
+              "司法部与SEC同时盯上"
+            ],
+            "title_highlights": [
+              "刚买湖人就转手",
+              "200亿关联贷款",
+              "司法部与SEC"
+            ],
+            "runner_up_titles": [
+              "200亿贷款未披露，沃尔特两家保障机构被盯上",
+              "湖人转手背后，沃尔特200亿关联贷款被查"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么。",
+            "comment_highlights": [
+              "200亿关联贷款",
+              "监管调查"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：马克·沃尔特手握多个顶级职业体育俱乐部，商业版图横跨体育与金融。",
+                "comment_highlights": [
+                  "顶级职业体育俱乐部"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：洛杉矶道奇队是沃尔特体育资产中最耀眼的冠军招牌。",
+                "comment_highlights": [
+                  "洛杉矶道奇队"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：切尔西、F1凯迪拉克车队和女子冰球联盟，资产横跨多个体育领域。",
+                "comment_highlights": [
+                  "F1凯迪拉克车队"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：冠军球队争夺沃尔特杯，说明他在女子冰球也有冠名影响力。",
+                "comment_highlights": [
+                  "沃尔特杯"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：突然出售湖人震动体育与金融圈，因为这是他的核心资产之一。",
+                "comment_highlights": [
+                  "出售湖人"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：2025年才买下球队，持有时间之短让外界意外。",
+                "comment_highlights": [
+                  "2025年才买下"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：不到一年就转手最耀眼的奖杯，这个动作本身就是一个强信号。",
+                "comment_highlights": [
+                  "不到一年就转手"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：联邦检察官对沃尔特的世界表现出浓厚兴趣，调查范围正在扩大。",
+                "comment_highlights": [
+                  "联邦检察官"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：司法部和SEC同时调查两家保障机构，焦点落在关联贷款披露。",
+                "comment_highlights": [
+                  "司法部和SEC"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：200亿美元关联贷款未适当披露，这是调查的核心数字。",
+                "comment_highlights": [
+                  "200亿美元关联贷款"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：华尔街进入常被视为乏味的保障领域，故事张力正在于此。",
+                "comment_highlights": [
+                  "保障领域"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：保单持有人利益优先是长期前提，关联贷款披露问题因此更受关注。",
+                "comment_highlights": [
+                  "保单持有人利益优先"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"source_title\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n    \"show_date\": \"\",\n    \"current_title\": \"体育大亨沃尔特旗下保障机构遭监管审查\",\n    \"current_title_lines\": [\n      \"体育大亨沃尔特商业版图受关注\",\n      \"旗下保障机构贷款披露引监管审查\",\n      \"华尔街进入保障领域后原则是否生变\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"华尔街财经，马克·沃尔特拥有多个顶级职业体育俱乐部。\",\n        \"en\": \"Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.\",\n        \"relative_start\": 4.5,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"包括实力强劲的洛杉矶道奇队。\",\n        \"en\": \"There is the dominant Los Angeles Dodgers.\",\n        \"relative_start\": 10.5,\n        \"relative_end\": 13.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"切尔西足球俱乐部、F1凯迪拉克车队，甚至整个职业女子冰球联盟，\",\n        \"en\": \"Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,\",\n        \"relative_start\": 13.5,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"冠军球队争夺沃尔特杯。\",\n        \"en\": \"where the winner plays for the Walter Cup.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 24.5\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"因此，当沃尔特突然出售其核心资产之一——洛杉矶湖人队时，体育界和金融界都为之震动。\",\n        \"en\": \"So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.\",\n        \"relative_start\": 25.5,\n        \"relative_end\": 32.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他在2025年才买下这支球队。\",\n        \"en\": \"It only bought the team in 2025.\",\n        \"relative_start\": 34.5,\n        \"relative_end\": 37.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"不到一年就转手卖掉堪称其最耀眼的奖杯，这完全令人震惊。\",\n        \"en\": \"To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.\",\n        \"relative_start\": 37.5,\n        \"relative_end\": 46.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"此后浮现的情况是，联邦检察官对马克·沃尔特的世界表现出浓厚兴趣，\",\n        \"en\": \"What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter\",\n        \"relative_start\": 46.5,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以及他庞大的商业帝国。目前，司法部和美国证券交易委员会正在调查沃尔特控制的两家保险公司\",\n        \"en\": \"and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 63.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"为何未能适当披露向关联企业提供的200亿美元贷款。\",\n        \"en\": \"failed to properly disclose $20 billion in loans to affiliated businesses.\",\n        \"relative_start\": 63.5,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这个故事讲的是华尔街进入了一个常被视为乏味、沉寂、无聊的市场领域。\",\n        \"en\": \"This story is all about Wall Street moving into a part of the market that was often seen as unsexy, dormant, and boring.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 77.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"那就是保险业。这很重要，因为长期以来，保险公司运营的前提是保单持有人的利益始终优先于保险公司自身利益。\",\n        \"en\": \"That is, insurance. This matters because for a very long time, insurance companies operate in the premise that policyholders' interests always come before the insurance company's interests.\",\n        \"relative_start\": 77.5,\n        \"relative_end\": 89.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [\n    {\n      \"source_term\": \"F1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"motorsport, Cadillac F1 Team\",\n      \"sense\": \"Formula One world championship / team\",\n      \"preferred_zh\": \"一级方程式\",\n      \"title_label\": \"F1\",\n      \"avoid_zh\": [\n        \"方程式一\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.facebook.com/cjackchangc/posts/%E4%B8%80%E5%A0%B4%E6%B2%92%E6%9C%89%E4%BA%BA%E7%9C%8B%E5%A5%BD%E7%9A%84%E5%AD%A4%E7%8D%A8%E8%B1%AA%E8%B3%AD%E7%95%B6%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E5%8B%B8%E4%BD%A0%E5%8D%83%E8%90%AC%E5%88%A5%E7%A2%B0%E9%82%A3%E5%80%8B%E7%88%9B%E6%94%A4%E5%AD%90%E7%9A%84%E6%99%82%E5%80%99%E4%BD%A0%E6%95%A2%E4%B8%8D%E6%95%A2%E6%8E%8F%E5%87%BA-20-%E5%84%84%E7%BE%8E%E9%87%91%E8%B7%9F%E5%85%A8%E5%A4%A9%E4%B8%8B%E8%B3%AD%E4%B8%80%E6%8A%8A%E4%BD%A0%E5%8F%AF%E8%83%BD%E6\",\n        \"https://www.the-race.com/business/mark-walter-la-lakers-sale-what-it-could-mean-for-cadillac-f1-team\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"美国司法部与证券交易委员会正在调查马克·沃尔特控制的两家保险公司为何未能适当披露向关联企业提供的200亿美元贷款。\",\n      \"public_baseline\": \"公开报道确认联邦检察官与SEC正在调查沃尔特关联的四家企业，焦点是沃尔特控制的保险公司向关联企业发放的约200亿美元贷款是否被适当披露；同时沃尔特在2025年10月取得湖人控制权后，于2026年8月以125亿美元将湖人出售给鲍勃·艾格与约书亚·库什纳。\",\n      \"surprise_gap\": \"沃尔特2025年才买下湖人，不到一年即出售这支“皇冠明珠”球队，与其体育帝国扩张的公开形象形成反差；同时监管调查聚焦其保险子公司对关联方贷款的披露问题。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特拥有洛杉矶道奇、切尔西、凯迪拉克F1车队及北美女子职业冰球联赛等资产。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特2025年才买下湖人，不到一年即出售。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers 2025 buyer\",\n          \"url\": \"https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-from-mark-walter.html\",\n          \"fact\": \"CNBC确认沃尔特将湖人多数股权出售给鲍勃·艾格与约书亚·库什纳，估值125亿美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation\",\n          \"url\": \"https://www.latimes.com/business/story/2026-08-05/why-related-party-loans-at-issue-in-mark-walter-probe-considered-risky\",\n          \"fact\": \"洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"沃尔特已因调查被定罪或正式起诉\",\n        \"沃尔特出售湖人是因为监管调查直接导致\",\n        \"道奇队或凯迪拉克F1车队正在被出售\",\n        \"沃尔特已完全退出切尔西\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"沃尔特杯（Walter Cup）无可靠简体中文定名，title_label 为低置信度音译，建议标题中保留英文或改用“PWHL冠军奖杯”。\",\n    \"Group 1001、Delaware Life Insurance Co. 的中文译名均为直译，公开来源仅一个，属低置信度。\",\n    \"TWG Global、BlueCo 无可靠简体中文定名，建议标题中保留英文原名。\",\n    \"公开片段显示繁体中文，已按要求转换为简体中文标签。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"美国司法部与SEC正在调查马克·沃尔特控制的两家保险公司为何未适当披露向关联企业提供的200亿美元贷款，同时沃尔特2025年才买下湖人，不到一年即出售。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"刚买湖人就转手，沃尔特的200亿关联贷款藏不住了\",\n          \"title_lines\": [\n            \"刚买湖人就转手\",\n            \"旗下两家保障机构\",\n            \"200亿关联贷款遭调查\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"200亿贷款未披露，沃尔特两家保障机构被盯上\",\n          \"title_lines\": [\n            \"200亿贷款未披露\",\n            \"沃尔特两家保障机构\",\n            \"司法部与SEC同时盯上\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n            \"public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"体育大亨的保障机构被查，华尔街原则生变\",\n          \"title_lines\": [\n            \"体育大亨的保障机构\",\n            \"200亿关联贷款被查\",\n            \"华尔街原则生变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n            \"transcript fact: 保险公司运营的前提是保单持有人利益优先于保险公司自身利益\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"湖人转手背后，沃尔特200亿关联贷款被查\",\n          \"title_lines\": [\n            \"湖人转手背后\",\n            \"沃尔特200亿关联贷款\",\n            \"司法部与SEC正在调查\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n            \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上\",\n      \"title_lines\": [\n        \"刚买湖人就转手\",\n        \"沃尔特200亿关联贷款\",\n        \"司法部与SEC同时盯上\"\n      ],\n      \"title_highlights\": [\n        \"刚买湖人就转手\",\n        \"200亿关联贷款\",\n        \"司法部与SEC\"\n      ],\n      \"comment\": \"KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么\",\n      \"comment_highlights\": [\n        \"200亿关联贷款\",\n        \"监管调查\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：马克·沃尔特手握多个顶级职业体育俱乐部，商业版图横跨体育与金融\",\n          \"comment_highlights\": [\n            \"顶级职业体育俱乐部\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：洛杉矶道奇队是沃尔特体育资产中最耀眼的冠军招牌\",\n          \"comment_highlights\": [\n            \"洛杉矶道奇队\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：切尔西、F1凯迪拉克车队和女子冰球联盟，资产横跨多个体育领域\",\n          \"comment_highlights\": [\n            \"F1凯迪拉克车队\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：冠军球队争夺沃尔特杯，说明他在女子冰球也有冠名影响力\",\n          \"comment_highlights\": [\n            \"沃尔特杯\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：突然出售湖人震动体育与金融圈，因为这是他的核心资产之一\",\n          \"comment_highlights\": [\n            \"出售湖人\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：2025年才买下球队，持有时间之短让外界意外\",\n          \"comment_highlights\": [\n            \"2025年才买下\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：不到一年就转手最耀眼的奖杯，这个动作本身就是一个强信号\",\n          \"comment_highlights\": [\n            \"不到一年就转手\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：联邦检察官对沃尔特的世界表现出浓厚兴趣，调查范围正在扩大\",\n          \"comment_highlights\": [\n            \"联邦检察官\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：司法部和SEC同时调查两家保障机构，焦点落在关联贷款披露\",\n          \"comment_highlights\": [\n            \"司法部和SEC\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：200亿美元关联贷款未适当披露，这是调查的核心数字\",\n          \"comment_highlights\": [\n            \"200亿美元关联贷款\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：华尔街进入常被视为乏味的保障领域，故事张力正在于此\",\n          \"comment_highlights\": [\n            \"保障领域\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：保单持有人利益优先是长期前提，关联贷款披露问题因此更受关注\",\n          \"comment_highlights\": [\n            \"保单持有人利益优先\"\n          ]\n        }\n      ],\n      \"formula_id\": \"名人资产反转+监管数字\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"刚买下湖人就转手，背后还有200亿关联贷款被查？\",\n      \"evidence_basis\": [\n        \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n        \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n        \"public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款\"\n      ],\n      \"runner_up_titles\": [\n        \"200亿贷款未披露，沃尔特两家保障机构被盯上\",\n        \"湖人转手背后，沃尔特200亿关联贷款被查\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "名人资产反转+监管数字",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+                "evidence_basis": [
+                  "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+                  "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+                  "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+                ],
+                "title": "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上",
+                "title_lines": [
+                  "刚买湖人就转手",
+                  "沃尔特200亿关联贷款",
+                  "司法部与SEC同时盯上"
+                ],
+                "title_highlights": [
+                  "刚买湖人就转手",
+                  "200亿关联贷款",
+                  "司法部与SEC"
+                ],
+                "runner_up_titles": [
+                  "200亿贷款未披露，沃尔特两家保障机构被盯上",
+                  "湖人转手背后，沃尔特200亿关联贷款被查"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么",
+                "comment_highlights": [
+                  "200亿关联贷款",
+                  "监管调查"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：马克·沃尔特手握多个顶级职业体育俱乐部，商业版图横跨体育与金融",
+                    "comment_highlights": [
+                      "顶级职业体育俱乐部"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：洛杉矶道奇队是沃尔特体育资产中最耀眼的冠军招牌",
+                    "comment_highlights": [
+                      "洛杉矶道奇队"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：切尔西、F1凯迪拉克车队和女子冰球联盟，资产横跨多个体育领域",
+                    "comment_highlights": [
+                      "F1凯迪拉克车队"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：冠军球队争夺沃尔特杯，说明他在女子冰球也有冠名影响力",
+                    "comment_highlights": [
+                      "沃尔特杯"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：突然出售湖人震动体育与金融圈，因为这是他的核心资产之一",
+                    "comment_highlights": [
+                      "出售湖人"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：2025年才买下球队，持有时间之短让外界意外",
+                    "comment_highlights": [
+                      "2025年才买下"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：不到一年就转手最耀眼的奖杯，这个动作本身就是一个强信号",
+                    "comment_highlights": [
+                      "不到一年就转手"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：联邦检察官对沃尔特的世界表现出浓厚兴趣，调查范围正在扩大",
+                    "comment_highlights": [
+                      "联邦检察官"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：司法部和SEC同时调查两家保障机构，焦点落在关联贷款披露",
+                    "comment_highlights": [
+                      "司法部和SEC"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：200亿美元关联贷款未适当披露，这是调查的核心数字",
+                    "comment_highlights": [
+                      "200亿美元关联贷款"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：华尔街进入常被视为乏味的保障领域，故事张力正在于此",
+                    "comment_highlights": [
+                      "保障领域"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：保单持有人利益优先是长期前提，关联贷款披露问题因此更受关注",
+                    "comment_highlights": [
+                      "保单持有人利益优先"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上",
+          "title_lines": [
+            "刚买湖人就转手",
+            "沃尔特200亿关联贷款",
+            "司法部与SEC同时盯上"
+          ],
+          "formula_id": "名人资产反转+监管数字",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-19T00:28:06.644586+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context",
+          "source_title": "Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context",
+          "show_date": "",
+          "current_title": "体育大亨沃尔特旗下保障机构遭监管审查",
+          "current_title_lines": [
+            "体育大亨沃尔特商业版图受关注",
+            "旗下保障机构贷款披露引监管审查",
+            "华尔街进入保障领域后原则是否生变"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "华尔街财经，马克·沃尔特拥有多个顶级职业体育俱乐部。",
+              "en": "Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.",
+              "relative_start": 4.5,
+              "relative_end": 9.5
+            },
+            {
+              "index": 2,
+              "zh": "包括实力强劲的洛杉矶道奇队。",
+              "en": "There is the dominant Los Angeles Dodgers.",
+              "relative_start": 10.5,
+              "relative_end": 13.5
+            },
+            {
+              "index": 3,
+              "zh": "切尔西足球俱乐部、F1凯迪拉克车队，甚至整个职业女子冰球联盟，",
+              "en": "Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,",
+              "relative_start": 13.5,
+              "relative_end": 21.5
+            },
+            {
+              "index": 4,
+              "zh": "冠军球队争夺沃尔特杯。",
+              "en": "where the winner plays for the Walter Cup.",
+              "relative_start": 21.5,
+              "relative_end": 24.5
+            },
+            {
+              "index": 5,
+              "zh": "因此，当沃尔特突然出售其核心资产之一——洛杉矶湖人队时，体育界和金融界都为之震动。",
+              "en": "So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.",
+              "relative_start": 25.5,
+              "relative_end": 32.5
+            },
+            {
+              "index": 6,
+              "zh": "他在2025年才买下这支球队。",
+              "en": "It only bought the team in 2025.",
+              "relative_start": 34.5,
+              "relative_end": 37.5
+            },
+            {
+              "index": 7,
+              "zh": "不到一年就转手卖掉堪称其最耀眼的奖杯，这完全令人震惊。",
+              "en": "To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.",
+              "relative_start": 37.5,
+              "relative_end": 46.5
+            },
+            {
+              "index": 8,
+              "zh": "此后浮现的情况是，联邦检察官对马克·沃尔特的世界表现出浓厚兴趣，",
+              "en": "What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter",
+              "relative_start": 46.5,
+              "relative_end": 54.5
+            },
+            {
+              "index": 9,
+              "zh": "以及他庞大的商业帝国。目前，司法部和美国证券交易委员会正在调查沃尔特控制的两家保险公司",
+              "en": "and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls",
+              "relative_start": 54.5,
+              "relative_end": 63.5
+            },
+            {
+              "index": 10,
+              "zh": "为何未能适当披露向关联企业提供的200亿美元贷款。",
+              "en": "failed to properly disclose $20 billion in loans to affiliated businesses.",
+              "relative_start": 63.5,
+              "relative_end": 68.5
+            },
+            {
+              "index": 11,
+              "zh": "这个故事讲的是华尔街进入了一个常被视为乏味、沉寂、无聊的市场领域。",
+              "en": "This story is all about Wall Street moving into a part of the market that was often seen as unsexy, dormant, and boring.",
+              "relative_start": 69.5,
+              "relative_end": 77.5
+            },
+            {
+              "index": 12,
+              "zh": "那就是保险业。这很重要，因为长期以来，保险公司运营的前提是保单持有人的利益始终优先于保险公司自身利益。",
+              "en": "That is, insurance. This matters because for a very long time, insurance companies operate in the premise that policyholders' interests always come before the insurance company's interests.",
+              "relative_start": 77.5,
+              "relative_end": 89.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n  \"source_title\": \"Duration: 6:05 A Sports Mogul's Empire Under Scrutiny The Context\",\n  \"current_title\": \"体育大亨沃尔特旗下保障机构遭监管审查\",\n  \"source_claims\": [\n    \"Wall Street Finance here Mark Walter owns some of the most glamorous franchises and professional sports.\",\n    \"There is the dominant Los Angeles Dodgers.\",\n    \"Chelsea Football Club, F1 Cadillac Team, and even the entire professional women's hockey league,\",\n    \"where the winner plays for the Walter Cup.\",\n    \"So it sends shockwaves across sports and finance when Walter suddenly sold one of his crown jewels, the Los Angeles Lakers.\",\n    \"It only bought the team in 2025.\",\n    \"To turn around and sell arguably the most glittering trophy in his cabinet, within a year was a complete shock.\",\n    \"What has emerged since is that federal prosecutors have been showing a deep interest in the world of Mark Walter\",\n    \"and his sprawling business empire. What's happening is that the Justice Department and the Securities and Exchange Commission are investigating why two insurers' Walter controls\",\n    \"failed to properly disclose $20 billion in loans to affiliated businesses.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [\n    {\n      \"source_term\": \"F1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"motorsport, Cadillac F1 Team\",\n      \"sense\": \"Formula One world championship / team\",\n      \"preferred_zh\": \"一级方程式\",\n      \"title_label\": \"F1\",\n      \"avoid_zh\": [\n        \"方程式一\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.facebook.com/cjackchangc/posts/%E4%B8%80%E5%A0%B4%E6%B2%92%E6%9C%89%E4%BA%BA%E7%9C%8B%E5%A5%BD%E7%9A%84%E5%AD%A4%E7%8D%A8%E8%B1%AA%E8%B3%AD%E7%95%B6%E5%85%A8%E4%B8%96%E7%95%8C%E9%83%BD%E5%8B%B8%E4%BD%A0%E5%8D%83%E8%90%AC%E5%88%A5%E7%A2%B0%E9%82%A3%E5%80%8B%E7%88%9B%E6%94%A4%E5%AD%90%E7%9A%84%E6%99%82%E5%80%99%E4%BD%A0%E6%95%A2%E4%B8%8D%E6%95%A2%E6%8E%8F%E5%87%BA-20-%E5%84%84%E7%BE%8E%E9%87%91%E8%B7%9F%E5%85%A8%E5%A4%A9%E4%B8%8B%E8%B3%AD%E4%B8%80%E6%8A%8A%E4%BD%A0%E5%8F%AF%E8%83%BD%E6\",\n        \"https://www.the-race.com/business/mark-walter-la-lakers-sale-what-it-could-mean-for-cadillac-f1-team\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"美国司法部与证券交易委员会正在调查马克·沃尔特控制的两家保险公司为何未能适当披露向关联企业提供的200亿美元贷款。\",\n      \"public_baseline\": \"公开报道确认联邦检察官与SEC正在调查沃尔特关联的四家企业，焦点是沃尔特控制的保险公司向关联企业发放的约200亿美元贷款是否被适当披露；同时沃尔特在2025年10月取得湖人控制权后，于2026年8月以125亿美元将湖人出售给鲍勃·艾格与约书亚·库什纳。\",\n      \"surprise_gap\": \"沃尔特2025年才买下湖人，不到一年即出售这支“皇冠明珠”球队，与其体育帝国扩张的公开形象形成反差；同时监管调查聚焦其保险子公司对关联方贷款的披露问题。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特拥有洛杉矶道奇、切尔西、凯迪拉克F1车队及北美女子职业冰球联赛等资产。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"沃尔特2025年才买下湖人，不到一年即出售。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter sold Los Angeles Lakers 2025 buyer\",\n          \"url\": \"https://www.cnbc.com/2026/08/12/bob-iger-joshua-kushner-buy-los-angeles-lakers-from-mark-walter.html\",\n          \"fact\": \"CNBC确认沃尔特将湖人多数股权出售给鲍勃·艾格与约书亚·库什纳，估值125亿美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Mark Walter insurers $20 billion loans affiliated businesses DOJ SEC investigation\",\n          \"url\": \"https://www.latimes.com/business/story/2026-08-05/why-related-party-loans-at-issue-in-mark-walter-probe-considered-risky\",\n          \"fact\": \"洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"沃尔特已因调查被定罪或正式起诉\",\n        \"沃尔特出售湖人是因为监管调查直接导致\",\n        \"道奇队或凯迪拉克F1车队正在被出售\",\n        \"沃尔特已完全退出切尔西\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"沃尔特杯（Walter Cup）无可靠简体中文定名，title_label 为低置信度音译，建议标题中保留英文或改用“PWHL冠军奖杯”。\",\n    \"Group 1001、Delaware Life Insurance Co. 的中文译名均为直译，公开来源仅一个，属低置信度。\",\n    \"TWG Global、BlueCo 无可靠简体中文定名，建议标题中保留英文原名。\",\n    \"公开片段显示繁体中文，已按要求转换为简体中文标签。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上\",\n  \"title_lines\": [\n    \"刚买湖人就转手\",\n    \"沃尔特200亿关联贷款\",\n    \"司法部与SEC同时盯上\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"刚买下湖人就转手，背后还有200亿关联贷款被查？\",\n  \"evidence_basis\": [\n    \"transcript fact: 沃尔特2025年才买下湖人，不到一年即出售\",\n    \"transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款\",\n    \"public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+            "evidence_basis": [
+              "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+              "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+              "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+            ],
+            "title": "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上？",
+            "title_lines": [
+              "刚买湖人就转手",
+              "沃尔特200亿关联贷款",
+              "司法部与SEC同时盯上？"
+            ],
+            "title_highlights": [
+              "刚买湖人就转手",
+              "沃尔特200亿关联贷款",
+              "司法部与SEC同时盯上？"
+            ],
+            "runner_up_titles": [
+              "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC为何同时调查？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC同时盯上？",
+        "title_lines": [
+          "刚买湖人就转手",
+          "沃尔特200亿关联贷款",
+          "司法部与SEC同时盯上？"
+        ],
+        "title_highlights": [
+          "刚买湖人就转手",
+          "沃尔特200亿关联贷款",
+          "司法部与SEC同时盯上？"
+        ],
+        "comment": "KC评论：刚买湖人就转手，200亿关联贷款为何未披露，监管调查下一步看什么",
+        "comment_highlights": [
+          "200亿关联贷款",
+          "监管调查"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：马克·沃尔特手握多个顶级职业体育俱乐部，商业版图横跨体育与金融",
+            "comment_highlights": [
+              "顶级职业体育俱乐部"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：洛杉矶道奇队是沃尔特体育资产中最耀眼的冠军招牌",
+            "comment_highlights": [
+              "洛杉矶道奇队"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：切尔西、F1凯迪拉克车队和女子冰球联盟，资产横跨多个体育领域",
+            "comment_highlights": [
+              "F1凯迪拉克车队"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：冠军球队争夺沃尔特杯，说明他在女子冰球也有冠名影响力",
+            "comment_highlights": [
+              "沃尔特杯"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：突然出售湖人震动体育与金融圈，因为这是他的核心资产之一",
+            "comment_highlights": [
+              "出售湖人"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：2025年才买下球队，持有时间之短让外界意外",
+            "comment_highlights": [
+              "2025年才买下"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：不到一年就转手最耀眼的奖杯，这个动作本身就是一个强信号",
+            "comment_highlights": [
+              "不到一年就转手"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：联邦检察官对沃尔特的世界表现出浓厚兴趣，调查范围正在扩大",
+            "comment_highlights": [
+              "联邦检察官"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：司法部和SEC同时调查两家保障机构，焦点落在关联贷款披露",
+            "comment_highlights": [
+              "司法部和SEC"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：200亿美元关联贷款未适当披露，这是调查的核心数字",
+            "comment_highlights": [
+              "200亿美元关联贷款"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：华尔街进入常被视为乏味的保障领域，故事张力正在于此",
+            "comment_highlights": [
+              "保障领域"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：保单持有人利益优先是长期前提，关联贷款披露问题因此更受关注",
+            "comment_highlights": [
+              "保单持有人利益优先"
+            ]
+          }
+        ],
+        "formula_id": "名人资产反转+监管数字",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "刚买下湖人就转手，背后还有200亿关联贷款被查？",
+        "evidence_basis": [
+          "transcript fact: 沃尔特2025年才买下湖人，不到一年即出售",
+          "transcript fact: 司法部与SEC正在调查沃尔特控制的两家保险公司为何未适当披露200亿美元关联贷款",
+          "public evidence: 洛杉矶时报报道联邦当局正在调查沃尔特控制的两家保险公司向关联实体发放的数十亿美元关联方贷款"
+        ],
+        "runner_up_titles": [
+          "刚买湖人就转手：沃尔特200亿关联贷款，司法部与SEC为何同时调查？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
