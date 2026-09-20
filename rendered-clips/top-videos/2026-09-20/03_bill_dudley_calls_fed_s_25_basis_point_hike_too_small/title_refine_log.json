@@ -1,0 +1,1336 @@
+{
+  "timestamp_utc": "2026-09-20T00:03:55.085080+00:00",
+  "plan_path": "work/top-videos/03_bill_dudley_calls_fed_s_25_basis_point_hike_too_small/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bill Dudley",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "William C. Dudley",
+        "preferred_en": "William C. Dudley",
+        "official_zh": "威廉·C·杜德利",
+        "common_zh": "杜德利",
+        "title_label": "杜德利",
+        "preferred_zh": "杜德利",
+        "aliases": [
+          "比尔·杜德利"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://finance.sina.com.cn/roll/2025-05-21/doc-inexipuc0615612.shtml",
+          "https://www.capitalfutures.com.tw/zh-tw/Financial/GlobalArticle?ContentId=C25080400634&Category=all"
+        ],
+        "evidence": "新浪财经与群益期货均以「杜德利（Bill Dudley）」称呼，并标注其为前纽约联储主席；纽约联储官网确认其英文全名 William C. Dudley。"
+      },
+      {
+        "source_text": "New York Fed",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve Bank of New York",
+        "preferred_en": "Federal Reserve Bank of New York",
+        "official_zh": "纽约联邦储备银行",
+        "common_zh": "纽约联储",
+        "title_label": "纽约联储",
+        "preferred_zh": "纽约联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经媒体普遍使用「纽约联储」简称，正式全称为「纽约联邦储备银行」。"
+      },
+      {
+        "source_text": "Federal Reserve",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Reserve System",
+        "preferred_en": "Federal Reserve System",
+        "official_zh": "美国联邦储备系统",
+        "common_zh": "美联储",
+        "title_label": "美联储",
+        "preferred_zh": "美联储",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经报道统一使用「美联储」指代美国联邦储备系统。"
+      },
+      {
+        "source_text": "FOMC",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Open Market Committee",
+        "preferred_en": "Federal Open Market Committee",
+        "official_zh": "联邦公开市场委员会",
+        "common_zh": "联邦公开市场委员会",
+        "title_label": "FOMC",
+        "preferred_zh": "联邦公开市场委员会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "纽约联储官网明确 FOMC 全称为 Federal Open Market Committee，中文标准译名为「联邦公开市场委员会」。"
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "彭博官方视频页面确认 Bloomberg 为节目出品方，中文财经媒体通用「彭博」。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "25 basis point hike",
+        "clip_indexes": [],
+        "context": "美联储加息幅度",
+        "sense": "加息25个基点",
+        "preferred_zh": "加息25个基点",
+        "title_label": "加息25个基点",
+        "avoid_zh": [
+          "加息25个基准点"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "financial conditions",
+        "clip_indexes": [],
+        "context": "货币政策与市场环境",
+        "sense": "金融条件",
+        "preferred_zh": "金融条件",
+        "title_label": "金融条件",
+        "avoid_zh": [
+          "金融状况"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "immaculate disinflation",
+        "clip_indexes": [],
+        "context": "美联储经济预测",
+        "sense": "完美反通胀",
+        "preferred_zh": "完美反通胀",
+        "title_label": "完美反通胀",
+        "avoid_zh": [
+          "无瑕反通胀"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "前纽约联储主席杜德利认为美联储加息25个基点幅度太小，无法对经济活动产生有意义的影响，并预计美联储将继续加息。",
+        "public_baseline": "市场普遍预期美联储将加息25个基点，且联邦基金期货市场已定价未来6至9个月内还将有3至4次加息。",
+        "surprise_gap": "杜德利作为前纽约联储主席，公开批评美联储加息幅度不足，这与市场对美联储将渐进加息的普遍预期形成对比，其观点比市场共识更为鹰派。",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "杜德利表示，除非数据发生重大变化，否则美联储需要进一步加息，因为金融条件仍然宽松。"
+          },
+          {
+            "kind": "public",
+            "query": "Bill Dudley former New York Fed president 25 basis point hike too small",
+            "url": "https://www.bloomberg.com/news/videos/2026-09-17/bill-dudley-calls-fed-s-25-basis-point-hike-too-small-video",
+            "fact": "彭博视频标题确认杜德利称美联储加息25个基点为「太小」。"
+          },
+          {
+            "kind": "public",
+            "query": "Bill Dudley column case for a hike crystal clear Fed",
+            "url": "https://www.bloomberg.com/opinion/articles/2026-09-15/federal-reserve-has-rarely-had-a-stronger-case-for-raising-rates",
+            "fact": "杜德利在彭博专栏中写道，美联储很少有比现在更强的加息理由。"
+          }
+        ],
+        "forbidden_claims": [
+          "杜德利批评美联储主席鲍威尔个人",
+          "杜德利代表美联储官方立场",
+          "杜德利预测美国经济将衰退"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "所有中文译名均基于公开可查的财经媒体及官方来源，未使用音译或自创译名。",
+      "杜德利的 title_label 采用中文财经媒体最常用的「杜德利」，而非全名「威廉·C·杜德利」。",
+      "FOMC 在中文语境中常直接使用英文缩写，故 title_label 保留「FOMC」。"
+    ],
+    "research_queries": [
+      {
+        "query": "比尔·杜德利 纽约联储 前主席 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Bill Dudley and his exact former title at the Federal Reserve Bank of New York."
+      },
+      {
+        "query": "Bill Dudley former New York Fed president 25 basis point hike too small",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's public position that a 25-basis-point hike was too small and his reasoning about financial conditions."
+      },
+      {
+        "query": "Bill Dudley column case for a hike crystal clear Fed",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's prior public statement that the case for a rate hike was crystal clear before the Fed decision."
+      },
+      {
+        "query": "Bill Dudley Fed removing accommodation doses more hikes",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's claim that the Fed signaled this was the first in a series by talking about removing a dose of accommodation."
+      },
+      {
+        "query": "federal funds futures market pricing three or four hikes next six to nine months",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the market expectation of three or four additional Fed hikes over the next six to nine months as cited by Dudley."
+      },
+      {
+        "query": "immaculate disinflation Fed forecast Bill Dudley",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's reference to the Fed's forecast as an immaculate disinflation scenario."
+      },
+      {
+        "query": "美联储 加息 25个基点 太小 杜德利",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese-language coverage of Dudley's criticism to verify how his stance is described in Chinese media."
+      },
+      {
+        "query": "Bill Dudley financial conditions accommodative unsustainable pace economy",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's argument that accommodative financial conditions cause the economy to grow at an unsustainable pace."
+      },
+      {
+        "query": "Bill Dudley Fed needs to make financial conditions less accommodative",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Dudley's public position that the Fed needs to do more to make financial conditions less accommodative."
+      },
+      {
+        "query": "纽约联储 前主席 杜德利 加息 评论",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Chinese-language naming and institutional affiliation for the former New York Fed president."
+      },
+      {
+        "query": "Bill Dudley Fed rate hike series market expects not done",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the market consensus that the Fed is not done hiking and Dudley's agreement with that expectation."
+      },
+      {
+        "query": "Bloomberg Bill Dudley Calls Fed’s established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "杜德利25基点不够：市场已定价3到4次加息，美联储还得加多少？",
+      "title_lines": [
+        "杜德利25基点不够",
+        "市场已定价3到4次加息",
+        "美联储还得加多少？"
+      ],
+      "formula_id": "authority_breaks_consensus",
+      "angle_id": "authority_breaks_consensus",
+      "emotion_pole": "意外",
+      "viewer_reaction": "前联储主席都嫌加息太轻，市场定价的3到4次够吗",
+      "evidence_basis": [
+        "彭博视频标题确认杜德利称美联储加息25个基点为太小",
+        "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息",
+        "杜德利称美联储需要进一步收紧金融条件以抑制不可持续的增长"
+      ],
+      "runner_up_titles": [
+        "杜德利：25基点太小，市场定价的3到4次加息够吗？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 10,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:authority_breaks_consensus",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-20T00:03:51.652643+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’",
+          "source_title": "Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’",
+          "show_date": "",
+          "current_title": "前纽约联储主席评美联储加息幅度偏小",
+          "current_title_lines": [
+            "前纽约联储主席杜德利",
+            "评美联储25基点加息",
+            "称力度偏小难抑需求"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "前纽约联储主席比尔·杜德利撰文指出，25个基点的加息幅度太小，难以对经济活动产生实质性影响。",
+              "en": "The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.",
+              "relative_start": 0.0,
+              "relative_end": 8.4
+            },
+            {
+              "index": 2,
+              "zh": "比尔现在加入我们深入讨论。欢迎来到节目，在此次决策前，您在专栏中表示加息的理由非常明确。",
+              "en": "Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.",
+              "relative_start": 8.4,
+              "relative_end": 16.5
+            },
+            {
+              "index": 3,
+              "zh": "再次加息的理由同样明确吗？目前来看是的，除非数据出现显著变化。基本上可以说，他需要让金融条件不再那么宽松，可能将其推向限制性区域。",
+              "en": "Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into",
+              "relative_start": 16.5,
+              "relative_end": 29.8
+            },
+            {
+              "index": 4,
+              "zh": "他并未说明需要做到何种程度，但从金融市场反应来看，他尚未真正实现这一目标。",
+              "en": "the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.",
+              "relative_start": 29.8,
+              "relative_end": 39.2
+            },
+            {
+              "index": 5,
+              "zh": "我认为，他还暗示这可能是系列行动的第一步，提到要减少一剂宽松，意味着后续还有更多剂需要撤出。",
+              "en": "I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove",
+              "relative_start": 39.2,
+              "relative_end": 48.4
+            },
+            {
+              "index": 6,
+              "zh": "如果看联邦基金期货市场的定价，未来六到九个月内已计入三到四次加息。",
+              "en": "forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.",
+              "relative_start": 48.4,
+              "relative_end": 57.2
+            },
+            {
+              "index": 7,
+              "zh": "因此市场显然预期美联储尚未完成加息，这合情合理。",
+              "en": "So the market certainly expects that the Fed's not done, and that makes sense.",
+              "relative_start": 57.2,
+              "relative_end": 61.3
+            },
+            {
+              "index": 8,
+              "zh": "如果金融条件宽松，导致经济以不可持续的速度增长。",
+              "en": "If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.",
+              "relative_start": 61.3,
+              "relative_end": 67.4
+            },
+            {
+              "index": 9,
+              "zh": "你需要采取更多措施，使金融条件不再那么宽松，以抑制经济活动。",
+              "en": "You need to do more to make financial conditions less accommodative to a restrained economic activity.",
+              "relative_start": 67.4,
+              "relative_end": 72.8
+            },
+            {
+              "index": 10,
+              "zh": "美联储预测中有趣的一点是，似乎假设了完美的反通胀。",
+              "en": "You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.",
+              "relative_start": 72.8,
+              "relative_end": 75.8
+            },
+            {
+              "index": 11,
+              "zh": "如果看夏季的经济预测，增长并未放缓，失业率也尚未上升。",
+              "en": "If you look at the summer of economic projections, growth doesn't slow, unemployment rate doesn't rise yet.",
+              "relative_start": 75.8,
+              "relative_end": 82.0
+            },
+            {
+              "index": 12,
+              "zh": "通胀却神奇地回落到2%。我认为实际情况会更难一些。",
+              "en": "Inflation magically, it sinks back to two percent. I think it's going to be a little bit harder than that.",
+              "relative_start": 82.0,
+              "relative_end": 86.5
+            },
+            {
+              "index": 13,
+              "zh": "比尔，你认为我们需要破坏需求吗？",
+              "en": "Bill, do you think we need the demand destruction?",
+              "relative_start": 86.5,
+              "relative_end": 88.8
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"source_title\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"show_date\": \"\",\n    \"current_title\": \"前纽约联储主席评美联储加息幅度偏小\",\n    \"current_title_lines\": [\n      \"前纽约联储主席杜德利\",\n      \"评美联储25基点加息\",\n      \"称力度偏小难抑需求\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"前纽约联储主席比尔·杜德利撰文指出，25个基点的加息幅度太小，难以对经济活动产生实质性影响。\",\n        \"en\": \"The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"比尔现在加入我们深入讨论。欢迎来到节目，在此次决策前，您在专栏中表示加息的理由非常明确。\",\n        \"en\": \"Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.\",\n        \"relative_start\": 8.4,\n        \"relative_end\": 16.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"再次加息的理由同样明确吗？目前来看是的，除非数据出现显著变化。基本上可以说，他需要让金融条件不再那么宽松，可能将其推向限制性区域。\",\n        \"en\": \"Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into\",\n        \"relative_start\": 16.5,\n        \"relative_end\": 29.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"他并未说明需要做到何种程度，但从金融市场反应来看，他尚未真正实现这一目标。\",\n        \"en\": \"the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.\",\n        \"relative_start\": 29.8,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我认为，他还暗示这可能是系列行动的第一步，提到要减少一剂宽松，意味着后续还有更多剂需要撤出。\",\n        \"en\": \"I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果看联邦基金期货市场的定价，未来六到九个月内已计入三到四次加息。\",\n        \"en\": \"forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 57.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此市场显然预期美联储尚未完成加息，这合情合理。\",\n        \"en\": \"So the market certainly expects that the Fed's not done, and that makes sense.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 61.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"如果金融条件宽松，导致经济以不可持续的速度增长。\",\n        \"en\": \"If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.\",\n        \"relative_start\": 61.3,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"你需要采取更多措施，使金融条件不再那么宽松，以抑制经济活动。\",\n        \"en\": \"You need to do more to make financial conditions less accommodative to a restrained economic activity.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 72.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美联储预测中有趣的一点是，似乎假设了完美的反通胀。\",\n        \"en\": \"You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.\",\n        \"relative_start\": 72.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"如果看夏季的经济预测，增长并未放缓，失业率也尚未上升。\",\n        \"en\": \"If you look at the summer of economic projections, growth doesn't slow, unemployment rate doesn't rise yet.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 82.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"通胀却神奇地回落到2%。我认为实际情况会更难一些。\",\n        \"en\": \"Inflation magically, it sinks back to two percent. I think it's going to be a little bit harder than that.\",\n        \"relative_start\": 82.0,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比尔，你认为我们需要破坏需求吗？\",\n        \"en\": \"Bill, do you think we need the demand destruction?\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 88.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Bill Dudley\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"William C. Dudley\",\n      \"preferred_en\": \"William C. Dudley\",\n      \"official_zh\": \"威廉·C·杜德利\",\n      \"common_zh\": \"杜德利\",\n      \"title_label\": \"杜德利\",\n      \"preferred_zh\": \"杜德利\",\n      \"aliases\": [\n        \"比尔·杜德利\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/roll/2025-05-21/doc-inexipuc0615612.shtml\",\n        \"https://www.capitalfutures.com.tw/zh-tw/Financial/GlobalArticle?ContentId=C25080400634&Category=all\"\n      ],\n      \"evidence\": \"新浪财经与群益期货均以「杜德利（Bill Dudley）」称呼，并标注其为前纽约联储主席；纽约联储官网确认其英文全名 William C. Dudley。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"前纽约联储主席杜德利认为美联储加息25个基点幅度太小，无法对经济活动产生有意义的影响，并预计美联储将继续加息。\",\n      \"public_baseline\": \"市场普遍预期美联储将加息25个基点，且联邦基金期货市场已定价未来6至9个月内还将有3至4次加息。\",\n      \"surprise_gap\": \"杜德利作为前纽约联储主席，公开批评美联储加息幅度不足，这与市场对美联储将渐进加息的普遍预期形成对比，其观点比市场共识更为鹰派。\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"杜德利表示，除非数据发生重大变化，否则美联储需要进一步加息，因为金融条件仍然宽松。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley former New York Fed president 25 basis point hike too small\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-09-17/bill-dudley-calls-fed-s-25-basis-point-hike-too-small-video\",\n          \"fact\": \"彭博视频标题确认杜德利称美联储加息25个基点为「太小」。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley column case for a hike crystal clear Fed\",\n          \"url\": \"https://www.bloomberg.com/opinion/articles/2026-09-15/federal-reserve-has-rarely-had-a-stronger-case-for-raising-rates\",\n          \"fact\": \"杜德利在彭博专栏中写道，美联储很少有比现在更强的加息理由。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"杜德利批评美联储主席鲍威尔个人\",\n        \"杜德利代表美联储官方立场\",\n        \"杜德利预测美国经济将衰退\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"所有中文译名均基于公开可查的财经媒体及官方来源，未使用音译或自创译名。\",\n    \"杜德利的 title_label 采用中文财经媒体最常用的「杜德利」，而非全名「威廉·C·杜德利」。\",\n    \"FOMC 在中文语境中常直接使用英文缩写，故 title_label 保留「FOMC」。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "前纽约联储主席杜德利公开表示美联储加息25个基点幅度太小，无法对经济活动产生实质性影响，并预计美联储将继续加息，市场已定价未来6至9个月内还有3至4次加息。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "杜德利唱反调：25基点不够，美联储还得加",
+                "title_lines": [
+                  "杜德利唱反调",
+                  "25基点不够",
+                  "美联储还得加"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "彭博视频标题确认杜德利称美联储加息25个基点为太小",
+                  "杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "杜德利：市场已定价3到4次加息，美联储远未收手",
+                "title_lines": [
+                  "杜德利：市场已定价",
+                  "3到4次加息",
+                  "美联储远未收手"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息",
+                  "杜德利认为美联储需要让金融条件不再那么宽松"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 10,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "前纽约联储主席直言：25基点加息太小，压不住需求",
+                "title_lines": [
+                  "前纽约联储主席直言",
+                  "25基点加息太小",
+                  "压不住需求"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "杜德利撰文指出25个基点的加息幅度太小，难以对经济活动产生实质性影响",
+                  "杜德利表示如果金融条件宽松导致经济以不可持续速度增长，需要采取更多措施"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "市场预期美联储将收手，杜德利却说：这才刚开始",
+                "title_lines": [
+                  "市场预期美联储将收手",
+                  "杜德利却说",
+                  "这才刚开始"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "杜德利暗示这可能是系列行动的第一步，提到要减少一剂宽松意味着后续还有更多剂需要撤出",
+                  "杜德利认为美联储尚未完成加息，市场也预期美联储未完成"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"source_title\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"show_date\": \"\",\n    \"current_title\": \"前纽约联储主席评美联储加息幅度偏小\",\n    \"current_title_lines\": [\n      \"前纽约联储主席杜德利\",\n      \"评美联储25基点加息\",\n      \"称力度偏小难抑需求\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"前纽约联储主席比尔·杜德利撰文指出，25个基点的加息幅度太小，难以对经济活动产生实质性影响。\",\n        \"en\": \"The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"比尔现在加入我们深入讨论。欢迎来到节目，在此次决策前，您在专栏中表示加息的理由非常明确。\",\n        \"en\": \"Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.\",\n        \"relative_start\": 8.4,\n        \"relative_end\": 16.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"再次加息的理由同样明确吗？目前来看是的，除非数据出现显著变化。基本上可以说，他需要让金融条件不再那么宽松，可能将其推向限制性区域。\",\n        \"en\": \"Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into\",\n        \"relative_start\": 16.5,\n        \"relative_end\": 29.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"他并未说明需要做到何种程度，但从金融市场反应来看，他尚未真正实现这一目标。\",\n        \"en\": \"the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.\",\n        \"relative_start\": 29.8,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我认为，他还暗示这可能是系列行动的第一步，提到要减少一剂宽松，意味着后续还有更多剂需要撤出。\",\n        \"en\": \"I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果看联邦基金期货市场的定价，未来六到九个月内已计入三到四次加息。\",\n        \"en\": \"forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 57.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此市场显然预期美联储尚未完成加息，这合情合理。\",\n        \"en\": \"So the market certainly expects that the Fed's not done, and that makes sense.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 61.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"如果金融条件宽松，导致经济以不可持续的速度增长。\",\n        \"en\": \"If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.\",\n        \"relative_start\": 61.3,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"你需要采取更多措施，使金融条件不再那么宽松，以抑制经济活动。\",\n        \"en\": \"You need to do more to make financial conditions less accommodative to a restrained economic activity.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 72.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美联储预测中有趣的一点是，似乎假设了完美的反通胀。\",\n        \"en\": \"You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.\",\n        \"relative_start\": 72.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"如果看夏季的经济预测，增长并未放缓，失业率也尚未上升。\",\n        \"en\": \"If you look at the summer of economic projections, growth doesn't slow, unemployment rate doesn't rise yet.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 82.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"通胀却神奇地回落到2%。我认为实际情况会更难一些。\",\n        \"en\": \"Inflation magically, it sinks back to two percent. I think it's going to be a little bit harder than that.\",\n        \"relative_start\": 82.0,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比尔，你认为我们需要破坏需求吗？\",\n        \"en\": \"Bill, do you think we need the demand destruction?\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 88.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Bill Dudley\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"William C. Dudley\",\n      \"preferred_en\": \"William C. Dudley\",\n      \"official_zh\": \"威廉·C·杜德利\",\n      \"common_zh\": \"杜德利\",\n      \"title_label\": \"杜德利\",\n      \"preferred_zh\": \"杜德利\",\n      \"aliases\": [\n        \"比尔·杜德利\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/roll/2025-05-21/doc-inexipuc0615612.shtml\",\n        \"https://www.capitalfutures.com.tw/zh-tw/Financial/GlobalArticle?ContentId=C25080400634&Category=all\"\n      ],\n      \"evidence\": \"新浪财经与群益期货均以「杜德利（Bill Dudley）」称呼，并标注其为前纽约联储主席；纽约联储官网确认其英文全名 William C. Dudley。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"前纽约联储主席杜德利认为美联储加息25个基点幅度太小，无法对经济活动产生有意义的影响，并预计美联储将继续加息。\",\n      \"public_baseline\": \"市场普遍预期美联储将加息25个基点，且联邦基金期货市场已定价未来6至9个月内还将有3至4次加息。\",\n      \"surprise_gap\": \"杜德利作为前纽约联储主席，公开批评美联储加息幅度不足，这与市场对美联储将渐进加息的普遍预期形成对比，其观点比市场共识更为鹰派。\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"杜德利表示，除非数据发生重大变化，否则美联储需要进一步加息，因为金融条件仍然宽松。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley former New York Fed president 25 basis point hike too small\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-09-17/bill-dudley-calls-fed-s-25-basis-point-hike-too-small-video\",\n          \"fact\": \"彭博视频标题确认杜德利称美联储加息25个基点为「太小」。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley column case for a hike crystal clear Fed\",\n          \"url\": \"https://www.bloomberg.com/opinion/articles/2026-09-15/federal-reserve-has-rarely-had-a-stronger-case-for-raising-rates\",\n          \"fact\": \"杜德利在彭博专栏中写道，美联储很少有比现在更强的加息理由。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"杜德利批评美联储主席鲍威尔个人\",\n        \"杜德利代表美联储官方立场\",\n        \"杜德利预测美国经济将衰退\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"所有中文译名均基于公开可查的财经媒体及官方来源，未使用音译或自创译名。\",\n    \"杜德利的 title_label 采用中文财经媒体最常用的「杜德利」，而非全名「威廉·C·杜德利」。\",\n    \"FOMC 在中文语境中常直接使用英文缩写，故 title_label 保留「FOMC」。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"前纽约联储主席杜德利公开表示美联储加息25个基点幅度太小，无法对经济活动产生实质性影响，并预计美联储将继续加息，市场已定价未来6至9个月内还有3至4次加息。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"杜德利唱反调：25基点不够，美联储还得加\",\n          \"title_lines\": [\n            \"杜德利唱反调\",\n            \"25基点不够\",\n            \"美联储还得加\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"彭博视频标题确认杜德利称美联储加息25个基点为太小\",\n            \"杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"杜德利：市场已定价3到4次加息，美联储远未收手\",\n          \"title_lines\": [\n            \"杜德利：市场已定价\",\n            \"3到4次加息\",\n            \"美联储远未收手\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息\",\n            \"杜德利认为美联储需要让金融条件不再那么宽松\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"前纽约联储主席直言：25基点加息太小，压不住需求\",\n          \"title_lines\": [\n            \"前纽约联储主席直言\",\n            \"25基点加息太小\",\n            \"压不住需求\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利撰文指出25个基点的加息幅度太小，难以对经济活动产生实质性影响\",\n            \"杜德利表示如果金融条件宽松导致经济以不可持续速度增长，需要采取更多措施\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"市场预期美联储将收手，杜德利却说：这才刚开始\",\n          \"title_lines\": [\n            \"市场预期美联储将收手\",\n            \"杜德利却说\",\n            \"这才刚开始\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利暗示这可能是系列行动的第一步，提到要减少一剂宽松意味着后续还有更多剂需要撤出\",\n            \"杜德利认为美联储尚未完成加息，市场也预期美联储未完成\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_breaks_consensus",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "彭博视频标题确认杜德利称美联储加息25个基点为太小",
+              "杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由",
+              "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息"
+            ],
+            "title": "杜德利唱反调：25基点不够，美联储还得加",
+            "title_lines": [
+              "杜德利唱反调",
+              "25基点不够",
+              "美联储还得加"
+            ],
+            "title_highlights": [
+              "杜德利",
+              "25基点不够",
+              "美联储还得加"
+            ],
+            "runner_up_titles": [
+              "市场预期美联储将收手，杜德利却说：这才刚开始",
+              "杜德利：市场已定价3到4次加息，美联储远未收手"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息。",
+            "comment_highlights": [
+              "25基点太小",
+              "3到4次加息"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：杜德利撰文直言25基点太小，难对经济产生实质影响。",
+                "comment_highlights": [
+                  "25基点太小"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：决策前他就说加息理由明确，现在来节目深入讨论。",
+                "comment_highlights": [
+                  "加息理由明确"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：除非数据大变，否则还得加，金融条件仍太宽松。",
+                "comment_highlights": [
+                  "金融条件仍太宽松"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：他没说需要加到什么程度，但市场反应显示还没到位。",
+                "comment_highlights": [
+                  "还没到位"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：他暗示这是系列行动第一步，后续还有更多剂要撤。",
+                "comment_highlights": [
+                  "系列行动第一步"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：联邦基金期货已定价未来6到9个月三到四次加息。",
+                "comment_highlights": [
+                  "三到四次加息"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：市场显然预期美联储没加完，杜德利认为这合情合理。",
+                "comment_highlights": [
+                  "美联储没加完"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：金融条件宽松若让经济过热，就需要更多措施。",
+                "comment_highlights": [
+                  "经济过热"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：要抑制经济活动，就得让金融条件不再那么宽松。",
+                "comment_highlights": [
+                  "不再那么宽松"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：美联储预测里假设了完美的反通胀，这很值得玩味。",
+                "comment_highlights": [
+                  "完美的反通胀"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：夏季预测中增长不慢、失业率不升，通胀却神奇回落。",
+                "comment_highlights": [
+                  "通胀却神奇回落"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：杜德利认为实际情况会比美联储预测更难一些。",
+                "comment_highlights": [
+                  "更难一些"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：主持人追问是否需要破坏需求，这正是核心矛盾。",
+                "comment_highlights": [
+                  "破坏需求"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"source_title\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n    \"show_date\": \"\",\n    \"current_title\": \"前纽约联储主席评美联储加息幅度偏小\",\n    \"current_title_lines\": [\n      \"前纽约联储主席杜德利\",\n      \"评美联储25基点加息\",\n      \"称力度偏小难抑需求\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"前纽约联储主席比尔·杜德利撰文指出，25个基点的加息幅度太小，难以对经济活动产生实质性影响。\",\n        \"en\": \"The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 8.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"比尔现在加入我们深入讨论。欢迎来到节目，在此次决策前，您在专栏中表示加息的理由非常明确。\",\n        \"en\": \"Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.\",\n        \"relative_start\": 8.4,\n        \"relative_end\": 16.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"再次加息的理由同样明确吗？目前来看是的，除非数据出现显著变化。基本上可以说，他需要让金融条件不再那么宽松，可能将其推向限制性区域。\",\n        \"en\": \"Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into\",\n        \"relative_start\": 16.5,\n        \"relative_end\": 29.8\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"他并未说明需要做到何种程度，但从金融市场反应来看，他尚未真正实现这一目标。\",\n        \"en\": \"the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.\",\n        \"relative_start\": 29.8,\n        \"relative_end\": 39.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我认为，他还暗示这可能是系列行动的第一步，提到要减少一剂宽松，意味着后续还有更多剂需要撤出。\",\n        \"en\": \"I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove\",\n        \"relative_start\": 39.2,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果看联邦基金期货市场的定价，未来六到九个月内已计入三到四次加息。\",\n        \"en\": \"forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 57.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此市场显然预期美联储尚未完成加息，这合情合理。\",\n        \"en\": \"So the market certainly expects that the Fed's not done, and that makes sense.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 61.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"如果金融条件宽松，导致经济以不可持续的速度增长。\",\n        \"en\": \"If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.\",\n        \"relative_start\": 61.3,\n        \"relative_end\": 67.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"你需要采取更多措施，使金融条件不再那么宽松，以抑制经济活动。\",\n        \"en\": \"You need to do more to make financial conditions less accommodative to a restrained economic activity.\",\n        \"relative_start\": 67.4,\n        \"relative_end\": 72.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"美联储预测中有趣的一点是，似乎假设了完美的反通胀。\",\n        \"en\": \"You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.\",\n        \"relative_start\": 72.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"如果看夏季的经济预测，增长并未放缓，失业率也尚未上升。\",\n        \"en\": \"If you look at the summer of economic projections, growth doesn't slow, unemployment rate doesn't rise yet.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 82.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"通胀却神奇地回落到2%。我认为实际情况会更难一些。\",\n        \"en\": \"Inflation magically, it sinks back to two percent. I think it's going to be a little bit harder than that.\",\n        \"relative_start\": 82.0,\n        \"relative_end\": 86.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"比尔，你认为我们需要破坏需求吗？\",\n        \"en\": \"Bill, do you think we need the demand destruction?\",\n        \"relative_start\": 86.5,\n        \"relative_end\": 88.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Bill Dudley\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"William C. Dudley\",\n      \"preferred_en\": \"William C. Dudley\",\n      \"official_zh\": \"威廉·C·杜德利\",\n      \"common_zh\": \"杜德利\",\n      \"title_label\": \"杜德利\",\n      \"preferred_zh\": \"杜德利\",\n      \"aliases\": [\n        \"比尔·杜德利\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/roll/2025-05-21/doc-inexipuc0615612.shtml\",\n        \"https://www.capitalfutures.com.tw/zh-tw/Financial/GlobalArticle?ContentId=C25080400634&Category=all\"\n      ],\n      \"evidence\": \"新浪财经与群益期货均以「杜德利（Bill Dudley）」称呼，并标注其为前纽约联储主席；纽约联储官网确认其英文全名 William C. Dudley。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"前纽约联储主席杜德利认为美联储加息25个基点幅度太小，无法对经济活动产生有意义的影响，并预计美联储将继续加息。\",\n      \"public_baseline\": \"市场普遍预期美联储将加息25个基点，且联邦基金期货市场已定价未来6至9个月内还将有3至4次加息。\",\n      \"surprise_gap\": \"杜德利作为前纽约联储主席，公开批评美联储加息幅度不足，这与市场对美联储将渐进加息的普遍预期形成对比，其观点比市场共识更为鹰派。\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"杜德利表示，除非数据发生重大变化，否则美联储需要进一步加息，因为金融条件仍然宽松。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley former New York Fed president 25 basis point hike too small\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-09-17/bill-dudley-calls-fed-s-25-basis-point-hike-too-small-video\",\n          \"fact\": \"彭博视频标题确认杜德利称美联储加息25个基点为「太小」。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley column case for a hike crystal clear Fed\",\n          \"url\": \"https://www.bloomberg.com/opinion/articles/2026-09-15/federal-reserve-has-rarely-had-a-stronger-case-for-raising-rates\",\n          \"fact\": \"杜德利在彭博专栏中写道，美联储很少有比现在更强的加息理由。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"杜德利批评美联储主席鲍威尔个人\",\n        \"杜德利代表美联储官方立场\",\n        \"杜德利预测美国经济将衰退\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"所有中文译名均基于公开可查的财经媒体及官方来源，未使用音译或自创译名。\",\n    \"杜德利的 title_label 采用中文财经媒体最常用的「杜德利」，而非全名「威廉·C·杜德利」。\",\n    \"FOMC 在中文语境中常直接使用英文缩写，故 title_label 保留「FOMC」。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"前纽约联储主席杜德利公开表示美联储加息25个基点幅度太小，无法对经济活动产生实质性影响，并预计美联储将继续加息，市场已定价未来6至9个月内还有3至4次加息。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"杜德利唱反调：25基点不够，美联储还得加\",\n          \"title_lines\": [\n            \"杜德利唱反调\",\n            \"25基点不够\",\n            \"美联储还得加\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"彭博视频标题确认杜德利称美联储加息25个基点为太小\",\n            \"杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"杜德利：市场已定价3到4次加息，美联储远未收手\",\n          \"title_lines\": [\n            \"杜德利：市场已定价\",\n            \"3到4次加息\",\n            \"美联储远未收手\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息\",\n            \"杜德利认为美联储需要让金融条件不再那么宽松\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 10,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"前纽约联储主席直言：25基点加息太小，压不住需求\",\n          \"title_lines\": [\n            \"前纽约联储主席直言\",\n            \"25基点加息太小\",\n            \"压不住需求\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利撰文指出25个基点的加息幅度太小，难以对经济活动产生实质性影响\",\n            \"杜德利表示如果金融条件宽松导致经济以不可持续速度增长，需要采取更多措施\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"市场预期美联储将收手，杜德利却说：这才刚开始\",\n          \"title_lines\": [\n            \"市场预期美联储将收手\",\n            \"杜德利却说\",\n            \"这才刚开始\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"杜德利暗示这可能是系列行动的第一步，提到要减少一剂宽松意味着后续还有更多剂需要撤出\",\n            \"杜德利认为美联储尚未完成加息，市场也预期美联储未完成\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"杜德利唱反调：25基点不够，美联储还得加\",\n      \"title_lines\": [\n        \"杜德利唱反调\",\n        \"25基点不够\",\n        \"美联储还得加\"\n      ],\n      \"title_highlights\": [\n        \"杜德利\",\n        \"25基点不够\",\n        \"美联储还得加\"\n      ],\n      \"comment\": \"KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息\",\n      \"comment_highlights\": [\n        \"25基点太小\",\n        \"3到4次加息\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：杜德利撰文直言25基点太小，难对经济产生实质影响\",\n          \"comment_highlights\": [\n            \"25基点太小\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：决策前他就说加息理由明确，现在来节目深入讨论\",\n          \"comment_highlights\": [\n            \"加息理由明确\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：除非数据大变，否则还得加，金融条件仍太宽松\",\n          \"comment_highlights\": [\n            \"金融条件仍太宽松\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：他没说需要加到什么程度，但市场反应显示还没到位\",\n          \"comment_highlights\": [\n            \"还没到位\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：他暗示这是系列行动第一步，后续还有更多剂要撤\",\n          \"comment_highlights\": [\n            \"系列行动第一步\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：联邦基金期货已定价未来6到9个月三到四次加息\",\n          \"comment_highlights\": [\n            \"三到四次加息\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：市场显然预期美联储没加完，杜德利认为这合情合理\",\n          \"comment_highlights\": [\n            \"美联储没加完\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：金融条件宽松若让经济过热，就需要更多措施\",\n          \"comment_highlights\": [\n            \"经济过热\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：要抑制经济活动，就得让金融条件不再那么宽松\",\n          \"comment_highlights\": [\n            \"不再那么宽松\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：美联储预测里假设了完美的反通胀，这很值得玩味\",\n          \"comment_highlights\": [\n            \"完美的反通胀\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：夏季预测中增长不慢、失业率不升，通胀却神奇回落\",\n          \"comment_highlights\": [\n            \"通胀却神奇回落\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：杜德利认为实际情况会比美联储预测更难一些\",\n          \"comment_highlights\": [\n            \"更难一些\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：主持人追问是否需要破坏需求，这正是核心矛盾\",\n          \"comment_highlights\": [\n            \"破坏需求\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority_breaks_consensus\",\n      \"angle_id\": \"authority_breaks_consensus\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"彭博视频标题确认杜德利称美联储加息25个基点为太小\",\n        \"杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由\",\n        \"杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息\"\n      ],\n      \"runner_up_titles\": [\n        \"市场预期美联储将收手，杜德利却说：这才刚开始\",\n        \"杜德利：市场已定价3到4次加息，美联储远未收手\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:authority_breaks_consensus\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority_breaks_consensus",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "杜德利撰文指出25个基点的加息幅度太小，难以对经济活动产生实质性影响",
+                  "杜德利暗示这可能是系列行动的第一步，提到要减少一剂宽松意味着后续还有更多剂需要撤出",
+                  "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息",
+                  "彭博视频标题确认杜德利称美联储加息25个基点为太小"
+                ],
+                "title": "市场以为美联储要收手，杜德利却说才刚开始",
+                "title_lines": [
+                  "市场以为美联储要收手",
+                  "杜德利却说",
+                  "这才刚开始"
+                ],
+                "title_highlights": [
+                  "市场以为美联储要收手",
+                  "杜德利却说",
+                  "这才刚开始"
+                ],
+                "runner_up_titles": [
+                  "杜德利唱反调：25基点不够，美联储还得加",
+                  "杜德利：市场已定价3到4次加息，美联储远未收手"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息",
+                "comment_highlights": [
+                  "25基点太小",
+                  "3到4次加息"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：杜德利撰文直言25基点太小，难对经济产生实质影响",
+                    "comment_highlights": [
+                      "25基点太小"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：决策前他就说加息理由明确，现在来节目深入讨论",
+                    "comment_highlights": [
+                      "加息理由明确"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：除非数据大变，否则还得加，金融条件仍太宽松",
+                    "comment_highlights": [
+                      "金融条件仍太宽松"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：他没说需要加到什么程度，但市场反应显示还没到位",
+                    "comment_highlights": [
+                      "还没到位"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：他暗示这是系列行动第一步，后续还有更多剂要撤",
+                    "comment_highlights": [
+                      "系列行动第一步"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：联邦基金期货已定价未来6到9个月三到四次加息",
+                    "comment_highlights": [
+                      "三到四次加息"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：市场显然预期美联储没加完，杜德利认为这合情合理",
+                    "comment_highlights": [
+                      "美联储没加完"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：金融条件宽松若让经济过热，就需要更多措施",
+                    "comment_highlights": [
+                      "经济过热"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：要抑制经济活动，就得让金融条件不再那么宽松",
+                    "comment_highlights": [
+                      "不再那么宽松"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：美联储预测里假设了完美的反通胀，这很值得玩味",
+                    "comment_highlights": [
+                      "完美的反通胀"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：夏季预测中增长不慢、失业率不升，通胀却神奇回落",
+                    "comment_highlights": [
+                      "通胀却神奇回落"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：杜德利认为实际情况会比美联储预测更难一些",
+                    "comment_highlights": [
+                      "更难一些"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：主持人追问是否需要破坏需求，这正是核心矛盾",
+                    "comment_highlights": [
+                      "破坏需求"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "杜德利唱反调：25基点不够，美联储还得加",
+          "title_lines": [
+            "杜德利唱反调",
+            "25基点不够",
+            "美联储还得加"
+          ],
+          "formula_id": "authority_breaks_consensus",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:authority_breaks_consensus",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-20T00:03:53.857182+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’",
+          "source_title": "Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’",
+          "show_date": "",
+          "current_title": "前纽约联储主席评美联储加息幅度偏小",
+          "current_title_lines": [
+            "前纽约联储主席杜德利",
+            "评美联储25基点加息",
+            "称力度偏小难抑需求"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "前纽约联储主席比尔·杜德利撰文指出，25个基点的加息幅度太小，难以对经济活动产生实质性影响。",
+              "en": "The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.",
+              "relative_start": 0.0,
+              "relative_end": 8.4
+            },
+            {
+              "index": 2,
+              "zh": "比尔现在加入我们深入讨论。欢迎来到节目，在此次决策前，您在专栏中表示加息的理由非常明确。",
+              "en": "Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.",
+              "relative_start": 8.4,
+              "relative_end": 16.5
+            },
+            {
+              "index": 3,
+              "zh": "再次加息的理由同样明确吗？目前来看是的，除非数据出现显著变化。基本上可以说，他需要让金融条件不再那么宽松，可能将其推向限制性区域。",
+              "en": "Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into",
+              "relative_start": 16.5,
+              "relative_end": 29.8
+            },
+            {
+              "index": 4,
+              "zh": "他并未说明需要做到何种程度，但从金融市场反应来看，他尚未真正实现这一目标。",
+              "en": "the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.",
+              "relative_start": 29.8,
+              "relative_end": 39.2
+            },
+            {
+              "index": 5,
+              "zh": "我认为，他还暗示这可能是系列行动的第一步，提到要减少一剂宽松，意味着后续还有更多剂需要撤出。",
+              "en": "I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove",
+              "relative_start": 39.2,
+              "relative_end": 48.4
+            },
+            {
+              "index": 6,
+              "zh": "如果看联邦基金期货市场的定价，未来六到九个月内已计入三到四次加息。",
+              "en": "forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.",
+              "relative_start": 48.4,
+              "relative_end": 57.2
+            },
+            {
+              "index": 7,
+              "zh": "因此市场显然预期美联储尚未完成加息，这合情合理。",
+              "en": "So the market certainly expects that the Fed's not done, and that makes sense.",
+              "relative_start": 57.2,
+              "relative_end": 61.3
+            },
+            {
+              "index": 8,
+              "zh": "如果金融条件宽松，导致经济以不可持续的速度增长。",
+              "en": "If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.",
+              "relative_start": 61.3,
+              "relative_end": 67.4
+            },
+            {
+              "index": 9,
+              "zh": "你需要采取更多措施，使金融条件不再那么宽松，以抑制经济活动。",
+              "en": "You need to do more to make financial conditions less accommodative to a restrained economic activity.",
+              "relative_start": 67.4,
+              "relative_end": 72.8
+            },
+            {
+              "index": 10,
+              "zh": "美联储预测中有趣的一点是，似乎假设了完美的反通胀。",
+              "en": "You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.",
+              "relative_start": 72.8,
+              "relative_end": 75.8
+            },
+            {
+              "index": 11,
+              "zh": "如果看夏季的经济预测，增长并未放缓，失业率也尚未上升。",
+              "en": "If you look at the summer of economic projections, growth doesn't slow, unemployment rate doesn't rise yet.",
+              "relative_start": 75.8,
+              "relative_end": 82.0
+            },
+            {
+              "index": 12,
+              "zh": "通胀却神奇地回落到2%。我认为实际情况会更难一些。",
+              "en": "Inflation magically, it sinks back to two percent. I think it's going to be a little bit harder than that.",
+              "relative_start": 82.0,
+              "relative_end": 86.5
+            },
+            {
+              "index": 13,
+              "zh": "比尔，你认为我们需要破坏需求吗？",
+              "en": "Bill, do you think we need the demand destruction?",
+              "relative_start": 86.5,
+              "relative_end": 88.8
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n  \"source_title\": \"Opinion Duration: 6:03 Bill Dudley Calls Fed’s 25-Basis-Point Hike ‘Too Small’\",\n  \"current_title\": \"前纽约联储主席评美联储加息幅度偏小\",\n  \"source_claims\": [\n    \"The former New York Fed president, Bill Dudley, writing a 25 basis point hike is too small to have a meaningful impact on economic activity.\",\n    \"Bill joins us now for more. But welcome to the program, before this decision in your column, you said the case for a hike was crystal clear.\",\n    \"Is the case for another hike just as clear? Right now it is, unless the data change is pretty dramatically, it can work basically said that he needs to make financial conditions less accommodate, probably push them into\",\n    \"the respective side. And he hasn't told us how much you need to do to do that, but judging by the reaction of financial markets, he hasn't really accomplished that yet.\",\n    \"I think that, you know, he also signaled that this is probably the first in a series by talking about removing a dose of accommodation that implies that there's more doses to remove\",\n    \"forthcoming. And if you look at what the federal funds futures market is pricing, and they're pricing in three or four hikes over the next, you know, over the next six to nine months.\",\n    \"So the market certainly expects that the Fed's not done, and that makes sense.\",\n    \"If financial conditions are accommodative, that's causing the economy to grow in an unsustainable pace.\",\n    \"You need to do more to make financial conditions less accommodative to a restrained economic activity.\",\n    \"You know, what's interesting about the Fed's forecast is serve the immaculate disinflation.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Bill Dudley\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"William C. Dudley\",\n      \"preferred_en\": \"William C. Dudley\",\n      \"official_zh\": \"威廉·C·杜德利\",\n      \"common_zh\": \"杜德利\",\n      \"title_label\": \"杜德利\",\n      \"preferred_zh\": \"杜德利\",\n      \"aliases\": [\n        \"比尔·杜德利\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/roll/2025-05-21/doc-inexipuc0615612.shtml\",\n        \"https://www.capitalfutures.com.tw/zh-tw/Financial/GlobalArticle?ContentId=C25080400634&Category=all\"\n      ],\n      \"evidence\": \"新浪财经与群益期货均以「杜德利（Bill Dudley）」称呼，并标注其为前纽约联储主席；纽约联储官网确认其英文全名 William C. Dudley。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"前纽约联储主席杜德利认为美联储加息25个基点幅度太小，无法对经济活动产生有意义的影响，并预计美联储将继续加息。\",\n      \"public_baseline\": \"市场普遍预期美联储将加息25个基点，且联邦基金期货市场已定价未来6至9个月内还将有3至4次加息。\",\n      \"surprise_gap\": \"杜德利作为前纽约联储主席，公开批评美联储加息幅度不足，这与市场对美联储将渐进加息的普遍预期形成对比，其观点比市场共识更为鹰派。\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"杜德利表示，除非数据发生重大变化，否则美联储需要进一步加息，因为金融条件仍然宽松。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley former New York Fed president 25 basis point hike too small\",\n          \"url\": \"https://www.bloomberg.com/news/videos/2026-09-17/bill-dudley-calls-fed-s-25-basis-point-hike-too-small-video\",\n          \"fact\": \"彭博视频标题确认杜德利称美联储加息25个基点为「太小」。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Bill Dudley column case for a hike crystal clear Fed\",\n          \"url\": \"https://www.bloomberg.com/opinion/articles/2026-09-15/federal-reserve-has-rarely-had-a-stronger-case-for-raising-rates\",\n          \"fact\": \"杜德利在彭博专栏中写道，美联储很少有比现在更强的加息理由。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"杜德利批评美联储主席鲍威尔个人\",\n        \"杜德利代表美联储官方立场\",\n        \"杜德利预测美国经济将衰退\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"所有中文译名均基于公开可查的财经媒体及官方来源，未使用音译或自创译名。\",\n    \"杜德利的 title_label 采用中文财经媒体最常用的「杜德利」，而非全名「威廉·C·杜德利」。\",\n    \"FOMC 在中文语境中常直接使用英文缩写，故 title_label 保留「FOMC」。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"杜德利唱反调：25基点不够，美联储还得加\",\n  \"title_lines\": [\n    \"杜德利唱反调\",\n    \"25基点不够\",\n    \"美联储还得加\"\n  ],\n  \"angle_id\": \"authority_breaks_consensus\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"彭博视频标题确认杜德利称美联储加息25个基点为太小\",\n    \"杜德利在彭博专栏中写道美联储很少有比现在更强的加息理由\",\n    \"杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "意外",
+            "viewer_reaction": "前联储主席都嫌加息太轻，市场定价的3到4次够吗",
+            "evidence_basis": [
+              "彭博视频标题确认杜德利称美联储加息25个基点为太小",
+              "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息",
+              "杜德利称美联储需要进一步收紧金融条件以抑制不可持续的增长"
+            ],
+            "title": "杜德利：25基点不够，市场定价的3到4次加息够吗？",
+            "title_lines": [
+              "杜德利：25基点不够",
+              "市场已定价3到4次加息",
+              "美联储还得加多少？"
+            ],
+            "title_highlights": [
+              "25基点不够",
+              "3到4次加息",
+              "还得加多少？"
+            ],
+            "runner_up_titles": [
+              "杜德利：25基点太小，市场定价的3到4次加息够吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "杜德利25基点不够：市场已定价3到4次加息，美联储还得加多少？",
+        "title_lines": [
+          "杜德利25基点不够",
+          "市场已定价3到4次加息",
+          "美联储还得加多少？"
+        ],
+        "title_highlights": [
+          "25基点不够",
+          "3到4次加息",
+          "还得加多少？"
+        ],
+        "comment": "KC评论：前纽约联储主席公开说25基点太小，市场已定价后续还有3到4次加息",
+        "comment_highlights": [
+          "25基点太小",
+          "3到4次加息"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：杜德利撰文直言25基点太小，难对经济产生实质影响",
+            "comment_highlights": [
+              "25基点太小"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：决策前他就说加息理由明确，现在来节目深入讨论",
+            "comment_highlights": [
+              "加息理由明确"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：除非数据大变，否则还得加，金融条件仍太宽松",
+            "comment_highlights": [
+              "金融条件仍太宽松"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：他没说需要加到什么程度，但市场反应显示还没到位",
+            "comment_highlights": [
+              "还没到位"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：他暗示这是系列行动第一步，后续还有更多剂要撤",
+            "comment_highlights": [
+              "系列行动第一步"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：联邦基金期货已定价未来6到9个月三到四次加息",
+            "comment_highlights": [
+              "三到四次加息"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：市场显然预期美联储没加完，杜德利认为这合情合理",
+            "comment_highlights": [
+              "美联储没加完"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：金融条件宽松若让经济过热，就需要更多措施",
+            "comment_highlights": [
+              "经济过热"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：要抑制经济活动，就得让金融条件不再那么宽松",
+            "comment_highlights": [
+              "不再那么宽松"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：美联储预测里假设了完美的反通胀，这很值得玩味",
+            "comment_highlights": [
+              "完美的反通胀"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：夏季预测中增长不慢、失业率不升，通胀却神奇回落",
+            "comment_highlights": [
+              "通胀却神奇回落"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：杜德利认为实际情况会比美联储预测更难一些",
+            "comment_highlights": [
+              "更难一些"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：主持人追问是否需要破坏需求，这正是核心矛盾",
+            "comment_highlights": [
+              "破坏需求"
+            ]
+          }
+        ],
+        "formula_id": "authority_breaks_consensus",
+        "angle_id": "authority_breaks_consensus",
+        "emotion_pole": "意外",
+        "viewer_reaction": "前联储主席都嫌加息太轻，市场定价的3到4次够吗",
+        "evidence_basis": [
+          "彭博视频标题确认杜德利称美联储加息25个基点为太小",
+          "杜德利表示联邦基金期货市场已定价未来6到9个月内3到4次加息",
+          "杜德利称美联储需要进一步收紧金融条件以抑制不可持续的增长"
+        ],
+        "runner_up_titles": [
+          "杜德利：25基点太小，市场定价的3到4次加息够吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:authority_breaks_consensus",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
