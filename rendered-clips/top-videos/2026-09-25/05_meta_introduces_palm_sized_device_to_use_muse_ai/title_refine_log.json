@@ -1,0 +1,1307 @@
+{
+  "timestamp_utc": "2026-09-25T00:30:37.506482+00:00",
+  "plan_path": "work/top-videos/05_meta_introduces_palm_sized_device_to_use_muse_ai/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Meta",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Meta Platforms, Inc.",
+        "preferred_en": "Meta Platforms, Inc.",
+        "official_zh": "Meta平台公司",
+        "common_zh": "Meta",
+        "title_label": "Meta",
+        "preferred_zh": "Meta",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 4,
+        "evidence_urls": [
+          "https://m.sohu.com/a/1080243449_122066678",
+          "https://m.sohu.com/a/1080317692_120988576",
+          "https://original.ifeng.com/c/8wfuiM3Drwg",
+          "https://www.sohu.com/a/1073946418_362225",
+          "https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576"
+        ],
+        "evidence": "Multiple Chinese financial media (搜狐, 凤凰网, Gate新闻) consistently use 'Meta' as the company name in Simplified Chinese."
+      },
+      {
+        "source_text": "Muse",
+        "entity_type": "other",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Muse",
+        "preferred_en": "Muse",
+        "official_zh": "Muse",
+        "common_zh": "Muse",
+        "title_label": "Muse",
+        "preferred_zh": "Muse",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 4,
+        "evidence_urls": [
+          "https://m.sohu.com/a/1080243449_122066678",
+          "https://m.sohu.com/a/1080317692_120988576",
+          "https://original.ifeng.com/c/8wfuiM3Drwg",
+          "https://www.sohu.com/a/1073946418_362225",
+          "https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576"
+        ],
+        "evidence": "Chinese media consistently refer to Meta's AI agent as 'Muse' without translation, e.g., 'Meta发布云端AI智能体Muse'."
+      },
+      {
+        "source_text": "Muse Charm",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Muse Charm",
+        "preferred_en": "Muse Charm",
+        "official_zh": "Muse Charm",
+        "common_zh": "Muse Charm",
+        "title_label": "Muse Charm",
+        "preferred_zh": "Muse Charm",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media (搜狐, 凤凰网) and English sources (Unite.AI) consistently use 'Muse Charm' as the product name."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's official Chinese website uses '彭博' as the common Chinese name."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "agent",
+        "clip_indexes": [],
+        "context": "AI assistant that runs continuously",
+        "sense": "AI agent",
+        "preferred_zh": "智能体",
+        "title_label": "智能体",
+        "avoid_zh": [
+          "代理"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "cloud",
+        "clip_indexes": [],
+        "context": "computing",
+        "sense": "cloud computing",
+        "preferred_zh": "云端",
+        "title_label": "云端",
+        "avoid_zh": [
+          "云"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.",
+        "public_baseline": "Meta announced Muse Charm, a palm-sized AI device, on September 23, 2026, which runs the Muse AI agent and is expected to launch by December 2026.",
+        "surprise_gap": "The transcript claims the device runs entirely on the cloud with nothing on the device, which aligns with public reports that Muse is a cloud-based AI agent, but the device itself has local features like a touchscreen and 5G modem.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "The device interfaces with Muse agent and runs on the cloud."
+          },
+          {
+            "kind": "public",
+            "query": "Meta Muse AI 掌上设备 发布",
+            "url": "https://m.sohu.com/a/1080243449_122066678",
+            "fact": "Meta发布掌上AI设备Muse Charm，计划12月前上市。"
+          },
+          {
+            "kind": "public",
+            "query": "Meta palm-sized AI device Muse agent launch 2026",
+            "url": "https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/",
+            "fact": "Meta made a Tamagotchi-like wearable for its Muse AI agent."
+          }
+        ],
+        "forbidden_claims": [
+          "Meta's device is a Tamagotchi competitor",
+          "The device is always listening and recording without user consent"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The source clip is from Bloomberg, but the speaker is not clearly identified as a Bloomberg employee; speaker_relation is set to media_source.",
+      "Public snippets confirm the existence of Muse Charm and its cloud-based Muse agent, but no evidence supports the claim that the device is 'always listening' in a privacy-invasive w"
+    ],
+    "research_queries": [
+      {
+        "query": "Meta Muse AI 掌上设备 发布",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the official Chinese name of Meta's Muse AI and the palm-sized device product name."
+      },
+      {
+        "query": "Meta palm-sized AI device Muse agent launch 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish whether Meta actually announced a palm-sized device running the Muse agent, and its official product name."
+      },
+      {
+        "query": "Meta Muse AI agent cloud-based device always listening",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that the device runs entirely on the cloud and listens continuously."
+      },
+      {
+        "query": "Meta 2026 AI硬件 发布 掌上设备",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese media coverage of Meta's 2026 AI hardware launch to confirm the device's Chinese name."
+      },
+      {
+        "query": "Meta Muse AI 设备 云端 24/7 智能体",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that the device is a persistent agent running 24/7 on the cloud."
+      },
+      {
+        "query": "Meta AI device lost notification feature",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check if the device can detect when it is lost and send a notification, as claimed in the transcript."
+      },
+      {
+        "query": "Meta Muse AI 设备 中国 对比",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search for any China comparison or competitive analysis regarding Meta's palm-sized AI device."
+      },
+      {
+        "query": "Meta AI wearable device 2026 announcement official",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Meta's official announcement or press release for the palm-sized AI device to verify launch details."
+      },
+      {
+        "query": "Bloomberg Meta Introduces Palm-Sized Device established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Meta Introduces Palm-Sized Device 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Use Muse AI 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你？",
+      "title_lines": [
+        "Meta掌上AI设备",
+        "云端智能体全天候运行",
+        "丢了会自己找你？"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+        "transcript: 设备能判断自己是否丢失，然后给你发消息提醒",
+        "transcript: 这是一个全天候运行的持久智能体"
+      ],
+      "runner_up_titles": [
+        "Meta掌上AI设备：云端智能体全天候运行，丢了会自己发消息？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 0
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        }
+      },
+      "comment": "KC评论：云端智能体全天候待命，设备丢了还能自己提醒你"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-09-25T00:30:34.689921+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go",
+          "source_title": "Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go",
+          "show_date": "",
+          "current_title": "Meta推出掌上AI设备 全天候智能助手引市场关注",
+          "current_title_lines": [
+            "Meta发布掌上AI设备",
+            "全天候智能助手接入云端",
+            "股价创52周新高 生态布局初现"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "他们现在推出了一款新设备，你可以通过它和Muse智能体交互，一切仍在云端运行，设备本身不存储任何东西。",
+              "en": "They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.",
+              "relative_start": 0.0,
+              "relative_end": 14.0
+            },
+            {
+              "index": 2,
+              "zh": "但用语音交互更方便，不用再打开手机上的应用。",
+              "en": "But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.",
+              "relative_start": 14.0,
+              "relative_end": 23.0
+            },
+            {
+              "index": 3,
+              "zh": "这个设备一直在听你说话，你基本上就像在和自己的智能体对话。",
+              "en": "This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.",
+              "relative_start": 23.0,
+              "relative_end": 30.0
+            },
+            {
+              "index": 4,
+              "zh": "我是把它挂在钥匙链上？还是别在彭博工牌上？这东西到底怎么用？",
+              "en": "Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?",
+              "relative_start": 30.0,
+              "relative_end": 34.0
+            },
+            {
+              "index": 5,
+              "zh": "都行。",
+              "en": "Either is fine.",
+              "relative_start": 34.0,
+              "relative_end": 37.0
+            },
+            {
+              "index": 6,
+              "zh": "他大概五分钟就会把这东西弄丢。",
+              "en": "He's going to lose this thing in about five minutes.",
+              "relative_start": 37.0,
+              "relative_end": 41.0
+            },
+            {
+              "index": 7,
+              "zh": "我还在这个电台演播室里找你的屁股呢。",
+              "en": "I'm still looking for your butt down here in this radio studio.",
+              "relative_start": 41.0,
+              "relative_end": 44.0
+            },
+            {
+              "index": 8,
+              "zh": "但好处是，设备能判断自己是否丢失，然后给你发消息说：嘿，保罗，你可能把设备落下了。",
+              "en": "But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.",
+              "relative_start": 44.0,
+              "relative_end": 55.0
+            },
+            {
+              "index": 9,
+              "zh": "等等，这算是什么百万级工程奇迹，他却在聊弄丢设备？这是2026版的电子宠物吗？",
+              "en": "Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?",
+              "relative_start": 55.0,
+              "relative_end": 62.0
+            },
+            {
+              "index": 10,
+              "zh": "我觉得有人是这么比的，但说到底，他们说这是一个全天候运行的持久智能体。",
+              "en": "Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.",
+              "relative_start": 62.0,
+              "relative_end": 73.0
+            },
+            {
+              "index": 11,
+              "zh": "无论你是通过手机应用还是这个设备启动智能体，它都会全天候在后台运行。",
+              "en": "Whether you initiate the agent through the app on your smartphone or through this device, it's going to work behind the scenes 24-7.",
+              "relative_start": 73.0,
+              "relative_end": 83.0
+            },
+            {
+              "index": 12,
+              "zh": "你不需要不断提示它或与它互动。",
+              "en": "You don't have to constantly prompt it or you know engage with it.",
+              "relative_start": 83.0,
+              "relative_end": 88.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"source_title\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"show_date\": \"\",\n    \"current_title\": \"Meta推出掌上AI设备 全天候智能助手引市场关注\",\n    \"current_title_lines\": [\n      \"Meta发布掌上AI设备\",\n      \"全天候智能助手接入云端\",\n      \"股价创52周新高 生态布局初现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"他们现在推出了一款新设备，你可以通过它和Muse智能体交互，一切仍在云端运行，设备本身不存储任何东西。\",\n        \"en\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 14.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但用语音交互更方便，不用再打开手机上的应用。\",\n        \"en\": \"But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.\",\n        \"relative_start\": 14.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这个设备一直在听你说话，你基本上就像在和自己的智能体对话。\",\n        \"en\": \"This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 30.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我是把它挂在钥匙链上？还是别在彭博工牌上？这东西到底怎么用？\",\n        \"en\": \"Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?\",\n        \"relative_start\": 30.0,\n        \"relative_end\": 34.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"都行。\",\n        \"en\": \"Either is fine.\",\n        \"relative_start\": 34.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他大概五分钟就会把这东西弄丢。\",\n        \"en\": \"He's going to lose this thing in about five minutes.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我还在这个电台演播室里找你的屁股呢。\",\n        \"en\": \"I'm still looking for your butt down here in this radio studio.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 44.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但好处是，设备能判断自己是否丢失，然后给你发消息说：嘿，保罗，你可能把设备落下了。\",\n        \"en\": \"But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.\",\n        \"relative_start\": 44.0,\n        \"relative_end\": 55.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"等等，这算是什么百万级工程奇迹，他却在聊弄丢设备？这是2026版的电子宠物吗？\",\n        \"en\": \"Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?\",\n        \"relative_start\": 55.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我觉得有人是这么比的，但说到底，他们说这是一个全天候运行的持久智能体。\",\n        \"en\": \"Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 73.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"无论你是通过手机应用还是这个设备启动智能体，它都会全天候在后台运行。\",\n        \"en\": \"Whether you initiate the agent through the app on your smartphone or through this device, it's going to work behind the scenes 24-7.\",\n        \"relative_start\": 73.0,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你不需要不断提示它或与它互动。\",\n        \"en\": \"You don't have to constantly prompt it or you know engage with it.\",\n        \"relative_start\": 83.0,\n        \"relative_end\": 88.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Meta\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Meta Platforms, Inc.\",\n      \"preferred_en\": \"Meta Platforms, Inc.\",\n      \"official_zh\": \"Meta平台公司\",\n      \"common_zh\": \"Meta\",\n      \"title_label\": \"Meta\",\n      \"preferred_zh\": \"Meta\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Multiple Chinese financial media (搜狐, 凤凰网, Gate新闻) consistently use 'Meta' as the company name in Simplified Chinese.\"\n    },\n    {\n      \"source_text\": \"Muse\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Muse\",\n      \"preferred_en\": \"Muse\",\n      \"official_zh\": \"Muse\",\n      \"common_zh\": \"Muse\",\n      \"title_label\": \"Muse\",\n      \"preferred_zh\": \"Muse\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Chinese media consistently refer to Meta's AI agent as 'Muse' without translation, e.g., 'Meta发布云端AI智能体Muse'.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n      \"public_baseline\": \"Meta announced Muse Charm, a palm-sized AI device, on September 23, 2026, which runs the Muse AI agent and is expected to launch by December 2026.\",\n      \"surprise_gap\": \"The transcript claims the device runs entirely on the cloud with nothing on the device, which aligns with public reports that Muse is a cloud-based AI agent, but the device itself has local features like a touchscreen and 5G modem.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"The device interfaces with Muse agent and runs on the cloud.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta Muse AI 掌上设备 发布\",\n          \"url\": \"https://m.sohu.com/a/1080243449_122066678\",\n          \"fact\": \"Meta发布掌上AI设备Muse Charm，计划12月前上市。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta palm-sized AI device Muse agent launch 2026\",\n          \"url\": \"https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/\",\n          \"fact\": \"Meta made a Tamagotchi-like wearable for its Muse AI agent.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Meta's device is a Tamagotchi competitor\",\n        \"The device is always listening and recording without user consent\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip is from Bloomberg, but the speaker is not clearly identified as a Bloomberg employee; speaker_relation is set to media_source.\",\n    \"Public snippets confirm the existence of Muse Charm and its cloud-based Muse agent, but no evidence supports the claim that the device is 'always listening' in a privacy-invasive w\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Meta推出掌上AI设备，通过云端运行Muse智能体，设备本身不存储数据，可全天候在后台运行，且能判断自身是否丢失并提醒用户。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "Meta掌上AI设备：云端智能体全天候运行，设备丢了会自己提醒你",
+                "title_lines": [
+                  "Meta推掌上AI设备",
+                  "云端智能体全天候运行",
+                  "设备丢了会自己提醒"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+                  "transcript: 设备能判断自己是否丢失，然后给你发消息提醒"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你",
+                "title_lines": [
+                  "Meta掌上AI设备",
+                  "钥匙链上的智能体",
+                  "丢了会主动找你"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 可以挂在钥匙链上或别在工牌上",
+                  "transcript: 设备能判断自己是否丢失，然后给你发消息提醒"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢",
+                "title_lines": [
+                  "Meta掌上AI设备",
+                  "云端智能体全天候运行",
+                  "有人担心五分钟就弄丢"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 他大概五分钟就会把这东西弄丢",
+                  "transcript: 设备能判断自己是否丢失并提醒"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "Meta掌上AI设备：像电子宠物一样的智能体，却想全天候陪你",
+                "title_lines": [
+                  "Meta掌上AI设备",
+                  "像电子宠物一样的智能体",
+                  "却想全天候陪你"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 这是2026版的电子宠物吗",
+                  "transcript: 这是一个全天候运行的持久智能体"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 0
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"source_title\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"show_date\": \"\",\n    \"current_title\": \"Meta推出掌上AI设备 全天候智能助手引市场关注\",\n    \"current_title_lines\": [\n      \"Meta发布掌上AI设备\",\n      \"全天候智能助手接入云端\",\n      \"股价创52周新高 生态布局初现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"他们现在推出了一款新设备，你可以通过它和Muse智能体交互，一切仍在云端运行，设备本身不存储任何东西。\",\n        \"en\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 14.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但用语音交互更方便，不用再打开手机上的应用。\",\n        \"en\": \"But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.\",\n        \"relative_start\": 14.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这个设备一直在听你说话，你基本上就像在和自己的智能体对话。\",\n        \"en\": \"This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 30.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我是把它挂在钥匙链上？还是别在彭博工牌上？这东西到底怎么用？\",\n        \"en\": \"Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?\",\n        \"relative_start\": 30.0,\n        \"relative_end\": 34.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"都行。\",\n        \"en\": \"Either is fine.\",\n        \"relative_start\": 34.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他大概五分钟就会把这东西弄丢。\",\n        \"en\": \"He's going to lose this thing in about five minutes.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我还在这个电台演播室里找你的屁股呢。\",\n        \"en\": \"I'm still looking for your butt down here in this radio studio.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 44.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但好处是，设备能判断自己是否丢失，然后给你发消息说：嘿，保罗，你可能把设备落下了。\",\n        \"en\": \"But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.\",\n        \"relative_start\": 44.0,\n        \"relative_end\": 55.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"等等，这算是什么百万级工程奇迹，他却在聊弄丢设备？这是2026版的电子宠物吗？\",\n        \"en\": \"Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?\",\n        \"relative_start\": 55.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我觉得有人是这么比的，但说到底，他们说这是一个全天候运行的持久智能体。\",\n        \"en\": \"Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 73.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"无论你是通过手机应用还是这个设备启动智能体，它都会全天候在后台运行。\",\n        \"en\": \"Whether you initiate the agent through the app on your smartphone or through this device, it's going to work behind the scenes 24-7.\",\n        \"relative_start\": 73.0,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你不需要不断提示它或与它互动。\",\n        \"en\": \"You don't have to constantly prompt it or you know engage with it.\",\n        \"relative_start\": 83.0,\n        \"relative_end\": 88.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Meta\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Meta Platforms, Inc.\",\n      \"preferred_en\": \"Meta Platforms, Inc.\",\n      \"official_zh\": \"Meta平台公司\",\n      \"common_zh\": \"Meta\",\n      \"title_label\": \"Meta\",\n      \"preferred_zh\": \"Meta\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Multiple Chinese financial media (搜狐, 凤凰网, Gate新闻) consistently use 'Meta' as the company name in Simplified Chinese.\"\n    },\n    {\n      \"source_text\": \"Muse\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Muse\",\n      \"preferred_en\": \"Muse\",\n      \"official_zh\": \"Muse\",\n      \"common_zh\": \"Muse\",\n      \"title_label\": \"Muse\",\n      \"preferred_zh\": \"Muse\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Chinese media consistently refer to Meta's AI agent as 'Muse' without translation, e.g., 'Meta发布云端AI智能体Muse'.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n      \"public_baseline\": \"Meta announced Muse Charm, a palm-sized AI device, on September 23, 2026, which runs the Muse AI agent and is expected to launch by December 2026.\",\n      \"surprise_gap\": \"The transcript claims the device runs entirely on the cloud with nothing on the device, which aligns with public reports that Muse is a cloud-based AI agent, but the device itself has local features like a touchscreen and 5G modem.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"The device interfaces with Muse agent and runs on the cloud.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta Muse AI 掌上设备 发布\",\n          \"url\": \"https://m.sohu.com/a/1080243449_122066678\",\n          \"fact\": \"Meta发布掌上AI设备Muse Charm，计划12月前上市。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta palm-sized AI device Muse agent launch 2026\",\n          \"url\": \"https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/\",\n          \"fact\": \"Meta made a Tamagotchi-like wearable for its Muse AI agent.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Meta's device is a Tamagotchi competitor\",\n        \"The device is always listening and recording without user consent\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip is from Bloomberg, but the speaker is not clearly identified as a Bloomberg employee; speaker_relation is set to media_source.\",\n    \"Public snippets confirm the existence of Muse Charm and its cloud-based Muse agent, but no evidence supports the claim that the device is 'always listening' in a privacy-invasive w\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Meta推出掌上AI设备，通过云端运行Muse智能体，设备本身不存储数据，可全天候在后台运行，且能判断自身是否丢失并提醒用户。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"Meta掌上AI设备：云端智能体全天候运行，设备丢了会自己提醒你\",\n          \"title_lines\": [\n            \"Meta推掌上AI设备\",\n            \"云端智能体全天候运行\",\n            \"设备丢了会自己提醒\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西\",\n            \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"钥匙链上的智能体\",\n            \"丢了会主动找你\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 可以挂在钥匙链上或别在工牌上\",\n            \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"云端智能体全天候运行\",\n            \"有人担心五分钟就弄丢\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 他大概五分钟就会把这东西弄丢\",\n            \"transcript: 设备能判断自己是否丢失并提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"Meta掌上AI设备：像电子宠物一样的智能体，却想全天候陪你\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"像电子宠物一样的智能体\",\n            \"却想全天候陪你\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这是2026版的电子宠物吗\",\n            \"transcript: 这是一个全天候运行的持久智能体\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+              "transcript: 设备能判断自己是否丢失，然后给你发消息提醒",
+              "transcript: 这是一个全天候运行的持久智能体"
+            ],
+            "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你",
+            "title_lines": [
+              "Meta掌上AI设备",
+              "云端智能体全天候运行",
+              "丢了会自己找你"
+            ],
+            "title_highlights": [
+              "Meta掌上AI设备",
+              "全天候运行",
+              "丢了会自己找你"
+            ],
+            "runner_up_titles": [
+              "Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你",
+              "Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：云端智能体全天候待命，设备丢了还能自己提醒你。",
+            "comment_highlights": [
+              "云端智能体",
+              "自己提醒你"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：一切在云端运行，设备本身不存储数据。",
+                "comment_highlights": [
+                  "云端运行",
+                  "不存储数据"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：语音交互省去打开手机应用的步骤。",
+                "comment_highlights": [
+                  "语音交互",
+                  "省去步骤"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：设备持续聆听，像在和自己的智能体对话。",
+                "comment_highlights": [
+                  "持续聆听",
+                  "智能体对话"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：挂钥匙链还是别工牌，使用场景待明确。",
+                "comment_highlights": [
+                  "挂钥匙链",
+                  "使用场景"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：两种佩戴方式都行，设计上留了余地。",
+                "comment_highlights": [
+                  "两种佩戴方式",
+                  "留了余地"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：有人调侃五分钟就会弄丢，便携性也是风险。",
+                "comment_highlights": [
+                  "五分钟",
+                  "便携性"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：演播室里的玩笑，暗示小设备容易找不到。",
+                "comment_highlights": [
+                  "演播室",
+                  "找不到"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：设备能判断自己丢失并主动发消息提醒。",
+                "comment_highlights": [
+                  "判断自己丢失",
+                  "主动提醒"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：百万级工程却聊弄丢，反差感拉满。",
+                "comment_highlights": [
+                  "百万级工程",
+                  "反差感"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：官方定位是全天候运行的持久智能体。",
+                "comment_highlights": [
+                  "全天候运行",
+                  "持久智能体"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：无论从手机还是设备启动，后台都持续运行。",
+                "comment_highlights": [
+                  "手机还是设备",
+                  "持续运行"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：不需要不断提示，智能体主动在后台工作。",
+                "comment_highlights": [
+                  "不需要提示",
+                  "后台工作"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"source_title\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n    \"show_date\": \"\",\n    \"current_title\": \"Meta推出掌上AI设备 全天候智能助手引市场关注\",\n    \"current_title_lines\": [\n      \"Meta发布掌上AI设备\",\n      \"全天候智能助手接入云端\",\n      \"股价创52周新高 生态布局初现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"他们现在推出了一款新设备，你可以通过它和Muse智能体交互，一切仍在云端运行，设备本身不存储任何东西。\",\n        \"en\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 14.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但用语音交互更方便，不用再打开手机上的应用。\",\n        \"en\": \"But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.\",\n        \"relative_start\": 14.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这个设备一直在听你说话，你基本上就像在和自己的智能体对话。\",\n        \"en\": \"This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 30.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我是把它挂在钥匙链上？还是别在彭博工牌上？这东西到底怎么用？\",\n        \"en\": \"Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?\",\n        \"relative_start\": 30.0,\n        \"relative_end\": 34.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"都行。\",\n        \"en\": \"Either is fine.\",\n        \"relative_start\": 34.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"他大概五分钟就会把这东西弄丢。\",\n        \"en\": \"He's going to lose this thing in about five minutes.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我还在这个电台演播室里找你的屁股呢。\",\n        \"en\": \"I'm still looking for your butt down here in this radio studio.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 44.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但好处是，设备能判断自己是否丢失，然后给你发消息说：嘿，保罗，你可能把设备落下了。\",\n        \"en\": \"But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.\",\n        \"relative_start\": 44.0,\n        \"relative_end\": 55.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"等等，这算是什么百万级工程奇迹，他却在聊弄丢设备？这是2026版的电子宠物吗？\",\n        \"en\": \"Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?\",\n        \"relative_start\": 55.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"我觉得有人是这么比的，但说到底，他们说这是一个全天候运行的持久智能体。\",\n        \"en\": \"Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 73.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"无论你是通过手机应用还是这个设备启动智能体，它都会全天候在后台运行。\",\n        \"en\": \"Whether you initiate the agent through the app on your smartphone or through this device, it's going to work behind the scenes 24-7.\",\n        \"relative_start\": 73.0,\n        \"relative_end\": 83.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"你不需要不断提示它或与它互动。\",\n        \"en\": \"You don't have to constantly prompt it or you know engage with it.\",\n        \"relative_start\": 83.0,\n        \"relative_end\": 88.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Meta\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Meta Platforms, Inc.\",\n      \"preferred_en\": \"Meta Platforms, Inc.\",\n      \"official_zh\": \"Meta平台公司\",\n      \"common_zh\": \"Meta\",\n      \"title_label\": \"Meta\",\n      \"preferred_zh\": \"Meta\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Multiple Chinese financial media (搜狐, 凤凰网, Gate新闻) consistently use 'Meta' as the company name in Simplified Chinese.\"\n    },\n    {\n      \"source_text\": \"Muse\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Muse\",\n      \"preferred_en\": \"Muse\",\n      \"official_zh\": \"Muse\",\n      \"common_zh\": \"Muse\",\n      \"title_label\": \"Muse\",\n      \"preferred_zh\": \"Muse\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Chinese media consistently refer to Meta's AI agent as 'Muse' without translation, e.g., 'Meta发布云端AI智能体Muse'.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n      \"public_baseline\": \"Meta announced Muse Charm, a palm-sized AI device, on September 23, 2026, which runs the Muse AI agent and is expected to launch by December 2026.\",\n      \"surprise_gap\": \"The transcript claims the device runs entirely on the cloud with nothing on the device, which aligns with public reports that Muse is a cloud-based AI agent, but the device itself has local features like a touchscreen and 5G modem.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"The device interfaces with Muse agent and runs on the cloud.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta Muse AI 掌上设备 发布\",\n          \"url\": \"https://m.sohu.com/a/1080243449_122066678\",\n          \"fact\": \"Meta发布掌上AI设备Muse Charm，计划12月前上市。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta palm-sized AI device Muse agent launch 2026\",\n          \"url\": \"https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/\",\n          \"fact\": \"Meta made a Tamagotchi-like wearable for its Muse AI agent.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Meta's device is a Tamagotchi competitor\",\n        \"The device is always listening and recording without user consent\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip is from Bloomberg, but the speaker is not clearly identified as a Bloomberg employee; speaker_relation is set to media_source.\",\n    \"Public snippets confirm the existence of Muse Charm and its cloud-based Muse agent, but no evidence supports the claim that the device is 'always listening' in a privacy-invasive w\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Meta推出掌上AI设备，通过云端运行Muse智能体，设备本身不存储数据，可全天候在后台运行，且能判断自身是否丢失并提醒用户。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"Meta掌上AI设备：云端智能体全天候运行，设备丢了会自己提醒你\",\n          \"title_lines\": [\n            \"Meta推掌上AI设备\",\n            \"云端智能体全天候运行\",\n            \"设备丢了会自己提醒\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西\",\n            \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"钥匙链上的智能体\",\n            \"丢了会主动找你\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 可以挂在钥匙链上或别在工牌上\",\n            \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"云端智能体全天候运行\",\n            \"有人担心五分钟就弄丢\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 他大概五分钟就会把这东西弄丢\",\n            \"transcript: 设备能判断自己是否丢失并提醒\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"Meta掌上AI设备：像电子宠物一样的智能体，却想全天候陪你\",\n          \"title_lines\": [\n            \"Meta掌上AI设备\",\n            \"像电子宠物一样的智能体\",\n            \"却想全天候陪你\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 这是2026版的电子宠物吗\",\n            \"transcript: 这是一个全天候运行的持久智能体\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你\",\n      \"title_lines\": [\n        \"Meta掌上AI设备\",\n        \"云端智能体全天候运行\",\n        \"丢了会自己找你\"\n      ],\n      \"title_highlights\": [\n        \"Meta掌上AI设备\",\n        \"全天候运行\",\n        \"丢了会自己找你\"\n      ],\n      \"comment\": \"KC评论：云端智能体全天候待命，设备丢了还能自己提醒你\",\n      \"comment_highlights\": [\n        \"云端智能体\",\n        \"自己提醒你\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：一切在云端运行，设备本身不存储数据\",\n          \"comment_highlights\": [\n            \"云端运行\",\n            \"不存储数据\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：语音交互省去打开手机应用的步骤\",\n          \"comment_highlights\": [\n            \"语音交互\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：设备持续聆听，像在和自己的智能体对话\",\n          \"comment_highlights\": [\n            \"持续聆听\",\n            \"智能体对话\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：挂钥匙链还是别工牌，使用场景待明确\",\n          \"comment_highlights\": [\n            \"挂钥匙链\",\n            \"使用场景\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：两种佩戴方式都行，设计上留了余地\",\n          \"comment_highlights\": [\n            \"两种佩戴方式\",\n            \"留了余地\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：有人调侃五分钟就会弄丢，便携性也是风险\",\n          \"comment_highlights\": [\n            \"五分钟\",\n            \"便携性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：演播室里的玩笑，暗示小设备容易找不到\",\n          \"comment_highlights\": [\n            \"演播室\",\n            \"找不到\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：设备能判断自己丢失并主动发消息提醒\",\n          \"comment_highlights\": [\n            \"判断自己丢失\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：百万级工程却聊弄丢，反差感拉满\",\n          \"comment_highlights\": [\n            \"百万级工程\",\n            \"反差感\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：官方定位是全天候运行的持久智能体\",\n          \"comment_highlights\": [\n            \"全天候运行\",\n            \"持久智能体\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：无论从手机还是设备启动，后台都持续运行\",\n          \"comment_highlights\": [\n            \"手机还是设备\",\n            \"持续运行\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：不需要不断提示，智能体主动在后台工作\",\n          \"comment_highlights\": [\n            \"后台工作\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西\",\n        \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\",\n        \"transcript: 这是一个全天候运行的持久智能体\"\n      ],\n      \"runner_up_titles\": [\n        \"Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你\",\n        \"Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 8,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 8,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 0\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+                  "transcript: 设备能判断自己是否丢失，然后给你发消息提醒",
+                  "transcript: 这是一个全天候运行的持久智能体",
+                  "transcript: 他大概五分钟就会把这东西弄丢"
+                ],
+                "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你",
+                "title_lines": [
+                  "Meta掌上AI设备",
+                  "云端智能体全天候运行",
+                  "丢了会自己找你"
+                ],
+                "title_highlights": [
+                  "Meta掌上AI设备",
+                  "全天候运行",
+                  "丢了会自己找你"
+                ],
+                "runner_up_titles": [
+                  "Meta掌上AI设备：钥匙链上的全天候智能体，丢了会主动找你",
+                  "Meta掌上AI设备：云端智能体全天候运行，但有人担心五分钟就弄丢"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 0
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：云端智能体全天候待命，设备丢了还能自己提醒你",
+                "comment_highlights": [
+                  "云端智能体",
+                  "自己提醒你"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：一切在云端运行，设备本身不存储数据",
+                    "comment_highlights": [
+                      "云端运行",
+                      "不存储数据"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：语音交互省去打开手机应用的步骤",
+                    "comment_highlights": [
+                      "语音交互"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：设备持续聆听，像在和自己的智能体对话",
+                    "comment_highlights": [
+                      "持续聆听",
+                      "智能体对话"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：挂钥匙链还是别工牌，使用场景待明确",
+                    "comment_highlights": [
+                      "挂钥匙链",
+                      "使用场景"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：两种佩戴方式都行，设计上留了余地",
+                    "comment_highlights": [
+                      "两种佩戴方式",
+                      "留了余地"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：有人调侃五分钟就会弄丢，便携性也是风险",
+                    "comment_highlights": [
+                      "五分钟",
+                      "便携性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：演播室里的玩笑，暗示小设备容易找不到",
+                    "comment_highlights": [
+                      "演播室",
+                      "找不到"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：设备能判断自己丢失并主动发消息提醒",
+                    "comment_highlights": [
+                      "判断自己丢失"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：百万级工程却聊弄丢，反差感拉满",
+                    "comment_highlights": [
+                      "百万级工程",
+                      "反差感"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：官方定位是全天候运行的持久智能体",
+                    "comment_highlights": [
+                      "全天候运行",
+                      "持久智能体"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：无论从手机还是设备启动，后台都持续运行",
+                    "comment_highlights": [
+                      "手机还是设备",
+                      "持续运行"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：不需要不断提示，智能体主动在后台工作",
+                    "comment_highlights": [
+                      "后台工作"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你",
+          "title_lines": [
+            "Meta掌上AI设备",
+            "云端智能体全天候运行",
+            "丢了会自己找你"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 0
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 0
+            }
+          },
+          "comment": "KC评论：云端智能体全天候待命，设备丢了还能自己提醒你"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-25T00:30:36.567312+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go",
+          "source_title": "Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go",
+          "show_date": "",
+          "current_title": "Meta推出掌上AI设备 全天候智能助手引市场关注",
+          "current_title_lines": [
+            "Meta发布掌上AI设备",
+            "全天候智能助手接入云端",
+            "股价创52周新高 生态布局初现"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "他们现在推出了一款新设备，你可以通过它和Muse智能体交互，一切仍在云端运行，设备本身不存储任何东西。",
+              "en": "They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.",
+              "relative_start": 0.0,
+              "relative_end": 14.0
+            },
+            {
+              "index": 2,
+              "zh": "但用语音交互更方便，不用再打开手机上的应用。",
+              "en": "But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.",
+              "relative_start": 14.0,
+              "relative_end": 23.0
+            },
+            {
+              "index": 3,
+              "zh": "这个设备一直在听你说话，你基本上就像在和自己的智能体对话。",
+              "en": "This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.",
+              "relative_start": 23.0,
+              "relative_end": 30.0
+            },
+            {
+              "index": 4,
+              "zh": "我是把它挂在钥匙链上？还是别在彭博工牌上？这东西到底怎么用？",
+              "en": "Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?",
+              "relative_start": 30.0,
+              "relative_end": 34.0
+            },
+            {
+              "index": 5,
+              "zh": "都行。",
+              "en": "Either is fine.",
+              "relative_start": 34.0,
+              "relative_end": 37.0
+            },
+            {
+              "index": 6,
+              "zh": "他大概五分钟就会把这东西弄丢。",
+              "en": "He's going to lose this thing in about five minutes.",
+              "relative_start": 37.0,
+              "relative_end": 41.0
+            },
+            {
+              "index": 7,
+              "zh": "我还在这个电台演播室里找你的屁股呢。",
+              "en": "I'm still looking for your butt down here in this radio studio.",
+              "relative_start": 41.0,
+              "relative_end": 44.0
+            },
+            {
+              "index": 8,
+              "zh": "但好处是，设备能判断自己是否丢失，然后给你发消息说：嘿，保罗，你可能把设备落下了。",
+              "en": "But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.",
+              "relative_start": 44.0,
+              "relative_end": 55.0
+            },
+            {
+              "index": 9,
+              "zh": "等等，这算是什么百万级工程奇迹，他却在聊弄丢设备？这是2026版的电子宠物吗？",
+              "en": "Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?",
+              "relative_start": 55.0,
+              "relative_end": 62.0
+            },
+            {
+              "index": 10,
+              "zh": "我觉得有人是这么比的，但说到底，他们说这是一个全天候运行的持久智能体。",
+              "en": "Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.",
+              "relative_start": 62.0,
+              "relative_end": 73.0
+            },
+            {
+              "index": 11,
+              "zh": "无论你是通过手机应用还是这个设备启动智能体，它都会全天候在后台运行。",
+              "en": "Whether you initiate the agent through the app on your smartphone or through this device, it's going to work behind the scenes 24-7.",
+              "relative_start": 73.0,
+              "relative_end": 83.0
+            },
+            {
+              "index": 12,
+              "zh": "你不需要不断提示它或与它互动。",
+              "en": "You don't have to constantly prompt it or you know engage with it.",
+              "relative_start": 83.0,
+              "relative_end": 88.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n  \"source_title\": \"Duration: 5:22 Meta Introduces Palm-Sized Device to Use Muse AI on the Go\",\n  \"current_title\": \"Meta推出掌上AI设备 全天候智能助手引市场关注\",\n  \"source_claims\": [\n    \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n    \"But it's an easier way for you to interact using voice and instead of you know opening your app on the smartphone.\",\n    \"This device is listening to you all the time and you're pretty much you know talking to it as if it's your agent.\",\n    \"Do I put it on my keychain? Do I put it on my Bloomberg Lannier? What do I do with this thing?\",\n    \"Either is fine.\",\n    \"He's going to lose this thing in about five minutes.\",\n    \"I'm still looking for your butt down here in this radio studio.\",\n    \"But the good thing is the device can figure out if it's lost and you know send you some sort of a message that hey Paul you may have left the device.\",\n    \"Wait, is this like a million engineering Greece and he's talking about like losing a device? I mean, is this the 2026 version of the Tamangachi?\",\n    \"Well, that's what I think some people are comparing it to but at the end of the day they're saying this is a persistent agent that is running 24-7.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Meta\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Meta Platforms, Inc.\",\n      \"preferred_en\": \"Meta Platforms, Inc.\",\n      \"official_zh\": \"Meta平台公司\",\n      \"common_zh\": \"Meta\",\n      \"title_label\": \"Meta\",\n      \"preferred_zh\": \"Meta\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Multiple Chinese financial media (搜狐, 凤凰网, Gate新闻) consistently use 'Meta' as the company name in Simplified Chinese.\"\n    },\n    {\n      \"source_text\": \"Muse\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Muse\",\n      \"preferred_en\": \"Muse\",\n      \"official_zh\": \"Muse\",\n      \"common_zh\": \"Muse\",\n      \"title_label\": \"Muse\",\n      \"preferred_zh\": \"Muse\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.sohu.com/a/1080243449_122066678\",\n        \"https://m.sohu.com/a/1080317692_120988576\",\n        \"https://original.ifeng.com/c/8wfuiM3Drwg\",\n        \"https://www.sohu.com/a/1073946418_362225\",\n        \"https://www.gate.com/zh/news/detail/meta-launches-muse-personal-ai-agent-that-works-across-apps-including-24135576\"\n      ],\n      \"evidence\": \"Chinese media consistently refer to Meta's AI agent as 'Muse' without translation, e.g., 'Meta发布云端AI智能体Muse'.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"They are launching a new device now device where you can interface with their muse agent using this device and everything still runs on the cloud. Nothing is on the device.\",\n      \"public_baseline\": \"Meta announced Muse Charm, a palm-sized AI device, on September 23, 2026, which runs the Muse AI agent and is expected to launch by December 2026.\",\n      \"surprise_gap\": \"The transcript claims the device runs entirely on the cloud with nothing on the device, which aligns with public reports that Muse is a cloud-based AI agent, but the device itself has local features like a touchscreen and 5G modem.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"The device interfaces with Muse agent and runs on the cloud.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta Muse AI 掌上设备 发布\",\n          \"url\": \"https://m.sohu.com/a/1080243449_122066678\",\n          \"fact\": \"Meta发布掌上AI设备Muse Charm，计划12月前上市。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Meta palm-sized AI device Muse agent launch 2026\",\n          \"url\": \"https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/\",\n          \"fact\": \"Meta made a Tamagotchi-like wearable for its Muse AI agent.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Meta's device is a Tamagotchi competitor\",\n        \"The device is always listening and recording without user consent\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The source clip is from Bloomberg, but the speaker is not clearly identified as a Bloomberg employee; speaker_relation is set to media_source.\",\n    \"Public snippets confirm the existence of Muse Charm and its cloud-based Muse agent, but no evidence supports the claim that the device is 'always listening' in a privacy-invasive w\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你\",\n  \"title_lines\": [\n    \"Meta掌上AI设备\",\n    \"云端智能体全天候运行\",\n    \"丢了会自己找你\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西\",\n    \"transcript: 设备能判断自己是否丢失，然后给你发消息提醒\",\n    \"transcript: 这是一个全天候运行的持久智能体\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 8,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 0\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+              "transcript: 设备能判断自己是否丢失，然后给你发消息提醒",
+              "transcript: 这是一个全天候运行的持久智能体"
+            ],
+            "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你？",
+            "title_lines": [
+              "Meta掌上AI设备",
+              "云端智能体全天候运行",
+              "丢了会自己找你？"
+            ],
+            "title_highlights": [
+              "Meta掌上AI设备",
+              "云端智能体全天候运行",
+              "丢了会自己找你？"
+            ],
+            "runner_up_titles": [
+              "Meta掌上AI设备：云端智能体全天候运行，丢了会自己发消息？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 0
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "Meta掌上AI设备：云端智能体全天候运行，丢了会自己找你？",
+        "title_lines": [
+          "Meta掌上AI设备",
+          "云端智能体全天候运行",
+          "丢了会自己找你？"
+        ],
+        "title_highlights": [
+          "Meta掌上AI设备",
+          "云端智能体全天候运行",
+          "丢了会自己找你？"
+        ],
+        "comment": "KC评论：云端智能体全天候待命，设备丢了还能自己提醒你",
+        "comment_highlights": [
+          "云端智能体",
+          "自己提醒你"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：一切在云端运行，设备本身不存储数据",
+            "comment_highlights": [
+              "云端运行",
+              "不存储数据"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：语音交互省去打开手机应用的步骤",
+            "comment_highlights": [
+              "语音交互"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：设备持续聆听，像在和自己的智能体对话",
+            "comment_highlights": [
+              "持续聆听",
+              "智能体对话"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：挂钥匙链还是别工牌，使用场景待明确",
+            "comment_highlights": [
+              "挂钥匙链",
+              "使用场景"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：两种佩戴方式都行，设计上留了余地",
+            "comment_highlights": [
+              "两种佩戴方式",
+              "留了余地"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：有人调侃五分钟就会弄丢，便携性也是风险",
+            "comment_highlights": [
+              "五分钟",
+              "便携性"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：演播室里的玩笑，暗示小设备容易找不到",
+            "comment_highlights": [
+              "演播室",
+              "找不到"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：设备能判断自己丢失并主动发消息提醒",
+            "comment_highlights": [
+              "判断自己丢失"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：百万级工程却聊弄丢，反差感拉满",
+            "comment_highlights": [
+              "百万级工程",
+              "反差感"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：官方定位是全天候运行的持久智能体",
+            "comment_highlights": [
+              "全天候运行",
+              "持久智能体"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：无论从手机还是设备启动，后台都持续运行",
+            "comment_highlights": [
+              "手机还是设备",
+              "持续运行"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：不需要不断提示，智能体主动在后台工作",
+            "comment_highlights": [
+              "后台工作"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "transcript: 设备与Muse智能体交互，一切在云端运行，设备本身不存储任何东西",
+          "transcript: 设备能判断自己是否丢失，然后给你发消息提醒",
+          "transcript: 这是一个全天候运行的持久智能体"
+        ],
+        "runner_up_titles": [
+          "Meta掌上AI设备：云端智能体全天候运行，丢了会自己发消息？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 0
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 0
+          }
+        }
+      }
+    }
+  ]
+}
