@@ -1,0 +1,1175 @@
+{
+  "timestamp_utc": "2026-09-26T00:41:28.366349+00:00",
+  "plan_path": "work/top-videos/07_ex_taula_trader_matteo_sardo_to_join_millennium/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Matteo Sardo",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Matteo Sardo",
+        "preferred_en": "Matteo Sardo",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Matteo Sardo",
+        "preferred_zh": "",
+        "aliases": [
+          "Mateo Sardo"
+        ],
+        "confidence": "low",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium",
+          "https://it.linkedin.com/in/matteosardo"
+        ],
+        "evidence": "Bloomberg headline and LinkedIn profile both spell 'Matteo Sardo'; no reliable Chinese-language rendering found, so keep English label."
+      },
+      {
+        "source_text": "Taula / Tallah",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Taula Capital Management",
+        "preferred_en": "Taula Capital Management",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Taula Capital",
+        "preferred_zh": "",
+        "aliases": [
+          "Tallah"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Two independent outlets describe Taula Capital Management, the London hedge fund founded by ex-Millennium trader Diego Megia; no established Chinese name found."
+      },
+      {
+        "source_text": ".72",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Point72 Asset Management",
+        "preferred_en": "Point72 Asset Management",
+        "official_zh": "",
+        "common_zh": "Point72",
+        "title_label": "Point72",
+        "preferred_zh": "Point72",
+        "aliases": [
+          ".72"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and eFinancialCareers both identify Point72 Asset Management (Steve Cohen's firm) as the fund Sardo reneged on; Chinese media commonly keep 'Point72' in Latin script."
+      },
+      {
+        "source_text": "millennium",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Millennium Management LLC",
+        "preferred_en": "Millennium Management LLC",
+        "official_zh": "千禧年管理公司",
+        "common_zh": "千禧年资管",
+        "title_label": "千禧年",
+        "preferred_zh": "千禧年资管",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese financial media (财联社/虎嗅) consistently render Millennium Management as 千禧年资管/千禧年; short form 千禧年 is the established title label."
+      },
+      {
+        "source_text": "Izzy Englander",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Israel Englander",
+        "preferred_en": "Israel Englander",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Izzy Englander",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg snippet names Izzy Englander as Millennium's head; no reliable Chinese rendering found, keep English."
+      },
+      {
+        "source_text": "Steve Cohen",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Steve Cohen",
+        "preferred_en": "Steve Cohen",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Steve Cohen",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg snippet identifies Steve Cohen as Point72's founder; no reliable Chinese rendering found, keep English."
+      },
+      {
+        "source_text": "Diego Megia",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Diego Megia",
+        "preferred_en": "Diego Megia",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Diego Megia",
+        "preferred_zh": "",
+        "aliases": [
+          "Diego Megio"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "eFinancialCareers and LinkedIn both spell 'Diego Megia' as Taula Capital's founder; no established Chinese name found."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "guzzomping / gazumping",
+        "clip_indexes": [],
+        "context": "hedge fund talent wars",
+        "sense": "reneging on an accepted job offer to take a better one elsewhere",
+        "preferred_zh": "毁约跳槽",
+        "title_label": "毁约跳槽",
+        "avoid_zh": [
+          "抢人",
+          "挖角"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "talent wars",
+        "clip_indexes": [],
+        "context": "hedge fund hiring",
+        "sense": "intense competition among funds to hire portfolio managers",
+        "preferred_zh": "人才争夺战",
+        "title_label": "人才争夺战",
+        "avoid_zh": [
+          "人才战争"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "renege",
+        "clip_indexes": [],
+        "context": "job offer acceptance",
+        "sense": "to go back on a promise or accepted offer",
+        "preferred_zh": "毁约",
+        "title_label": "毁约",
+        "avoid_zh": [
+          "反悔"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Trader Matteo Sardo left Taula to join Point72, then reneged on that deal to return to Millennium, illustrating hedge fund talent wars and rising lawsuits.",
+        "public_baseline": "Bloomberg reports Sardo, a rates trader based in Milan, reneged on an accepted Point72 offer to return to former employer Millennium; Taula was founded by ex-Millennium PM Diego Megia with $3bn from Millennium.",
+        "surprise_gap": "The transcript's 'guzzomping' framing matches Bloomberg's 'gazumps' headline, so the reversal is confirmed rather than contradicted; the surprise is the rarity of a PM reneging on an accepted offer to return to a prior employer.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says Sardo left Taula to join Point72, then reneged to join Millennium."
+          },
+          {
+            "kind": "public",
+            "query": "Matteo Sardo Taula Capital Millennium hedge fund",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium",
+            "fact": "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium; based in Milan; rates trading specialist."
+          },
+          {
+            "kind": "public",
+            "query": "Taula Capital hedge fund founder",
+            "url": "https://www.efinancialcareers.com/news/diego-megia-taula-capital",
+            "fact": "Taula Capital founded by ex-Millennium PM Diego Megia with $3bn from Millennium; ~$8.5bn AUM."
+          }
+        ],
+        "forbidden_claims": [
+          "That Sardo was sued or that litigation has been filed against him specifically",
+          "That Millennium or Point72 has changed hiring contracts or policies in response",
+          "That Taula Capital is collapsing or shutting down",
+          "That the transcript's 'guzzomping' is a standard industry term"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Transcript renders 'Taula' as 'Tallah' and 'Point72' as '.72'; these are ASR artifacts, not alternate names.",
+      "No reliable Chinese-language rendering found for Matteo Sardo, Izzy Englander, Steve Cohen, or Diego Megia; keep English labels rather than inventing phonetic Chinese.",
+      "Millennium's established Chinese short form 千禧年 is used by 财联社 and 虎嗅; Point72 is typically kept in Latin script by Chinese financial media."
+    ],
+    "research_queries": [
+      {
+        "query": "Matteo Sardo Taula Capital Millennium hedge fund",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the correct spelling and Chinese name of Matteo Sardo and his career moves between Taula Capital, .72 (Point72), and Millennium."
+      },
+      {
+        "query": "Matteo Sardo 千禧 对冲基金 跳槽",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find established Chinese-language coverage of Matteo Sardo's move to Millennium to confirm the Chinese rendering of his name and the institution."
+      },
+      {
+        "query": "Taula Capital hedge fund founder",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm what Taula Capital is and its founder, to verify the claim that Sardo left Taula."
+      },
+      {
+        "query": "Point72 hedge fund 72 中文名称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Chinese name for Point72, referred to as '.72' in the transcript."
+      },
+      {
+        "query": "Millennium Management hedge fund 千禧年 中文",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Millennium Management."
+      },
+      {
+        "query": "hedge fund talent war renege offer lawsuit 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish whether reneging on hedge fund job offers and resulting lawsuits are a documented industry trend, to test the source claim."
+      },
+      {
+        "query": "hedge fund sues employee reneging contract joining competitor",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find concrete examples of hedge funds suing employees for reneging, to verify the claim that lawsuits are increasing."
+      },
+      {
+        "query": "Matteo Sardo Point72 renege Millennium lawsuit",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether there was a public dispute or lawsuit over Sardo reneging on Point72 to join Millennium."
+      },
+      {
+        "query": "Millennium Management employee leaves to competitor 2024",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Millennium has also had someone leave for another employer, supporting the 'revolving door' characterization."
+      },
+      {
+        "query": "对冲基金 人才争夺 跳槽 诉讼 千禧 点72",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language coverage of the hedge fund talent war and lawsuits to establish the Chinese framing and any China comparison."
+      },
+      {
+        "query": "中国 量化私募 人才争夺 跳槽 竞业协议 诉讼",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Chinese quant/hedge fund industry has a comparable talent war and non-compete litigation, to assess the comparative angle."
+      },
+      {
+        "query": "guzzumping hedge fund talent meaning",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the term 'guzzumping' as used by Bloomberg to describe reneging on hedge fund commitments, confirming the speaker's framing."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-09-26T00:41:25.909057+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 73.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium",
+          "source_title": "Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium",
+          "show_date": "",
+          "current_title": "前千禧交易员跳槽风波：资管人才争夺升温",
+          "current_title_lines": [
+            "前Taula交易员Matteo Sardo",
+            "转投千禧资管引人才争夺",
+            "跳槽违约与诉讼升温"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "人才争夺战持续升温，抢人大战愈演愈烈。",
+              "en": "So the talent wars just to that point continue the guzzomping if you will.",
+              "relative_start": 0.0,
+              "relative_end": 4.2
+            },
+            {
+              "index": 2,
+              "zh": "这位交易员马特奥·萨尔多有什么最新动态？",
+              "en": "What's the latest drama with this one trader, Mateo Sardo?",
+              "relative_start": 4.2,
+              "relative_end": 7.4
+            },
+            {
+              "index": 3,
+              "zh": "他离开Tallah加入.72，然后离开.72，背弃协议加入千禧年。",
+              "en": "Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.",
+              "relative_start": 7.4,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "我们看到这种抢人现象，人们会背弃加入某家对冲基金的承诺，转投别处，因为被有吸引力的薪酬方案和",
+              "en": "So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and",
+              "relative_start": 15.0,
+              "relative_end": 24.9
+            },
+            {
+              "index": 5,
+              "zh": "有吸引力的交易挖走。这显示了人才的热度以及公司抢夺人才的力度。他们能做什么？这些对冲基金有没有",
+              "en": "attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are",
+              "relative_start": 24.9,
+              "relative_end": 35.6
+            },
+            {
+              "index": 6,
+              "zh": "采取什么策略来防止这种情况？他们未能成功阻止，但当这种情况发生时，我们看到更多诉讼。所以一家对冲基金",
+              "en": "trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund",
+              "relative_start": 35.6,
+              "relative_end": 45.4
+            },
+            {
+              "index": 7,
+              "zh": "起诉员工离开他们，背弃合同，违反协议。",
+              "en": "suing their employee for leaving them for reneging on a contract and breaking that deal.",
+              "relative_start": 45.4,
+              "relative_end": 52.5
+            },
+            {
+              "index": 8,
+              "zh": "所以我们看到更多围绕这种抢人现象的诉讼，但也看到双方都有这种情况，比如千禧年有人离开去另一家雇主",
+              "en": "So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee",
+              "relative_start": 52.5,
+              "relative_end": 61.7
+            },
+            {
+              "index": 9,
+              "zh": "然后也从别处挖了人。所以这是一个旋转门，正如我们所见。非常感谢加入我们。真的很感激。",
+              "en": "employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.",
+              "relative_start": 62.4,
+              "relative_end": 72.7
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 73.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"source_title\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"show_date\": \"\",\n    \"current_title\": \"前千禧交易员跳槽风波：资管人才争夺升温\",\n    \"current_title_lines\": [\n      \"前Taula交易员Matteo Sardo\",\n      \"转投千禧资管引人才争夺\",\n      \"跳槽违约与诉讼升温\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"人才争夺战持续升温，抢人大战愈演愈烈。\",\n        \"en\": \"So the talent wars just to that point continue the guzzomping if you will.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这位交易员马特奥·萨尔多有什么最新动态？\",\n        \"en\": \"What's the latest drama with this one trader, Mateo Sardo?\",\n        \"relative_start\": 4.2,\n        \"relative_end\": 7.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"他离开Tallah加入.72，然后离开.72，背弃协议加入千禧年。\",\n        \"en\": \"Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.\",\n        \"relative_start\": 7.4,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我们看到这种抢人现象，人们会背弃加入某家对冲基金的承诺，转投别处，因为被有吸引力的薪酬方案和\",\n        \"en\": \"So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 24.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"有吸引力的交易挖走。这显示了人才的热度以及公司抢夺人才的力度。他们能做什么？这些对冲基金有没有\",\n        \"en\": \"attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are\",\n        \"relative_start\": 24.9,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"采取什么策略来防止这种情况？他们未能成功阻止，但当这种情况发生时，我们看到更多诉讼。所以一家对冲基金\",\n        \"en\": \"trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 45.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"起诉员工离开他们，背弃合同，违反协议。\",\n        \"en\": \"suing their employee for leaving them for reneging on a contract and breaking that deal.\",\n        \"relative_start\": 45.4,\n        \"relative_end\": 52.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我们看到更多围绕这种抢人现象的诉讼，但也看到双方都有这种情况，比如千禧年有人离开去另一家雇主\",\n        \"en\": \"So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee\",\n        \"relative_start\": 52.5,\n        \"relative_end\": 61.7\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"然后也从别处挖了人。所以这是一个旋转门，正如我们所见。非常感谢加入我们。真的很感激。\",\n        \"en\": \"employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.\",\n        \"relative_start\": 62.4,\n        \"relative_end\": 72.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Trader Matteo Sardo left Taula to join Point72, then reneged on that deal to return to Millennium, illustrating hedge fund talent wars and rising lawsuits.\",\n      \"public_baseline\": \"Bloomberg reports Sardo, a rates trader based in Milan, reneged on an accepted Point72 offer to return to former employer Millennium; Taula was founded by ex-Millennium PM Diego Megia with $3bn from Millennium.\",\n      \"surprise_gap\": \"The transcript's 'guzzomping' framing matches Bloomberg's 'gazumps' headline, so the reversal is confirmed rather than contradicted; the surprise is the rarity of a PM reneging on an accepted offer to return to a prior employer.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says Sardo left Taula to join Point72, then reneged to join Millennium.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Matteo Sardo Taula Capital Millennium hedge fund\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium\",\n          \"fact\": \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium; based in Milan; rates trading specialist.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taula Capital hedge fund founder\",\n          \"url\": \"https://www.efinancialcareers.com/news/diego-megia-taula-capital\",\n          \"fact\": \"Taula Capital founded by ex-Millennium PM Diego Megia with $3bn from Millennium; ~$8.5bn AUM.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That Sardo was sued or that litigation has been filed against him specifically\",\n        \"That Millennium or Point72 has changed hiring contracts or policies in response\",\n        \"That Taula Capital is collapsing or shutting down\",\n        \"That the transcript's 'guzzomping' is a standard industry term\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript renders 'Taula' as 'Tallah' and 'Point72' as '.72'; these are ASR artifacts, not alternate names.\",\n    \"No reliable Chinese-language rendering found for Matteo Sardo, Izzy Englander, Steve Cohen, or Diego Megia; keep English labels rather than inventing phonetic Chinese.\",\n    \"Millennium's established Chinese short form 千禧年 is used by 财联社 and 虎嗅; Point72 is typically kept in Latin script by Chinese financial media.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Matteo Sardo left Taula to join Point72, then reneged on that accepted offer to return to Millennium, as hedge funds increasingly sue over reneged offers in a talent war.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "签了Point72又反悔，交易员转身回千禧年",
+                "title_lines": [
+                  "签了Point72又反悔",
+                  "交易员转身回千禧年",
+                  "对冲基金抢人抢到翻脸"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: Sardo left Taula to join Point72 then reneged to join Millennium",
+                  "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "背弃合同转投别家，对冲基金开始起诉自己人",
+                "title_lines": [
+                  "背弃合同转投别家",
+                  "对冲基金开始起诉自己人",
+                  "抢人大战把法庭变战场"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: hedge fund suing their employee for leaving them for reneging on a contract",
+                  "Transcript: we are seeing more lawsuits surrounding this guzzompingness"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "刚离开老东家又回头，千禧年把Point72的人抢回来",
+                "title_lines": [
+                  "刚离开老东家又回头",
+                  "千禧年把Point72的人抢回来",
+                  "旋转门转到法庭上"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: he left Taula to join Point72 then reneged on that deal to join Millennium",
+                  "Transcript: it's a revolving door around the industry"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "抢人抢到毁约，对冲基金用诉讼留人管用吗",
+                "title_lines": [
+                  "抢人抢到毁约",
+                  "对冲基金用诉讼留人",
+                  "管用吗"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Transcript: they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits",
+                  "Transcript: hedge fund suing their employee for leaving them for reneging on a contract"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 73.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"source_title\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"show_date\": \"\",\n    \"current_title\": \"前千禧交易员跳槽风波：资管人才争夺升温\",\n    \"current_title_lines\": [\n      \"前Taula交易员Matteo Sardo\",\n      \"转投千禧资管引人才争夺\",\n      \"跳槽违约与诉讼升温\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"人才争夺战持续升温，抢人大战愈演愈烈。\",\n        \"en\": \"So the talent wars just to that point continue the guzzomping if you will.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这位交易员马特奥·萨尔多有什么最新动态？\",\n        \"en\": \"What's the latest drama with this one trader, Mateo Sardo?\",\n        \"relative_start\": 4.2,\n        \"relative_end\": 7.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"他离开Tallah加入.72，然后离开.72，背弃协议加入千禧年。\",\n        \"en\": \"Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.\",\n        \"relative_start\": 7.4,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我们看到这种抢人现象，人们会背弃加入某家对冲基金的承诺，转投别处，因为被有吸引力的薪酬方案和\",\n        \"en\": \"So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 24.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"有吸引力的交易挖走。这显示了人才的热度以及公司抢夺人才的力度。他们能做什么？这些对冲基金有没有\",\n        \"en\": \"attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are\",\n        \"relative_start\": 24.9,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"采取什么策略来防止这种情况？他们未能成功阻止，但当这种情况发生时，我们看到更多诉讼。所以一家对冲基金\",\n        \"en\": \"trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 45.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"起诉员工离开他们，背弃合同，违反协议。\",\n        \"en\": \"suing their employee for leaving them for reneging on a contract and breaking that deal.\",\n        \"relative_start\": 45.4,\n        \"relative_end\": 52.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我们看到更多围绕这种抢人现象的诉讼，但也看到双方都有这种情况，比如千禧年有人离开去另一家雇主\",\n        \"en\": \"So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee\",\n        \"relative_start\": 52.5,\n        \"relative_end\": 61.7\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"然后也从别处挖了人。所以这是一个旋转门，正如我们所见。非常感谢加入我们。真的很感激。\",\n        \"en\": \"employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.\",\n        \"relative_start\": 62.4,\n        \"relative_end\": 72.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Trader Matteo Sardo left Taula to join Point72, then reneged on that deal to return to Millennium, illustrating hedge fund talent wars and rising lawsuits.\",\n      \"public_baseline\": \"Bloomberg reports Sardo, a rates trader based in Milan, reneged on an accepted Point72 offer to return to former employer Millennium; Taula was founded by ex-Millennium PM Diego Megia with $3bn from Millennium.\",\n      \"surprise_gap\": \"The transcript's 'guzzomping' framing matches Bloomberg's 'gazumps' headline, so the reversal is confirmed rather than contradicted; the surprise is the rarity of a PM reneging on an accepted offer to return to a prior employer.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says Sardo left Taula to join Point72, then reneged to join Millennium.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Matteo Sardo Taula Capital Millennium hedge fund\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium\",\n          \"fact\": \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium; based in Milan; rates trading specialist.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taula Capital hedge fund founder\",\n          \"url\": \"https://www.efinancialcareers.com/news/diego-megia-taula-capital\",\n          \"fact\": \"Taula Capital founded by ex-Millennium PM Diego Megia with $3bn from Millennium; ~$8.5bn AUM.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That Sardo was sued or that litigation has been filed against him specifically\",\n        \"That Millennium or Point72 has changed hiring contracts or policies in response\",\n        \"That Taula Capital is collapsing or shutting down\",\n        \"That the transcript's 'guzzomping' is a standard industry term\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript renders 'Taula' as 'Tallah' and 'Point72' as '.72'; these are ASR artifacts, not alternate names.\",\n    \"No reliable Chinese-language rendering found for Matteo Sardo, Izzy Englander, Steve Cohen, or Diego Megia; keep English labels rather than inventing phonetic Chinese.\",\n    \"Millennium's established Chinese short form 千禧年 is used by 财联社 and 虎嗅; Point72 is typically kept in Latin script by Chinese financial media.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Matteo Sardo left Taula to join Point72, then reneged on that accepted offer to return to Millennium, as hedge funds increasingly sue over reneged offers in a talent war.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"签了Point72又反悔，交易员转身回千禧年\",\n          \"title_lines\": [\n            \"签了Point72又反悔\",\n            \"交易员转身回千禧年\",\n            \"对冲基金抢人抢到翻脸\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Sardo left Taula to join Point72 then reneged to join Millennium\",\n            \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"背弃合同转投别家，对冲基金开始起诉自己人\",\n          \"title_lines\": [\n            \"背弃合同转投别家\",\n            \"对冲基金开始起诉自己人\",\n            \"抢人大战把法庭变战场\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\",\n            \"Transcript: we are seeing more lawsuits surrounding this guzzompingness\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"刚离开老东家又回头，千禧年把Point72的人抢回来\",\n          \"title_lines\": [\n            \"刚离开老东家又回头\",\n            \"千禧年把Point72的人抢回来\",\n            \"旋转门转到法庭上\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: he left Taula to join Point72 then reneged on that deal to join Millennium\",\n            \"Transcript: it's a revolving door around the industry\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"抢人抢到毁约，对冲基金用诉讼留人管用吗\",\n          \"title_lines\": [\n            \"抢人抢到毁约\",\n            \"对冲基金用诉讼留人\",\n            \"管用吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits\",\n            \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然签了还能反悔",
+            "evidence_basis": [
+              "Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium",
+              "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium",
+              "Transcript: hedge fund suing their employee for leaving them for reneging on a contract"
+            ],
+            "title": "签了Point72又反悔，交易员转身回千禧年",
+            "title_lines": [
+              "签了Point72又反悔",
+              "交易员转身回千禧年",
+              "抢人抢到法庭见"
+            ],
+            "title_highlights": [
+              "签了Point72又反悔",
+              "转身回千禧年",
+              "法庭见"
+            ],
+            "runner_up_titles": [
+              "背弃合同转投别家，对冲基金开始起诉自己人",
+              "刚离开老东家又回头，千禧年把Point72的人抢回来"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：签了offer还能反悔，抢人大战把诉讼也带火了。",
+            "comment_highlights": [
+              "签了offer还能反悔",
+              "诉讼也带火了"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：人才争夺升温，抢人已经成常态。",
+                "comment_highlights": [
+                  "抢人已经成常态"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：焦点落在交易员Matteo Sardo的最新动向。",
+                "comment_highlights": [
+                  "Matteo Sardo"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：离开Taula去Point72，又反悔回千禧年。",
+                "comment_highlights": [
+                  "反悔回千禧年"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：有吸引力的薪酬方案能让人背弃承诺。",
+                "comment_highlights": [
+                  "背弃承诺"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：人才热度高，公司抢人力度也在加大。",
+                "comment_highlights": [
+                  "抢人力度"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：阻止不了跳槽，诉讼数量却在增加。",
+                "comment_highlights": [
+                  "诉讼数量却在增加"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：员工离开并违约，对冲基金选择起诉。",
+                "comment_highlights": [
+                  "选择起诉"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：抢人双向流动，千禧年也有人被挖走。",
+                "comment_highlights": [
+                  "双向流动"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：行业旋转门持续，人才流动不会停。",
+                "comment_highlights": [
+                  "旋转门持续"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 73.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"source_title\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n    \"show_date\": \"\",\n    \"current_title\": \"前千禧交易员跳槽风波：资管人才争夺升温\",\n    \"current_title_lines\": [\n      \"前Taula交易员Matteo Sardo\",\n      \"转投千禧资管引人才争夺\",\n      \"跳槽违约与诉讼升温\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"人才争夺战持续升温，抢人大战愈演愈烈。\",\n        \"en\": \"So the talent wars just to that point continue the guzzomping if you will.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这位交易员马特奥·萨尔多有什么最新动态？\",\n        \"en\": \"What's the latest drama with this one trader, Mateo Sardo?\",\n        \"relative_start\": 4.2,\n        \"relative_end\": 7.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"他离开Tallah加入.72，然后离开.72，背弃协议加入千禧年。\",\n        \"en\": \"Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.\",\n        \"relative_start\": 7.4,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我们看到这种抢人现象，人们会背弃加入某家对冲基金的承诺，转投别处，因为被有吸引力的薪酬方案和\",\n        \"en\": \"So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 24.9\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"有吸引力的交易挖走。这显示了人才的热度以及公司抢夺人才的力度。他们能做什么？这些对冲基金有没有\",\n        \"en\": \"attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are\",\n        \"relative_start\": 24.9,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"采取什么策略来防止这种情况？他们未能成功阻止，但当这种情况发生时，我们看到更多诉讼。所以一家对冲基金\",\n        \"en\": \"trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 45.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"起诉员工离开他们，背弃合同，违反协议。\",\n        \"en\": \"suing their employee for leaving them for reneging on a contract and breaking that deal.\",\n        \"relative_start\": 45.4,\n        \"relative_end\": 52.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我们看到更多围绕这种抢人现象的诉讼，但也看到双方都有这种情况，比如千禧年有人离开去另一家雇主\",\n        \"en\": \"So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee\",\n        \"relative_start\": 52.5,\n        \"relative_end\": 61.7\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"然后也从别处挖了人。所以这是一个旋转门，正如我们所见。非常感谢加入我们。真的很感激。\",\n        \"en\": \"employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.\",\n        \"relative_start\": 62.4,\n        \"relative_end\": 72.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Trader Matteo Sardo left Taula to join Point72, then reneged on that deal to return to Millennium, illustrating hedge fund talent wars and rising lawsuits.\",\n      \"public_baseline\": \"Bloomberg reports Sardo, a rates trader based in Milan, reneged on an accepted Point72 offer to return to former employer Millennium; Taula was founded by ex-Millennium PM Diego Megia with $3bn from Millennium.\",\n      \"surprise_gap\": \"The transcript's 'guzzomping' framing matches Bloomberg's 'gazumps' headline, so the reversal is confirmed rather than contradicted; the surprise is the rarity of a PM reneging on an accepted offer to return to a prior employer.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says Sardo left Taula to join Point72, then reneged to join Millennium.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Matteo Sardo Taula Capital Millennium hedge fund\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium\",\n          \"fact\": \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium; based in Milan; rates trading specialist.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taula Capital hedge fund founder\",\n          \"url\": \"https://www.efinancialcareers.com/news/diego-megia-taula-capital\",\n          \"fact\": \"Taula Capital founded by ex-Millennium PM Diego Megia with $3bn from Millennium; ~$8.5bn AUM.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That Sardo was sued or that litigation has been filed against him specifically\",\n        \"That Millennium or Point72 has changed hiring contracts or policies in response\",\n        \"That Taula Capital is collapsing or shutting down\",\n        \"That the transcript's 'guzzomping' is a standard industry term\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript renders 'Taula' as 'Tallah' and 'Point72' as '.72'; these are ASR artifacts, not alternate names.\",\n    \"No reliable Chinese-language rendering found for Matteo Sardo, Izzy Englander, Steve Cohen, or Diego Megia; keep English labels rather than inventing phonetic Chinese.\",\n    \"Millennium's established Chinese short form 千禧年 is used by 财联社 and 虎嗅; Point72 is typically kept in Latin script by Chinese financial media.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Matteo Sardo left Taula to join Point72, then reneged on that accepted offer to return to Millennium, as hedge funds increasingly sue over reneged offers in a talent war.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"签了Point72又反悔，交易员转身回千禧年\",\n          \"title_lines\": [\n            \"签了Point72又反悔\",\n            \"交易员转身回千禧年\",\n            \"对冲基金抢人抢到翻脸\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: Sardo left Taula to join Point72 then reneged to join Millennium\",\n            \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"背弃合同转投别家，对冲基金开始起诉自己人\",\n          \"title_lines\": [\n            \"背弃合同转投别家\",\n            \"对冲基金开始起诉自己人\",\n            \"抢人大战把法庭变战场\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\",\n            \"Transcript: we are seeing more lawsuits surrounding this guzzompingness\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"刚离开老东家又回头，千禧年把Point72的人抢回来\",\n          \"title_lines\": [\n            \"刚离开老东家又回头\",\n            \"千禧年把Point72的人抢回来\",\n            \"旋转门转到法庭上\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: he left Taula to join Point72 then reneged on that deal to join Millennium\",\n            \"Transcript: it's a revolving door around the industry\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"抢人抢到毁约，对冲基金用诉讼留人管用吗\",\n          \"title_lines\": [\n            \"抢人抢到毁约\",\n            \"对冲基金用诉讼留人\",\n            \"管用吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits\",\n            \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"签了Point72又反悔：交易员转身回千禧年，抢人抢到法庭见\",\n      \"title_lines\": [\n        \"签了Point72又反悔\",\n        \"交易员转身回千禧年\",\n        \"抢人抢到法庭见\"\n      ],\n      \"title_highlights\": [\n        \"签了Point72又反悔\",\n        \"转身回千禧年\",\n        \"法庭见\"\n      ],\n      \"comment\": \"KC评论：签了offer还能反悔，抢人大战把诉讼也带火了\",\n      \"comment_highlights\": [\n        \"签了offer还能反悔\",\n        \"诉讼也带火了\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：人才争夺升温，抢人已经成常态\",\n          \"comment_highlights\": [\n            \"抢人已经成常态\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：焦点落在交易员MatteoSardo的最新动向\",\n          \"comment_highlights\": [\n            \"焦点落在交易员M\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：离开Taula去Point72，又反悔回千禧年\",\n          \"comment_highlights\": [\n            \"反悔回千禧年\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：有吸引力的薪酬方案能让人背弃承诺\",\n          \"comment_highlights\": [\n            \"背弃承诺\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：人才热度高，公司抢人力度也在加大\",\n          \"comment_highlights\": [\n            \"抢人力度\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：阻止不了跳槽，诉讼数量却在增加\",\n          \"comment_highlights\": [\n            \"诉讼数量却在增加\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：员工离开并违约，对冲基金选择起诉\",\n          \"comment_highlights\": [\n            \"选择起诉\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：抢人双向流动，千禧年也有人被挖走\",\n          \"comment_highlights\": [\n            \"双向流动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：行业旋转门持续，人才流动不会停\",\n          \"comment_highlights\": [\n            \"旋转门持续\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然签了还能反悔\",\n      \"evidence_basis\": [\n        \"Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium\",\n        \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium\",\n        \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\"\n      ],\n      \"runner_up_titles\": [\n        \"背弃合同转投别家，对冲产品开始起诉自己人\",\n        \"刚离开老东家又回头，千禧年把Point72的人抢回来\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 10,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 10,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "签了offer居然还能反悔",
+                "evidence_basis": [
+                  "Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium",
+                  "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium",
+                  "Transcript: hedge fund suing their employee for leaving them for reneging on a contract"
+                ],
+                "title": "签了Point72又反悔，交易员转身回千禧年",
+                "title_lines": [
+                  "签了Point72又反悔",
+                  "交易员转身回千禧年",
+                  "抢人抢到法庭见"
+                ],
+                "title_highlights": [
+                  "签了Point72又反悔",
+                  "转身回千禧年",
+                  "法庭见"
+                ],
+                "runner_up_titles": [
+                  "背弃合同转投别家，对冲产品开始起诉自己人",
+                  "刚离开老东家又回头，千禧年把Point72的人抢回来"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：签了offer还能反悔，抢人大战把诉讼也带火了",
+                "comment_highlights": [
+                  "签了offer还能反悔",
+                  "诉讼也带火了"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：人才争夺升温，抢人已经成常态",
+                    "comment_highlights": [
+                      "抢人已经成常态"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：焦点落在交易员MatteoSardo的最新动向",
+                    "comment_highlights": [
+                      "焦点落在交易员M"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：离开Taula去Point72，又反悔回千禧年",
+                    "comment_highlights": [
+                      "反悔回千禧年"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：有吸引力的薪酬方案能让人背弃承诺",
+                    "comment_highlights": [
+                      "背弃承诺"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：人才热度高，公司抢人力度也在加大",
+                    "comment_highlights": [
+                      "抢人力度"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：阻止不了跳槽，诉讼数量却在增加",
+                    "comment_highlights": [
+                      "诉讼数量却在增加"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：员工离开并违约，对冲基金选择起诉",
+                    "comment_highlights": [
+                      "选择起诉"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：抢人双向流动，千禧年也有人被挖走",
+                    "comment_highlights": [
+                      "双向流动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：行业旋转门持续，人才流动不会停",
+                    "comment_highlights": [
+                      "旋转门持续"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "签了Point72又反悔：交易员转身回千禧年，抢人抢到法庭见",
+          "title_lines": [
+            "签了Point72又反悔",
+            "交易员转身回千禧年",
+            "抢人抢到法庭见"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然签了还能反悔",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 87,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：签了offer还能反悔，抢人大战把诉讼也带火了"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-09-26T00:41:28.354538+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 73.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium",
+          "source_title": "Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium",
+          "show_date": "",
+          "current_title": "前千禧交易员跳槽风波：资管人才争夺升温",
+          "current_title_lines": [
+            "前Taula交易员Matteo Sardo",
+            "转投千禧资管引人才争夺",
+            "跳槽违约与诉讼升温"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "人才争夺战持续升温，抢人大战愈演愈烈。",
+              "en": "So the talent wars just to that point continue the guzzomping if you will.",
+              "relative_start": 0.0,
+              "relative_end": 4.2
+            },
+            {
+              "index": 2,
+              "zh": "这位交易员马特奥·萨尔多有什么最新动态？",
+              "en": "What's the latest drama with this one trader, Mateo Sardo?",
+              "relative_start": 4.2,
+              "relative_end": 7.4
+            },
+            {
+              "index": 3,
+              "zh": "他离开Tallah加入.72，然后离开.72，背弃协议加入千禧年。",
+              "en": "Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.",
+              "relative_start": 7.4,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "我们看到这种抢人现象，人们会背弃加入某家对冲基金的承诺，转投别处，因为被有吸引力的薪酬方案和",
+              "en": "So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and",
+              "relative_start": 15.0,
+              "relative_end": 24.9
+            },
+            {
+              "index": 5,
+              "zh": "有吸引力的交易挖走。这显示了人才的热度以及公司抢夺人才的力度。他们能做什么？这些对冲基金有没有",
+              "en": "attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are",
+              "relative_start": 24.9,
+              "relative_end": 35.6
+            },
+            {
+              "index": 6,
+              "zh": "采取什么策略来防止这种情况？他们未能成功阻止，但当这种情况发生时，我们看到更多诉讼。所以一家对冲基金",
+              "en": "trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund",
+              "relative_start": 35.6,
+              "relative_end": 45.4
+            },
+            {
+              "index": 7,
+              "zh": "起诉员工离开他们，背弃合同，违反协议。",
+              "en": "suing their employee for leaving them for reneging on a contract and breaking that deal.",
+              "relative_start": 45.4,
+              "relative_end": 52.5
+            },
+            {
+              "index": 8,
+              "zh": "所以我们看到更多围绕这种抢人现象的诉讼，但也看到双方都有这种情况，比如千禧年有人离开去另一家雇主",
+              "en": "So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee",
+              "relative_start": 52.5,
+              "relative_end": 61.7
+            },
+            {
+              "index": 9,
+              "zh": "然后也从别处挖了人。所以这是一个旋转门，正如我们所见。非常感谢加入我们。真的很感激。",
+              "en": "employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.",
+              "relative_start": 62.4,
+              "relative_end": 72.7
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n  \"source_title\": \"Duration: 1:13 Ex-Taula Trader Matteo Sardo to Join Millennium\",\n  \"current_title\": \"前千禧交易员跳槽风波：资管人才争夺升温\",\n  \"source_claims\": [\n    \"So the talent wars just to that point continue the guzzomping if you will.\",\n    \"What's the latest drama with this one trader, Mateo Sardo?\",\n    \"Yes, so he left Tallah to join .72 then left .72 reneging on that deal to join them to go to millennium.\",\n    \"So what we're seeing this guzzomping is when people will renege on their commitment to join a hedge fund to go someplace else because they've been snatched away by an attractive pay package and\",\n    \"attractive deal. It shows just the hot worth of talent and the extent to which firms are going to grab talent. Can they do anything about that? Are there any tactics that these hedge funds are\",\n    \"trying to employ to prevent this type of thing from happening? So they haven't been successful in preventing it but when they do see this happening we're seeing a lot more lawsuits. So a hedge fund\",\n    \"suing their employee for leaving them for reneging on a contract and breaking that deal.\",\n    \"So we are seeing more lawsuits surrounding this guzzompingness but we're also seeing people seeing it on both sides like millennium has had somebody leave them to go to another employee\",\n    \"employer and then it's also like snatched somebody from somewhere else. So it's a revolving door around the industry as we're seeing. Thank you so much for joining us. Really appreciate it.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Trader Matteo Sardo left Taula to join Point72, then reneged on that deal to return to Millennium, illustrating hedge fund talent wars and rising lawsuits.\",\n      \"public_baseline\": \"Bloomberg reports Sardo, a rates trader based in Milan, reneged on an accepted Point72 offer to return to former employer Millennium; Taula was founded by ex-Millennium PM Diego Megia with $3bn from Millennium.\",\n      \"surprise_gap\": \"The transcript's 'guzzomping' framing matches Bloomberg's 'gazumps' headline, so the reversal is confirmed rather than contradicted; the surprise is the rarity of a PM reneging on an accepted offer to return to a prior employer.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says Sardo left Taula to join Point72, then reneged to join Millennium.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Matteo Sardo Taula Capital Millennium hedge fund\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2026-09-25/ex-taula-trader-matteo-sardo-gazumps-point72-to-join-millennium\",\n          \"fact\": \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium; based in Milan; rates trading specialist.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Taula Capital hedge fund founder\",\n          \"url\": \"https://www.efinancialcareers.com/news/diego-megia-taula-capital\",\n          \"fact\": \"Taula Capital founded by ex-Millennium PM Diego Megia with $3bn from Millennium; ~$8.5bn AUM.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That Sardo was sued or that litigation has been filed against him specifically\",\n        \"That Millennium or Point72 has changed hiring contracts or policies in response\",\n        \"That Taula Capital is collapsing or shutting down\",\n        \"That the transcript's 'guzzomping' is a standard industry term\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Transcript renders 'Taula' as 'Tallah' and 'Point72' as '.72'; these are ASR artifacts, not alternate names.\",\n    \"No reliable Chinese-language rendering found for Matteo Sardo, Izzy Englander, Steve Cohen, or Diego Megia; keep English labels rather than inventing phonetic Chinese.\",\n    \"Millennium's established Chinese short form 千禧年 is used by 财联社 and 虎嗅; Point72 is typically kept in Latin script by Chinese financial media.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"签了Point72又反悔：交易员转身回千禧年，抢人抢到法庭见\",\n  \"title_lines\": [\n    \"签了Point72又反悔\",\n    \"交易员转身回千禧年\",\n    \"抢人抢到法庭见\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然签了还能反悔\",\n  \"evidence_basis\": [\n    \"Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium\",\n    \"Bloomberg: Sardo reneged on a Point72 offer to return to Millennium\",\n    \"Transcript: hedge fund suing their employee for leaving them for reneging on a contract\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 10,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "签了还能反悔，这行抢人到底有多凶",
+            "evidence_basis": [
+              "Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium",
+              "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium",
+              "Transcript: hedge fund suing their employee for leaving them for reneging on a contract"
+            ],
+            "title": "签了Point72又反悔：交易员转身回千禧年，抢人抢到法庭见？",
+            "title_lines": [
+              "交易员签了Point72又反悔",
+              "转身回千禧年，抢人抢到法庭见",
+              "反悔一次，会被老东家告上法庭吗？"
+            ],
+            "title_highlights": [
+              "签了Point72又反悔",
+              "转身回千禧年",
+              "会被老东家告上法庭吗？"
+            ],
+            "runner_up_titles": [
+              "交易员签了Point72又反悔：转身回千禧年，抢人抢到法庭见？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "交易员签了Point72又反悔：转身回千禧年，抢人抢到法庭见，反悔一次，会被老东家告上法庭吗？",
+        "title_lines": [
+          "交易员签了Point72又反悔",
+          "转身回千禧年，抢人抢到法庭见",
+          "反悔一次，会被老东家告上法庭吗？"
+        ],
+        "title_highlights": [
+          "签了Point72又反悔",
+          "转身回千禧年",
+          "会被老东家告上法庭吗？"
+        ],
+        "comment": "KC评论：签了offer还能反悔，抢人大战把诉讼也带火了",
+        "comment_highlights": [
+          "签了offer还能反悔",
+          "诉讼也带火了"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：人才争夺升温，抢人已经成常态",
+            "comment_highlights": [
+              "抢人已经成常态"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：焦点落在交易员MatteoSardo的最新动向",
+            "comment_highlights": [
+              "焦点落在交易员M"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：离开Taula去Point72，又反悔回千禧年",
+            "comment_highlights": [
+              "反悔回千禧年"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：有吸引力的薪酬方案能让人背弃承诺",
+            "comment_highlights": [
+              "背弃承诺"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：人才热度高，公司抢人力度也在加大",
+            "comment_highlights": [
+              "抢人力度"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：阻止不了跳槽，诉讼数量却在增加",
+            "comment_highlights": [
+              "诉讼数量却在增加"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：员工离开并违约，对冲基金选择起诉",
+            "comment_highlights": [
+              "选择起诉"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：抢人双向流动，千禧年也有人被挖走",
+            "comment_highlights": [
+              "双向流动"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：行业旋转门持续，人才流动不会停",
+            "comment_highlights": [
+              "旋转门持续"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "签了还能反悔，这行抢人到底有多凶",
+        "evidence_basis": [
+          "Transcript: Sardo left Taula to join Point72 then reneged on that deal to join Millennium",
+          "Bloomberg: Sardo reneged on a Point72 offer to return to Millennium",
+          "Transcript: hedge fund suing their employee for leaving them for reneging on a contract"
+        ],
+        "runner_up_titles": [
+          "交易员签了Point72又反悔：转身回千禧年，抢人抢到法庭见？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 10,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 10,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
