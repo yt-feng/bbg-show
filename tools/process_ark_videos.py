@@ -50,6 +50,7 @@ DEFAULT_TRANSCRIPT_RECIPIENT_CERT = ROOT / "config" / "transcript-archive-recipi
 DEFAULT_TRANSCRIPT_ARCHIVE_ROOT = ROOT / "transcripts"
 SENSITIVE_SKIP_MARKERS = (
     "source video skipped by sensitive topic filter",
+    "ark video skipped by sensitive topic filter",
     "no non-sensitive-topic clips remained after filtering",
     "no non-sensitive-topic clips found in plan",
     "no non-sensitive-topic clips remained after title refinement",
@@ -963,7 +964,9 @@ def working_proxy(args: argparse.Namespace, source_url: str, work_dir: Path) -> 
     return None
 
 
-def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
+def load_manifest(
+    path: Path, max_videos: int, *, skipped: list[dict[str, Any]] | None = None
+) -> list[dict[str, Any]]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     videos = payload.get("videos", [])
     if not isinstance(videos, list):
@@ -979,6 +982,9 @@ def load_manifest(path: Path, max_videos: int) -> list[dict[str, Any]]:
             continue
         if is_trump_related(url, title, item.get("description", ""), item.get("slug", ""), use_ai=True):
             print(f"[ark] Skipping sensitive-topic manifest video: {title or url}", flush=True)
+            if skipped is not None:
+                skipped.append({"status": "skipped", "reason": "sensitive_topic", "url": url, "title": title})
+            seen.add(url)
             continue
         seen.add(url)
         slug = clean_text(str(item.get("slug", ""))) or safe_file_part(slug_from_url(url) or title)
@@ -1719,19 +1725,21 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     args.work_root.mkdir(parents=True, exist_ok=True)
 
-    videos = load_manifest(args.manifest, args.max_videos)
+    skipped: list[dict[str, Any]] = []
+    videos = load_manifest(args.manifest, args.max_videos, skipped=skipped)
     ark_output_dir = output_dir / "ark-invest"
     ark_output_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy2(args.manifest, ark_output_dir / "ark_videos.json")
 
-    results: list[dict[str, Any]] = []
+    results: list[dict[str, Any]] = list(skipped)
     for index, item in enumerate(videos, start=1):
         try:
             result = process_one(item, index, args, output_dir)
         except Exception as exc:  # noqa: BLE001 - keep diagnostics in summary
             print(f"FAILED ARK video {index}: {exc}", flush=True)
             result = {
-                "status": "failed",
+                "status": "skipped" if is_sensitive_skip_output(str(exc)) else "failed",
+                "reason": "sensitive_topic" if is_sensitive_skip_output(str(exc)) else "processing_error",
                 "index": index,
                 "source": "ark-invest",
                 "url": item.get("url", ""),
@@ -1761,12 +1769,13 @@ def main() -> None:
         "total": len(results),
         "succeeded": len(successes),
         "failed": sum(1 for item in results if item.get("status") == "failed"),
+        "skipped": sum(1 for item in results if item.get("status") == "skipped"),
         "videos": results,
     }
     (ark_output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2), flush=True)
-    if videos and not successes:
-        raise SystemExit("No ARK Invest videos were processed successfully")
+    if summary["failed"] and not successes:
+        raise SystemExit("One or more ARK Invest videos failed processing")
 
 
 if __name__ == "__main__":

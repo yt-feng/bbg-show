@@ -229,14 +229,10 @@ jobs:
       - name: Verify rendered ARK clips
         if: ${{ steps.scrape.outputs.video_count != '0' }}
         run: |
-          OUTPUT_DIR="rendered-clips/${RUN_DATE}/ark-invest"
-          CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l | tr -d ' ')
-          echo "Rendered ARK MP4 count: $CLIP_COUNT"
-          if [ "$CLIP_COUNT" -lt 1 ]; then
-            echo "No rendered ARK clips produced" >&2
-            exit 1
-          fi
-          find "$OUTPUT_DIR" -maxdepth 3 -type f -print -exec ls -lh {} \;
+          python tools/verify_ark_outputs.py \
+            --manifest work/ark-invest/ark_videos.json \
+            --summary "rendered-clips/${RUN_DATE}/ark-invest/summary.json" \
+            --step-summary "$GITHUB_STEP_SUMMARY"
 
       - name: Clean rendered clips older than 72 hours
         run: |

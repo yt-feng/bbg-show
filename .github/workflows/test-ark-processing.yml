@@ -1,0 +1,35 @@
+name: ARK processing regression
+
+on:
+  pull_request:
+    paths:
+      - tools/**
+      - tests/**
+      - .github/workflows/daily-ark-invest-videos.yml
+      - .github/workflows/test-ark-processing.yml
+  push:
+    branches: [main]
+    paths:
+      - tools/**
+      - tests/**
+      - .github/workflows/daily-ark-invest-videos.yml
+      - .github/workflows/test-ark-processing.yml
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            tools
+            tests
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Verify explicit exclusions and real rendering failures
+        run: python -m unittest tests.test_ark_processing_outcomes tests.test_ark_title_refinement_fallback tests.test_ark_wistia_source tests.test_sensitive_topic_filter
