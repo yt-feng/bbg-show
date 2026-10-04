@@ -1,0 +1,1176 @@
+{
+  "timestamp_utc": "2026-10-04T00:37:28.218528+00:00",
+  "plan_path": "work/top-videos/05_nithya_raman_on_plan_for_jobs_in_hollywood/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Nithya Raman",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Nithya Raman",
+        "preferred_en": "Nithya Raman",
+        "official_zh": "妮蒂亚·拉曼",
+        "common_zh": "拉曼",
+        "title_label": "拉曼",
+        "preferred_zh": "拉曼",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "RFI Chinese report uses 拉曼（Nithya Raman）; official LA City Clerk Chinese-language candidate statement uses 我叫Nithya Raman. Both confirm the surname form 拉曼; full given-name rendering 妮蒂亚 is not directly attested in the snippets, so official_zh is marked medium"
+      },
+      {
+        "source_text": "Los Angeles",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles",
+        "preferred_en": "Los Angeles",
+        "official_zh": "洛杉矶",
+        "common_zh": "洛杉矶",
+        "title_label": "洛杉矶",
+        "preferred_zh": "洛杉矶",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "RFI Chinese and NBC Los Angeles both reference Los Angeles; 洛杉矶 is the established Simplified Chinese name."
+      },
+      {
+        "source_text": "Hollywood",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Hollywood",
+        "preferred_en": "Hollywood",
+        "official_zh": "好莱坞",
+        "common_zh": "好莱坞",
+        "title_label": "好莱坞",
+        "preferred_zh": "好莱坞",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple English sources use Hollywood; 好莱坞 is the standard Simplified Chinese rendering used by Chinese media."
+      },
+      {
+        "source_text": "Georgia",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Georgia",
+        "preferred_en": "Georgia",
+        "official_zh": "佐治亚州",
+        "common_zh": "佐治亚州",
+        "title_label": "佐治亚州",
+        "preferred_zh": "佐治亚州",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "US state Georgia; 佐治亚州 is the standard Simplified Chinese name. Not to be confused with the country 格鲁吉亚."
+      },
+      {
+        "source_text": "American Idol",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "American Idol",
+        "preferred_en": "American Idol",
+        "official_zh": "",
+        "common_zh": "美国偶像",
+        "title_label": "《美国偶像》",
+        "preferred_zh": "美国偶像",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "US singing competition show; 美国偶像 is the widely used Chinese title. No official Chinese name found, so official_zh left empty."
+      },
+      {
+        "source_text": "Los Angeles City Council",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Los Angeles City Council",
+        "preferred_en": "Los Angeles City Council",
+        "official_zh": "洛杉矶市议会",
+        "common_zh": "洛杉矶市议会",
+        "title_label": "洛杉矶市议会",
+        "preferred_zh": "洛杉矶市议会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official CD4 page and Wikipedia confirm Raman is a member of the Los Angeles City Council; 洛杉矶市议会 is the standard Chinese rendering."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "production",
+        "clip_indexes": [],
+        "context": "Film and TV industry",
+        "sense": "film/TV production activity",
+        "preferred_zh": "影视制作",
+        "title_label": "影视制作",
+        "avoid_zh": [
+          "生产"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "permitting processes",
+        "clip_indexes": [],
+        "context": "Film permits in Los Angeles",
+        "sense": "government permit approval procedures for filming",
+        "preferred_zh": "拍摄许可审批流程",
+        "title_label": "拍摄许可",
+        "avoid_zh": [
+          "允许过程"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "tax incentive",
+        "clip_indexes": [],
+        "context": "Georgia film tax credit",
+        "sense": "government tax credit to attract film production",
+        "preferred_zh": "税收优惠",
+        "title_label": "税收优惠",
+        "avoid_zh": [
+          "税务激励"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "American Idol is moving production to Georgia from Los Angeles, and Los Angeles is losing Hollywood production; as mayor, Raman would ensure a film office in the mayor's office to liaise with productions.",
+        "public_baseline": "Multiple outlets (NBC Los Angeles, Hollywood Reporter, USA Today, Fox News) confirm American Idol is relocating production from Los Angeles to the Atlanta area for its 25th season, primarily due to Georgia's tax incentives.",
+        "surprise_gap": "The transcript frames the move as evidence that Los Angeles is losing Hollywood; public reporting confirms the move but attributes it mainly to Georgia's tax incentive program, a factor Raman's remarks do not emphasize.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "concrete_stakes",
+          "outsider_candor"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Raman says Los Angeles is losing Hollywood production and proposes a film office in the mayor's office."
+          },
+          {
+            "kind": "public",
+            "query": "American Idol moving production from Los Angeles to Georgia",
+            "url": "https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964/",
+            "fact": "American Idol is moving production from Los Angeles to Atlanta."
+          },
+          {
+            "kind": "public",
+            "query": "American Idol moving production from Los Angeles to Georgia",
+            "url": "https://www.usatoday.com/story/news/state/california/2026/09/16/why-american-idol-is-leaving-southern-california-for-georgia/91794871007/",
+            "fact": "The move is primarily motivated by Georgia's tax incentive program."
+          }
+        ],
+        "forbidden_claims": [
+          "Raman has already implemented a film office as mayor",
+          "Los Angeles has lost all Hollywood production",
+          "Georgia's tax incentives are the sole cause of all LA production losses"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The full Chinese given-name rendering 妮蒂亚·拉曼 is not directly attested in the provided snippets; only the surname 拉曼 is confirmed by RFI and the official LA City Clerk Chinese-langu",
+      "Georgia here refers to the US state (佐治亚州), not the country (格鲁吉亚)."
+    ],
+    "research_queries": [
+      {
+        "query": "Nithya Raman 洛杉矶 市长 候选人 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name and identity of Nithya Raman, Los Angeles mayoral candidate and city councilmember."
+      },
+      {
+        "query": "Nithya Raman Los Angeles City Council District 4 official biography",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm her exact public office, district, and institutional affiliation from official sources."
+      },
+      {
+        "query": "American Idol moving production from Los Angeles to Georgia",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the factual claim that American Idol relocated production from Los Angeles to Georgia."
+      },
+      {
+        "query": "Los Angeles film and television production exodus 2024 2025 statistics",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline on whether Los Angeles is losing film and TV production to other cities and states."
+      },
+      {
+        "query": "Nithya Raman film office mayor's office Los Angeles production plan",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify her stated policy proposal to create a film office within the mayor's office and streamline permitting."
+      },
+      {
+        "query": "Los Angeles film permit processing times compared to other cities",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Los Angeles permitting timelines and costs are documented as slower or more expensive than competing jurisdictions."
+      },
+      {
+        "query": "Los Angeles film production fire police fees HOA costs compared to other cities",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific claim that Los Angeles productions face additional fire, police, and neighborhood costs not present elsewhere."
+      },
+      {
+        "query": "California film tax credit 2024 2025 production incentives",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish what existing state and local incentives already do, to assess whether her proposals are new or already implemented."
+      },
+      {
+        "query": "Los Angeles mayor film office existing office of film and television",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether a film office already exists in Los Angeles city government, to test the novelty of her proposal."
+      },
+      {
+        "query": "Nithya Raman previous statements film production Hollywood Los Angeles",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find prior public statements by Raman on film production to check consistency or change in position."
+      },
+      {
+        "query": "美国 影视制作 外流 佐治亚州 洛杉矶 对比",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Search Chinese-language coverage of US film production relocation to Georgia for comparative context on production incentives."
+      },
+      {
+        "query": "Bloomberg Nithya Raman established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "讲追梦的节目：自己先搬走了，洛杉矶还能留住谁？",
+      "title_lines": [
+        "讲追梦的节目",
+        "自己先搬走了",
+        "洛杉矶还能留住谁？"
+      ],
+      "formula_id": "追梦节目搬走",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "强疑惑",
+      "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+      "evidence_basis": [
+        "transcript: this is a show that's about chasing your dreams",
+        "transcript: American Idol is moving production to Georgia from Los Angeles",
+        "transcript: Los Angeles is losing Hollywood",
+        "public: American Idol is moving production from Los Angeles to Atlanta"
+      ],
+      "runner_up_titles": [
+        "追梦节目搬去佐治亚，洛杉矶还能留住谁？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 8,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 2
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:强疑惑",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        }
+      },
+      "comment": "KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-04T00:37:25.268841+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood",
+          "source_title": "Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood",
+          "show_date": "",
+          "current_title": "洛杉矶市长候选人拉曼谈好莱坞就业与影视制作",
+          "current_title_lines": [
+            "洛杉矶市长候选人拉曼",
+            "谈好莱坞就业与影视制作",
+            "如何留住制作与就业机会"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "最近我读到《美国偶像》要把制作从洛杉矶搬到佐治亚州，我想，哇，这节目讲的是追逐梦想，而人们追梦时还会去哪个城市呢？",
+              "en": "So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what",
+              "relative_start": 0.0,
+              "relative_end": 10.9
+            },
+            {
+              "index": 2,
+              "zh": "除了洛杉矶，人们还会去哪里追梦？所以，我知道你说过洛杉矶正在失去好莱坞，无论是《美国偶像》还是……",
+              "en": "other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or",
+              "relative_start": 10.9,
+              "relative_end": 20.8
+            },
+            {
+              "index": 3,
+              "zh": "那些大片，市长实际上能做什么来阻止这种外流并让制作回归？是的，这些决定很多都超出了市长的职权范围。",
+              "en": "the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of",
+              "relative_start": 20.8,
+              "relative_end": 31.9
+            },
+            {
+              "index": 4,
+              "zh": "但我认为洛杉矶市长应该做更多，如果我当选，我计划这样做。首先，我们的许多规则、成本、许可流程……",
+              "en": "the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes",
+              "relative_start": 31.9,
+              "relative_end": 44.1
+            },
+            {
+              "index": 5,
+              "zh": "在洛杉矶，制作相关的规则源于这座城市曾将制作视为理所当然的时代，无论是获得许可需要很长时间，还是……",
+              "en": "around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether",
+              "relative_start": 44.1,
+              "relative_end": 57.5
+            },
+            {
+              "index": 6,
+              "zh": "社区条件，有时你必须在某地拍摄支付额外的业主协会费用，或者支付其他城市制作没有的消防和警察费用。",
+              "en": "that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities",
+              "relative_start": 57.5,
+              "relative_end": 69.9
+            },
+            {
+              "index": 7,
+              "zh": "这些条件需要改变，以使洛杉矶对大型制作，尤其是中小型制作，更具吸引力且拍摄更直接。",
+              "en": "don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size",
+              "relative_start": 69.9,
+              "relative_end": 82.2
+            },
+            {
+              "index": 8,
+              "zh": "作为市长，我将确保市长办公室设有电影办公室，负责联络……",
+              "en": "productions as mayor I would ensure that we had a film office in the mayor's office that was liaising",
+              "relative_start": 82.2,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"source_title\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"show_date\": \"\",\n    \"current_title\": \"洛杉矶市长候选人拉曼谈好莱坞就业与影视制作\",\n    \"current_title_lines\": [\n      \"洛杉矶市长候选人拉曼\",\n      \"谈好莱坞就业与影视制作\",\n      \"如何留住制作与就业机会\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"最近我读到《美国偶像》要把制作从洛杉矶搬到佐治亚州，我想，哇，这节目讲的是追逐梦想，而人们追梦时还会去哪个城市呢？\",\n        \"en\": \"So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"除了洛杉矶，人们还会去哪里追梦？所以，我知道你说过洛杉矶正在失去好莱坞，无论是《美国偶像》还是……\",\n        \"en\": \"other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or\",\n        \"relative_start\": 10.9,\n        \"relative_end\": 20.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"那些大片，市长实际上能做什么来阻止这种外流并让制作回归？是的，这些决定很多都超出了市长的职权范围。\",\n        \"en\": \"the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of\",\n        \"relative_start\": 20.8,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我认为洛杉矶市长应该做更多，如果我当选，我计划这样做。首先，我们的许多规则、成本、许可流程……\",\n        \"en\": \"the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 44.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"在洛杉矶，制作相关的规则源于这座城市曾将制作视为理所当然的时代，无论是获得许可需要很长时间，还是……\",\n        \"en\": \"around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether\",\n        \"relative_start\": 44.1,\n        \"relative_end\": 57.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"社区条件，有时你必须在某地拍摄支付额外的业主协会费用，或者支付其他城市制作没有的消防和警察费用。\",\n        \"en\": \"that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities\",\n        \"relative_start\": 57.5,\n        \"relative_end\": 69.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这些条件需要改变，以使洛杉矶对大型制作，尤其是中小型制作，更具吸引力且拍摄更直接。\",\n        \"en\": \"don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size\",\n        \"relative_start\": 69.9,\n        \"relative_end\": 82.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"作为市长，我将确保市长办公室设有电影办公室，负责联络……\",\n        \"en\": \"productions as mayor I would ensure that we had a film office in the mayor's office that was liaising\",\n        \"relative_start\": 82.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"American Idol is moving production to Georgia from Los Angeles, and Los Angeles is losing Hollywood production; as mayor, Raman would ensure a film office in the mayor's office to liaise with productions.\",\n      \"public_baseline\": \"Multiple outlets (NBC Los Angeles, Hollywood Reporter, USA Today, Fox News) confirm American Idol is relocating production from Los Angeles to the Atlanta area for its 25th season, primarily due to Georgia's tax incentives.\",\n      \"surprise_gap\": \"The transcript frames the move as evidence that Los Angeles is losing Hollywood; public reporting confirms the move but attributes it mainly to Georgia's tax incentive program, a factor Raman's remarks do not emphasize.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Raman says Los Angeles is losing Hollywood production and proposes a film office in the mayor's office.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964/\",\n          \"fact\": \"American Idol is moving production from Los Angeles to Atlanta.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.usatoday.com/story/news/state/california/2026/09/16/why-american-idol-is-leaving-southern-california-for-georgia/91794871007/\",\n          \"fact\": \"The move is primarily motivated by Georgia's tax incentive program.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Raman has already implemented a film office as mayor\",\n        \"Los Angeles has lost all Hollywood production\",\n        \"Georgia's tax incentives are the sole cause of all LA production losses\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The full Chinese given-name rendering 妮蒂亚·拉曼 is not directly attested in the provided snippets; only the surname 拉曼 is confirmed by RFI and the official LA City Clerk Chinese-langu\",\n    \"Georgia here refers to the US state (佐治亚州), not the country (格鲁吉亚).\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "洛杉矶市长候选人拉曼说《美国偶像》把制作从洛杉矶搬到佐治亚州，洛杉矶正在失去好莱坞制作，她提议在市长办公室设电影办公室来对接制作方。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "追梦节目搬走了",
+                "title_lines": [
+                  "追梦节目搬走了",
+                  "洛杉矶急了",
+                  "市长办公室要设电影办"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: American Idol moving production to Georgia from Los Angeles",
+                  "transcript: as mayor I would ensure a film office in the mayor's office",
+                  "public: American Idol is moving production from Los Angeles to Atlanta"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "讲追梦的节目",
+                "title_lines": [
+                  "讲追梦的节目",
+                  "自己先搬走了",
+                  "洛杉矶还能留住谁"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: this is a show that's about chasing your dreams",
+                  "transcript: American Idol is moving production to Georgia from Los Angeles",
+                  "transcript: Los Angeles is losing Hollywood"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "市长候选人说透",
+                "title_lines": [
+                  "市长候选人说透",
+                  "许可太慢成本太高",
+                  "制作被别州抢走"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: long timelines to get permits back",
+                  "transcript: costs for fire and police that other cities don't have",
+                  "transcript: conditions need to change for LA to be more attractive"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "大片外流背后",
+                "title_lines": [
+                  "大片外流背后",
+                  "消防警察费都要算",
+                  "中小制作先扛不住"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: you have to pay additional HOA fees",
+                  "transcript: costs for fire and police that other productions in other cities don't have",
+                  "transcript: especially for medium and small size productions"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"source_title\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"show_date\": \"\",\n    \"current_title\": \"洛杉矶市长候选人拉曼谈好莱坞就业与影视制作\",\n    \"current_title_lines\": [\n      \"洛杉矶市长候选人拉曼\",\n      \"谈好莱坞就业与影视制作\",\n      \"如何留住制作与就业机会\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"最近我读到《美国偶像》要把制作从洛杉矶搬到佐治亚州，我想，哇，这节目讲的是追逐梦想，而人们追梦时还会去哪个城市呢？\",\n        \"en\": \"So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"除了洛杉矶，人们还会去哪里追梦？所以，我知道你说过洛杉矶正在失去好莱坞，无论是《美国偶像》还是……\",\n        \"en\": \"other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or\",\n        \"relative_start\": 10.9,\n        \"relative_end\": 20.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"那些大片，市长实际上能做什么来阻止这种外流并让制作回归？是的，这些决定很多都超出了市长的职权范围。\",\n        \"en\": \"the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of\",\n        \"relative_start\": 20.8,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我认为洛杉矶市长应该做更多，如果我当选，我计划这样做。首先，我们的许多规则、成本、许可流程……\",\n        \"en\": \"the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 44.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"在洛杉矶，制作相关的规则源于这座城市曾将制作视为理所当然的时代，无论是获得许可需要很长时间，还是……\",\n        \"en\": \"around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether\",\n        \"relative_start\": 44.1,\n        \"relative_end\": 57.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"社区条件，有时你必须在某地拍摄支付额外的业主协会费用，或者支付其他城市制作没有的消防和警察费用。\",\n        \"en\": \"that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities\",\n        \"relative_start\": 57.5,\n        \"relative_end\": 69.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这些条件需要改变，以使洛杉矶对大型制作，尤其是中小型制作，更具吸引力且拍摄更直接。\",\n        \"en\": \"don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size\",\n        \"relative_start\": 69.9,\n        \"relative_end\": 82.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"作为市长，我将确保市长办公室设有电影办公室，负责联络……\",\n        \"en\": \"productions as mayor I would ensure that we had a film office in the mayor's office that was liaising\",\n        \"relative_start\": 82.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"American Idol is moving production to Georgia from Los Angeles, and Los Angeles is losing Hollywood production; as mayor, Raman would ensure a film office in the mayor's office to liaise with productions.\",\n      \"public_baseline\": \"Multiple outlets (NBC Los Angeles, Hollywood Reporter, USA Today, Fox News) confirm American Idol is relocating production from Los Angeles to the Atlanta area for its 25th season, primarily due to Georgia's tax incentives.\",\n      \"surprise_gap\": \"The transcript frames the move as evidence that Los Angeles is losing Hollywood; public reporting confirms the move but attributes it mainly to Georgia's tax incentive program, a factor Raman's remarks do not emphasize.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Raman says Los Angeles is losing Hollywood production and proposes a film office in the mayor's office.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964/\",\n          \"fact\": \"American Idol is moving production from Los Angeles to Atlanta.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.usatoday.com/story/news/state/california/2026/09/16/why-american-idol-is-leaving-southern-california-for-georgia/91794871007/\",\n          \"fact\": \"The move is primarily motivated by Georgia's tax incentive program.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Raman has already implemented a film office as mayor\",\n        \"Los Angeles has lost all Hollywood production\",\n        \"Georgia's tax incentives are the sole cause of all LA production losses\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The full Chinese given-name rendering 妮蒂亚·拉曼 is not directly attested in the provided snippets; only the surname 拉曼 is confirmed by RFI and the official LA City Clerk Chinese-langu\",\n    \"Georgia here refers to the US state (佐治亚州), not the country (格鲁吉亚).\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"洛杉矶市长候选人拉曼说《美国偶像》把制作从洛杉矶搬到佐治亚州，洛杉矶正在失去好莱坞制作，她提议在市长办公室设电影办公室来对接制作方。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"追梦节目搬走了\",\n          \"title_lines\": [\n            \"追梦节目搬走了\",\n            \"洛杉矶急了\",\n            \"市长办公室要设电影办\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: American Idol moving production to Georgia from Los Angeles\",\n            \"transcript: as mayor I would ensure a film office in the mayor's office\",\n            \"public: American Idol is moving production from Los Angeles to Atlanta\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"讲追梦的节目\",\n          \"title_lines\": [\n            \"讲追梦的节目\",\n            \"自己先搬走了\",\n            \"洛杉矶还能留住谁\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: this is a show that's about chasing your dreams\",\n            \"transcript: American Idol is moving production to Georgia from Los Angeles\",\n            \"transcript: Los Angeles is losing Hollywood\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"市长候选人说透\",\n          \"title_lines\": [\n            \"市长候选人说透\",\n            \"许可太慢成本太高\",\n            \"制作被别州抢走\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: long timelines to get permits back\",\n            \"transcript: costs for fire and police that other cities don't have\",\n            \"transcript: conditions need to change for LA to be more attractive\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"大片外流背后\",\n          \"title_lines\": [\n            \"大片外流背后\",\n            \"消防警察费都要算\",\n            \"中小制作先扛不住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: you have to pay additional HOA fees\",\n            \"transcript: costs for fire and police that other productions in other cities don't have\",\n            \"transcript: especially for medium and small size productions\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "追梦节目搬走",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+            "evidence_basis": [
+              "transcript: this is a show that's about chasing your dreams",
+              "transcript: American Idol is moving production to Georgia from Los Angeles",
+              "transcript: Los Angeles is losing Hollywood",
+              "public: American Idol is moving production from Los Angeles to Atlanta"
+            ],
+            "title": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+            "title_lines": [
+              "讲追梦的节目",
+              "自己先搬走了",
+              "洛杉矶还能留住谁"
+            ],
+            "title_highlights": [
+              "讲追梦的节目",
+              "自己先搬走了",
+              "洛杉矶还能留住谁"
+            ],
+            "runner_up_titles": [
+              "追梦节目搬走了，洛杉矶急了",
+              "市长候选人说透：许可太慢成本太高，制作被别州抢走"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢、成本高，并提议在市长办公室设电影办公室对接制作方。",
+            "comment_highlights": [
+              "追梦的节目搬去佐治亚州",
+              "许可慢、成本高",
+              "市长办公室设电影办公室"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：追梦节目自己先搬走，这个反差就是整段话的钩子。",
+                "comment_highlights": [
+                  "追梦节目自己先搬走"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：拉曼直接承认洛杉矶正在失去好莱坞制作，问题被摆上台面。",
+                "comment_highlights": [
+                  "洛杉矶正在失去好莱坞制作"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：市长能做的有限，但她说还有更多空间，先把责任边界讲清楚。",
+                "comment_highlights": [
+                  "市长能做的有限"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：她把矛头指向规则、成本和许可流程，这是具体抓手。",
+                "comment_highlights": [
+                  "规则、成本和许可流程"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：许可周期长，源于城市曾把制作视为理所当然。",
+                "comment_highlights": [
+                  "许可周期长"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：业主协会费用、消防和警察成本，都是别州没有的额外负担。",
+                "comment_highlights": [
+                  "别州没有的额外负担"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：她强调中小制作先扛不住，改变条件才能留住拍摄。",
+                "comment_highlights": [
+                  "中小制作先扛不住"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：她承诺市长办公室设电影办公室，负责对接制作方。",
+                "comment_highlights": [
+                  "市长办公室设电影办公室"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"source_title\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n    \"show_date\": \"\",\n    \"current_title\": \"洛杉矶市长候选人拉曼谈好莱坞就业与影视制作\",\n    \"current_title_lines\": [\n      \"洛杉矶市长候选人拉曼\",\n      \"谈好莱坞就业与影视制作\",\n      \"如何留住制作与就业机会\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"最近我读到《美国偶像》要把制作从洛杉矶搬到佐治亚州，我想，哇，这节目讲的是追逐梦想，而人们追梦时还会去哪个城市呢？\",\n        \"en\": \"So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"除了洛杉矶，人们还会去哪里追梦？所以，我知道你说过洛杉矶正在失去好莱坞，无论是《美国偶像》还是……\",\n        \"en\": \"other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or\",\n        \"relative_start\": 10.9,\n        \"relative_end\": 20.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"那些大片，市长实际上能做什么来阻止这种外流并让制作回归？是的，这些决定很多都超出了市长的职权范围。\",\n        \"en\": \"the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of\",\n        \"relative_start\": 20.8,\n        \"relative_end\": 31.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但我认为洛杉矶市长应该做更多，如果我当选，我计划这样做。首先，我们的许多规则、成本、许可流程……\",\n        \"en\": \"the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes\",\n        \"relative_start\": 31.9,\n        \"relative_end\": 44.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"在洛杉矶，制作相关的规则源于这座城市曾将制作视为理所当然的时代，无论是获得许可需要很长时间，还是……\",\n        \"en\": \"around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether\",\n        \"relative_start\": 44.1,\n        \"relative_end\": 57.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"社区条件，有时你必须在某地拍摄支付额外的业主协会费用，或者支付其他城市制作没有的消防和警察费用。\",\n        \"en\": \"that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities\",\n        \"relative_start\": 57.5,\n        \"relative_end\": 69.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这些条件需要改变，以使洛杉矶对大型制作，尤其是中小型制作，更具吸引力且拍摄更直接。\",\n        \"en\": \"don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size\",\n        \"relative_start\": 69.9,\n        \"relative_end\": 82.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"作为市长，我将确保市长办公室设有电影办公室，负责联络……\",\n        \"en\": \"productions as mayor I would ensure that we had a film office in the mayor's office that was liaising\",\n        \"relative_start\": 82.2,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"American Idol is moving production to Georgia from Los Angeles, and Los Angeles is losing Hollywood production; as mayor, Raman would ensure a film office in the mayor's office to liaise with productions.\",\n      \"public_baseline\": \"Multiple outlets (NBC Los Angeles, Hollywood Reporter, USA Today, Fox News) confirm American Idol is relocating production from Los Angeles to the Atlanta area for its 25th season, primarily due to Georgia's tax incentives.\",\n      \"surprise_gap\": \"The transcript frames the move as evidence that Los Angeles is losing Hollywood; public reporting confirms the move but attributes it mainly to Georgia's tax incentive program, a factor Raman's remarks do not emphasize.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Raman says Los Angeles is losing Hollywood production and proposes a film office in the mayor's office.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964/\",\n          \"fact\": \"American Idol is moving production from Los Angeles to Atlanta.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.usatoday.com/story/news/state/california/2026/09/16/why-american-idol-is-leaving-southern-california-for-georgia/91794871007/\",\n          \"fact\": \"The move is primarily motivated by Georgia's tax incentive program.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Raman has already implemented a film office as mayor\",\n        \"Los Angeles has lost all Hollywood production\",\n        \"Georgia's tax incentives are the sole cause of all LA production losses\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The full Chinese given-name rendering 妮蒂亚·拉曼 is not directly attested in the provided snippets; only the surname 拉曼 is confirmed by RFI and the official LA City Clerk Chinese-langu\",\n    \"Georgia here refers to the US state (佐治亚州), not the country (格鲁吉亚).\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"洛杉矶市长候选人拉曼说《美国偶像》把制作从洛杉矶搬到佐治亚州，洛杉矶正在失去好莱坞制作，她提议在市长办公室设电影办公室来对接制作方。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"追梦节目搬走了\",\n          \"title_lines\": [\n            \"追梦节目搬走了\",\n            \"洛杉矶急了\",\n            \"市长办公室要设电影办\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: American Idol moving production to Georgia from Los Angeles\",\n            \"transcript: as mayor I would ensure a film office in the mayor's office\",\n            \"public: American Idol is moving production from Los Angeles to Atlanta\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"讲追梦的节目\",\n          \"title_lines\": [\n            \"讲追梦的节目\",\n            \"自己先搬走了\",\n            \"洛杉矶还能留住谁\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: this is a show that's about chasing your dreams\",\n            \"transcript: American Idol is moving production to Georgia from Los Angeles\",\n            \"transcript: Los Angeles is losing Hollywood\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"市长候选人说透\",\n          \"title_lines\": [\n            \"市长候选人说透\",\n            \"许可太慢成本太高\",\n            \"制作被别州抢走\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: long timelines to get permits back\",\n            \"transcript: costs for fire and police that other cities don't have\",\n            \"transcript: conditions need to change for LA to be more attractive\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"大片外流背后\",\n          \"title_lines\": [\n            \"大片外流背后\",\n            \"消防警察费都要算\",\n            \"中小制作先扛不住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: you have to pay additional HOA fees\",\n            \"transcript: costs for fire and police that other productions in other cities don't have\",\n            \"transcript: especially for medium and small size productions\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"讲追梦的节目：自己先搬走了，洛杉矶还能留住谁\",\n      \"title_lines\": [\n        \"讲追梦的节目\",\n        \"自己先搬走了\",\n        \"洛杉矶还能留住谁\"\n      ],\n      \"title_highlights\": [\n        \"讲追梦的节目\",\n        \"自己先搬走了\",\n        \"洛杉矶还能留住谁\"\n      ],\n      \"comment\": \"KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢\",\n      \"comment_highlights\": [\n        \"追梦的节目搬去佐治亚州\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：追梦节目自己先搬走，这个反差就是整段话的钩子\",\n          \"comment_highlights\": [\n            \"追梦节目自己先搬走\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：拉曼直接承认洛杉矶正在失去好莱坞制作，问题被摆上台面\",\n          \"comment_highlights\": [\n            \"洛杉矶正在失去好莱坞制作\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：市长能做的有限，但她说还有更多空间，先把责任边界讲清楚\",\n          \"comment_highlights\": [\n            \"市长能做的有限\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：她把矛头指向规则、成本和许可流程，这是具体抓手\",\n          \"comment_highlights\": [\n            \"规则、成本和许可流程\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：许可周期长，源于城市曾把制作视为理所当然\",\n          \"comment_highlights\": [\n            \"许可周期长\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：业主协会费用、消防和警察成本，都是别州没有的额外负担\",\n          \"comment_highlights\": [\n            \"别州没有的额外负担\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：她强调中小制作先扛不住，改变条件才能留住拍摄\",\n          \"comment_highlights\": [\n            \"中小制作先扛不住\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：她承诺市长办公室设电影办公室，负责对接制作方\",\n          \"comment_highlights\": [\n            \"市长办公室设电影办公室\"\n          ]\n        }\n      ],\n      \"formula_id\": \"追梦节目搬走\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"讲追梦的节目自己先搬走了，洛杉矶还能留住谁\",\n      \"evidence_basis\": [\n        \"transcript: this is a show that's about chasing your dreams\",\n        \"transcript: American Idol is moving production to Georgia from Los Angeles\",\n        \"transcript: Los Angeles is losing Hollywood\",\n        \"public: American Idol is moving production from Los Angeles to Atlanta\"\n      ],\n      \"runner_up_titles\": [\n        \"追梦节目搬走了，洛杉矶急了\",\n        \"市长候选人说透：许可太慢成本太高，制作被别州抢走\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "追梦节目搬走",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+                "evidence_basis": [
+                  "transcript: this is a show that's about chasing your dreams",
+                  "transcript: American Idol is moving production to Georgia from Los Angeles",
+                  "transcript: Los Angeles is losing Hollywood",
+                  "public: American Idol is moving production from Los Angeles to Atlanta"
+                ],
+                "title": "讲追梦的节目，自己先搬走了",
+                "title_lines": [
+                  "讲追梦的节目",
+                  "自己先搬走了",
+                  "洛杉矶还能留住谁"
+                ],
+                "title_highlights": [
+                  "讲追梦的节目",
+                  "自己先搬走了",
+                  "洛杉矶还能留住谁"
+                ],
+                "runner_up_titles": [
+                  "追梦节目搬走了，洛杉矶急了",
+                  "市长候选人说透：许可太慢成本太高，制作被别州抢走"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢",
+                "comment_highlights": [
+                  "追梦的节目搬去佐治亚州"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：追梦节目自己先搬走，这个反差就是整段话的钩子",
+                    "comment_highlights": [
+                      "追梦节目自己先搬走"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：拉曼直接承认洛杉矶正在失去好莱坞制作，问题被摆上台面",
+                    "comment_highlights": [
+                      "洛杉矶正在失去好莱坞制作"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：市长能做的有限，但她说还有更多空间，先把责任边界讲清楚",
+                    "comment_highlights": [
+                      "市长能做的有限"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：她把矛头指向规则、成本和许可流程，这是具体抓手",
+                    "comment_highlights": [
+                      "规则、成本和许可流程"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：许可周期长，源于城市曾把制作视为理所当然",
+                    "comment_highlights": [
+                      "许可周期长"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：业主协会费用、消防和警察成本，都是别州没有的额外负担",
+                    "comment_highlights": [
+                      "别州没有的额外负担"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：她强调中小制作先扛不住，改变条件才能留住拍摄",
+                    "comment_highlights": [
+                      "中小制作先扛不住"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：她承诺市长办公室设电影办公室，负责对接制作方",
+                    "comment_highlights": [
+                      "市长办公室设电影办公室"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "讲追梦的节目：自己先搬走了，洛杉矶还能留住谁",
+          "title_lines": [
+            "讲追梦的节目",
+            "自己先搬走了",
+            "洛杉矶还能留住谁"
+          ],
+          "formula_id": "追梦节目搬走",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-04T00:37:27.098041+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood",
+          "source_title": "Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood",
+          "show_date": "",
+          "current_title": "洛杉矶市长候选人拉曼谈好莱坞就业与影视制作",
+          "current_title_lines": [
+            "洛杉矶市长候选人拉曼",
+            "谈好莱坞就业与影视制作",
+            "如何留住制作与就业机会"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "最近我读到《美国偶像》要把制作从洛杉矶搬到佐治亚州，我想，哇，这节目讲的是追逐梦想，而人们追梦时还会去哪个城市呢？",
+              "en": "So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what",
+              "relative_start": 0.0,
+              "relative_end": 10.9
+            },
+            {
+              "index": 2,
+              "zh": "除了洛杉矶，人们还会去哪里追梦？所以，我知道你说过洛杉矶正在失去好莱坞，无论是《美国偶像》还是……",
+              "en": "other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or",
+              "relative_start": 10.9,
+              "relative_end": 20.8
+            },
+            {
+              "index": 3,
+              "zh": "那些大片，市长实际上能做什么来阻止这种外流并让制作回归？是的，这些决定很多都超出了市长的职权范围。",
+              "en": "the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of",
+              "relative_start": 20.8,
+              "relative_end": 31.9
+            },
+            {
+              "index": 4,
+              "zh": "但我认为洛杉矶市长应该做更多，如果我当选，我计划这样做。首先，我们的许多规则、成本、许可流程……",
+              "en": "the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes",
+              "relative_start": 31.9,
+              "relative_end": 44.1
+            },
+            {
+              "index": 5,
+              "zh": "在洛杉矶，制作相关的规则源于这座城市曾将制作视为理所当然的时代，无论是获得许可需要很长时间，还是……",
+              "en": "around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether",
+              "relative_start": 44.1,
+              "relative_end": 57.5
+            },
+            {
+              "index": 6,
+              "zh": "社区条件，有时你必须在某地拍摄支付额外的业主协会费用，或者支付其他城市制作没有的消防和警察费用。",
+              "en": "that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities",
+              "relative_start": 57.5,
+              "relative_end": 69.9
+            },
+            {
+              "index": 7,
+              "zh": "这些条件需要改变，以使洛杉矶对大型制作，尤其是中小型制作，更具吸引力且拍摄更直接。",
+              "en": "don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size",
+              "relative_start": 69.9,
+              "relative_end": 82.2
+            },
+            {
+              "index": 8,
+              "zh": "作为市长，我将确保市长办公室设有电影办公室，负责联络……",
+              "en": "productions as mayor I would ensure that we had a film office in the mayor's office that was liaising",
+              "relative_start": 82.2,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n  \"source_title\": \"Duration: 21:27 Nithya Raman on Plan for Jobs in Hollywood\",\n  \"current_title\": \"洛杉矶市长候选人拉曼谈好莱坞就业与影视制作\",\n  \"source_claims\": [\n    \"So I was reading recently the show American Idol is moving production to Georgia from Los Angeles and I thought wow this is a show that's about chasing your dreams and you know what what\",\n    \"other city do people come to then Los Angeles to chase their dreams and so with that in mind I know that you've said that Los Angeles is losing Hollywood you know whether it's American Idol or\",\n    \"the Blackbuster movies what can a mayor realistically do that hasn't already been done to stop that Exodus and bring production back so yes there's a lot about these decisions that is outside of\",\n    \"the scope of a mayor but I think there's a lot more that the mayor of Los Angeles should be doing and if I mayor I plan to do it so one is that a lot of our rules our costs are permitting processes\",\n    \"around production here in Los Angeles stem from an era when this city took production here for granted whether that means the long timelines that it takes to get your permits back whether\",\n    \"that means neighborhood conditions where you sometimes have to pay additional HOA fees in order to shoot somewhere or you have costs for fire and police that other productions in other cities\",\n    \"don't have these are conditions that need to change in order for Los Angeles to be more attractive and straightforward to shoot in for larger productions and especially for medium and small size\",\n    \"productions as mayor I would ensure that we had a film office in the mayor's office that was liaising\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"American Idol is moving production to Georgia from Los Angeles, and Los Angeles is losing Hollywood production; as mayor, Raman would ensure a film office in the mayor's office to liaise with productions.\",\n      \"public_baseline\": \"Multiple outlets (NBC Los Angeles, Hollywood Reporter, USA Today, Fox News) confirm American Idol is relocating production from Los Angeles to the Atlanta area for its 25th season, primarily due to Georgia's tax incentives.\",\n      \"surprise_gap\": \"The transcript frames the move as evidence that Los Angeles is losing Hollywood; public reporting confirms the move but attributes it mainly to Georgia's tax incentive program, a factor Raman's remarks do not emphasize.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"outsider_candor\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Raman says Los Angeles is losing Hollywood production and proposes a film office in the mayor's office.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.hollywoodreporter.com/business/business-news/american-idol-moving-production-georgia-1236702964/\",\n          \"fact\": \"American Idol is moving production from Los Angeles to Atlanta.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"American Idol moving production from Los Angeles to Georgia\",\n          \"url\": \"https://www.usatoday.com/story/news/state/california/2026/09/16/why-american-idol-is-leaving-southern-california-for-georgia/91794871007/\",\n          \"fact\": \"The move is primarily motivated by Georgia's tax incentive program.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Raman has already implemented a film office as mayor\",\n        \"Los Angeles has lost all Hollywood production\",\n        \"Georgia's tax incentives are the sole cause of all LA production losses\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The full Chinese given-name rendering 妮蒂亚·拉曼 is not directly attested in the provided snippets; only the surname 拉曼 is confirmed by RFI and the official LA City Clerk Chinese-langu\",\n    \"Georgia here refers to the US state (佐治亚州), not the country (格鲁吉亚).\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"讲追梦的节目：自己先搬走了，洛杉矶还能留住谁\",\n  \"title_lines\": [\n    \"讲追梦的节目\",\n    \"自己先搬走了\",\n    \"洛杉矶还能留住谁\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"讲追梦的节目自己先搬走了，洛杉矶还能留住谁\",\n  \"evidence_basis\": [\n    \"transcript: this is a show that's about chasing your dreams\",\n    \"transcript: American Idol is moving production to Georgia from Los Angeles\",\n    \"transcript: Los Angeles is losing Hollywood\",\n    \"public: American Idol is moving production from Los Angeles to Atlanta\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+            "evidence_basis": [
+              "transcript: this is a show that's about chasing your dreams",
+              "transcript: American Idol is moving production to Georgia from Los Angeles",
+              "transcript: Los Angeles is losing Hollywood",
+              "public: American Idol is moving production from Los Angeles to Atlanta"
+            ],
+            "title": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁？",
+            "title_lines": [
+              "讲追梦的节目",
+              "自己先搬走了",
+              "洛杉矶还能留住谁？"
+            ],
+            "title_highlights": [
+              "讲追梦的节目",
+              "自己先搬走了",
+              "洛杉矶还能留住谁？"
+            ],
+            "runner_up_titles": [
+              "追梦节目搬去佐治亚，洛杉矶还能留住谁？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "讲追梦的节目：自己先搬走了，洛杉矶还能留住谁？",
+        "title_lines": [
+          "讲追梦的节目",
+          "自己先搬走了",
+          "洛杉矶还能留住谁？"
+        ],
+        "title_highlights": [
+          "讲追梦的节目",
+          "自己先搬走了",
+          "洛杉矶还能留住谁？"
+        ],
+        "comment": "KC评论：一档讲追梦的节目搬去佐治亚州，洛杉矶市长候选人拉曼把原因指向许可慢",
+        "comment_highlights": [
+          "追梦的节目搬去佐治亚州"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：追梦节目自己先搬走，这个反差就是整段话的钩子",
+            "comment_highlights": [
+              "追梦节目自己先搬走"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：拉曼直接承认洛杉矶正在失去好莱坞制作，问题被摆上台面",
+            "comment_highlights": [
+              "洛杉矶正在失去好莱坞制作"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：市长能做的有限，但她说还有更多空间，先把责任边界讲清楚",
+            "comment_highlights": [
+              "市长能做的有限"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：她把矛头指向规则、成本和许可流程，这是具体抓手",
+            "comment_highlights": [
+              "规则、成本和许可流程"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：许可周期长，源于城市曾把制作视为理所当然",
+            "comment_highlights": [
+              "许可周期长"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：业主协会费用、消防和警察成本，都是别州没有的额外负担",
+            "comment_highlights": [
+              "别州没有的额外负担"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：她强调中小制作先扛不住，改变条件才能留住拍摄",
+            "comment_highlights": [
+              "中小制作先扛不住"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：她承诺市长办公室设电影办公室，负责对接制作方",
+            "comment_highlights": [
+              "市长办公室设电影办公室"
+            ]
+          }
+        ],
+        "formula_id": "追梦节目搬走",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "讲追梦的节目自己先搬走了，洛杉矶还能留住谁",
+        "evidence_basis": [
+          "transcript: this is a show that's about chasing your dreams",
+          "transcript: American Idol is moving production to Georgia from Los Angeles",
+          "transcript: Los Angeles is losing Hollywood",
+          "public: American Idol is moving production from Los Angeles to Atlanta"
+        ],
+        "runner_up_titles": [
+          "追梦节目搬去佐治亚，洛杉矶还能留住谁？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}

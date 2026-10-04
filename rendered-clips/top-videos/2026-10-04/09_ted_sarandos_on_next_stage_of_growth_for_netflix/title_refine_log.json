@@ -1,0 +1,781 @@
+{
+  "timestamp_utc": "2026-10-04T00:47:28.126441+00:00",
+  "plan_path": "work/top-videos/09_ted_sarandos_on_next_stage_of_growth_for_netflix/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Ted Sarandos",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Ted Sarandos",
+        "preferred_en": "Ted Sarandos",
+        "official_zh": "泰德·萨兰多斯",
+        "common_zh": "泰德·萨兰多斯",
+        "title_label": "奈飞联席CEO萨兰多斯",
+        "preferred_zh": "泰德·萨兰多斯",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Wikipedia and Netflix official newsroom confirm Ted Sarandos as Netflix co-CEO since 2020; Chinese media commonly render the name as 泰德·萨兰多斯, though the search snippets did not include a Chinese-language source explicitly pairing the name and title."
+      },
+      {
+        "source_text": "Netflix",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Netflix, Inc.",
+        "preferred_en": "Netflix, Inc.",
+        "official_zh": "奈飞公司",
+        "common_zh": "奈飞",
+        "title_label": "奈飞",
+        "preferred_zh": "奈飞",
+        "aliases": [
+          "网飞"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Baidu Baike entries give the Chinese translation as 奈飞 or 网飞, with the corporate entity listed as 奈飞公司; 奈飞 is the form most used by Chinese financial media."
+      }
+    ],
+    "terms": [],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "We do nothing we make on Netflix's for everyone. We hope you find your favorite show on Netflix for sure.",
+        "public_baseline": "Netflix is widely described as a mass-market streaming service whose broad content slate is designed to appeal to large global audiences.",
+        "surprise_gap": "Sarandos explicitly rejects the premise that Netflix makes content for everyone, framing the strategy as serving diverse individual tastes rather than a single mass audience.",
+        "speaker_relation": "company_executive",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Sarandos says nothing Netflix makes is for everyone and hopes viewers find their favorite show."
+          },
+          {
+            "kind": "public",
+            "query": "Ted Sarandos Netflix programming for everyone quote",
+            "url": "https://x.com/BloombergLive/status/2105477003323568444",
+            "fact": "Bloomberg Live posted the same quote: 'Nothing we make at Netflix is for everyone, we hope you find your favorite show on Netflix for sure.'"
+          },
+          {
+            "kind": "public",
+            "query": "Ted Sarandos Netflix programming for everyone quote",
+            "url": "https://ceointerviews.ai/interview/2960067/",
+            "fact": "Interview summary states Sarandos argued Netflix content is not for everyone but offers something for everyone."
+          }
+        ],
+        "forbidden_claims": [
+          "Netflix is abandoning mass-market content",
+          "Sarandos admits Netflix programming strategy has failed",
+          "Netflix no longer wants broad audiences"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "No domain-specific terms were present in the clip metadata.",
+      "The Chinese name 泰德·萨兰多斯 is widely used but the provided search snippets did not include a Chinese-language source explicitly pairing it with the co-CEO title, so confidence is med"
+    ],
+    "research_queries": [
+      {
+        "query": "Ted Sarandos 奈飞 联合首席执行官 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name and title for Ted Sarandos, Netflix co-CEO."
+      },
+      {
+        "query": "Netflix 中文名 奈飞 官方 公司名称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Netflix and its official Chinese-language usage."
+      },
+      {
+        "query": "Ted Sarandos Netflix programming for everyone quote",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Sarandos's exact public statement that Netflix does not make content for everyone."
+      },
+      {
+        "query": "Netflix biggest paid streaming service subscribers 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline that Netflix is the largest paid video streaming service by subscribers."
+      },
+      {
+        "query": "Netflix 内容策略 多元化 全球 本地化 原创",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Netflix's publicly stated content strategy around diverse global and local programming."
+      },
+      {
+        "query": "Ted Sarandos Netflix 2024 interview growth strategy",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find prior public statements by Sarandos on Netflix's next stage of growth and content strategy."
+      },
+      {
+        "query": "Netflix 中国 市场 未进入 原因",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Netflix's public position and status regarding the Chinese market for context."
+      },
+      {
+        "query": "Netflix 爱奇艺 腾讯视频 会员数 对比",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Compare Netflix's subscriber scale with major Chinese streaming platforms to test China comparative claims."
+      },
+      {
+        "query": "Ted Sarandos Netflix awards prestige programming strategy",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Sarandos's public emphasis on prestige and awards-oriented programming at Netflix."
+      },
+      {
+        "query": "Netflix 全球 订阅用户 2024 财报",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Netflix's official subscriber numbers from its latest earnings report."
+      },
+      {
+        "query": "Bloomberg Ted Sarandos established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "奈飞主管当场否认：没有一部剧是给所有人看，全球最大付费平台为何反着说",
+      "title_lines": [
+        "奈飞主管当场否认",
+        "没有一部剧是给所有人看",
+        "全球最大付费平台为何反着说"
+      ],
+      "formula_id": "authority_denial_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的",
+        "transcript: 我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难",
+        "transcript: 2013年2月我们推出纸牌屋那天，我们只有一种类型，就是高端连续剧",
+        "transcript: 之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧"
+      ],
+      "runner_up_titles": [
+        "全球最大流媒体主管说透：我和妻子都看不到一块去",
+        "从一种类型到八种：奈飞十年扩张背后谁在被挤出"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 9,
+        "specificity": 8,
+        "curiosity_gap": 9,
+        "factual_fidelity": 10,
+        "china_resonance": 5
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 10,
+          "china_resonance": 5
+        }
+      },
+      "comment": "KC评论：全球最大付费平台主管亲口推翻大众化标签，内容策略正从全民转向分众"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-04T00:47:27.374337+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.1,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix",
+          "source_title": "Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix",
+          "show_date": "",
+          "current_title": "奈飞内容主管谈增长下一程：从单一精品剧到全球多元内容",
+          "current_title_lines": [
+            "奈飞内容主管谈增长下一程",
+            "从单一精品剧到全球多元内容",
+            "全球市场贡献过半，内容策略如何演变"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我想先聊聊Netflix的节目内容。",
+              "en": "I want to start talking about the programming on Netflix.",
+              "relative_start": 0.0,
+              "relative_end": 5.5
+            },
+            {
+              "index": 2,
+              "zh": "你们是最大的视频流媒体服务。这里先不算YouTube。",
+              "en": "You're the biggest video streaming service out. We'll take the YouTube out of the equation for that.",
+              "relative_start": 5.5,
+              "relative_end": 9.3
+            },
+            {
+              "index": 3,
+              "zh": "全球最大的付费视频流媒体服务。你经常提到制作这些能吸引大量观众的大众化节目。",
+              "en": "The biggest paid video streaming service in the world. And you talk a lot about kind of making these big broad shows that kind of appeal to a lot of viewers.",
+              "relative_start": 9.3,
+              "relative_end": 18.0
+            },
+            {
+              "index": 4,
+              "zh": "我觉得有些人觉得，随着你们越来越针对更多人群，你们的节目突然变得不是为所有人，而是有点谁都不讨好。",
+              "en": "And I think some people feel like, as you have targeted more and more people, that your shows are suddenly not because they're for everyone, they're kind of for no one.",
+              "relative_start": 18.0,
+              "relative_end": 25.6
+            },
+            {
+              "index": 5,
+              "zh": "所以我想知道，你认为Netflix的节目与同行相比有什么独特之处？",
+              "en": "And so I'm wondering, what do you think distinguishes Netflix's programming from your peers?",
+              "relative_start": 25.6,
+              "relative_end": 31.3
+            },
+            {
+              "index": 6,
+              "zh": "首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的。",
+              "en": "Well, first of all, just to kind of set that record straight, we do nothing we make on Netflix's for everyone.",
+              "relative_start": 31.3,
+              "relative_end": 37.9
+            },
+            {
+              "index": 7,
+              "zh": "我们当然希望你能在Netflix上找到你最喜欢的节目。",
+              "en": "We hope you find your favorite show on Netflix for sure.",
+              "relative_start": 37.9,
+              "relative_end": 41.0
+            },
+            {
+              "index": 8,
+              "zh": "要做到这一点，人们的品味极其多样。",
+              "en": "To do that, people's tastes are crazy diverse.",
+              "relative_start": 41.0,
+              "relative_end": 44.4
+            },
+            {
+              "index": 9,
+              "zh": "我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难。",
+              "en": "My wife and I don't agree on what to watch. So it's pretty hard to get the whole world to agree on what to watch.",
+              "relative_start": 44.4,
+              "relative_end": 48.8
+            },
+            {
+              "index": 10,
+              "zh": "所以你们制作了很多迎合不同品味的内容，包括更有声望、获奖类的节目，",
+              "en": "So you make a lot of things that appeal to different tastes, including more prestige, awards-y kinds of programming,",
+              "relative_start": 48.8,
+              "relative_end": 57.7
+            },
+            {
+              "index": 11,
+              "zh": "对那类观众而言，顺便说一句，我们起步时只做这个。",
+              "en": "for that audience, which was by the way, when we started, that's all we did.",
+              "relative_start": 57.7,
+              "relative_end": 61.5
+            },
+            {
+              "index": 12,
+              "zh": "所以大致说明一下节目规划这些年如何拓宽，2013年2月我们推出《纸牌屋》那天，",
+              "en": "So to give it kind of an idea of how the programming initiative was broadened over the years, that day when we started with House of Cards in February of 2013,",
+              "relative_start": 61.5,
+              "relative_end": 71.8
+            },
+            {
+              "index": 13,
+              "zh": "我们只有一种类型，就是高端连续剧。",
+              "en": "we had one kind of thing, just prestige, serialized drama.",
+              "relative_start": 71.8,
+              "relative_end": 76.1
+            },
+            {
+              "index": 14,
+              "zh": "之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧。",
+              "en": "And then we've since then we've added competition shows and game shows and cooking shows and travel shows and original movies and standard comedy.",
+              "relative_start": 76.1,
+              "relative_end": 83.4
+            },
+            {
+              "index": 15,
+              "zh": "此后我们所做的一切都只是持续扩张。",
+              "en": "Everything we've done since then has just been an ongoing expansion.",
+              "relative_start": 83.4,
+              "relative_end": 87.1
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix\",\n    \"source_title\": \"Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix\",\n    \"show_date\": \"\",\n    \"current_title\": \"奈飞内容主管谈增长下一程：从单一精品剧到全球多元内容\",\n    \"current_title_lines\": [\n      \"奈飞内容主管谈增长下一程\",\n      \"从单一精品剧到全球多元内容\",\n      \"全球市场贡献过半，内容策略如何演变\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我想先聊聊Netflix的节目内容。\",\n        \"en\": \"I want to start talking about the programming on Netflix.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"你们是最大的视频流媒体服务。这里先不算YouTube。\",\n        \"en\": \"You're the biggest video streaming service out. We'll take the YouTube out of the equation for that.\",\n        \"relative_start\": 5.5,\n        \"relative_end\": 9.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"全球最大的付费视频流媒体服务。你经常提到制作这些能吸引大量观众的大众化节目。\",\n        \"en\": \"The biggest paid video streaming service in the world. And you talk a lot about kind of making these big broad shows that kind of appeal to a lot of viewers.\",\n        \"relative_start\": 9.3,\n        \"relative_end\": 18.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我觉得有些人觉得，随着你们越来越针对更多人群，你们的节目突然变得不是为所有人，而是有点谁都不讨好。\",\n        \"en\": \"And I think some people feel like, as you have targeted more and more people, that your shows are suddenly not because they're for everyone, they're kind of for no one.\",\n        \"relative_start\": 18.0,\n        \"relative_end\": 25.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以我想知道，你认为Netflix的节目与同行相比有什么独特之处？\",\n        \"en\": \"And so I'm wondering, what do you think distinguishes Netflix's programming from your peers?\",\n        \"relative_start\": 25.6,\n        \"relative_end\": 31.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的。\",\n        \"en\": \"Well, first of all, just to kind of set that record straight, we do nothing we make on Netflix's for everyone.\",\n        \"relative_start\": 31.3,\n        \"relative_end\": 37.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们当然希望你能在Netflix上找到你最喜欢的节目。\",\n        \"en\": \"We hope you find your favorite show on Netflix for sure.\",\n        \"relative_start\": 37.9,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"要做到这一点，人们的品味极其多样。\",\n        \"en\": \"To do that, people's tastes are crazy diverse.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 44.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难。\",\n        \"en\": \"My wife and I don't agree on what to watch. So it's pretty hard to get the whole world to agree on what to watch.\",\n        \"relative_start\": 44.4,\n        \"relative_end\": 48.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以你们制作了很多迎合不同品味的内容，包括更有声望、获奖类的节目，\",\n        \"en\": \"So you make a lot of things that appeal to different tastes, including more prestige, awards-y kinds of programming,\",\n        \"relative_start\": 48.8,\n        \"relative_end\": 57.7\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"对那类观众而言，顺便说一句，我们起步时只做这个。\",\n        \"en\": \"for that audience, which was by the way, when we started, that's all we did.\",\n        \"relative_start\": 57.7,\n        \"relative_end\": 61.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"所以大致说明一下节目规划这些年如何拓宽，2013年2月我们推出《纸牌屋》那天，\",\n        \"en\": \"So to give it kind of an idea of how the programming initiative was broadened over the years, that day when we started with House of Cards in February of 2013,\",\n        \"relative_start\": 61.5,\n        \"relative_end\": 71.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我们只有一种类型，就是高端连续剧。\",\n        \"en\": \"we had one kind of thing, just prestige, serialized drama.\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 76.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧。\",\n        \"en\": \"And then we've since then we've added competition shows and game shows and cooking shows and travel shows and original movies and standard comedy.\",\n        \"relative_start\": 76.1,\n        \"relative_end\": 83.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"此后我们所做的一切都只是持续扩张。\",\n        \"en\": \"Everything we've done since then has just been an ongoing expansion.\",\n        \"relative_start\": 83.4,\n        \"relative_end\": 87.1\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"We do nothing we make on Netflix's for everyone. We hope you find your favorite show on Netflix for sure.\",\n      \"public_baseline\": \"Netflix is widely described as a mass-market streaming service whose broad content slate is designed to appeal to large global audiences.\",\n      \"surprise_gap\": \"Sarandos explicitly rejects the premise that Netflix makes content for everyone, framing the strategy as serving diverse individual tastes rather than a single mass audience.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Sarandos says nothing Netflix makes is for everyone and hopes viewers find their favorite show.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ted Sarandos Netflix programming for everyone quote\",\n          \"url\": \"https://x.com/BloombergLive/status/2105477003323568444\",\n          \"fact\": \"Bloomberg Live posted the same quote: 'Nothing we make at Netflix is for everyone, we hope you find your favorite show on Netflix for sure.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ted Sarandos Netflix programming for everyone quote\",\n          \"url\": \"https://ceointerviews.ai/interview/2960067/\",\n          \"fact\": \"Interview summary states Sarandos argued Netflix content is not for everyone but offers something for everyone.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Netflix is abandoning mass-market content\",\n        \"Sarandos admits Netflix programming strategy has failed\",\n        \"Netflix no longer wants broad audiences\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No domain-specific terms were present in the clip metadata.\",\n    \"The Chinese name 泰德·萨兰多斯 is widely used but the provided search snippets did not include a Chinese-language source explicitly pairing it with the co-CEO title, so confidence is med\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "萨兰多斯说Netflix上没有任何内容是给所有人看的，并希望观众找到自己最喜欢的节目，Netflix从2013年只有高端连续剧起步，之后持续扩张到竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "奈飞内容主管当场否认：没有一部剧是给所有人看的",
+                "title_lines": [
+                  "奈飞主管当场否认",
+                  "没有一部剧是给所有人看",
+                  "全球最大付费平台为何反着说"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的",
+                  "public_baseline: Netflix被广泛描述为面向大众市场的流媒体服务"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "全球最大流媒体主管说透：我和妻子都看不到一块去",
+                "title_lines": [
+                  "全球最大流媒体主管说透",
+                  "我和妻子都看不到一块去",
+                  "世界怎么可能看同一部剧"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难",
+                  "transcript: 人们的品味极其多样"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "从一种类型到八种：奈飞十年扩张背后谁在被挤出",
+                "title_lines": [
+                  "从一种类型到八种",
+                  "奈飞十年扩张背后",
+                  "谁在被挤出内容清单"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 2013年2月我们推出纸牌屋那天，我们只有一种类型，就是高端连续剧",
+                  "transcript: 之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 10,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "奈飞主管反驳大众化标签：我们做的从来不是全民内容",
+                "title_lines": [
+                  "奈飞主管反驳大众化标签",
+                  "我们做的从来不是全民内容",
+                  "但希望每个人都能找到最爱"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 我们当然希望你能在Netflix上找到你最喜欢的节目",
+                  "transcript: 我们做的没有一个是给所有人看的"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 10,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.1,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix\",\n    \"source_title\": \"Duration: 28:48 Ted Sarandos on Next Stage of Growth for Netflix\",\n    \"show_date\": \"\",\n    \"current_title\": \"奈飞内容主管谈增长下一程：从单一精品剧到全球多元内容\",\n    \"current_title_lines\": [\n      \"奈飞内容主管谈增长下一程\",\n      \"从单一精品剧到全球多元内容\",\n      \"全球市场贡献过半，内容策略如何演变\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我想先聊聊Netflix的节目内容。\",\n        \"en\": \"I want to start talking about the programming on Netflix.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.5\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"你们是最大的视频流媒体服务。这里先不算YouTube。\",\n        \"en\": \"You're the biggest video streaming service out. We'll take the YouTube out of the equation for that.\",\n        \"relative_start\": 5.5,\n        \"relative_end\": 9.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"全球最大的付费视频流媒体服务。你经常提到制作这些能吸引大量观众的大众化节目。\",\n        \"en\": \"The biggest paid video streaming service in the world. And you talk a lot about kind of making these big broad shows that kind of appeal to a lot of viewers.\",\n        \"relative_start\": 9.3,\n        \"relative_end\": 18.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"我觉得有些人觉得，随着你们越来越针对更多人群，你们的节目突然变得不是为所有人，而是有点谁都不讨好。\",\n        \"en\": \"And I think some people feel like, as you have targeted more and more people, that your shows are suddenly not because they're for everyone, they're kind of for no one.\",\n        \"relative_start\": 18.0,\n        \"relative_end\": 25.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以我想知道，你认为Netflix的节目与同行相比有什么独特之处？\",\n        \"en\": \"And so I'm wondering, what do you think distinguishes Netflix's programming from your peers?\",\n        \"relative_start\": 25.6,\n        \"relative_end\": 31.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的。\",\n        \"en\": \"Well, first of all, just to kind of set that record straight, we do nothing we make on Netflix's for everyone.\",\n        \"relative_start\": 31.3,\n        \"relative_end\": 37.9\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我们当然希望你能在Netflix上找到你最喜欢的节目。\",\n        \"en\": \"We hope you find your favorite show on Netflix for sure.\",\n        \"relative_start\": 37.9,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"要做到这一点，人们的品味极其多样。\",\n        \"en\": \"To do that, people's tastes are crazy diverse.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 44.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难。\",\n        \"en\": \"My wife and I don't agree on what to watch. So it's pretty hard to get the whole world to agree on what to watch.\",\n        \"relative_start\": 44.4,\n        \"relative_end\": 48.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以你们制作了很多迎合不同品味的内容，包括更有声望、获奖类的节目，\",\n        \"en\": \"So you make a lot of things that appeal to different tastes, including more prestige, awards-y kinds of programming,\",\n        \"relative_start\": 48.8,\n        \"relative_end\": 57.7\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"对那类观众而言，顺便说一句，我们起步时只做这个。\",\n        \"en\": \"for that audience, which was by the way, when we started, that's all we did.\",\n        \"relative_start\": 57.7,\n        \"relative_end\": 61.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"所以大致说明一下节目规划这些年如何拓宽，2013年2月我们推出《纸牌屋》那天，\",\n        \"en\": \"So to give it kind of an idea of how the programming initiative was broadened over the years, that day when we started with House of Cards in February of 2013,\",\n        \"relative_start\": 61.5,\n        \"relative_end\": 71.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我们只有一种类型，就是高端连续剧。\",\n        \"en\": \"we had one kind of thing, just prestige, serialized drama.\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 76.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧。\",\n        \"en\": \"And then we've since then we've added competition shows and game shows and cooking shows and travel shows and original movies and standard comedy.\",\n        \"relative_start\": 76.1,\n        \"relative_end\": 83.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"此后我们所做的一切都只是持续扩张。\",\n        \"en\": \"Everything we've done since then has just been an ongoing expansion.\",\n        \"relative_start\": 83.4,\n        \"relative_end\": 87.1\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"We do nothing we make on Netflix's for everyone. We hope you find your favorite show on Netflix for sure.\",\n      \"public_baseline\": \"Netflix is widely described as a mass-market streaming service whose broad content slate is designed to appeal to large global audiences.\",\n      \"surprise_gap\": \"Sarandos explicitly rejects the premise that Netflix makes content for everyone, framing the strategy as serving diverse individual tastes rather than a single mass audience.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Sarandos says nothing Netflix makes is for everyone and hopes viewers find their favorite show.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ted Sarandos Netflix programming for everyone quote\",\n          \"url\": \"https://x.com/BloombergLive/status/2105477003323568444\",\n          \"fact\": \"Bloomberg Live posted the same quote: 'Nothing we make at Netflix is for everyone, we hope you find your favorite show on Netflix for sure.'\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ted Sarandos Netflix programming for everyone quote\",\n          \"url\": \"https://ceointerviews.ai/interview/2960067/\",\n          \"fact\": \"Interview summary states Sarandos argued Netflix content is not for everyone but offers something for everyone.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Netflix is abandoning mass-market content\",\n        \"Sarandos admits Netflix programming strategy has failed\",\n        \"Netflix no longer wants broad audiences\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No domain-specific terms were present in the clip metadata.\",\n    \"The Chinese name 泰德·萨兰多斯 is widely used but the provided search snippets did not include a Chinese-language source explicitly pairing it with the co-CEO title, so confidence is med\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"萨兰多斯说Netflix上没有任何内容是给所有人看的，并希望观众找到自己最喜欢的节目，Netflix从2013年只有高端连续剧起步，之后持续扩张到竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"奈飞内容主管当场否认：没有一部剧是给所有人看的\",\n          \"title_lines\": [\n            \"奈飞主管当场否认\",\n            \"没有一部剧是给所有人看\",\n            \"全球最大付费平台为何反着说\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的\",\n            \"public_baseline: Netflix被广泛描述为面向大众市场的流媒体服务\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"全球最大流媒体主管说透：我和妻子都看不到一块去\",\n          \"title_lines\": [\n            \"全球最大流媒体主管说透\",\n            \"我和妻子都看不到一块去\",\n            \"世界怎么可能看同一部剧\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难\",\n            \"transcript: 人们的品味极其多样\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"从一种类型到八种：奈飞十年扩张背后谁在被挤出\",\n          \"title_lines\": [\n            \"从一种类型到八种\",\n            \"奈飞十年扩张背后\",\n            \"谁在被挤出内容清单\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 2013年2月我们推出纸牌屋那天，我们只有一种类型，就是高端连续剧\",\n            \"transcript: 之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"奈飞主管反驳大众化标签：我们做的从来不是全民内容\",\n          \"title_lines\": [\n            \"奈飞主管反驳大众化标签\",\n            \"我们做的从来不是全民内容\",\n            \"但希望每个人都能找到最爱\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 我们当然希望你能在Netflix上找到你最喜欢的节目\",\n            \"transcript: 我们做的没有一个是给所有人看的\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_denial_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 首先，澄清一下，我们在Netflix上制作的内容没有一个是给所有人看的",
+              "transcript: 我和我妻子对看什么意见都不一致。所以要让全世界对看什么达成一致相当难",
+              "transcript: 2013年2月我们推出纸牌屋那天，我们只有一种类型，就是高端连续剧",
+              "transcript: 之后我们陆续增加了竞技秀、游戏秀、烹饪秀、旅行秀、原创电影和标准喜剧"
+            ],
+            "title": "奈飞主管当场否认：没有一部剧是给所有人看的",
+            "title_lines": [
+              "奈飞主管当场否认",
+              "没有一部剧是给所有人看",
+              "全球最大付费平台为何反着说"
+            ],
+            "title_highlights": [
+              "奈飞主管",
+              "当场否认",
+              "没有一部剧是给所有人看"
+            ],
+            "runner_up_titles": [
+              "全球最大流媒体主管说透：我和妻子都看不到一块去",
+              "从一种类型到八种：奈飞十年扩张背后谁在被挤出"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：全球最大付费平台主管亲口推翻大众化标签，内容策略正从全民转向分众。",
+            "comment_highlights": [
+              "推翻大众化标签",
+              "从全民转向分众"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：开场直接切入节目内容，说明这场对话核心是内容策略。",
+                "comment_highlights": [
+                  "核心是内容策略"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：把YouTube排除后，奈飞是最大视频流媒体，定位先立住。",
+                "comment_highlights": [
+                  "最大视频流媒体"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：全球最大付费平台，却常被问大众化节目是否失灵。",
+                "comment_highlights": [
+                  "大众化节目是否失灵"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：外界质疑越针对人群，节目越可能谁都不讨好。",
+                "comment_highlights": [
+                  "谁都不讨好"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：主持人把问题逼到独特之处，为后面的反转铺垫。",
+                "comment_highlights": [
+                  "独特之处"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：萨兰多斯直接否认，没有一部剧是给所有人看的。",
+                "comment_highlights": [
+                  "直接否认"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：否认全民内容，但希望每个人都能找到最爱。",
+                "comment_highlights": [
+                  "找到最爱"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：品味极其多样，是分众策略的现实基础。",
+                "comment_highlights": [
+                  "品味极其多样"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：连夫妻都看不到一块去，全球一致更是难上加难。",
+                "comment_highlights": [
+                  "全球一致"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：从高端获奖节目到多元口味，内容盘子越铺越宽。",
+                "comment_highlights": [
+                  "内容盘子越铺越宽"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：起步时只做高端剧，如今已不是单一类型。",
+                "comment_highlights": [
+                  "不是单一类型"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：2013年纸牌屋是起点，节目规划从此拓宽。",
+                "comment_highlights": [
+                  "节目规划从此拓宽"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：当时只有高端连续剧一种类型，对比今天反差明显。",
+                "comment_highlights": [
+                  "反差明显"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：竞技、游戏、烹饪、旅行、电影、喜剧，类型持续增加。",
+                "comment_highlights": [
+                  "类型持续增加"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：此后一切动作都是持续扩张，分众策略没有回头路。",
+                "comment_highlights": [
+                  "持续扩张"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "奈飞主管当场否认：没有一部剧是给所有人看，全球最大付费平台为何反着说",
+          "title_lines": [
+            "奈飞主管当场否认",
+            "没有一部剧是给所有人看",
+            "全球最大付费平台为何反着说"
+          ],
+          "formula_id": "authority_denial_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 10,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 10,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：全球最大付费平台主管亲口推翻大众化标签，内容策略正从全民转向分众"
+        }
+      }
+    }
+  ]
+}
