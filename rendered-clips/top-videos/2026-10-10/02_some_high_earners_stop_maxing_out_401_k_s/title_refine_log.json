@@ -1,0 +1,1362 @@
+{
+  "timestamp_utc": "2026-10-10T02:03:57.754530+00:00",
+  "plan_path": "work/top-videos/02_some_high_earners_stop_maxing_out_401_k_s/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 5,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's own site and Chinese financial media consistently use 彭博 as the short display form; 彭博有限合伙企业 is the formal registered name."
+      },
+      {
+        "source_text": "Bloomberg Money",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg Money",
+        "preferred_en": "Bloomberg Money",
+        "official_zh": "",
+        "common_zh": "彭博财富",
+        "title_label": "彭博财富",
+        "preferred_zh": "彭博财富",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg Money is a Bloomberg vertical; no two independent reliable Chinese sources co-occur with a fixed Chinese display form, so label is provisional."
+      },
+      {
+        "source_text": "401(k)",
+        "entity_type": "other",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "401(k) plan",
+        "preferred_en": "401(k) plan",
+        "official_zh": "401(k)退休储蓄计划",
+        "common_zh": "401(k)",
+        "title_label": "401(k)",
+        "preferred_zh": "401(k)",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits",
+          "https://www.schwab.com/learn/story/401k-contribution-limits"
+        ],
+        "evidence": "IRS and Charles Schwab both describe the 401(k) plan; Chinese financial media commonly retain the Latin-script 401(k) form."
+      },
+      {
+        "source_text": "Roth IRA",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Roth IRA",
+        "preferred_en": "Roth IRA",
+        "official_zh": "罗斯个人退休账户",
+        "common_zh": "罗斯IRA",
+        "title_label": "罗斯IRA",
+        "preferred_zh": "罗斯IRA",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Two independent FIRE/retirement sources use Roth IRA and describe the account; Chinese media commonly render it 罗斯IRA or 罗斯个人退休账户."
+      },
+      {
+        "source_text": "Foster",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Foster",
+        "preferred_en": "Foster",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Foster",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No public snippet confirms the reporter's full name or an established Chinese display form; keep original English rather than invent a phonetic Chinese name."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "maxing out 401(k)",
+        "clip_indexes": [],
+        "context": "US retirement savings",
+        "sense": "contributing the annual elective deferral limit to a 401(k)",
+        "preferred_zh": "满额缴存401(k)",
+        "title_label": "满额缴存401(k)",
+        "avoid_zh": [
+          "最大化401(k)"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "employer match",
+        "clip_indexes": [],
+        "context": "US 401(k) plan design",
+        "sense": "employer contribution matching a portion of employee deferrals",
+        "preferred_zh": "雇主匹配缴款",
+        "title_label": "雇主匹配",
+        "avoid_zh": [
+          "雇主比赛"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "early withdrawal penalty",
+        "clip_indexes": [],
+        "context": "US retirement accounts",
+        "sense": "10% additional tax for withdrawing before age 59½",
+        "preferred_zh": "提前支取罚金",
+        "title_label": "提前支取罚金",
+        "avoid_zh": [
+          "提前取款惩罚"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "FIRE movement",
+        "clip_indexes": [],
+        "context": "personal finance",
+        "sense": "Financial Independence, Retire Early",
+        "preferred_zh": "FIRE运动（财务独立、提前退休）",
+        "title_label": "FIRE运动",
+        "avoid_zh": [
+          "火运动"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Roth conversion ladder",
+        "clip_indexes": [],
+        "context": "FIRE early-retirement strategy",
+        "sense": "annual conversions from traditional IRA/401(k) to Roth to access funds penalty-free after five years",
+        "preferred_zh": "罗斯转换阶梯",
+        "title_label": "罗斯转换阶梯",
+        "avoid_zh": [
+          "罗斯转换梯子"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "个人养老金",
+        "clip_indexes": [],
+        "context": "China third-pillar pension",
+        "sense": "China's voluntary individual pension account with tax-deferred contributions",
+        "preferred_zh": "个人养老金",
+        "title_label": "个人养老金",
+        "avoid_zh": [
+          "个人退休金"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Some high earners are cutting 401(k) contributions—one 40-year-old reduced hers from 20% to 5%, keeping only the full employer match and redirecting the rest to a Roth IRA and brokerages for earlier access and more control.",
+        "public_baseline": "US 401(k) rules allow up to $23,500 in 2025 elective deferrals (plus $7,500 catch-up over 50), and conventional advice is to contribute at least enough to capture the full employer match; FIRE investors commonly use Roth conversion ladders to access pre-tax funds before 59½ without the 10% penalty.",
+        "surprise_gap": "The clip frames high earners reducing 401(k) contributions as a notable shift, while standard guidance and IRS limits still favor maxing out or at least capturing the full match; the FIRE-style redirection to Roth IRA and brokerages is a recognized but non-mainstream strategy.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes",
+          "surprise_reversal"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "A 40-year-old saver cut her 401(k) contribution from 20% to 5% to keep the full employer match and redirect the rest to a Roth IRA and brokerages for earlier access and more control."
+          },
+          {
+            "kind": "public",
+            "query": "401(k) contribution limits 2025 high earners employer match",
+            "url": "https://www.fool.com/retirement/plans/401k/income-limits/",
+            "fact": "Employees can contribute up to $23,500 in 2025, with a $7,500 catch-up if over 50."
+          },
+          {
+            "kind": "public",
+            "query": "FIRE movement 401(k) early retirement penalty Roth IRA brokerage",
+            "url": "https://www.howtofire.com/roth-conversion-ladder/",
+            "fact": "Without a Roth conversion ladder, early retirees tapping retirement savings before 59½ face a 10% early withdrawal penalty."
+          },
+          {
+            "kind": "public",
+            "query": "中国 个人养老金 制度 缴费上限 税收优惠",
+            "url": "https://www.gov.cn/zhengce/zhengceku/202412/content_6992498.htm",
+            "fact": "China's individual pension system was fully implemented nationwide from 2024-12-15 with tax-deferred treatment."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim high earners are abandoning retirement savings entirely; the transcript says the saver is still saving and investing, just not in the 401(k).",
+          "Do not claim Bloomberg endorses reducing 401(k) contributions; the clip is reporting, not an editorial position.",
+          "Do not claim a specific number of high earners are doing this; the transcript cites one saver.",
+          "Do not claim China's individual pension system is equivalent to a 401(k) or that Chinese high earners are reducing contributions."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The reporter's surname 'Foster' could not be matched to a verified full name or established Chinese display form; keep original English in titles.",
+      "Bloomberg Money has no confirmed fixed Chinese display form in the snippets; 彭博财富 is provisional and low confidence.",
+      "China comparison snippets describe the individual pension system generally; they do not establish Chinese high-earner participation rates, so no china_advantage angle is supported."
+    ],
+    "research_queries": [
+      {
+        "query": "401(k) contribution limits 2025 high earners employer match",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the standard baseline for 401(k) contribution limits and employer match rules to assess whether high earners reducing contributions is unusual."
+      },
+      {
+        "query": "FIRE movement 401(k) early retirement penalty Roth IRA brokerage",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline for FIRE strategy and early withdrawal penalties to assess the claim about redirecting savings for early access."
+      },
+      {
+        "query": "中国 个人养老金 制度 缴费上限 税收优惠",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify China's individual pension system contribution limits and tax incentives for a factual contrast with U.S. 401(k) rules."
+      },
+      {
+        "query": "中国 养老金 第三支柱 高收入者 参与率",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish Chinese high earners' participation in the third-pillar pension system to compare with U.S. high earners reducing 401(k) contributions."
+      },
+      {
+        "query": "401(k) early withdrawal penalty 10% exception rule",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact penalty for early 401(k) withdrawal to confirm the saver's stated reason for redirecting funds."
+      },
+      {
+        "query": "Roth IRA vs 401(k) early retirement access control investments",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the comparative advantages of Roth IRA and brokerage accounts for early retirement access and investment control."
+      },
+      {
+        "query": "Bloomberg Some High Earners Stop Maxing Out established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Some High Earners Stop Maxing Out 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Bloomberg Money 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 9,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-10T02:03:55.603947+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.7,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money",
+          "source_title": "Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money",
+          "show_date": "",
+          "current_title": "高收入人群调整退休储蓄配置 不再满额缴存401(k)",
+          "current_title_lines": [
+            "高收入人群调整退休储蓄配置",
+            "不再满额缴存401(k)",
+            "转向个人账户与应税账户 追求灵活与掌控"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "本周吸引观众注意的一个话题是，是否要最大化401K缴款，因为一些高收入者现在质疑这一策略。",
+              "en": "One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.",
+              "relative_start": 0.0,
+              "relative_end": 10.1
+            },
+            {
+              "index": 2,
+              "zh": "彭博明星记者福斯特一直在报道此事，现在她加入我们讨论。你采访了一位40岁女性，她决定将缴款从20%降至5%，所以",
+              "en": "Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so",
+              "relative_start": 10.1,
+              "relative_end": 20.4
+            },
+            {
+              "index": 3,
+              "zh": "她仍能获得雇主全额匹配，但不再想把多余金额投入401K。",
+              "en": "she can still capture her full employer match but she no longer wants to put that other amount into her 401K.",
+              "relative_start": 20.4,
+              "relative_end": 27.4
+            },
+            {
+              "index": 4,
+              "zh": "她将资金转向其他方向。我想，写关于Macsars的报道已经好几个月了。",
+              "en": "She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.",
+              "relative_start": 27.4,
+              "relative_end": 32.0
+            },
+            {
+              "index": 5,
+              "zh": "我想是时候写一篇关于反Macsars的报道了。",
+              "en": "I guess it's time that we write a story about anti-macsars.",
+              "relative_start": 32.0,
+              "relative_end": 35.3
+            },
+            {
+              "index": 6,
+              "zh": "我与其中一位储蓄者交谈，她告诉我她仍在为未来储蓄和配置。",
+              "en": "I spoke with one of these savers who told me that she's still saving and investing for her future.",
+              "relative_start": 35.3,
+              "relative_end": 40.3
+            },
+            {
+              "index": 7,
+              "zh": "她只是不把钱放在401K里。她正在考虑Roth IRA和经纪账户。",
+              "en": "She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.",
+              "relative_start": 40.3,
+              "relative_end": 44.3
+            },
+            {
+              "index": 8,
+              "zh": "她希望更早获得资金，并希望对自己的配置有更多控制权。",
+              "en": "She wants access to the funds earlier and she wants more control over her investments.",
+              "relative_start": 44.3,
+              "relative_end": 48.8
+            },
+            {
+              "index": 9,
+              "zh": "如果她将钱投入401K，提前取出会被罚款。",
+              "en": "And if she were to put it in her 401K, she would be penalized if she took her money out early.",
+              "relative_start": 48.8,
+              "relative_end": 53.0
+            },
+            {
+              "index": 10,
+              "zh": "所以这是为那些想努力工作、努力储蓄并提前退休的人准备的。",
+              "en": "So this is for people who want to work hard, save hard and retire early.",
+              "relative_start": 53.0,
+              "relative_end": 57.0
+            },
+            {
+              "index": 11,
+              "zh": "是的，这类故事说明财务规划要围绕个人目标来安排。如果你愿意承担更多风险，或者想提前退休，那就另当别论。",
+              "en": "Yes, it's one of those stories where I think finance has to kind of fit around your personal goals and so if you're someone who maybe wants to take on a little more risk or maybe",
+              "relative_start": 57.0,
+              "relative_end": 66.7
+            },
+            {
+              "index": 12,
+              "zh": "想比传统401K规则更早退休，那可能适合多缴一些。但关键问题是，现在许多退休规划师对此有些担忧。",
+              "en": "retire early before those typical rules with the traditional 401K, that's when it probably makes sense to Macs out, not to not Macs out, excuse me, but I think the big question",
+              "relative_start": 66.7,
+              "relative_end": 77.3
+            },
+            {
+              "index": 13,
+              "zh": "我并不担心。与彼得·奥斯泽格多年前在布鲁金斯学会的里程碑研究相比，变化在于我相信我们都在活得更久。",
+              "en": "now is a lot of retirement planners are a little bit worried about it.",
+              "relative_start": 77.3,
+              "relative_end": 81.1
+            },
+            {
+              "index": 14,
+              "zh": "我并不担心。与彼得·奥萨格多年前在布鲁金斯学会的里程碑式研究相比，变化在于我相信我们都在活得更久。",
+              "en": "I was not worried about it. The thing that's changed from Peter Orszeg and his landmark work at Brookings years ago is I believe we're all living longer.",
+              "relative_start": 81.1,
+              "relative_end": 89.7
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.7,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"source_title\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"高收入人群调整退休储蓄配置 不再满额缴存401(k)\",\n    \"current_title_lines\": [\n      \"高收入人群调整退休储蓄配置\",\n      \"不再满额缴存401(k)\",\n      \"转向个人账户与应税账户 追求灵活与掌控\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"本周吸引观众注意的一个话题是，是否要最大化401K缴款，因为一些高收入者现在质疑这一策略。\",\n        \"en\": \"One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"彭博明星记者福斯特一直在报道此事，现在她加入我们讨论。你采访了一位40岁女性，她决定将缴款从20%降至5%，所以\",\n        \"en\": \"Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"她仍能获得雇主全额匹配，但不再想把多余金额投入401K。\",\n        \"en\": \"she can still capture her full employer match but she no longer wants to put that other amount into her 401K.\",\n        \"relative_start\": 20.4,\n        \"relative_end\": 27.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"她将资金转向其他方向。我想，写关于Macsars的报道已经好几个月了。\",\n        \"en\": \"She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.\",\n        \"relative_start\": 27.4,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想是时候写一篇关于反Macsars的报道了。\",\n        \"en\": \"I guess it's time that we write a story about anti-macsars.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我与其中一位储蓄者交谈，她告诉我她仍在为未来储蓄和配置。\",\n        \"en\": \"I spoke with one of these savers who told me that she's still saving and investing for her future.\",\n        \"relative_start\": 35.3,\n        \"relative_end\": 40.3\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她只是不把钱放在401K里。她正在考虑Roth IRA和经纪账户。\",\n        \"en\": \"She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.\",\n        \"relative_start\": 40.3,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"她希望更早获得资金，并希望对自己的配置有更多控制权。\",\n        \"en\": \"She wants access to the funds earlier and she wants more control over her investments.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"如果她将钱投入401K，提前取出会被罚款。\",\n        \"en\": \"And if she were to put it in her 401K, she would be penalized if she took her money out early.\",\n        \"relative_start\": 48.8,\n        \"relative_end\": 53.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以这是为那些想努力工作、努力储蓄并提前退休的人准备的。\",\n        \"en\": \"So this is for people who want to work hard, save hard and retire early.\",\n        \"relative_start\": 53.0,\n        \"relative_end\": 57.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"是的，这类故事说明财务规划要围绕个人目标来安排。如果你愿意承担更多风险，或者想提前退休，那就另当别论。\",\n        \"en\": \"Yes, it's one of those stories where I think finance has to kind of fit around your personal goals and so if you're someone who maybe wants to take on a little more risk or maybe\",\n        \"relative_start\": 57.0,\n        \"relative_end\": 66.7\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"想比传统401K规则更早退休，那可能适合多缴一些。但关键问题是，现在许多退休规划师对此有些担忧。\",\n        \"en\": \"retire early before those typical rules with the traditional 401K, that's when it probably makes sense to Macs out, not to not Macs out, excuse me, but I think the big question\",\n        \"relative_start\": 66.7,\n        \"relative_end\": 77.3\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我并不担心。与彼得·奥斯泽格多年前在布鲁金斯学会的里程碑研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"now is a lot of retirement planners are a little bit worried about it.\",\n        \"relative_start\": 77.3,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我并不担心。与彼得·奥萨格多年前在布鲁金斯学会的里程碑式研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"I was not worried about it. The thing that's changed from Peter Orszeg and his landmark work at Brookings years ago is I believe we're all living longer.\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 89.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"401(k)\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"401(k) plan\",\n      \"preferred_en\": \"401(k) plan\",\n      \"official_zh\": \"401(k)退休储蓄计划\",\n      \"common_zh\": \"401(k)\",\n      \"title_label\": \"401(k)\",\n      \"preferred_zh\": \"401(k)\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits\",\n        \"https://www.schwab.com/learn/story/401k-contribution-limits\"\n      ],\n      \"evidence\": \"IRS and Charles Schwab both describe the 401(k) plan; Chinese financial media commonly retain the Latin-script 401(k) form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Some high earners are cutting 401(k) contributions—one 40-year-old reduced hers from 20% to 5%, keeping only the full employer match and redirecting the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"public_baseline\": \"US 401(k) rules allow up to $23,500 in 2025 elective deferrals (plus $7,500 catch-up over 50), and conventional advice is to contribute at least enough to capture the full employer match; FIRE investors commonly use Roth conversion ladders to access pre-tax funds before 59½ without the 10% penalty.\",\n      \"surprise_gap\": \"The clip frames high earners reducing 401(k) contributions as a notable shift, while standard guidance and IRS limits still favor maxing out or at least capturing the full match; the FIRE-style redirection to Roth IRA and brokerages is a recognized but non-mainstream strategy.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"A 40-year-old saver cut her 401(k) contribution from 20% to 5% to keep the full employer match and redirect the rest to a Roth IRA and brokerages for earlier access and more control.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"401(k) contribution limits 2025 high earners employer match\",\n          \"url\": \"https://www.fool.com/retirement/plans/401k/income-limits/\",\n          \"fact\": \"Employees can contribute up to $23,500 in 2025, with a $7,500 catch-up if over 50.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"FIRE movement 401(k) early retirement penalty Roth IRA brokerage\",\n          \"url\": \"https://www.howtofire.com/roth-conversion-ladder/\",\n          \"fact\": \"Without a Roth conversion ladder, early retirees tapping retirement savings before 59½ face a 10% early withdrawal penalty.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"中国 个人养老金 制度 缴费上限 税收优惠\",\n          \"url\": \"https://www.gov.cn/zhengce/zhengceku/202412/content_6992498.htm\",\n          \"fact\": \"China's individual pension system was fully implemented nationwide from 2024-12-15 with tax-deferred treatment.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim high earners are abandoning retirement savings entirely; the transcript says the saver is still saving and investing, just not in the 401(k).\",\n        \"Do not claim Bloomberg endorses reducing 401(k) contributions; the clip is reporting, not an editorial position.\",\n        \"Do not claim a specific number of high earners are doing this; the transcript cites one saver.\",\n        \"Do not claim China's individual pension system is equivalent to a 401(k) or that Chinese high earners are reducing contributions.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The reporter's surname 'Foster' could not be matched to a verified full name or established Chinese display form; keep original English in titles.\",\n    \"Bloomberg Money has no confirmed fixed Chinese display form in the snippets; 彭博财富 is provisional and low confidence.\",\n    \"China comparison snippets describe the individual pension system generally; they do not establish Chinese high-earner participation rates, so no china_advantage angle is supported.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "A 40-year-old high earner cut her 401(k) contribution from 20% to 5%, keeping only the full employer match, and redirected the rest to a Roth IRA and brokerages for earlier access and more control.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "401(k)满额缴存被质疑 高收入者只留雇主匹配 转向Roth IRA与经纪账户",
+                "title_lines": [
+                  "401(k)满额缴存被质疑",
+                  "高收入者只留雇主匹配",
+                  "转向Roth IRA与经纪账户"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 40-year-old cut contribution from 20% to 5%, keeps full employer match",
+                  "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+                  "public: 2025 401(k) elective deferral limit $23,500"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么",
+                "title_lines": [
+                  "缴存比例20%砍到5%",
+                  "仍拿满雇主匹配",
+                  "40岁储蓄者图什么"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 40-year-old cut contribution from 20% to 5%, still captures full employer match",
+                  "transcript: wants access to funds earlier and more control over investments"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "彭博记者追踪高收入者 401(k)不再满额缴存 提前取款罚金逼出替代路径",
+                "title_lines": [
+                  "彭博记者追踪高收入者",
+                  "401(k)不再满额缴存",
+                  "提前取款罚金逼出替代路径"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Bloomberg reporter Foster interviewed a saver who cut 401(k) contribution",
+                  "transcript: early withdrawal from 401(k) triggers penalty, motivating redirection",
+                  "public: early withdrawals before 59½ face 10% penalty without Roth conversion ladder"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户",
+                "title_lines": [
+                  "为提前退休",
+                  "她放弃401(k)满额缴存",
+                  "转投Roth IRA与经纪账户"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: saver wants to work hard, save hard, retire early",
+                  "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+                  "transcript: 401(k) early withdrawal would be penalized"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.7,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"source_title\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"高收入人群调整退休储蓄配置 不再满额缴存401(k)\",\n    \"current_title_lines\": [\n      \"高收入人群调整退休储蓄配置\",\n      \"不再满额缴存401(k)\",\n      \"转向个人账户与应税账户 追求灵活与掌控\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"本周吸引观众注意的一个话题是，是否要最大化401K缴款，因为一些高收入者现在质疑这一策略。\",\n        \"en\": \"One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"彭博明星记者福斯特一直在报道此事，现在她加入我们讨论。你采访了一位40岁女性，她决定将缴款从20%降至5%，所以\",\n        \"en\": \"Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"她仍能获得雇主全额匹配，但不再想把多余金额投入401K。\",\n        \"en\": \"she can still capture her full employer match but she no longer wants to put that other amount into her 401K.\",\n        \"relative_start\": 20.4,\n        \"relative_end\": 27.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"她将资金转向其他方向。我想，写关于Macsars的报道已经好几个月了。\",\n        \"en\": \"She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.\",\n        \"relative_start\": 27.4,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想是时候写一篇关于反Macsars的报道了。\",\n        \"en\": \"I guess it's time that we write a story about anti-macsars.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我与其中一位储蓄者交谈，她告诉我她仍在为未来储蓄和配置。\",\n        \"en\": \"I spoke with one of these savers who told me that she's still saving and investing for her future.\",\n        \"relative_start\": 35.3,\n        \"relative_end\": 40.3\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她只是不把钱放在401K里。她正在考虑Roth IRA和经纪账户。\",\n        \"en\": \"She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.\",\n        \"relative_start\": 40.3,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"她希望更早获得资金，并希望对自己的配置有更多控制权。\",\n        \"en\": \"She wants access to the funds earlier and she wants more control over her investments.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"如果她将钱投入401K，提前取出会被罚款。\",\n        \"en\": \"And if she were to put it in her 401K, she would be penalized if she took her money out early.\",\n        \"relative_start\": 48.8,\n        \"relative_end\": 53.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以这是为那些想努力工作、努力储蓄并提前退休的人准备的。\",\n        \"en\": \"So this is for people who want to work hard, save hard and retire early.\",\n        \"relative_start\": 53.0,\n        \"relative_end\": 57.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"是的，这类故事说明财务规划要围绕个人目标来安排。如果你愿意承担更多风险，或者想提前退休，那就另当别论。\",\n        \"en\": \"Yes, it's one of those stories where I think finance has to kind of fit around your personal goals and so if you're someone who maybe wants to take on a little more risk or maybe\",\n        \"relative_start\": 57.0,\n        \"relative_end\": 66.7\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"想比传统401K规则更早退休，那可能适合多缴一些。但关键问题是，现在许多退休规划师对此有些担忧。\",\n        \"en\": \"retire early before those typical rules with the traditional 401K, that's when it probably makes sense to Macs out, not to not Macs out, excuse me, but I think the big question\",\n        \"relative_start\": 66.7,\n        \"relative_end\": 77.3\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我并不担心。与彼得·奥斯泽格多年前在布鲁金斯学会的里程碑研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"now is a lot of retirement planners are a little bit worried about it.\",\n        \"relative_start\": 77.3,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我并不担心。与彼得·奥萨格多年前在布鲁金斯学会的里程碑式研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"I was not worried about it. The thing that's changed from Peter Orszeg and his landmark work at Brookings years ago is I believe we're all living longer.\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 89.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"401(k)\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"401(k) plan\",\n      \"preferred_en\": \"401(k) plan\",\n      \"official_zh\": \"401(k)退休储蓄计划\",\n      \"common_zh\": \"401(k)\",\n      \"title_label\": \"401(k)\",\n      \"preferred_zh\": \"401(k)\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits\",\n        \"https://www.schwab.com/learn/story/401k-contribution-limits\"\n      ],\n      \"evidence\": \"IRS and Charles Schwab both describe the 401(k) plan; Chinese financial media commonly retain the Latin-script 401(k) form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Some high earners are cutting 401(k) contributions—one 40-year-old reduced hers from 20% to 5%, keeping only the full employer match and redirecting the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"public_baseline\": \"US 401(k) rules allow up to $23,500 in 2025 elective deferrals (plus $7,500 catch-up over 50), and conventional advice is to contribute at least enough to capture the full employer match; FIRE investors commonly use Roth conversion ladders to access pre-tax funds before 59½ without the 10% penalty.\",\n      \"surprise_gap\": \"The clip frames high earners reducing 401(k) contributions as a notable shift, while standard guidance and IRS limits still favor maxing out or at least capturing the full match; the FIRE-style redirection to Roth IRA and brokerages is a recognized but non-mainstream strategy.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"A 40-year-old saver cut her 401(k) contribution from 20% to 5% to keep the full employer match and redirect the rest to a Roth IRA and brokerages for earlier access and more control.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"401(k) contribution limits 2025 high earners employer match\",\n          \"url\": \"https://www.fool.com/retirement/plans/401k/income-limits/\",\n          \"fact\": \"Employees can contribute up to $23,500 in 2025, with a $7,500 catch-up if over 50.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"FIRE movement 401(k) early retirement penalty Roth IRA brokerage\",\n          \"url\": \"https://www.howtofire.com/roth-conversion-ladder/\",\n          \"fact\": \"Without a Roth conversion ladder, early retirees tapping retirement savings before 59½ face a 10% early withdrawal penalty.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"中国 个人养老金 制度 缴费上限 税收优惠\",\n          \"url\": \"https://www.gov.cn/zhengce/zhengceku/202412/content_6992498.htm\",\n          \"fact\": \"China's individual pension system was fully implemented nationwide from 2024-12-15 with tax-deferred treatment.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim high earners are abandoning retirement savings entirely; the transcript says the saver is still saving and investing, just not in the 401(k).\",\n        \"Do not claim Bloomberg endorses reducing 401(k) contributions; the clip is reporting, not an editorial position.\",\n        \"Do not claim a specific number of high earners are doing this; the transcript cites one saver.\",\n        \"Do not claim China's individual pension system is equivalent to a 401(k) or that Chinese high earners are reducing contributions.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The reporter's surname 'Foster' could not be matched to a verified full name or established Chinese display form; keep original English in titles.\",\n    \"Bloomberg Money has no confirmed fixed Chinese display form in the snippets; 彭博财富 is provisional and low confidence.\",\n    \"China comparison snippets describe the individual pension system generally; they do not establish Chinese high-earner participation rates, so no china_advantage angle is supported.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"A 40-year-old high earner cut her 401(k) contribution from 20% to 5%, keeping only the full employer match, and redirected the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"401(k)满额缴存被质疑 高收入者只留雇主匹配 转向Roth IRA与经纪账户\",\n          \"title_lines\": [\n            \"401(k)满额缴存被质疑\",\n            \"高收入者只留雇主匹配\",\n            \"转向Roth IRA与经纪账户\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 40-year-old cut contribution from 20% to 5%, keeps full employer match\",\n            \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n            \"public: 2025 401(k) elective deferral limit $23,500\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么\",\n          \"title_lines\": [\n            \"缴存比例20%砍到5%\",\n            \"仍拿满雇主匹配\",\n            \"40岁储蓄者图什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 40-year-old cut contribution from 20% to 5%, still captures full employer match\",\n            \"transcript: wants access to funds earlier and more control over investments\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"彭博记者追踪高收入者 401(k)不再满额缴存 提前取款罚金逼出替代路径\",\n          \"title_lines\": [\n            \"彭博记者追踪高收入者\",\n            \"401(k)不再满额缴存\",\n            \"提前取款罚金逼出替代路径\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Bloomberg reporter Foster interviewed a saver who cut 401(k) contribution\",\n            \"transcript: early withdrawal from 401(k) triggers penalty, motivating redirection\",\n            \"public: early withdrawals before 59½ face 10% penalty without Roth conversion ladder\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户\",\n          \"title_lines\": [\n            \"为提前退休\",\n            \"她放弃401(k)满额缴存\",\n            \"转投Roth IRA与经纪账户\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: saver wants to work hard, save hard, retire early\",\n            \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n            \"transcript: 401(k) early withdrawal would be penalized\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match",
+              "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+              "transcript: early withdrawal from 401(k) triggers penalty",
+              "public: 2025 401(k) elective deferral limit $23,500"
+            ],
+            "title": "401(k)满额缴存被质疑 高收入者只留雇主匹配 转向Roth IRA与经纪账户",
+            "title_lines": [
+              "401(k)满额缴存被质疑",
+              "高收入者只留雇主匹配",
+              "转向Roth IRA与经纪账户"
+            ],
+            "title_highlights": [
+              "401(k)满额缴存被质疑",
+              "只留雇主匹配",
+              "Roth IRA与经纪账户"
+            ],
+            "runner_up_titles": [
+              "缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么",
+              "为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：高收入者不再默认满额缴存，而是保留雇主匹配后转向更灵活的账户，这一变化值得关注。",
+            "comment_highlights": [
+              "保留雇主匹配",
+              "更灵活的账户"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：401(k)满额缴存策略正被部分高收入者重新审视。",
+                "comment_highlights": [
+                  "满额缴存策略"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：一位40岁女性将缴存比例从20%降至5%。",
+                "comment_highlights": [
+                  "20%降至5%"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：她仍拿满雇主匹配，但不再追加缴存。",
+                "comment_highlights": [
+                  "仍拿满雇主匹配"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：资金被重新配置到其他账户。",
+                "comment_highlights": [
+                  "重新配置"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：报道方向从鼓励满额缴存转向反思。",
+                "comment_highlights": [
+                  "反思"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：她仍在为未来储蓄和配置，只是换了账户。",
+                "comment_highlights": [
+                  "换了账户"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：Roth IRA和经纪账户成为替代选项。",
+                "comment_highlights": [
+                  "Roth IRA",
+                  "经纪账户"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：她希望更早获得资金并掌握更多控制权。",
+                "comment_highlights": [
+                  "更早获得资金",
+                  "更多控制权"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：401(k)提前取款会面临罚金，这是转向的关键原因。",
+                "comment_highlights": [
+                  "提前取款",
+                  "罚金"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：这一策略适合想努力工作、努力储蓄并提前退休的人。",
+                "comment_highlights": [
+                  "提前退休"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：财务规划需围绕个人目标，而非默认规则。",
+                "comment_highlights": [
+                  "个人目标"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：退休规划师对此有些担忧，传统规则面临挑战。",
+                "comment_highlights": [
+                  "退休规划师",
+                  "担忧"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：寿命延长改变了退休储蓄的考量。",
+                "comment_highlights": [
+                  "寿命延长"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：与布鲁金斯学会的里程碑研究相比，活得更久是核心变化。",
+                "comment_highlights": [
+                  "布鲁金斯学会",
+                  "活得更久"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.7,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"source_title\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n    \"show_date\": \"\",\n    \"current_title\": \"高收入人群调整退休储蓄配置 不再满额缴存401(k)\",\n    \"current_title_lines\": [\n      \"高收入人群调整退休储蓄配置\",\n      \"不再满额缴存401(k)\",\n      \"转向个人账户与应税账户 追求灵活与掌控\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"本周吸引观众注意的一个话题是，是否要最大化401K缴款，因为一些高收入者现在质疑这一策略。\",\n        \"en\": \"One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"彭博明星记者福斯特一直在报道此事，现在她加入我们讨论。你采访了一位40岁女性，她决定将缴款从20%降至5%，所以\",\n        \"en\": \"Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.4\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"她仍能获得雇主全额匹配，但不再想把多余金额投入401K。\",\n        \"en\": \"she can still capture her full employer match but she no longer wants to put that other amount into her 401K.\",\n        \"relative_start\": 20.4,\n        \"relative_end\": 27.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"她将资金转向其他方向。我想，写关于Macsars的报道已经好几个月了。\",\n        \"en\": \"She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.\",\n        \"relative_start\": 27.4,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想是时候写一篇关于反Macsars的报道了。\",\n        \"en\": \"I guess it's time that we write a story about anti-macsars.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.3\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我与其中一位储蓄者交谈，她告诉我她仍在为未来储蓄和配置。\",\n        \"en\": \"I spoke with one of these savers who told me that she's still saving and investing for her future.\",\n        \"relative_start\": 35.3,\n        \"relative_end\": 40.3\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她只是不把钱放在401K里。她正在考虑Roth IRA和经纪账户。\",\n        \"en\": \"She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.\",\n        \"relative_start\": 40.3,\n        \"relative_end\": 44.3\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"她希望更早获得资金，并希望对自己的配置有更多控制权。\",\n        \"en\": \"She wants access to the funds earlier and she wants more control over her investments.\",\n        \"relative_start\": 44.3,\n        \"relative_end\": 48.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"如果她将钱投入401K，提前取出会被罚款。\",\n        \"en\": \"And if she were to put it in her 401K, she would be penalized if she took her money out early.\",\n        \"relative_start\": 48.8,\n        \"relative_end\": 53.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以这是为那些想努力工作、努力储蓄并提前退休的人准备的。\",\n        \"en\": \"So this is for people who want to work hard, save hard and retire early.\",\n        \"relative_start\": 53.0,\n        \"relative_end\": 57.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"是的，这类故事说明财务规划要围绕个人目标来安排。如果你愿意承担更多风险，或者想提前退休，那就另当别论。\",\n        \"en\": \"Yes, it's one of those stories where I think finance has to kind of fit around your personal goals and so if you're someone who maybe wants to take on a little more risk or maybe\",\n        \"relative_start\": 57.0,\n        \"relative_end\": 66.7\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"想比传统401K规则更早退休，那可能适合多缴一些。但关键问题是，现在许多退休规划师对此有些担忧。\",\n        \"en\": \"retire early before those typical rules with the traditional 401K, that's when it probably makes sense to Macs out, not to not Macs out, excuse me, but I think the big question\",\n        \"relative_start\": 66.7,\n        \"relative_end\": 77.3\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我并不担心。与彼得·奥斯泽格多年前在布鲁金斯学会的里程碑研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"now is a lot of retirement planners are a little bit worried about it.\",\n        \"relative_start\": 77.3,\n        \"relative_end\": 81.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我并不担心。与彼得·奥萨格多年前在布鲁金斯学会的里程碑式研究相比，变化在于我相信我们都在活得更久。\",\n        \"en\": \"I was not worried about it. The thing that's changed from Peter Orszeg and his landmark work at Brookings years ago is I believe we're all living longer.\",\n        \"relative_start\": 81.1,\n        \"relative_end\": 89.7\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"401(k)\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"401(k) plan\",\n      \"preferred_en\": \"401(k) plan\",\n      \"official_zh\": \"401(k)退休储蓄计划\",\n      \"common_zh\": \"401(k)\",\n      \"title_label\": \"401(k)\",\n      \"preferred_zh\": \"401(k)\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits\",\n        \"https://www.schwab.com/learn/story/401k-contribution-limits\"\n      ],\n      \"evidence\": \"IRS and Charles Schwab both describe the 401(k) plan; Chinese financial media commonly retain the Latin-script 401(k) form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Some high earners are cutting 401(k) contributions—one 40-year-old reduced hers from 20% to 5%, keeping only the full employer match and redirecting the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"public_baseline\": \"US 401(k) rules allow up to $23,500 in 2025 elective deferrals (plus $7,500 catch-up over 50), and conventional advice is to contribute at least enough to capture the full employer match; FIRE investors commonly use Roth conversion ladders to access pre-tax funds before 59½ without the 10% penalty.\",\n      \"surprise_gap\": \"The clip frames high earners reducing 401(k) contributions as a notable shift, while standard guidance and IRS limits still favor maxing out or at least capturing the full match; the FIRE-style redirection to Roth IRA and brokerages is a recognized but non-mainstream strategy.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"A 40-year-old saver cut her 401(k) contribution from 20% to 5% to keep the full employer match and redirect the rest to a Roth IRA and brokerages for earlier access and more control.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"401(k) contribution limits 2025 high earners employer match\",\n          \"url\": \"https://www.fool.com/retirement/plans/401k/income-limits/\",\n          \"fact\": \"Employees can contribute up to $23,500 in 2025, with a $7,500 catch-up if over 50.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"FIRE movement 401(k) early retirement penalty Roth IRA brokerage\",\n          \"url\": \"https://www.howtofire.com/roth-conversion-ladder/\",\n          \"fact\": \"Without a Roth conversion ladder, early retirees tapping retirement savings before 59½ face a 10% early withdrawal penalty.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"中国 个人养老金 制度 缴费上限 税收优惠\",\n          \"url\": \"https://www.gov.cn/zhengce/zhengceku/202412/content_6992498.htm\",\n          \"fact\": \"China's individual pension system was fully implemented nationwide from 2024-12-15 with tax-deferred treatment.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim high earners are abandoning retirement savings entirely; the transcript says the saver is still saving and investing, just not in the 401(k).\",\n        \"Do not claim Bloomberg endorses reducing 401(k) contributions; the clip is reporting, not an editorial position.\",\n        \"Do not claim a specific number of high earners are doing this; the transcript cites one saver.\",\n        \"Do not claim China's individual pension system is equivalent to a 401(k) or that Chinese high earners are reducing contributions.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The reporter's surname 'Foster' could not be matched to a verified full name or established Chinese display form; keep original English in titles.\",\n    \"Bloomberg Money has no confirmed fixed Chinese display form in the snippets; 彭博财富 is provisional and low confidence.\",\n    \"China comparison snippets describe the individual pension system generally; they do not establish Chinese high-earner participation rates, so no china_advantage angle is supported.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"A 40-year-old high earner cut her 401(k) contribution from 20% to 5%, keeping only the full employer match, and redirected the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"401(k)满额缴存被质疑 高收入者只留雇主匹配 转向Roth IRA与经纪账户\",\n          \"title_lines\": [\n            \"401(k)满额缴存被质疑\",\n            \"高收入者只留雇主匹配\",\n            \"转向Roth IRA与经纪账户\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 40-year-old cut contribution from 20% to 5%, keeps full employer match\",\n            \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n            \"public: 2025 401(k) elective deferral limit $23,500\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么\",\n          \"title_lines\": [\n            \"缴存比例20%砍到5%\",\n            \"仍拿满雇主匹配\",\n            \"40岁储蓄者图什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 40-year-old cut contribution from 20% to 5%, still captures full employer match\",\n            \"transcript: wants access to funds earlier and more control over investments\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"彭博记者追踪高收入者 401(k)不再满额缴存 提前取款罚金逼出替代路径\",\n          \"title_lines\": [\n            \"彭博记者追踪高收入者\",\n            \"401(k)不再满额缴存\",\n            \"提前取款罚金逼出替代路径\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Bloomberg reporter Foster interviewed a saver who cut 401(k) contribution\",\n            \"transcript: early withdrawal from 401(k) triggers penalty, motivating redirection\",\n            \"public: early withdrawals before 59½ face 10% penalty without Roth conversion ladder\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户\",\n          \"title_lines\": [\n            \"为提前退休\",\n            \"她放弃401(k)满额缴存\",\n            \"转投Roth IRA与经纪账户\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: saver wants to work hard, save hard, retire early\",\n            \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n            \"transcript: 401(k) early withdrawal would be penalized\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"401(k)满额缴存被质疑：高收入者只留雇主匹配，转向Roth IRA与经纪账户\",\n      \"title_lines\": [\n        \"401(k)满额缴存被质疑\",\n        \"高收入者只留雇主匹配\",\n        \"转向Roth IRA与经纪账户\"\n      ],\n      \"title_highlights\": [\n        \"401(k)满额缴存被质疑\",\n        \"只留雇主匹配\",\n        \"Roth IRA与经纪账户\"\n      ],\n      \"comment\": \"KC评论：高收入者不再默认满额缴存，而是保留雇主匹配后转向更灵活的账户\",\n      \"comment_highlights\": [\n        \"保留雇主匹配\",\n        \"更灵活的账户\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：401(k)满额缴存策略正被部分高收入者重新审视\",\n          \"comment_highlights\": [\n            \"满额缴存策略\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：一位40岁女性将缴存比例从20%降至5%\",\n          \"comment_highlights\": [\n            \"20%降至5%\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：她仍拿满雇主匹配，但不再追加缴存\",\n          \"comment_highlights\": [\n            \"仍拿满雇主匹配\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：资金被重新配置到其他账户\",\n          \"comment_highlights\": [\n            \"重新配置\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：报道方向从鼓励满额缴存转向反思\",\n          \"comment_highlights\": [\n            \"反思\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：她仍在为未来储蓄和配置，只是换了账户\",\n          \"comment_highlights\": [\n            \"换了账户\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：RothIRA和经纪账户成为替代选项\",\n          \"comment_highlights\": [\n            \"经纪账户\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：她希望更早获得资金并掌握更多控制权\",\n          \"comment_highlights\": [\n            \"更早获得资金\",\n            \"更多控制权\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：401(k)提前取款会面临罚金，这是转向的关键原因\",\n          \"comment_highlights\": [\n            \"提前取款\",\n            \"罚金\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：这一策略适合想努力工作、努力储蓄并提前退休的人\",\n          \"comment_highlights\": [\n            \"提前退休\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：财务规划需围绕个人目标，而非默认规则\",\n          \"comment_highlights\": [\n            \"个人目标\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：退休规划师对此有些担忧，传统规则面临挑战\",\n          \"comment_highlights\": [\n            \"退休规划师\",\n            \"担忧\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：寿命延长改变了退休储蓄的考量\",\n          \"comment_highlights\": [\n            \"寿命延长\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：与布鲁金斯学会的里程碑研究相比，活得更久是核心变化\",\n          \"comment_highlights\": [\n            \"布鲁金斯学会\",\n            \"活得更久\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match\",\n        \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n        \"transcript: early withdrawal from 401(k) triggers penalty\",\n        \"public: 2025 401(k) elective deferral limit $23,500\"\n      ],\n      \"runner_up_titles\": [\n        \"缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么\",\n        \"为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"has_hook_tension\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"tighten_display_lines\",\n          \"shorten_full_title\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 7,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"tighten_display_lines\",\n      \"shorten_full_title\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match",
+                  "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+                  "transcript: early withdrawal from 401(k) triggers penalty",
+                  "public: 2025 401(k) elective deferral limit $23,500"
+                ],
+                "title": "401(k)满额缴存被质疑 高收入者只留雇主匹配",
+                "title_lines": [
+                  "401(k)满额缴存被质疑",
+                  "高收入者只留雇主匹配",
+                  "转向Roth IRA与经纪账户"
+                ],
+                "title_highlights": [
+                  "401(k)满额缴存被质疑",
+                  "只留雇主匹配",
+                  "Roth IRA与经纪账户"
+                ],
+                "runner_up_titles": [
+                  "缴存比例20%砍到5% 仍拿满雇主匹配 40岁储蓄者图什么",
+                  "为提前退休 她放弃401(k)满额缴存 转投Roth IRA与经纪账户"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：高收入者不再默认满额缴存，保留雇主匹配后转向更灵活的账户",
+                "comment_highlights": [
+                  "保留雇主匹配",
+                  "更灵活的账户"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：401(k)满额缴存策略正被部分高收入者重新审视",
+                    "comment_highlights": [
+                      "满额缴存策略"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：一位40岁女性将缴存比例从20%降至5%",
+                    "comment_highlights": [
+                      "20%降至5%"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：她仍拿满雇主匹配，但不再追加缴存",
+                    "comment_highlights": [
+                      "仍拿满雇主匹配"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：资金被重新配置到其他账户",
+                    "comment_highlights": [
+                      "重新配置"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：报道方向从鼓励满额缴存转向反思",
+                    "comment_highlights": [
+                      "反思"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：她仍在为未来储蓄和配置，只是换了账户",
+                    "comment_highlights": [
+                      "换了账户"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：Roth IRA和经纪账户成为替代选项",
+                    "comment_highlights": [
+                      "经纪账户"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：她希望更早获得资金并掌握更多控制权",
+                    "comment_highlights": [
+                      "更早获得资金",
+                      "更多控制权"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：401(k)提前取款会面临罚金，这是转向的关键原因",
+                    "comment_highlights": [
+                      "提前取款",
+                      "罚金"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：这一策略适合想努力工作、努力储蓄并提前退休的人",
+                    "comment_highlights": [
+                      "提前退休"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：财务规划需围绕个人目标，而非默认规则",
+                    "comment_highlights": [
+                      "个人目标"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：退休规划师对此有些担忧，传统规则面临挑战",
+                    "comment_highlights": [
+                      "退休规划师",
+                      "担忧"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：寿命延长改变了退休储蓄的考量",
+                    "comment_highlights": [
+                      "寿命延长"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：与布鲁金斯学会的里程碑研究相比，活得更久是核心变化",
+                    "comment_highlights": [
+                      "布鲁金斯学会",
+                      "活得更久"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "401(k)满额缴存被质疑：高收入者只留雇主匹配，转向Roth IRA与经纪账户",
+          "title_lines": [
+            "401(k)满额缴存被质疑",
+            "高收入者只留雇主匹配",
+            "转向Roth IRA与经纪账户"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 87,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "tighten_display_lines",
+              "shorten_full_title"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：高收入者不再默认满额缴存，而是保留雇主匹配后转向更灵活的账户"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-10T02:03:57.734467+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.7,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money",
+          "source_title": "Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money",
+          "show_date": "",
+          "current_title": "高收入人群调整退休储蓄配置 不再满额缴存401(k)",
+          "current_title_lines": [
+            "高收入人群调整退休储蓄配置",
+            "不再满额缴存401(k)",
+            "转向个人账户与应税账户 追求灵活与掌控"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "本周吸引观众注意的一个话题是，是否要最大化401K缴款，因为一些高收入者现在质疑这一策略。",
+              "en": "One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.",
+              "relative_start": 0.0,
+              "relative_end": 10.1
+            },
+            {
+              "index": 2,
+              "zh": "彭博明星记者福斯特一直在报道此事，现在她加入我们讨论。你采访了一位40岁女性，她决定将缴款从20%降至5%，所以",
+              "en": "Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so",
+              "relative_start": 10.1,
+              "relative_end": 20.4
+            },
+            {
+              "index": 3,
+              "zh": "她仍能获得雇主全额匹配，但不再想把多余金额投入401K。",
+              "en": "she can still capture her full employer match but she no longer wants to put that other amount into her 401K.",
+              "relative_start": 20.4,
+              "relative_end": 27.4
+            },
+            {
+              "index": 4,
+              "zh": "她将资金转向其他方向。我想，写关于Macsars的报道已经好几个月了。",
+              "en": "She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.",
+              "relative_start": 27.4,
+              "relative_end": 32.0
+            },
+            {
+              "index": 5,
+              "zh": "我想是时候写一篇关于反Macsars的报道了。",
+              "en": "I guess it's time that we write a story about anti-macsars.",
+              "relative_start": 32.0,
+              "relative_end": 35.3
+            },
+            {
+              "index": 6,
+              "zh": "我与其中一位储蓄者交谈，她告诉我她仍在为未来储蓄和配置。",
+              "en": "I spoke with one of these savers who told me that she's still saving and investing for her future.",
+              "relative_start": 35.3,
+              "relative_end": 40.3
+            },
+            {
+              "index": 7,
+              "zh": "她只是不把钱放在401K里。她正在考虑Roth IRA和经纪账户。",
+              "en": "She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.",
+              "relative_start": 40.3,
+              "relative_end": 44.3
+            },
+            {
+              "index": 8,
+              "zh": "她希望更早获得资金，并希望对自己的配置有更多控制权。",
+              "en": "She wants access to the funds earlier and she wants more control over her investments.",
+              "relative_start": 44.3,
+              "relative_end": 48.8
+            },
+            {
+              "index": 9,
+              "zh": "如果她将钱投入401K，提前取出会被罚款。",
+              "en": "And if she were to put it in her 401K, she would be penalized if she took her money out early.",
+              "relative_start": 48.8,
+              "relative_end": 53.0
+            },
+            {
+              "index": 10,
+              "zh": "所以这是为那些想努力工作、努力储蓄并提前退休的人准备的。",
+              "en": "So this is for people who want to work hard, save hard and retire early.",
+              "relative_start": 53.0,
+              "relative_end": 57.0
+            },
+            {
+              "index": 11,
+              "zh": "是的，这类故事说明财务规划要围绕个人目标来安排。如果你愿意承担更多风险，或者想提前退休，那就另当别论。",
+              "en": "Yes, it's one of those stories where I think finance has to kind of fit around your personal goals and so if you're someone who maybe wants to take on a little more risk or maybe",
+              "relative_start": 57.0,
+              "relative_end": 66.7
+            },
+            {
+              "index": 12,
+              "zh": "想比传统401K规则更早退休，那可能适合多缴一些。但关键问题是，现在许多退休规划师对此有些担忧。",
+              "en": "retire early before those typical rules with the traditional 401K, that's when it probably makes sense to Macs out, not to not Macs out, excuse me, but I think the big question",
+              "relative_start": 66.7,
+              "relative_end": 77.3
+            },
+            {
+              "index": 13,
+              "zh": "我并不担心。与彼得·奥斯泽格多年前在布鲁金斯学会的里程碑研究相比，变化在于我相信我们都在活得更久。",
+              "en": "now is a lot of retirement planners are a little bit worried about it.",
+              "relative_start": 77.3,
+              "relative_end": 81.1
+            },
+            {
+              "index": 14,
+              "zh": "我并不担心。与彼得·奥萨格多年前在布鲁金斯学会的里程碑式研究相比，变化在于我相信我们都在活得更久。",
+              "en": "I was not worried about it. The thing that's changed from Peter Orszeg and his landmark work at Brookings years ago is I believe we're all living longer.",
+              "relative_start": 81.1,
+              "relative_end": 89.7
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n  \"source_title\": \"Duration: 2:57 Some High Earners Stop Maxing Out 401(k)s Bloomberg Money\",\n  \"current_title\": \"高收入人群调整退休储蓄配置 不再满额缴存401(k)\",\n  \"source_claims\": [\n    \"One of the stories that caught our audience's attention this week is whether to maximize your contributions to 401Ks because some high earners are now questioning that strategy.\",\n    \"Bloomberg star Foster has been reporting on the story and she joins us now to discuss and you talk to a 40-year-old who decided to cut her contribution down to 5% from 20% so\",\n    \"she can still capture her full employer match but she no longer wants to put that other amount into her 401K.\",\n    \"She's redirecting it elsewhere. It's been months, I think, of writing stories about Macsars.\",\n    \"I guess it's time that we write a story about anti-macsars.\",\n    \"I spoke with one of these savers who told me that she's still saving and investing for her future.\",\n    \"She's just not putting it in the 401K. She's looking at the Roth IRA, brokerages.\",\n    \"She wants access to the funds earlier and she wants more control over her investments.\",\n    \"And if she were to put it in her 401K, she would be penalized if she took her money out early.\",\n    \"So this is for people who want to work hard, save hard and retire early.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"401(k)\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"401(k) plan\",\n      \"preferred_en\": \"401(k) plan\",\n      \"official_zh\": \"401(k)退休储蓄计划\",\n      \"common_zh\": \"401(k)\",\n      \"title_label\": \"401(k)\",\n      \"preferred_zh\": \"401(k)\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits\",\n        \"https://www.schwab.com/learn/story/401k-contribution-limits\"\n      ],\n      \"evidence\": \"IRS and Charles Schwab both describe the 401(k) plan; Chinese financial media commonly retain the Latin-script 401(k) form.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Some high earners are cutting 401(k) contributions—one 40-year-old reduced hers from 20% to 5%, keeping only the full employer match and redirecting the rest to a Roth IRA and brokerages for earlier access and more control.\",\n      \"public_baseline\": \"US 401(k) rules allow up to $23,500 in 2025 elective deferrals (plus $7,500 catch-up over 50), and conventional advice is to contribute at least enough to capture the full employer match; FIRE investors commonly use Roth conversion ladders to access pre-tax funds before 59½ without the 10% penalty.\",\n      \"surprise_gap\": \"The clip frames high earners reducing 401(k) contributions as a notable shift, while standard guidance and IRS limits still favor maxing out or at least capturing the full match; the FIRE-style redirection to Roth IRA and brokerages is a recognized but non-mainstream strategy.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"surprise_reversal\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"A 40-year-old saver cut her 401(k) contribution from 20% to 5% to keep the full employer match and redirect the rest to a Roth IRA and brokerages for earlier access and more control.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"401(k) contribution limits 2025 high earners employer match\",\n          \"url\": \"https://www.fool.com/retirement/plans/401k/income-limits/\",\n          \"fact\": \"Employees can contribute up to $23,500 in 2025, with a $7,500 catch-up if over 50.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"FIRE movement 401(k) early retirement penalty Roth IRA brokerage\",\n          \"url\": \"https://www.howtofire.com/roth-conversion-ladder/\",\n          \"fact\": \"Without a Roth conversion ladder, early retirees tapping retirement savings before 59½ face a 10% early withdrawal penalty.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"中国 个人养老金 制度 缴费上限 税收优惠\",\n          \"url\": \"https://www.gov.cn/zhengce/zhengceku/202412/content_6992498.htm\",\n          \"fact\": \"China's individual pension system was fully implemented nationwide from 2024-12-15 with tax-deferred treatment.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim high earners are abandoning retirement savings entirely; the transcript says the saver is still saving and investing, just not in the 401(k).\",\n        \"Do not claim Bloomberg endorses reducing 401(k) contributions; the clip is reporting, not an editorial position.\",\n        \"Do not claim a specific number of high earners are doing this; the transcript cites one saver.\",\n        \"Do not claim China's individual pension system is equivalent to a 401(k) or that Chinese high earners are reducing contributions.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The reporter's surname 'Foster' could not be matched to a verified full name or established Chinese display form; keep original English in titles.\",\n    \"Bloomberg Money has no confirmed fixed Chinese display form in the snippets; 彭博财富 is provisional and low confidence.\",\n    \"China comparison snippets describe the individual pension system generally; they do not establish Chinese high-earner participation rates, so no china_advantage angle is supported.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"401(k)满额缴存被质疑：高收入者只留雇主匹配，转向Roth IRA与经纪账户\",\n  \"title_lines\": [\n    \"401(k)满额缴存被质疑\",\n    \"高收入者只留雇主匹配\",\n    \"转向Roth IRA与经纪账户\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match\",\n    \"transcript: redirects to Roth IRA and brokerages for earlier access and more control\",\n    \"transcript: early withdrawal from 401(k) triggers penalty\",\n    \"public: 2025 401(k) elective deferral limit $23,500\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 7,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"tighten_display_lines\", \"shorten_full_title\"]\n\nMandatory clip-specific repair rules:\n- No additional clip-specific rule.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match",
+              "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+              "transcript: early withdrawal from 401(k) triggers penalty",
+              "public: 2025 401(k) elective deferral limit $23,500"
+            ],
+            "title": "401(k)满额缴存被质疑：高收入者只留雇主匹配，转向Roth IRA与经纪账户",
+            "title_lines": [
+              "401(k)满额缴存被质疑",
+              "高收入者只留雇主匹配",
+              "转向Roth IRA与经纪账户"
+            ],
+            "title_highlights": [
+              "401(k)满额缴存被质疑",
+              "高收入者只留雇主匹配",
+              "转向Roth IRA与经纪账户"
+            ],
+            "runner_up_titles": [
+              "高收入者不再满额缴存401(k)：只留雇主匹配，转向Roth IRA与经纪账户"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "401(k)满额缴存被质疑：高收入者只留雇主匹配，转向Roth IRA与经纪账户",
+        "title_lines": [
+          "401(k)满额缴存被质疑",
+          "高收入者只留雇主匹配",
+          "转向Roth IRA与经纪账户"
+        ],
+        "title_highlights": [
+          "401(k)满额缴存被质疑",
+          "高收入者只留雇主匹配",
+          "转向Roth IRA与经纪账户"
+        ],
+        "comment": "KC评论：高收入者不再默认满额缴存，而是保留雇主匹配后转向更灵活的账户",
+        "comment_highlights": [
+          "保留雇主匹配",
+          "更灵活的账户"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：401(k)满额缴存策略正被部分高收入者重新审视",
+            "comment_highlights": [
+              "满额缴存策略"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：一位40岁女性将缴存比例从20%降至5%",
+            "comment_highlights": [
+              "20%降至5%"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：她仍拿满雇主匹配，但不再追加缴存",
+            "comment_highlights": [
+              "仍拿满雇主匹配"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：资金被重新配置到其他账户",
+            "comment_highlights": [
+              "重新配置"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：报道方向从鼓励满额缴存转向反思",
+            "comment_highlights": [
+              "反思"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：她仍在为未来储蓄和配置，只是换了账户",
+            "comment_highlights": [
+              "换了账户"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：RothIRA和经纪账户成为替代选项",
+            "comment_highlights": [
+              "经纪账户"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：她希望更早获得资金并掌握更多控制权",
+            "comment_highlights": [
+              "更早获得资金",
+              "更多控制权"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：401(k)提前取款会面临罚金，这是转向的关键原因",
+            "comment_highlights": [
+              "提前取款",
+              "罚金"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：这一策略适合想努力工作、努力储蓄并提前退休的人",
+            "comment_highlights": [
+              "提前退休"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：财务规划需围绕个人目标，而非默认规则",
+            "comment_highlights": [
+              "个人目标"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：退休规划师对此有些担忧，传统规则面临挑战",
+            "comment_highlights": [
+              "退休规划师",
+              "担忧"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：寿命延长改变了退休储蓄的考量",
+            "comment_highlights": [
+              "寿命延长"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：与布鲁金斯学会的里程碑研究相比，活得更久是核心变化",
+            "comment_highlights": [
+              "布鲁金斯学会",
+              "活得更久"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "transcript: 40-year-old saver cut 401(k) contribution from 20% to 5%, keeps full employer match",
+          "transcript: redirects to Roth IRA and brokerages for earlier access and more control",
+          "transcript: early withdrawal from 401(k) triggers penalty",
+          "public: 2025 401(k) elective deferral limit $23,500"
+        ],
+        "runner_up_titles": [
+          "高收入者不再满额缴存401(k)：只留雇主匹配，转向Roth IRA与经纪账户"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
