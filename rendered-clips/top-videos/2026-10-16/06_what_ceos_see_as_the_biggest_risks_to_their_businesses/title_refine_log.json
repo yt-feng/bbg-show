@@ -1,0 +1,1359 @@
+{
+  "timestamp_utc": "2026-10-16T00:21:04.177574+00:00",
+  "plan_path": "work/top-videos/06_what_ceos_see_as_the_biggest_risks_to_their_businesses/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "KPMG",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "KPMG",
+        "preferred_en": "KPMG",
+        "official_zh": "毕马威",
+        "common_zh": "毕马威",
+        "title_label": "毕马威",
+        "preferred_zh": "毕马威",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "KPMG official pages confirm the firm; 毕马威 is the established Simplified Chinese name used by Chinese financial media."
+      },
+      {
+        "source_text": "Tim Walsh",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Timothy J. Walsh",
+        "preferred_en": "Timothy J. Walsh",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Tim Walsh",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "KPMG and American Heart Association CEO Roundtable both identify Tim Walsh as KPMG U.S. Chair and CEO; no reliable established Simplified Chinese personal name found, so keep English."
+      },
+      {
+        "source_text": "Blackstone",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Blackstone Inc.",
+        "preferred_en": "Blackstone Inc.",
+        "official_zh": "黑石集团",
+        "common_zh": "黑石",
+        "title_label": "黑石",
+        "preferred_zh": "黑石",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Mentioned only in passing in the transcript; no public lookup snippet was provided to verify the Chinese display form, so confidence is medium and source count is zero."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "ROI",
+        "clip_indexes": [],
+        "context": "AI investment return timeline",
+        "sense": "return on investment",
+        "preferred_zh": "投资回报率",
+        "title_label": "投资回报",
+        "avoid_zh": [
+          "回报率ROI"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "AI",
+        "clip_indexes": [],
+        "context": "enterprise technology investment",
+        "sense": "artificial intelligence",
+        "preferred_zh": "人工智能",
+        "title_label": "AI",
+        "avoid_zh": [
+          "人工智慧"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "About 90% of CEOs are pushing into AI in some form, but only about 9% say they have seen real transformation from it, and the time to ROI is changing because AI deployment is not plug-and-play.",
+        "public_baseline": "KPMG's 2025 Global CEO Outlook reports 71% of CEOs are backing AI investment, and KPMG's AI Pulse surveys report nearly 6 in 10 leaders seeing measurable business value from AI initiatives.",
+        "surprise_gap": "The transcript's ~9% real-transformation figure is far below KPMG's own public AI Pulse finding that nearly 6 in 10 leaders report measurable business value, suggesting a gap between broad AI adoption and realized transformation.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Tim Walsh says roughly 90% of CEOs are pushing into AI and about 9% report real transformation."
+          },
+          {
+            "kind": "public",
+            "query": "KPMG 2025 CEO Outlook AI investment return timeline",
+            "url": "https://assets.kpmg.com/content/dam/kpmgsites/sg/pdf/2025/10/ceo-outlook-2025-insight-summary.pdf.coredownload.inline.pdf",
+            "fact": "KPMG 2025 Global CEO Outlook says 71% of CEOs are strongly backing AI investment."
+          },
+          {
+            "kind": "public",
+            "query": "KPMG 2025 CEO survey AI investment ROI 9% transformation",
+            "url": "https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html",
+            "fact": "KPMG AI Quarterly Pulse Survey says nearly 6 in 10 leaders report measurable business value from AI initiatives."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim KPMG officially reported that only 9% of CEOs have seen real AI transformation; the public KPMG AI Pulse survey reports a much higher measurable-value figure.",
+          "Do not claim Tim Walsh said companies are not investing in AI; he said they are investing heavily.",
+          "Do not claim Blackstone made a specific statement about AI ROI; the transcript only references Blackstone comments in passing."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "No reliable established Simplified Chinese personal name was found for Tim Walsh; title should keep the English name or lead with the topic.",
+      "The 9% figure is spoken by Tim Walsh in the clip but was not confirmed by the provided public snippets; treat it as a transcript claim, not an official KPMG statistic."
+    ],
+    "research_queries": [
+      {
+        "query": "毕马威 美国 主席 Tim Walsh 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name and title for KPMG U.S. Chair and CEO Tim Walsh."
+      },
+      {
+        "query": "KPMG 2025 CEO survey AI investment ROI 9% transformation",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact KPMG survey statistic that about 9% of CEOs have seen real transformation from AI."
+      },
+      {
+        "query": "KPMG 2025 CEO Outlook AI investment return timeline",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline on CEO AI investment and expected ROI timelines from KPMG's official survey."
+      },
+      {
+        "query": "Tim Walsh KPMG US Chair CEO AI return on investment interview",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Tim Walsh's public statements on AI investment and ROI expectations."
+      },
+      {
+        "query": "毕马威 2025 CEO 调查 AI 投资 回报 周期",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language coverage of KPMG's CEO survey on AI investment and return timelines."
+      },
+      {
+        "query": "KPMG China AI investment ROI survey 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether KPMG has comparable China-specific data on AI investment and ROI."
+      },
+      {
+        "query": "Blackstone CEO comments AI investment 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Blackstone comments referenced by the interviewer regarding AI investment."
+      },
+      {
+        "query": "KPMG US Chair Tim Walsh prior statements AI transformation",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Tim Walsh has previously made similar or different claims about AI transformation."
+      },
+      {
+        "query": "KPMG CEO survey 2025 9% AI transformation statistic",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the exact 9% figure and its context in KPMG's official survey report."
+      },
+      {
+        "query": "毕马威 美国 主席 Tim Walsh 人工智能 投资",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Chinese-language references to Tim Walsh and his AI investment comments."
+      },
+      {
+        "query": "Bloomberg Biggest Risks established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "九成CEO推进AI：仅9%看到真转型，回报周期拉长后谁先撑不住？",
+      "title_lines": [
+        "九成CEO推进AI",
+        "仅9%看到真转型",
+        "回报周期拉长后谁先撑不住？"
+      ],
+      "formula_id": "数字反差+权威锚点",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "九成CEO都在推AI，却只有9%看到真转型，那剩下的人到底在等什么？",
+      "evidence_basis": [
+        "transcript: 90%的CEO在以某种形式推进AI",
+        "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+        "transcript: 获得回报的时间在变化，预期也在变化",
+        "transcript: AI部署不是即插即用"
+      ],
+      "runner_up_titles": [
+        "九成CEO押注AI，仅9%看到真转型，回报周期拉长后谁先撑不住？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 2
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        }
+      },
+      "comment": "KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-16T00:21:00.365000+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.9,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses",
+          "source_title": "Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses",
+          "show_date": "",
+          "current_title": "毕马威美国主席：CEO们正加大AI投入 回报周期拉长",
+          "current_title_lines": [
+            "毕马威美国主席谈企业风险",
+            "CEO们正加大AI投入",
+            "回报周期拉长 治理成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "现在加入我们的是毕马威美国主席兼首席执行官蒂姆·沃尔什。蒂姆，很高兴见到你。",
+              "en": "Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "也很高兴见到你，雷曼。我基本上在说，90%的首席执行官都在以某种形式推进人工智能。",
+              "en": "Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.",
+              "relative_start": 5.0,
+              "relative_end": 11.9
+            },
+            {
+              "index": 3,
+              "zh": "所以他们显然明白其重要性。",
+              "en": "So they clearly understand the importance of it.",
+              "relative_start": 11.9,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "关于回报是什么，仍有很多问题。",
+              "en": "There's still a lot of questions as to what the return is on that.",
+              "relative_start": 15.0,
+              "relative_end": 18.3
+            },
+            {
+              "index": 5,
+              "zh": "我想我在你的调查中看到的数字是大约9%的人说，至少到目前为止，我已经看到了某种真正的转型。",
+              "en": "I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.",
+              "relative_start": 18.3,
+              "relative_end": 26.1
+            },
+            {
+              "index": 6,
+              "zh": "这是一个巨大的差距。巨大的差距。但我假设，如果他们不认为这个差距会缩小，他们就不会投入这么多。",
+              "en": "That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.",
+              "relative_start": 26.1,
+              "relative_end": 31.4
+            },
+            {
+              "index": 7,
+              "zh": "所以很有趣，你的开场白就提到了黑石和评论，对吧？",
+              "en": "So so interesting, your intro there just in terms of the blackstone and comments, right?",
+              "relative_start": 31.4,
+              "relative_end": 35.2
+            },
+            {
+              "index": 8,
+              "zh": "这确实与我们看到的调查结果一致，即不是首席执行官在**而公司没有全力投入。",
+              "en": "Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.",
+              "relative_start": 35.2,
+              "relative_end": 43.5
+            },
+            {
+              "index": 9,
+              "zh": "但获得回报的时间肯定在变化，或者说预期在变化，对吧？",
+              "en": "But the time to ROI is definitely, let's say changing or the expectation, right?",
+              "relative_start": 43.5,
+              "relative_end": 48.6
+            },
+            {
+              "index": 10,
+              "zh": "随着我们更多地了解如何将人工智能部署到业务中，这并不是即插即用的。",
+              "en": "As we learn more about how to deploy AI into businesses, which is not plug-and-play.",
+              "relative_start": 48.6,
+              "relative_end": 53.6
+            },
+            {
+              "index": 11,
+              "zh": "这需要流程重新设计、AI和数据清理。",
+              "en": "This requires process redesign AI and data cleanup.",
+              "relative_start": 53.6,
+              "relative_end": 56.9
+            },
+            {
+              "index": 12,
+              "zh": "然后将AI融入业务中。作为CEO，我们相信回报会到来，",
+              "en": "And then of course for engineering the AI into the businesses. So we feel confident as CEOs that the return will come,",
+              "relative_start": 56.9,
+              "relative_end": 64.6
+            },
+            {
+              "index": 13,
+              "zh": "但需要投入和时间才能实现。他们是否担心资金投入以及是否审慎使用？",
+              "en": "but there's a required investment in timeline to get there. What are they sort of, are they worried at all about the money that is being spent and whether it is being spent prudently?",
+              "relative_start": 64.6,
+              "relative_end": 74.9
+            },
+            {
+              "index": 14,
+              "zh": "因为当这些人上我的节目或参与调查时，长期来看，他们似乎都异口同声。",
+              "en": "I mean, because when you hear from these people where they come on my show or they're in their surveys, long term, they all seem to be singing from the same him and all.",
+              "relative_start": 74.9,
+              "relative_end": 81.4
+            },
+            {
+              "index": 15,
+              "zh": "但在AI周期的早期阶段，大量资金被投入，看看哪些能成功。",
+              "en": "But there was sort of this early stage, I think of this AI and cycle, where there was just a lot of cash being thrown at the wall to see what sticks.",
+              "relative_start": 81.4,
+              "relative_end": 87.9
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"source_title\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"show_date\": \"\",\n    \"current_title\": \"毕马威美国主席：CEO们正加大AI投入 回报周期拉长\",\n    \"current_title_lines\": [\n      \"毕马威美国主席谈企业风险\",\n      \"CEO们正加大AI投入\",\n      \"回报周期拉长 治理成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"现在加入我们的是毕马威美国主席兼首席执行官蒂姆·沃尔什。蒂姆，很高兴见到你。\",\n        \"en\": \"Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"也很高兴见到你，雷曼。我基本上在说，90%的首席执行官都在以某种形式推进人工智能。\",\n        \"en\": \"Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以他们显然明白其重要性。\",\n        \"en\": \"So they clearly understand the importance of it.\",\n        \"relative_start\": 11.9,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"关于回报是什么，仍有很多问题。\",\n        \"en\": \"There's still a lot of questions as to what the return is on that.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 18.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我在你的调查中看到的数字是大约9%的人说，至少到目前为止，我已经看到了某种真正的转型。\",\n        \"en\": \"I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.\",\n        \"relative_start\": 18.3,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这是一个巨大的差距。巨大的差距。但我假设，如果他们不认为这个差距会缩小，他们就不会投入这么多。\",\n        \"en\": \"That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.\",\n        \"relative_start\": 26.1,\n        \"relative_end\": 31.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以很有趣，你的开场白就提到了黑石和评论，对吧？\",\n        \"en\": \"So so interesting, your intro there just in terms of the blackstone and comments, right?\",\n        \"relative_start\": 31.4,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这确实与我们看到的调查结果一致，即不是首席执行官在**而公司没有全力投入。\",\n        \"en\": \"Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"但获得回报的时间肯定在变化，或者说预期在变化，对吧？\",\n        \"en\": \"But the time to ROI is definitely, let's say changing or the expectation, right?\",\n        \"relative_start\": 43.5,\n        \"relative_end\": 48.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"随着我们更多地了解如何将人工智能部署到业务中，这并不是即插即用的。\",\n        \"en\": \"As we learn more about how to deploy AI into businesses, which is not plug-and-play.\",\n        \"relative_start\": 48.6,\n        \"relative_end\": 53.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这需要流程重新设计、AI和数据清理。\",\n        \"en\": \"This requires process redesign AI and data cleanup.\",\n        \"relative_start\": 53.6,\n        \"relative_end\": 56.9\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"然后将AI融入业务中。作为CEO，我们相信回报会到来，\",\n        \"en\": \"And then of course for engineering the AI into the businesses. So we feel confident as CEOs that the return will come,\",\n        \"relative_start\": 56.9,\n        \"relative_end\": 64.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"但需要投入和时间才能实现。他们是否担心资金投入以及是否审慎使用？\",\n        \"en\": \"but there's a required investment in timeline to get there. What are they sort of, are they worried at all about the money that is being spent and whether it is being spent prudently?\",\n        \"relative_start\": 64.6,\n        \"relative_end\": 74.9\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"因为当这些人上我的节目或参与调查时，长期来看，他们似乎都异口同声。\",\n        \"en\": \"I mean, because when you hear from these people where they come on my show or they're in their surveys, long term, they all seem to be singing from the same him and all.\",\n        \"relative_start\": 74.9,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"但在AI周期的早期阶段，大量资金被投入，看看哪些能成功。\",\n        \"en\": \"But there was sort of this early stage, I think of this AI and cycle, where there was just a lot of cash being thrown at the wall to see what sticks.\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"About 90% of CEOs are pushing into AI in some form, but only about 9% say they have seen real transformation from it, and the time to ROI is changing because AI deployment is not plug-and-play.\",\n      \"public_baseline\": \"KPMG's 2025 Global CEO Outlook reports 71% of CEOs are backing AI investment, and KPMG's AI Pulse surveys report nearly 6 in 10 leaders seeing measurable business value from AI initiatives.\",\n      \"surprise_gap\": \"The transcript's ~9% real-transformation figure is far below KPMG's own public AI Pulse finding that nearly 6 in 10 leaders report measurable business value, suggesting a gap between broad AI adoption and realized transformation.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tim Walsh says roughly 90% of CEOs are pushing into AI and about 9% report real transformation.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO Outlook AI investment return timeline\",\n          \"url\": \"https://assets.kpmg.com/content/dam/kpmgsites/sg/pdf/2025/10/ceo-outlook-2025-insight-summary.pdf.coredownload.inline.pdf\",\n          \"fact\": \"KPMG 2025 Global CEO Outlook says 71% of CEOs are strongly backing AI investment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO survey AI investment ROI 9% transformation\",\n          \"url\": \"https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html\",\n          \"fact\": \"KPMG AI Quarterly Pulse Survey says nearly 6 in 10 leaders report measurable business value from AI initiatives.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim KPMG officially reported that only 9% of CEOs have seen real AI transformation; the public KPMG AI Pulse survey reports a much higher measurable-value figure.\",\n        \"Do not claim Tim Walsh said companies are not investing in AI; he said they are investing heavily.\",\n        \"Do not claim Blackstone made a specific statement about AI ROI; the transcript only references Blackstone comments in passing.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable established Simplified Chinese personal name was found for Tim Walsh; title should keep the English name or lead with the topic.\",\n    \"The 9% figure is spoken by Tim Walsh in the clip but was not confirmed by the provided public snippets; treat it as a transcript claim, not an official KPMG statistic.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "约90%的CEO在推进AI，但只有约9%的人说自己看到了真正的转型，且回报周期在拉长，因为AI部署不是即插即用。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "九成CEO押注AI",
+                "title_lines": [
+                  "九成CEO押注AI",
+                  "仅9%看到真转型",
+                  "回报周期正在拉长"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 90%的CEO在以某种形式推进AI",
+                  "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+                  "transcript: 获得回报的时间在变化，预期也在变化"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "毕马威美国主席说透",
+                "title_lines": [
+                  "毕马威美国主席说透",
+                  "90%在推AI",
+                  "只有9%看到真转型"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Tim Walsh说90%的CEO在推进AI",
+                  "transcript: 只有约9%说看到了真正的转型",
+                  "speaker_relation: foreign_institution"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "90%对9%",
+                "title_lines": [
+                  "90%对9%",
+                  "AI投入与回报差距巨大",
+                  "CEO们为何还在加码"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 90%的CEO在推进AI",
+                  "transcript: 约9%看到真正的转型，这是一个巨大的差距",
+                  "transcript: 如果他们不认为差距会缩小，就不会投入这么多"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "AI部署不是即插即用",
+                "title_lines": [
+                  "AI部署不是即插即用",
+                  "需要流程重设与数据清理",
+                  "回报周期被迫拉长"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: AI部署不是即插即用",
+                  "transcript: 需要流程重新设计、AI和数据清理",
+                  "transcript: 回报需要投入和时间才能实现"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"source_title\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"show_date\": \"\",\n    \"current_title\": \"毕马威美国主席：CEO们正加大AI投入 回报周期拉长\",\n    \"current_title_lines\": [\n      \"毕马威美国主席谈企业风险\",\n      \"CEO们正加大AI投入\",\n      \"回报周期拉长 治理成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"现在加入我们的是毕马威美国主席兼首席执行官蒂姆·沃尔什。蒂姆，很高兴见到你。\",\n        \"en\": \"Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"也很高兴见到你，雷曼。我基本上在说，90%的首席执行官都在以某种形式推进人工智能。\",\n        \"en\": \"Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以他们显然明白其重要性。\",\n        \"en\": \"So they clearly understand the importance of it.\",\n        \"relative_start\": 11.9,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"关于回报是什么，仍有很多问题。\",\n        \"en\": \"There's still a lot of questions as to what the return is on that.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 18.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我在你的调查中看到的数字是大约9%的人说，至少到目前为止，我已经看到了某种真正的转型。\",\n        \"en\": \"I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.\",\n        \"relative_start\": 18.3,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这是一个巨大的差距。巨大的差距。但我假设，如果他们不认为这个差距会缩小，他们就不会投入这么多。\",\n        \"en\": \"That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.\",\n        \"relative_start\": 26.1,\n        \"relative_end\": 31.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以很有趣，你的开场白就提到了黑石和评论，对吧？\",\n        \"en\": \"So so interesting, your intro there just in terms of the blackstone and comments, right?\",\n        \"relative_start\": 31.4,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这确实与我们看到的调查结果一致，即不是首席执行官在**而公司没有全力投入。\",\n        \"en\": \"Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"但获得回报的时间肯定在变化，或者说预期在变化，对吧？\",\n        \"en\": \"But the time to ROI is definitely, let's say changing or the expectation, right?\",\n        \"relative_start\": 43.5,\n        \"relative_end\": 48.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"随着我们更多地了解如何将人工智能部署到业务中，这并不是即插即用的。\",\n        \"en\": \"As we learn more about how to deploy AI into businesses, which is not plug-and-play.\",\n        \"relative_start\": 48.6,\n        \"relative_end\": 53.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这需要流程重新设计、AI和数据清理。\",\n        \"en\": \"This requires process redesign AI and data cleanup.\",\n        \"relative_start\": 53.6,\n        \"relative_end\": 56.9\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"然后将AI融入业务中。作为CEO，我们相信回报会到来，\",\n        \"en\": \"And then of course for engineering the AI into the businesses. So we feel confident as CEOs that the return will come,\",\n        \"relative_start\": 56.9,\n        \"relative_end\": 64.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"但需要投入和时间才能实现。他们是否担心资金投入以及是否审慎使用？\",\n        \"en\": \"but there's a required investment in timeline to get there. What are they sort of, are they worried at all about the money that is being spent and whether it is being spent prudently?\",\n        \"relative_start\": 64.6,\n        \"relative_end\": 74.9\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"因为当这些人上我的节目或参与调查时，长期来看，他们似乎都异口同声。\",\n        \"en\": \"I mean, because when you hear from these people where they come on my show or they're in their surveys, long term, they all seem to be singing from the same him and all.\",\n        \"relative_start\": 74.9,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"但在AI周期的早期阶段，大量资金被投入，看看哪些能成功。\",\n        \"en\": \"But there was sort of this early stage, I think of this AI and cycle, where there was just a lot of cash being thrown at the wall to see what sticks.\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"About 90% of CEOs are pushing into AI in some form, but only about 9% say they have seen real transformation from it, and the time to ROI is changing because AI deployment is not plug-and-play.\",\n      \"public_baseline\": \"KPMG's 2025 Global CEO Outlook reports 71% of CEOs are backing AI investment, and KPMG's AI Pulse surveys report nearly 6 in 10 leaders seeing measurable business value from AI initiatives.\",\n      \"surprise_gap\": \"The transcript's ~9% real-transformation figure is far below KPMG's own public AI Pulse finding that nearly 6 in 10 leaders report measurable business value, suggesting a gap between broad AI adoption and realized transformation.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tim Walsh says roughly 90% of CEOs are pushing into AI and about 9% report real transformation.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO Outlook AI investment return timeline\",\n          \"url\": \"https://assets.kpmg.com/content/dam/kpmgsites/sg/pdf/2025/10/ceo-outlook-2025-insight-summary.pdf.coredownload.inline.pdf\",\n          \"fact\": \"KPMG 2025 Global CEO Outlook says 71% of CEOs are strongly backing AI investment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO survey AI investment ROI 9% transformation\",\n          \"url\": \"https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html\",\n          \"fact\": \"KPMG AI Quarterly Pulse Survey says nearly 6 in 10 leaders report measurable business value from AI initiatives.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim KPMG officially reported that only 9% of CEOs have seen real AI transformation; the public KPMG AI Pulse survey reports a much higher measurable-value figure.\",\n        \"Do not claim Tim Walsh said companies are not investing in AI; he said they are investing heavily.\",\n        \"Do not claim Blackstone made a specific statement about AI ROI; the transcript only references Blackstone comments in passing.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable established Simplified Chinese personal name was found for Tim Walsh; title should keep the English name or lead with the topic.\",\n    \"The 9% figure is spoken by Tim Walsh in the clip but was not confirmed by the provided public snippets; treat it as a transcript claim, not an official KPMG statistic.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"约90%的CEO在推进AI，但只有约9%的人说自己看到了真正的转型，且回报周期在拉长，因为AI部署不是即插即用。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"九成CEO押注AI\",\n          \"title_lines\": [\n            \"九成CEO押注AI\",\n            \"仅9%看到真转型\",\n            \"回报周期正在拉长\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 90%的CEO在以某种形式推进AI\",\n            \"transcript: 约9%说至少到目前为止看到了某种真正的转型\",\n            \"transcript: 获得回报的时间在变化，预期也在变化\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"毕马威美国主席说透\",\n          \"title_lines\": [\n            \"毕马威美国主席说透\",\n            \"90%在推AI\",\n            \"只有9%看到真转型\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Tim Walsh说90%的CEO在推进AI\",\n            \"transcript: 只有约9%说看到了真正的转型\",\n            \"speaker_relation: foreign_institution\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"90%对9%\",\n          \"title_lines\": [\n            \"90%对9%\",\n            \"AI投入与回报差距巨大\",\n            \"CEO们为何还在加码\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 90%的CEO在推进AI\",\n            \"transcript: 约9%看到真正的转型，这是一个巨大的差距\",\n            \"transcript: 如果他们不认为差距会缩小，就不会投入这么多\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI部署不是即插即用\",\n          \"title_lines\": [\n            \"AI部署不是即插即用\",\n            \"需要流程重设与数据清理\",\n            \"回报周期被迫拉长\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI部署不是即插即用\",\n            \"transcript: 需要流程重新设计、AI和数据清理\",\n            \"transcript: 回报需要投入和时间才能实现\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "数字反差+权威锚点",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "九成押注却只有一成看到真转型，这差距也太大了",
+            "evidence_basis": [
+              "transcript: 90%的CEO在以某种形式推进AI",
+              "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+              "transcript: 获得回报的时间在变化，预期也在变化",
+              "transcript: AI部署不是即插即用，需要流程重新设计、数据清理"
+            ],
+            "title": "九成CEO押注AI，仅9%看到真转型",
+            "title_lines": [
+              "九成CEO押注AI",
+              "仅9%看到真转型",
+              "回报周期正在拉长"
+            ],
+            "title_highlights": [
+              "九成CEO押注AI",
+              "仅9%看到真转型",
+              "回报周期正在拉长"
+            ],
+            "runner_up_titles": [
+              "90%对9%：AI投入与回报差距巨大",
+              "AI部署不是即插即用，回报周期被迫拉长"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字，AI投入与回报之间的差距值得关注。",
+            "comment_highlights": [
+              "毕马威美国主席蒂姆·沃尔什",
+              "AI投入与回报之间的差距"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：毕马威美国主席蒂姆·沃尔什出场，带来一线企业风险观察。",
+                "comment_highlights": [
+                  "毕马威美国主席蒂姆·沃尔什"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：九成CEO已在推进AI，覆盖面远超预期。",
+                "comment_highlights": [
+                  "九成CEO已在推进AI"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：重视程度毋庸置疑，但落地效果才是关键。",
+                "comment_highlights": [
+                  "落地效果才是关键"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：回报问题悬而未决，成为CEO们共同的疑问。",
+                "comment_highlights": [
+                  "回报问题悬而未决"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：仅约9%看到真正转型，与九成投入形成鲜明反差。",
+                "comment_highlights": [
+                  "仅约9%看到真正转型"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：巨大差距下仍持续加码，说明CEO们预期差距会收窄。",
+                "comment_highlights": [
+                  "巨大差距下仍持续加码"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：黑石相关评论被提及，市场关注度可见一斑。",
+                "comment_highlights": [
+                  "黑石相关评论"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：问题不在CEO是否投入，而在公司是否全力推进。",
+                "comment_highlights": [
+                  "公司是否全力推进"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：回报时间预期正在变化，这是当前最现实的挑战。",
+                "comment_highlights": [
+                  "回报时间预期正在变化"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：AI部署不是即插即用，企业需要重新理解落地难度。",
+                "comment_highlights": [
+                  "AI部署不是即插即用"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：流程重设与数据清理是绕不开的基础工作。",
+                "comment_highlights": [
+                  "流程重设与数据清理"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：CEO们相信回报会来，但需要投入和时间。",
+                "comment_highlights": [
+                  "需要投入和时间"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：资金是否审慎使用，成为CEO们关心的现实问题。",
+                "comment_highlights": [
+                  "资金是否审慎使用"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：长期看法一致，但短期执行差异明显。",
+                "comment_highlights": [
+                  "短期执行差异明显"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：早期阶段大量资金投入，市场正在观察哪些能成功。",
+                "comment_highlights": [
+                  "早期阶段大量资金投入"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"source_title\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n    \"show_date\": \"\",\n    \"current_title\": \"毕马威美国主席：CEO们正加大AI投入 回报周期拉长\",\n    \"current_title_lines\": [\n      \"毕马威美国主席谈企业风险\",\n      \"CEO们正加大AI投入\",\n      \"回报周期拉长 治理成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"现在加入我们的是毕马威美国主席兼首席执行官蒂姆·沃尔什。蒂姆，很高兴见到你。\",\n        \"en\": \"Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"也很高兴见到你，雷曼。我基本上在说，90%的首席执行官都在以某种形式推进人工智能。\",\n        \"en\": \"Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 11.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"所以他们显然明白其重要性。\",\n        \"en\": \"So they clearly understand the importance of it.\",\n        \"relative_start\": 11.9,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"关于回报是什么，仍有很多问题。\",\n        \"en\": \"There's still a lot of questions as to what the return is on that.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 18.3\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我想我在你的调查中看到的数字是大约9%的人说，至少到目前为止，我已经看到了某种真正的转型。\",\n        \"en\": \"I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.\",\n        \"relative_start\": 18.3,\n        \"relative_end\": 26.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"这是一个巨大的差距。巨大的差距。但我假设，如果他们不认为这个差距会缩小，他们就不会投入这么多。\",\n        \"en\": \"That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.\",\n        \"relative_start\": 26.1,\n        \"relative_end\": 31.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"所以很有趣，你的开场白就提到了黑石和评论，对吧？\",\n        \"en\": \"So so interesting, your intro there just in terms of the blackstone and comments, right?\",\n        \"relative_start\": 31.4,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这确实与我们看到的调查结果一致，即不是首席执行官在**而公司没有全力投入。\",\n        \"en\": \"Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 43.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"但获得回报的时间肯定在变化，或者说预期在变化，对吧？\",\n        \"en\": \"But the time to ROI is definitely, let's say changing or the expectation, right?\",\n        \"relative_start\": 43.5,\n        \"relative_end\": 48.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"随着我们更多地了解如何将人工智能部署到业务中，这并不是即插即用的。\",\n        \"en\": \"As we learn more about how to deploy AI into businesses, which is not plug-and-play.\",\n        \"relative_start\": 48.6,\n        \"relative_end\": 53.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这需要流程重新设计、AI和数据清理。\",\n        \"en\": \"This requires process redesign AI and data cleanup.\",\n        \"relative_start\": 53.6,\n        \"relative_end\": 56.9\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"然后将AI融入业务中。作为CEO，我们相信回报会到来，\",\n        \"en\": \"And then of course for engineering the AI into the businesses. So we feel confident as CEOs that the return will come,\",\n        \"relative_start\": 56.9,\n        \"relative_end\": 64.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"但需要投入和时间才能实现。他们是否担心资金投入以及是否审慎使用？\",\n        \"en\": \"but there's a required investment in timeline to get there. What are they sort of, are they worried at all about the money that is being spent and whether it is being spent prudently?\",\n        \"relative_start\": 64.6,\n        \"relative_end\": 74.9\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"因为当这些人上我的节目或参与调查时，长期来看，他们似乎都异口同声。\",\n        \"en\": \"I mean, because when you hear from these people where they come on my show or they're in their surveys, long term, they all seem to be singing from the same him and all.\",\n        \"relative_start\": 74.9,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"但在AI周期的早期阶段，大量资金被投入，看看哪些能成功。\",\n        \"en\": \"But there was sort of this early stage, I think of this AI and cycle, where there was just a lot of cash being thrown at the wall to see what sticks.\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"About 90% of CEOs are pushing into AI in some form, but only about 9% say they have seen real transformation from it, and the time to ROI is changing because AI deployment is not plug-and-play.\",\n      \"public_baseline\": \"KPMG's 2025 Global CEO Outlook reports 71% of CEOs are backing AI investment, and KPMG's AI Pulse surveys report nearly 6 in 10 leaders seeing measurable business value from AI initiatives.\",\n      \"surprise_gap\": \"The transcript's ~9% real-transformation figure is far below KPMG's own public AI Pulse finding that nearly 6 in 10 leaders report measurable business value, suggesting a gap between broad AI adoption and realized transformation.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tim Walsh says roughly 90% of CEOs are pushing into AI and about 9% report real transformation.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO Outlook AI investment return timeline\",\n          \"url\": \"https://assets.kpmg.com/content/dam/kpmgsites/sg/pdf/2025/10/ceo-outlook-2025-insight-summary.pdf.coredownload.inline.pdf\",\n          \"fact\": \"KPMG 2025 Global CEO Outlook says 71% of CEOs are strongly backing AI investment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO survey AI investment ROI 9% transformation\",\n          \"url\": \"https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html\",\n          \"fact\": \"KPMG AI Quarterly Pulse Survey says nearly 6 in 10 leaders report measurable business value from AI initiatives.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim KPMG officially reported that only 9% of CEOs have seen real AI transformation; the public KPMG AI Pulse survey reports a much higher measurable-value figure.\",\n        \"Do not claim Tim Walsh said companies are not investing in AI; he said they are investing heavily.\",\n        \"Do not claim Blackstone made a specific statement about AI ROI; the transcript only references Blackstone comments in passing.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable established Simplified Chinese personal name was found for Tim Walsh; title should keep the English name or lead with the topic.\",\n    \"The 9% figure is spoken by Tim Walsh in the clip but was not confirmed by the provided public snippets; treat it as a transcript claim, not an official KPMG statistic.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"约90%的CEO在推进AI，但只有约9%的人说自己看到了真正的转型，且回报周期在拉长，因为AI部署不是即插即用。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"九成CEO押注AI\",\n          \"title_lines\": [\n            \"九成CEO押注AI\",\n            \"仅9%看到真转型\",\n            \"回报周期正在拉长\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 90%的CEO在以某种形式推进AI\",\n            \"transcript: 约9%说至少到目前为止看到了某种真正的转型\",\n            \"transcript: 获得回报的时间在变化，预期也在变化\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"毕马威美国主席说透\",\n          \"title_lines\": [\n            \"毕马威美国主席说透\",\n            \"90%在推AI\",\n            \"只有9%看到真转型\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Tim Walsh说90%的CEO在推进AI\",\n            \"transcript: 只有约9%说看到了真正的转型\",\n            \"speaker_relation: foreign_institution\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"90%对9%\",\n          \"title_lines\": [\n            \"90%对9%\",\n            \"AI投入与回报差距巨大\",\n            \"CEO们为何还在加码\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 90%的CEO在推进AI\",\n            \"transcript: 约9%看到真正的转型，这是一个巨大的差距\",\n            \"transcript: 如果他们不认为差距会缩小，就不会投入这么多\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI部署不是即插即用\",\n          \"title_lines\": [\n            \"AI部署不是即插即用\",\n            \"需要流程重设与数据清理\",\n            \"回报周期被迫拉长\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI部署不是即插即用\",\n            \"transcript: 需要流程重新设计、AI和数据清理\",\n            \"transcript: 回报需要投入和时间才能实现\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"九成CEO押注AI：仅9%看到真转型，回报周期正在拉长\",\n      \"title_lines\": [\n        \"九成CEO押注AI\",\n        \"仅9%看到真转型\",\n        \"回报周期正在拉长\"\n      ],\n      \"title_highlights\": [\n        \"九成CEO押注AI\",\n        \"仅9%看到真转型\",\n        \"回报周期正在拉长\"\n      ],\n      \"comment\": \"KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字\",\n      \"comment_highlights\": [\n        \"毕马威美国主席蒂姆·沃尔什\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：毕马威美国主席蒂姆·沃尔什出场，带来一线企业风险观察\",\n          \"comment_highlights\": [\n            \"毕马威美国主席蒂姆·沃尔什\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：九成CEO已在推进AI，覆盖面远超预期\",\n          \"comment_highlights\": [\n            \"九成CEO已在推进AI\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：重视程度毋庸置疑，但落地效果才是关键\",\n          \"comment_highlights\": [\n            \"落地效果才是关键\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：回报问题悬而未决，成为CEO们共同的疑问\",\n          \"comment_highlights\": [\n            \"回报问题悬而未决\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：仅约9%看到真正转型，与九成投入形成鲜明反差\",\n          \"comment_highlights\": [\n            \"仅约9%看到真正转型\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：巨大差距下仍持续加码，说明CEO们预期差距会收窄\",\n          \"comment_highlights\": [\n            \"巨大差距下仍持续加码\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：黑石相关评论被提及，市场关注度可见一斑\",\n          \"comment_highlights\": [\n            \"黑石相关评论\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：问题不在CEO是否投入，而在公司是否全力推进\",\n          \"comment_highlights\": [\n            \"公司是否全力推进\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：回报时间预期正在变化，这是当前最现实的挑战\",\n          \"comment_highlights\": [\n            \"回报时间预期正在变化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：AI部署不是即插即用，企业需要重新理解落地难度\",\n          \"comment_highlights\": [\n            \"AI部署不是即插即用\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：流程重设与数据清理是绕不开的基础工作\",\n          \"comment_highlights\": [\n            \"流程重设与数据清理\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：CEO们相信回报会来，但需要投入和时间\",\n          \"comment_highlights\": [\n            \"需要投入和时间\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：资金是否审慎使用，成为CEO们关心的现实问题\",\n          \"comment_highlights\": [\n            \"资金是否审慎使用\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：长期看法一致，但短期执行差异明显\",\n          \"comment_highlights\": [\n            \"短期执行差异明显\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：早期阶段大量资金投入，市场正在观察哪些能成功\",\n          \"comment_highlights\": [\n            \"早期阶段大量资金投入\"\n          ]\n        }\n      ],\n      \"formula_id\": \"数字反差+权威锚点\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"九成押注却只有一成看到真转型，这差距也太大了\",\n      \"evidence_basis\": [\n        \"transcript: 90%的CEO在以某种形式推进AI\",\n        \"transcript: 约9%说至少到目前为止看到了某种真正的转型\",\n        \"transcript: 获得回报的时间在变化，预期也在变化\",\n        \"transcript: AI部署不是即插即用，需要流程重新设计、数据清理\"\n      ],\n      \"runner_up_titles\": [\n        \"90%对9%：AI投入与回报差距巨大\",\n        \"AI部署不是即插即用，回报周期被迫拉长\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "数字反差+权威锚点",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "九成押注却只有一成看到真转型，这差距也太大了",
+                "evidence_basis": [
+                  "transcript: 90%的CEO在以某种形式推进AI",
+                  "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+                  "transcript: 获得回报的时间在变化，预期也在变化",
+                  "transcript: AI部署不是即插即用，需要流程重新设计、数据清理"
+                ],
+                "title": "九成CEO押注AI，仅9%看到真转型",
+                "title_lines": [
+                  "九成CEO押注AI",
+                  "仅9%看到真转型",
+                  "回报周期正在拉长"
+                ],
+                "title_highlights": [
+                  "九成CEO押注AI",
+                  "仅9%看到真转型",
+                  "回报周期正在拉长"
+                ],
+                "runner_up_titles": [
+                  "90%对9%：AI投入与回报差距巨大",
+                  "AI部署不是即插即用，回报周期被迫拉长"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字，AI投入与落地效果之间的差距值得关注。",
+                "comment_highlights": [
+                  "毕马威美国主席蒂姆·沃尔什",
+                  "AI投入与落地效果之间的差距"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：毕马威美国主席蒂姆·沃尔什出场，带来一线企业风险观察。",
+                    "comment_highlights": [
+                      "毕马威美国主席蒂姆·沃尔什"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：九成CEO已在推进AI，覆盖面远超预期。",
+                    "comment_highlights": [
+                      "九成CEO已在推进AI"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：重视程度毋庸置疑，但落地效果才是关键。",
+                    "comment_highlights": [
+                      "落地效果才是关键"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：回报问题悬而未决，成为CEO们共同的疑问。",
+                    "comment_highlights": [
+                      "回报问题悬而未决"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：仅约9%看到真正转型，与九成投入形成鲜明反差。",
+                    "comment_highlights": [
+                      "仅约9%看到真正转型"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：巨大差距下仍持续加码，说明CEO们预期差距会收窄。",
+                    "comment_highlights": [
+                      "巨大差距下仍持续加码"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：黑石相关评论被提及，市场关注度可见一斑。",
+                    "comment_highlights": [
+                      "黑石相关评论"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：问题不在CEO是否投入，而在公司是否全力推进。",
+                    "comment_highlights": [
+                      "公司是否全力推进"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：回报时间预期正在变化，这是当前最现实的挑战。",
+                    "comment_highlights": [
+                      "回报时间预期正在变化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：AI部署不是即插即用，企业需要重新理解落地难度。",
+                    "comment_highlights": [
+                      "AI部署不是即插即用"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：流程重设与数据清理是绕不开的基础工作。",
+                    "comment_highlights": [
+                      "流程重设与数据清理"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：CEO们相信回报会来，但需要投入和时间。",
+                    "comment_highlights": [
+                      "需要投入和时间"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：资金是否审慎使用，成为CEO们关心的现实问题。",
+                    "comment_highlights": [
+                      "资金是否审慎使用"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：长期看法一致，但短期执行差异明显。",
+                    "comment_highlights": [
+                      "短期执行差异明显"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：早期阶段大量资金投入，市场正在观察哪些能成功。",
+                    "comment_highlights": [
+                      "早期阶段大量资金投入"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "九成CEO押注AI：仅9%看到真转型，回报周期正在拉长",
+          "title_lines": [
+            "九成CEO押注AI",
+            "仅9%看到真转型",
+            "回报周期正在拉长"
+          ],
+          "formula_id": "数字反差+权威锚点",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "九成押注却只有一成看到真转型，这差距也太大了",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-16T00:21:02.853816+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.9,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses",
+          "source_title": "Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses",
+          "show_date": "",
+          "current_title": "毕马威美国主席：CEO们正加大AI投入 回报周期拉长",
+          "current_title_lines": [
+            "毕马威美国主席谈企业风险",
+            "CEO们正加大AI投入",
+            "回报周期拉长 治理成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "现在加入我们的是毕马威美国主席兼首席执行官蒂姆·沃尔什。蒂姆，很高兴见到你。",
+              "en": "Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "也很高兴见到你，雷曼。我基本上在说，90%的首席执行官都在以某种形式推进人工智能。",
+              "en": "Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.",
+              "relative_start": 5.0,
+              "relative_end": 11.9
+            },
+            {
+              "index": 3,
+              "zh": "所以他们显然明白其重要性。",
+              "en": "So they clearly understand the importance of it.",
+              "relative_start": 11.9,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "关于回报是什么，仍有很多问题。",
+              "en": "There's still a lot of questions as to what the return is on that.",
+              "relative_start": 15.0,
+              "relative_end": 18.3
+            },
+            {
+              "index": 5,
+              "zh": "我想我在你的调查中看到的数字是大约9%的人说，至少到目前为止，我已经看到了某种真正的转型。",
+              "en": "I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.",
+              "relative_start": 18.3,
+              "relative_end": 26.1
+            },
+            {
+              "index": 6,
+              "zh": "这是一个巨大的差距。巨大的差距。但我假设，如果他们不认为这个差距会缩小，他们就不会投入这么多。",
+              "en": "That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.",
+              "relative_start": 26.1,
+              "relative_end": 31.4
+            },
+            {
+              "index": 7,
+              "zh": "所以很有趣，你的开场白就提到了黑石和评论，对吧？",
+              "en": "So so interesting, your intro there just in terms of the blackstone and comments, right?",
+              "relative_start": 31.4,
+              "relative_end": 35.2
+            },
+            {
+              "index": 8,
+              "zh": "这确实与我们看到的调查结果一致，即不是首席执行官在**而公司没有全力投入。",
+              "en": "Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.",
+              "relative_start": 35.2,
+              "relative_end": 43.5
+            },
+            {
+              "index": 9,
+              "zh": "但获得回报的时间肯定在变化，或者说预期在变化，对吧？",
+              "en": "But the time to ROI is definitely, let's say changing or the expectation, right?",
+              "relative_start": 43.5,
+              "relative_end": 48.6
+            },
+            {
+              "index": 10,
+              "zh": "随着我们更多地了解如何将人工智能部署到业务中，这并不是即插即用的。",
+              "en": "As we learn more about how to deploy AI into businesses, which is not plug-and-play.",
+              "relative_start": 48.6,
+              "relative_end": 53.6
+            },
+            {
+              "index": 11,
+              "zh": "这需要流程重新设计、AI和数据清理。",
+              "en": "This requires process redesign AI and data cleanup.",
+              "relative_start": 53.6,
+              "relative_end": 56.9
+            },
+            {
+              "index": 12,
+              "zh": "然后将AI融入业务中。作为CEO，我们相信回报会到来，",
+              "en": "And then of course for engineering the AI into the businesses. So we feel confident as CEOs that the return will come,",
+              "relative_start": 56.9,
+              "relative_end": 64.6
+            },
+            {
+              "index": 13,
+              "zh": "但需要投入和时间才能实现。他们是否担心资金投入以及是否审慎使用？",
+              "en": "but there's a required investment in timeline to get there. What are they sort of, are they worried at all about the money that is being spent and whether it is being spent prudently?",
+              "relative_start": 64.6,
+              "relative_end": 74.9
+            },
+            {
+              "index": 14,
+              "zh": "因为当这些人上我的节目或参与调查时，长期来看，他们似乎都异口同声。",
+              "en": "I mean, because when you hear from these people where they come on my show or they're in their surveys, long term, they all seem to be singing from the same him and all.",
+              "relative_start": 74.9,
+              "relative_end": 81.4
+            },
+            {
+              "index": 15,
+              "zh": "但在AI周期的早期阶段，大量资金被投入，看看哪些能成功。",
+              "en": "But there was sort of this early stage, I think of this AI and cycle, where there was just a lot of cash being thrown at the wall to see what sticks.",
+              "relative_start": 81.4,
+              "relative_end": 87.9
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n  \"source_title\": \"Duration: 8:12 What CEOs See as the Biggest Risks to Their Businesses\",\n  \"current_title\": \"毕马威美国主席：CEO们正加大AI投入 回报周期拉长\",\n  \"source_claims\": [\n    \"Joining us right now is the U.S. Chair and CEO of KPMG Tim Walsh. Tim, great to see you here.\",\n    \"Great to see you as well, remain. I'm basically talking like 90% of the CEOs out there are basically pushing into AI in some form or another.\",\n    \"So they clearly understand the importance of it.\",\n    \"There's still a lot of questions as to what the return is on that.\",\n    \"I think the number that I saw in your survey was about 9% said, at least as of right now, I've seen some sort of real transformation by it.\",\n    \"That's a huge gap. Huge gap. But I assume they wouldn't be investing this much if they didn't think that gap was going to narrow.\",\n    \"So so interesting, your intro there just in terms of the blackstone and comments, right?\",\n    \"Which really lines to the survey results that we're seeing is a result that it's not that CEOs are investing and companies aren't going all in.\",\n    \"But the time to ROI is definitely, let's say changing or the expectation, right?\",\n    \"As we learn more about how to deploy AI into businesses, which is not plug-and-play.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"About 90% of CEOs are pushing into AI in some form, but only about 9% say they have seen real transformation from it, and the time to ROI is changing because AI deployment is not plug-and-play.\",\n      \"public_baseline\": \"KPMG's 2025 Global CEO Outlook reports 71% of CEOs are backing AI investment, and KPMG's AI Pulse surveys report nearly 6 in 10 leaders seeing measurable business value from AI initiatives.\",\n      \"surprise_gap\": \"The transcript's ~9% real-transformation figure is far below KPMG's own public AI Pulse finding that nearly 6 in 10 leaders report measurable business value, suggesting a gap between broad AI adoption and realized transformation.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Tim Walsh says roughly 90% of CEOs are pushing into AI and about 9% report real transformation.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO Outlook AI investment return timeline\",\n          \"url\": \"https://assets.kpmg.com/content/dam/kpmgsites/sg/pdf/2025/10/ceo-outlook-2025-insight-summary.pdf.coredownload.inline.pdf\",\n          \"fact\": \"KPMG 2025 Global CEO Outlook says 71% of CEOs are strongly backing AI investment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"KPMG 2025 CEO survey AI investment ROI 9% transformation\",\n          \"url\": \"https://kpmg.com/us/en/articles/2025/ai-quarterly-pulse-survey.html\",\n          \"fact\": \"KPMG AI Quarterly Pulse Survey says nearly 6 in 10 leaders report measurable business value from AI initiatives.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim KPMG officially reported that only 9% of CEOs have seen real AI transformation; the public KPMG AI Pulse survey reports a much higher measurable-value figure.\",\n        \"Do not claim Tim Walsh said companies are not investing in AI; he said they are investing heavily.\",\n        \"Do not claim Blackstone made a specific statement about AI ROI; the transcript only references Blackstone comments in passing.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"No reliable established Simplified Chinese personal name was found for Tim Walsh; title should keep the English name or lead with the topic.\",\n    \"The 9% figure is spoken by Tim Walsh in the clip but was not confirmed by the provided public snippets; treat it as a transcript claim, not an official KPMG statistic.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"九成CEO押注AI：仅9%看到真转型，回报周期正在拉长\",\n  \"title_lines\": [\n    \"九成CEO押注AI\",\n    \"仅9%看到真转型\",\n    \"回报周期正在拉长\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"九成押注却只有一成看到真转型，这差距也太大了\",\n  \"evidence_basis\": [\n    \"transcript: 90%的CEO在以某种形式推进AI\",\n    \"transcript: 约9%说至少到目前为止看到了某种真正的转型\",\n    \"transcript: 获得回报的时间在变化，预期也在变化\",\n    \"transcript: AI部署不是即插即用，需要流程重新设计、数据清理\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "九成CEO都在推AI，却只有9%看到真转型，那剩下的人到底在等什么？",
+            "evidence_basis": [
+              "transcript: 90%的CEO在以某种形式推进AI",
+              "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+              "transcript: 获得回报的时间在变化，预期也在变化",
+              "transcript: AI部署不是即插即用"
+            ],
+            "title": "九成CEO推进AI，仅9%看到真转型，回报周期拉长后谁先撑不住？",
+            "title_lines": [
+              "九成CEO推进AI",
+              "仅9%看到真转型",
+              "回报周期拉长后谁先撑不住？"
+            ],
+            "title_highlights": [
+              "九成CEO推进AI",
+              "仅9%看到真转型",
+              "回报周期拉长后谁先撑不住？"
+            ],
+            "runner_up_titles": [
+              "九成CEO押注AI，仅9%看到真转型，回报周期拉长后谁先撑不住？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "九成CEO推进AI：仅9%看到真转型，回报周期拉长后谁先撑不住？",
+        "title_lines": [
+          "九成CEO推进AI",
+          "仅9%看到真转型",
+          "回报周期拉长后谁先撑不住？"
+        ],
+        "title_highlights": [
+          "九成CEO推进AI",
+          "仅9%看到真转型",
+          "回报周期拉长后谁先撑不住？"
+        ],
+        "comment": "KC评论：毕马威美国主席蒂姆·沃尔什在访谈中给出这组数字",
+        "comment_highlights": [
+          "毕马威美国主席蒂姆·沃尔什"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：毕马威美国主席蒂姆·沃尔什出场，带来一线企业风险观察",
+            "comment_highlights": [
+              "毕马威美国主席蒂姆·沃尔什"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：九成CEO已在推进AI，覆盖面远超预期",
+            "comment_highlights": [
+              "九成CEO已在推进AI"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：重视程度毋庸置疑，但落地效果才是关键",
+            "comment_highlights": [
+              "落地效果才是关键"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：回报问题悬而未决，成为CEO们共同的疑问",
+            "comment_highlights": [
+              "回报问题悬而未决"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：仅约9%看到真正转型，与九成投入形成鲜明反差",
+            "comment_highlights": [
+              "仅约9%看到真正转型"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：巨大差距下仍持续加码，说明CEO们预期差距会收窄",
+            "comment_highlights": [
+              "巨大差距下仍持续加码"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：黑石相关评论被提及，市场关注度可见一斑",
+            "comment_highlights": [
+              "黑石相关评论"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：问题不在CEO是否投入，而在公司是否全力推进",
+            "comment_highlights": [
+              "公司是否全力推进"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：回报时间预期正在变化，这是当前最现实的挑战",
+            "comment_highlights": [
+              "回报时间预期正在变化"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：AI部署不是即插即用，企业需要重新理解落地难度",
+            "comment_highlights": [
+              "AI部署不是即插即用"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：流程重设与数据清理是绕不开的基础工作",
+            "comment_highlights": [
+              "流程重设与数据清理"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：CEO们相信回报会来，但需要投入和时间",
+            "comment_highlights": [
+              "需要投入和时间"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：资金是否审慎使用，成为CEO们关心的现实问题",
+            "comment_highlights": [
+              "资金是否审慎使用"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：长期看法一致，但短期执行差异明显",
+            "comment_highlights": [
+              "短期执行差异明显"
+            ]
+          },
+          {
+            "subtitle_index": 15,
+            "comment": "KC评论：早期阶段大量资金投入，市场正在观察哪些能成功",
+            "comment_highlights": [
+              "早期阶段大量资金投入"
+            ]
+          }
+        ],
+        "formula_id": "数字反差+权威锚点",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "九成CEO都在推AI，却只有9%看到真转型，那剩下的人到底在等什么？",
+        "evidence_basis": [
+          "transcript: 90%的CEO在以某种形式推进AI",
+          "transcript: 约9%说至少到目前为止看到了某种真正的转型",
+          "transcript: 获得回报的时间在变化，预期也在变化",
+          "transcript: AI部署不是即插即用"
+        ],
+        "runner_up_titles": [
+          "九成CEO押注AI，仅9%看到真转型，回报周期拉长后谁先撑不住？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
