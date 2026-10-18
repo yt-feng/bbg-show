@@ -1,0 +1,872 @@
+{
+  "timestamp_utc": "2026-10-18T00:09:46.513059+00:00",
+  "plan_path": "work/top-videos/06_can_digital_infrastructure_transform_economies/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Ruben",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "",
+        "preferred_en": "",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Ruben",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Search returned Ruben Enikolopov (CEPR) and GDN/CSIS DPI pages, but none ties a 'Ruben' to this Bloomberg panel or to digital financial transactions and productivity. Identity unconfirmed; keep English first name."
+      },
+      {
+        "source_text": "Mr. Nilikani",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "",
+        "preferred_en": "",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Nilikani",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "DuckDuckGo results mention PSAC Digital Infrastructure, Timor-Leste Deputy PM Francisco Kalbuadi Lay, and India's Jyotiraditya Scindia, but none confirms a 'Mr. Nilikani' or his title. Likely a transcription variant; do not guess a Chinese name."
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Speaker field names Bloomberg; no lookup snippet was run for Bloomberg's Chinese name. 彭博 is the widely used Chinese media form, but this batch has no supporting snippet, so confidence is medium and count is 0."
+      },
+      {
+        "source_text": "digital public infrastructure (DPI)",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Digital Public Infrastructure",
+        "preferred_en": "Digital Public Infrastructure",
+        "official_zh": "",
+        "common_zh": "数字公共基础设施",
+        "title_label": "数字公共基础设施",
+        "preferred_zh": "数字公共基础设施",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "GDN, CSIS and Digital Impact Alliance all use 'digital public infrastructure (DPI)' as the established English term; Chinese rendering 数字公共基础设施 is the standard literal form but no bilingual source in this batch confirms it."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "digital public infrastructure (DPI)",
+        "clip_indexes": [],
+        "context": "digital financial transactions, productivity and public digital rails",
+        "sense": "shared digital systems (identity, payments, data exchange) underpinning a digital economy",
+        "preferred_zh": "数字公共基础设施",
+        "title_label": "数字公共基础设施",
+        "avoid_zh": [
+          "数字基建",
+          "数字基础设施"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "digital financial transactions",
+        "clip_indexes": [],
+        "context": "measuring whether cheaper transactions raise productivity",
+        "sense": "payments and transfers executed over digital rails",
+        "preferred_zh": "数字金融交易",
+        "title_label": "数字金融交易",
+        "avoid_zh": [
+          "电子转账"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "productivity",
+        "clip_indexes": [],
+        "context": "moving beyond efficiency gains to output per unit of input",
+        "sense": "economic productivity, not app feature efficiency",
+        "preferred_zh": "生产率",
+        "title_label": "生产率",
+        "avoid_zh": [
+          "生产力提升幅度"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "A solid digital public infrastructure makes transactions definitely cheaper, but the panel questions at what point that moves beyond efficiency to actually increasing productivity, and the guest says there is no easy answer.",
+        "public_baseline": "Public DPI literature (Carnegie, Digital Impact Alliance, IMF) frames DPI as a catalyst for efficiency, inclusion and growth, while noting benefits are uneven and evidence on productivity is still being built.",
+        "surprise_gap": "The panel's admission that cheaper transactions do not straightforwardly translate into higher productivity is a candid caveat against the more promotional 'DPI drives growth' framing common in policy advocacy.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Guest states a solid digital public infrastructure makes transactions definitely cheaper."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Host asks at what point efficiency gains become actual productivity increases; guest replies there is no easy answer."
+          },
+          {
+            "kind": "public",
+            "query": "digital public infrastructure transactions cheaper productivity efficiency economics",
+            "url": "https://carnegieendowment.org/posts/2024/02/the-economic-case-for-digital-public-infrastructure",
+            "fact": "Carnegie frames DPI as a potential catalyst for growth and efficiency under the right interoperability and incentive conditions."
+          },
+          {
+            "kind": "public",
+            "query": "digital public infrastructure transactions cheaper productivity efficiency economics",
+            "url": "https://dial.global/research/economics-of-digital-public-infrastructure",
+            "fact": "Digital Impact Alliance notes DPI benefits are not evenly distributed and more robust research is needed on economic impact."
+          },
+          {
+            "kind": "public",
+            "query": "Ruben digital public infrastructure productivity economist",
+            "url": "https://cepr.org/about/people/ruben-enikolopov",
+            "fact": "CEPR lists a Ruben Enikolopov, but no source links him to this panel."
+          }
+        ],
+        "forbidden_claims": [
+          "That the speaker is Ruben Enikolopov or any named economist",
+          "That 'Mr. Nilikani' is a confirmed minister or that the conference is identified",
+          "That DPI has been proven not to raise productivity",
+          "That any speaker contradicted a prior public position",
+          "Any China comparison or advantage claim"
+        ],
+        "confidence": "low"
+      }
+    ],
+    "notes": [
+      "No lookup snippet confirms the identity of 'Ruben' or 'Mr. Nilikani'; both title labels stay in English and confidence is low.",
+      "Bloomberg's Chinese name 彭博 is widely used but has zero supporting snippets in this batch, so verified_source_count is 0.",
+      "Chinese renderings for DPI and related terms are standard literal forms; only the English term is corroborated by three public sources.",
+      "The clip is a panel discussion, not an editorial; Bloomberg as publisher is not treated as the opinion holder."
+    ],
+    "research_queries": [
+      {
+        "query": "Ruben digital public infrastructure productivity economist",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify which economist named Ruben spoke on digital financial transactions and productivity at this Bloomberg panel"
+      },
+      {
+        "query": "Nilikani digital infrastructure prime minister conference",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact name and title of 'Mr. Nilikani' referenced on stage and the conference/prime minister context"
+      },
+      {
+        "query": "digital public infrastructure transactions cheaper productivity efficiency economics",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the mainstream economic consensus on whether DPI lowers transaction costs but has unclear productivity effects"
+      },
+      {
+        "query": "digital financial transactions productivity measurement evidence",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the accepted research baseline on measuring productivity gains from digital financial transactions"
+      },
+      {
+        "query": "India UPI digital public infrastructure productivity GDP evidence",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check the concrete evidence base for DPI productivity claims often cited at such conferences"
+      },
+      {
+        "query": "World Bank digital public infrastructure transaction costs report",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find official institutional position on DPI reducing transaction costs to test the source claim"
+      },
+      {
+        "query": "China digital infrastructure productivity growth digital economy GDP share",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify concrete China comparative data on digital infrastructure and productivity to test any implicit comparison"
+      },
+      {
+        "query": "China mobile payment penetration transaction cost Alipay WeChat Pay statistics",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish concrete China advantage figures on digital financial transactions and cost reduction"
+      },
+      {
+        "query": "Ruben economist prior statements digital public infrastructure productivity",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether the speaker Ruben previously made consistent or changed claims on DPI and productivity"
+      },
+      {
+        "query": "Bloomberg Can Digital Infrastructure Transform Economies established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Can Digital Infrastructure Transform Economies 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "交易成本降了：生产力却没跟上，这笔账怎么算",
+      "title_lines": [
+        "交易成本降了",
+        "生产力却没跟上",
+        "这笔账怎么算"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "transcript: 坚实的数字公共基础设施确实让交易成本更低",
+        "transcript: 何时超越效率真正提升生产力，没有简单答案",
+        "transcript: 很难证明交易在缺少UPI等系统时不会发生"
+      ],
+      "runner_up_titles": [
+        "台上被问效率转生产力，嘉宾说很难证明",
+        "订阅变容易了，增长却难回答"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 8,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 5
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        }
+      },
+      "comment": "KC评论：数字设施降低摩擦，但增长证据仍待补齐"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-18T00:09:45.366840+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 25:58 Can Digital Infrastructure Transform Economies?",
+          "source_title": "Duration: 25:58 Can Digital Infrastructure Transform Economies?",
+          "show_date": "",
+          "current_title": "数字基础设施能否重塑经济体",
+          "current_title_lines": [
+            "数字公共设施成焦点",
+            "交易成本下降之后",
+            "效率能否转为生产力"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "数字基础设施的问题从会议一开始就备受关注。",
+              "en": "The question of the digital infrastructure has really gripped this conference right since the start.",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "总理已多次提及这一点。",
+              "en": "The Prime Minister has made mention of it several times.",
+              "relative_start": 5.0,
+              "relative_end": 8.0
+            },
+            {
+              "index": 3,
+              "zh": "尼利卡尼先生也在台上谈论了它及其潜力。",
+              "en": "There was Mr. Nilikani on stage talking about it and talking about its potential.",
+              "relative_start": 8.0,
+              "relative_end": 12.0
+            },
+            {
+              "index": 4,
+              "zh": "很高兴能邀请两位一起进一步讨论。",
+              "en": "And I'm glad to be joined by both of you to discuss this further.",
+              "relative_start": 12.0,
+              "relative_end": 17.0
+            },
+            {
+              "index": 5,
+              "zh": "那我们从主要问题本身开始吧。",
+              "en": "So let's start from the main question itself.",
+              "relative_start": 17.0,
+              "relative_end": 21.0
+            },
+            {
+              "index": 6,
+              "zh": "是的，坚实的数字公共基础设施确实让交易成本更低。",
+              "en": "Yes, a solid digital public infrastructure makes transactions definitely cheaper.",
+              "relative_start": 21.0,
+              "relative_end": 27.0
+            },
+            {
+              "index": 7,
+              "zh": "但鲁本，我想先问你，你觉得我们何时能超越效率，真正提升生产力？",
+              "en": "But if I can ask my first question to you, Ruben, at what point do you feel that we move beyond efficiency to actually increasing productivity?",
+              "relative_start": 27.0,
+              "relative_end": 37.0
+            },
+            {
+              "index": 8,
+              "zh": "可惜这个问题没有简单答案。",
+              "en": "Yeah, so unfortunately there's no easy answer to this.",
+              "relative_start": 37.0,
+              "relative_end": 41.0
+            },
+            {
+              "index": 9,
+              "zh": "我要戴上经济学极客的帽子了，比如看数字金融交易，",
+              "en": "I'm going to wear my nerdy economics hat here, which is, so if you look at digital financial transactions for instance,",
+              "relative_start": 41.0,
+              "relative_end": 49.0
+            },
+            {
+              "index": 10,
+              "zh": "你如何确定生产力更高了呢？",
+              "en": "how do you establish that there's greater productivity?",
+              "relative_start": 49.0,
+              "relative_end": 52.0
+            },
+            {
+              "index": 11,
+              "zh": "你得说明，这是一笔本来会发生、已经发生、但如果没有UPI或PICS等系统就不会发生的交易。",
+              "en": "You have to basically say that here's a transaction that would have happened, that has happened, that would not have happened in the absence of, say, UPI or PICS or any of these things.",
+              "relative_start": 52.0,
+              "relative_end": 62.0
+            },
+            {
+              "index": 12,
+              "zh": "这很难证明。",
+              "en": "That is very difficult to establish.",
+              "relative_start": 62.0,
+              "relative_end": 65.0
+            },
+            {
+              "index": 13,
+              "zh": "所以我总是谨慎，是的，它大幅降低了交易成本，但是否带来增长则更难回答。",
+              "en": "And so I'm always measured about, yes, it is dramatically lowering transaction costs but whether it's leading to growth is a trickier question to answer.",
+              "relative_start": 65.0,
+              "relative_end": 75.0
+            },
+            {
+              "index": 14,
+              "zh": "但你开始看到迹象，更低的摩擦正在带来其他变化。",
+              "en": "But you're beginning to see signs that the lower friction is leading to other stuff.",
+              "relative_start": 75.0,
+              "relative_end": 80.0
+            },
+            {
+              "index": 15,
+              "zh": "例如，对于频繁交易，它显然使频繁交易成为可能，因此订阅服务等变得容易多了。",
+              "en": "For instance, for frequent transactions, it has obviously made frequent transactions, so subscription services and so on have become much easier.",
+              "relative_start": 80.0,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 25:58 Can Digital Infrastructure Transform Economies?\",\n    \"source_title\": \"Duration: 25:58 Can Digital Infrastructure Transform Economies?\",\n    \"show_date\": \"\",\n    \"current_title\": \"数字基础设施能否重塑经济体\",\n    \"current_title_lines\": [\n      \"数字公共设施成焦点\",\n      \"交易成本下降之后\",\n      \"效率能否转为生产力\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"数字基础设施的问题从会议一开始就备受关注。\",\n        \"en\": \"The question of the digital infrastructure has really gripped this conference right since the start.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"总理已多次提及这一点。\",\n        \"en\": \"The Prime Minister has made mention of it several times.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 8.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"尼利卡尼先生也在台上谈论了它及其潜力。\",\n        \"en\": \"There was Mr. Nilikani on stage talking about it and talking about its potential.\",\n        \"relative_start\": 8.0,\n        \"relative_end\": 12.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"很高兴能邀请两位一起进一步讨论。\",\n        \"en\": \"And I'm glad to be joined by both of you to discuss this further.\",\n        \"relative_start\": 12.0,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"那我们从主要问题本身开始吧。\",\n        \"en\": \"So let's start from the main question itself.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"是的，坚实的数字公共基础设施确实让交易成本更低。\",\n        \"en\": \"Yes, a solid digital public infrastructure makes transactions definitely cheaper.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 27.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"但鲁本，我想先问你，你觉得我们何时能超越效率，真正提升生产力？\",\n        \"en\": \"But if I can ask my first question to you, Ruben, at what point do you feel that we move beyond efficiency to actually increasing productivity?\",\n        \"relative_start\": 27.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"可惜这个问题没有简单答案。\",\n        \"en\": \"Yeah, so unfortunately there's no easy answer to this.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我要戴上经济学极客的帽子了，比如看数字金融交易，\",\n        \"en\": \"I'm going to wear my nerdy economics hat here, which is, so if you look at digital financial transactions for instance,\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 49.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"你如何确定生产力更高了呢？\",\n        \"en\": \"how do you establish that there's greater productivity?\",\n        \"relative_start\": 49.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"你得说明，这是一笔本来会发生、已经发生、但如果没有UPI或PICS等系统就不会发生的交易。\",\n        \"en\": \"You have to basically say that here's a transaction that would have happened, that has happened, that would not have happened in the absence of, say, UPI or PICS or any of these things.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这很难证明。\",\n        \"en\": \"That is very difficult to establish.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 65.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"所以我总是谨慎，是的，它大幅降低了交易成本，但是否带来增长则更难回答。\",\n        \"en\": \"And so I'm always measured about, yes, it is dramatically lowering transaction costs but whether it's leading to growth is a trickier question to answer.\",\n        \"relative_start\": 65.0,\n        \"relative_end\": 75.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"但你开始看到迹象，更低的摩擦正在带来其他变化。\",\n        \"en\": \"But you're beginning to see signs that the lower friction is leading to other stuff.\",\n        \"relative_start\": 75.0,\n        \"relative_end\": 80.0\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"例如，对于频繁交易，它显然使频繁交易成为可能，因此订阅服务等变得容易多了。\",\n        \"en\": \"For instance, for frequent transactions, it has obviously made frequent transactions, so subscription services and so on have become much easier.\",\n        \"relative_start\": 80.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"A solid digital public infrastructure makes transactions definitely cheaper, but the panel questions at what point that moves beyond efficiency to actually increasing productivity, and the guest says there is no easy answer.\",\n      \"public_baseline\": \"Public DPI literature (Carnegie, Digital Impact Alliance, IMF) frames DPI as a catalyst for efficiency, inclusion and growth, while noting benefits are uneven and evidence on productivity is still being built.\",\n      \"surprise_gap\": \"The panel's admission that cheaper transactions do not straightforwardly translate into higher productivity is a candid caveat against the more promotional 'DPI drives growth' framing common in policy advocacy.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Guest states a solid digital public infrastructure makes transactions definitely cheaper.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Host asks at what point efficiency gains become actual productivity increases; guest replies there is no easy answer.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"digital public infrastructure transactions cheaper productivity efficiency economics\",\n          \"url\": \"https://carnegieendowment.org/posts/2024/02/the-economic-case-for-digital-public-infrastructure\",\n          \"fact\": \"Carnegie frames DPI as a potential catalyst for growth and efficiency under the right interoperability and incentive conditions.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"digital public infrastructure transactions cheaper productivity efficiency economics\",\n          \"url\": \"https://dial.global/research/economics-of-digital-public-infrastructure\",\n          \"fact\": \"Digital Impact Alliance notes DPI benefits are not evenly distributed and more robust research is needed on economic impact.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ruben digital public infrastructure productivity economist\",\n          \"url\": \"https://cepr.org/about/people/ruben-enikolopov\",\n          \"fact\": \"CEPR lists a Ruben Enikolopov, but no source links him to this panel.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That the speaker is Ruben Enikolopov or any named economist\",\n        \"That 'Mr. Nilikani' is a confirmed minister or that the conference is identified\",\n        \"That DPI has been proven not to raise productivity\",\n        \"That any speaker contradicted a prior public position\",\n        \"Any China comparison or advantage claim\"\n      ],\n      \"confidence\": \"low\"\n    }\n  ],\n  \"notes\": [\n    \"No lookup snippet confirms the identity of 'Ruben' or 'Mr. Nilikani'; both title labels stay in English and confidence is low.\",\n    \"Bloomberg's Chinese name 彭博 is widely used but has zero supporting snippets in this batch, so verified_source_count is 0.\",\n    \"Chinese renderings for DPI and related terms are standard literal forms; only the English term is corroborated by three public sources.\",\n    \"The clip is a panel discussion, not an editorial; Bloomberg as publisher is not treated as the opinion holder.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "嘉宾承认坚实的数字公共基础设施确实让交易成本更低，但被问到效率何时转为生产力提升时，他说没有简单答案，也很难证明这些交易在缺少系统时就不会发生。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "交易成本降了，生产力却没跟上",
+                "title_lines": [
+                  "交易成本降了",
+                  "生产力却没跟上",
+                  "这笔账怎么算"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 坚实的数字公共基础设施确实让交易成本更低",
+                  "transcript: 何时超越效率真正提升生产力，没有简单答案",
+                  "transcript: 很难证明交易在缺少系统时不会发生"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "台上被问效率转生产力，嘉宾说很难证明",
+                "title_lines": [
+                  "效率转生产力",
+                  "嘉宾当场说",
+                  "很难证明"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 主持人问何时超越效率真正提升生产力",
+                  "transcript: 嘉宾回答没有简单答案",
+                  "transcript: 要证明交易在缺少UPI等系统时不会发生，这很难证明"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "订阅变容易了，增长却难回答",
+                "title_lines": [
+                  "订阅变容易了",
+                  "增长却难回答",
+                  "摩擦降低之后"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 更低的摩擦让订阅服务等频繁交易变得容易得多",
+                  "transcript: 交易成本大幅降低，但是否带来增长则更难回答",
+                  "transcript: 生产力提升很难确立"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "数字设施被热捧，台上却先泼冷水",
+                "title_lines": [
+                  "数字设施被热捧",
+                  "台上却先问",
+                  "生产力在哪"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 数字基础设施问题从会议一开始就备受关注，总理多次提及",
+                  "transcript: 嘉宾说没有简单答案，对增长问题保持谨慎",
+                  "transcript: 交易成本降低不等于生产力提升"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 25:58 Can Digital Infrastructure Transform Economies?\",\n    \"source_title\": \"Duration: 25:58 Can Digital Infrastructure Transform Economies?\",\n    \"show_date\": \"\",\n    \"current_title\": \"数字基础设施能否重塑经济体\",\n    \"current_title_lines\": [\n      \"数字公共设施成焦点\",\n      \"交易成本下降之后\",\n      \"效率能否转为生产力\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"数字基础设施的问题从会议一开始就备受关注。\",\n        \"en\": \"The question of the digital infrastructure has really gripped this conference right since the start.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"总理已多次提及这一点。\",\n        \"en\": \"The Prime Minister has made mention of it several times.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 8.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"尼利卡尼先生也在台上谈论了它及其潜力。\",\n        \"en\": \"There was Mr. Nilikani on stage talking about it and talking about its potential.\",\n        \"relative_start\": 8.0,\n        \"relative_end\": 12.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"很高兴能邀请两位一起进一步讨论。\",\n        \"en\": \"And I'm glad to be joined by both of you to discuss this further.\",\n        \"relative_start\": 12.0,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"那我们从主要问题本身开始吧。\",\n        \"en\": \"So let's start from the main question itself.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 21.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"是的，坚实的数字公共基础设施确实让交易成本更低。\",\n        \"en\": \"Yes, a solid digital public infrastructure makes transactions definitely cheaper.\",\n        \"relative_start\": 21.0,\n        \"relative_end\": 27.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"但鲁本，我想先问你，你觉得我们何时能超越效率，真正提升生产力？\",\n        \"en\": \"But if I can ask my first question to you, Ruben, at what point do you feel that we move beyond efficiency to actually increasing productivity?\",\n        \"relative_start\": 27.0,\n        \"relative_end\": 37.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"可惜这个问题没有简单答案。\",\n        \"en\": \"Yeah, so unfortunately there's no easy answer to this.\",\n        \"relative_start\": 37.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我要戴上经济学极客的帽子了，比如看数字金融交易，\",\n        \"en\": \"I'm going to wear my nerdy economics hat here, which is, so if you look at digital financial transactions for instance,\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 49.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"你如何确定生产力更高了呢？\",\n        \"en\": \"how do you establish that there's greater productivity?\",\n        \"relative_start\": 49.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"你得说明，这是一笔本来会发生、已经发生、但如果没有UPI或PICS等系统就不会发生的交易。\",\n        \"en\": \"You have to basically say that here's a transaction that would have happened, that has happened, that would not have happened in the absence of, say, UPI or PICS or any of these things.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 62.0\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这很难证明。\",\n        \"en\": \"That is very difficult to establish.\",\n        \"relative_start\": 62.0,\n        \"relative_end\": 65.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"所以我总是谨慎，是的，它大幅降低了交易成本，但是否带来增长则更难回答。\",\n        \"en\": \"And so I'm always measured about, yes, it is dramatically lowering transaction costs but whether it's leading to growth is a trickier question to answer.\",\n        \"relative_start\": 65.0,\n        \"relative_end\": 75.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"但你开始看到迹象，更低的摩擦正在带来其他变化。\",\n        \"en\": \"But you're beginning to see signs that the lower friction is leading to other stuff.\",\n        \"relative_start\": 75.0,\n        \"relative_end\": 80.0\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"例如，对于频繁交易，它显然使频繁交易成为可能，因此订阅服务等变得容易多了。\",\n        \"en\": \"For instance, for frequent transactions, it has obviously made frequent transactions, so subscription services and so on have become much easier.\",\n        \"relative_start\": 80.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"A solid digital public infrastructure makes transactions definitely cheaper, but the panel questions at what point that moves beyond efficiency to actually increasing productivity, and the guest says there is no easy answer.\",\n      \"public_baseline\": \"Public DPI literature (Carnegie, Digital Impact Alliance, IMF) frames DPI as a catalyst for efficiency, inclusion and growth, while noting benefits are uneven and evidence on productivity is still being built.\",\n      \"surprise_gap\": \"The panel's admission that cheaper transactions do not straightforwardly translate into higher productivity is a candid caveat against the more promotional 'DPI drives growth' framing common in policy advocacy.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Guest states a solid digital public infrastructure makes transactions definitely cheaper.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Host asks at what point efficiency gains become actual productivity increases; guest replies there is no easy answer.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"digital public infrastructure transactions cheaper productivity efficiency economics\",\n          \"url\": \"https://carnegieendowment.org/posts/2024/02/the-economic-case-for-digital-public-infrastructure\",\n          \"fact\": \"Carnegie frames DPI as a potential catalyst for growth and efficiency under the right interoperability and incentive conditions.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"digital public infrastructure transactions cheaper productivity efficiency economics\",\n          \"url\": \"https://dial.global/research/economics-of-digital-public-infrastructure\",\n          \"fact\": \"Digital Impact Alliance notes DPI benefits are not evenly distributed and more robust research is needed on economic impact.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Ruben digital public infrastructure productivity economist\",\n          \"url\": \"https://cepr.org/about/people/ruben-enikolopov\",\n          \"fact\": \"CEPR lists a Ruben Enikolopov, but no source links him to this panel.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That the speaker is Ruben Enikolopov or any named economist\",\n        \"That 'Mr. Nilikani' is a confirmed minister or that the conference is identified\",\n        \"That DPI has been proven not to raise productivity\",\n        \"That any speaker contradicted a prior public position\",\n        \"Any China comparison or advantage claim\"\n      ],\n      \"confidence\": \"low\"\n    }\n  ],\n  \"notes\": [\n    \"No lookup snippet confirms the identity of 'Ruben' or 'Mr. Nilikani'; both title labels stay in English and confidence is low.\",\n    \"Bloomberg's Chinese name 彭博 is widely used but has zero supporting snippets in this batch, so verified_source_count is 0.\",\n    \"Chinese renderings for DPI and related terms are standard literal forms; only the English term is corroborated by three public sources.\",\n    \"The clip is a panel discussion, not an editorial; Bloomberg as publisher is not treated as the opinion holder.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"嘉宾承认坚实的数字公共基础设施确实让交易成本更低，但被问到效率何时转为生产力提升时，他说没有简单答案，也很难证明这些交易在缺少系统时就不会发生。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"交易成本降了，生产力却没跟上\",\n          \"title_lines\": [\n            \"交易成本降了\",\n            \"生产力却没跟上\",\n            \"这笔账怎么算\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 坚实的数字公共基础设施确实让交易成本更低\",\n            \"transcript: 何时超越效率真正提升生产力，没有简单答案\",\n            \"transcript: 很难证明交易在缺少系统时不会发生\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"台上被问效率转生产力，嘉宾说很难证明\",\n          \"title_lines\": [\n            \"效率转生产力\",\n            \"嘉宾当场说\",\n            \"很难证明\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 主持人问何时超越效率真正提升生产力\",\n            \"transcript: 嘉宾回答没有简单答案\",\n            \"transcript: 要证明交易在缺少UPI等系统时不会发生，这很难证明\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"订阅变容易了，增长却难回答\",\n          \"title_lines\": [\n            \"订阅变容易了\",\n            \"增长却难回答\",\n            \"摩擦降低之后\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 更低的摩擦让订阅服务等频繁交易变得容易得多\",\n            \"transcript: 交易成本大幅降低，但是否带来增长则更难回答\",\n            \"transcript: 生产力提升很难确立\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"数字设施被热捧，台上却先泼冷水\",\n          \"title_lines\": [\n            \"数字设施被热捧\",\n            \"台上却先问\",\n            \"生产力在哪\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 数字基础设施问题从会议一开始就备受关注，总理多次提及\",\n            \"transcript: 嘉宾说没有简单答案，对增长问题保持谨慎\",\n            \"transcript: 交易成本降低不等于生产力提升\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 坚实的数字公共基础设施确实让交易成本更低",
+              "transcript: 何时超越效率真正提升生产力，没有简单答案",
+              "transcript: 很难证明交易在缺少UPI等系统时不会发生"
+            ],
+            "title": "交易成本降了，生产力却没跟上",
+            "title_lines": [
+              "交易成本降了",
+              "生产力却没跟上",
+              "这笔账怎么算"
+            ],
+            "title_highlights": [
+              "交易成本降了",
+              "生产力却没跟上"
+            ],
+            "runner_up_titles": [
+              "台上被问效率转生产力，嘉宾说很难证明",
+              "订阅变容易了，增长却难回答"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：数字设施降低摩擦，但增长证据仍待补齐。",
+            "comment_highlights": [
+              "降低摩擦",
+              "证据仍待补齐"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：会议开场就把数字设施摆上主桌。",
+                "comment_highlights": [
+                  "数字设施"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：总理多次提及，政策关注度不低。",
+                "comment_highlights": [
+                  "政策关注度"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：台上谈潜力，但潜力需要证据落地。",
+                "comment_highlights": [
+                  "潜力需要证据"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：两位嘉宾被请来拆解这个核心问题。",
+                "comment_highlights": [
+                  "拆解"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：主持人直接切入主题，不绕弯子。",
+                "comment_highlights": [
+                  "直接切入"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：交易成本更低，这是嘉宾先确认的共识。",
+                "comment_highlights": [
+                  "交易成本更低"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：关键追问来了，效率何时变成生产力。",
+                "comment_highlights": [
+                  "效率何时变成生产力"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：嘉宾坦承没有简单答案，预期被拉低。",
+                "comment_highlights": [
+                  "没有简单答案"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：他戴上经济学帽子，开始拆交易本身。",
+                "comment_highlights": [
+                  "经济学帽子"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：生产力更高，到底该怎么衡量。",
+                "comment_highlights": [
+                  "怎么衡量"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：要证明交易在无系统时不会发生，很难。",
+                "comment_highlights": [
+                  "很难"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：这句话点出因果识别的难点。",
+                "comment_highlights": [
+                  "因果识别"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：成本大降不等于增长自动到来。",
+                "comment_highlights": [
+                  "不等于增长自动到来"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：但低摩擦已经开始带来其他变化。",
+                "comment_highlights": [
+                  "低摩擦"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：订阅服务变容易，是摩擦降低的直观例子。",
+                "comment_highlights": [
+                  "订阅服务变容易"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "交易成本降了：生产力却没跟上，这笔账怎么算",
+          "title_lines": [
+            "交易成本降了",
+            "生产力却没跟上",
+            "这笔账怎么算"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：数字设施降低摩擦，但增长证据仍待补齐"
+        }
+      }
+    }
+  ]
+}
