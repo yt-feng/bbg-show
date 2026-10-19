@@ -1,0 +1,1411 @@
+{
+  "timestamp_utc": "2026-10-19T00:11:26.978909+00:00",
+  "plan_path": "work/top-videos/07_for_three_buffetts_a_150_billion_puzzle_over_warren_s_riches/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Warren Buffett",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Warren Buffett",
+        "preferred_en": "Warren Buffett",
+        "official_zh": "沃伦·巴菲特",
+        "common_zh": "巴菲特",
+        "title_label": "巴菲特",
+        "preferred_zh": "巴菲特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese financial media and Baidu Baike consistently use 巴菲特 / 沃伦·巴菲特."
+      },
+      {
+        "source_text": "Susie Buffett",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Susan Alice \"Susie\" Buffett",
+        "preferred_en": "Susan Alice \"Susie\" Buffett",
+        "official_zh": "苏珊·巴菲特",
+        "common_zh": "苏珊·巴菲特",
+        "title_label": "苏珊·巴菲特",
+        "preferred_zh": "苏珊·巴菲特",
+        "aliases": [
+          "苏西·巴菲特"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Baidu Baike uses 苏珊; 财联社 and 川观新闻 use 苏珊·巴菲特. 苏西 appears as a transliteration variant in one snippet."
+      },
+      {
+        "source_text": "Howard Buffett",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Howard Graham Buffett",
+        "preferred_en": "Howard Graham Buffett",
+        "official_zh": "霍华德·巴菲特",
+        "common_zh": "霍华德·巴菲特",
+        "title_label": "霍华德·巴菲特",
+        "preferred_zh": "霍华德·巴菲特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple Chinese sources use 霍华德·巴菲特."
+      },
+      {
+        "source_text": "Peter Buffett",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Peter Andrew Buffett",
+        "preferred_en": "Peter Andrew Buffett",
+        "official_zh": "彼得·巴菲特",
+        "common_zh": "彼得·巴菲特",
+        "title_label": "彼得·巴菲特",
+        "preferred_zh": "彼得·巴菲特",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Multiple Chinese sources use 彼得·巴菲特."
+      },
+      {
+        "source_text": "Bill Gates",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Bill Gates",
+        "preferred_en": "Bill Gates",
+        "official_zh": "比尔·盖茨",
+        "common_zh": "比尔·盖茨",
+        "title_label": "比尔·盖茨",
+        "preferred_zh": "比尔·盖茨",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media consistently use 比尔·盖茨."
+      },
+      {
+        "source_text": "Jeffrey Epstein",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Jeffrey Epstein",
+        "preferred_en": "Jeffrey Epstein",
+        "official_zh": "杰弗里·爱泼斯坦",
+        "common_zh": "爱泼斯坦",
+        "title_label": "爱泼斯坦",
+        "preferred_zh": "爱泼斯坦",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media use 爱泼斯坦 / 杰弗里·爱泼斯坦."
+      },
+      {
+        "source_text": "Gates Foundation",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bill & Melinda Gates Foundation (Gates Foundation)",
+        "preferred_en": "Bill & Melinda Gates Foundation (Gates Foundation)",
+        "official_zh": "比尔及梅琳达·盖茨基金会",
+        "common_zh": "盖茨基金会",
+        "title_label": "盖茨基金会",
+        "preferred_zh": "盖茨基金会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media use 盖茨基金会 as the common short form."
+      },
+      {
+        "source_text": "Susan Thompson Buffett Foundation",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Susan Thompson Buffett Foundation",
+        "preferred_en": "Susan Thompson Buffett Foundation",
+        "official_zh": "苏珊·汤普森·巴菲特基金会",
+        "common_zh": "苏珊·汤普森·巴菲特基金会",
+        "title_label": "苏珊·汤普森·巴菲特基金会",
+        "preferred_zh": "苏珊·汤普森·巴菲特基金会",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "川观新闻 uses 苏珊·汤普森·巴菲特基金会; English Wikipedia confirms the entity name."
+      },
+      {
+        "source_text": "Howard G. Buffett Foundation",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Howard G. Buffett Foundation",
+        "preferred_en": "Howard G. Buffett Foundation",
+        "official_zh": "霍华德·G·巴菲特基金会",
+        "common_zh": "霍华德·G·巴菲特基金会",
+        "title_label": "霍华德·G·巴菲特基金会",
+        "preferred_zh": "霍华德·G·巴菲特基金会",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "川观新闻 uses 霍华德·G·巴菲特基金会; InvestmentNews confirms the English name."
+      },
+      {
+        "source_text": "Sherwood Foundation",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "The Sherwood Foundation",
+        "preferred_en": "The Sherwood Foundation",
+        "official_zh": "舍伍德基金会",
+        "common_zh": "舍伍德基金会",
+        "title_label": "舍伍德基金会",
+        "preferred_zh": "舍伍德基金会",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "川观新闻 uses 舍伍德基金会; Candid confirms the English name and founder."
+      },
+      {
+        "source_text": "NoVo Foundation",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "NoVo Foundation",
+        "preferred_en": "NoVo Foundation",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "NoVo Foundation",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "English sources confirm the entity, but no reliable Chinese display form was found in the snippets."
+      },
+      {
+        "source_text": "Berkshire Hathaway",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Berkshire Hathaway Inc.",
+        "preferred_en": "Berkshire Hathaway Inc.",
+        "official_zh": "伯克希尔·哈撒韦公司",
+        "common_zh": "伯克希尔·哈撒韦",
+        "title_label": "伯克希尔·哈撒韦",
+        "preferred_zh": "伯克希尔·哈撒韦",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Chinese media use 伯克希尔·哈撒韦."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "net worth",
+        "clip_indexes": [],
+        "context": "Buffett's personal wealth tripling while he gives money away",
+        "sense": "personal net worth",
+        "preferred_zh": "净资产",
+        "title_label": "净资产",
+        "avoid_zh": [
+          "净值产"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "charitable foundation",
+        "clip_indexes": [],
+        "context": "family foundations receiving Buffett's fortune",
+        "sense": "philanthropic foundation",
+        "preferred_zh": "慈善基金会",
+        "title_label": "慈善基金会",
+        "avoid_zh": [
+          "慈善基金"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "reproductive rights",
+        "clip_indexes": [],
+        "context": "foundation focus areas",
+        "sense": "reproductive health and rights",
+        "preferred_zh": "生殖权利",
+        "title_label": "生殖权利",
+        "avoid_zh": [
+          "生育权力"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "food security",
+        "clip_indexes": [],
+        "context": "foundation focus areas",
+        "sense": "reliable access to food",
+        "preferred_zh": "粮食安全",
+        "title_label": "粮食安全",
+        "avoid_zh": [
+          "食品安全"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "early childhood education",
+        "clip_indexes": [],
+        "context": "foundation focus areas",
+        "sense": "education for young children",
+        "preferred_zh": "幼儿教育",
+        "title_label": "幼儿教育",
+        "avoid_zh": [
+          "早期儿童教育"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "conflict mitigation",
+        "clip_indexes": [],
+        "context": "Howard Buffett's foundation focus",
+        "sense": "reducing international conflict",
+        "preferred_zh": "冲突缓解",
+        "title_label": "冲突缓解",
+        "avoid_zh": [
+          "冲突减轻"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "After Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.",
+        "public_baseline": "Berkshire Hathaway's July statement and Chinese media report that Buffett stopped annual stock gifts to the Gates Foundation and redirected nearly $6 billion to four family foundations, with Epstein-related scrutiny cited as context.",
+        "surprise_gap": "Buffett had been the Gates Foundation's largest donor for about two decades; ending that pipeline is a reversal of a long-standing public commitment.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": true,
+          "prior_position": "For roughly 20 years Buffett made annual Berkshire stock gifts to the Gates Foundation.",
+          "current_position": "In July Buffett said he would no longer gift to the Gates Foundation and would direct his fortune to four family foundations.",
+          "independent_source_count": 3,
+          "evidence": [
+            {
+              "kind": "public",
+              "query": "巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明",
+              "url": "https://www.sohu.com/a/1050324015_115362",
+              "fact": "Berkshire statement: Buffett stops annual Gates Foundation gifts, gives ~$6B to four family foundations."
+            },
+            {
+              "kind": "public",
+              "query": "巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明",
+              "url": "https://h5.ifeng.com/c/vivoArticle/v0023ipZ9q6AXKOeMblViD4gQyF1MWlYD1rp-_wGPp8BRMZ4__",
+              "fact": "Reports end of 20-year philanthropic partnership; Epstein ties cited."
+            },
+            {
+              "kind": "public",
+              "query": "巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明",
+              "url": "https://www.fortunechina.com/shangye/c/2026-07/20/content_475335.htm",
+              "fact": "Buffett had said in 2024 he would stop Gates Foundation giving after his death."
+            }
+          ]
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Buffett's net worth more than tripled over 20 years despite billions in annual gifts."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "$150 billion still slated for donations; fortune to go to four family foundations."
+          },
+          {
+            "kind": "public",
+            "query": "Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation",
+            "url": "https://www.investmentnews.com/practice-management/buffett-accelerates-6b-giving-plan-drops-gates-foundation-from-list/267418",
+            "fact": "Sherwood, Howard G. Buffett and NoVo foundations each receive 1,000,000 shares (~$500M)."
+          },
+          {
+            "kind": "public",
+            "query": "巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名",
+            "url": "https://www.cls.cn/detail/2260347",
+            "fact": "Siblings Susan, Howard and Peter Buffett discuss the challenge of giving away the fortune."
+          }
+        ],
+        "forbidden_claims": [
+          "Buffett's net worth tripled purely because of donations",
+          "Buffett personally accused Gates of wrongdoing over Epstein",
+          "The $150 billion figure is a confirmed final donation total",
+          "Buffett's children are professional philanthropists by career"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Clip metadata gives sibling ages as 73/71/68; 财联社 snippet says 72/71/67 — age discrepancy noted, not resolved.",
+      "NoVo Foundation has no verified Chinese display form; keep English in titles.",
+      "Epstein link is reported context; do not state Buffett cited Epstein as his reason unless an exact quote is verified."
+    ],
+    "research_queries": [
+      {
+        "query": "巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify established Chinese names for Susie, Howard, and Peter Buffett and their foundations"
+      },
+      {
+        "query": "Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify exact names of the four family foundations receiving Buffett's fortune"
+      },
+      {
+        "query": "巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Buffett's July statement that he would stop gifting to the Gates Foundation and the Epstein scrutiny context"
+      },
+      {
+        "query": "Buffett net worth tripled while donating billions 2006 2024 Berkshire Hathaway shares",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Buffett's net worth more than tripled over 20 years despite annual multibillion-dollar gifts"
+      },
+      {
+        "query": "Buffett $150 billion slated for donation remaining fortune 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the $150 billion figure still slated for donation"
+      },
+      {
+        "query": "Howard Buffett foundation international conflict mitigation food security",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Howard G. Buffett Foundation focus areas match conflict mitigation and food security"
+      },
+      {
+        "query": "Susan Thompson Buffett Foundation girls and women's rights early childhood education",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the late wife's foundation focus on girls and women's rights and early childhood education"
+      },
+      {
+        "query": "NoVo Foundation Peter Buffett girls and women's rights",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Peter Buffett's NoVo Foundation focus on girls and women's rights"
+      },
+      {
+        "query": "Sherwood Foundation Susie Buffett early childhood education Omaha",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Susie Buffett's Sherwood Foundation focus on early childhood education"
+      },
+      {
+        "query": "Bill Gates Jeffrey Epstein scrutiny 2021 2022 Gates Foundation",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the public scrutiny over Gates' ties to Epstein that preceded Buffett's decision"
+      },
+      {
+        "query": "巴菲特 盖茨基金会 捐赠 累计 金额 2006 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the scale of Buffett's past gifts to the Gates Foundation to establish baseline for the change"
+      },
+      {
+        "query": "Buffett children ages Susie 73 Howard 71 Peter 68 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the siblings' ages cited in the clip"
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-19T00:11:25.010147+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches",
+          "source_title": "Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches",
+          "show_date": "",
+          "current_title": "巴菲特千亿捐赠难题",
+          "current_title_lines": [
+            "巴菲特家族",
+            "千亿捐赠如何落地",
+            "三位子女能否接棒"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "沃伦·巴菲特，全球最著名的市场参与者，过去20年一直试图将财富捐给慈善事业。",
+              "en": "Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.",
+              "relative_start": 0.0,
+              "relative_end": 7.9
+            },
+            {
+              "index": 2,
+              "zh": "但尽管他竭尽全力，每年捐出数十亿美元，他的净资产同期却增长了两倍多。",
+              "en": "But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.",
+              "relative_start": 7.9,
+              "relative_end": 17.0
+            },
+            {
+              "index": 3,
+              "zh": "目前，仍有1500亿美元计划用于捐赠。",
+              "en": "Currently, 150 billion is still slated for donations.",
+              "relative_start": 17.0,
+              "relative_end": 21.5
+            },
+            {
+              "index": 4,
+              "zh": "直到最近，他的老朋友比尔·盖茨通过自己的大型基金会处理了大部分工作。",
+              "en": "Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.",
+              "relative_start": 21.5,
+              "relative_end": 28.8
+            },
+            {
+              "index": 5,
+              "zh": "但在盖茨因与杰弗里·爱泼斯坦的关系面临更多审查后，巴菲特在7月表示，他不再计划向朋友的基金会捐款。",
+              "en": "But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.",
+              "relative_start": 28.8,
+              "relative_end": 38.4
+            },
+            {
+              "index": 6,
+              "zh": "相反，他的全部财富将捐给四个家族基金会：一个以他已故妻子命名，另外三个由他的每个孩子运营。",
+              "en": "Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.",
+              "relative_start": 38.4,
+              "relative_end": 47.0
+            },
+            {
+              "index": 7,
+              "zh": "苏西、霍华德和彼得，年龄分别为73岁、71岁和68岁，这三兄妹一直在用本该退休的岁月，",
+              "en": "Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,",
+              "relative_start": 47.6,
+              "relative_end": 56.8
+            },
+            {
+              "index": 8,
+              "zh": "设法捐出不断增长的家族财富。",
+              "en": "trying to find ways to give away the growing family fortune.",
+              "relative_start": 56.8,
+              "relative_end": 60.3
+            },
+            {
+              "index": 9,
+              "zh": "他们共同将数十亿美元投入最关心的事业：缓解国际冲突、粮食安全、",
+              "en": "Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,",
+              "relative_start": 60.3,
+              "relative_end": 68.7
+            },
+            {
+              "index": 10,
+              "zh": "幼儿教育、女童和妇女权利等。",
+              "en": "early childhood education, girls and women's rights, and more.",
+              "relative_start": 69.4,
+              "relative_end": 73.6
+            },
+            {
+              "index": 11,
+              "zh": "但捐出1500亿美元并非易事，他们父亲不断增长的财富部分已经证明了这一点。",
+              "en": "But giving away 150 billion dollars isn't a simple task, as their father's ever-growing part of money has demonstrated",
+              "relative_start": 73.6,
+              "relative_end": 81.5
+            },
+            {
+              "index": 12,
+              "zh": "如果要在去世前全部捐出，他们必须大幅加快捐赠步伐。",
+              "en": "they'll have to dramatically pick up the pace of their giving if they want to get rid of it all before they die.",
+              "relative_start": 81.5,
+              "relative_end": 87.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"source_title\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"show_date\": \"\",\n    \"current_title\": \"巴菲特千亿捐赠难题\",\n    \"current_title_lines\": [\n      \"巴菲特家族\",\n      \"千亿捐赠如何落地\",\n      \"三位子女能否接棒\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"沃伦·巴菲特，全球最著名的市场参与者，过去20年一直试图将财富捐给慈善事业。\",\n        \"en\": \"Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但尽管他竭尽全力，每年捐出数十亿美元，他的净资产同期却增长了两倍多。\",\n        \"en\": \"But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.\",\n        \"relative_start\": 7.9,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"目前，仍有1500亿美元计划用于捐赠。\",\n        \"en\": \"Currently, 150 billion is still slated for donations.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"直到最近，他的老朋友比尔·盖茨通过自己的大型基金会处理了大部分工作。\",\n        \"en\": \"Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 28.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但在盖茨因与杰弗里·爱泼斯坦的关系面临更多审查后，巴菲特在7月表示，他不再计划向朋友的基金会捐款。\",\n        \"en\": \"But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n        \"relative_start\": 28.8,\n        \"relative_end\": 38.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"相反，他的全部财富将捐给四个家族基金会：一个以他已故妻子命名，另外三个由他的每个孩子运营。\",\n        \"en\": \"Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.\",\n        \"relative_start\": 38.4,\n        \"relative_end\": 47.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"苏西、霍华德和彼得，年龄分别为73岁、71岁和68岁，这三兄妹一直在用本该退休的岁月，\",\n        \"en\": \"Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,\",\n        \"relative_start\": 47.6,\n        \"relative_end\": 56.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"设法捐出不断增长的家族财富。\",\n        \"en\": \"trying to find ways to give away the growing family fortune.\",\n        \"relative_start\": 56.8,\n        \"relative_end\": 60.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他们共同将数十亿美元投入最关心的事业：缓解国际冲突、粮食安全、\",\n        \"en\": \"Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,\",\n        \"relative_start\": 60.3,\n        \"relative_end\": 68.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"幼儿教育、女童和妇女权利等。\",\n        \"en\": \"early childhood education, girls and women's rights, and more.\",\n        \"relative_start\": 69.4,\n        \"relative_end\": 73.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但捐出1500亿美元并非易事，他们父亲不断增长的财富部分已经证明了这一点。\",\n        \"en\": \"But giving away 150 billion dollars isn't a simple task, as their father's ever-growing part of money has demonstrated\",\n        \"relative_start\": 73.6,\n        \"relative_end\": 81.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"如果要在去世前全部捐出，他们必须大幅加快捐赠步伐。\",\n        \"en\": \"they'll have to dramatically pick up the pace of their giving if they want to get rid of it all before they die.\",\n        \"relative_start\": 81.5,\n        \"relative_end\": 87.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n      \"public_baseline\": \"Berkshire Hathaway's July statement and Chinese media report that Buffett stopped annual stock gifts to the Gates Foundation and redirected nearly $6 billion to four family foundations, with Epstein-related scrutiny cited as context.\",\n      \"surprise_gap\": \"Buffett had been the Gates Foundation's largest donor for about two decades; ending that pipeline is a reversal of a long-standing public commitment.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"For roughly 20 years Buffett made annual Berkshire stock gifts to the Gates Foundation.\",\n        \"current_position\": \"In July Buffett said he would no longer gift to the Gates Foundation and would direct his fortune to four family foundations.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.sohu.com/a/1050324015_115362\",\n            \"fact\": \"Berkshire statement: Buffett stops annual Gates Foundation gifts, gives ~$6B to four family foundations.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://h5.ifeng.com/c/vivoArticle/v0023ipZ9q6AXKOeMblViD4gQyF1MWlYD1rp-_wGPp8BRMZ4__\",\n            \"fact\": \"Reports end of 20-year philanthropic partnership; Epstein ties cited.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.fortunechina.com/shangye/c/2026-07/20/content_475335.htm\",\n            \"fact\": \"Buffett had said in 2024 he would stop Gates Foundation giving after his death.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Buffett's net worth more than tripled over 20 years despite billions in annual gifts.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"$150 billion still slated for donations; fortune to go to four family foundations.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation\",\n          \"url\": \"https://www.investmentnews.com/practice-management/buffett-accelerates-6b-giving-plan-drops-gates-foundation-from-list/267418\",\n          \"fact\": \"Sherwood, Howard G. Buffett and NoVo foundations each receive 1,000,000 shares (~$500M).\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名\",\n          \"url\": \"https://www.cls.cn/detail/2260347\",\n          \"fact\": \"Siblings Susan, Howard and Peter Buffett discuss the challenge of giving away the fortune.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Buffett's net worth tripled purely because of donations\",\n        \"Buffett personally accused Gates of wrongdoing over Epstein\",\n        \"The $150 billion figure is a confirmed final donation total\",\n        \"Buffett's children are professional philanthropists by career\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip metadata gives sibling ages as 73/71/68; 财联社 snippet says 72/71/67 — age discrepancy noted, not resolved.\",\n    \"NoVo Foundation has no verified Chinese display form; keep English in titles.\",\n    \"Epstein link is reported context; do not state Buffett cited Epstein as his reason unless an exact quote is verified.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "巴菲特过去20年每年捐出数十亿美元，净资产却增长两倍多，目前仍有1500亿美元计划用于捐赠；7月他表示不再向盖茨基金会捐款，全部财富将捐给四个家族基金会，由三位子女在退休年龄设法捐出。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "捐了20年，巴菲特财富反增两倍",
+                "title_lines": [
+                  "捐了20年",
+                  "财富反增两倍",
+                  "1500亿还没捐完"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 过去20年每年捐数十亿美元，净资产同期增长两倍多",
+                  "transcript: 目前仍有1500亿美元计划用于捐赠"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "1500亿要捐完，三位子女得加速",
+                "title_lines": [
+                  "1500亿要捐完",
+                  "三位子女接棒",
+                  "退休年龄还得加速"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 全部财富将捐给四个家族基金会，三个由子女运营",
+                  "transcript: 苏西、霍华德、彼得年龄分别为73、71、68岁，正用退休岁月设法捐出财富",
+                  "transcript: 要在去世前全部捐出，必须大幅加快捐赠步伐"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "巴菲特停了盖茨基金会的年度捐赠",
+                "title_lines": [
+                  "巴菲特停了",
+                  "盖茨基金会年度捐赠",
+                  "全部转给四个家族基金会"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "public: Berkshire 7月声明停止向盖茨基金会年度捐赠股票，转捐近60亿美元给四个家族基金会",
+                  "transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "捐得越多，巴菲特财富涨得越快？",
+                "title_lines": [
+                  "捐得越多",
+                  "财富涨得越快",
+                  "1500亿难题留给子女"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 每年捐数十亿美元，净资产同期增长两倍多",
+                  "transcript: 目前仍有1500亿美元计划用于捐赠，捐出并非易事"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"source_title\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"show_date\": \"\",\n    \"current_title\": \"巴菲特千亿捐赠难题\",\n    \"current_title_lines\": [\n      \"巴菲特家族\",\n      \"千亿捐赠如何落地\",\n      \"三位子女能否接棒\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"沃伦·巴菲特，全球最著名的市场参与者，过去20年一直试图将财富捐给慈善事业。\",\n        \"en\": \"Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但尽管他竭尽全力，每年捐出数十亿美元，他的净资产同期却增长了两倍多。\",\n        \"en\": \"But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.\",\n        \"relative_start\": 7.9,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"目前，仍有1500亿美元计划用于捐赠。\",\n        \"en\": \"Currently, 150 billion is still slated for donations.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"直到最近，他的老朋友比尔·盖茨通过自己的大型基金会处理了大部分工作。\",\n        \"en\": \"Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 28.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但在盖茨因与杰弗里·爱泼斯坦的关系面临更多审查后，巴菲特在7月表示，他不再计划向朋友的基金会捐款。\",\n        \"en\": \"But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n        \"relative_start\": 28.8,\n        \"relative_end\": 38.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"相反，他的全部财富将捐给四个家族基金会：一个以他已故妻子命名，另外三个由他的每个孩子运营。\",\n        \"en\": \"Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.\",\n        \"relative_start\": 38.4,\n        \"relative_end\": 47.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"苏西、霍华德和彼得，年龄分别为73岁、71岁和68岁，这三兄妹一直在用本该退休的岁月，\",\n        \"en\": \"Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,\",\n        \"relative_start\": 47.6,\n        \"relative_end\": 56.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"设法捐出不断增长的家族财富。\",\n        \"en\": \"trying to find ways to give away the growing family fortune.\",\n        \"relative_start\": 56.8,\n        \"relative_end\": 60.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他们共同将数十亿美元投入最关心的事业：缓解国际冲突、粮食安全、\",\n        \"en\": \"Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,\",\n        \"relative_start\": 60.3,\n        \"relative_end\": 68.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"幼儿教育、女童和妇女权利等。\",\n        \"en\": \"early childhood education, girls and women's rights, and more.\",\n        \"relative_start\": 69.4,\n        \"relative_end\": 73.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但捐出1500亿美元并非易事，他们父亲不断增长的财富部分已经证明了这一点。\",\n        \"en\": \"But giving away 150 billion dollars isn't a simple task, as their father's ever-growing part of money has demonstrated\",\n        \"relative_start\": 73.6,\n        \"relative_end\": 81.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"如果要在去世前全部捐出，他们必须大幅加快捐赠步伐。\",\n        \"en\": \"they'll have to dramatically pick up the pace of their giving if they want to get rid of it all before they die.\",\n        \"relative_start\": 81.5,\n        \"relative_end\": 87.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n      \"public_baseline\": \"Berkshire Hathaway's July statement and Chinese media report that Buffett stopped annual stock gifts to the Gates Foundation and redirected nearly $6 billion to four family foundations, with Epstein-related scrutiny cited as context.\",\n      \"surprise_gap\": \"Buffett had been the Gates Foundation's largest donor for about two decades; ending that pipeline is a reversal of a long-standing public commitment.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"For roughly 20 years Buffett made annual Berkshire stock gifts to the Gates Foundation.\",\n        \"current_position\": \"In July Buffett said he would no longer gift to the Gates Foundation and would direct his fortune to four family foundations.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.sohu.com/a/1050324015_115362\",\n            \"fact\": \"Berkshire statement: Buffett stops annual Gates Foundation gifts, gives ~$6B to four family foundations.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://h5.ifeng.com/c/vivoArticle/v0023ipZ9q6AXKOeMblViD4gQyF1MWlYD1rp-_wGPp8BRMZ4__\",\n            \"fact\": \"Reports end of 20-year philanthropic partnership; Epstein ties cited.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.fortunechina.com/shangye/c/2026-07/20/content_475335.htm\",\n            \"fact\": \"Buffett had said in 2024 he would stop Gates Foundation giving after his death.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Buffett's net worth more than tripled over 20 years despite billions in annual gifts.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"$150 billion still slated for donations; fortune to go to four family foundations.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation\",\n          \"url\": \"https://www.investmentnews.com/practice-management/buffett-accelerates-6b-giving-plan-drops-gates-foundation-from-list/267418\",\n          \"fact\": \"Sherwood, Howard G. Buffett and NoVo foundations each receive 1,000,000 shares (~$500M).\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名\",\n          \"url\": \"https://www.cls.cn/detail/2260347\",\n          \"fact\": \"Siblings Susan, Howard and Peter Buffett discuss the challenge of giving away the fortune.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Buffett's net worth tripled purely because of donations\",\n        \"Buffett personally accused Gates of wrongdoing over Epstein\",\n        \"The $150 billion figure is a confirmed final donation total\",\n        \"Buffett's children are professional philanthropists by career\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip metadata gives sibling ages as 73/71/68; 财联社 snippet says 72/71/67 — age discrepancy noted, not resolved.\",\n    \"NoVo Foundation has no verified Chinese display form; keep English in titles.\",\n    \"Epstein link is reported context; do not state Buffett cited Epstein as his reason unless an exact quote is verified.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"巴菲特过去20年每年捐出数十亿美元，净资产却增长两倍多，目前仍有1500亿美元计划用于捐赠；7月他表示不再向盖茨基金会捐款，全部财富将捐给四个家族基金会，由三位子女在退休年龄设法捐出。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"捐了20年，巴菲特财富反增两倍\",\n          \"title_lines\": [\n            \"捐了20年\",\n            \"财富反增两倍\",\n            \"1500亿还没捐完\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 过去20年每年捐数十亿美元，净资产同期增长两倍多\",\n            \"transcript: 目前仍有1500亿美元计划用于捐赠\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"1500亿要捐完，三位子女得加速\",\n          \"title_lines\": [\n            \"1500亿要捐完\",\n            \"三位子女接棒\",\n            \"退休年龄还得加速\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 全部财富将捐给四个家族基金会，三个由子女运营\",\n            \"transcript: 苏西、霍华德、彼得年龄分别为73、71、68岁，正用退休岁月设法捐出财富\",\n            \"transcript: 要在去世前全部捐出，必须大幅加快捐赠步伐\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"巴菲特停了盖茨基金会的年度捐赠\",\n          \"title_lines\": [\n            \"巴菲特停了\",\n            \"盖茨基金会年度捐赠\",\n            \"全部转给四个家族基金会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"public: Berkshire 7月声明停止向盖茨基金会年度捐赠股票，转捐近60亿美元给四个家族基金会\",\n            \"transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"捐得越多，巴菲特财富涨得越快？\",\n          \"title_lines\": [\n            \"捐得越多\",\n            \"财富涨得越快\",\n            \"1500亿难题留给子女\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 每年捐数十亿美元，净资产同期增长两倍多\",\n            \"transcript: 目前仍有1500亿美元计划用于捐赠，捐出并非易事\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "名人反常识数字",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "捐了20年，财富怎么反而翻了两倍多？",
+            "evidence_basis": [
+              "transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多",
+              "transcript: 目前仍有1500亿美元计划用于捐赠",
+              "transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会"
+            ],
+            "title": "捐了20年，巴菲特财富反增两倍",
+            "title_lines": [
+              "捐了20年",
+              "财富反增两倍",
+              "1500亿还没捐完"
+            ],
+            "title_highlights": [
+              "捐了20年",
+              "财富反增两倍",
+              "1500亿"
+            ],
+            "runner_up_titles": [
+              "巴菲特停了盖茨基金会年度捐赠",
+              "1500亿要捐完，三位子女得加速"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：捐赠速度追不上财富增长，1500亿的接力才刚开始",
+            "comment_highlights": [
+              "1500亿"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：全球最著名的市场参与者，捐了20年",
+                "comment_highlights": [
+                  "捐了20年"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：每年捐数十亿，净资产却增长两倍多",
+                "comment_highlights": [
+                  "增长两倍多"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：1500亿美元仍在待捐清单上",
+                "comment_highlights": [
+                  "1500亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：过去大部分捐赠工作由盖茨基金会承接",
+                "comment_highlights": [
+                  "盖茨基金会"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：7月他表态不再向盖茨基金会捐款",
+                "comment_highlights": [
+                  "不再向盖茨基金会捐款"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：全部财富转向四个家族基金会",
+                "comment_highlights": [
+                  "四个家族基金会"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：三位子女在退休年龄接手捐赠",
+                "comment_highlights": [
+                  "退休年龄"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：家族财富还在增长，捐出难度同步上升",
+                "comment_highlights": [
+                  "捐出难度"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：数十亿美元投向国际冲突缓解与粮食安全",
+                "comment_highlights": [
+                  "粮食安全"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：幼儿教育、女童和妇女权利也是重点",
+                "comment_highlights": [
+                  "女童和妇女权利"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：1500亿的捐赠任务并不简单",
+                "comment_highlights": [
+                  "1500亿"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：要在去世前捐完，必须大幅加速",
+                "comment_highlights": [
+                  "大幅加速"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"source_title\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n    \"show_date\": \"\",\n    \"current_title\": \"巴菲特千亿捐赠难题\",\n    \"current_title_lines\": [\n      \"巴菲特家族\",\n      \"千亿捐赠如何落地\",\n      \"三位子女能否接棒\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"沃伦·巴菲特，全球最著名的市场参与者，过去20年一直试图将财富捐给慈善事业。\",\n        \"en\": \"Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 7.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但尽管他竭尽全力，每年捐出数十亿美元，他的净资产同期却增长了两倍多。\",\n        \"en\": \"But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.\",\n        \"relative_start\": 7.9,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"目前，仍有1500亿美元计划用于捐赠。\",\n        \"en\": \"Currently, 150 billion is still slated for donations.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 21.5\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"直到最近，他的老朋友比尔·盖茨通过自己的大型基金会处理了大部分工作。\",\n        \"en\": \"Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.\",\n        \"relative_start\": 21.5,\n        \"relative_end\": 28.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"但在盖茨因与杰弗里·爱泼斯坦的关系面临更多审查后，巴菲特在7月表示，他不再计划向朋友的基金会捐款。\",\n        \"en\": \"But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n        \"relative_start\": 28.8,\n        \"relative_end\": 38.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"相反，他的全部财富将捐给四个家族基金会：一个以他已故妻子命名，另外三个由他的每个孩子运营。\",\n        \"en\": \"Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.\",\n        \"relative_start\": 38.4,\n        \"relative_end\": 47.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"苏西、霍华德和彼得，年龄分别为73岁、71岁和68岁，这三兄妹一直在用本该退休的岁月，\",\n        \"en\": \"Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,\",\n        \"relative_start\": 47.6,\n        \"relative_end\": 56.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"设法捐出不断增长的家族财富。\",\n        \"en\": \"trying to find ways to give away the growing family fortune.\",\n        \"relative_start\": 56.8,\n        \"relative_end\": 60.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他们共同将数十亿美元投入最关心的事业：缓解国际冲突、粮食安全、\",\n        \"en\": \"Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,\",\n        \"relative_start\": 60.3,\n        \"relative_end\": 68.7\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"幼儿教育、女童和妇女权利等。\",\n        \"en\": \"early childhood education, girls and women's rights, and more.\",\n        \"relative_start\": 69.4,\n        \"relative_end\": 73.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"但捐出1500亿美元并非易事，他们父亲不断增长的财富部分已经证明了这一点。\",\n        \"en\": \"But giving away 150 billion dollars isn't a simple task, as their father's ever-growing part of money has demonstrated\",\n        \"relative_start\": 73.6,\n        \"relative_end\": 81.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"如果要在去世前全部捐出，他们必须大幅加快捐赠步伐。\",\n        \"en\": \"they'll have to dramatically pick up the pace of their giving if they want to get rid of it all before they die.\",\n        \"relative_start\": 81.5,\n        \"relative_end\": 87.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n      \"public_baseline\": \"Berkshire Hathaway's July statement and Chinese media report that Buffett stopped annual stock gifts to the Gates Foundation and redirected nearly $6 billion to four family foundations, with Epstein-related scrutiny cited as context.\",\n      \"surprise_gap\": \"Buffett had been the Gates Foundation's largest donor for about two decades; ending that pipeline is a reversal of a long-standing public commitment.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"For roughly 20 years Buffett made annual Berkshire stock gifts to the Gates Foundation.\",\n        \"current_position\": \"In July Buffett said he would no longer gift to the Gates Foundation and would direct his fortune to four family foundations.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.sohu.com/a/1050324015_115362\",\n            \"fact\": \"Berkshire statement: Buffett stops annual Gates Foundation gifts, gives ~$6B to four family foundations.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://h5.ifeng.com/c/vivoArticle/v0023ipZ9q6AXKOeMblViD4gQyF1MWlYD1rp-_wGPp8BRMZ4__\",\n            \"fact\": \"Reports end of 20-year philanthropic partnership; Epstein ties cited.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.fortunechina.com/shangye/c/2026-07/20/content_475335.htm\",\n            \"fact\": \"Buffett had said in 2024 he would stop Gates Foundation giving after his death.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Buffett's net worth more than tripled over 20 years despite billions in annual gifts.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"$150 billion still slated for donations; fortune to go to four family foundations.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation\",\n          \"url\": \"https://www.investmentnews.com/practice-management/buffett-accelerates-6b-giving-plan-drops-gates-foundation-from-list/267418\",\n          \"fact\": \"Sherwood, Howard G. Buffett and NoVo foundations each receive 1,000,000 shares (~$500M).\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名\",\n          \"url\": \"https://www.cls.cn/detail/2260347\",\n          \"fact\": \"Siblings Susan, Howard and Peter Buffett discuss the challenge of giving away the fortune.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Buffett's net worth tripled purely because of donations\",\n        \"Buffett personally accused Gates of wrongdoing over Epstein\",\n        \"The $150 billion figure is a confirmed final donation total\",\n        \"Buffett's children are professional philanthropists by career\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip metadata gives sibling ages as 73/71/68; 财联社 snippet says 72/71/67 — age discrepancy noted, not resolved.\",\n    \"NoVo Foundation has no verified Chinese display form; keep English in titles.\",\n    \"Epstein link is reported context; do not state Buffett cited Epstein as his reason unless an exact quote is verified.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"巴菲特过去20年每年捐出数十亿美元，净资产却增长两倍多，目前仍有1500亿美元计划用于捐赠；7月他表示不再向盖茨基金会捐款，全部财富将捐给四个家族基金会，由三位子女在退休年龄设法捐出。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"捐了20年，巴菲特财富反增两倍\",\n          \"title_lines\": [\n            \"捐了20年\",\n            \"财富反增两倍\",\n            \"1500亿还没捐完\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 过去20年每年捐数十亿美元，净资产同期增长两倍多\",\n            \"transcript: 目前仍有1500亿美元计划用于捐赠\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"1500亿要捐完，三位子女得加速\",\n          \"title_lines\": [\n            \"1500亿要捐完\",\n            \"三位子女接棒\",\n            \"退休年龄还得加速\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 全部财富将捐给四个家族基金会，三个由子女运营\",\n            \"transcript: 苏西、霍华德、彼得年龄分别为73、71、68岁，正用退休岁月设法捐出财富\",\n            \"transcript: 要在去世前全部捐出，必须大幅加快捐赠步伐\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"巴菲特停了盖茨基金会的年度捐赠\",\n          \"title_lines\": [\n            \"巴菲特停了\",\n            \"盖茨基金会年度捐赠\",\n            \"全部转给四个家族基金会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"public: Berkshire 7月声明停止向盖茨基金会年度捐赠股票，转捐近60亿美元给四个家族基金会\",\n            \"transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"捐得越多，巴菲特财富涨得越快？\",\n          \"title_lines\": [\n            \"捐得越多\",\n            \"财富涨得越快\",\n            \"1500亿难题留给子女\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 每年捐数十亿美元，净资产同期增长两倍多\",\n            \"transcript: 目前仍有1500亿美元计划用于捐赠，捐出并非易事\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"捐了20年：财富反增两倍，1500亿还没捐完\",\n      \"title_lines\": [\n        \"捐了20年\",\n        \"财富反增两倍\",\n        \"1500亿还没捐完\"\n      ],\n      \"title_highlights\": [\n        \"捐了20年\",\n        \"财富反增两倍\",\n        \"1500亿\"\n      ],\n      \"comment\": \"KC评论：捐赠速度追不上财富增长，1500亿的接力才刚开始\",\n      \"comment_highlights\": [\n        \"1500亿\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：全球最著名的市场参与者，捐了20年\",\n          \"comment_highlights\": [\n            \"捐了20年\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：每年捐数十亿，净资产却增长两倍多\",\n          \"comment_highlights\": [\n            \"增长两倍多\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：1500亿美元仍在待捐清单上\",\n          \"comment_highlights\": [\n            \"1500亿美元\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：过去大部分捐赠工作由盖茨基金会承接\",\n          \"comment_highlights\": [\n            \"盖茨基金会\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：7月他表态不再向盖茨基金会捐款\",\n          \"comment_highlights\": [\n            \"不再向盖茨基金会捐款\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：全部财富转向四个家族基金会\",\n          \"comment_highlights\": [\n            \"四个家族基金会\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：三位子女在退休年龄接手捐赠\",\n          \"comment_highlights\": [\n            \"退休年龄\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：家族财富还在增长，捐出难度同步上升\",\n          \"comment_highlights\": [\n            \"捐出难度\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：数十亿美元投向国际冲突缓解与粮食安全\",\n          \"comment_highlights\": [\n            \"粮食安全\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：幼儿教育、女童和妇女权利也是重点\",\n          \"comment_highlights\": [\n            \"女童和妇女权利\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：1500亿的捐赠任务并不简单\",\n          \"comment_highlights\": [\n            \"1500亿\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：要在去世前捐完，必须大幅加速\",\n          \"comment_highlights\": [\n            \"大幅加速\"\n          ]\n        }\n      ],\n      \"formula_id\": \"名人反常识数字\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"捐了20年，财富怎么反而翻了两倍多？\",\n      \"evidence_basis\": [\n        \"transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多\",\n        \"transcript: 目前仍有1500亿美元计划用于捐赠\",\n        \"transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会\"\n      ],\n      \"runner_up_titles\": [\n        \"巴菲特停了盖茨产品会年度捐赠\",\n        \"1500亿要捐完，三位子女得加速\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 9,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 9,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "名人反常识数字",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "捐了20年，财富怎么反而翻了两倍多？",
+                "evidence_basis": [
+                  "transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多",
+                  "transcript: 目前仍有1500亿美元计划用于捐赠",
+                  "transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会"
+                ],
+                "title": "捐了20年，财富反增两倍，1500亿还没捐完",
+                "title_lines": [
+                  "捐了20年",
+                  "财富反增两倍",
+                  "1500亿还没捐完"
+                ],
+                "title_highlights": [
+                  "捐了20年",
+                  "财富反增两倍",
+                  "1500亿"
+                ],
+                "runner_up_titles": [
+                  "巴菲特停了盖茨基金会年度捐赠",
+                  "1500亿要捐完，三位子女得加速"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：捐赠速度追不上财富增长，1500亿的接力才刚开始",
+                "comment_highlights": [
+                  "1500亿"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：全球最著名的市场参与者，捐了20年",
+                    "comment_highlights": [
+                      "捐了20年"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：每年捐数十亿，净资产却增长两倍多",
+                    "comment_highlights": [
+                      "增长两倍多"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：1500亿美元仍在待捐清单上",
+                    "comment_highlights": [
+                      "1500亿美元"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：过去大部分捐赠工作由盖茨基金会承接",
+                    "comment_highlights": [
+                      "盖茨基金会"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：7月他表态不再向盖茨基金会捐款",
+                    "comment_highlights": [
+                      "不再向盖茨基金会捐款"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：全部财富转向四个家族基金会",
+                    "comment_highlights": [
+                      "四个家族基金会"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：三位子女在退休年龄接手捐赠",
+                    "comment_highlights": [
+                      "退休年龄"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：家族财富还在增长，捐出难度同步上升",
+                    "comment_highlights": [
+                      "捐出难度"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：数十亿美元投向国际冲突缓解与粮食安全",
+                    "comment_highlights": [
+                      "粮食安全"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：幼儿教育、女童和妇女权利也是重点",
+                    "comment_highlights": [
+                      "女童和妇女权利"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：1500亿的捐赠任务并不简单",
+                    "comment_highlights": [
+                      "1500亿"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：要在去世前捐完，必须大幅加速",
+                    "comment_highlights": [
+                      "大幅加速"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "捐了20年：财富反增两倍，1500亿还没捐完",
+          "title_lines": [
+            "捐了20年",
+            "财富反增两倍",
+            "1500亿还没捐完"
+          ],
+          "formula_id": "名人反常识数字",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "捐了20年，财富怎么反而翻了两倍多？",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：捐赠速度追不上财富增长，1500亿的接力才刚开始"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-19T00:11:26.962855+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches",
+          "source_title": "Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches",
+          "show_date": "",
+          "current_title": "巴菲特千亿捐赠难题",
+          "current_title_lines": [
+            "巴菲特家族",
+            "千亿捐赠如何落地",
+            "三位子女能否接棒"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "沃伦·巴菲特，全球最著名的市场参与者，过去20年一直试图将财富捐给慈善事业。",
+              "en": "Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.",
+              "relative_start": 0.0,
+              "relative_end": 7.9
+            },
+            {
+              "index": 2,
+              "zh": "但尽管他竭尽全力，每年捐出数十亿美元，他的净资产同期却增长了两倍多。",
+              "en": "But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.",
+              "relative_start": 7.9,
+              "relative_end": 17.0
+            },
+            {
+              "index": 3,
+              "zh": "目前，仍有1500亿美元计划用于捐赠。",
+              "en": "Currently, 150 billion is still slated for donations.",
+              "relative_start": 17.0,
+              "relative_end": 21.5
+            },
+            {
+              "index": 4,
+              "zh": "直到最近，他的老朋友比尔·盖茨通过自己的大型基金会处理了大部分工作。",
+              "en": "Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.",
+              "relative_start": 21.5,
+              "relative_end": 28.8
+            },
+            {
+              "index": 5,
+              "zh": "但在盖茨因与杰弗里·爱泼斯坦的关系面临更多审查后，巴菲特在7月表示，他不再计划向朋友的基金会捐款。",
+              "en": "But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.",
+              "relative_start": 28.8,
+              "relative_end": 38.4
+            },
+            {
+              "index": 6,
+              "zh": "相反，他的全部财富将捐给四个家族基金会：一个以他已故妻子命名，另外三个由他的每个孩子运营。",
+              "en": "Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.",
+              "relative_start": 38.4,
+              "relative_end": 47.0
+            },
+            {
+              "index": 7,
+              "zh": "苏西、霍华德和彼得，年龄分别为73岁、71岁和68岁，这三兄妹一直在用本该退休的岁月，",
+              "en": "Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,",
+              "relative_start": 47.6,
+              "relative_end": 56.8
+            },
+            {
+              "index": 8,
+              "zh": "设法捐出不断增长的家族财富。",
+              "en": "trying to find ways to give away the growing family fortune.",
+              "relative_start": 56.8,
+              "relative_end": 60.3
+            },
+            {
+              "index": 9,
+              "zh": "他们共同将数十亿美元投入最关心的事业：缓解国际冲突、粮食安全、",
+              "en": "Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,",
+              "relative_start": 60.3,
+              "relative_end": 68.7
+            },
+            {
+              "index": 10,
+              "zh": "幼儿教育、女童和妇女权利等。",
+              "en": "early childhood education, girls and women's rights, and more.",
+              "relative_start": 69.4,
+              "relative_end": 73.6
+            },
+            {
+              "index": 11,
+              "zh": "但捐出1500亿美元并非易事，他们父亲不断增长的财富部分已经证明了这一点。",
+              "en": "But giving away 150 billion dollars isn't a simple task, as their father's ever-growing part of money has demonstrated",
+              "relative_start": 73.6,
+              "relative_end": 81.5
+            },
+            {
+              "index": 12,
+              "zh": "如果要在去世前全部捐出，他们必须大幅加快捐赠步伐。",
+              "en": "they'll have to dramatically pick up the pace of their giving if they want to get rid of it all before they die.",
+              "relative_start": 81.5,
+              "relative_end": 87.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n  \"source_title\": \"Duration: 1:32 For Three Buffetts, a $150 Billion Puzzle Over Warren’s Riches\",\n  \"current_title\": \"巴菲特千亿捐赠难题\",\n  \"source_claims\": [\n    \"Warren Buffett, the most famous investor on the planet, spent the past 20 years trying to give his fortune away to charity.\",\n    \"But despite his best efforts and after billions of dollars in gifts every year, his net worth over the same period has more than tripled.\",\n    \"Currently, 150 billion is still slated for donations.\",\n    \"Until recently, his longtime friend Bill Gates was taking care of most of that work through his own giant foundation.\",\n    \"But after Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n    \"Instead, his whole fortune would go to four family foundations, one named for his late wife, and three run by each of his children.\",\n    \"Susie, Howard, and Peter, age 73, 71, and 68 years old, the siblings have been spending what would be their retirement years,\",\n    \"trying to find ways to give away the growing family fortune.\",\n    \"Together, they've spent billions of dollars on the things they care about most, international conflict mitigation, food security,\",\n    \"early childhood education, girls and women's rights, and more.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"After Gates faced more scrutiny over his ties to Jeffrey Epstein, Buffett said in July that he wasn't planning to make gifts to his friend's foundation anymore.\",\n      \"public_baseline\": \"Berkshire Hathaway's July statement and Chinese media report that Buffett stopped annual stock gifts to the Gates Foundation and redirected nearly $6 billion to four family foundations, with Epstein-related scrutiny cited as context.\",\n      \"surprise_gap\": \"Buffett had been the Gates Foundation's largest donor for about two decades; ending that pipeline is a reversal of a long-standing public commitment.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"For roughly 20 years Buffett made annual Berkshire stock gifts to the Gates Foundation.\",\n        \"current_position\": \"In July Buffett said he would no longer gift to the Gates Foundation and would direct his fortune to four family foundations.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.sohu.com/a/1050324015_115362\",\n            \"fact\": \"Berkshire statement: Buffett stops annual Gates Foundation gifts, gives ~$6B to four family foundations.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://h5.ifeng.com/c/vivoArticle/v0023ipZ9q6AXKOeMblViD4gQyF1MWlYD1rp-_wGPp8BRMZ4__\",\n            \"fact\": \"Reports end of 20-year philanthropic partnership; Epstein ties cited.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"巴菲特 2024 不再捐赠 盖茨基金会 爱泼斯坦 声明\",\n            \"url\": \"https://www.fortunechina.com/shangye/c/2026-07/20/content_475335.htm\",\n            \"fact\": \"Buffett had said in 2024 he would stop Gates Foundation giving after his death.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Buffett's net worth more than tripled over 20 years despite billions in annual gifts.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"$150 billion still slated for donations; fortune to go to four family foundations.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Warren Buffett four family foundations Susan Thompson Buffett Foundation Howard G. Buffett Foundation Sherwood Foundation NoVo Foundation\",\n          \"url\": \"https://www.investmentnews.com/practice-management/buffett-accelerates-6b-giving-plan-drops-gates-foundation-from-list/267418\",\n          \"fact\": \"Sherwood, Howard G. Buffett and NoVo foundations each receive 1,000,000 shares (~$500M).\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"巴菲特 三个子女 苏西 霍华德 彼得 基金会 中文名\",\n          \"url\": \"https://www.cls.cn/detail/2260347\",\n          \"fact\": \"Siblings Susan, Howard and Peter Buffett discuss the challenge of giving away the fortune.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Buffett's net worth tripled purely because of donations\",\n        \"Buffett personally accused Gates of wrongdoing over Epstein\",\n        \"The $150 billion figure is a confirmed final donation total\",\n        \"Buffett's children are professional philanthropists by career\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip metadata gives sibling ages as 73/71/68; 财联社 snippet says 72/71/67 — age discrepancy noted, not resolved.\",\n    \"NoVo Foundation has no verified Chinese display form; keep English in titles.\",\n    \"Epstein link is reported context; do not state Buffett cited Epstein as his reason unless an exact quote is verified.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"捐了20年：财富反增两倍，1500亿还没捐完\",\n  \"title_lines\": [\n    \"捐了20年\",\n    \"财富反增两倍\",\n    \"1500亿还没捐完\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"捐了20年，财富怎么反而翻了两倍多？\",\n  \"evidence_basis\": [\n    \"transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多\",\n    \"transcript: 目前仍有1500亿美元计划用于捐赠\",\n    \"transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 9,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "捐了20年，财富怎么反而翻了两倍多？1500亿最后会流向哪里？",
+            "evidence_basis": [
+              "transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多",
+              "transcript: 目前仍有1500亿美元计划用于捐赠",
+              "transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会"
+            ],
+            "title": "捐了20年：财富反增两倍，1500亿将流向哪四个家族基金会？",
+            "title_lines": [
+              "捐了20年",
+              "财富反增两倍",
+              "1500亿将流向哪四个家族基金会？"
+            ],
+            "title_highlights": [
+              "捐了20年",
+              "财富反增两倍",
+              "1500亿将流向哪四个家族基金会？"
+            ],
+            "runner_up_titles": [
+              "捐了20年：财富反增两倍，1500亿捐赠计划生变？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "捐了20年：财富反增两倍，1500亿将流向哪四个家族产品会？",
+        "title_lines": [
+          "捐了20年",
+          "财富反增两倍",
+          "1500亿将流向哪四个家族产品会？"
+        ],
+        "title_highlights": [
+          "捐了20年",
+          "财富反增两倍"
+        ],
+        "comment": "KC评论：捐赠速度追不上财富增长，1500亿的接力才刚开始",
+        "comment_highlights": [
+          "1500亿"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：全球最著名的市场参与者，捐了20年",
+            "comment_highlights": [
+              "捐了20年"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：每年捐数十亿，净资产却增长两倍多",
+            "comment_highlights": [
+              "增长两倍多"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：1500亿美元仍在待捐清单上",
+            "comment_highlights": [
+              "1500亿美元"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：过去大部分捐赠工作由盖茨基金会承接",
+            "comment_highlights": [
+              "盖茨基金会"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：7月他表态不再向盖茨基金会捐款",
+            "comment_highlights": [
+              "不再向盖茨基金会捐款"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：全部财富转向四个家族基金会",
+            "comment_highlights": [
+              "四个家族基金会"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：三位子女在退休年龄接手捐赠",
+            "comment_highlights": [
+              "退休年龄"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：家族财富还在增长，捐出难度同步上升",
+            "comment_highlights": [
+              "捐出难度"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：数十亿美元投向国际冲突缓解与粮食安全",
+            "comment_highlights": [
+              "粮食安全"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：幼儿教育、女童和妇女权利也是重点",
+            "comment_highlights": [
+              "女童和妇女权利"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：1500亿的捐赠任务并不简单",
+            "comment_highlights": [
+              "1500亿"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：要在去世前捐完，必须大幅加速",
+            "comment_highlights": [
+              "大幅加速"
+            ]
+          }
+        ],
+        "formula_id": "名人反常识数字",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "捐了20年，财富怎么反而翻了两倍多？1500亿最后会流向哪里？",
+        "evidence_basis": [
+          "transcript: 过去20年每年捐出数十亿美元，净资产同期增长两倍多",
+          "transcript: 目前仍有1500亿美元计划用于捐赠",
+          "transcript: 7月巴菲特表示不再计划向盖茨基金会捐款，全部财富将捐给四个家族基金会"
+        ],
+        "runner_up_titles": [
+          "捐了20年：财富反增两倍，1500亿捐赠计划生变？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 97,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
