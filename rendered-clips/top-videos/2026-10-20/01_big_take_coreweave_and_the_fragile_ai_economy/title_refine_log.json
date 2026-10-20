@@ -1,0 +1,1146 @@
+{
+  "timestamp_utc": "2026-10-20T01:02:35.995829+00:00",
+  "plan_path": "work/top-videos/01_big_take_coreweave_and_the_fragile_ai_economy/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "CoreWeave",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "CoreWeave, Inc.",
+        "preferred_en": "CoreWeave, Inc.",
+        "official_zh": "",
+        "common_zh": "CoreWeave",
+        "title_label": "CoreWeave",
+        "preferred_zh": "CoreWeave",
+        "aliases": [
+          "Corrieve",
+          "CoreWeave vids"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未提供CoreWeave的既定简体中文译名；中文财经媒体通常直接使用英文名CoreWeave。转录中的“Corrieve”“CoreWeave vids”为语音识别错误，可安全替换为CoreWeave。"
+      },
+      {
+        "source_text": "Brannin McBee",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Brannin McBee",
+        "preferred_en": "Brannin McBee",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "CoreWeave联合创始人",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "检索片段确认Brannin McBee为CoreWeave联合创始人、负责融资，但未提供可靠中文译名，故不虚构音译。"
+      },
+      {
+        "source_text": "Meta",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Meta Platforms, Inc.",
+        "preferred_en": "Meta Platforms, Inc.",
+        "official_zh": "",
+        "common_zh": "Meta",
+        "title_label": "Meta",
+        "preferred_zh": "Meta",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经媒体普遍直接使用“Meta”；检索片段将其列为超大规模云厂商之一。"
+      },
+      {
+        "source_text": "Amazon",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Amazon.com, Inc.",
+        "preferred_en": "Amazon.com, Inc.",
+        "official_zh": "亚马逊公司",
+        "common_zh": "亚马逊",
+        "title_label": "亚马逊",
+        "preferred_zh": "亚马逊",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "检索片段将Amazon列为超大规模云厂商；亚马逊为其通行中文名。"
+      },
+      {
+        "source_text": "Financial Times",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Financial Times",
+        "preferred_en": "Financial Times",
+        "official_zh": "",
+        "common_zh": "英国《金融时报》",
+        "title_label": "英国《金融时报》",
+        "preferred_zh": "英国《金融时报》",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "检索片段显示FT为McBee“unlimited”表态的原始采访媒体；中文媒体通行称“英国《金融时报》”。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "investment grade rating",
+        "clip_indexes": [],
+        "context": "CoreWeave寻求为其芯片抵押债务及公司本身获得评级",
+        "sense": "投资级信用评级",
+        "preferred_zh": "投资级评级",
+        "title_label": "投资级评级",
+        "avoid_zh": [
+          "投资等级评分"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "interest coverage",
+        "clip_indexes": [],
+        "context": "与同业相比CoreWeave的利息覆盖水平偏低",
+        "sense": "利息覆盖倍数，衡量经营利润对利息支出的覆盖能力",
+        "preferred_zh": "利息覆盖倍数",
+        "title_label": "利息覆盖",
+        "avoid_zh": [
+          "利率覆盖率"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "refinancing risk",
+        "clip_indexes": [],
+        "context": "依赖外部融资导致再融资风险敞口更大",
+        "sense": "到期债务需重新融资所带来的风险",
+        "preferred_zh": "再融资风险",
+        "title_label": "再融资风险",
+        "avoid_zh": [
+          "重融资风险"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "hyperscaler",
+        "clip_indexes": [],
+        "context": "Meta、Amazon等拥有多元化业务和巨额现金的超大规模云厂商",
+        "sense": "超大规模云计算/数据中心运营商",
+        "preferred_zh": "超大规模云厂商",
+        "title_label": "超大规模云厂商",
+        "avoid_zh": [
+          "超级扩展器"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "AI infrastructure",
+        "clip_indexes": [],
+        "context": "CoreWeave所处的GPU云与数据中心赛道",
+        "sense": "支撑AI训练与推理的算力、数据中心等基础设施",
+        "preferred_zh": "AI基础设施",
+        "title_label": "AI基础设施",
+        "avoid_zh": [
+          "人工智能基建"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "CoreWeave的债务增速惊人，杠杆显著高于AI基础设施同业，利息覆盖偏低，且依赖外部融资，因而再融资风险更大；联合创始人称希望通过获得投资级评级来接入“无限的资金池”。",
+        "public_baseline": "公开报道显示CoreWeave确为英伟达支持的AI云厂商，2025年营收约51.3亿美元、同比增长约168%，并计划2026年资本开支超300亿美元；多家分析指出其债务负担重、利息成本上升，杠杆高于超大规模云厂商同业。FT报道称联合创始人Brannin McBee表示希望为更多芯片抵押债务乃至公司本身取得投资级评级，以触达保险资金这一“无限”资金池。",
+        "surprise_gap": "公司一边高速扩张、一边公开寻求“无限资金池”和投资级评级，与市场对高杠杆AI基建融资可持续性的担忧形成张力；但“显著高于同业”的具体倍数在检索片段中未给出可核实的量化口径。",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "嘉宾称CoreWeave债务增速“相当惊人”，杠杆显著高于公开数据中心可比公司，利息覆盖偏低，依赖外部融资，再融资风险更大。"
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "嘉宾称联合创始人表示希望通过获得投资级评级接入“无限的资金池”。"
+          },
+          {
+            "kind": "public",
+            "query": "CoreWeave co-founder unlimited pools of capital investment grade rating",
+            "url": "https://www.ft.com/content/4ffa1853-0e2c-424f-b941-88c6bcac5765?syn-25a6b1a6=1",
+            "fact": "FT报道：联合创始人Brannin McBee称，为更多芯片抵押债务乃至公司本身取得投资级评级，可让其触达保险资金。"
+          },
+          {
+            "kind": "public",
+            "query": "CoreWeave co-founder unlimited pools of capital investment grade rating",
+            "url": "https://dealroom.co/news/162445-coreweave-wants-investment-grade-ratings-to-tap-unlimited-insurance-mone/",
+            "fact": "McBee原话引述：保险资金池“is unlimited … all the money in the world that sits in the insurance tranche”。"
+          },
+          {
+            "kind": "public",
+            "query": "CoreWeave debt load leverage compared to AI infrastructure peers 2025",
+            "url": "https://www.ainvest.com/news/coreweave-debt-laden-ai-play-growing-risk-investors-2512/",
+            "fact": "分析称2025年五大AI超大规模厂商合计发债1210亿美元，Meta、Google有巨额现金对冲，CoreWeave缺乏此类流动性。"
+          },
+          {
+            "kind": "public",
+            "query": "CoreWeave debt load leverage compared to AI infrastructure peers 2025",
+            "url": "https://tech-insider.org/coreweave-30-billion-capex-ai-cloud-2026/",
+            "fact": "CoreWeave 2025年营收51.3亿美元、同比增168%，并计划2026年资本开支超300亿美元。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得声称CoreWeave已获得投资级评级",
+          "不得声称CoreWeave已违约或出现债务危机",
+          "不得给出检索片段未支持的“杠杆是同业X倍”具体数字",
+          "不得将Bloomberg或节目主持人表述为持有该观点的主体",
+          "不得声称联合创始人承认公司存在欺诈或隐瞒"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "转录中的“Corrieve”“CoreWeave vids”为语音识别错误，已作为可替换别名记录。",
+      "公开检索未提供CoreWeave、Brannin McBee的可靠简体中文译名，故official_zh/common_zh留空，标题建议直接使用英文名。",
+      "部分检索结果日期标注为2026年，引用时需注意时间口径；本卡片仅用于实体与术语核对，不构成投资判断。"
+    ],
+    "research_queries": [
+      {
+        "query": "CoreWeave 高杠杆 债务 融资 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "确认CoreWeave的既定中文译名及公司身份"
+      },
+      {
+        "query": "CoreWeave debt load leverage compared to AI infrastructure peers 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实CoreWeave债务规模和杠杆率是否显著高于同业，以判断“materially more leveraged”是否属实"
+      },
+      {
+        "query": "CoreWeave co-founder unlimited pools of capital investment grade rating",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实联合创始人关于“unlimited pools of capital”和争取投资级评级的原话及时间点"
+      },
+      {
+        "query": "CoreWeave interest coverage ratio debt rating Moody's S&P",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实CoreWeave利息覆盖率和信用评级状况，验证“low interest coverage”说法"
+      },
+      {
+        "query": "CoreWeave outside financing dependence hyperscalers Meta Amazon internal funding",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实CoreWeave依赖外部融资、而Meta和Amazon等超大规模厂商以自有现金流支撑AI投资的对比是否成立"
+      },
+      {
+        "query": "CoreWeave bond yields spike after co-founder comments 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实收益率在联合创始人表态后大幅上升的市场反应是否真实发生"
+      },
+      {
+        "query": "CoreWeave 2025 revenue backlog debt total borrowings financial results",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实CoreWeave债务总额和营收积压等具体财务数据，支撑“tons of billions of debt”说法"
+      },
+      {
+        "query": "CoreWeave refinancing risk higher interest rate environment borrowing cost",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实再融资风险和高利率环境下借贷成本上升的分析是否与公开报道一致"
+      },
+      {
+        "query": "中国 智算中心 融资 杠杆 对比 CoreWeave",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "查找中国AI算力基础设施融资模式的公开对比信息，用于中国比较角度"
+      },
+      {
+        "query": "CoreWeave IPO 2025 prospectus risk factors customer concentration Microsoft",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实招股书中披露的客户集中度和风险因素，验证其商业模式脆弱性"
+      },
+      {
+        "query": "Bloomberg Watch Now established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-20T01:02:33.828751+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 75.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "CoreWeave高杠杆引关注 AI基建融资承压",
+          "current_title_lines": [
+            "CoreWeave",
+            "AI基建融资承压",
+            "高杠杆与再融资压力受关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "凯瑟琳，你一直在与市场参与者讨论Corrieve的情况，而收益率的最大飙升确实是在Corrieve联合创始人表示公司希望通过获得**级评级来获取“无限资金池”之后发生的。",
+              "en": "Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get",
+              "relative_start": 0.0,
+              "relative_end": 9.8
+            },
+            {
+              "index": 2,
+              "zh": "正如你之前提到的，为什么Corrieve将借更多钱的建议会被视为一个重大警示信号？",
+              "en": "access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?",
+              "relative_start": 9.8,
+              "relative_end": 20.6
+            },
+            {
+              "index": 3,
+              "zh": "是的，我认为Corrieve的债务增长速度非常惊人。",
+              "en": "Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.",
+              "relative_start": 21.2,
+              "relative_end": 25.9
+            },
+            {
+              "index": 4,
+              "zh": "即使在其人工智能基础设施同行中，这些同行已经面临大量借贷，我认为与同行相比，它在某些方面杠杆率明显更高，至少与一些公开的数据中心可比公司相比是这样。",
+              "en": "Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least",
+              "relative_start": 25.9,
+              "relative_end": 35.8
+            },
+            {
+              "index": 5,
+              "zh": "而且它的利息覆盖率在同行中相当低。所以我认为高杠杆以及Corrieve的一个主要区别是，它依赖外部融资。",
+              "en": "compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's",
+              "relative_start": 35.8,
+              "relative_end": 46.7
+            },
+            {
+              "index": 6,
+              "zh": "与Meta和亚马逊等现金充裕的超大规模公司不同，它没有多元化业务来内部资助人工智能**。",
+              "en": "dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.",
+              "relative_start": 46.7,
+              "relative_end": 58.6
+            },
+            {
+              "index": 7,
+              "zh": "这使得它更容易受到再融资风险的影响。而关于其大量债务的问题，现在我们还处于利率较高的环境，这将使借贷成本更加昂贵。",
+              "en": "So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to",
+              "relative_start": 58.6,
+              "relative_end": 69.5
+            },
+            {
+              "index": 8,
+              "zh": "所以我认为这加剧了市场参与者的许多担忧。",
+              "en": "make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.",
+              "relative_start": 69.5,
+              "relative_end": 75.3
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 75.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"CoreWeave高杠杆引关注 AI基建融资承压\",\n    \"current_title_lines\": [\n      \"CoreWeave\",\n      \"AI基建融资承压\",\n      \"高杠杆与再融资压力受关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"凯瑟琳，你一直在与市场参与者讨论Corrieve的情况，而收益率的最大飙升确实是在Corrieve联合创始人表示公司希望通过获得**级评级来获取“无限资金池”之后发生的。\",\n        \"en\": \"Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"正如你之前提到的，为什么Corrieve将借更多钱的建议会被视为一个重大警示信号？\",\n        \"en\": \"access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"是的，我认为Corrieve的债务增长速度非常惊人。\",\n        \"en\": \"Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.\",\n        \"relative_start\": 21.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"即使在其人工智能基础设施同行中，这些同行已经面临大量借贷，我认为与同行相比，它在某些方面杠杆率明显更高，至少与一些公开的数据中心可比公司相比是这样。\",\n        \"en\": \"Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"而且它的利息覆盖率在同行中相当低。所以我认为高杠杆以及Corrieve的一个主要区别是，它依赖外部融资。\",\n        \"en\": \"compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 46.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"与Meta和亚马逊等现金充裕的超大规模公司不同，它没有多元化业务来内部资助人工智能**。\",\n        \"en\": \"dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.\",\n        \"relative_start\": 46.7,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这使得它更容易受到再融资风险的影响。而关于其大量债务的问题，现在我们还处于利率较高的环境，这将使借贷成本更加昂贵。\",\n        \"en\": \"So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我认为这加剧了市场参与者的许多担忧。\",\n        \"en\": \"make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 75.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"CoreWeave的债务增速惊人，杠杆显著高于AI基础设施同业，利息覆盖偏低，且依赖外部融资，因而再融资风险更大；联合创始人称希望通过获得投资级评级来接入“无限的资金池”。\",\n      \"public_baseline\": \"公开报道显示CoreWeave确为英伟达支持的AI云厂商，2025年营收约51.3亿美元、同比增长约168%，并计划2026年资本开支超300亿美元；多家分析指出其债务负担重、利息成本上升，杠杆高于超大规模云厂商同业。FT报道称联合创始人Brannin McBee表示希望为更多芯片抵押债务乃至公司本身取得投资级评级，以触达保险资金这一“无限”资金池。\",\n      \"surprise_gap\": \"公司一边高速扩张、一边公开寻求“无限资金池”和投资级评级，与市场对高杠杆AI基建融资可持续性的担忧形成张力；但“显著高于同业”的具体倍数在检索片段中未给出可核实的量化口径。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称CoreWeave债务增速“相当惊人”，杠杆显著高于公开数据中心可比公司，利息覆盖偏低，依赖外部融资，再融资风险更大。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称联合创始人表示希望通过获得投资级评级接入“无限的资金池”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://www.ft.com/content/4ffa1853-0e2c-424f-b941-88c6bcac5765?syn-25a6b1a6=1\",\n          \"fact\": \"FT报道：联合创始人Brannin McBee称，为更多芯片抵押债务乃至公司本身取得投资级评级，可让其触达保险资金。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://dealroom.co/news/162445-coreweave-wants-investment-grade-ratings-to-tap-unlimited-insurance-mone/\",\n          \"fact\": \"McBee原话引述：保险资金池“is unlimited … all the money in the world that sits in the insurance tranche”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://www.ainvest.com/news/coreweave-debt-laden-ai-play-growing-risk-investors-2512/\",\n          \"fact\": \"分析称2025年五大AI超大规模厂商合计发债1210亿美元，Meta、Google有巨额现金对冲，CoreWeave缺乏此类流动性。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://tech-insider.org/coreweave-30-billion-capex-ai-cloud-2026/\",\n          \"fact\": \"CoreWeave 2025年营收51.3亿美元、同比增168%，并计划2026年资本开支超300亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称CoreWeave已获得投资级评级\",\n        \"不得声称CoreWeave已违约或出现债务危机\",\n        \"不得给出检索片段未支持的“杠杆是同业X倍”具体数字\",\n        \"不得将Bloomberg或节目主持人表述为持有该观点的主体\",\n        \"不得声称联合创始人承认公司存在欺诈或隐瞒\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转录中的“Corrieve”“CoreWeave vids”为语音识别错误，已作为可替换别名记录。\",\n    \"公开检索未提供CoreWeave、Brannin McBee的可靠简体中文译名，故official_zh/common_zh留空，标题建议直接使用英文名。\",\n    \"部分检索结果日期标注为2026年，引用时需注意时间口径；本卡片仅用于实体与术语核对，不构成投资判断。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "CoreWeave联合创始人称希望通过获得投资级评级接入“无限资金池”，嘉宾指出其债务增速惊人、杠杆显著高于同业、利息覆盖偏低且依赖外部融资，再融资风险更大。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "CoreWeave要无限资金池",
+                "title_lines": [
+                  "CoreWeave",
+                  "要无限资金池",
+                  "再融资压力藏不住"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”",
+                  "transcript: 嘉宾称债务增速惊人、杠杆显著高于同业、利息覆盖偏低、依赖外部融资"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "CoreWeave杠杆高",
+                "title_lines": [
+                  "CoreWeave",
+                  "杠杆高过同业",
+                  "利息覆盖偏低"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 嘉宾称杠杆显著高于公开数据中心可比公司",
+                  "transcript: 利息覆盖率在同行中相当低"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "无限资金池背后",
+                "title_lines": [
+                  "无限资金池背后",
+                  "CoreWeave再融资",
+                  "利率环境不帮忙"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 联合创始人称希望接入“无限资金池”",
+                  "transcript: 高利率环境使借贷成本更昂贵，再融资风险更大"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "AI基建融资承压",
+                "title_lines": [
+                  "AI基建融资",
+                  "CoreWeave高杠杆",
+                  "再融资风险受关注"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 嘉宾称CoreWeave依赖外部融资，与现金充裕的超大规模公司不同",
+                  "transcript: 高杠杆和再融资风险是市场关注点"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 75.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"CoreWeave高杠杆引关注 AI基建融资承压\",\n    \"current_title_lines\": [\n      \"CoreWeave\",\n      \"AI基建融资承压\",\n      \"高杠杆与再融资压力受关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"凯瑟琳，你一直在与市场参与者讨论Corrieve的情况，而收益率的最大飙升确实是在Corrieve联合创始人表示公司希望通过获得**级评级来获取“无限资金池”之后发生的。\",\n        \"en\": \"Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"正如你之前提到的，为什么Corrieve将借更多钱的建议会被视为一个重大警示信号？\",\n        \"en\": \"access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"是的，我认为Corrieve的债务增长速度非常惊人。\",\n        \"en\": \"Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.\",\n        \"relative_start\": 21.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"即使在其人工智能基础设施同行中，这些同行已经面临大量借贷，我认为与同行相比，它在某些方面杠杆率明显更高，至少与一些公开的数据中心可比公司相比是这样。\",\n        \"en\": \"Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"而且它的利息覆盖率在同行中相当低。所以我认为高杠杆以及Corrieve的一个主要区别是，它依赖外部融资。\",\n        \"en\": \"compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 46.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"与Meta和亚马逊等现金充裕的超大规模公司不同，它没有多元化业务来内部资助人工智能**。\",\n        \"en\": \"dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.\",\n        \"relative_start\": 46.7,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这使得它更容易受到再融资风险的影响。而关于其大量债务的问题，现在我们还处于利率较高的环境，这将使借贷成本更加昂贵。\",\n        \"en\": \"So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我认为这加剧了市场参与者的许多担忧。\",\n        \"en\": \"make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 75.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"CoreWeave的债务增速惊人，杠杆显著高于AI基础设施同业，利息覆盖偏低，且依赖外部融资，因而再融资风险更大；联合创始人称希望通过获得投资级评级来接入“无限的资金池”。\",\n      \"public_baseline\": \"公开报道显示CoreWeave确为英伟达支持的AI云厂商，2025年营收约51.3亿美元、同比增长约168%，并计划2026年资本开支超300亿美元；多家分析指出其债务负担重、利息成本上升，杠杆高于超大规模云厂商同业。FT报道称联合创始人Brannin McBee表示希望为更多芯片抵押债务乃至公司本身取得投资级评级，以触达保险资金这一“无限”资金池。\",\n      \"surprise_gap\": \"公司一边高速扩张、一边公开寻求“无限资金池”和投资级评级，与市场对高杠杆AI基建融资可持续性的担忧形成张力；但“显著高于同业”的具体倍数在检索片段中未给出可核实的量化口径。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称CoreWeave债务增速“相当惊人”，杠杆显著高于公开数据中心可比公司，利息覆盖偏低，依赖外部融资，再融资风险更大。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称联合创始人表示希望通过获得投资级评级接入“无限的资金池”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://www.ft.com/content/4ffa1853-0e2c-424f-b941-88c6bcac5765?syn-25a6b1a6=1\",\n          \"fact\": \"FT报道：联合创始人Brannin McBee称，为更多芯片抵押债务乃至公司本身取得投资级评级，可让其触达保险资金。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://dealroom.co/news/162445-coreweave-wants-investment-grade-ratings-to-tap-unlimited-insurance-mone/\",\n          \"fact\": \"McBee原话引述：保险资金池“is unlimited … all the money in the world that sits in the insurance tranche”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://www.ainvest.com/news/coreweave-debt-laden-ai-play-growing-risk-investors-2512/\",\n          \"fact\": \"分析称2025年五大AI超大规模厂商合计发债1210亿美元，Meta、Google有巨额现金对冲，CoreWeave缺乏此类流动性。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://tech-insider.org/coreweave-30-billion-capex-ai-cloud-2026/\",\n          \"fact\": \"CoreWeave 2025年营收51.3亿美元、同比增168%，并计划2026年资本开支超300亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称CoreWeave已获得投资级评级\",\n        \"不得声称CoreWeave已违约或出现债务危机\",\n        \"不得给出检索片段未支持的“杠杆是同业X倍”具体数字\",\n        \"不得将Bloomberg或节目主持人表述为持有该观点的主体\",\n        \"不得声称联合创始人承认公司存在欺诈或隐瞒\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转录中的“Corrieve”“CoreWeave vids”为语音识别错误，已作为可替换别名记录。\",\n    \"公开检索未提供CoreWeave、Brannin McBee的可靠简体中文译名，故official_zh/common_zh留空，标题建议直接使用英文名。\",\n    \"部分检索结果日期标注为2026年，引用时需注意时间口径；本卡片仅用于实体与术语核对，不构成投资判断。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"CoreWeave联合创始人称希望通过获得投资级评级接入“无限资金池”，嘉宾指出其债务增速惊人、杠杆显著高于同业、利息覆盖偏低且依赖外部融资，再融资风险更大。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"CoreWeave要无限资金池\",\n          \"title_lines\": [\n            \"CoreWeave\",\n            \"要无限资金池\",\n            \"再融资压力藏不住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”\",\n            \"transcript: 嘉宾称债务增速惊人、杠杆显著高于同业、利息覆盖偏低、依赖外部融资\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"CoreWeave杠杆高\",\n          \"title_lines\": [\n            \"CoreWeave\",\n            \"杠杆高过同业\",\n            \"利息覆盖偏低\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称杠杆显著高于公开数据中心可比公司\",\n            \"transcript: 利息覆盖率在同行中相当低\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"无限资金池背后\",\n          \"title_lines\": [\n            \"无限资金池背后\",\n            \"CoreWeave再融资\",\n            \"利率环境不帮忙\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 联合创始人称希望接入“无限资金池”\",\n            \"transcript: 高利率环境使借贷成本更昂贵，再融资风险更大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI基建融资承压\",\n          \"title_lines\": [\n            \"AI基建融资\",\n            \"CoreWeave高杠杆\",\n            \"再融资风险受关注\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称CoreWeave依赖外部融资，与现金充裕的超大规模公司不同\",\n            \"transcript: 高杠杆和再融资风险是市场关注点\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然想靠一个评级撬动无限资金池",
+            "evidence_basis": [
+              "transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”",
+              "transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资",
+              "transcript: 高利率环境使借贷成本更昂贵，再融资风险更大"
+            ],
+            "title": "CoreWeave要无限资金池 杠杆却高过同业",
+            "title_lines": [
+              "CoreWeave要无限资金池",
+              "杠杆却高过同业",
+              "再融资压力藏不住"
+            ],
+            "title_highlights": [
+              "无限资金池",
+              "杠杆却高过同业",
+              "再融资压力"
+            ],
+            "runner_up_titles": [
+              "CoreWeave杠杆高过同业 利息覆盖偏低",
+              "无限资金池背后 CoreWeave再融资遇高利率"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：一边喊无限资金池，一边杠杆高过同业，高利率让再融资更贵。",
+            "comment_highlights": [
+              "无限资金池",
+              "杠杆高过同业",
+              "再融资更贵"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：联合创始人把投资级评级和无限资金池直接挂钩。",
+                "comment_highlights": [
+                  "无限资金池"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：借更多钱为何成警示信号，关键在杠杆与覆盖。",
+                "comment_highlights": [
+                  "警示信号"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：嘉宾直言债务增速相当惊人，这是讨论起点。",
+                "comment_highlights": [
+                  "债务增速"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：即便在AI基建同业里，它的杠杆也明显更高。",
+                "comment_highlights": [
+                  "杠杆也明显更高"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：利息覆盖偏低，加上依赖外部融资，压力更集中。",
+                "comment_highlights": [
+                  "利息覆盖偏低",
+                  "依赖外部融资"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：没有Meta和亚马逊的多元化现金流，只能靠外部融资。",
+                "comment_highlights": [
+                  "多元化现金流"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：高利率环境下，再融资成本变得更昂贵。",
+                "comment_highlights": [
+                  "再融资成本"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：高杠杆叠加高利率，市场担忧被进一步放大。",
+                "comment_highlights": [
+                  "市场担忧"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 75.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"CoreWeave高杠杆引关注 AI基建融资承压\",\n    \"current_title_lines\": [\n      \"CoreWeave\",\n      \"AI基建融资承压\",\n      \"高杠杆与再融资压力受关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"凯瑟琳，你一直在与市场参与者讨论Corrieve的情况，而收益率的最大飙升确实是在Corrieve联合创始人表示公司希望通过获得**级评级来获取“无限资金池”之后发生的。\",\n        \"en\": \"Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"正如你之前提到的，为什么Corrieve将借更多钱的建议会被视为一个重大警示信号？\",\n        \"en\": \"access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?\",\n        \"relative_start\": 9.8,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"是的，我认为Corrieve的债务增长速度非常惊人。\",\n        \"en\": \"Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.\",\n        \"relative_start\": 21.2,\n        \"relative_end\": 25.9\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"即使在其人工智能基础设施同行中，这些同行已经面临大量借贷，我认为与同行相比，它在某些方面杠杆率明显更高，至少与一些公开的数据中心可比公司相比是这样。\",\n        \"en\": \"Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least\",\n        \"relative_start\": 25.9,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"而且它的利息覆盖率在同行中相当低。所以我认为高杠杆以及Corrieve的一个主要区别是，它依赖外部融资。\",\n        \"en\": \"compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 46.7\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"与Meta和亚马逊等现金充裕的超大规模公司不同，它没有多元化业务来内部资助人工智能**。\",\n        \"en\": \"dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.\",\n        \"relative_start\": 46.7,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这使得它更容易受到再融资风险的影响。而关于其大量债务的问题，现在我们还处于利率较高的环境，这将使借贷成本更加昂贵。\",\n        \"en\": \"So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.5\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"所以我认为这加剧了市场参与者的许多担忧。\",\n        \"en\": \"make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.\",\n        \"relative_start\": 69.5,\n        \"relative_end\": 75.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"CoreWeave的债务增速惊人，杠杆显著高于AI基础设施同业，利息覆盖偏低，且依赖外部融资，因而再融资风险更大；联合创始人称希望通过获得投资级评级来接入“无限的资金池”。\",\n      \"public_baseline\": \"公开报道显示CoreWeave确为英伟达支持的AI云厂商，2025年营收约51.3亿美元、同比增长约168%，并计划2026年资本开支超300亿美元；多家分析指出其债务负担重、利息成本上升，杠杆高于超大规模云厂商同业。FT报道称联合创始人Brannin McBee表示希望为更多芯片抵押债务乃至公司本身取得投资级评级，以触达保险资金这一“无限”资金池。\",\n      \"surprise_gap\": \"公司一边高速扩张、一边公开寻求“无限资金池”和投资级评级，与市场对高杠杆AI基建融资可持续性的担忧形成张力；但“显著高于同业”的具体倍数在检索片段中未给出可核实的量化口径。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称CoreWeave债务增速“相当惊人”，杠杆显著高于公开数据中心可比公司，利息覆盖偏低，依赖外部融资，再融资风险更大。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称联合创始人表示希望通过获得投资级评级接入“无限的资金池”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://www.ft.com/content/4ffa1853-0e2c-424f-b941-88c6bcac5765?syn-25a6b1a6=1\",\n          \"fact\": \"FT报道：联合创始人Brannin McBee称，为更多芯片抵押债务乃至公司本身取得投资级评级，可让其触达保险资金。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://dealroom.co/news/162445-coreweave-wants-investment-grade-ratings-to-tap-unlimited-insurance-mone/\",\n          \"fact\": \"McBee原话引述：保险资金池“is unlimited … all the money in the world that sits in the insurance tranche”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://www.ainvest.com/news/coreweave-debt-laden-ai-play-growing-risk-investors-2512/\",\n          \"fact\": \"分析称2025年五大AI超大规模厂商合计发债1210亿美元，Meta、Google有巨额现金对冲，CoreWeave缺乏此类流动性。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://tech-insider.org/coreweave-30-billion-capex-ai-cloud-2026/\",\n          \"fact\": \"CoreWeave 2025年营收51.3亿美元、同比增168%，并计划2026年资本开支超300亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称CoreWeave已获得投资级评级\",\n        \"不得声称CoreWeave已违约或出现债务危机\",\n        \"不得给出检索片段未支持的“杠杆是同业X倍”具体数字\",\n        \"不得将Bloomberg或节目主持人表述为持有该观点的主体\",\n        \"不得声称联合创始人承认公司存在欺诈或隐瞒\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转录中的“Corrieve”“CoreWeave vids”为语音识别错误，已作为可替换别名记录。\",\n    \"公开检索未提供CoreWeave、Brannin McBee的可靠简体中文译名，故official_zh/common_zh留空，标题建议直接使用英文名。\",\n    \"部分检索结果日期标注为2026年，引用时需注意时间口径；本卡片仅用于实体与术语核对，不构成投资判断。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"CoreWeave联合创始人称希望通过获得投资级评级接入“无限资金池”，嘉宾指出其债务增速惊人、杠杆显著高于同业、利息覆盖偏低且依赖外部融资，再融资风险更大。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"CoreWeave要无限资金池\",\n          \"title_lines\": [\n            \"CoreWeave\",\n            \"要无限资金池\",\n            \"再融资压力藏不住\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”\",\n            \"transcript: 嘉宾称债务增速惊人、杠杆显著高于同业、利息覆盖偏低、依赖外部融资\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"CoreWeave杠杆高\",\n          \"title_lines\": [\n            \"CoreWeave\",\n            \"杠杆高过同业\",\n            \"利息覆盖偏低\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称杠杆显著高于公开数据中心可比公司\",\n            \"transcript: 利息覆盖率在同行中相当低\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"无限资金池背后\",\n          \"title_lines\": [\n            \"无限资金池背后\",\n            \"CoreWeave再融资\",\n            \"利率环境不帮忙\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 联合创始人称希望接入“无限资金池”\",\n            \"transcript: 高利率环境使借贷成本更昂贵，再融资风险更大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI基建融资承压\",\n          \"title_lines\": [\n            \"AI基建融资\",\n            \"CoreWeave高杠杆\",\n            \"再融资风险受关注\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称CoreWeave依赖外部融资，与现金充裕的超大规模公司不同\",\n            \"transcript: 高杠杆和再融资风险是市场关注点\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"CoreWeave要无限资金池：杠杆却高过同业，再融资压力藏不住\",\n      \"title_lines\": [\n        \"CoreWeave要无限资金池\",\n        \"杠杆却高过同业\",\n        \"再融资压力藏不住\"\n      ],\n      \"title_highlights\": [\n        \"无限资金池\",\n        \"杠杆却高过同业\",\n        \"再融资压力\"\n      ],\n      \"comment\": \"KC评论：一边喊无限资金池，一边杠杆高过同业，高利率让再融资更贵\",\n      \"comment_highlights\": [\n        \"无限资金池\",\n        \"杠杆高过同业\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：联合创始人把**级评级和无限资金池直接挂钩\",\n          \"comment_highlights\": [\n            \"无限资金池\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：借更多钱为何成警示信号，关键在杠杆与覆盖\",\n          \"comment_highlights\": [\n            \"警示信号\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：嘉宾直言债务增速相当惊人，这是讨论起点\",\n          \"comment_highlights\": [\n            \"债务增速\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：即便在AI基建同业里，它的杠杆也明显更高\",\n          \"comment_highlights\": [\n            \"杠杆也明显更高\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：利息覆盖偏低，加上依赖外部融资，压力更集中\",\n          \"comment_highlights\": [\n            \"利息覆盖偏低\",\n            \"依赖外部融资\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：没有Meta和亚马逊的多元化现金流，只能靠外部融资\",\n          \"comment_highlights\": [\n            \"多元化现金流\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：高利率环境下，再融资成本变得更昂贵\",\n          \"comment_highlights\": [\n            \"再融资成本\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：高杠杆叠加高利率，市场担忧被进一步放大\",\n          \"comment_highlights\": [\n            \"市场担忧\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然想靠一个评级撬动无限资金池\",\n      \"evidence_basis\": [\n        \"transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”\",\n        \"transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资\",\n        \"transcript: 高利率环境使借贷成本更昂贵，再融资风险更大\"\n      ],\n      \"runner_up_titles\": [\n        \"CoreWeave杠杆高过同业 利息覆盖偏低\",\n        \"无限资金池背后 CoreWeave再融资遇高利率\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 97,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"has_hook_tension\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然想靠一个评级撬动无限资金池",
+                "evidence_basis": [
+                  "transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”",
+                  "transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资",
+                  "transcript: 高利率环境使借贷成本更昂贵，再融资风险更大"
+                ],
+                "title": "CoreWeave要无限资金池 杠杆却高过同业",
+                "title_lines": [
+                  "CoreWeave要无限资金池",
+                  "杠杆却高过同业",
+                  "再融资更贵了"
+                ],
+                "title_highlights": [
+                  "无限资金池",
+                  "杠杆却高过同业",
+                  "再融资更贵了"
+                ],
+                "runner_up_titles": [
+                  "CoreWeave杠杆高过同业 利息覆盖偏低",
+                  "无限资金池背后 CoreWeave再融资遇高利率"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：一边喊无限资金池，一边杠杆高过同业，高利率让再融资更贵",
+                "comment_highlights": [
+                  "无限资金池",
+                  "杠杆高过同业"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：联合创始人把评级和无限资金池直接挂钩",
+                    "comment_highlights": [
+                      "无限资金池"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：借更多钱为何成警示信号，关键在杠杆与覆盖",
+                    "comment_highlights": [
+                      "警示信号"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：嘉宾直言债务增速相当惊人，这是讨论起点",
+                    "comment_highlights": [
+                      "债务增速"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：即便在AI基建同业里，它的杠杆也明显更高",
+                    "comment_highlights": [
+                      "杠杆也明显更高"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：利息覆盖偏低，加上依赖外部融资，压力更集中",
+                    "comment_highlights": [
+                      "利息覆盖偏低",
+                      "依赖外部融资"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：没有Meta和亚马逊的多元化现金流，只能靠外部融资",
+                    "comment_highlights": [
+                      "多元化现金流"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：高利率环境下，再融资成本变得更昂贵",
+                    "comment_highlights": [
+                      "再融资成本"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：高杠杆叠加高利率，市场担忧被进一步放大",
+                    "comment_highlights": [
+                      "市场担忧"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "CoreWeave要无限资金池：杠杆却高过同业，再融资压力藏不住",
+          "title_lines": [
+            "CoreWeave要无限资金池",
+            "杠杆却高过同业",
+            "再融资压力藏不住"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然想靠一个评级撬动无限资金池",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 97,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：一边喊无限资金池，一边杠杆高过同业，高利率让再融资更贵"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-20T01:02:35.983743+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 75.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "CoreWeave高杠杆引关注 AI基建融资承压",
+          "current_title_lines": [
+            "CoreWeave",
+            "AI基建融资承压",
+            "高杠杆与再融资压力受关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "凯瑟琳，你一直在与市场参与者讨论Corrieve的情况，而收益率的最大飙升确实是在Corrieve联合创始人表示公司希望通过获得**级评级来获取“无限资金池”之后发生的。",
+              "en": "Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get",
+              "relative_start": 0.0,
+              "relative_end": 9.8
+            },
+            {
+              "index": 2,
+              "zh": "正如你之前提到的，为什么Corrieve将借更多钱的建议会被视为一个重大警示信号？",
+              "en": "access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?",
+              "relative_start": 9.8,
+              "relative_end": 20.6
+            },
+            {
+              "index": 3,
+              "zh": "是的，我认为Corrieve的债务增长速度非常惊人。",
+              "en": "Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.",
+              "relative_start": 21.2,
+              "relative_end": 25.9
+            },
+            {
+              "index": 4,
+              "zh": "即使在其人工智能基础设施同行中，这些同行已经面临大量借贷，我认为与同行相比，它在某些方面杠杆率明显更高，至少与一些公开的数据中心可比公司相比是这样。",
+              "en": "Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least",
+              "relative_start": 25.9,
+              "relative_end": 35.8
+            },
+            {
+              "index": 5,
+              "zh": "而且它的利息覆盖率在同行中相当低。所以我认为高杠杆以及Corrieve的一个主要区别是，它依赖外部融资。",
+              "en": "compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's",
+              "relative_start": 35.8,
+              "relative_end": 46.7
+            },
+            {
+              "index": 6,
+              "zh": "与Meta和亚马逊等现金充裕的超大规模公司不同，它没有多元化业务来内部资助人工智能**。",
+              "en": "dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.",
+              "relative_start": 46.7,
+              "relative_end": 58.6
+            },
+            {
+              "index": 7,
+              "zh": "这使得它更容易受到再融资风险的影响。而关于其大量债务的问题，现在我们还处于利率较高的环境，这将使借贷成本更加昂贵。",
+              "en": "So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to",
+              "relative_start": 58.6,
+              "relative_end": 69.5
+            },
+            {
+              "index": 8,
+              "zh": "所以我认为这加剧了市场参与者的许多担忧。",
+              "en": "make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.",
+              "relative_start": 69.5,
+              "relative_end": 75.3
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Watch Now\",\n  \"source_title\": \"Watch Now\",\n  \"current_title\": \"CoreWeave高杠杆引关注 AI基建融资承压\",\n  \"source_claims\": [\n    \"Catherine, you've been speaking to investors about Corrieve's situation and, you know, the biggest spike in yields really came after Corrieve's co-founder said the company wanted to get\",\n    \"access to, quote, unlimited pools of capital by getting this investment grade rating as you alluded to earlier. Why was the suggestion that Corrieve would be borrowing more such a red flag?\",\n    \"Yeah, I think Corrieve's debt has grown into pace that is, you know, pretty extraordinary.\",\n    \"Even among its AI infrastructure peers, where you're already dealing with a lot of, you know, borrowing, I think compared to its peers, it's materially more leveraged in some ways, at least\",\n    \"compared to some of the public data center comps. And it carries a pretty low interest coverage in the group. So I think that high leverage and then also a main distinction of Corrieve vids, it's\",\n    \"dependent on outside financing. So unlike some of those heavy cash hyperscalers, like meta and Amazon, you know, it doesn't have a diversified business that's funding the AI investment internally.\",\n    \"So that's making it a lot more exposed to refinancing risk. And the thing about its tons of villains of debt is now also we're at a time of a higher interest rate environment which is going to\",\n    \"make the cost of borrowing more expensive. So I think that's sort of compounding a lot of those investor concerns.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"CoreWeave的债务增速惊人，杠杆显著高于AI基础设施同业，利息覆盖偏低，且依赖外部融资，因而再融资风险更大；联合创始人称希望通过获得投资级评级来接入“无限的资金池”。\",\n      \"public_baseline\": \"公开报道显示CoreWeave确为英伟达支持的AI云厂商，2025年营收约51.3亿美元、同比增长约168%，并计划2026年资本开支超300亿美元；多家分析指出其债务负担重、利息成本上升，杠杆高于超大规模云厂商同业。FT报道称联合创始人Brannin McBee表示希望为更多芯片抵押债务乃至公司本身取得投资级评级，以触达保险资金这一“无限”资金池。\",\n      \"surprise_gap\": \"公司一边高速扩张、一边公开寻求“无限资金池”和投资级评级，与市场对高杠杆AI基建融资可持续性的担忧形成张力；但“显著高于同业”的具体倍数在检索片段中未给出可核实的量化口径。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称CoreWeave债务增速“相当惊人”，杠杆显著高于公开数据中心可比公司，利息覆盖偏低，依赖外部融资，再融资风险更大。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称联合创始人表示希望通过获得投资级评级接入“无限的资金池”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://www.ft.com/content/4ffa1853-0e2c-424f-b941-88c6bcac5765?syn-25a6b1a6=1\",\n          \"fact\": \"FT报道：联合创始人Brannin McBee称，为更多芯片抵押债务乃至公司本身取得投资级评级，可让其触达保险资金。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave co-founder unlimited pools of capital investment grade rating\",\n          \"url\": \"https://dealroom.co/news/162445-coreweave-wants-investment-grade-ratings-to-tap-unlimited-insurance-mone/\",\n          \"fact\": \"McBee原话引述：保险资金池“is unlimited … all the money in the world that sits in the insurance tranche”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://www.ainvest.com/news/coreweave-debt-laden-ai-play-growing-risk-investors-2512/\",\n          \"fact\": \"分析称2025年五大AI超大规模厂商合计发债1210亿美元，Meta、Google有巨额现金对冲，CoreWeave缺乏此类流动性。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"CoreWeave debt load leverage compared to AI infrastructure peers 2025\",\n          \"url\": \"https://tech-insider.org/coreweave-30-billion-capex-ai-cloud-2026/\",\n          \"fact\": \"CoreWeave 2025年营收51.3亿美元、同比增168%，并计划2026年资本开支超300亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称CoreWeave已获得投资级评级\",\n        \"不得声称CoreWeave已违约或出现债务危机\",\n        \"不得给出检索片段未支持的“杠杆是同业X倍”具体数字\",\n        \"不得将Bloomberg或节目主持人表述为持有该观点的主体\",\n        \"不得声称联合创始人承认公司存在欺诈或隐瞒\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转录中的“Corrieve”“CoreWeave vids”为语音识别错误，已作为可替换别名记录。\",\n    \"公开检索未提供CoreWeave、Brannin McBee的可靠简体中文译名，故official_zh/common_zh留空，标题建议直接使用英文名。\",\n    \"部分检索结果日期标注为2026年，引用时需注意时间口径；本卡片仅用于实体与术语核对，不构成投资判断。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"CoreWeave要无限资金池：杠杆却高过同业，再融资压力藏不住\",\n  \"title_lines\": [\n    \"CoreWeave要无限资金池\",\n    \"杠杆却高过同业\",\n    \"再融资压力藏不住\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然想靠一个评级撬动无限资金池\",\n  \"evidence_basis\": [\n    \"transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”\",\n    \"transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资\",\n    \"transcript: 高利率环境使借贷成本更昂贵，再融资风险更大\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- No additional clip-specific rule.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然想靠一个评级撬动无限资金池",
+            "evidence_basis": [
+              "transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”",
+              "transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资",
+              "transcript: 高利率环境使借贷成本更昂贵，再融资风险更大"
+            ],
+            "title": "CoreWeave想拿投资级评级撬动无限资金池，杠杆却高于同业",
+            "title_lines": [
+              "CoreWeave想拿投资级评级",
+              "撬动无限资金池",
+              "杠杆却高于同业"
+            ],
+            "title_highlights": [
+              "CoreWeave想拿投资级评级",
+              "撬动无限资金池",
+              "杠杆却高于同业"
+            ],
+            "runner_up_titles": [
+              "CoreWeave瞄准无限资金池，高杠杆再融资压力更受关注"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "CoreWeave想拿**级评级：撬动无限资金池，杠杆却高于同业",
+        "title_lines": [
+          "CoreWeave想拿**级评级",
+          "撬动无限资金池",
+          "杠杆却高于同业"
+        ],
+        "title_highlights": [
+          "撬动无限资金池",
+          "杠杆却高于同业"
+        ],
+        "comment": "KC评论：一边喊无限资金池，一边杠杆高过同业，高利率让再融资更贵",
+        "comment_highlights": [
+          "无限资金池",
+          "杠杆高过同业"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：联合创始人把**级评级和无限资金池直接挂钩",
+            "comment_highlights": [
+              "无限资金池"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：借更多钱为何成警示信号，关键在杠杆与覆盖",
+            "comment_highlights": [
+              "警示信号"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：嘉宾直言债务增速相当惊人，这是讨论起点",
+            "comment_highlights": [
+              "债务增速"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：即便在AI基建同业里，它的杠杆也明显更高",
+            "comment_highlights": [
+              "杠杆也明显更高"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：利息覆盖偏低，加上依赖外部融资，压力更集中",
+            "comment_highlights": [
+              "利息覆盖偏低",
+              "依赖外部融资"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：没有Meta和亚马逊的多元化现金流，只能靠外部融资",
+            "comment_highlights": [
+              "多元化现金流"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：高利率环境下，再融资成本变得更昂贵",
+            "comment_highlights": [
+              "再融资成本"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：高杠杆叠加高利率，市场担忧被进一步放大",
+            "comment_highlights": [
+              "市场担忧"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然想靠一个评级撬动无限资金池",
+        "evidence_basis": [
+          "transcript: 联合创始人表示希望通过获得投资级评级接入“无限资金池”",
+          "transcript: 嘉宾称债务增速惊人、杠杆显著高于公开数据中心可比公司、利息覆盖偏低、依赖外部融资",
+          "transcript: 高利率环境使借贷成本更昂贵，再融资风险更大"
+        ],
+        "runner_up_titles": [
+          "CoreWeave瞄准无限资金池，高杠杆再融资压力更受关注"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "make_the_emotional_reversal_visible_in_words",
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
