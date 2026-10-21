@@ -1,0 +1,949 @@
+{
+  "timestamp_utc": "2026-10-21T00:43:54.352666+00:00",
+  "plan_path": "work/top-videos/07_gm_narrows_2026_profit_forecast_boosts_share_buyback/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "General Motors",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "General Motors Company",
+        "preferred_en": "General Motors Company",
+        "official_zh": "通用汽车公司",
+        "common_zh": "通用汽车",
+        "title_label": "通用汽车",
+        "preferred_zh": "通用汽车",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "多家中文财经媒体一致使用“通用汽车(GM.US/GM.N)”，正式全称为通用汽车公司。"
+      },
+      {
+        "source_text": "GM",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "General Motors Company",
+        "preferred_en": "General Motors Company",
+        "official_zh": "通用汽车公司",
+        "common_zh": "通用汽车",
+        "title_label": "通用汽车",
+        "preferred_zh": "通用汽车",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 4,
+        "evidence_urls": [
+          "https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml",
+          "https://finance.ifeng.com/c/8xNpSYdI3Cl",
+          "https://cn.investing.com/news/stock-market-news/article-3616598",
+          "https://www.tradingkey.com/zh-hans/news/transcripts/262226669-tradingkey"
+        ],
+        "evidence": "中文财经报道普遍以“通用汽车”对应GM股票代码。"
+      },
+      {
+        "source_text": "Paul Jacobson",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Paul Jacobson",
+        "preferred_en": "Paul Jacobson",
+        "official_zh": "",
+        "common_zh": "保罗·雅各布森",
+        "title_label": "通用汽车CFO雅各布森",
+        "preferred_zh": "保罗·雅各布森",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "凤凰网财经称“公司首席财务官保罗·雅各布森”；Motley Fool电话会记录确认CFO为Paul Jacobson。中文名仅见一处音译，故为medium。"
+      },
+      {
+        "source_text": "Mary Barra",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Mary Barra",
+        "preferred_en": "Mary Barra",
+        "official_zh": "",
+        "common_zh": "玛丽·博拉",
+        "title_label": "玛丽·博拉",
+        "preferred_zh": "玛丽·博拉",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "智通财经报道使用“CEO玛丽·博拉”；电话会记录确认Mary Barra为董事长兼CEO。中文译名仅见一处，故为medium。"
+      },
+      {
+        "source_text": "Super Cruise",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Super Cruise",
+        "preferred_en": "Super Cruise",
+        "official_zh": "超级巡航",
+        "common_zh": "Super Cruise",
+        "title_label": "Super Cruise",
+        "preferred_zh": "Super Cruise",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文报道多保留英文“Super Cruise”，未见稳定统一的中文官方译名，故标题保留英文。"
+      },
+      {
+        "source_text": "OnStar",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "OnStar",
+        "preferred_en": "OnStar",
+        "official_zh": "安吉星",
+        "common_zh": "安吉星",
+        "title_label": "安吉星",
+        "preferred_zh": "安吉星",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "TradingKey中文电话会纪要使用“安吉星（OnStar）”；仅一处可靠来源，故为medium偏保守。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "share buyback",
+        "clip_indexes": [],
+        "context": "GM capital return program",
+        "sense": "company repurchase of its own shares",
+        "preferred_zh": "股票回购",
+        "title_label": "回购",
+        "avoid_zh": [
+          "股份购回计划（港式）"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "free cash flow",
+        "clip_indexes": [],
+        "context": "automotive cash generation",
+        "sense": "operating cash flow minus capital expenditure",
+        "preferred_zh": "自由现金流",
+        "title_label": "自由现金流",
+        "avoid_zh": [
+          "免费现金流"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "fully diluted share count",
+        "clip_indexes": [],
+        "context": "share count reduction from buybacks",
+        "sense": "total shares including dilutive securities",
+        "preferred_zh": "完全稀释后股本",
+        "title_label": "稀释后股本",
+        "avoid_zh": [
+          "全稀释股数"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "adjusted EBIT",
+        "clip_indexes": [],
+        "context": "GM guidance metric",
+        "sense": "earnings before interest and taxes, adjusted",
+        "preferred_zh": "调整后息税前利润",
+        "title_label": "调整后息税前利润",
+        "avoid_zh": [
+          "调整后EBIT利润"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "profit forecast / guidance",
+        "clip_indexes": [],
+        "context": "full-year 2026 outlook",
+        "sense": "company-issued earnings guidance",
+        "preferred_zh": "盈利指引",
+        "title_label": "利润指引",
+        "avoid_zh": [
+          "利润预测指引"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "过去四年我们平均每年回购约75亿美元，将完全稀释后股本降低了37%；今年早些时候董事会批准的63亿美元授权刚刚完成。",
+        "public_baseline": "公开报道显示，通用汽车2026年10月20日宣布新的200亿美元多年期回购授权，同时将2026年调整后每股收益指引由12—14美元收窄至12.75—13.75美元，调整后息税前利润指引由140亿—160亿美元收窄至145亿—155亿美元，并将汽车业务调整后自由现金流指引上调至115亿—125亿美元。",
+        "surprise_gap": "市场此前已两次上调指引，部分投资者期待第三次上调；公司仅“收窄”利润区间，却同时抛出约占市值28%的200亿美元回购，股价盘前仍跌超7%。",
+        "speaker_relation": "company_executive",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes",
+          "words_vs_actions"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%，并刚完成63亿美元授权。"
+          },
+          {
+            "kind": "public",
+            "query": "通用汽车 2026 利润指引 下调 回购 200亿美元",
+            "url": "https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml",
+            "fact": "董事会批准200亿美元多年期回购授权，约占市值28%；2026年调整后EPS指引收窄至12.75—13.75美元。"
+          },
+          {
+            "kind": "public",
+            "query": "通用汽车 2026 利润指引 下调 回购 200亿美元",
+            "url": "https://finance.ifeng.com/c/8xNpSYdI3Cl",
+            "fact": "公司市值约726亿美元，宣布200亿美元回购后盘前跌超7%；此前60亿美元回购已完成。"
+          },
+          {
+            "kind": "public",
+            "query": "General Motors fully diluted share count reduced 37% since 2023",
+            "url": "https://www.marketbeat.com/instant-alerts/transcript-what-general-motors-gm-said-on-its-q3-earnings-call-2026-10-20/",
+            "fact": "Barra称自2023年开始用盈余现金回购以来，完全稀释股本下降37%。"
+          },
+          {
+            "kind": "public",
+            "query": "GM CFO Paul Jacobson free cash flow $7.5 billion average buyback",
+            "url": "https://finance.yahoo.com/markets/stocks/articles/gm-cfo-expects-improved-2027-185737185.html",
+            "fact": "Jacobson称过去五年自由现金流平均超过100亿美元，此前五年约30亿美元。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得称通用汽车“上调”2026年利润指引——公开报道为收窄区间",
+          "不得称200亿美元回购已全部执行完毕",
+          "不得称股价因回购大涨——报道显示盘前下跌",
+          "不得将37%股本下降归因于单次200亿美元授权",
+          "不得称公司承认造假或存在财务不当行为"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "通用汽车 2026 利润指引 下调 回购 200亿美元",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Chinese name for General Motors (通用汽车) and the exact figures: 2026 profit forecast cut and $20 billion buyback authorization."
+      },
+      {
+        "query": "GM CFO Paul Jacobson free cash flow $7.5 billion average buyback",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the speaker's claim that GM has repurchased an average of about $7.5 billion annually and that free cash flow has been strong for several years."
+      },
+      {
+        "query": "General Motors fully diluted share count reduced 37% since 2023",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check the concrete statistic that GM lowered its fully diluted share count by 37% over four years, as stated in the transcript."
+      },
+      {
+        "query": "GM $6.3 billion share repurchase authorization board 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that GM completed a recent $6.3 billion authorization given by the board earlier this year."
+      },
+      {
+        "query": "通用汽车 自由现金流 回购 股东回报 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language coverage of GM's free cash flow and shareholder returns to compare with how Chinese automakers are described in Chinese media."
+      },
+      {
+        "query": "GM capital expenditure $10 billion $12 billion future portfolio balance sheet",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the speaker's statement that GM invests $10–12 billion in the company annually to keep the future portfolio and balance sheet strong."
+      },
+      {
+        "query": "General Motors 2026 adjusted EPS guidance EBIT forecast official",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the official consensus/guidance numbers for GM's 2026 profit forecast to assess whether the transcript's 'narrows' claim is accurate."
+      },
+      {
+        "query": "GM share buyback 2025 announcement $6 billion authorization completed",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check the $6.3 billion authorization completion against GM's official press releases and filings."
+      },
+      {
+        "query": "通用汽车 2026年 利润 预期 下调 官方",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the exact Chinese phrasing used by official GM China or Chinese financial media for the 2026 profit forecast cut."
+      },
+      {
+        "query": "Bloomberg GM Narrows established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "GM Narrows 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "利润指引收窄：回购却加到200亿，通用汽车盘前为何走弱",
+      "title_lines": [
+        "利润指引收窄",
+        "回购却加到200亿",
+        "通用汽车盘前为何走弱"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "利润指引收窄，回购却加到200亿，盘前还跌了，这到底在打什么算盘",
+      "evidence_basis": [
+        "公开报道：2026年调整后EPS指引由12—14美元收窄至12.75—13.75美元",
+        "公开报道：董事会批准200亿美元多年期回购授权，约占市值28%",
+        "公开报道：宣布回购后盘前跌超7%",
+        "高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%"
+      ],
+      "runner_up_titles": [
+        "四年回购砍掉37%股本 通用汽车还嫌不够",
+        "通用汽车利润指引收窄 却把回购加到200亿"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：利润指引收窄却加码回购，盘前走弱说明市场在重新定价预期"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-21T00:43:53.334978+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback",
+          "source_title": "Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback",
+          "show_date": "",
+          "current_title": "通用汽车下调2026利润指引 加码回购",
+          "current_title_lines": [
+            "通用汽车",
+            "下调2026利润指引并加码回购",
+            "现金流强劲 估值重估空间受关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我们得从回购说起。规模巨大。能解释一下你们怎么定下200亿美元的吗？",
+              "en": "We have to start with that by back. It's a monster. Can you just break down for us how you come up with $20 billion?",
+              "relative_start": 0.0,
+              "relative_end": 5.9
+            },
+            {
+              "index": 2,
+              "zh": "这个决策是怎么做出的？",
+              "en": "And what goes into make it a decision like that?",
+              "relative_start": 5.9,
+              "relative_end": 9.2
+            },
+            {
+              "index": 3,
+              "zh": "好的，早上好，乔纳森。感谢邀请。",
+              "en": "Yeah, well, good morning, Jonathan. Thanks for having us today.",
+              "relative_start": 9.2,
+              "relative_end": 12.7
+            },
+            {
+              "index": 4,
+              "zh": "回顾过去几年，通用汽车的关键故事和数据点就是自由现金流生成。",
+              "en": "When you look at the last several years, I think the one story and data point that you got to think about with General Motors is free cash flow generation.",
+              "relative_start": 12.7,
+              "relative_end": 20.6
+            },
+            {
+              "index": 5,
+              "zh": "如你所知，过去几年现金流非常强劲。",
+              "en": "And cash flow has been incredibly strong, as you know, for the last several years.",
+              "relative_start": 20.6,
+              "relative_end": 24.9
+            },
+            {
+              "index": 6,
+              "zh": "我们平均回购了约75亿美元。",
+              "en": "We've repurchased an average of about $7.5 billion.",
+              "relative_start": 24.9,
+              "relative_end": 28.0
+            },
+            {
+              "index": 7,
+              "zh": "这是在我们向公司投入100到120亿美元之后，因为我们必须保持未来产品组合强劲。",
+              "en": "This is after we invest 10 to $12 billion in the company, because we got to keep that future portfolio strong.",
+              "relative_start": 28.0,
+              "relative_end": 34.4
+            },
+            {
+              "index": 8,
+              "zh": "我们必须保持资产负债表强劲。然后利用自由现金流回报股东。",
+              "en": "We got to keep our balance sheet strong. And then with free cash flow, we have an opportunity to return it back to shareholders.",
+              "relative_start": 34.4,
+              "relative_end": 40.8
+            },
+            {
+              "index": 9,
+              "zh": "过去四年，每年约75亿美元，我们将完全稀释后的股份数减少了37%。",
+              "en": "Over the last four years, about $7.5 billion a year, we've lowered our fully diluted share count by 37%.",
+              "relative_start": 40.8,
+              "relative_end": 48.0
+            },
+            {
+              "index": 10,
+              "zh": "自2023年以来，我们刚刚完成了董事会今年早些时候批准的63亿美元授权。",
+              "en": "Since 2023, we just completed our recent $6.3 billion authorization that was given by the board earlier this year.",
+              "relative_start": 48.0,
+              "relative_end": 55.7
+            },
+            {
+              "index": 11,
+              "zh": "我认为这略高于市场对今年的预期。",
+              "en": "I think that was slightly ahead of expectations that the street had for this year.",
+              "relative_start": 55.7,
+              "relative_end": 59.8
+            },
+            {
+              "index": 12,
+              "zh": "董事会表示，我们致力于继续以此方式提升股东价值。",
+              "en": "And what the board has said is we're committed to continuing to drive shareholder value this way.",
+              "relative_start": 59.8,
+              "relative_end": 64.6
+            },
+            {
+              "index": 13,
+              "zh": "纵观我们取得的进展，前瞻盈利的市盈率仍然很低，每股自由现金流收益率达到两位数回报。",
+              "en": "When you look at all the progress we've made, we still have a very low PE multiple on forward earnings, our free cash flow yield per share is double digit returns.",
+              "relative_start": 64.6,
+              "relative_end": 75.1
+            },
+            {
+              "index": 14,
+              "zh": "我们认为这是向股东返还资本并提升股东价值的绝佳方式。",
+              "en": "And we think that this is a great way to return capital to shareholders and drive shareholder value.",
+              "relative_start": 75.1,
+              "relative_end": 79.4
+            },
+            {
+              "index": 15,
+              "zh": "指引上限略低于预期。",
+              "en": "The upper end of the guide was a little bit softer than expected.",
+              "relative_start": 79.4,
+              "relative_end": 82.5
+            },
+            {
+              "index": 16,
+              "zh": "Paula，今早人们可能关注了这一点。我们能就此展开谈谈吗？",
+              "en": "Paula, maybe people have focused on that this morning. Can we build on some of that?",
+              "relative_start": 82.5,
+              "relative_end": 86.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback\",\n    \"source_title\": \"Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback\",\n    \"show_date\": \"\",\n    \"current_title\": \"通用汽车下调2026利润指引 加码回购\",\n    \"current_title_lines\": [\n      \"通用汽车\",\n      \"下调2026利润指引并加码回购\",\n      \"现金流强劲 估值重估空间受关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们得从回购说起。规模巨大。能解释一下你们怎么定下200亿美元的吗？\",\n        \"en\": \"We have to start with that by back. It's a monster. Can you just break down for us how you come up with $20 billion?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个决策是怎么做出的？\",\n        \"en\": \"And what goes into make it a decision like that?\",\n        \"relative_start\": 5.9,\n        \"relative_end\": 9.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"好的，早上好，乔纳森。感谢邀请。\",\n        \"en\": \"Yeah, well, good morning, Jonathan. Thanks for having us today.\",\n        \"relative_start\": 9.2,\n        \"relative_end\": 12.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"回顾过去几年，通用汽车的关键故事和数据点就是自由现金流生成。\",\n        \"en\": \"When you look at the last several years, I think the one story and data point that you got to think about with General Motors is free cash flow generation.\",\n        \"relative_start\": 12.7,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"如你所知，过去几年现金流非常强劲。\",\n        \"en\": \"And cash flow has been incredibly strong, as you know, for the last several years.\",\n        \"relative_start\": 20.6,\n        \"relative_end\": 24.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们平均回购了约75亿美元。\",\n        \"en\": \"We've repurchased an average of about $7.5 billion.\",\n        \"relative_start\": 24.9,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是在我们向公司投入100到120亿美元之后，因为我们必须保持未来产品组合强劲。\",\n        \"en\": \"This is after we invest 10 to $12 billion in the company, because we got to keep that future portfolio strong.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 34.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们必须保持资产负债表强劲。然后利用自由现金流回报股东。\",\n        \"en\": \"We got to keep our balance sheet strong. And then with free cash flow, we have an opportunity to return it back to shareholders.\",\n        \"relative_start\": 34.4,\n        \"relative_end\": 40.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"过去四年，每年约75亿美元，我们将完全稀释后的股份数减少了37%。\",\n        \"en\": \"Over the last four years, about $7.5 billion a year, we've lowered our fully diluted share count by 37%.\",\n        \"relative_start\": 40.8,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"自2023年以来，我们刚刚完成了董事会今年早些时候批准的63亿美元授权。\",\n        \"en\": \"Since 2023, we just completed our recent $6.3 billion authorization that was given by the board earlier this year.\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 55.7\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我认为这略高于市场对今年的预期。\",\n        \"en\": \"I think that was slightly ahead of expectations that the street had for this year.\",\n        \"relative_start\": 55.7,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"董事会表示，我们致力于继续以此方式提升股东价值。\",\n        \"en\": \"And what the board has said is we're committed to continuing to drive shareholder value this way.\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 64.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"纵观我们取得的进展，前瞻盈利的市盈率仍然很低，每股自由现金流收益率达到两位数回报。\",\n        \"en\": \"When you look at all the progress we've made, we still have a very low PE multiple on forward earnings, our free cash flow yield per share is double digit returns.\",\n        \"relative_start\": 64.6,\n        \"relative_end\": 75.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我们认为这是向股东返还资本并提升股东价值的绝佳方式。\",\n        \"en\": \"And we think that this is a great way to return capital to shareholders and drive shareholder value.\",\n        \"relative_start\": 75.1,\n        \"relative_end\": 79.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"指引上限略低于预期。\",\n        \"en\": \"The upper end of the guide was a little bit softer than expected.\",\n        \"relative_start\": 79.4,\n        \"relative_end\": 82.5\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"Paula，今早人们可能关注了这一点。我们能就此展开谈谈吗？\",\n        \"en\": \"Paula, maybe people have focused on that this morning. Can we build on some of that?\",\n        \"relative_start\": 82.5,\n        \"relative_end\": 86.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"GM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"General Motors Company\",\n      \"preferred_en\": \"General Motors Company\",\n      \"official_zh\": \"通用汽车公司\",\n      \"common_zh\": \"通用汽车\",\n      \"title_label\": \"通用汽车\",\n      \"preferred_zh\": \"通用汽车\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml\",\n        \"https://finance.ifeng.com/c/8xNpSYdI3Cl\",\n        \"https://cn.investing.com/news/stock-market-news/article-3616598\",\n        \"https://www.tradingkey.com/zh-hans/news/transcripts/262226669-tradingkey\"\n      ],\n      \"evidence\": \"中文财经报道普遍以“通用汽车”对应GM股票代码。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"过去四年我们平均每年回购约75亿美元，将完全稀释后股本降低了37%；今年早些时候董事会批准的63亿美元授权刚刚完成。\",\n      \"public_baseline\": \"公开报道显示，通用汽车2026年10月20日宣布新的200亿美元多年期回购授权，同时将2026年调整后每股收益指引由12—14美元收窄至12.75—13.75美元，调整后息税前利润指引由140亿—160亿美元收窄至145亿—155亿美元，并将汽车业务调整后自由现金流指引上调至115亿—125亿美元。\",\n      \"surprise_gap\": \"市场此前已两次上调指引，部分投资者期待第三次上调；公司仅“收窄”利润区间，却同时抛出约占市值28%的200亿美元回购，股价盘前仍跌超7%。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%，并刚完成63亿美元授权。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"通用汽车 2026 利润指引 下调 回购 200亿美元\",\n          \"url\": \"https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml\",\n          \"fact\": \"董事会批准200亿美元多年期回购授权，约占市值28%；2026年调整后EPS指引收窄至12.75—13.75美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"通用汽车 2026 利润指引 下调 回购 200亿美元\",\n          \"url\": \"https://finance.ifeng.com/c/8xNpSYdI3Cl\",\n          \"fact\": \"公司市值约726亿美元，宣布200亿美元回购后盘前跌超7%；此前60亿美元回购已完成。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"General Motors fully diluted share count reduced 37% since 2023\",\n          \"url\": \"https://www.marketbeat.com/instant-alerts/transcript-what-general-motors-gm-said-on-its-q3-earnings-call-2026-10-20/\",\n          \"fact\": \"Barra称自2023年开始用盈余现金回购以来，完全稀释股本下降37%。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"GM CFO Paul Jacobson free cash flow $7.5 billion average buyback\",\n          \"url\": \"https://finance.yahoo.com/markets/stocks/articles/gm-cfo-expects-improved-2027-185737185.html\",\n          \"fact\": \"Jacobson称过去五年自由现金流平均超过100亿美元，此前五年约30亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称通用汽车“上调”2026年利润指引——公开报道为收窄区间\",\n        \"不得称200亿美元回购已全部执行完毕\",\n        \"不得称股价因回购大涨——报道显示盘前下跌\",\n        \"不得将37%股本下降归因于单次200亿美元授权\",\n        \"不得称公司承认造假或存在财务不当行为\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "通用汽车将2026年利润指引区间收窄，同时宣布200亿美元多年期回购授权，过去四年年均回购约75亿美元、完全稀释股本下降37%",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "利润指引收窄 回购却加到200亿",
+                "title_lines": [
+                  "利润指引收窄",
+                  "回购却加到200亿",
+                  "通用汽车盘前为何走弱"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "公开报道：2026年调整后EPS指引由12—14美元收窄至12.75—13.75美元",
+                  "公开报道：董事会批准200亿美元多年期回购授权，约占市值28%",
+                  "公开报道：宣布回购后盘前跌超7%"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "四年回购砍掉37%股本 通用汽车还嫌不够",
+                "title_lines": [
+                  "四年回购砍掉37%股本",
+                  "通用汽车还嫌不够",
+                  "200亿新授权砸向市场"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%",
+                  "公开报道：新授权200亿美元，约占市值28%"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "通用汽车利润指引收窄 却把回购加到200亿",
+                "title_lines": [
+                  "通用汽车利润指引收窄",
+                  "却把回购加到200亿",
+                  "盘前股价先跌为敬"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "公开报道：2026年调整后EPS指引收窄至12.75—13.75美元",
+                  "公开报道：200亿美元回购授权约占市值28%，盘前跌超7%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "现金流收益率两位数 通用汽车为何还压估值",
+                "title_lines": [
+                  "现金流收益率两位数",
+                  "通用汽车为何还压估值",
+                  "利润指引收窄后的选择题"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "高管称前瞻盈利市盈率仍低、每股自由现金流收益率达两位数",
+                  "公开报道：2026年调整后EPS指引收窄至12.75—13.75美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback\",\n    \"source_title\": \"Duration: 6:38 GM Narrows 2026 Profit Forecast, Boosts Share Buyback\",\n    \"show_date\": \"\",\n    \"current_title\": \"通用汽车下调2026利润指引 加码回购\",\n    \"current_title_lines\": [\n      \"通用汽车\",\n      \"下调2026利润指引并加码回购\",\n      \"现金流强劲 估值重估空间受关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们得从回购说起。规模巨大。能解释一下你们怎么定下200亿美元的吗？\",\n        \"en\": \"We have to start with that by back. It's a monster. Can you just break down for us how you come up with $20 billion?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.9\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个决策是怎么做出的？\",\n        \"en\": \"And what goes into make it a decision like that?\",\n        \"relative_start\": 5.9,\n        \"relative_end\": 9.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"好的，早上好，乔纳森。感谢邀请。\",\n        \"en\": \"Yeah, well, good morning, Jonathan. Thanks for having us today.\",\n        \"relative_start\": 9.2,\n        \"relative_end\": 12.7\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"回顾过去几年，通用汽车的关键故事和数据点就是自由现金流生成。\",\n        \"en\": \"When you look at the last several years, I think the one story and data point that you got to think about with General Motors is free cash flow generation.\",\n        \"relative_start\": 12.7,\n        \"relative_end\": 20.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"如你所知，过去几年现金流非常强劲。\",\n        \"en\": \"And cash flow has been incredibly strong, as you know, for the last several years.\",\n        \"relative_start\": 20.6,\n        \"relative_end\": 24.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们平均回购了约75亿美元。\",\n        \"en\": \"We've repurchased an average of about $7.5 billion.\",\n        \"relative_start\": 24.9,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是在我们向公司投入100到120亿美元之后，因为我们必须保持未来产品组合强劲。\",\n        \"en\": \"This is after we invest 10 to $12 billion in the company, because we got to keep that future portfolio strong.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 34.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我们必须保持资产负债表强劲。然后利用自由现金流回报股东。\",\n        \"en\": \"We got to keep our balance sheet strong. And then with free cash flow, we have an opportunity to return it back to shareholders.\",\n        \"relative_start\": 34.4,\n        \"relative_end\": 40.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"过去四年，每年约75亿美元，我们将完全稀释后的股份数减少了37%。\",\n        \"en\": \"Over the last four years, about $7.5 billion a year, we've lowered our fully diluted share count by 37%.\",\n        \"relative_start\": 40.8,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"自2023年以来，我们刚刚完成了董事会今年早些时候批准的63亿美元授权。\",\n        \"en\": \"Since 2023, we just completed our recent $6.3 billion authorization that was given by the board earlier this year.\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 55.7\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"我认为这略高于市场对今年的预期。\",\n        \"en\": \"I think that was slightly ahead of expectations that the street had for this year.\",\n        \"relative_start\": 55.7,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"董事会表示，我们致力于继续以此方式提升股东价值。\",\n        \"en\": \"And what the board has said is we're committed to continuing to drive shareholder value this way.\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 64.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"纵观我们取得的进展，前瞻盈利的市盈率仍然很低，每股自由现金流收益率达到两位数回报。\",\n        \"en\": \"When you look at all the progress we've made, we still have a very low PE multiple on forward earnings, our free cash flow yield per share is double digit returns.\",\n        \"relative_start\": 64.6,\n        \"relative_end\": 75.1\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"我们认为这是向股东返还资本并提升股东价值的绝佳方式。\",\n        \"en\": \"And we think that this is a great way to return capital to shareholders and drive shareholder value.\",\n        \"relative_start\": 75.1,\n        \"relative_end\": 79.4\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"指引上限略低于预期。\",\n        \"en\": \"The upper end of the guide was a little bit softer than expected.\",\n        \"relative_start\": 79.4,\n        \"relative_end\": 82.5\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"Paula，今早人们可能关注了这一点。我们能就此展开谈谈吗？\",\n        \"en\": \"Paula, maybe people have focused on that this morning. Can we build on some of that?\",\n        \"relative_start\": 82.5,\n        \"relative_end\": 86.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"GM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"General Motors Company\",\n      \"preferred_en\": \"General Motors Company\",\n      \"official_zh\": \"通用汽车公司\",\n      \"common_zh\": \"通用汽车\",\n      \"title_label\": \"通用汽车\",\n      \"preferred_zh\": \"通用汽车\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml\",\n        \"https://finance.ifeng.com/c/8xNpSYdI3Cl\",\n        \"https://cn.investing.com/news/stock-market-news/article-3616598\",\n        \"https://www.tradingkey.com/zh-hans/news/transcripts/262226669-tradingkey\"\n      ],\n      \"evidence\": \"中文财经报道普遍以“通用汽车”对应GM股票代码。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"过去四年我们平均每年回购约75亿美元，将完全稀释后股本降低了37%；今年早些时候董事会批准的63亿美元授权刚刚完成。\",\n      \"public_baseline\": \"公开报道显示，通用汽车2026年10月20日宣布新的200亿美元多年期回购授权，同时将2026年调整后每股收益指引由12—14美元收窄至12.75—13.75美元，调整后息税前利润指引由140亿—160亿美元收窄至145亿—155亿美元，并将汽车业务调整后自由现金流指引上调至115亿—125亿美元。\",\n      \"surprise_gap\": \"市场此前已两次上调指引，部分投资者期待第三次上调；公司仅“收窄”利润区间，却同时抛出约占市值28%的200亿美元回购，股价盘前仍跌超7%。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\",\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%，并刚完成63亿美元授权。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"通用汽车 2026 利润指引 下调 回购 200亿美元\",\n          \"url\": \"https://m.jrj.com.cn/madapter/finance/2026/10/20185558796653.shtml\",\n          \"fact\": \"董事会批准200亿美元多年期回购授权，约占市值28%；2026年调整后EPS指引收窄至12.75—13.75美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"通用汽车 2026 利润指引 下调 回购 200亿美元\",\n          \"url\": \"https://finance.ifeng.com/c/8xNpSYdI3Cl\",\n          \"fact\": \"公司市值约726亿美元，宣布200亿美元回购后盘前跌超7%；此前60亿美元回购已完成。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"General Motors fully diluted share count reduced 37% since 2023\",\n          \"url\": \"https://www.marketbeat.com/instant-alerts/transcript-what-general-motors-gm-said-on-its-q3-earnings-call-2026-10-20/\",\n          \"fact\": \"Barra称自2023年开始用盈余现金回购以来，完全稀释股本下降37%。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"GM CFO Paul Jacobson free cash flow $7.5 billion average buyback\",\n          \"url\": \"https://finance.yahoo.com/markets/stocks/articles/gm-cfo-expects-improved-2027-185737185.html\",\n          \"fact\": \"Jacobson称过去五年自由现金流平均超过100亿美元，此前五年约30亿美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称通用汽车“上调”2026年利润指引——公开报道为收窄区间\",\n        \"不得称200亿美元回购已全部执行完毕\",\n        \"不得称股价因回购大涨——报道显示盘前下跌\",\n        \"不得将37%股本下降归因于单次200亿美元授权\",\n        \"不得称公司承认造假或存在财务不当行为\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"通用汽车将2026年利润指引区间收窄，同时宣布200亿美元多年期回购授权，过去四年年均回购约75亿美元、完全稀释股本下降37%\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"利润指引收窄 回购却加到200亿\",\n          \"title_lines\": [\n            \"利润指引收窄\",\n            \"回购却加到200亿\",\n            \"通用汽车盘前为何走弱\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"公开报道：2026年调整后EPS指引由12—14美元收窄至12.75—13.75美元\",\n            \"公开报道：董事会批准200亿美元多年期回购授权，约占市值28%\",\n            \"公开报道：宣布回购后盘前跌超7%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"四年回购砍掉37%股本 通用汽车还嫌不够\",\n          \"title_lines\": [\n            \"四年回购砍掉37%股本\",\n            \"通用汽车还嫌不够\",\n            \"200亿新授权砸向市场\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%\",\n            \"公开报道：新授权200亿美元，约占市值28%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"通用汽车利润指引收窄 却把回购加到200亿\",\n          \"title_lines\": [\n            \"通用汽车利润指引收窄\",\n            \"却把回购加到200亿\",\n            \"盘前股价先跌为敬\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"公开报道：2026年调整后EPS指引收窄至12.75—13.75美元\",\n            \"公开报道：200亿美元回购授权约占市值28%，盘前跌超7%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"现金流收益率两位数 通用汽车为何还压估值\",\n          \"title_lines\": [\n            \"现金流收益率两位数\",\n            \"通用汽车为何还压估值\",\n            \"利润指引收窄后的选择题\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"高管称前瞻盈利市盈率仍低、每股自由现金流收益率达两位数\",\n            \"公开报道：2026年调整后EPS指引收窄至12.75—13.75美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "利润指引收窄，回购却加到200亿，盘前还跌了，这到底在打什么算盘",
+            "evidence_basis": [
+              "公开报道：2026年调整后EPS指引由12—14美元收窄至12.75—13.75美元",
+              "公开报道：董事会批准200亿美元多年期回购授权，约占市值28%",
+              "公开报道：宣布回购后盘前跌超7%",
+              "高管称过去四年平均每年回购约75亿美元，完全稀释后股本下降37%"
+            ],
+            "title": "利润指引收窄 回购却加到200亿",
+            "title_lines": [
+              "利润指引收窄",
+              "回购却加到200亿",
+              "通用汽车盘前为何走弱"
+            ],
+            "title_highlights": [
+              "利润指引收窄",
+              "回购却加到200亿",
+              "盘前为何走弱"
+            ],
+            "runner_up_titles": [
+              "四年回购砍掉37%股本 通用汽车还嫌不够",
+              "通用汽车利润指引收窄 却把回购加到200亿"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：利润指引收窄却加码回购，盘前走弱说明市场在重新定价预期。",
+            "comment_highlights": [
+              "盘前走弱",
+              "重新定价预期"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：200亿美元回购授权是整场对话的起点。",
+                "comment_highlights": [
+                  "200亿美元回购授权"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：主持人追问决策逻辑，答案藏在现金流里。",
+                "comment_highlights": [
+                  "现金流"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：高管开场先定调，感谢之后直奔主题。",
+                "comment_highlights": [
+                  "直奔主题"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：自由现金流是通用汽车过去几年的核心故事。",
+                "comment_highlights": [
+                  "自由现金流"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：现金流强劲，才有底气持续回报股东。",
+                "comment_highlights": [
+                  "现金流强劲"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：年均75亿美元回购，规模已经不小。",
+                "comment_highlights": [
+                  "年均75亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：先投100到120亿美元保产品，再谈回购。",
+                "comment_highlights": [
+                  "先投100到120亿美元"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：资产负债表优先，然后才是股东回报。",
+                "comment_highlights": [
+                  "资产负债表优先"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：四年砍掉37%股本，回购效果直接体现在每股上。",
+                "comment_highlights": [
+                  "37%股本"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：63亿美元授权刚完成，新授权又接上。",
+                "comment_highlights": [
+                  "63亿美元授权"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：略超街预期，说明回购节奏比市场想的快。",
+                "comment_highlights": [
+                  "略超街预期"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：董事会把回购定为长期提升股东价值的方式。",
+                "comment_highlights": [
+                  "长期提升股东价值"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：低市盈率加两位数现金流收益率，是回购的底气。",
+                "comment_highlights": [
+                  "低市盈率",
+                  "两位数现金流收益率"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：高管认为回购是返还资本的最佳方式。",
+                "comment_highlights": [
+                  "返还资本"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：指引上限略低于预期，这才是盘前走弱的触发点。",
+                "comment_highlights": [
+                  "指引上限略低于预期"
+                ]
+              },
+              {
+                "subtitle_index": 16,
+                "comment": "KC评论：主持人把焦点拉回利润指引，追问才刚开始。",
+                "comment_highlights": [
+                  "追问才刚开始"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "利润指引收窄：回购却加到200亿，通用汽车盘前为何走弱",
+          "title_lines": [
+            "利润指引收窄",
+            "回购却加到200亿",
+            "通用汽车盘前为何走弱"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "利润指引收窄，回购却加到200亿，盘前还跌了，这到底在打什么算盘",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：利润指引收窄却加码回购，盘前走弱说明市场在重新定价预期"
+        }
+      }
+    }
+  ]
+}
