@@ -1,0 +1,1144 @@
+{
+  "timestamp_utc": "2026-10-22T00:36:50.107730+00:00",
+  "plan_path": "work/top-videos/02_ai_is_tailwind_ibm_ceo_says_as_sales_rise/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "IBM",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "International Business Machines Corporation",
+        "preferred_en": "International Business Machines Corporation",
+        "official_zh": "国际商业机器公司",
+        "common_zh": "IBM",
+        "title_label": "IBM",
+        "preferred_zh": "IBM",
+        "aliases": [
+          "万国商用机器公司"
+        ],
+        "confidence": "high",
+        "verified_source_count": 3,
+        "evidence_urls": [
+          "https://zh.wikipedia.org/zh-hans/IBM",
+          "https://baike.baidu.com/item/IBM/9190",
+          "https://www.ibm.com/cn-zh/about"
+        ],
+        "evidence": "维基百科、百度百科与IBM中文官网均以IBM/国际商业机器公司指称同一公司；中文财经媒体普遍直接用IBM。"
+      },
+      {
+        "source_text": "Arvin Krishna",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Arvind Krishna",
+        "preferred_en": "Arvind Krishna",
+        "official_zh": "阿尔温德·克里希纳",
+        "common_zh": "",
+        "title_label": "IBM CEO",
+        "preferred_zh": "",
+        "aliases": [
+          "Arvin Krishna"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "百度百科列出IBM董事长兼首席执行官阿尔温德·克里希纳（ArvindKrishna）；转录拼写Arvin为音近误写。中文财经媒体多称“IBM CEO”，正式全名译法使用不广，故title_label用职务。"
+      },
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [
+          "布隆伯格"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "本次检索片段未直接给出彭博中文名证据；按通行译名标注，未计入已验证来源。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "tailwind",
+        "clip_indexes": [],
+        "context": "IBM CEO on AI demand driving sales",
+        "sense": "a favorable force supporting growth",
+        "preferred_zh": "顺风",
+        "title_label": "顺风",
+        "avoid_zh": [
+          "尾风",
+          "顺风因素（泛指）"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "operating EPS",
+        "clip_indexes": [],
+        "context": "IBM Q3 earnings",
+        "sense": "non-GAAP operating earnings per share",
+        "preferred_zh": "运营每股收益",
+        "title_label": "每股收益",
+        "avoid_zh": [
+          "经营EPS（中英混排）"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "the street",
+        "clip_indexes": [],
+        "context": "analyst consensus estimates",
+        "sense": "market analysts' consensus expectations",
+        "preferred_zh": "华尔街分析师普遍预期",
+        "title_label": "市场预期",
+        "avoid_zh": [
+          "街道"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "capex",
+        "clip_indexes": [],
+        "context": "IBM spending constraint and partner reliance",
+        "sense": "capital expenditure",
+        "preferred_zh": "资本开支",
+        "title_label": "资本开支",
+        "avoid_zh": [
+          "资本支出额（误作营收项）"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "IBM CEO阿尔温德·克里希纳称二季度软件增长放缓已在三季度回升，并认为AI是公司顺风；公司对资本开支较为克制、更多依赖合作伙伴的策略正在见效。",
+        "public_baseline": "公开报道显示IBM 2025年第三季度营收约171亿美元、同比增长5%，运营每股收益2.95美元，超出市场预期；此前二季度软件仅增长5%、基础设施下滑，股价曾单日暴跌约25%。",
+        "surprise_gap": "二季度软件放缓曾引发历史性抛售，三季度软件收入7.8亿美元（报道口径）与整体超预期构成明显反转，与市场此前“出了问题”的担忧形成落差。",
+        "speaker_relation": "company_executive",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "CEO称二季度放缓在三季度回升，全年仍相对持平，但预计未来加速；AI为顺风。"
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "转录给出运营EPS 2.95美元、软件收入78亿美元、现金流30亿美元，均高于街市预期。"
+          },
+          {
+            "kind": "public",
+            "query": "IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元",
+            "url": "https://newsroom.ibm.com/2025-10-22-IBM-RELEASES-THIRD-QUARTER-RESULTS",
+            "fact": "IBM官方2025年10月22日发布三季度业绩，称各业务板块加速并超出营收、利润和自由现金流预期。"
+          },
+          {
+            "kind": "public",
+            "query": "IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元",
+            "url": "https://www.gate.com/zh/news/detail/ibm-posts-q3-eps-of-295-beats-expectations-amid-strong-software-growth-25114715",
+            "fact": "报道称总营收171亿美元、同比增长5%，运营EPS 2.95美元，GAAP EPS 2.31美元。"
+          },
+          {
+            "kind": "public",
+            "query": "IBM Q2 2025 software growth slowdown stock selloff",
+            "url": "https://www.cnbc.com/2025/07/23/ibm-q2-earnings-report-2025.html",
+            "fact": "CNBC称IBM二季度盈利超预期并上调全年自由现金流指引，但软件收入略逊。"
+          },
+          {
+            "kind": "public",
+            "query": "IBM Q2 2025 software growth slowdown stock selloff",
+            "url": "https://www.whatjobs.com/news/ibm-stock-plunges-25-after-q2-software-warning-as-clients-divert-capex-to-ai-hardware/",
+            "fact": "二季度软件仅增5%、基础设施降7%，股价单日跌约25%（二手来源，需以CNBC原文复核）。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得称IBM三季度营收“16.8亿美元”——转录中16.8为街市营收预期口径，需核对单位与口径。",
+          "不得称IBM已公开承认二季度“判断失误”或改变AI战略。",
+          "不得将“更多依赖合作伙伴”表述为已披露的具体资本开支削减数字。",
+          "不得称彭博/主持人对IBM持看空或看多立场。"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify IBM Q3 2025 reported revenue, software revenue $7.8B, operating EPS $2.95, and cash flow $3B against street estimates (16.8B revenue, 7.64B software, 2.86 EPS)."
+      },
+      {
+        "query": "IBM Q2 2025 software growth slowdown stock selloff",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline that IBM's Q2 2025 software slowdown shocked investors and caused a stock selloff, to test whether the Q3 rebound is genuinely unexpected."
+      },
+      {
+        "query": "IBM 2025 capex spending partners AI infrastructure",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify IBM's stated position on constrained capex and reliance on partners as a paying-off strategy."
+      },
+      {
+        "query": "IBM 公司 中文名 国际商业机器公司 官方",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the established Chinese name for IBM (国际商业机器公司) for title desk use."
+      },
+      {
+        "query": "Arvind Krishna 阿尔温德·克里希纳 IBM CEO 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the established Chinese transliteration of IBM CEO Arvind Krishna."
+      },
+      {
+        "query": "IBM third quarter 2025 results press release revenue software EPS",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Cross-check IBM's official Q3 2025 earnings release figures against the transcript's claimed numbers."
+      },
+      {
+        "query": "IBM stock reaction Q3 2025 earnings analyst reaction",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify market and analyst reaction to IBM's Q3 2025 report to assess whether the 'absolution' framing is supported."
+      },
+      {
+        "query": "IBM AI business bookings generative AI 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify IBM's disclosed AI bookings and generative AI business metrics to test the AI tailwind claim."
+      },
+      {
+        "query": "Bloomberg Tailwind established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Tailwind 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "IBM CEO 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "IBM二季度遭抛售：三季度营收171亿超预期，AI顺风能否延续？",
+      "title_lines": [
+        "IBM二季度遭抛售",
+        "三季度营收171亿超预期",
+        "AI顺风能否延续？"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "二季度被抛售后，三季度居然全面超预期，AI顺风能否延续",
+      "evidence_basis": [
+        "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+        "转录：软件营收78亿美元，市场预期76.4亿美元",
+        "转录：运营EPS 2.95美元，市场预期2.86美元",
+        "转录：CEO称二季度放缓在三季度回升，AI为顺风",
+        "研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%"
+      ],
+      "runner_up_titles": [
+        "IBM二季度遭抛售后，三季度营收171亿超预期，AI顺风能持续吗？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 2
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        }
+      },
+      "comment": "KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-10-22T00:36:46.667185+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 82.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise",
+          "source_title": "Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise",
+          "show_date": "",
+          "current_title": "IBM CEO称AI成顺风 三季度营收超预期",
+          "current_title_lines": [
+            "IBM",
+            "AI成顺风 三季度营收超预期",
+            "软件业务回暖 管理层看加速"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我记得第二季度报告发布后，很多人对软件增长放缓感到震惊。第三季度整体营收171亿美元，超出预期，似乎有所反弹。",
+              "en": "You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third quarter 17.1 billio",
+              "relative_start": 0.0,
+              "relative_end": 13.8
+            },
+            {
+              "index": 2,
+              "zh": "市场预期为168亿美元，软件营收本身为78亿美元，市场预期为76.4亿美元。公司表示，本季度每股收益在底线基础上...",
+              "en": "The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter",
+              "relative_start": 13.8,
+              "relative_end": 24.2
+            },
+            {
+              "index": 3,
+              "zh": "运营每股收益为2.95美元，市场预期为2.86美元，现金流为30亿美元。我刚才有机会与CEO进行了交流。",
+              "en": "Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO",
+              "relative_start": 24.7,
+              "relative_end": 38.1
+            },
+            {
+              "index": 4,
+              "zh": "阿尔温·克里希纳进一步讨论了这一点。他告诉我，第二季度看到的放缓在第三季度有所回升。",
+              "en": "Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3",
+              "relative_start": 38.1,
+              "relative_end": 45.8
+            },
+            {
+              "index": 5,
+              "zh": "尽管整体趋于平稳，全年仍相对持平，但他预计未来会加速。公司还明确表示，在人工智能领域以及可能更具约束性的资本支出策略方面，他们看到了许多有利因素。",
+              "en": "Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI space and their strateg",
+              "relative_start": 46.2,
+              "relative_end": 59.5
+            },
+            {
+              "index": 6,
+              "zh": "在资本支出上更加节制，并更多地依赖合作伙伴，在他看来正在取得成效。现在加入我们的是彭博情报的高级科技分析师Anurag Rana。",
+              "en": "Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloomberg intelligence an",
+              "relative_start": 59.9,
+              "relative_end": 71.6
+            },
+            {
+              "index": 7,
+              "zh": "我记得三个月前这只权益资产遭抛售时，大家都感到焦虑，认为出了问题。你对今天这份报告怎么看？这是一种解脱吗？",
+              "en": "I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?",
+              "relative_start": 71.8,
+              "relative_end": 82.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 82.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"source_title\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"show_date\": \"\",\n    \"current_title\": \"IBM CEO称AI成顺风 三季度营收超预期\",\n    \"current_title_lines\": [\n      \"IBM\",\n      \"AI成顺风 三季度营收超预期\",\n      \"软件业务回暖 管理层看加速\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我记得第二季度报告发布后，很多人对软件增长放缓感到震惊。第三季度整体营收171亿美元，超出预期，似乎有所反弹。\",\n        \"en\": \"You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third quarter 17.1 billio\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 13.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场预期为168亿美元，软件营收本身为78亿美元，市场预期为76.4亿美元。公司表示，本季度每股收益在底线基础上...\",\n        \"en\": \"The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter\",\n        \"relative_start\": 13.8,\n        \"relative_end\": 24.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"运营每股收益为2.95美元，市场预期为2.86美元，现金流为30亿美元。我刚才有机会与CEO进行了交流。\",\n        \"en\": \"Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO\",\n        \"relative_start\": 24.7,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"阿尔温·克里希纳进一步讨论了这一点。他告诉我，第二季度看到的放缓在第三季度有所回升。\",\n        \"en\": \"Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 45.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管整体趋于平稳，全年仍相对持平，但他预计未来会加速。公司还明确表示，在人工智能领域以及可能更具约束性的资本支出策略方面，他们看到了许多有利因素。\",\n        \"en\": \"Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI space and their strateg\",\n        \"relative_start\": 46.2,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"在资本支出上更加节制，并更多地依赖合作伙伴，在他看来正在取得成效。现在加入我们的是彭博情报的高级科技分析师Anurag Rana。\",\n        \"en\": \"Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloomberg intelligence an\",\n        \"relative_start\": 59.9,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我记得三个月前这只权益资产遭抛售时，大家都感到焦虑，认为出了问题。你对今天这份报告怎么看？这是一种解脱吗？\",\n        \"en\": \"I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 82.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"IBM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"International Business Machines Corporation\",\n      \"preferred_en\": \"International Business Machines Corporation\",\n      \"official_zh\": \"国际商业机器公司\",\n      \"common_zh\": \"IBM\",\n      \"title_label\": \"IBM\",\n      \"preferred_zh\": \"IBM\",\n      \"aliases\": [\n        \"万国商用机器公司\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/IBM\",\n        \"https://baike.baidu.com/item/IBM/9190\",\n        \"https://www.ibm.com/cn-zh/about\"\n      ],\n      \"evidence\": \"维基百科、百度百科与IBM中文官网均以IBM/国际商业机器公司指称同一公司；中文财经媒体普遍直接用IBM。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"IBM CEO阿尔温德·克里希纳称二季度软件增长放缓已在三季度回升，并认为AI是公司顺风；公司对资本开支较为克制、更多依赖合作伙伴的策略正在见效。\",\n      \"public_baseline\": \"公开报道显示IBM 2025年第三季度营收约171亿美元、同比增长5%，运营每股收益2.95美元，超出市场预期；此前二季度软件仅增长5%、基础设施下滑，股价曾单日暴跌约25%。\",\n      \"surprise_gap\": \"二季度软件放缓曾引发历史性抛售，三季度软件收入7.8亿美元（报道口径）与整体超预期构成明显反转，与市场此前“出了问题”的担忧形成落差。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"CEO称二季度放缓在三季度回升，全年仍相对持平，但预计未来加速；AI为顺风。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"转录给出运营EPS 2.95美元、软件收入78亿美元、现金流30亿美元，均高于街市预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://newsroom.ibm.com/2025-10-22-IBM-RELEASES-THIRD-QUARTER-RESULTS\",\n          \"fact\": \"IBM官方2025年10月22日发布三季度业绩，称各业务板块加速并超出营收、利润和自由现金流预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://www.gate.com/zh/news/detail/ibm-posts-q3-eps-of-295-beats-expectations-amid-strong-software-growth-25114715\",\n          \"fact\": \"报道称总营收171亿美元、同比增长5%，运营EPS 2.95美元，GAAP EPS 2.31美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.cnbc.com/2025/07/23/ibm-q2-earnings-report-2025.html\",\n          \"fact\": \"CNBC称IBM二季度盈利超预期并上调全年自由现金流指引，但软件收入略逊。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.whatjobs.com/news/ibm-stock-plunges-25-after-q2-software-warning-as-clients-divert-capex-to-ai-hardware/\",\n          \"fact\": \"二季度软件仅增5%、基础设施降7%，股价单日跌约25%（二手来源，需以CNBC原文复核）。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称IBM三季度营收“16.8亿美元”——转录中16.8为街市营收预期口径，需核对单位与口径。\",\n        \"不得称IBM已公开承认二季度“判断失误”或改变AI战略。\",\n        \"不得将“更多依赖合作伙伴”表述为已披露的具体资本开支削减数字。\",\n        \"不得称彭博/主持人对IBM持看空或看多立场。\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "IBM三季度营收171亿美元、运营EPS 2.95美元、软件收入78亿美元均超市场预期，CEO称二季度软件放缓已在三季度回升，AI为顺风，资本开支更节制并更多依赖合作伙伴。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "IBM二季度遭抛售后 三季度软件营收78亿超预期 CEO称AI顺风",
+                "title_lines": [
+                  "IBM二季度遭抛售",
+                  "三季度软件营收78亿超预期",
+                  "CEO称AI顺风"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+                  "转录：软件营收78亿美元，市场预期76.4亿美元",
+                  "转录：CEO称二季度放缓在三季度回升，AI为顺风"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "原来数字这么硬",
+                "title": "IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期",
+                "title_lines": [
+                  "IBM三季度营收171亿美元",
+                  "运营EPS 2.95美元",
+                  "均超市场预期"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "转录：整体营收171亿美元，市场预期168亿美元",
+                  "转录：运营EPS 2.95美元，市场预期2.86美元",
+                  "转录：现金流30亿美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 10,
+                  "curiosity_gap": 6,
+                  "factual_fidelity": 10,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速",
+                "title_lines": [
+                  "IBM CEO：二季度放缓已回升",
+                  "全年仍持平",
+                  "但预计未来加速"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "转录：CEO称二季度放缓在Q3回升，全年相对持平，但预计未来加速",
+                  "转录：CEO认为AI是顺风，资本开支更节制、更多依赖合作伙伴的策略正在见效"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "IBM资本开支更节制 靠合作伙伴策略见效 三季度营收超预期",
+                "title_lines": [
+                  "IBM资本开支更节制",
+                  "靠合作伙伴策略见效",
+                  "三季度营收超预期"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "转录：CEO称在资本开支上更节制、更多依赖合作伙伴的策略正在取得成效",
+                  "转录：三季度整体营收171亿美元超预期"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 82.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"source_title\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"show_date\": \"\",\n    \"current_title\": \"IBM CEO称AI成顺风 三季度营收超预期\",\n    \"current_title_lines\": [\n      \"IBM\",\n      \"AI成顺风 三季度营收超预期\",\n      \"软件业务回暖 管理层看加速\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我记得第二季度报告发布后，很多人对软件增长放缓感到震惊。第三季度整体营收171亿美元，超出预期，似乎有所反弹。\",\n        \"en\": \"You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third quarter 17.1 billio\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 13.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场预期为168亿美元，软件营收本身为78亿美元，市场预期为76.4亿美元。公司表示，本季度每股收益在底线基础上...\",\n        \"en\": \"The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter\",\n        \"relative_start\": 13.8,\n        \"relative_end\": 24.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"运营每股收益为2.95美元，市场预期为2.86美元，现金流为30亿美元。我刚才有机会与CEO进行了交流。\",\n        \"en\": \"Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO\",\n        \"relative_start\": 24.7,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"阿尔温·克里希纳进一步讨论了这一点。他告诉我，第二季度看到的放缓在第三季度有所回升。\",\n        \"en\": \"Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 45.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管整体趋于平稳，全年仍相对持平，但他预计未来会加速。公司还明确表示，在人工智能领域以及可能更具约束性的资本支出策略方面，他们看到了许多有利因素。\",\n        \"en\": \"Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI space and their strateg\",\n        \"relative_start\": 46.2,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"在资本支出上更加节制，并更多地依赖合作伙伴，在他看来正在取得成效。现在加入我们的是彭博情报的高级科技分析师Anurag Rana。\",\n        \"en\": \"Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloomberg intelligence an\",\n        \"relative_start\": 59.9,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我记得三个月前这只权益资产遭抛售时，大家都感到焦虑，认为出了问题。你对今天这份报告怎么看？这是一种解脱吗？\",\n        \"en\": \"I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 82.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"IBM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"International Business Machines Corporation\",\n      \"preferred_en\": \"International Business Machines Corporation\",\n      \"official_zh\": \"国际商业机器公司\",\n      \"common_zh\": \"IBM\",\n      \"title_label\": \"IBM\",\n      \"preferred_zh\": \"IBM\",\n      \"aliases\": [\n        \"万国商用机器公司\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/IBM\",\n        \"https://baike.baidu.com/item/IBM/9190\",\n        \"https://www.ibm.com/cn-zh/about\"\n      ],\n      \"evidence\": \"维基百科、百度百科与IBM中文官网均以IBM/国际商业机器公司指称同一公司；中文财经媒体普遍直接用IBM。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"IBM CEO阿尔温德·克里希纳称二季度软件增长放缓已在三季度回升，并认为AI是公司顺风；公司对资本开支较为克制、更多依赖合作伙伴的策略正在见效。\",\n      \"public_baseline\": \"公开报道显示IBM 2025年第三季度营收约171亿美元、同比增长5%，运营每股收益2.95美元，超出市场预期；此前二季度软件仅增长5%、基础设施下滑，股价曾单日暴跌约25%。\",\n      \"surprise_gap\": \"二季度软件放缓曾引发历史性抛售，三季度软件收入7.8亿美元（报道口径）与整体超预期构成明显反转，与市场此前“出了问题”的担忧形成落差。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"CEO称二季度放缓在三季度回升，全年仍相对持平，但预计未来加速；AI为顺风。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"转录给出运营EPS 2.95美元、软件收入78亿美元、现金流30亿美元，均高于街市预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://newsroom.ibm.com/2025-10-22-IBM-RELEASES-THIRD-QUARTER-RESULTS\",\n          \"fact\": \"IBM官方2025年10月22日发布三季度业绩，称各业务板块加速并超出营收、利润和自由现金流预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://www.gate.com/zh/news/detail/ibm-posts-q3-eps-of-295-beats-expectations-amid-strong-software-growth-25114715\",\n          \"fact\": \"报道称总营收171亿美元、同比增长5%，运营EPS 2.95美元，GAAP EPS 2.31美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.cnbc.com/2025/07/23/ibm-q2-earnings-report-2025.html\",\n          \"fact\": \"CNBC称IBM二季度盈利超预期并上调全年自由现金流指引，但软件收入略逊。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.whatjobs.com/news/ibm-stock-plunges-25-after-q2-software-warning-as-clients-divert-capex-to-ai-hardware/\",\n          \"fact\": \"二季度软件仅增5%、基础设施降7%，股价单日跌约25%（二手来源，需以CNBC原文复核）。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称IBM三季度营收“16.8亿美元”——转录中16.8为街市营收预期口径，需核对单位与口径。\",\n        \"不得称IBM已公开承认二季度“判断失误”或改变AI战略。\",\n        \"不得将“更多依赖合作伙伴”表述为已披露的具体资本开支削减数字。\",\n        \"不得称彭博/主持人对IBM持看空或看多立场。\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"IBM三季度营收171亿美元、运营EPS 2.95美元、软件收入78亿美元均超市场预期，CEO称二季度软件放缓已在三季度回升，AI为顺风，资本开支更节制并更多依赖合作伙伴。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"IBM二季度遭抛售后 三季度软件营收78亿超预期 CEO称AI顺风\",\n          \"title_lines\": [\n            \"IBM二季度遭抛售\",\n            \"三季度软件营收78亿超预期\",\n            \"CEO称AI顺风\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期\",\n            \"转录：软件营收78亿美元，市场预期76.4亿美元\",\n            \"转录：CEO称二季度放缓在三季度回升，AI为顺风\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"原来数字这么硬\",\n          \"title\": \"IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期\",\n          \"title_lines\": [\n            \"IBM三季度营收171亿美元\",\n            \"运营EPS 2.95美元\",\n            \"均超市场预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：整体营收171亿美元，市场预期168亿美元\",\n            \"转录：运营EPS 2.95美元，市场预期2.86美元\",\n            \"转录：现金流30亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 10,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速\",\n          \"title_lines\": [\n            \"IBM CEO：二季度放缓已回升\",\n            \"全年仍持平\",\n            \"但预计未来加速\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：CEO称二季度放缓在Q3回升，全年相对持平，但预计未来加速\",\n            \"转录：CEO认为AI是顺风，资本开支更节制、更多依赖合作伙伴的策略正在见效\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"IBM资本开支更节制 靠合作伙伴策略见效 三季度营收超预期\",\n          \"title_lines\": [\n            \"IBM资本开支更节制\",\n            \"靠合作伙伴策略见效\",\n            \"三季度营收超预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：CEO称在资本开支上更节制、更多依赖合作伙伴的策略正在取得成效\",\n            \"转录：三季度整体营收171亿美元超预期\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "二季度被抛售后，三季度居然全面超预期",
+            "evidence_basis": [
+              "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+              "转录：软件营收78亿美元，市场预期76.4亿美元",
+              "转录：运营EPS 2.95美元，市场预期2.86美元",
+              "转录：CEO称二季度放缓在三季度回升，AI为顺风",
+              "研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%"
+            ],
+            "title": "IBM二季度遭抛售后 三季度营收171亿超预期",
+            "title_lines": [
+              "IBM二季度遭抛售",
+              "三季度营收171亿超预期",
+              "CEO称AI成顺风"
+            ],
+            "title_highlights": [
+              "IBM",
+              "遭抛售",
+              "171亿超预期",
+              "AI成顺风"
+            ],
+            "runner_up_titles": [
+              "IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期",
+              "IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期，关注回升能否延续。",
+            "comment_highlights": [
+              "软件放缓",
+              "双双超预期"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：二季度软件放缓曾让市场震惊，三季度营收171亿出现反弹。",
+                "comment_highlights": [
+                  "171亿出现反弹"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：软件营收78亿高于预期76.4亿，是这次反转的关键数字。",
+                "comment_highlights": [
+                  "78亿高于预期"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：运营EPS 2.95美元超预期，现金流30亿美元，数字层面全面占优。",
+                "comment_highlights": [
+                  "2.95美元超预期"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：CEO亲口确认二季度放缓在三季度回升，说法与财报口径一致。",
+                "comment_highlights": [
+                  "三季度回升"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：全年仍相对持平，但管理层预计未来加速，AI被列为顺风。",
+                "comment_highlights": [
+                  "预计未来加速"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：资本开支更节制、更多依赖合作伙伴，CEO认为这套打法正在见效。",
+                "comment_highlights": [
+                  "更多依赖合作伙伴"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：三个月前权益资产遭抛售时的焦虑，如今被这份财报正面回应。",
+                "comment_highlights": [
+                  "焦虑",
+                  "正面回应"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 82.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"source_title\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n    \"show_date\": \"\",\n    \"current_title\": \"IBM CEO称AI成顺风 三季度营收超预期\",\n    \"current_title_lines\": [\n      \"IBM\",\n      \"AI成顺风 三季度营收超预期\",\n      \"软件业务回暖 管理层看加速\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我记得第二季度报告发布后，很多人对软件增长放缓感到震惊。第三季度整体营收171亿美元，超出预期，似乎有所反弹。\",\n        \"en\": \"You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third quarter 17.1 billio\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 13.8\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"市场预期为168亿美元，软件营收本身为78亿美元，市场预期为76.4亿美元。公司表示，本季度每股收益在底线基础上...\",\n        \"en\": \"The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter\",\n        \"relative_start\": 13.8,\n        \"relative_end\": 24.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"运营每股收益为2.95美元，市场预期为2.86美元，现金流为30亿美元。我刚才有机会与CEO进行了交流。\",\n        \"en\": \"Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO\",\n        \"relative_start\": 24.7,\n        \"relative_end\": 38.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"阿尔温·克里希纳进一步讨论了这一点。他告诉我，第二季度看到的放缓在第三季度有所回升。\",\n        \"en\": \"Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3\",\n        \"relative_start\": 38.1,\n        \"relative_end\": 45.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"尽管整体趋于平稳，全年仍相对持平，但他预计未来会加速。公司还明确表示，在人工智能领域以及可能更具约束性的资本支出策略方面，他们看到了许多有利因素。\",\n        \"en\": \"Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI space and their strateg\",\n        \"relative_start\": 46.2,\n        \"relative_end\": 59.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"在资本支出上更加节制，并更多地依赖合作伙伴，在他看来正在取得成效。现在加入我们的是彭博情报的高级科技分析师Anurag Rana。\",\n        \"en\": \"Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloomberg intelligence an\",\n        \"relative_start\": 59.9,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我记得三个月前这只权益资产遭抛售时，大家都感到焦虑，认为出了问题。你对今天这份报告怎么看？这是一种解脱吗？\",\n        \"en\": \"I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 82.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"IBM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"International Business Machines Corporation\",\n      \"preferred_en\": \"International Business Machines Corporation\",\n      \"official_zh\": \"国际商业机器公司\",\n      \"common_zh\": \"IBM\",\n      \"title_label\": \"IBM\",\n      \"preferred_zh\": \"IBM\",\n      \"aliases\": [\n        \"万国商用机器公司\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/IBM\",\n        \"https://baike.baidu.com/item/IBM/9190\",\n        \"https://www.ibm.com/cn-zh/about\"\n      ],\n      \"evidence\": \"维基百科、百度百科与IBM中文官网均以IBM/国际商业机器公司指称同一公司；中文财经媒体普遍直接用IBM。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"IBM CEO阿尔温德·克里希纳称二季度软件增长放缓已在三季度回升，并认为AI是公司顺风；公司对资本开支较为克制、更多依赖合作伙伴的策略正在见效。\",\n      \"public_baseline\": \"公开报道显示IBM 2025年第三季度营收约171亿美元、同比增长5%，运营每股收益2.95美元，超出市场预期；此前二季度软件仅增长5%、基础设施下滑，股价曾单日暴跌约25%。\",\n      \"surprise_gap\": \"二季度软件放缓曾引发历史性抛售，三季度软件收入7.8亿美元（报道口径）与整体超预期构成明显反转，与市场此前“出了问题”的担忧形成落差。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"CEO称二季度放缓在三季度回升，全年仍相对持平，但预计未来加速；AI为顺风。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"转录给出运营EPS 2.95美元、软件收入78亿美元、现金流30亿美元，均高于街市预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://newsroom.ibm.com/2025-10-22-IBM-RELEASES-THIRD-QUARTER-RESULTS\",\n          \"fact\": \"IBM官方2025年10月22日发布三季度业绩，称各业务板块加速并超出营收、利润和自由现金流预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://www.gate.com/zh/news/detail/ibm-posts-q3-eps-of-295-beats-expectations-amid-strong-software-growth-25114715\",\n          \"fact\": \"报道称总营收171亿美元、同比增长5%，运营EPS 2.95美元，GAAP EPS 2.31美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.cnbc.com/2025/07/23/ibm-q2-earnings-report-2025.html\",\n          \"fact\": \"CNBC称IBM二季度盈利超预期并上调全年自由现金流指引，但软件收入略逊。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.whatjobs.com/news/ibm-stock-plunges-25-after-q2-software-warning-as-clients-divert-capex-to-ai-hardware/\",\n          \"fact\": \"二季度软件仅增5%、基础设施降7%，股价单日跌约25%（二手来源，需以CNBC原文复核）。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称IBM三季度营收“16.8亿美元”——转录中16.8为街市营收预期口径，需核对单位与口径。\",\n        \"不得称IBM已公开承认二季度“判断失误”或改变AI战略。\",\n        \"不得将“更多依赖合作伙伴”表述为已披露的具体资本开支削减数字。\",\n        \"不得称彭博/主持人对IBM持看空或看多立场。\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"IBM三季度营收171亿美元、运营EPS 2.95美元、软件收入78亿美元均超市场预期，CEO称二季度软件放缓已在三季度回升，AI为顺风，资本开支更节制并更多依赖合作伙伴。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"IBM二季度遭抛售后 三季度软件营收78亿超预期 CEO称AI顺风\",\n          \"title_lines\": [\n            \"IBM二季度遭抛售\",\n            \"三季度软件营收78亿超预期\",\n            \"CEO称AI顺风\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期\",\n            \"转录：软件营收78亿美元，市场预期76.4亿美元\",\n            \"转录：CEO称二季度放缓在三季度回升，AI为顺风\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"原来数字这么硬\",\n          \"title\": \"IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期\",\n          \"title_lines\": [\n            \"IBM三季度营收171亿美元\",\n            \"运营EPS 2.95美元\",\n            \"均超市场预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：整体营收171亿美元，市场预期168亿美元\",\n            \"转录：运营EPS 2.95美元，市场预期2.86美元\",\n            \"转录：现金流30亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 10,\n            \"curiosity_gap\": 6,\n            \"factual_fidelity\": 10,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速\",\n          \"title_lines\": [\n            \"IBM CEO：二季度放缓已回升\",\n            \"全年仍持平\",\n            \"但预计未来加速\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：CEO称二季度放缓在Q3回升，全年相对持平，但预计未来加速\",\n            \"转录：CEO认为AI是顺风，资本开支更节制、更多依赖合作伙伴的策略正在见效\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"IBM资本开支更节制 靠合作伙伴策略见效 三季度营收超预期\",\n          \"title_lines\": [\n            \"IBM资本开支更节制\",\n            \"靠合作伙伴策略见效\",\n            \"三季度营收超预期\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"转录：CEO称在资本开支上更节制、更多依赖合作伙伴的策略正在取得成效\",\n            \"转录：三季度整体营收171亿美元超预期\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"IBM二季度遭抛售：三季度营收171亿超预期，CEO称AI成顺风\",\n      \"title_lines\": [\n        \"IBM二季度遭抛售\",\n        \"三季度营收171亿超预期\",\n        \"CEO称AI成顺风\"\n      ],\n      \"title_highlights\": [\n        \"IBM\",\n        \"遭抛售\",\n        \"171亿超预期\"\n      ],\n      \"comment\": \"KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期\",\n      \"comment_highlights\": [\n        \"软件放缓\",\n        \"双双超预期\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：二季度软件放缓曾让市场震惊，三季度营收171亿出现反弹\",\n          \"comment_highlights\": [\n            \"171亿出现反弹\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：软件营收78亿高于预期76.4亿，是这次反转的关键数字\",\n          \"comment_highlights\": [\n            \"78亿高于预期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：运营EPS2.95美元超预期，现金流30亿美元，数字层面全面占优\",\n          \"comment_highlights\": [\n            \"2.95美元超预期\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：CEO亲口确认二季度放缓在三季度回升，说法与财报口径一致\",\n          \"comment_highlights\": [\n            \"三季度回升\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：全年仍相对持平，但管理层预计未来加速，AI被列为顺风\",\n          \"comment_highlights\": [\n            \"预计未来加速\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：资本开支更节制、更多依赖合作伙伴，CEO认为这套打法正在见效\",\n          \"comment_highlights\": [\n            \"更多依赖合作伙伴\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：三个月前权益资产遭抛售时的焦虑，如今被这份财报正面回应\",\n          \"comment_highlights\": [\n            \"焦虑\",\n            \"正面回应\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"二季度被抛售后，三季度居然全面超预期\",\n      \"evidence_basis\": [\n        \"转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期\",\n        \"转录：软件营收78亿美元，市场预期76.4亿美元\",\n        \"转录：运营EPS 2.95美元，市场预期2.86美元\",\n        \"转录：CEO称二季度放缓在三季度回升，AI为顺风\",\n        \"研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%\"\n      ],\n      \"runner_up_titles\": [\n        \"IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期\",\n        \"IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "二季度被抛售后，三季度居然全面超预期",
+                "evidence_basis": [
+                  "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+                  "转录：软件营收78亿美元，市场预期76.4亿美元",
+                  "转录：运营EPS 2.95美元，市场预期2.86美元",
+                  "转录：CEO称二季度放缓在三季度回升，AI为顺风",
+                  "研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%"
+                ],
+                "title": "IBM二季度遭抛售后 三季度营收171亿超预期 CEO称AI成顺风",
+                "title_lines": [
+                  "IBM二季度遭抛售后",
+                  "三季度营收171亿超预期",
+                  "CEO称AI成顺风"
+                ],
+                "title_highlights": [
+                  "IBM",
+                  "遭抛售后",
+                  "171亿超预期"
+                ],
+                "runner_up_titles": [
+                  "IBM三季度营收171亿美元 运营EPS 2.95美元 均超市场预期",
+                  "IBM CEO：二季度放缓已回升 全年仍持平 但预计未来加速"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期，反转信号明确",
+                "comment_highlights": [
+                  "双双超预期",
+                  "反转信号明确"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：二季度软件放缓曾让市场震惊，三季度营收171亿出现反弹",
+                    "comment_highlights": [
+                      "171亿出现反弹"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：软件营收78亿高于预期76.4亿，是这次反转的关键数字",
+                    "comment_highlights": [
+                      "78亿高于预期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：运营EPS2.95美元超预期，现金流30亿美元，数字层面全面占优",
+                    "comment_highlights": [
+                      "2.95美元超预期"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：CEO亲口确认二季度放缓在三季度回升，说法与财报口径一致",
+                    "comment_highlights": [
+                      "三季度回升"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：全年仍相对持平，但管理层预计未来加速，AI被列为顺风",
+                    "comment_highlights": [
+                      "预计未来加速"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：资本开支更节制、更多依赖合作伙伴，CEO认为这套打法正在见效",
+                    "comment_highlights": [
+                      "更多依赖合作伙伴"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：三个月前权益资产遭抛售时的焦虑，如今被这份财报正面回应",
+                    "comment_highlights": [
+                      "焦虑",
+                      "正面回应"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "IBM二季度遭抛售：三季度营收171亿超预期，CEO称AI成顺风",
+          "title_lines": [
+            "IBM二季度遭抛售",
+            "三季度营收171亿超预期",
+            "CEO称AI成顺风"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "二季度被抛售后，三季度居然全面超预期",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-22T00:36:48.874608+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 82.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise",
+          "source_title": "Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise",
+          "show_date": "",
+          "current_title": "IBM CEO称AI成顺风 三季度营收超预期",
+          "current_title_lines": [
+            "IBM",
+            "AI成顺风 三季度营收超预期",
+            "软件业务回暖 管理层看加速"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我记得第二季度报告发布后，很多人对软件增长放缓感到震惊。第三季度整体营收171亿美元，超出预期，似乎有所反弹。",
+              "en": "You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third quarter 17.1 billio",
+              "relative_start": 0.0,
+              "relative_end": 13.8
+            },
+            {
+              "index": 2,
+              "zh": "市场预期为168亿美元，软件营收本身为78亿美元，市场预期为76.4亿美元。公司表示，本季度每股收益在底线基础上...",
+              "en": "The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter",
+              "relative_start": 13.8,
+              "relative_end": 24.2
+            },
+            {
+              "index": 3,
+              "zh": "运营每股收益为2.95美元，市场预期为2.86美元，现金流为30亿美元。我刚才有机会与CEO进行了交流。",
+              "en": "Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO",
+              "relative_start": 24.7,
+              "relative_end": 38.1
+            },
+            {
+              "index": 4,
+              "zh": "阿尔温·克里希纳进一步讨论了这一点。他告诉我，第二季度看到的放缓在第三季度有所回升。",
+              "en": "Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3",
+              "relative_start": 38.1,
+              "relative_end": 45.8
+            },
+            {
+              "index": 5,
+              "zh": "尽管整体趋于平稳，全年仍相对持平，但他预计未来会加速。公司还明确表示，在人工智能领域以及可能更具约束性的资本支出策略方面，他们看到了许多有利因素。",
+              "en": "Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI space and their strateg",
+              "relative_start": 46.2,
+              "relative_end": 59.5
+            },
+            {
+              "index": 6,
+              "zh": "在资本支出上更加节制，并更多地依赖合作伙伴，在他看来正在取得成效。现在加入我们的是彭博情报的高级科技分析师Anurag Rana。",
+              "en": "Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloomberg intelligence an",
+              "relative_start": 59.9,
+              "relative_end": 71.6
+            },
+            {
+              "index": 7,
+              "zh": "我记得三个月前这只权益资产遭抛售时，大家都感到焦虑，认为出了问题。你对今天这份报告怎么看？这是一种解脱吗？",
+              "en": "I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?",
+              "relative_start": 71.8,
+              "relative_end": 82.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n  \"source_title\": \"Duration: 4:03 IBM CEO Sees AI as a Tailwind as Sales Rise\",\n  \"current_title\": \"IBM CEO称AI成顺风 三季度营收超预期\",\n  \"source_claims\": [\n    \"You know why I remember coming off of that Q2 report that shocked a lot of people with regards to the slowdown and software growth It does look they rebounded a bit here in the third quarter overall revenue for the third\",\n    \"The street was looking for 16.8 software revenue itself 7.8 billion the street was looking for 7.64 The company says that on the bottom line EPS in the quarter\",\n    \"Coming in at operating EPS $2.95 a street was looking for 286 in cash flow at $3 billion even I had a chance chance just a little while ago to catch up with the CEO\",\n    \"Arvin Krishna to talk a little bit more about this Basically he told me that look that slowdown that you saw in Q2 it came back in Q3\",\n    \"Though it all kind of smoothed out and it's still relatively flat on the year But he sees an acceleration going forward A company also saying very clearly here that they see a lot of tailwinds when it comes to the AI spa\",\n    \"Being a little bit more constrained with regards to their capex spending and relying a little bit more on their partners in his view is paying off Joining us right now is on a rock run a senior tech analyst over at Bloom\",\n    \"I remember all of the agita that we saw three months ago when this stock sold off everybody thought something's wrong here What did you make of this report that we got today? Is this sort of absolution?\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"IBM\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"International Business Machines Corporation\",\n      \"preferred_en\": \"International Business Machines Corporation\",\n      \"official_zh\": \"国际商业机器公司\",\n      \"common_zh\": \"IBM\",\n      \"title_label\": \"IBM\",\n      \"preferred_zh\": \"IBM\",\n      \"aliases\": [\n        \"万国商用机器公司\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/IBM\",\n        \"https://baike.baidu.com/item/IBM/9190\",\n        \"https://www.ibm.com/cn-zh/about\"\n      ],\n      \"evidence\": \"维基百科、百度百科与IBM中文官网均以IBM/国际商业机器公司指称同一公司；中文财经媒体普遍直接用IBM。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"IBM CEO阿尔温德·克里希纳称二季度软件增长放缓已在三季度回升，并认为AI是公司顺风；公司对资本开支较为克制、更多依赖合作伙伴的策略正在见效。\",\n      \"public_baseline\": \"公开报道显示IBM 2025年第三季度营收约171亿美元、同比增长5%，运营每股收益2.95美元，超出市场预期；此前二季度软件仅增长5%、基础设施下滑，股价曾单日暴跌约25%。\",\n      \"surprise_gap\": \"二季度软件放缓曾引发历史性抛售，三季度软件收入7.8亿美元（报道口径）与整体超预期构成明显反转，与市场此前“出了问题”的担忧形成落差。\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"CEO称二季度放缓在三季度回升，全年仍相对持平，但预计未来加速；AI为顺风。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"转录给出运营EPS 2.95美元、软件收入78亿美元、现金流30亿美元，均高于街市预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://newsroom.ibm.com/2025-10-22-IBM-RELEASES-THIRD-QUARTER-RESULTS\",\n          \"fact\": \"IBM官方2025年10月22日发布三季度业绩，称各业务板块加速并超出营收、利润和自由现金流预期。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM 2025年第三季度 财报 营收 软件 每股收益 2.95美元\",\n          \"url\": \"https://www.gate.com/zh/news/detail/ibm-posts-q3-eps-of-295-beats-expectations-amid-strong-software-growth-25114715\",\n          \"fact\": \"报道称总营收171亿美元、同比增长5%，运营EPS 2.95美元，GAAP EPS 2.31美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.cnbc.com/2025/07/23/ibm-q2-earnings-report-2025.html\",\n          \"fact\": \"CNBC称IBM二季度盈利超预期并上调全年自由现金流指引，但软件收入略逊。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"IBM Q2 2025 software growth slowdown stock selloff\",\n          \"url\": \"https://www.whatjobs.com/news/ibm-stock-plunges-25-after-q2-software-warning-as-clients-divert-capex-to-ai-hardware/\",\n          \"fact\": \"二季度软件仅增5%、基础设施降7%，股价单日跌约25%（二手来源，需以CNBC原文复核）。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称IBM三季度营收“16.8亿美元”——转录中16.8为街市营收预期口径，需核对单位与口径。\",\n        \"不得称IBM已公开承认二季度“判断失误”或改变AI战略。\",\n        \"不得将“更多依赖合作伙伴”表述为已披露的具体资本开支削减数字。\",\n        \"不得称彭博/主持人对IBM持看空或看多立场。\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCurrent rejected title:\n{\n  \"title\": \"IBM二季度遭抛售：三季度营收171亿超预期，CEO称AI成顺风\",\n  \"title_lines\": [\n    \"IBM二季度遭抛售\",\n    \"三季度营收171亿超预期\",\n    \"CEO称AI成顺风\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"二季度被抛售后，三季度居然全面超预期\",\n  \"evidence_basis\": [\n    \"转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期\",\n    \"转录：软件营收78亿美元，市场预期76.4亿美元\",\n    \"转录：运营EPS 2.95美元，市场预期2.86美元\",\n    \"转录：CEO称二季度放缓在三季度回升，AI为顺风\",\n    \"研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "二季度被抛售后，三季度居然全面超预期，AI顺风能否延续",
+            "evidence_basis": [
+              "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+              "转录：软件营收78亿美元，市场预期76.4亿美元",
+              "转录：运营EPS 2.95美元，市场预期2.86美元",
+              "转录：CEO称二季度放缓在三季度回升，AI为顺风",
+              "研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%"
+            ],
+            "title": "IBM二季度遭抛售，三季度营收171亿超预期，AI顺风能否延续？",
+            "title_lines": [
+              "IBM二季度遭抛售",
+              "三季度营收171亿超预期",
+              "AI顺风能否延续？"
+            ],
+            "title_highlights": [
+              "二季度遭抛售",
+              "171亿超预期",
+              "AI顺风能否延续？"
+            ],
+            "runner_up_titles": [
+              "IBM二季度遭抛售后，三季度营收171亿超预期，AI顺风能持续吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "IBM二季度遭抛售：三季度营收171亿超预期，AI顺风能否延续？",
+        "title_lines": [
+          "IBM二季度遭抛售",
+          "三季度营收171亿超预期",
+          "AI顺风能否延续？"
+        ],
+        "title_highlights": [
+          "二季度遭抛售",
+          "171亿超预期",
+          "AI顺风能否延续？"
+        ],
+        "comment": "KC评论：二季度软件放缓曾引发抛售，三季度营收与软件双双超预期",
+        "comment_highlights": [
+          "软件放缓",
+          "双双超预期"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：二季度软件放缓曾让市场震惊，三季度营收171亿出现反弹",
+            "comment_highlights": [
+              "171亿出现反弹"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：软件营收78亿高于预期76.4亿，是这次反转的关键数字",
+            "comment_highlights": [
+              "78亿高于预期"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：运营EPS2.95美元超预期，现金流30亿美元，数字层面全面占优",
+            "comment_highlights": [
+              "2.95美元超预期"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：CEO亲口确认二季度放缓在三季度回升，说法与财报口径一致",
+            "comment_highlights": [
+              "三季度回升"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：全年仍相对持平，但管理层预计未来加速，AI被列为顺风",
+            "comment_highlights": [
+              "预计未来加速"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：资本开支更节制、更多依赖合作伙伴，CEO认为这套打法正在见效",
+            "comment_highlights": [
+              "更多依赖合作伙伴"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：三个月前权益资产遭抛售时的焦虑，如今被这份财报正面回应",
+            "comment_highlights": [
+              "焦虑",
+              "正面回应"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "二季度被抛售后，三季度居然全面超预期，AI顺风能否延续",
+        "evidence_basis": [
+          "转录：二季度软件增长放缓引发震惊，三季度整体营收171亿美元超预期",
+          "转录：软件营收78亿美元，市场预期76.4亿美元",
+          "转录：运营EPS 2.95美元，市场预期2.86美元",
+          "转录：CEO称二季度放缓在三季度回升，AI为顺风",
+          "研究卡：二季度软件仅增5%、基础设施下滑，股价曾单日大跌约25%"
+        ],
+        "runner_up_titles": [
+          "IBM二季度遭抛售后，三季度营收171亿超预期，AI顺风能持续吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
