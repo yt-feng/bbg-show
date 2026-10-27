@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -13,6 +14,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
+from download_bloomberg_video import extract_url_bound_asset_ids
 from trump_filter import is_trump_related
 from weekend_processed_shows import (
     WeekendProcessedShowsError,
@@ -27,6 +29,7 @@ SHOW_AUTO = "auto"
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_WEEKEND_BACKLOG = REPO_ROOT / "tools" / "bloomberg_weekend_backlog.json"
 DEFAULT_RENDERED_ROOT = REPO_ROOT / "rendered-clips"
+CHINA_SERIES_URL = "https://www.bloomberg.com/btv/series/the-china-show"
 UUID_RE = re.compile(
     r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
 )
@@ -90,6 +93,72 @@ def build_url(show_date: str, show_type: str) -> str:
 def bloomberg_brp_url(url: str) -> str:
     parsed = urlsplit(url)
     return parsed._replace(scheme="https", netloc="brp-prod-bcc.bloomberg.com").geturl()
+
+
+def fetch_show_page(url: str, timeout: int) -> str:
+    """Fetch public episode metadata with bounded retries and no browser setup."""
+    timeout = max(3, timeout)
+    proc = subprocess.run(
+        [
+            "curl", "-sS", "--fail", "--location",
+            "--max-time", str(timeout), "--connect-timeout", str(min(timeout, 5)),
+            "--retry", "1", "--retry-delay", "1",
+            "-A", PROBE_UA,
+            bloomberg_brp_url(url),
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=2 * timeout + 5,
+    )
+    if proc.returncode:
+        raise RuntimeError((proc.stderr or f"curl exited {proc.returncode}").strip())
+    return proc.stdout
+
+
+def china_episode_urls(content: str, show_date: str) -> list[str]:
+    """Read published paths, including Bloomberg's nonstandard slug dates.
+
+    The publication-date directory is authoritative. The slug can use a short
+    year or even a different month, as on 2026-10-27.
+    """
+    parse_date(show_date)
+    normalized = html.unescape(content).replace("\\/", "/")
+    normalized = normalized.replace("\\u002F", "/").replace("\\u002f", "/")
+    pattern = rf"/news/videos/{re.escape(show_date)}/the-china-show-[a-zA-Z0-9-]+-video(?=[\s\"'<>?#\\\\]|$)"
+    paths = dict.fromkeys(re.findall(pattern, normalized))
+    return [f"https://www.bloomberg.com{path}" for path in paths]
+
+
+def resolve_china_url(show_date: str, timeout: int = 12) -> str:
+    """Prefer the official series listing; never guess a neighbouring episode."""
+    try:
+        content = fetch_show_page(CHINA_SERIES_URL, timeout)
+    except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
+        print(f"China Show series lookup unavailable: {exc}", flush=True)
+    else:
+        urls = china_episode_urls(content, show_date)
+        if len(urls) == 1:
+            print(f"China Show {show_date}: resolved from official series", flush=True)
+            return urls[0]
+        if len(urls) > 1:
+            raise SystemExit(f"Multiple China Show URLs published for {show_date}; use --url to select an episode.")
+        print(f"China Show {show_date}: not present in current series listing; checking date URLs", flush=True)
+
+    long_url = build_china_url(show_date)
+    year = parse_date(show_date).year
+    short_url = long_url.removesuffix(f"{year}-video") + f"{year % 100:02d}-video"
+    for url in (long_url, short_url):
+        try:
+            content = fetch_show_page(url, timeout)
+        except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
+            print(f"China Show candidate {url}: {exc}", flush=True)
+            continue
+        # HTTP 200 alone can expose only recommendations or a stale player.
+        if len(extract_url_bound_asset_ids({"html": content}, url)) == 1:
+            return url
+        print(f"China Show candidate {url}: no unique video bound to this URL", flush=True)
+    raise SystemExit(f"No verified China Show URL found for {show_date}; retry after publication or provide --url.")
 
 
 def parse_date(value: str) -> date:
@@ -327,6 +396,7 @@ def main() -> None:
         help="auto chooses China Show on Mon-Fri show dates and Bloomberg Weekend on Sat-Sun show dates.",
     )
     parser.add_argument("--url", default="", help="Override Bloomberg video URL.")
+    parser.add_argument("--china-probe-timeout", type=int, default=12, help="Seconds per China Show metadata request.")
     parser.add_argument(
         "--weekend-backlog",
         type=Path,
@@ -418,7 +488,12 @@ def main() -> None:
                 "configured backlog, or older weekend scan."
             )
 
-    url = args.url.strip() or build_url(show_date, show_type)
+    if explicit_url:
+        url = args.url.strip()
+    elif show_type == SHOW_CHINA:
+        url = resolve_china_url(show_date, args.china_probe_timeout)
+    else:
+        url = build_url(show_date, show_type)
     output_dir = f"rendered-clips/{show_date}"
 
     values = {

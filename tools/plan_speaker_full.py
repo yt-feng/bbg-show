@@ -178,9 +178,10 @@ def translate_units(units: list[SubtitleUnit], speaker: str, context: str, batch
 
 
 def has_zh_translation(item: dict[str, Any] | None) -> bool:
-    if not item:
+    if not isinstance(item, dict):
         return False
-    return bool(clean_text(str(item.get("zh", ""))))
+    raw_zh = item.get("zh")
+    return isinstance(raw_zh, str) and bool(clean_text(raw_zh))
 
 
 def normalize_highlights(value: Any, text: str, limit: int = 2) -> list[str]:

@@ -98,12 +98,11 @@ The workflow should interrupt the operator only when the URL cannot be classifie
 - `tools/resolve_china_show_url.py`
   - Resolves the daily Bloomberg China Show URL.
   - Defaults to yesterday in `Asia/Shanghai`, matching the scheduled 03:00 Beijing-time run.
-  - Uses Bloomberg's date pattern:
-
-```text
-https://www.bloomberg.com/news/videos/YYYY-MM-DD/the-china-show-M-D-YYYY-video
-```
-
+  - Reads the official China Show series page and matches the exact publication-date
+    directory. The slug itself may use a short year or an inconsistent month.
+  - If the listing is unavailable or no longer includes the requested date, probes
+    long/short-year date URLs and requires a unique video asset bound to that URL.
+    Explicit URL overrides and Weekend selection retain their existing behavior.
   - Writes `SHOW_DATE`, `SHOW_URL`, and `OUTPUT_DIR` into `GITHUB_ENV` for workflow steps.
 
 - `tools/transcribe_video.py`
@@ -287,6 +286,10 @@ Weekend clips on weekend dates.
 - A rerun that finds MP4s already present under `OUTPUT_DIR` skips expensive generation but must
   still execute the post-commit WebDAV reconciliation. This is the recovery path when rendering
   and Git publication succeeded but storage delivery did not.
+- Manual `repair_failed_speakers=true` with an explicit `show_date` recovers recorded planner
+  failures from a published show. It preserves existing clips, replans failed speakers, and
+  appends eligible results. A genuine planner failure stops normal publication and source-ledger
+  finalization; an intentional content exclusion does not.
 
 Show duplicate state is durable:
 
