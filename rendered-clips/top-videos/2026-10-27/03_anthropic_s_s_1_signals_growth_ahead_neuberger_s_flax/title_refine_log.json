@@ -1,0 +1,1326 @@
+{
+  "timestamp_utc": "2026-10-27T01:52:25.590035+00:00",
+  "plan_path": "work/top-videos/03_anthropic_s_s_1_signals_growth_ahead_neuberger_s_flax/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Anthropic",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Anthropic PBC",
+        "preferred_en": "Anthropic PBC",
+        "official_zh": "安特罗匹克公司",
+        "common_zh": "Anthropic",
+        "title_label": "Anthropic",
+        "preferred_zh": "Anthropic",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 3,
+        "evidence_urls": [
+          "https://zh.wikipedia.org/zh-hans/Anthropic",
+          "https://cn.nytimes.com/business/20260529/anthropic-tops-openai-valuation",
+          "https://zhuanlan.zhihu.com/p/13568558856"
+        ],
+        "evidence": "中文维基百科给出中国大陆官方媒体译名“安特罗匹克公司”；纽约时报中文网、知乎等中文媒体普遍直接使用英文名Anthropic，故标题标签保留英文。"
+      },
+      {
+        "source_text": "Neuberger Berman",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Neuberger Berman Group LLC",
+        "preferred_en": "Neuberger Berman Group LLC",
+        "official_zh": "路博迈集团",
+        "common_zh": "路博迈",
+        "title_label": "路博迈",
+        "preferred_zh": "路博迈",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科、百度百科及路博迈基金官网均使用“路博迈/路博迈集团”。"
+      },
+      {
+        "source_text": "Flax",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Danny Flax",
+        "preferred_en": "Danny Flax",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Flax",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未提供Danny Flax的可靠中文译名，按规则不臆造音译，标题保留英文姓氏。"
+      },
+      {
+        "source_text": "Claude Code",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Claude Code",
+        "preferred_en": "Claude Code",
+        "official_zh": "",
+        "common_zh": "Claude Code",
+        "title_label": "Claude Code",
+        "preferred_zh": "Claude Code",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科Anthropic条目产品列表及纽约时报中文网均直接使用英文产品名Claude Code。转录中“Claude Codd”应为Claude Code的听写误差。"
+      },
+      {
+        "source_text": "Claude Cowork",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Claude Cowork",
+        "preferred_en": "Claude Cowork",
+        "official_zh": "",
+        "common_zh": "Claude Cowork",
+        "title_label": "Claude Cowork",
+        "preferred_zh": "Claude Cowork",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科Anthropic条目产品列表列出Claude Cowork；转录中“co-work”即指该产品。"
+      },
+      {
+        "source_text": "S-1",
+        "entity_type": "other",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Form S-1",
+        "preferred_en": "Form S-1",
+        "official_zh": "S-1注册声明",
+        "common_zh": "S-1招股书",
+        "title_label": "S-1",
+        "preferred_zh": "S-1招股书",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391",
+          "https://www.rexshares.com/anthropic-ipo-prospectus/"
+        ],
+        "evidence": "多家英文财经媒体以S-1指代Anthropic的IPO注册文件；中文财经语境常称“S-1招股书/注册声明”。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "S-1",
+        "clip_indexes": [
+          1
+        ],
+        "context": "US IPO filing",
+        "sense": "SEC registration statement for a US IPO",
+        "preferred_zh": "S-1注册声明",
+        "title_label": "S-1",
+        "avoid_zh": [
+          "S1表",
+          "上市申请表"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391",
+          "https://www.rexshares.com/anthropic-ipo-prospectus/"
+        ]
+      },
+      {
+        "source_term": "durable growth",
+        "clip_indexes": [],
+        "context": "investment outlook",
+        "sense": "sustained, long-lasting revenue growth",
+        "preferred_zh": "可持续增长",
+        "title_label": "可持续增长",
+        "avoid_zh": [
+          "耐用增长"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "revenue concentration",
+        "clip_indexes": [],
+        "context": "investor risk discussion",
+        "sense": "reliance on a small number of customers for revenue",
+        "preferred_zh": "营收集中度",
+        "title_label": "营收集中度",
+        "avoid_zh": [
+          "收入集中"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Anthropic的营收大幅跃升，但亏损同样扩大；Neuberger的Flax认为公司增长轨迹非凡且可持续。",
+        "public_baseline": "公开检索显示Anthropic已提交S-1，报道的营收与亏损数字差异极大（营收约46亿至163亿美元、亏损约420亿至807亿美元不等），且多为非现金项目，尚无统一口径。",
+        "surprise_gap": "片段只笼统称“营收跃升、亏损扩大”，未给出具体数字；公开报道的具体规模远超一般预期，但各来源数字互相矛盾，不能据此断言某一具体数字。",
+        "speaker_relation": "analyst",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "营收大幅跃升，亏损同样扩大；Flax称增长轨迹非凡、投资正在变现"
+          },
+          {
+            "kind": "public",
+            "query": "Anthropic S-1 filing revenue losses 2025",
+            "url": "https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391",
+            "fact": "报道称S-1显示营收约12倍增长及约5180亿美元算力采购承诺"
+          },
+          {
+            "kind": "public",
+            "query": "Anthropic S-1 filing revenue losses 2025",
+            "url": "https://www.neowin.net/news/anthropics-ipo-filing-reveals-163b-revenue-807b-loss-and-800b-compute-plans/",
+            "fact": "报道称营收163亿美元、亏损807亿美元，与其它来源数字不一致"
+          }
+        ],
+        "forbidden_claims": [
+          "不得断言Anthropic已正式上市或IPO已完成",
+          "不得引用某一具体营收/亏损数字作为已核实事实",
+          "不得称Flax或路博迈持有Anthropic股份",
+          "不得称Anthropic存在营收集中问题已被证实",
+          "不得将Bloomberg或主持人表述为观点持有者"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "Anthropic S-1 filing revenue losses 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether Anthropic has publicly filed an S-1 and the reported revenue and loss figures"
+      },
+      {
+        "query": "Anthropic 中文名 公司 名称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Anthropic"
+      },
+      {
+        "query": "Neuberger Berman 中文名 路博迈",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Neuberger Berman and analyst Danny Flax"
+      },
+      {
+        "query": "Claude Code Anthropic revenue growth 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Claude Code and co-work drive Anthropic revenue growth"
+      },
+      {
+        "query": "Anthropic valuation funding round 2025 revenue run rate",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish Anthropic's publicly reported revenue run-rate and valuation baseline"
+      },
+      {
+        "query": "Anthropic customer revenue concentration risk",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the investor concern about revenue concentration mentioned in the clip"
+      },
+      {
+        "query": "Danny Flax Neuberger Berman Anthropic comments",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the speaker's prior public statements on Anthropic to check consistency"
+      },
+      {
+        "query": "Anthropic losses 2025 operating loss forecast",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that losses have expanded alongside revenue"
+      },
+      {
+        "query": "Bloomberg Anthropic's S established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Anthropic's S 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Signals Significant Growth Ahead 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-27T01:52:23.281279+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says",
+          "source_title": "Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says",
+          "show_date": "",
+          "current_title": "Anthropic递交S-1 营收跃升亏损扩大",
+          "current_title_lines": [
+            "Anthropic递交S-1",
+            "营收跃升亏损扩大",
+            "增长能否持续引关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这更像是一个窗口，让我们了解这家公司的预期。是的，它的收入大幅增长，但亏损也同样大幅增加。",
+              "en": "More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.",
+              "relative_start": 0.0,
+              "relative_end": 6.6
+            },
+            {
+              "index": 2,
+              "zh": "对于这份S1文件中我们了解到的一些数据，你的初步反应是什么？",
+              "en": "What is your initial reaction to some of the figures we're learning about in this S1?",
+              "relative_start": 6.6,
+              "relative_end": 11.3
+            },
+            {
+              "index": 3,
+              "zh": "我们的初步反应是，这家公司未来有着非凡的增长轨迹。",
+              "en": "Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.",
+              "relative_start": 12.4,
+              "relative_end": 18.0
+            },
+            {
+              "index": 4,
+              "zh": "这得益于创新和对模型的执行，然后将其转化为Claude Codd或co-work等领域的收入。",
+              "en": "It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.",
+              "relative_start": 18.0,
+              "relative_end": 27.6
+            },
+            {
+              "index": 5,
+              "zh": "就配置而言，关键点是，是的，数字非常惊人。",
+              "en": "The key in terms of the investments is, yes, the numbers are extraordinary.",
+              "relative_start": 27.6,
+              "relative_end": 31.5
+            },
+            {
+              "index": 6,
+              "zh": "它们将继续增长，但他们正在将这些配置变现。",
+              "en": "They'll continue to grow, but they're monetizing these investments.",
+              "relative_start": 31.5,
+              "relative_end": 35.2
+            },
+            {
+              "index": 7,
+              "zh": "因此，这种在增长之前进行配置的推拉效应，我认为将在未来几个月内持续存在。",
+              "en": "And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.",
+              "relative_start": 35.2,
+              "relative_end": 42.4
+            },
+            {
+              "index": 8,
+              "zh": "但如果公司能够继续创新，执行其技术路线图，那么我认为未来一年我们将看到Anthropic的增长是持久的。",
+              "en": "But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable",
+              "relative_start": 42.4,
+              "relative_end": 52.3
+            },
+            {
+              "index": 9,
+              "zh": "并且他们将继续扩展到新的领域。",
+              "en": "and they're going to continue to expand into newer areas.",
+              "relative_start": 52.3,
+              "relative_end": 55.3
+            },
+            {
+              "index": 10,
+              "zh": "持久的增长和向新领域的扩展。Danny和我还讨论了一些市场参与者可能有的担忧，即他们的收入集中。",
+              "en": "Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated",
+              "relative_start": 55.3,
+              "relative_end": 63.6
+            },
+            {
+              "index": 11,
+              "zh": "仅集中在少数几家公司，但公司表示，今年第三季度近80%的收入来自前五大客户以外的客户。",
+              "en": "in just a few companies, but actually the company said that nearly 80% of the revenue came from customers outside of the top five customers for their third quarter of the year.",
+              "relative_start": 63.6,
+              "relative_end": 71.6
+            },
+            {
+              "index": 12,
+              "zh": "这在一定程度上缓解了那些担忧，丹，你怎么看？",
+              "en": "So that kind of alleviates any of those concerns, any thoughts on that, Dan?",
+              "relative_start": 71.6,
+              "relative_end": 75.6
+            },
+            {
+              "index": 13,
+              "zh": "是的，很多收入将通过谷歌云、亚马逊云服务等云提供商及其合作伙伴实现，",
+              "en": "Yes, and so a lot of the revenue is going to go through cloud providers such as Google Cloud, Amazon Web Services, their partners, of course,",
+              "relative_start": 76.5,
+              "relative_end": 85.6
+            },
+            {
+              "index": 14,
+              "zh": "当然还有微软Azure。",
+              "en": "Microsoft Azure as well.",
+              "relative_start": 85.6,
+              "relative_end": 87.3
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"source_title\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic递交S-1 营收跃升亏损扩大\",\n    \"current_title_lines\": [\n      \"Anthropic递交S-1\",\n      \"营收跃升亏损扩大\",\n      \"增长能否持续引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这更像是一个窗口，让我们了解这家公司的预期。是的，它的收入大幅增长，但亏损也同样大幅增加。\",\n        \"en\": \"More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于这份S1文件中我们了解到的一些数据，你的初步反应是什么？\",\n        \"en\": \"What is your initial reaction to some of the figures we're learning about in this S1?\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们的初步反应是，这家公司未来有着非凡的增长轨迹。\",\n        \"en\": \"Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.\",\n        \"relative_start\": 12.4,\n        \"relative_end\": 18.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这得益于创新和对模型的执行，然后将其转化为Claude Codd或co-work等领域的收入。\",\n        \"en\": \"It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.\",\n        \"relative_start\": 18.0,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"就配置而言，关键点是，是的，数字非常惊人。\",\n        \"en\": \"The key in terms of the investments is, yes, the numbers are extraordinary.\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 31.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"它们将继续增长，但他们正在将这些配置变现。\",\n        \"en\": \"They'll continue to grow, but they're monetizing these investments.\",\n        \"relative_start\": 31.5,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此，这种在增长之前进行配置的推拉效应，我认为将在未来几个月内持续存在。\",\n        \"en\": \"And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 42.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但如果公司能够继续创新，执行其技术路线图，那么我认为未来一年我们将看到Anthropic的增长是持久的。\",\n        \"en\": \"But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable\",\n        \"relative_start\": 42.4,\n        \"relative_end\": 52.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"并且他们将继续扩展到新的领域。\",\n        \"en\": \"and they're going to continue to expand into newer areas.\",\n        \"relative_start\": 52.3,\n        \"relative_end\": 55.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"持久的增长和向新领域的扩展。Danny和我还讨论了一些市场参与者可能有的担忧，即他们的收入集中。\",\n        \"en\": \"Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated\",\n        \"relative_start\": 55.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"仅集中在少数几家公司，但公司表示，今年第三季度近80%的收入来自前五大客户以外的客户。\",\n        \"en\": \"in just a few companies, but actually the company said that nearly 80% of the revenue came from customers outside of the top five customers for their third quarter of the year.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这在一定程度上缓解了那些担忧，丹，你怎么看？\",\n        \"en\": \"So that kind of alleviates any of those concerns, any thoughts on that, Dan?\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"是的，很多收入将通过谷歌云、亚马逊云服务等云提供商及其合作伙伴实现，\",\n        \"en\": \"Yes, and so a lot of the revenue is going to go through cloud providers such as Google Cloud, Amazon Web Services, their partners, of course,\",\n        \"relative_start\": 76.5,\n        \"relative_end\": 85.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"当然还有微软Azure。\",\n        \"en\": \"Microsoft Azure as well.\",\n        \"relative_start\": 85.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic PBC\",\n      \"preferred_en\": \"Anthropic PBC\",\n      \"official_zh\": \"安特罗匹克公司\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/Anthropic\",\n        \"https://cn.nytimes.com/business/20260529/anthropic-tops-openai-valuation\",\n        \"https://zhuanlan.zhihu.com/p/13568558856\"\n      ],\n      \"evidence\": \"中文维基百科给出中国大陆官方媒体译名“安特罗匹克公司”；纽约时报中文网、知乎等中文媒体普遍直接使用英文名Anthropic，故标题标签保留英文。\"\n    },\n    {\n      \"source_text\": \"S-1\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Form S-1\",\n      \"preferred_en\": \"Form S-1\",\n      \"official_zh\": \"S-1注册声明\",\n      \"common_zh\": \"S-1招股书\",\n      \"title_label\": \"S-1\",\n      \"preferred_zh\": \"S-1招股书\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ],\n      \"evidence\": \"多家英文财经媒体以S-1指代Anthropic的IPO注册文件；中文财经语境常称“S-1招股书/注册声明”。\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"S-1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"US IPO filing\",\n      \"sense\": \"SEC registration statement for a US IPO\",\n      \"preferred_zh\": \"S-1注册声明\",\n      \"title_label\": \"S-1\",\n      \"avoid_zh\": [\n        \"S1表\",\n        \"上市申请表\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Anthropic的营收大幅跃升，但亏损同样扩大；Neuberger的Flax认为公司增长轨迹非凡且可持续。\",\n      \"public_baseline\": \"公开检索显示Anthropic已提交S-1，报道的营收与亏损数字差异极大（营收约46亿至163亿美元、亏损约420亿至807亿美元不等），且多为非现金项目，尚无统一口径。\",\n      \"surprise_gap\": \"片段只笼统称“营收跃升、亏损扩大”，未给出具体数字；公开报道的具体规模远超一般预期，但各来源数字互相矛盾，不能据此断言某一具体数字。\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"营收大幅跃升，亏损同样扩大；Flax称增长轨迹非凡、投资正在变现\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n          \"fact\": \"报道称S-1显示营收约12倍增长及约5180亿美元算力采购承诺\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.neowin.net/news/anthropics-ipo-filing-reveals-163b-revenue-807b-loss-and-800b-compute-plans/\",\n          \"fact\": \"报道称营收163亿美元、亏损807亿美元，与其它来源数字不一致\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得断言Anthropic已正式上市或IPO已完成\",\n        \"不得引用某一具体营收/亏损数字作为已核实事实\",\n        \"不得称Flax或路博迈持有Anthropic股份\",\n        \"不得称Anthropic存在营收集中问题已被证实\",\n        \"不得将Bloomberg或主持人表述为观点持有者\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Anthropic的S-1文件显示营收大幅跃升但亏损同样扩大，Neuberger的Flax认为增长轨迹非凡且可持续，同时公司称第三季度近80%收入来自前五大客户以外的客户。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "营收猛增却亏更多\nAnthropic的账本\n藏着什么反差",
+                "title_lines": [
+                  "营收猛增却亏更多",
+                  "Anthropic的账本",
+                  "藏着什么反差"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 营收大幅跃升，亏损同样扩大",
+                  "public: S-1文件显示营收增长但亏损扩大"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "80%收入不靠前五客户\nAnthropic的S-1\n能否打消集中担忧",
+                "title_lines": [
+                  "80%收入不靠前五客户",
+                  "Anthropic的S-1",
+                  "能否打消集中担忧"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 公司称第三季度近80%收入来自前五大客户以外的客户",
+                  "transcript: 市场参与者担忧收入集中"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "Neuberger的Flax看S-1\n增长持久但配置先行\n推拉效应还要持续",
+                "title_lines": [
+                  "Neuberger的Flax看S-1",
+                  "增长持久但配置先行",
+                  "推拉效应还要持续"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Flax称增长轨迹非凡、投资正在变现",
+                  "transcript: 增长前配置的推拉效应将持续数月"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "亏损扩大仍称增长非凡\nAnthropic的S-1\n让机构看到什么",
+                "title_lines": [
+                  "亏损扩大仍称增长非凡",
+                  "Anthropic的S-1",
+                  "让机构看到什么"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: 亏损扩大但Flax称增长轨迹非凡",
+                  "public: S-1文件显示营收增长但亏损扩大"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"source_title\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic递交S-1 营收跃升亏损扩大\",\n    \"current_title_lines\": [\n      \"Anthropic递交S-1\",\n      \"营收跃升亏损扩大\",\n      \"增长能否持续引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这更像是一个窗口，让我们了解这家公司的预期。是的，它的收入大幅增长，但亏损也同样大幅增加。\",\n        \"en\": \"More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于这份S1文件中我们了解到的一些数据，你的初步反应是什么？\",\n        \"en\": \"What is your initial reaction to some of the figures we're learning about in this S1?\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们的初步反应是，这家公司未来有着非凡的增长轨迹。\",\n        \"en\": \"Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.\",\n        \"relative_start\": 12.4,\n        \"relative_end\": 18.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这得益于创新和对模型的执行，然后将其转化为Claude Codd或co-work等领域的收入。\",\n        \"en\": \"It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.\",\n        \"relative_start\": 18.0,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"就配置而言，关键点是，是的，数字非常惊人。\",\n        \"en\": \"The key in terms of the investments is, yes, the numbers are extraordinary.\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 31.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"它们将继续增长，但他们正在将这些配置变现。\",\n        \"en\": \"They'll continue to grow, but they're monetizing these investments.\",\n        \"relative_start\": 31.5,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此，这种在增长之前进行配置的推拉效应，我认为将在未来几个月内持续存在。\",\n        \"en\": \"And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 42.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但如果公司能够继续创新，执行其技术路线图，那么我认为未来一年我们将看到Anthropic的增长是持久的。\",\n        \"en\": \"But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable\",\n        \"relative_start\": 42.4,\n        \"relative_end\": 52.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"并且他们将继续扩展到新的领域。\",\n        \"en\": \"and they're going to continue to expand into newer areas.\",\n        \"relative_start\": 52.3,\n        \"relative_end\": 55.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"持久的增长和向新领域的扩展。Danny和我还讨论了一些市场参与者可能有的担忧，即他们的收入集中。\",\n        \"en\": \"Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated\",\n        \"relative_start\": 55.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"仅集中在少数几家公司，但公司表示，今年第三季度近80%的收入来自前五大客户以外的客户。\",\n        \"en\": \"in just a few companies, but actually the company said that nearly 80% of the revenue came from customers outside of the top five customers for their third quarter of the year.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这在一定程度上缓解了那些担忧，丹，你怎么看？\",\n        \"en\": \"So that kind of alleviates any of those concerns, any thoughts on that, Dan?\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"是的，很多收入将通过谷歌云、亚马逊云服务等云提供商及其合作伙伴实现，\",\n        \"en\": \"Yes, and so a lot of the revenue is going to go through cloud providers such as Google Cloud, Amazon Web Services, their partners, of course,\",\n        \"relative_start\": 76.5,\n        \"relative_end\": 85.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"当然还有微软Azure。\",\n        \"en\": \"Microsoft Azure as well.\",\n        \"relative_start\": 85.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic PBC\",\n      \"preferred_en\": \"Anthropic PBC\",\n      \"official_zh\": \"安特罗匹克公司\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/Anthropic\",\n        \"https://cn.nytimes.com/business/20260529/anthropic-tops-openai-valuation\",\n        \"https://zhuanlan.zhihu.com/p/13568558856\"\n      ],\n      \"evidence\": \"中文维基百科给出中国大陆官方媒体译名“安特罗匹克公司”；纽约时报中文网、知乎等中文媒体普遍直接使用英文名Anthropic，故标题标签保留英文。\"\n    },\n    {\n      \"source_text\": \"S-1\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Form S-1\",\n      \"preferred_en\": \"Form S-1\",\n      \"official_zh\": \"S-1注册声明\",\n      \"common_zh\": \"S-1招股书\",\n      \"title_label\": \"S-1\",\n      \"preferred_zh\": \"S-1招股书\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ],\n      \"evidence\": \"多家英文财经媒体以S-1指代Anthropic的IPO注册文件；中文财经语境常称“S-1招股书/注册声明”。\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"S-1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"US IPO filing\",\n      \"sense\": \"SEC registration statement for a US IPO\",\n      \"preferred_zh\": \"S-1注册声明\",\n      \"title_label\": \"S-1\",\n      \"avoid_zh\": [\n        \"S1表\",\n        \"上市申请表\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Anthropic的营收大幅跃升，但亏损同样扩大；Neuberger的Flax认为公司增长轨迹非凡且可持续。\",\n      \"public_baseline\": \"公开检索显示Anthropic已提交S-1，报道的营收与亏损数字差异极大（营收约46亿至163亿美元、亏损约420亿至807亿美元不等），且多为非现金项目，尚无统一口径。\",\n      \"surprise_gap\": \"片段只笼统称“营收跃升、亏损扩大”，未给出具体数字；公开报道的具体规模远超一般预期，但各来源数字互相矛盾，不能据此断言某一具体数字。\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"营收大幅跃升，亏损同样扩大；Flax称增长轨迹非凡、投资正在变现\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n          \"fact\": \"报道称S-1显示营收约12倍增长及约5180亿美元算力采购承诺\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.neowin.net/news/anthropics-ipo-filing-reveals-163b-revenue-807b-loss-and-800b-compute-plans/\",\n          \"fact\": \"报道称营收163亿美元、亏损807亿美元，与其它来源数字不一致\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得断言Anthropic已正式上市或IPO已完成\",\n        \"不得引用某一具体营收/亏损数字作为已核实事实\",\n        \"不得称Flax或路博迈持有Anthropic股份\",\n        \"不得称Anthropic存在营收集中问题已被证实\",\n        \"不得将Bloomberg或主持人表述为观点持有者\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Anthropic的S-1文件显示营收大幅跃升但亏损同样扩大，Neuberger的Flax认为增长轨迹非凡且可持续，同时公司称第三季度近80%收入来自前五大客户以外的客户。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"营收猛增却亏更多\\nAnthropic的账本\\n藏着什么反差\",\n          \"title_lines\": [\n            \"营收猛增却亏更多\",\n            \"Anthropic的账本\",\n            \"藏着什么反差\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 营收大幅跃升，亏损同样扩大\",\n            \"public: S-1文件显示营收增长但亏损扩大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"80%收入不靠前五客户\\nAnthropic的S-1\\n能否打消集中担忧\",\n          \"title_lines\": [\n            \"80%收入不靠前五客户\",\n            \"Anthropic的S-1\",\n            \"能否打消集中担忧\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 公司称第三季度近80%收入来自前五大客户以外的客户\",\n            \"transcript: 市场参与者担忧收入集中\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Neuberger的Flax看S-1\\n增长持久但配置先行\\n推拉效应还要持续\",\n          \"title_lines\": [\n            \"Neuberger的Flax看S-1\",\n            \"增长持久但配置先行\",\n            \"推拉效应还要持续\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Flax称增长轨迹非凡、投资正在变现\",\n            \"transcript: 增长前配置的推拉效应将持续数月\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"亏损扩大仍称增长非凡\\nAnthropic的S-1\\n让机构看到什么\",\n          \"title_lines\": [\n            \"亏损扩大仍称增长非凡\",\n            \"Anthropic的S-1\",\n            \"让机构看到什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 亏损扩大但Flax称增长轨迹非凡\",\n            \"public: S-1文件显示营收增长但亏损扩大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 营收大幅跃升，亏损同样扩大",
+              "transcript: 公司称第三季度近80%收入来自前五大客户以外的客户",
+              "public: S-1文件显示营收增长但亏损扩大"
+            ],
+            "title": "营收猛增却亏更多\nAnthropic的账本\n藏着什么反差",
+            "title_lines": [
+              "营收猛增却亏更多",
+              "Anthropic的账本",
+              "藏着什么反差"
+            ],
+            "title_highlights": [
+              "营收猛增却亏更多",
+              "Anthropic的账本"
+            ],
+            "runner_up_titles": [
+              "80%收入不靠前五客户\nAnthropic的S-1\n能否打消集中担忧",
+              "亏损扩大仍称增长非凡\nAnthropic的S-1\n让机构看到什么"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：营收与亏损同步放大，S-1里的反差才是看点。",
+            "comment_highlights": [
+              "S-1里的反差"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：营收和亏损同步放大，反差已经摆上台面。",
+                "comment_highlights": [
+                  "反差已经摆上台面"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：主持人直接追问，S-1数据到底怎么看。",
+                "comment_highlights": [
+                  "S-1数据到底怎么看"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：机构先给增长定调，但亏损问题没被绕开。",
+                "comment_highlights": [
+                  "亏损问题没被绕开"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：创新和执行被点名，收入转化才是关键。",
+                "comment_highlights": [
+                  "收入转化才是关键"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：数字惊人只是开场，配置节奏更值得盯。",
+                "comment_highlights": [
+                  "配置节奏更值得盯"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：投入还在继续，变现能力决定后续空间。",
+                "comment_highlights": [
+                  "变现能力决定后续空间"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：增长前先配置，推拉效应还会持续数月。",
+                "comment_highlights": [
+                  "推拉效应还会持续数月"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：路线图执行到位，增长才谈得上持久。",
+                "comment_highlights": [
+                  "增长才谈得上持久"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：新领域扩张是下一阶段的观察点。",
+                "comment_highlights": [
+                  "新领域扩张"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：收入集中担忧被摆上桌面，回应来了。",
+                "comment_highlights": [
+                  "收入集中担忧"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：近80%收入来自前五客户以外，集中度压力缓解。",
+                "comment_highlights": [
+                  "近80%收入来自前五客户以外"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：担忧是否打消，还要看后续客户结构。",
+                "comment_highlights": [
+                  "后续客户结构"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：云厂商渠道分成，收入路径更清晰。",
+                "comment_highlights": [
+                  "云厂商渠道分成"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：微软Azure也在名单里，云合作面继续扩大。",
+                "comment_highlights": [
+                  "云合作面继续扩大"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"source_title\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic递交S-1 营收跃升亏损扩大\",\n    \"current_title_lines\": [\n      \"Anthropic递交S-1\",\n      \"营收跃升亏损扩大\",\n      \"增长能否持续引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这更像是一个窗口，让我们了解这家公司的预期。是的，它的收入大幅增长，但亏损也同样大幅增加。\",\n        \"en\": \"More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"对于这份S1文件中我们了解到的一些数据，你的初步反应是什么？\",\n        \"en\": \"What is your initial reaction to some of the figures we're learning about in this S1?\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 11.3\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们的初步反应是，这家公司未来有着非凡的增长轨迹。\",\n        \"en\": \"Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.\",\n        \"relative_start\": 12.4,\n        \"relative_end\": 18.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"这得益于创新和对模型的执行，然后将其转化为Claude Codd或co-work等领域的收入。\",\n        \"en\": \"It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.\",\n        \"relative_start\": 18.0,\n        \"relative_end\": 27.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"就配置而言，关键点是，是的，数字非常惊人。\",\n        \"en\": \"The key in terms of the investments is, yes, the numbers are extraordinary.\",\n        \"relative_start\": 27.6,\n        \"relative_end\": 31.5\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"它们将继续增长，但他们正在将这些配置变现。\",\n        \"en\": \"They'll continue to grow, but they're monetizing these investments.\",\n        \"relative_start\": 31.5,\n        \"relative_end\": 35.2\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"因此，这种在增长之前进行配置的推拉效应，我认为将在未来几个月内持续存在。\",\n        \"en\": \"And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.\",\n        \"relative_start\": 35.2,\n        \"relative_end\": 42.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"但如果公司能够继续创新，执行其技术路线图，那么我认为未来一年我们将看到Anthropic的增长是持久的。\",\n        \"en\": \"But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable\",\n        \"relative_start\": 42.4,\n        \"relative_end\": 52.3\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"并且他们将继续扩展到新的领域。\",\n        \"en\": \"and they're going to continue to expand into newer areas.\",\n        \"relative_start\": 52.3,\n        \"relative_end\": 55.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"持久的增长和向新领域的扩展。Danny和我还讨论了一些市场参与者可能有的担忧，即他们的收入集中。\",\n        \"en\": \"Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated\",\n        \"relative_start\": 55.3,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"仅集中在少数几家公司，但公司表示，今年第三季度近80%的收入来自前五大客户以外的客户。\",\n        \"en\": \"in just a few companies, but actually the company said that nearly 80% of the revenue came from customers outside of the top five customers for their third quarter of the year.\",\n        \"relative_start\": 63.6,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这在一定程度上缓解了那些担忧，丹，你怎么看？\",\n        \"en\": \"So that kind of alleviates any of those concerns, any thoughts on that, Dan?\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"是的，很多收入将通过谷歌云、亚马逊云服务等云提供商及其合作伙伴实现，\",\n        \"en\": \"Yes, and so a lot of the revenue is going to go through cloud providers such as Google Cloud, Amazon Web Services, their partners, of course,\",\n        \"relative_start\": 76.5,\n        \"relative_end\": 85.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"当然还有微软Azure。\",\n        \"en\": \"Microsoft Azure as well.\",\n        \"relative_start\": 85.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic PBC\",\n      \"preferred_en\": \"Anthropic PBC\",\n      \"official_zh\": \"安特罗匹克公司\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/Anthropic\",\n        \"https://cn.nytimes.com/business/20260529/anthropic-tops-openai-valuation\",\n        \"https://zhuanlan.zhihu.com/p/13568558856\"\n      ],\n      \"evidence\": \"中文维基百科给出中国大陆官方媒体译名“安特罗匹克公司”；纽约时报中文网、知乎等中文媒体普遍直接使用英文名Anthropic，故标题标签保留英文。\"\n    },\n    {\n      \"source_text\": \"S-1\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Form S-1\",\n      \"preferred_en\": \"Form S-1\",\n      \"official_zh\": \"S-1注册声明\",\n      \"common_zh\": \"S-1招股书\",\n      \"title_label\": \"S-1\",\n      \"preferred_zh\": \"S-1招股书\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ],\n      \"evidence\": \"多家英文财经媒体以S-1指代Anthropic的IPO注册文件；中文财经语境常称“S-1招股书/注册声明”。\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"S-1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"US IPO filing\",\n      \"sense\": \"SEC registration statement for a US IPO\",\n      \"preferred_zh\": \"S-1注册声明\",\n      \"title_label\": \"S-1\",\n      \"avoid_zh\": [\n        \"S1表\",\n        \"上市申请表\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Anthropic的营收大幅跃升，但亏损同样扩大；Neuberger的Flax认为公司增长轨迹非凡且可持续。\",\n      \"public_baseline\": \"公开检索显示Anthropic已提交S-1，报道的营收与亏损数字差异极大（营收约46亿至163亿美元、亏损约420亿至807亿美元不等），且多为非现金项目，尚无统一口径。\",\n      \"surprise_gap\": \"片段只笼统称“营收跃升、亏损扩大”，未给出具体数字；公开报道的具体规模远超一般预期，但各来源数字互相矛盾，不能据此断言某一具体数字。\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"营收大幅跃升，亏损同样扩大；Flax称增长轨迹非凡、投资正在变现\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n          \"fact\": \"报道称S-1显示营收约12倍增长及约5180亿美元算力采购承诺\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.neowin.net/news/anthropics-ipo-filing-reveals-163b-revenue-807b-loss-and-800b-compute-plans/\",\n          \"fact\": \"报道称营收163亿美元、亏损807亿美元，与其它来源数字不一致\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得断言Anthropic已正式上市或IPO已完成\",\n        \"不得引用某一具体营收/亏损数字作为已核实事实\",\n        \"不得称Flax或路博迈持有Anthropic股份\",\n        \"不得称Anthropic存在营收集中问题已被证实\",\n        \"不得将Bloomberg或主持人表述为观点持有者\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Anthropic的S-1文件显示营收大幅跃升但亏损同样扩大，Neuberger的Flax认为增长轨迹非凡且可持续，同时公司称第三季度近80%收入来自前五大客户以外的客户。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"营收猛增却亏更多\\nAnthropic的账本\\n藏着什么反差\",\n          \"title_lines\": [\n            \"营收猛增却亏更多\",\n            \"Anthropic的账本\",\n            \"藏着什么反差\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 营收大幅跃升，亏损同样扩大\",\n            \"public: S-1文件显示营收增长但亏损扩大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"80%收入不靠前五客户\\nAnthropic的S-1\\n能否打消集中担忧\",\n          \"title_lines\": [\n            \"80%收入不靠前五客户\",\n            \"Anthropic的S-1\",\n            \"能否打消集中担忧\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 公司称第三季度近80%收入来自前五大客户以外的客户\",\n            \"transcript: 市场参与者担忧收入集中\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Neuberger的Flax看S-1\\n增长持久但配置先行\\n推拉效应还要持续\",\n          \"title_lines\": [\n            \"Neuberger的Flax看S-1\",\n            \"增长持久但配置先行\",\n            \"推拉效应还要持续\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Flax称增长轨迹非凡、投资正在变现\",\n            \"transcript: 增长前配置的推拉效应将持续数月\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"亏损扩大仍称增长非凡\\nAnthropic的S-1\\n让机构看到什么\",\n          \"title_lines\": [\n            \"亏损扩大仍称增长非凡\",\n            \"Anthropic的S-1\",\n            \"让机构看到什么\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: 亏损扩大但Flax称增长轨迹非凡\",\n            \"public: S-1文件显示营收增长但亏损扩大\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"营收猛增却亏更多：Anthropic的账本，藏着什么反差\",\n      \"title_lines\": [\n        \"营收猛增却亏更多\",\n        \"Anthropic的账本\",\n        \"藏着什么反差\"\n      ],\n      \"title_highlights\": [\n        \"营收猛增却亏更多\",\n        \"Anthropic的账本\"\n      ],\n      \"comment\": \"KC评论：营收与亏损同步放大，S-1里的反差才是看点\",\n      \"comment_highlights\": [\n        \"S-1里的反差\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：营收和亏损同步放大，反差已经摆上台面\",\n          \"comment_highlights\": [\n            \"反差已经摆上台面\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：主持人直接追问，S-1数据到底怎么看\",\n          \"comment_highlights\": [\n            \"S-1数据到底怎么看\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：机构先给增长定调，但亏损问题没被绕开\",\n          \"comment_highlights\": [\n            \"亏损问题没被绕开\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：创新和执行被点名，收入转化才是关键\",\n          \"comment_highlights\": [\n            \"收入转化才是关键\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：数字惊人只是开场，配置节奏更值得盯\",\n          \"comment_highlights\": [\n            \"配置节奏更值得盯\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：投入还在继续，变现能力决定后续空间\",\n          \"comment_highlights\": [\n            \"变现能力决定后续空间\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：增长前先配置，推拉效应还会持续数月\",\n          \"comment_highlights\": [\n            \"推拉效应还会持续数月\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：路线图执行到位，增长才谈得上持久\",\n          \"comment_highlights\": [\n            \"增长才谈得上持久\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：新领域扩张是下一阶段的观察点\",\n          \"comment_highlights\": [\n            \"新领域扩张\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：收入集中担忧被摆上桌面，回应来了\",\n          \"comment_highlights\": [\n            \"收入集中担忧\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：近80%收入来自前五客户以外，集中度压力缓解\",\n          \"comment_highlights\": [\n            \"近80%收入来自前五客户以外\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：担忧是否打消，还要看后续客户结构\",\n          \"comment_highlights\": [\n            \"后续客户结构\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：云厂商渠道分成，收入路径更清晰\",\n          \"comment_highlights\": [\n            \"云厂商渠道分成\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：微软Azure也在名单里，云合作面继续扩大\",\n          \"comment_highlights\": [\n            \"云合作面继续扩大\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 营收大幅跃升，亏损同样扩大\",\n        \"transcript: 公司称第三季度近80%收入来自前五大客户以外的客户\",\n        \"public: S-1文件显示营收增长但亏损扩大\"\n      ],\n      \"runner_up_titles\": [\n        \"80%收入不靠前五客户 Anthropic的S-1 能否打消集中担忧\",\n        \"亏损扩大仍称增长非凡 Anthropic的S-1 让机构看到什么\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 7,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然营收猛增还亏更多，反差这么大",
+                "evidence_basis": [
+                  "transcript: 营收大幅跃升，亏损同样扩大",
+                  "transcript: 公司称第三季度近80%收入来自前五大客户以外的客户",
+                  "public: S-1文件显示营收增长但亏损扩大"
+                ],
+                "title": "营收猛增却亏更多\nAnthropic的S-1\n反差藏不住了",
+                "title_lines": [
+                  "营收猛增却亏更多",
+                  "Anthropic的S-1",
+                  "反差藏不住了"
+                ],
+                "title_highlights": [
+                  "营收猛增却亏更多",
+                  "反差藏不住了"
+                ],
+                "runner_up_titles": [
+                  "80%收入不靠前五客户 Anthropic的S-1 能否打消集中担忧",
+                  "亏损扩大仍称增长非凡 Anthropic的S-1 让机构看到什么"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：营收与亏损同步放大，S-1里的反差才是看点",
+                "comment_highlights": [
+                  "S-1里的反差"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：营收和亏损同步放大，反差已经摆上台面",
+                    "comment_highlights": [
+                      "反差已经摆上台面"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：主持人直接追问，S-1数据到底怎么看",
+                    "comment_highlights": [
+                      "S-1数据到底怎么看"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：机构先给增长定调，但亏损问题没被绕开",
+                    "comment_highlights": [
+                      "亏损问题没被绕开"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：创新和执行被点名，收入转化才是关键",
+                    "comment_highlights": [
+                      "收入转化才是关键"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：数字惊人只是开场，配置节奏更值得盯",
+                    "comment_highlights": [
+                      "配置节奏更值得盯"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：投入还在继续，变现能力决定后续空间",
+                    "comment_highlights": [
+                      "变现能力决定后续空间"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：增长前先配置，推拉效应还会持续数月",
+                    "comment_highlights": [
+                      "推拉效应还会持续数月"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：路线图执行到位，增长才谈得上持久",
+                    "comment_highlights": [
+                      "增长才谈得上持久"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：新领域扩张是下一阶段的观察点",
+                    "comment_highlights": [
+                      "新领域扩张"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：收入集中担忧被摆上桌面，回应来了",
+                    "comment_highlights": [
+                      "收入集中担忧"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：近80%收入来自前五客户以外，集中度压力缓解",
+                    "comment_highlights": [
+                      "近80%收入来自前五客户以外"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：担忧是否打消，还要看后续客户结构",
+                    "comment_highlights": [
+                      "后续客户结构"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：云厂商渠道分成，收入路径更清晰",
+                    "comment_highlights": [
+                      "云厂商渠道分成"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：微软Azure也在名单里，云合作面继续扩大",
+                    "comment_highlights": [
+                      "云合作面继续扩大"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "营收猛增却亏更多：Anthropic的S-1，反差藏不住了",
+          "title_lines": [
+            "营收猛增却亏更多",
+            "Anthropic的S-1",
+            "反差藏不住了"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然营收猛增还亏更多，反差这么大",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 97,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：营收与亏损同步放大，S-1里的反差才是看点"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-27T01:52:25.567749+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says",
+          "source_title": "Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says",
+          "show_date": "",
+          "current_title": "Anthropic递交S-1 营收跃升亏损扩大",
+          "current_title_lines": [
+            "Anthropic递交S-1",
+            "营收跃升亏损扩大",
+            "增长能否持续引关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这更像是一个窗口，让我们了解这家公司的预期。是的，它的收入大幅增长，但亏损也同样大幅增加。",
+              "en": "More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.",
+              "relative_start": 0.0,
+              "relative_end": 6.6
+            },
+            {
+              "index": 2,
+              "zh": "对于这份S1文件中我们了解到的一些数据，你的初步反应是什么？",
+              "en": "What is your initial reaction to some of the figures we're learning about in this S1?",
+              "relative_start": 6.6,
+              "relative_end": 11.3
+            },
+            {
+              "index": 3,
+              "zh": "我们的初步反应是，这家公司未来有着非凡的增长轨迹。",
+              "en": "Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.",
+              "relative_start": 12.4,
+              "relative_end": 18.0
+            },
+            {
+              "index": 4,
+              "zh": "这得益于创新和对模型的执行，然后将其转化为Claude Codd或co-work等领域的收入。",
+              "en": "It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.",
+              "relative_start": 18.0,
+              "relative_end": 27.6
+            },
+            {
+              "index": 5,
+              "zh": "就配置而言，关键点是，是的，数字非常惊人。",
+              "en": "The key in terms of the investments is, yes, the numbers are extraordinary.",
+              "relative_start": 27.6,
+              "relative_end": 31.5
+            },
+            {
+              "index": 6,
+              "zh": "它们将继续增长，但他们正在将这些配置变现。",
+              "en": "They'll continue to grow, but they're monetizing these investments.",
+              "relative_start": 31.5,
+              "relative_end": 35.2
+            },
+            {
+              "index": 7,
+              "zh": "因此，这种在增长之前进行配置的推拉效应，我认为将在未来几个月内持续存在。",
+              "en": "And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.",
+              "relative_start": 35.2,
+              "relative_end": 42.4
+            },
+            {
+              "index": 8,
+              "zh": "但如果公司能够继续创新，执行其技术路线图，那么我认为未来一年我们将看到Anthropic的增长是持久的。",
+              "en": "But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable",
+              "relative_start": 42.4,
+              "relative_end": 52.3
+            },
+            {
+              "index": 9,
+              "zh": "并且他们将继续扩展到新的领域。",
+              "en": "and they're going to continue to expand into newer areas.",
+              "relative_start": 52.3,
+              "relative_end": 55.3
+            },
+            {
+              "index": 10,
+              "zh": "持久的增长和向新领域的扩展。Danny和我还讨论了一些市场参与者可能有的担忧，即他们的收入集中。",
+              "en": "Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated",
+              "relative_start": 55.3,
+              "relative_end": 63.6
+            },
+            {
+              "index": 11,
+              "zh": "仅集中在少数几家公司，但公司表示，今年第三季度近80%的收入来自前五大客户以外的客户。",
+              "en": "in just a few companies, but actually the company said that nearly 80% of the revenue came from customers outside of the top five customers for their third quarter of the year.",
+              "relative_start": 63.6,
+              "relative_end": 71.6
+            },
+            {
+              "index": 12,
+              "zh": "这在一定程度上缓解了那些担忧，丹，你怎么看？",
+              "en": "So that kind of alleviates any of those concerns, any thoughts on that, Dan?",
+              "relative_start": 71.6,
+              "relative_end": 75.6
+            },
+            {
+              "index": 13,
+              "zh": "是的，很多收入将通过谷歌云、亚马逊云服务等云提供商及其合作伙伴实现，",
+              "en": "Yes, and so a lot of the revenue is going to go through cloud providers such as Google Cloud, Amazon Web Services, their partners, of course,",
+              "relative_start": 76.5,
+              "relative_end": 85.6
+            },
+            {
+              "index": 14,
+              "zh": "当然还有微软Azure。",
+              "en": "Microsoft Azure as well.",
+              "relative_start": 85.6,
+              "relative_end": 87.3
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n  \"source_title\": \"Duration: 3:35 Anthropic's S-1 Signals Significant Growth Ahead, Neuberger's Flax Says\",\n  \"current_title\": \"Anthropic递交S-1 营收跃升亏损扩大\",\n  \"source_claims\": [\n    \"More of a window into what this company is expecting. Yes, its revenue has taken a big step up, but so too have its losses.\",\n    \"What is your initial reaction to some of the figures we're learning about in this S1?\",\n    \"Our initial reaction is that this company has an extraordinary growth trajectory ahead of itself.\",\n    \"It's driven by the innovation and the execution on the models and then transforming that into revenue in areas like Claude Codd or co-work.\",\n    \"The key in terms of the investments is, yes, the numbers are extraordinary.\",\n    \"They'll continue to grow, but they're monetizing these investments.\",\n    \"And so this push and pull in terms of investing ahead of some of the growth, I think, will be with us for the next several months.\",\n    \"But if the company can continue to innovate, execute on its technology roadmap, then I think what we'll see in the year ahead is that growth for anthropic is durable\",\n    \"and they're going to continue to expand into newer areas.\",\n    \"Durable growth and expanding in newer areas. Danny and I have also been talking about some of the concerns that some investors may have that they have their revenue concentrated\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic PBC\",\n      \"preferred_en\": \"Anthropic PBC\",\n      \"official_zh\": \"安特罗匹克公司\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/Anthropic\",\n        \"https://cn.nytimes.com/business/20260529/anthropic-tops-openai-valuation\",\n        \"https://zhuanlan.zhihu.com/p/13568558856\"\n      ],\n      \"evidence\": \"中文维基百科给出中国大陆官方媒体译名“安特罗匹克公司”；纽约时报中文网、知乎等中文媒体普遍直接使用英文名Anthropic，故标题标签保留英文。\"\n    },\n    {\n      \"source_text\": \"S-1\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Form S-1\",\n      \"preferred_en\": \"Form S-1\",\n      \"official_zh\": \"S-1注册声明\",\n      \"common_zh\": \"S-1招股书\",\n      \"title_label\": \"S-1\",\n      \"preferred_zh\": \"S-1招股书\",\n      \"aliases\": [],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ],\n      \"evidence\": \"多家英文财经媒体以S-1指代Anthropic的IPO注册文件；中文财经语境常称“S-1招股书/注册声明”。\"\n    }\n  ],\n  \"terms\": [\n    {\n      \"source_term\": \"S-1\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"context\": \"US IPO filing\",\n      \"sense\": \"SEC registration statement for a US IPO\",\n      \"preferred_zh\": \"S-1注册声明\",\n      \"title_label\": \"S-1\",\n      \"avoid_zh\": [\n        \"S1表\",\n        \"上市申请表\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n        \"https://www.rexshares.com/anthropic-ipo-prospectus/\"\n      ]\n    }\n  ],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Anthropic的营收大幅跃升，但亏损同样扩大；Neuberger的Flax认为公司增长轨迹非凡且可持续。\",\n      \"public_baseline\": \"公开检索显示Anthropic已提交S-1，报道的营收与亏损数字差异极大（营收约46亿至163亿美元、亏损约420亿至807亿美元不等），且多为非现金项目，尚无统一口径。\",\n      \"surprise_gap\": \"片段只笼统称“营收跃升、亏损扩大”，未给出具体数字；公开报道的具体规模远超一般预期，但各来源数字互相矛盾，不能据此断言某一具体数字。\",\n      \"speaker_relation\": \"analyst\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"营收大幅跃升，亏损同样扩大；Flax称增长轨迹非凡、投资正在变现\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.investmentnews.com/equities/anthropics-landmark-ipo-filing-shows-12-fold-revenue-jump-518b-compute-bill/268391\",\n          \"fact\": \"报道称S-1显示营收约12倍增长及约5180亿美元算力采购承诺\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic S-1 filing revenue losses 2025\",\n          \"url\": \"https://www.neowin.net/news/anthropics-ipo-filing-reveals-163b-revenue-807b-loss-and-800b-compute-plans/\",\n          \"fact\": \"报道称营收163亿美元、亏损807亿美元，与其它来源数字不一致\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得断言Anthropic已正式上市或IPO已完成\",\n        \"不得引用某一具体营收/亏损数字作为已核实事实\",\n        \"不得称Flax或路博迈持有Anthropic股份\",\n        \"不得称Anthropic存在营收集中问题已被证实\",\n        \"不得将Bloomberg或主持人表述为观点持有者\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCurrent rejected title:\n{\n  \"title\": \"营收猛增却亏更多：Anthropic的S-1，反差藏不住了\",\n  \"title_lines\": [\n    \"营收猛增却亏更多\",\n    \"Anthropic的S-1\",\n    \"反差藏不住了\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然营收猛增还亏更多，反差这么大\",\n  \"evidence_basis\": [\n    \"transcript: 营收大幅跃升，亏损同样扩大\",\n    \"transcript: 公司称第三季度近80%收入来自前五大客户以外的客户\",\n    \"public: S-1文件显示营收增长但亏损扩大\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 7,\n    \"specificity\": 7,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- No additional clip-specific rule.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "营收大幅跃升，亏损却同步扩大，反差明显",
+            "evidence_basis": [
+              "transcript: 营收大幅跃升，亏损同样扩大",
+              "transcript: Flax称公司增长轨迹非凡，投资正在变现",
+              "public: S-1文件显示营收增长但亏损扩大"
+            ],
+            "title": "Anthropic递交S-1：营收跃升，亏损同步扩大",
+            "title_lines": [
+              "Anthropic递交S-1",
+              "营收跃升亏损扩大",
+              "增长能否持续"
+            ],
+            "title_highlights": [
+              "Anthropic递交S-1",
+              "营收跃升亏损扩大"
+            ],
+            "runner_up_titles": [
+              "Anthropic的S-1：营收大增，亏损也扩大"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 7,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "Anthropic递交S-1：营收跃升亏损扩大，增长能否持续",
+        "title_lines": [
+          "Anthropic递交S-1",
+          "营收跃升亏损扩大",
+          "增长能否持续"
+        ],
+        "title_highlights": [
+          "Anthropic递交S-1",
+          "营收跃升亏损扩大"
+        ],
+        "comment": "KC评论：营收与亏损同步放大，S-1里的反差才是看点",
+        "comment_highlights": [
+          "S-1里的反差"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：营收和亏损同步放大，反差已经摆上台面",
+            "comment_highlights": [
+              "反差已经摆上台面"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：主持人直接追问，S-1数据到底怎么看",
+            "comment_highlights": [
+              "S-1数据到底怎么看"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：机构先给增长定调，但亏损问题没被绕开",
+            "comment_highlights": [
+              "亏损问题没被绕开"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：创新和执行被点名，收入转化才是关键",
+            "comment_highlights": [
+              "收入转化才是关键"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：数字惊人只是开场，配置节奏更值得盯",
+            "comment_highlights": [
+              "配置节奏更值得盯"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：投入还在继续，变现能力决定后续空间",
+            "comment_highlights": [
+              "变现能力决定后续空间"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：增长前先配置，推拉效应还会持续数月",
+            "comment_highlights": [
+              "推拉效应还会持续数月"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：路线图执行到位，增长才谈得上持久",
+            "comment_highlights": [
+              "增长才谈得上持久"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：新领域扩张是下一阶段的观察点",
+            "comment_highlights": [
+              "新领域扩张"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：收入集中担忧被摆上桌面，回应来了",
+            "comment_highlights": [
+              "收入集中担忧"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：近80%收入来自前五客户以外，集中度压力缓解",
+            "comment_highlights": [
+              "近80%收入来自前五客户以外"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：担忧是否打消，还要看后续客户结构",
+            "comment_highlights": [
+              "后续客户结构"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：云厂商渠道分成，收入路径更清晰",
+            "comment_highlights": [
+              "云厂商渠道分成"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：微软Azure也在名单里，云合作面继续扩大",
+            "comment_highlights": [
+              "云合作面继续扩大"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "营收大幅跃升，亏损却同步扩大，反差明显",
+        "evidence_basis": [
+          "transcript: 营收大幅跃升，亏损同样扩大",
+          "transcript: Flax称公司增长轨迹非凡，投资正在变现",
+          "public: S-1文件显示营收增长但亏损扩大"
+        ],
+        "runner_up_titles": [
+          "Anthropic的S-1：营收大增，亏损也扩大"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 7,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 97,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 7,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}

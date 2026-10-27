@@ -1,0 +1,1215 @@
+{
+  "timestamp_utc": "2026-10-27T01:30:21.020414+00:00",
+  "plan_path": "work/top-videos/05_moderna_ceo_sees_cancer_vaccines_working_beyond_melanoma/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Moderna",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Moderna, Inc.",
+        "preferred_en": "Moderna, Inc.",
+        "official_zh": "莫德纳",
+        "common_zh": "莫德纳",
+        "title_label": "莫德纳",
+        "preferred_zh": "莫德纳",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Moderna official Chinese site uses 莫德纳; zh.wikipedia and WSJ Chinese both use 莫德纳."
+      },
+      {
+        "source_text": "Stéphane Bancel",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Stéphane Bancel",
+        "preferred_en": "Stéphane Bancel",
+        "official_zh": "斯特凡·班塞尔",
+        "common_zh": "斯特凡·邦塞尔",
+        "title_label": "莫德纳CEO",
+        "preferred_zh": "斯特凡·邦塞尔",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "zh.wikipedia uses 斯特凡·班塞尔; WSJ Chinese uses 斯特凡·邦塞尔; Moderna official Chinese page lists Stéphane Bancel as 行政總裁 without a Chinese transliteration. Chinese renderings vary, so title_label uses the role rather than a contested transliteration."
+      },
+      {
+        "source_text": "Keytruda",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Keytruda (pembrolizumab)",
+        "preferred_en": "Keytruda (pembrolizumab)",
+        "official_zh": "可瑞达",
+        "common_zh": "K药",
+        "title_label": "K药",
+        "preferred_zh": "K药",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Merck official pages confirm Keytruda = pembrolizumab; Chinese media commonly abbreviate as K药. Official Chinese brand name 可瑞达 not directly confirmed in snippets, so confidence medium."
+      },
+      {
+        "source_text": "intismeran autogene (mRNA-4157/V940)",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "intismeran autogene",
+        "preferred_en": "intismeran autogene",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "mRNA癌症疫苗",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "English sources confirm intismeran autogene formerly mRNA-4157/V940; no established Simplified Chinese name found, so title_label stays descriptive."
+      },
+      {
+        "source_text": "KEYNOTE-942",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "KEYNOTE-942 (NCT03897881)",
+        "preferred_en": "KEYNOTE-942 (NCT03897881)",
+        "official_zh": "",
+        "common_zh": "KEYNOTE-942试验",
+        "title_label": "KEYNOTE-942试验",
+        "preferred_zh": "KEYNOTE-942试验",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "ASCO publications confirm KEYNOTE-942 as the phase IIb trial of intismeran plus pembrolizumab in resected melanoma."
+      },
+      {
+        "source_text": "melanoma",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "melanoma",
+        "preferred_en": "melanoma",
+        "official_zh": "黑色素瘤",
+        "common_zh": "黑色素瘤",
+        "title_label": "黑色素瘤",
+        "preferred_zh": "黑色素瘤",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "WSJ Chinese and zh.wikipedia both render melanoma as 黑色素瘤."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "mRNA cancer vaccine",
+        "clip_indexes": [],
+        "context": "oncology immunotherapy",
+        "sense": "individualized neoantigen therapy delivered via mRNA",
+        "preferred_zh": "mRNA癌症疫苗",
+        "title_label": "mRNA癌症疫苗",
+        "avoid_zh": [
+          "信使核糖核酸癌疫苗"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "recurrence-free survival (RFS)",
+        "clip_indexes": [],
+        "context": "oncology trial endpoint",
+        "sense": "time without cancer recurrence",
+        "preferred_zh": "无复发生存期",
+        "title_label": "无复发生存期",
+        "avoid_zh": [
+          "无复发存活"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "adjuvant therapy",
+        "clip_indexes": [],
+        "context": "post-surgery melanoma treatment",
+        "sense": "treatment given after complete resection",
+        "preferred_zh": "辅助治疗",
+        "title_label": "辅助治疗",
+        "avoid_zh": [
+          "佐剂治疗"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "This is 42% improvement versus Keytruda, and prior three large studies trying to improve on Keytruda all failed; the presenter called it a 'penicillin moment'.",
+        "public_baseline": "KEYNOTE-942 is a phase IIb trial of intismeran autogene plus pembrolizumab vs pembrolizumab alone in resected high-risk melanoma; Merck/Moderna report sustained RFS improvement, and Keytruda adjuvant approval came in 2019 (not 2018).",
+        "surprise_gap": "Speaker frames 42% improvement over Keytruda as landmark and cites Keytruda availability in 2018; public record shows FDA adjuvant approval Feb 2019 and the comparison is against pembrolizumab alone, not placebo.",
+        "speaker_relation": "company_executive",
+        "supported_angles": [
+          "concrete_stakes",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker claims 42% improvement versus Keytruda and calls it a landmark/penicillin moment."
+          },
+          {
+            "kind": "public",
+            "query": "Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab",
+            "url": "https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/",
+            "fact": "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda in high-risk melanoma."
+          },
+          {
+            "kind": "public",
+            "query": "Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial",
+            "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adjuvant-treatment-melanoma",
+            "fact": "FDA approved adjuvant pembrolizumab for melanoma on Feb 15, 2019, not 2018."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim the vaccine is approved or commercially available.",
+          "Do not state the 42% figure is an overall survival benefit; it is an RFS comparison.",
+          "Do not assert Keytruda was approved in 2018.",
+          "Do not claim Bancel personally called it a penicillin moment; the transcript attributes that to the presenting doctor.",
+          "Do not claim a China advantage or regulatory comparison not present in evidence."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "Moderna CEO Stéphane Bancel 中文名 莫德纳 首席执行官",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Moderna and its CEO Stéphane Bancel, since the transcript does not name the speaker explicitly."
+      },
+      {
+        "query": "Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the 42% improvement versus Keytruda (pembrolizumab) figure and the trial name for the cancer vaccine, to check the source claim against published data."
+      },
+      {
+        "query": "Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Keytruda showed a 43% improvement versus placebo and was available in 2018, establishing the baseline the speaker compares against."
+      },
+      {
+        "query": "Moderna Merck cancer vaccine 'penicillin moment' melanoma",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether the 'penicillin moment' characterization was actually used by the presenting doctor, and by whom, to check the speaker's framing."
+      },
+      {
+        "query": "Moderna 癌症疫苗 黑色素瘤 三期临床 2024 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the current public status of Moderna's cancer vaccine program in Chinese-language coverage, to test whether the claim of efficacy beyond melanoma is supported."
+      },
+      {
+        "query": "Moderna mRNA cancer vaccine beyond melanoma other tumor types trial",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether Moderna has disclosed trials or data for cancer vaccine use beyond melanoma, which is the core claim in the current title."
+      },
+      {
+        "query": "David Burman Moderna cancer vaccine transformational",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify the person referred to as 'David Burman' and verify his public comments calling the vaccine transformational."
+      },
+      {
+        "query": "Moderna CEO Stéphane Bancel cancer vaccine 'landmark study' interview",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the speaker's public characterization of the study as a landmark and his prediction that data will improve over time."
+      },
+      {
+        "query": "Moderna 莫德纳 中国 合作 业务 2024 2025",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Moderna has concrete China-related business actions or statements, in case a words-versus-actions angle on China is relevant."
+      },
+      {
+        "query": "Moderna mRNA-4157 versus Keytruda three prior studies failed to improve on Keytruda",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that three large prior studies failed to improve on Keytruda, which underpins the speaker's argument about a high bar."
+      },
+      {
+        "query": "Bloomberg Beyond Melanoma The Close established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-27T01:30:18.535149+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close",
+          "source_title": "Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close",
+          "show_date": "",
+          "current_title": "Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤",
+          "current_title_lines": [
+            "Moderna首席执行官",
+            "癌症疫苗疗效观察",
+            "数据能否随时间进一步改善"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "在Asimom Madrid，有一项关于治疗方法的全新展示，我认为许多患者和市场参与者都对此充满期待。",
+              "en": "Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.",
+              "relative_start": 0.0,
+              "relative_end": 10.0
+            },
+            {
+              "index": 2,
+              "zh": "现在有很多问题，不仅关乎这种药物作为药物的疗效，还关乎其作为商业模式的效力。",
+              "en": "There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.",
+              "relative_start": 10.0,
+              "relative_end": 19.0
+            },
+            {
+              "index": 3,
+              "zh": "乔治娜，与介绍这项研究的医生一起，她称这是一个青霉素时刻。",
+              "en": "Georgina, along the doctor who presented on this, she called this a penicillin moment.",
+              "relative_start": 19.0,
+              "relative_end": 23.0
+            },
+            {
+              "index": 4,
+              "zh": "你对此大加宣传。大卫·伯曼也表示这实际上可能具有变革性，是吗？",
+              "en": "You've talked this up. David Burman has also said this could actually be transformational, is it?",
+              "relative_start": 23.0,
+              "relative_end": 28.0
+            },
+            {
+              "index": 5,
+              "zh": "是的，感谢邀请。我们认为这是一项里程碑式的研究。",
+              "en": "Yeah, thank you for having me. We figured it's a landmark study.",
+              "relative_start": 28.0,
+              "relative_end": 32.0
+            },
+            {
+              "index": 6,
+              "zh": "如果考虑研究中两年的表现，随着时间推移我们会获得更多数据，与Ketudra相比，改善了42%。",
+              "en": "If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.",
+              "relative_start": 32.0,
+              "relative_end": 41.0
+            },
+            {
+              "index": 7,
+              "zh": "让我们将其置于背景中。Ketudra于2018年上市，如果看与安慰剂相比的数据，改善了43%。",
+              "en": "So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.",
+              "relative_start": 41.0,
+              "relative_end": 52.0
+            },
+            {
+              "index": 8,
+              "zh": "这是与Ketudra相比改善了42%。所以门槛真的很高。作为背景，在我们之前有三项大型研究试图改进Ketudra，但都失败了。",
+              "en": "This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.",
+              "relative_start": 52.0,
+              "relative_end": 63.0
+            },
+            {
+              "index": 9,
+              "zh": "所以我们对临床医生和患者来说，这是一项里程碑式的研究，我们对数据非常满意。",
+              "en": "So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.",
+              "relative_start": 63.0,
+              "relative_end": 70.0
+            },
+            {
+              "index": 10,
+              "zh": "如果看我们的数据，实际上我们的数据随时间改善。所以我预计，我个人相信数据会随着时间变得更好。",
+              "en": "And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.",
+              "relative_start": 70.0,
+              "relative_end": 78.0
+            },
+            {
+              "index": 11,
+              "zh": "所以你指的是Ketudra，显然是Mark的药物，但有人担心你们的治疗成本，以及这是否真的值得将其加入Ketudra。",
+              "en": "So you're referring to Ketudra, Mark's drug obviously, but there has been some concerns about what the cost of your treatment would be and whether that would actually justify adding that to Ketudra.",
+              "relative_start": 78.0,
+              "relative_end": 89.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"source_title\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤\",\n    \"current_title_lines\": [\n      \"Moderna首席执行官\",\n      \"癌症疫苗疗效观察\",\n      \"数据能否随时间进一步改善\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在Asimom Madrid，有一项关于治疗方法的全新展示，我认为许多患者和市场参与者都对此充满期待。\",\n        \"en\": \"Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在有很多问题，不仅关乎这种药物作为药物的疗效，还关乎其作为商业模式的效力。\",\n        \"en\": \"There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.\",\n        \"relative_start\": 10.0,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"乔治娜，与介绍这项研究的医生一起，她称这是一个青霉素时刻。\",\n        \"en\": \"Georgina, along the doctor who presented on this, she called this a penicillin moment.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你对此大加宣传。大卫·伯曼也表示这实际上可能具有变革性，是吗？\",\n        \"en\": \"You've talked this up. David Burman has also said this could actually be transformational, is it?\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，感谢邀请。我们认为这是一项里程碑式的研究。\",\n        \"en\": \"Yeah, thank you for having me. We figured it's a landmark study.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果考虑研究中两年的表现，随着时间推移我们会获得更多数据，与Ketudra相比，改善了42%。\",\n        \"en\": \"If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"让我们将其置于背景中。Ketudra于2018年上市，如果看与安慰剂相比的数据，改善了43%。\",\n        \"en\": \"So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这是与Ketudra相比改善了42%。所以门槛真的很高。作为背景，在我们之前有三项大型研究试图改进Ketudra，但都失败了。\",\n        \"en\": \"This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 63.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以我们对临床医生和患者来说，这是一项里程碑式的研究，我们对数据非常满意。\",\n        \"en\": \"So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.\",\n        \"relative_start\": 63.0,\n        \"relative_end\": 70.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"如果看我们的数据，实际上我们的数据随时间改善。所以我预计，我个人相信数据会随着时间变得更好。\",\n        \"en\": \"And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.\",\n        \"relative_start\": 70.0,\n        \"relative_end\": 78.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"所以你指的是Ketudra，显然是Mark的药物，但有人担心你们的治疗成本，以及这是否真的值得将其加入Ketudra。\",\n        \"en\": \"So you're referring to Ketudra, Mark's drug obviously, but there has been some concerns about what the cost of your treatment would be and whether that would actually justify adding that to Ketudra.\",\n        \"relative_start\": 78.0,\n        \"relative_end\": 89.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"This is 42% improvement versus Keytruda, and prior three large studies trying to improve on Keytruda all failed; the presenter called it a 'penicillin moment'.\",\n      \"public_baseline\": \"KEYNOTE-942 is a phase IIb trial of intismeran autogene plus pembrolizumab vs pembrolizumab alone in resected high-risk melanoma; Merck/Moderna report sustained RFS improvement, and Keytruda adjuvant approval came in 2019 (not 2018).\",\n      \"surprise_gap\": \"Speaker frames 42% improvement over Keytruda as landmark and cites Keytruda availability in 2018; public record shows FDA adjuvant approval Feb 2019 and the comparison is against pembrolizumab alone, not placebo.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker claims 42% improvement versus Keytruda and calls it a landmark/penicillin moment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab\",\n          \"url\": \"https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/\",\n          \"fact\": \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda in high-risk melanoma.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial\",\n          \"url\": \"https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adjuvant-treatment-melanoma\",\n          \"fact\": \"FDA approved adjuvant pembrolizumab for melanoma on Feb 15, 2019, not 2018.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the vaccine is approved or commercially available.\",\n        \"Do not state the 42% figure is an overall survival benefit; it is an RFS comparison.\",\n        \"Do not assert Keytruda was approved in 2018.\",\n        \"Do not claim Bancel personally called it a penicillin moment; the transcript attributes that to the presenting doctor.\",\n        \"Do not claim a China advantage or regulatory comparison not present in evidence.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Moderna CEO says the cancer vaccine showed a 42% improvement versus Keytruda, three prior large studies trying to beat Keytruda all failed, and the presenting doctor called it a penicillin moment.",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "三项研究全失败后，这款癌症疫苗对比Keytruda改善42%",
+                "title_lines": [
+                  "三项研究全失败",
+                  "这款疫苗对比Keytruda",
+                  "改善42%"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: three large studies trying to improve on Keytruda all failed",
+                  "Transcript: 42% improvement versus Keytruda at two years",
+                  "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "Moderna首席执行官称癌症疫苗是里程碑，数据还会随时间改善",
+                "title_lines": [
+                  "Moderna首席执行官",
+                  "称癌症疫苗是里程碑",
+                  "数据还会随时间改善"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: CEO calls it a landmark study",
+                  "Transcript: I personally believe the data is going to improve with time",
+                  "Merck/Moderna report sustained RFS improvement"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "对比Keytruda改善42%，但治疗成本能否被接受仍是问题",
+                "title_lines": [
+                  "对比Keytruda改善42%",
+                  "但治疗成本",
+                  "能否被接受仍是问题"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "Transcript: 42% improvement versus Keytruda",
+                  "Transcript: concerns about the cost of your treatment and whether it justifies adding to Keytruda",
+                  "Merck/Moderna report sustained RFS improvement"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "被称作青霉素时刻的癌症疫苗，两年数据改善42%",
+                "title_lines": [
+                  "被称作青霉素时刻",
+                  "的癌症疫苗",
+                  "两年数据改善42%"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "Transcript: the presenting doctor called this a penicillin moment",
+                  "Transcript: 42% improvement versus Keytruda at two years",
+                  "Merck/Moderna report sustained RFS improvement"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"source_title\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤\",\n    \"current_title_lines\": [\n      \"Moderna首席执行官\",\n      \"癌症疫苗疗效观察\",\n      \"数据能否随时间进一步改善\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在Asimom Madrid，有一项关于治疗方法的全新展示，我认为许多患者和市场参与者都对此充满期待。\",\n        \"en\": \"Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在有很多问题，不仅关乎这种药物作为药物的疗效，还关乎其作为商业模式的效力。\",\n        \"en\": \"There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.\",\n        \"relative_start\": 10.0,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"乔治娜，与介绍这项研究的医生一起，她称这是一个青霉素时刻。\",\n        \"en\": \"Georgina, along the doctor who presented on this, she called this a penicillin moment.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你对此大加宣传。大卫·伯曼也表示这实际上可能具有变革性，是吗？\",\n        \"en\": \"You've talked this up. David Burman has also said this could actually be transformational, is it?\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，感谢邀请。我们认为这是一项里程碑式的研究。\",\n        \"en\": \"Yeah, thank you for having me. We figured it's a landmark study.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果考虑研究中两年的表现，随着时间推移我们会获得更多数据，与Ketudra相比，改善了42%。\",\n        \"en\": \"If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"让我们将其置于背景中。Ketudra于2018年上市，如果看与安慰剂相比的数据，改善了43%。\",\n        \"en\": \"So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这是与Ketudra相比改善了42%。所以门槛真的很高。作为背景，在我们之前有三项大型研究试图改进Ketudra，但都失败了。\",\n        \"en\": \"This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 63.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以我们对临床医生和患者来说，这是一项里程碑式的研究，我们对数据非常满意。\",\n        \"en\": \"So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.\",\n        \"relative_start\": 63.0,\n        \"relative_end\": 70.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"如果看我们的数据，实际上我们的数据随时间改善。所以我预计，我个人相信数据会随着时间变得更好。\",\n        \"en\": \"And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.\",\n        \"relative_start\": 70.0,\n        \"relative_end\": 78.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"所以你指的是Ketudra，显然是Mark的药物，但有人担心你们的治疗成本，以及这是否真的值得将其加入Ketudra。\",\n        \"en\": \"So you're referring to Ketudra, Mark's drug obviously, but there has been some concerns about what the cost of your treatment would be and whether that would actually justify adding that to Ketudra.\",\n        \"relative_start\": 78.0,\n        \"relative_end\": 89.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"This is 42% improvement versus Keytruda, and prior three large studies trying to improve on Keytruda all failed; the presenter called it a 'penicillin moment'.\",\n      \"public_baseline\": \"KEYNOTE-942 is a phase IIb trial of intismeran autogene plus pembrolizumab vs pembrolizumab alone in resected high-risk melanoma; Merck/Moderna report sustained RFS improvement, and Keytruda adjuvant approval came in 2019 (not 2018).\",\n      \"surprise_gap\": \"Speaker frames 42% improvement over Keytruda as landmark and cites Keytruda availability in 2018; public record shows FDA adjuvant approval Feb 2019 and the comparison is against pembrolizumab alone, not placebo.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker claims 42% improvement versus Keytruda and calls it a landmark/penicillin moment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab\",\n          \"url\": \"https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/\",\n          \"fact\": \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda in high-risk melanoma.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial\",\n          \"url\": \"https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adjuvant-treatment-melanoma\",\n          \"fact\": \"FDA approved adjuvant pembrolizumab for melanoma on Feb 15, 2019, not 2018.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the vaccine is approved or commercially available.\",\n        \"Do not state the 42% figure is an overall survival benefit; it is an RFS comparison.\",\n        \"Do not assert Keytruda was approved in 2018.\",\n        \"Do not claim Bancel personally called it a penicillin moment; the transcript attributes that to the presenting doctor.\",\n        \"Do not claim a China advantage or regulatory comparison not present in evidence.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Moderna CEO says the cancer vaccine showed a 42% improvement versus Keytruda, three prior large studies trying to beat Keytruda all failed, and the presenting doctor called it a penicillin moment.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"三项研究全失败后，这款癌症疫苗对比Keytruda改善42%\",\n          \"title_lines\": [\n            \"三项研究全失败\",\n            \"这款疫苗对比Keytruda\",\n            \"改善42%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: three large studies trying to improve on Keytruda all failed\",\n            \"Transcript: 42% improvement versus Keytruda at two years\",\n            \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"Moderna首席执行官称癌症疫苗是里程碑，数据还会随时间改善\",\n          \"title_lines\": [\n            \"Moderna首席执行官\",\n            \"称癌症疫苗是里程碑\",\n            \"数据还会随时间改善\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: CEO calls it a landmark study\",\n            \"Transcript: I personally believe the data is going to improve with time\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"对比Keytruda改善42%，但治疗成本能否被接受仍是问题\",\n          \"title_lines\": [\n            \"对比Keytruda改善42%\",\n            \"但治疗成本\",\n            \"能否被接受仍是问题\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: 42% improvement versus Keytruda\",\n            \"Transcript: concerns about the cost of your treatment and whether it justifies adding to Keytruda\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"被称作青霉素时刻的癌症疫苗，两年数据改善42%\",\n          \"title_lines\": [\n            \"被称作青霉素时刻\",\n            \"的癌症疫苗\",\n            \"两年数据改善42%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: the presenting doctor called this a penicillin moment\",\n            \"Transcript: 42% improvement versus Keytruda at two years\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "Transcript: three large studies trying to improve on Keytruda all failed",
+              "Transcript: 42% improvement versus Keytruda at two years",
+              "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda"
+            ],
+            "title": "三项研究全失败后，这款癌症疫苗对比Keytruda改善42%",
+            "title_lines": [
+              "三项研究全失败",
+              "这款疫苗对比Keytruda",
+              "改善42%"
+            ],
+            "title_highlights": [
+              "三项研究全失败",
+              "改善42%"
+            ],
+            "runner_up_titles": [
+              "被称作青霉素时刻的癌症疫苗，两年数据改善42%",
+              "对比Keytruda改善42%，但治疗成本能否被接受仍是问题"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：此前三项大型研究均未超越Keytruda，这次42%改善能否转化为临床可及性，值得关注。",
+            "comment_highlights": [
+              "42%改善"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：患者和投资者都在等这款疗法的新展示。",
+                "comment_highlights": [
+                  "患者和投资者"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：疗效之外，商业模式能否成立同样关键。",
+                "comment_highlights": [
+                  "商业模式"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：介绍研究的医生用青霉素时刻来形容。",
+                "comment_highlights": [
+                  "青霉素时刻"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：主持人追问这是否真具变革性。",
+                "comment_highlights": [
+                  "变革性"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：CEO将这项研究定义为里程碑式。",
+                "comment_highlights": [
+                  "里程碑式"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：两年数据对比Ketudra改善42%。",
+                "comment_highlights": [
+                  "改善42%"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：Ketudra于2018年上市，与安慰剂比改善43%。",
+                "comment_highlights": [
+                  "2018年",
+                  "43%"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：此前三项大型研究试图改进Ketudra均失败。",
+                "comment_highlights": [
+                  "三项大型研究"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：对临床医生和患者而言，数据令人满意。",
+                "comment_highlights": [
+                  "临床医生和患者"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：CEO个人相信数据会随时间变得更好。",
+                "comment_highlights": [
+                  "数据会随时间"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：治疗成本能否被接受，仍是待解问题。",
+                "comment_highlights": [
+                  "治疗成本"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 89.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"source_title\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n    \"show_date\": \"\",\n    \"current_title\": \"Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤\",\n    \"current_title_lines\": [\n      \"Moderna首席执行官\",\n      \"癌症疫苗疗效观察\",\n      \"数据能否随时间进一步改善\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"在Asimom Madrid，有一项关于治疗方法的全新展示，我认为许多患者和市场参与者都对此充满期待。\",\n        \"en\": \"Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 10.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在有很多问题，不仅关乎这种药物作为药物的疗效，还关乎其作为商业模式的效力。\",\n        \"en\": \"There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.\",\n        \"relative_start\": 10.0,\n        \"relative_end\": 19.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"乔治娜，与介绍这项研究的医生一起，她称这是一个青霉素时刻。\",\n        \"en\": \"Georgina, along the doctor who presented on this, she called this a penicillin moment.\",\n        \"relative_start\": 19.0,\n        \"relative_end\": 23.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你对此大加宣传。大卫·伯曼也表示这实际上可能具有变革性，是吗？\",\n        \"en\": \"You've talked this up. David Burman has also said this could actually be transformational, is it?\",\n        \"relative_start\": 23.0,\n        \"relative_end\": 28.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"是的，感谢邀请。我们认为这是一项里程碑式的研究。\",\n        \"en\": \"Yeah, thank you for having me. We figured it's a landmark study.\",\n        \"relative_start\": 28.0,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"如果考虑研究中两年的表现，随着时间推移我们会获得更多数据，与Ketudra相比，改善了42%。\",\n        \"en\": \"If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 41.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"让我们将其置于背景中。Ketudra于2018年上市，如果看与安慰剂相比的数据，改善了43%。\",\n        \"en\": \"So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.\",\n        \"relative_start\": 41.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"这是与Ketudra相比改善了42%。所以门槛真的很高。作为背景，在我们之前有三项大型研究试图改进Ketudra，但都失败了。\",\n        \"en\": \"This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 63.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"所以我们对临床医生和患者来说，这是一项里程碑式的研究，我们对数据非常满意。\",\n        \"en\": \"So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.\",\n        \"relative_start\": 63.0,\n        \"relative_end\": 70.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"如果看我们的数据，实际上我们的数据随时间改善。所以我预计，我个人相信数据会随着时间变得更好。\",\n        \"en\": \"And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.\",\n        \"relative_start\": 70.0,\n        \"relative_end\": 78.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"所以你指的是Ketudra，显然是Mark的药物，但有人担心你们的治疗成本，以及这是否真的值得将其加入Ketudra。\",\n        \"en\": \"So you're referring to Ketudra, Mark's drug obviously, but there has been some concerns about what the cost of your treatment would be and whether that would actually justify adding that to Ketudra.\",\n        \"relative_start\": 78.0,\n        \"relative_end\": 89.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"This is 42% improvement versus Keytruda, and prior three large studies trying to improve on Keytruda all failed; the presenter called it a 'penicillin moment'.\",\n      \"public_baseline\": \"KEYNOTE-942 is a phase IIb trial of intismeran autogene plus pembrolizumab vs pembrolizumab alone in resected high-risk melanoma; Merck/Moderna report sustained RFS improvement, and Keytruda adjuvant approval came in 2019 (not 2018).\",\n      \"surprise_gap\": \"Speaker frames 42% improvement over Keytruda as landmark and cites Keytruda availability in 2018; public record shows FDA adjuvant approval Feb 2019 and the comparison is against pembrolizumab alone, not placebo.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker claims 42% improvement versus Keytruda and calls it a landmark/penicillin moment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab\",\n          \"url\": \"https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/\",\n          \"fact\": \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda in high-risk melanoma.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial\",\n          \"url\": \"https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adjuvant-treatment-melanoma\",\n          \"fact\": \"FDA approved adjuvant pembrolizumab for melanoma on Feb 15, 2019, not 2018.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the vaccine is approved or commercially available.\",\n        \"Do not state the 42% figure is an overall survival benefit; it is an RFS comparison.\",\n        \"Do not assert Keytruda was approved in 2018.\",\n        \"Do not claim Bancel personally called it a penicillin moment; the transcript attributes that to the presenting doctor.\",\n        \"Do not claim a China advantage or regulatory comparison not present in evidence.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Moderna CEO says the cancer vaccine showed a 42% improvement versus Keytruda, three prior large studies trying to beat Keytruda all failed, and the presenting doctor called it a penicillin moment.\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"三项研究全失败后，这款癌症疫苗对比Keytruda改善42%\",\n          \"title_lines\": [\n            \"三项研究全失败\",\n            \"这款疫苗对比Keytruda\",\n            \"改善42%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: three large studies trying to improve on Keytruda all failed\",\n            \"Transcript: 42% improvement versus Keytruda at two years\",\n            \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"Moderna首席执行官称癌症疫苗是里程碑，数据还会随时间改善\",\n          \"title_lines\": [\n            \"Moderna首席执行官\",\n            \"称癌症疫苗是里程碑\",\n            \"数据还会随时间改善\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: CEO calls it a landmark study\",\n            \"Transcript: I personally believe the data is going to improve with time\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"对比Keytruda改善42%，但治疗成本能否被接受仍是问题\",\n          \"title_lines\": [\n            \"对比Keytruda改善42%\",\n            \"但治疗成本\",\n            \"能否被接受仍是问题\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"Transcript: 42% improvement versus Keytruda\",\n            \"Transcript: concerns about the cost of your treatment and whether it justifies adding to Keytruda\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"被称作青霉素时刻的癌症疫苗，两年数据改善42%\",\n          \"title_lines\": [\n            \"被称作青霉素时刻\",\n            \"的癌症疫苗\",\n            \"两年数据改善42%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"Transcript: the presenting doctor called this a penicillin moment\",\n            \"Transcript: 42% improvement versus Keytruda at two years\",\n            \"Merck/Moderna report sustained RFS improvement\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"三项研究全失败：这款疫苗对比Keytruda，改善42%\",\n      \"title_lines\": [\n        \"三项研究全失败\",\n        \"这款疫苗对比Keytruda\",\n        \"改善42%\"\n      ],\n      \"title_highlights\": [\n        \"三项研究全失败\",\n        \"改善42%\"\n      ],\n      \"comment\": \"KC评论：此前三项大型研究均未超越Keytruda\",\n      \"comment_highlights\": [\n        \"此前三项大型研究\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：患者和市场参与者都在等这款疗法的新展示\",\n          \"comment_highlights\": [\n            \"患者和市场参与者\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：疗效之外，商业模式能否成立同样关键\",\n          \"comment_highlights\": [\n            \"商业模式\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：介绍研究的医生用青霉素时刻来形容\",\n          \"comment_highlights\": [\n            \"青霉素时刻\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：主持人追问这是否真具变革性\",\n          \"comment_highlights\": [\n            \"变革性\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：CEO将这项研究定义为里程碑式\",\n          \"comment_highlights\": [\n            \"里程碑式\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：两年数据对比Ketudra改善42%\",\n          \"comment_highlights\": [\n            \"改善42%\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：Ketudra于2018年上市，与安慰剂比改善43%\",\n          \"comment_highlights\": [\n            \"2018年\",\n            \"43%\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：此前三项大型研究试图改进Ketudra均失败\",\n          \"comment_highlights\": [\n            \"三项大型研究\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：对临床医生和患者而言，数据令人满意\",\n          \"comment_highlights\": [\n            \"临床医生和患者\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：CEO个人相信数据会随时间变得更好\",\n          \"comment_highlights\": [\n            \"数据会随时间\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：治疗成本能否被接受，仍是待解问题\",\n          \"comment_highlights\": [\n            \"治疗成本\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"Transcript: three large studies trying to improve on Keytruda all failed\",\n        \"Transcript: 42% improvement versus Keytruda at two years\",\n        \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda\"\n      ],\n      \"runner_up_titles\": [\n        \"被称作青霉素时刻的癌症疫苗，两年数据改善42%\",\n        \"对比Keytruda改善42%，但治疗成本能否被接受仍是问题\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然三项都失败后它做到了",
+                "evidence_basis": [
+                  "Transcript: three large studies trying to improve on Keytruda all failed",
+                  "Transcript: 42% improvement versus Keytruda at two years",
+                  "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda"
+                ],
+                "title": "三项研究全失败，这款癌症疫苗却比Keytruda改善42%",
+                "title_lines": [
+                  "三项研究全失败",
+                  "这款癌症疫苗",
+                  "却比Keytruda改善42%"
+                ],
+                "title_highlights": [
+                  "三项研究全失败",
+                  "改善42%"
+                ],
+                "runner_up_titles": [
+                  "被称作青霉素时刻的癌症疫苗，两年数据改善42%",
+                  "对比Keytruda改善42%，但治疗成本能否被接受仍是问题"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：此前三项大型研究均未超越Keytruda，这次数据能否持续改善值得关注",
+                "comment_highlights": [
+                  "三项大型研究",
+                  "持续改善"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：患者和市场参与者都在等这款疗法的新展示",
+                    "comment_highlights": [
+                      "患者和市场参与者"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：疗效之外，商业模式能否成立同样关键",
+                    "comment_highlights": [
+                      "商业模式"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：介绍研究的医生用青霉素时刻来形容",
+                    "comment_highlights": [
+                      "青霉素时刻"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：主持人追问这是否真具变革性",
+                    "comment_highlights": [
+                      "变革性"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：CEO将这项研究定义为里程碑式",
+                    "comment_highlights": [
+                      "里程碑式"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：两年数据对比Ketudra改善42%",
+                    "comment_highlights": [
+                      "改善42%"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：Ketudra于2018年上市，与安慰剂比改善43%",
+                    "comment_highlights": [
+                      "2018年",
+                      "43%"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：此前三项大型研究试图改进Ketudra均失败",
+                    "comment_highlights": [
+                      "三项大型研究"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：对临床医生和患者而言，数据令人满意",
+                    "comment_highlights": [
+                      "临床医生和患者"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：CEO个人相信数据会随时间变得更好",
+                    "comment_highlights": [
+                      "数据会随时间"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：治疗成本能否被接受，仍是待解问题",
+                    "comment_highlights": [
+                      "治疗成本"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "三项研究全失败：这款疫苗对比Keytruda，改善42%",
+          "title_lines": [
+            "三项研究全失败",
+            "这款疫苗对比Keytruda",
+            "改善42%"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 87,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：此前三项大型研究均未超越Keytruda"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-27T01:30:21.006293+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 89.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close",
+          "source_title": "Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close",
+          "show_date": "",
+          "current_title": "Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤",
+          "current_title_lines": [
+            "Moderna首席执行官",
+            "癌症疫苗疗效观察",
+            "数据能否随时间进一步改善"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "在Asimom Madrid，有一项关于治疗方法的全新展示，我认为许多患者和市场参与者都对此充满期待。",
+              "en": "Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.",
+              "relative_start": 0.0,
+              "relative_end": 10.0
+            },
+            {
+              "index": 2,
+              "zh": "现在有很多问题，不仅关乎这种药物作为药物的疗效，还关乎其作为商业模式的效力。",
+              "en": "There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.",
+              "relative_start": 10.0,
+              "relative_end": 19.0
+            },
+            {
+              "index": 3,
+              "zh": "乔治娜，与介绍这项研究的医生一起，她称这是一个青霉素时刻。",
+              "en": "Georgina, along the doctor who presented on this, she called this a penicillin moment.",
+              "relative_start": 19.0,
+              "relative_end": 23.0
+            },
+            {
+              "index": 4,
+              "zh": "你对此大加宣传。大卫·伯曼也表示这实际上可能具有变革性，是吗？",
+              "en": "You've talked this up. David Burman has also said this could actually be transformational, is it?",
+              "relative_start": 23.0,
+              "relative_end": 28.0
+            },
+            {
+              "index": 5,
+              "zh": "是的，感谢邀请。我们认为这是一项里程碑式的研究。",
+              "en": "Yeah, thank you for having me. We figured it's a landmark study.",
+              "relative_start": 28.0,
+              "relative_end": 32.0
+            },
+            {
+              "index": 6,
+              "zh": "如果考虑研究中两年的表现，随着时间推移我们会获得更多数据，与Ketudra相比，改善了42%。",
+              "en": "If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.",
+              "relative_start": 32.0,
+              "relative_end": 41.0
+            },
+            {
+              "index": 7,
+              "zh": "让我们将其置于背景中。Ketudra于2018年上市，如果看与安慰剂相比的数据，改善了43%。",
+              "en": "So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.",
+              "relative_start": 41.0,
+              "relative_end": 52.0
+            },
+            {
+              "index": 8,
+              "zh": "这是与Ketudra相比改善了42%。所以门槛真的很高。作为背景，在我们之前有三项大型研究试图改进Ketudra，但都失败了。",
+              "en": "This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.",
+              "relative_start": 52.0,
+              "relative_end": 63.0
+            },
+            {
+              "index": 9,
+              "zh": "所以我们对临床医生和患者来说，这是一项里程碑式的研究，我们对数据非常满意。",
+              "en": "So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.",
+              "relative_start": 63.0,
+              "relative_end": 70.0
+            },
+            {
+              "index": 10,
+              "zh": "如果看我们的数据，实际上我们的数据随时间改善。所以我预计，我个人相信数据会随着时间变得更好。",
+              "en": "And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.",
+              "relative_start": 70.0,
+              "relative_end": 78.0
+            },
+            {
+              "index": 11,
+              "zh": "所以你指的是Ketudra，显然是Mark的药物，但有人担心你们的治疗成本，以及这是否真的值得将其加入Ketudra。",
+              "en": "So you're referring to Ketudra, Mark's drug obviously, but there has been some concerns about what the cost of your treatment would be and whether that would actually justify adding that to Ketudra.",
+              "relative_start": 78.0,
+              "relative_end": 89.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n  \"source_title\": \"Duration: 12:00 Moderna CEO Sees Cancer Vaccines Working Beyond Melanoma The Close\",\n  \"current_title\": \"Moderna首席执行官：癌症疫苗疗效有望超越黑色素瘤\",\n  \"source_claims\": [\n    \"Fresh offer presentation over at Asimom Madrid on a treatment that I think a lot of folks have been looking forward to both in terms of patients as well as investors.\",\n    \"There's been a lot of questions now, not only about the efficacy of this as a drug, but the efficacy as a commercial business model.\",\n    \"Georgina, along the doctor who presented on this, she called this a penicillin moment.\",\n    \"You've talked this up. David Burman has also said this could actually be transformational, is it?\",\n    \"Yeah, thank you for having me. We figured it's a landmark study.\",\n    \"If you think about the performance at two years in the study and we're going to get more data as time goes by, it was a 42% improvement versus Ketudra.\",\n    \"So let's put that into context. Ketudra was available in 2018, and if you look at the data compared to placebo, it was a 43% improvement.\",\n    \"This is 42% improvement versus Ketudra. So the bar was really high. And for context, there were three large studies done before us trying to improve on Ketudra and they all failed.\",\n    \"So we think about this for for clinician, for patient. It's a landmark study where very happy of the data.\",\n    \"And if you look at our face to data, actually our data improved over time. So we anticipate, I personally believe that the data is going to improve with time.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"This is 42% improvement versus Keytruda, and prior three large studies trying to improve on Keytruda all failed; the presenter called it a 'penicillin moment'.\",\n      \"public_baseline\": \"KEYNOTE-942 is a phase IIb trial of intismeran autogene plus pembrolizumab vs pembrolizumab alone in resected high-risk melanoma; Merck/Moderna report sustained RFS improvement, and Keytruda adjuvant approval came in 2019 (not 2018).\",\n      \"surprise_gap\": \"Speaker frames 42% improvement over Keytruda as landmark and cites Keytruda availability in 2018; public record shows FDA adjuvant approval Feb 2019 and the comparison is against pembrolizumab alone, not placebo.\",\n      \"speaker_relation\": \"company_executive\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker claims 42% improvement versus Keytruda and calls it a landmark/penicillin moment.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Moderna mRNA-4157 intismeran autogene KEYNOTE-942 melanoma 42% improvement pembrolizumab\",\n          \"url\": \"https://www.merck.com/news/moderna-merck-announce-5-year-data-for-intismeran-autogene-in-combination-with-keytruda-pembrolizumab-demonstrated-sustained-improvement-in-the-primary-endpoint-of-recurrence-free-survival-i/\",\n          \"fact\": \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda in high-risk melanoma.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Keytruda pembrolizumab 2018 approval placebo 43% improvement melanoma trial\",\n          \"url\": \"https://www.fda.gov/drugs/drug-approvals-and-databases/fda-approves-pembrolizumab-adjuvant-treatment-melanoma\",\n          \"fact\": \"FDA approved adjuvant pembrolizumab for melanoma on Feb 15, 2019, not 2018.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the vaccine is approved or commercially available.\",\n        \"Do not state the 42% figure is an overall survival benefit; it is an RFS comparison.\",\n        \"Do not assert Keytruda was approved in 2018.\",\n        \"Do not claim Bancel personally called it a penicillin moment; the transcript attributes that to the presenting doctor.\",\n        \"Do not claim a China advantage or regulatory comparison not present in evidence.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCurrent rejected title:\n{\n  \"title\": \"三项研究全失败：这款疫苗对比Keytruda，改善42%\",\n  \"title_lines\": [\n    \"三项研究全失败\",\n    \"这款疫苗对比Keytruda\",\n    \"改善42%\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"Transcript: three large studies trying to improve on Keytruda all failed\",\n    \"Transcript: 42% improvement versus Keytruda at two years\",\n    \"Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "三项研究都失败，它凭什么做到42%？",
+            "evidence_basis": [
+              "Transcript: three large studies trying to improve on Keytruda all failed",
+              "Transcript: 42% improvement versus Keytruda at two years",
+              "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda"
+            ],
+            "title": "三项研究全失败：这款疫苗对比Keytruda，改善42%能否持续？",
+            "title_lines": [
+              "三项研究全失败",
+              "这款疫苗对比Keytruda改善42%",
+              "42%的改善能否持续？"
+            ],
+            "title_highlights": [
+              "三项研究全失败",
+              "改善42%",
+              "能否持续？"
+            ],
+            "runner_up_titles": [
+              "三项研究全失败：这款疫苗对比Keytruda改善42%，后续数据会更好吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "三项研究全失败：这款疫苗对比Keytruda改善42%，42%的改善能否持续？",
+        "title_lines": [
+          "三项研究全失败",
+          "这款疫苗对比Keytruda改善42%",
+          "42%的改善能否持续？"
+        ],
+        "title_highlights": [
+          "三项研究全失败",
+          "改善42%",
+          "能否持续？"
+        ],
+        "comment": "KC评论：此前三项大型研究均未超越Keytruda",
+        "comment_highlights": [
+          "此前三项大型研究"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：患者和市场参与者都在等这款疗法的新展示",
+            "comment_highlights": [
+              "患者和市场参与者"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：疗效之外，商业模式能否成立同样关键",
+            "comment_highlights": [
+              "商业模式"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：介绍研究的医生用青霉素时刻来形容",
+            "comment_highlights": [
+              "青霉素时刻"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：主持人追问这是否真具变革性",
+            "comment_highlights": [
+              "变革性"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：CEO将这项研究定义为里程碑式",
+            "comment_highlights": [
+              "里程碑式"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：两年数据对比Ketudra改善42%",
+            "comment_highlights": [
+              "改善42%"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：Ketudra于2018年上市，与安慰剂比改善43%",
+            "comment_highlights": [
+              "2018年",
+              "43%"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：此前三项大型研究试图改进Ketudra均失败",
+            "comment_highlights": [
+              "三项大型研究"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：对临床医生和患者而言，数据令人满意",
+            "comment_highlights": [
+              "临床医生和患者"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：CEO个人相信数据会随时间变得更好",
+            "comment_highlights": [
+              "数据会随时间"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：治疗成本能否被接受，仍是待解问题",
+            "comment_highlights": [
+              "治疗成本"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "三项研究都失败，它凭什么做到42%？",
+        "evidence_basis": [
+          "Transcript: three large studies trying to improve on Keytruda all failed",
+          "Transcript: 42% improvement versus Keytruda at two years",
+          "Merck/Moderna report sustained RFS improvement for intismeran autogene plus Keytruda"
+        ],
+        "runner_up_titles": [
+          "三项研究全失败：这款疫苗对比Keytruda改善42%，后续数据会更好吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
