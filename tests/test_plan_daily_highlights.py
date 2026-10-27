@@ -258,6 +258,53 @@ class PlanDailyHighlightsTests(unittest.TestCase):
 
         self.assertEqual(payload["planning_status"], "planner_failed")
 
+    def test_one_successful_speaker_does_not_hide_another_planner_failure(self) -> None:
+        """Oct 25's completed clip must not finalize a show with Drew Matus missing."""
+        for failed_exit, expected_status in (
+            (1, "planner_failed"),
+            (plan_speaker_highlights.NO_ELIGIBLE_CLIPS_EXIT_CODE, "planned"),
+        ):
+            with self.subTest(failed_exit=failed_exit), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                transcript, speakers, plans, combined = self.make_inputs(root)
+                speakers.write_text(json.dumps({"speakers": [
+                    {"speaker": name, "segment_start": 10, "segment_end": 180}
+                    for name in ("Dan Crenshaw", "Drew Matus")
+                ]}), encoding="utf-8")
+
+                def planner(command: list[str]) -> subprocess.CompletedProcess[str]:
+                    name = command[command.index("--speaker") + 1]
+                    if name == "Drew Matus":
+                        return subprocess.CompletedProcess(
+                            command, failed_exit,
+                            stdout="DeepSeek API failed: Unterminated string" if failed_exit == 1 else "No eligible clips",
+                        )
+                    path = Path(command[command.index("--out") + 1])
+                    path.write_text(json.dumps({"clips": [{
+                        "start": 20, "end": 80, "title": "Completed clip",
+                    }]}), encoding="utf-8")
+                    return subprocess.CompletedProcess(command, 0, stdout="")
+
+                with (
+                    mock.patch.object(sys, "argv", [
+                        "plan_daily_highlights.py", "--transcript", str(transcript),
+                        "--speakers", str(speakers), "--out-dir", str(plans),
+                        "--combined-plan", str(combined), "--allow-empty", "--skip-title-refine",
+                    ]),
+                    mock.patch.object(plan_daily_highlights, "run_and_stream", side_effect=planner),
+                    mock.patch.object(plan_daily_highlights, "remove_trump_clips_from_plan", return_value=[]),
+                ):
+                    if failed_exit == 1:
+                        with self.assertRaisesRegex(SystemExit, "Speaker planner failed for: Drew Matus"):
+                            plan_daily_highlights.main()
+                    else:
+                        plan_daily_highlights.main()
+
+                payload = json.loads(combined.read_text(encoding="utf-8"))
+                self.assertEqual(payload["planning_status"], expected_status)
+                self.assertEqual(len(payload["clips"]), 1)
+                self.assertEqual(payload["skipped_speakers"][0]["speaker"], "Drew Matus")
+
     def test_no_eligible_exit_code_is_structured(self) -> None:
         with self.assertRaises(SystemExit) as raised:
             plan_speaker_highlights.exit_no_eligible_clips("not suitable")

@@ -30,6 +30,11 @@ on:
         required: false
         type: string
         default: ""
+      repair_failed_speakers:
+        description: "Retry failed speakers in an existing show; requires show_date and preserves published clips."
+        required: false
+        type: boolean
+        default: false
       max_speakers:
         description: "Maximum keynote speakers to process."
         required: false
@@ -68,6 +73,7 @@ jobs:
       SHOW_DATE_INPUT: ${{ github.event.inputs.show_date || '' }}
       SHOW_TYPE_INPUT: ${{ github.event.inputs.show_type || 'auto' }}
       URL_INPUT: ${{ github.event.inputs.url || '' }}
+      REPAIR_FAILED_SPEAKERS: ${{ github.event.inputs.repair_failed_speakers || 'false' }}
       MAX_SPEAKERS: ${{ github.event.inputs.max_speakers || '3' }}
       CLIPS_PER_SPEAKER: ${{ github.event.inputs.clips_per_speaker || '5' }}
       FONT_PRESET: ${{ github.event.inputs.font_preset || 'noto-serif-sc' }}
@@ -99,7 +105,12 @@ jobs:
       - name: Check existing rendered show clips
         id: existing_clips
         run: |
-          if [ "${SKIP_SHOW:-false}" = "true" ]; then
+          if [ "$REPAIR_FAILED_SPEAKERS" = "true" ]; then
+            python tools/repair_show_plan.py prepare \
+              --show-date "$SHOW_DATE_INPUT" \
+              --output-dir "$OUTPUT_DIR"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          elif [ "${SKIP_SHOW:-false}" = "true" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "${SHOW_SKIP_REASON:-No Bloomberg show selected; skipping.}"
           elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
@@ -193,6 +204,10 @@ jobs:
             --identity-output work/daily/source_identity.json \
             --github-output "$GITHUB_OUTPUT"
 
+          if [ "$REPAIR_FAILED_SPEAKERS" = "true" ]; then
+            python tools/repair_show_plan.py verify-source
+          fi
+
       - name: Transcribe full show
         if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true'
         env:
@@ -236,12 +251,16 @@ jobs:
           PYTHONUNBUFFERED: "1"
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
-          python tools/select_daily_speakers.py \
-            --transcript work/daily/transcript.json \
-            --show-date "$SHOW_DATE" \
-            --out work/daily/speakers.json \
-            --max-speakers "$MAX_SPEAKERS" \
-            --allow-empty
+          if [ "$REPAIR_FAILED_SPEAKERS" = "true" ]; then
+            cp work/daily/repair_speakers.json work/daily/speakers.json
+          else
+            python tools/select_daily_speakers.py \
+              --transcript work/daily/transcript.json \
+              --show-date "$SHOW_DATE" \
+              --out work/daily/speakers.json \
+              --max-speakers "$MAX_SPEAKERS" \
+              --allow-empty
+          fi
 
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
@@ -277,6 +296,10 @@ jobs:
             --max-clips "$CLIPS_PER_SPEAKER" \
             --allow-empty
 
+          if [ "$REPAIR_FAILED_SPEAKERS" = "true" ]; then
+            python tools/repair_show_plan.py merge
+          fi
+
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
 
@@ -298,15 +321,16 @@ jobs:
           PYTHONUNBUFFERED: "1"
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
         run: |
-          rm -rf "$OUTPUT_DIR"
+          if [ "$REPAIR_FAILED_SPEAKERS" != "true" ]; then
+            rm -rf "$OUTPUT_DIR"
+          fi
           mkdir -p "$OUTPUT_DIR"
           python tools/render_clips_linux.py \
             --source "$VIDEO_FILE" \
             --plan work/daily/highlight_plan.json \
             --out-dir "$OUTPUT_DIR" \
             --work-dir work/daily/render \
-            --threads 2 \
-            --force
+            --threads 2
 
       - name: Copy metadata
         if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'

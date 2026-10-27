@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
 import sys
@@ -36,6 +37,7 @@ HOST_OUTRO_PATTERNS = [
 SHORT_CLIP_EXPAND_MIN_RATIO = 0.75
 SHORT_CLIP_EXPAND_MAX_DEFICIT = 10.0
 NO_ELIGIBLE_CLIPS_EXIT_CODE = 3
+SUBTITLE_TRANSLATION_BATCH_SIZE = 10
 
 
 def exit_no_eligible_clips(message: str) -> None:
@@ -105,10 +107,11 @@ def main() -> None:
     print(f"Planning for {args.speaker}: {args.segment_start:.0f}s-{args.segment_end:.0f}s ({segment_duration:.0f}s)", flush=True)
     print(f"Transcript segments in range: {len(segments)}", flush=True)
 
-    # Step 1: Ask DeepSeek to split into clips with bilingual subtitles
+    # Select short ranges first. Returning every bilingual subtitle for several
+    # long clips in one response can exhaust the model's response budget.
     system_prompt = (
         "You are a senior Chinese short-video editor. Your task is to split an interview segment "
-        "into short clips and provide bilingual subtitles with keyword highlights. "
+        "into short clips and provide their titles. Do not return subtitles or repeat the transcript. "
         "Return strict JSON only. All Chinese title fields must avoid financial-advice/product-sale words: "
         "rephrase 资产管理/投资/股票/基金/理财/保险 as neutral market wording. "
         "For subtitles, rephrase 投资/股票/A股/港股 with 配置/权益资产/内地市场/香港市场 when needed. "
@@ -130,14 +133,7 @@ Task:
    - A Chinese title (机构/嘉宾身份 + 热点事件 + hook结构, 例如 "高盛王逸：5万亿城市更新，会拖住楼市吗？")
    - title_lines: split the title into exactly 3 short lines for display (line1=机构嘉宾, line2=主题关键词, line3=hook/观点)
    - title_highlights: 2-3 keywords from title_lines to highlight in yellow
-   - Bilingual subtitles covering the full clip duration
-
-3. For each subtitle entry:
-   - Provide the original English text
-   - Provide a natural Chinese translation (avoid 投资/股 words when possible)
-   - zh_highlights: 1-2 key Chinese phrases to highlight yellow
-   - en_highlights: 1-2 key English phrases to highlight yellow
-   - Each subtitle should be 3-8 seconds long
+3. Return only clip ranges and title fields. Subtitles will be translated separately from the original transcript in small batches.
 
 Return JSON:
 {{
@@ -148,31 +144,19 @@ Return JSON:
       "speaker": "{args.speaker}",
       "title": "<full Chinese title with colon>",
       "title_lines": ["<line1>", "<line2>", "<line3>"],
-      "title_highlights": ["<keyword1>", "<keyword2>"],
-      "subtitles": [
-        {{
-          "index": 1,
-          "start": <absolute seconds>,
-          "end": <absolute seconds>,
-          "en": "<English text>",
-          "zh": "<Chinese translation>",
-          "zh_highlights": ["<phrase>"],
-          "en_highlights": ["<phrase>"]
-        }}
-      ]
+      "title_highlights": ["<keyword1>", "<keyword2>"]
     }}
   ]
 }}
 
 Important:
 - Timestamps are ABSOLUTE (from video start, not segment start)
-- Subtitles must cover the full clip without gaps
+- Choose boundaries at the original transcript segment boundaries, covering complete statements.
 - Return {clip_count_rule(args.min_clips, args.max_clips)}. If the interview genuinely cannot support the minimum without filler, return fewer high-quality clips.
-- Each clip must have at least 3 subtitles
 - Every clip must contain a substantive answer from {args.speaker}. A host question is allowed only if the speaker answer follows in the same clip.
 - Do not create clips from host outros, thank-you lines, post-interview market recaps, market open boards, or transitions to the next segment. If the provided range includes that material, stop before it and return fewer clips.
 - Do not create clips about sensitive geopolitics or military topics, including Donald Trump / Trump / 特朗普 / 川普, Iran / 伊朗, Strait of Hormuz / 霍尔木兹海峡, Ukraine / 乌克兰, Russia-Ukraine war / 俄乌战争, wars, missiles, airstrikes, military operations, or active-conflict stories. If the strongest segment is sensitive-topic related, return fewer clips or no clips.
-- Do not reuse the same subtitle text in multiple clips unless it genuinely appears twice in the source transcript.
+- Do not select overlapping ranges or repeat the same source passage in multiple clips.
 - Chinese titles must have hook/conflict angle, not flat descriptions
 - Avoid in Chinese title fields: 资产管理, 投资, 股票, 基金, 理财, 保险, 投顾, 荐股, 买入, 卖出.
 - Rephrase title wording with neutral alternatives such as 资管, 配置, 权益资产, 市场, 产品, 财富配置, 保障, 观点.
@@ -184,11 +168,29 @@ Important:
 
     print("Requesting clip plan from DeepSeek...", flush=True)
     result = ask_deepseek(api_key, system_prompt, user_prompt)
-    clips = result.get("clips", [])
-
+    clips = result.get("clips")
+    if not isinstance(clips, list) or any(not isinstance(clip, dict) for clip in clips):
+        raise SystemExit("Speaker planner response must contain a clips list of objects")
     if not clips:
-        print("DeepSeek returned no clips; building transcript fallback clip", flush=True)
+        exit_no_eligible_clips("DeepSeek returned no eligible clips")
+    for clip in clips:
+        try:
+            valid_range = all(math.isfinite(float(clip[key])) for key in ("start", "end"))
+        except (KeyError, TypeError, ValueError):
+            valid_range = False
+        if not valid_range:
+            raise SystemExit("Speaker planner returned an invalid clip time range")
 
+    clips = postprocess_clips(
+        clips,
+        args.segment_start,
+        args.segment_end,
+        args.min_seconds,
+        args.max_seconds,
+        args.max_clips,
+        require_subtitles=False,
+    )
+    add_source_subtitles(clips, args.transcript)
     clips = postprocess_clips(
         clips,
         args.segment_start,
@@ -223,6 +225,8 @@ Important:
                 exit_no_eligible_clips("All generated clips were sensitive-topic related")
         else:
             exit_no_eligible_clips("All generated clips failed the speaker-content quality gate")
+
+    translate_clip_subtitles(clips, args.speaker, args.speaker_context)
 
     # Write output
     payload = sanitize_plan_wording({
@@ -260,6 +264,8 @@ def postprocess_clips(
     min_seconds: int,
     max_seconds: int,
     max_clips: int,
+    *,
+    require_subtitles: bool = True,
 ) -> list[dict[str, Any]]:
     cleaned: list[dict[str, Any]] = []
     for idx, clip in enumerate(clips, start=1):
@@ -312,7 +318,7 @@ def postprocess_clips(
             normalized["relative_end"] = sub_end - start
             subtitles.append(normalized)
 
-        if len(subtitles) < 2:
+        if require_subtitles and len(subtitles) < 2:
             print(f"Skipping clip {idx}: fewer than 2 valid subtitles", flush=True)
             continue
 
@@ -325,6 +331,67 @@ def postprocess_clips(
     if max_clips > 0:
         cleaned = cleaned[:max_clips]
     return cleaned
+
+
+def add_source_subtitles(clips: list[dict[str, Any]], transcript: Path) -> None:
+    """Keep English text and timings in Python; the model only translates text."""
+    # Imported lazily because the full-segment planner shares ask_deepseek here.
+    from plan_speaker_full import load_transcript_units
+
+    for clip in clips:
+        units = load_transcript_units(
+            transcript,
+            float(clip["start"]),
+            float(clip["end"]),
+            min_seconds=3.0,
+            max_seconds=7.5,
+            max_chars=220,
+        )
+        clip["subtitles"] = [
+            {
+                "index": unit.index,
+                "start": unit.start,
+                "end": unit.end,
+                "relative_start": unit.start - float(clip["start"]),
+                "relative_end": unit.end - float(clip["start"]),
+                "en": unit.en,
+                "zh": "",
+                "zh_highlights": [],
+                "en_highlights": [],
+            }
+            for unit in units
+        ]
+
+
+def translate_clip_subtitles(clips: list[dict[str, Any]], speaker: str, context: str) -> None:
+    """Translate at most ten subtitle units per response and require every row."""
+    from plan_speaker_full import (
+        SubtitleUnit,
+        normalize_highlights,
+        safe_zh,
+        translate_units,
+    )
+
+    for clip_index, clip in enumerate(clips, start=1):
+        units = [
+            SubtitleUnit(index, float(sub["start"]), float(sub["end"]), str(sub["en"]))
+            for index, sub in enumerate(clip["subtitles"], start=1)
+        ]
+        translated = translate_units(units, speaker, context, SUBTITLE_TRANSLATION_BATCH_SIZE)
+        for unit, subtitle in zip(units, clip["subtitles"]):
+            item = translated.get(unit.index, {})
+            raw_zh = item.get("zh") if isinstance(item, dict) else None
+            zh = safe_zh(raw_zh) if isinstance(raw_zh, str) else ""
+            if not zh:
+                raise SystemExit(
+                    f"Missing Chinese translation for clip {clip_index} subtitle {unit.index}"
+                )
+            subtitle.update({
+                "index": unit.index,
+                "zh": zh,
+                "zh_highlights": normalize_highlights(item.get("zh_highlights"), zh),
+                "en_highlights": normalize_highlights(item.get("en_highlights"), unit.en),
+            })
 
 
 def expand_short_clip(

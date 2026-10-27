@@ -347,7 +347,7 @@ def main() -> None:
             combined_clips.append(clip)
         plan_files.append(str(plan_path))
 
-    if not combined_clips:
+    if planner_failures or not combined_clips:
         planning_status = "planner_failed" if planner_failures else "no_eligible_clips"
         write_combined_plan(
             args.combined_plan,
@@ -356,7 +356,7 @@ def main() -> None:
             speakers_path=args.speakers,
             plan_files=plan_files,
             skipped=[*skipped, *planner_failures],
-            clips=[],
+            clips=combined_clips,
             planning_status=planning_status,
         )
         if planner_failures:
@@ -367,7 +367,6 @@ def main() -> None:
             return
         raise SystemExit("No clips planned for any speaker")
 
-    skipped.extend(planner_failures)
     combined = write_combined_plan(
         args.combined_plan,
         speakers_data=speakers_data,

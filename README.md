@@ -80,7 +80,8 @@ Sunday and Monday Beijing runs clip the previous day's Bloomberg Weekend. The
 workflow checks the current Weekend episode first, then drains older unprocessed
 episodes. A committed terminal-state ledger prevents a rendered or intentionally
 skipped Weekend episode from being downloaded again after its clips expire. It
-resolves the Bloomberg URL using the date pattern, downloads the
+resolves China Show URLs from the official series page by publication date, with
+verified long/short-year URLs as a fallback, then downloads the
 episode, transcribes it, selects keynote guest speakers, renders 3-5 KC Desktop
 formatted highlight clips per selected speaker, and commits the generated files
 to:
@@ -94,6 +95,12 @@ Manual dispatch accepts optional `show_date`, `show_type`, `url`,
 defaults to `auto`, which uses China Show for Monday-Friday show dates and
 Bloomberg Weekend for Saturday-Sunday show dates. The default font preset is
 `noto-serif-sc`.
+
+If a previously published show has a recorded speaker-planning failure, set
+`repair_failed_speakers=true` with its explicit `show_date`. This retries only
+the failed speakers and appends eligible clips while preserving existing MP4s.
+New runs fail on actual speaker-planning errors instead of publishing an
+incomplete show as successful; intentional content exclusions remain valid.
 
 ## Daily Bloomberg Top Videos
 
