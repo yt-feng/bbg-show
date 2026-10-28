@@ -1,0 +1,1178 @@
+{
+  "timestamp_utc": "2026-10-28T01:13:43.221110+00:00",
+  "plan_path": "work/top-videos/05_wilson_pinpoints_clearing_events_as_buying_opportunities/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Mike Wilson",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Mike Wilson",
+        "preferred_en": "Mike Wilson",
+        "official_zh": "迈克·威尔逊",
+        "common_zh": "威尔逊",
+        "title_label": "威尔逊",
+        "preferred_zh": "威尔逊",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Morgan Stanley official profile confirms Mike Wilson as Chief U.S. Equity Strategist and CIO; Bloomberg confirms his role. Chinese display form 威尔逊/迈克·威尔逊 is the standard financial-media rendering, but the snippets themselves are English-only, so confidence is"
+      },
+      {
+        "source_text": "Morgan Stanley",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Morgan Stanley",
+        "preferred_en": "Morgan Stanley",
+        "official_zh": "摩根士丹利",
+        "common_zh": "摩根士丹利",
+        "title_label": "摩根士丹利",
+        "preferred_zh": "摩根士丹利",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Official Morgan Stanley page and Bloomberg article both identify the firm; 摩根士丹利 is the established Simplified Chinese name used by Chinese financial media."
+      },
+      {
+        "source_text": "midterm elections",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "U.S. midterm elections",
+        "preferred_en": "U.S. midterm elections",
+        "official_zh": "美国中期选举",
+        "common_zh": "中期选举",
+        "title_label": "中期选举",
+        "preferred_zh": "中期选举",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg and MarketWatch both reference the U.S. midterm elections in the context of Wilson's clearing-event thesis; 中期选举 is the standard Chinese term."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "clearing events",
+        "clip_indexes": [],
+        "context": "Wilson's note on market catalysts",
+        "sense": "market-moving events whose resolution removes uncertainty and unlocks risk appetite",
+        "preferred_zh": "出清事件",
+        "title_label": "出清事件",
+        "avoid_zh": [
+          "清算事件",
+          "清除事件"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "adding risk",
+        "clip_indexes": [],
+        "context": "portfolio positioning around catalysts",
+        "sense": "increasing exposure to risk assets such as equities",
+        "preferred_zh": "加仓风险资产",
+        "title_label": "加仓风险资产",
+        "avoid_zh": [
+          "增加风险"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Wilson says that over the next six to 12 months after midterm elections, going back to 1952, there is 100% certainty of positive returns, usually double digits.",
+        "public_baseline": "Multiple public sources (J.P. Morgan Asset Management, Yahoo Finance/Baird, simianx.ai) state the S&P 500 has risen in the 12 months after every midterm election since 1950, averaging roughly 15%.",
+        "surprise_gap": "Wilson's '100% certainty' framing is rhetorically strong but broadly consistent with the historical record cited publicly; the surprise is the absolutist phrasing rather than a factual contradiction.",
+        "speaker_relation": "foreign_expert",
+        "supported_angles": [
+          "outsider_candor",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Wilson identifies midterm elections as a clearing event and claims 100% certainty of positive 6-12 month returns since 1952, usually double digits."
+          },
+          {
+            "kind": "public",
+            "query": "S&P 500 returns after midterm elections since 1952 positive 12 months",
+            "url": "https://am.jpmorgan.com/us/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/",
+            "fact": "J.P. Morgan Asset Management: S&P 500 positive in 12 months after every midterm election, average ~15%."
+          },
+          {
+            "kind": "public",
+            "query": "Morgan Stanley Mike Wilson three clearing events midterm elections note 2022",
+            "url": "https://www.bloomberg.com/news/articles/2022-11-07/morgan-stanley-s-wilson-says-us-midterms-could-fuel-equity-rally",
+            "fact": "Bloomberg (Nov 2022): Wilson urged investors to stay bullish ahead of midterms, calling them a clearing event."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim Wilson predicted a specific percentage gain or named all three clearing events if the transcript does not.",
+          "Do not claim Wilson's historical claim is false; public data broadly supports positive post-midterm returns.",
+          "Do not attribute Bloomberg's or the host's views to Wilson.",
+          "Do not claim Wilson changed his position without exact prior statements."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Chinese display forms for Mike Wilson are inferred from standard financial-media usage; the retrieved snippets are English-only, so entity confidence is capped at medium.",
+      "The transcript is garbled in places ('12% bond in Brazil', 'pastles'); these were not treated as verifiable claims.",
+      "Only one of the three clearing events (midterm elections) is clearly identifiable in the transcript; the other two should not be named without further evidence."
+    ],
+    "research_queries": [
+      {
+        "query": "摩根士丹利 迈克·威尔逊 Mike Wilson 首席投资官 中文名",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name and title for Morgan Stanley's Mike Wilson"
+      },
+      {
+        "query": "Morgan Stanley Mike Wilson three clearing events midterm elections note 2022",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Wilson's note identifying three clearing events including midterm elections and the claim of positive 6-12 month returns since 1952"
+      },
+      {
+        "query": "S&P 500 returns after midterm elections since 1952 positive 12 months",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check the historical baseline for post-midterm equity returns to test whether Wilson's 100% certainty claim is accurate"
+      },
+      {
+        "query": "Mike Wilson Morgan Stanley 2022 market outlook earnings growth another leg higher",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Wilson's stated view that earnings growth would drive another leg higher and that rates had steadied"
+      },
+      {
+        "query": "Mike Wilson Morgan Stanley 2023 S&P 500 forecast bearish turned bullish",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether Wilson's later public stance changed from the risk-on buying-opportunity view in this clip"
+      },
+      {
+        "query": "摩根士丹利 威尔逊 美股 2023 看空 预测 复盘",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Chinese-language check on whether Morgan Stanley Wilson's later bearish calls contradict the clip's add-risk stance"
+      },
+      {
+        "query": "Brazil 12% bond yield 2022 Morgan Stanley Wilson",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific reference to a 12% Brazil bond yield mentioned by Wilson"
+      },
+      {
+        "query": "Bloomberg Wilson Pinpoints established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Wilson Pinpoints 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Clearing Events' 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "Buying Opportunities 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-28T01:13:41.039086+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 80.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities",
+          "source_title": "Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities",
+          "show_date": "",
+          "current_title": "摩根士丹利威尔逊：三大事件落地或成市场配置窗口",
+          "current_title_lines": [
+            "摩根士丹利威尔逊",
+            "三大事件落地窗口",
+            "市场配置机会浮现"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "摩根士丹利的Mike Wilson写道，未来几周将有几项出清事件上演。",
+              "en": "Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.",
+              "relative_start": 0.0,
+              "relative_end": 5.2
+            },
+            {
+              "index": 2,
+              "zh": "这应会提供有吸引力的买入机会，因市场预期盈利增长将再上一个台阶。Mike现在加入我们带来更多分析。Mike，早上好。",
+              "en": "This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.",
+              "relative_start": 5.2,
+              "relative_end": 13.1
+            },
+            {
+              "index": 3,
+              "zh": "早上好。这些出清事件是你本周初报告的重点。你指出了三个。今天能和我们分享一下吗？",
+              "en": "Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?",
+              "relative_start": 13.1,
+              "relative_end": 19.3
+            },
+            {
+              "index": 4,
+              "zh": "好的。首先，也许我们在巴西还能获得12%的债券收益。别忘了这一点。",
+              "en": "Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.",
+              "relative_start": 19.3,
+              "relative_end": 24.6
+            },
+            {
+              "index": 5,
+              "zh": "所以，我想说的是，市场有其运行方式，人们关注过去的部分原因是事情太多，无法集中注意力。",
+              "en": "So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.",
+              "relative_start": 24.6,
+              "relative_end": 31.8
+            },
+            {
+              "index": 6,
+              "zh": "因此，市场会抓住它们所知道的，即盈利仍然相当不错。",
+              "en": "So, the markets kind of grab onto what they know, which is earnings are still pretty good.",
+              "relative_start": 31.8,
+              "relative_end": 35.4
+            },
+            {
+              "index": 7,
+              "zh": "利率实际上已经下降，更加稳定，所以这不是一个糟糕的环境来考虑增加风险。现在，我们最关注的三个事情，",
+              "en": "Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,",
+              "relative_start": 35.4,
+              "relative_end": 43.8
+            },
+            {
+              "index": 8,
+              "zh": "不分先后，明显的是中期选举，这总是一个出清事件。我的意思是，历史上，这总是增加风险的好时机。现在，",
+              "en": "and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,",
+              "relative_start": 43.8,
+              "relative_end": 52.0
+            },
+            {
+              "index": 9,
+              "zh": "有时可能会再持续一个月左右，但在未来6到12个月，100%确定，回溯到1952年，你会获得正回报，通常还是两位数。",
+              "en": "sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.",
+              "relative_start": 52.0,
+              "relative_end": 61.0
+            },
+            {
+              "index": 10,
+              "zh": "所以，这只是你要记在心里的事情，当事情变得波动时，记住这一点，你应该介入并增加风险。",
+              "en": "So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.",
+              "relative_start": 61.0,
+              "relative_end": 67.3
+            },
+            {
+              "index": 11,
+              "zh": "第二点，我认为是关于AI资本回流和资金稀缺性的观点。",
+              "en": "Number two, I think, is around this idea around AI catbacks and the scarcity of capital.",
+              "relative_start": 67.3,
+              "relative_end": 73.2
+            },
+            {
+              "index": 12,
+              "zh": "这一点也相当好理解，我认为这些公司处理得当，对吧？他们在股权发行和债务发行之间来回操作。",
+              "en": "Okay, that one's pretty well understood too, and I think these companies are dealing with it properly, right? So, they're doing the back and forth between equity issuance and debt issuance.",
+              "relative_start": 73.2,
+              "relative_end": 80.6
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 80.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"source_title\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"show_date\": \"\",\n    \"current_title\": \"摩根士丹利威尔逊：三大事件落地或成市场配置窗口\",\n    \"current_title_lines\": [\n      \"摩根士丹利威尔逊\",\n      \"三大事件落地窗口\",\n      \"市场配置机会浮现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"摩根士丹利的Mike Wilson写道，未来几周将有几项出清事件上演。\",\n        \"en\": \"Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这应会提供有吸引力的买入机会，因市场预期盈利增长将再上一个台阶。Mike现在加入我们带来更多分析。Mike，早上好。\",\n        \"en\": \"This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.\",\n        \"relative_start\": 5.2,\n        \"relative_end\": 13.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"早上好。这些出清事件是你本周初报告的重点。你指出了三个。今天能和我们分享一下吗？\",\n        \"en\": \"Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?\",\n        \"relative_start\": 13.1,\n        \"relative_end\": 19.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"好的。首先，也许我们在巴西还能获得12%的债券收益。别忘了这一点。\",\n        \"en\": \"Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.\",\n        \"relative_start\": 19.3,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以，我想说的是，市场有其运行方式，人们关注过去的部分原因是事情太多，无法集中注意力。\",\n        \"en\": \"So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，市场会抓住它们所知道的，即盈利仍然相当不错。\",\n        \"en\": \"So, the markets kind of grab onto what they know, which is earnings are still pretty good.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"利率实际上已经下降，更加稳定，所以这不是一个糟糕的环境来考虑增加风险。现在，我们最关注的三个事情，\",\n        \"en\": \"Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,\",\n        \"relative_start\": 35.4,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"不分先后，明显的是中期选举，这总是一个出清事件。我的意思是，历史上，这总是增加风险的好时机。现在，\",\n        \"en\": \"and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"有时可能会再持续一个月左右，但在未来6到12个月，100%确定，回溯到1952年，你会获得正回报，通常还是两位数。\",\n        \"en\": \"sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以，这只是你要记在心里的事情，当事情变得波动时，记住这一点，你应该介入并增加风险。\",\n        \"en\": \"So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 67.3\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"第二点，我认为是关于AI资本回流和资金稀缺性的观点。\",\n        \"en\": \"Number two, I think, is around this idea around AI catbacks and the scarcity of capital.\",\n        \"relative_start\": 67.3,\n        \"relative_end\": 73.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这一点也相当好理解，我认为这些公司处理得当，对吧？他们在股权发行和债务发行之间来回操作。\",\n        \"en\": \"Okay, that one's pretty well understood too, and I think these companies are dealing with it properly, right? So, they're doing the back and forth between equity issuance and debt issuance.\",\n        \"relative_start\": 73.2,\n        \"relative_end\": 80.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Wilson says that over the next six to 12 months after midterm elections, going back to 1952, there is 100% certainty of positive returns, usually double digits.\",\n      \"public_baseline\": \"Multiple public sources (J.P. Morgan Asset Management, Yahoo Finance/Baird, simianx.ai) state the S&P 500 has risen in the 12 months after every midterm election since 1950, averaging roughly 15%.\",\n      \"surprise_gap\": \"Wilson's '100% certainty' framing is rhetorically strong but broadly consistent with the historical record cited publicly; the surprise is the absolutist phrasing rather than a factual contradiction.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Wilson identifies midterm elections as a clearing event and claims 100% certainty of positive 6-12 month returns since 1952, usually double digits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"S&P 500 returns after midterm elections since 1952 positive 12 months\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/\",\n          \"fact\": \"J.P. Morgan Asset Management: S&P 500 positive in 12 months after every midterm election, average ~15%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Morgan Stanley Mike Wilson three clearing events midterm elections note 2022\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2022-11-07/morgan-stanley-s-wilson-says-us-midterms-could-fuel-equity-rally\",\n          \"fact\": \"Bloomberg (Nov 2022): Wilson urged investors to stay bullish ahead of midterms, calling them a clearing event.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Wilson predicted a specific percentage gain or named all three clearing events if the transcript does not.\",\n        \"Do not claim Wilson's historical claim is false; public data broadly supports positive post-midterm returns.\",\n        \"Do not attribute Bloomberg's or the host's views to Wilson.\",\n        \"Do not claim Wilson changed his position without exact prior statements.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Chinese display forms for Mike Wilson are inferred from standard financial-media usage; the retrieved snippets are English-only, so entity confidence is capped at medium.\",\n    \"The transcript is garbled in places ('12% bond in Brazil', 'pastles'); these were not treated as verifiable claims.\",\n    \"Only one of the three clearing events (midterm elections) is clearly identifiable in the transcript; the other two should not be named without further evidence.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "摩根士丹利Mike Wilson称中期选举是出清事件，并称回溯至1952年，中期选举后6到12个月正回报概率100%，通常为两位数。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "中期选举后6到12个月\n正回报概率100%\nWilson这次把话说满",
+                "title_lines": [
+                  "中期选举后6到12个月",
+                  "正回报概率100%",
+                  "Wilson这次把话说满"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数",
+                  "public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "摩根士丹利Wilson\n把中期选举当出清事件\n波动越大越该加风险",
+                "title_lines": [
+                  "摩根士丹利Wilson",
+                  "把中期选举当出清事件",
+                  "波动越大越该加风险"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Wilson称中期选举总是出清事件，历史上是增加风险的好时机",
+                  "transcript: Wilson称市场波动时应介入并增加风险"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "1952年以来100%正回报\n中期选举后6到12个月\n这次还能两位数吗",
+                "title_lines": [
+                  "1952年以来100%正回报",
+                  "中期选举后6到12个月",
+                  "这次还能两位数吗"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报100%，通常两位数"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "Wilson点破市场惯性\n盈利仍不错利率趋稳\n出清事件就是配置窗口",
+                "title_lines": [
+                  "Wilson点破市场惯性",
+                  "盈利仍不错利率趋稳",
+                  "出清事件就是配置窗口"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Wilson称市场抓住已知的盈利不错，利率已下降更稳定，环境不差适合增加风险",
+                  "transcript: Wilson称出清事件应提供有吸引力的买入机会"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 80.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"source_title\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"show_date\": \"\",\n    \"current_title\": \"摩根士丹利威尔逊：三大事件落地或成市场配置窗口\",\n    \"current_title_lines\": [\n      \"摩根士丹利威尔逊\",\n      \"三大事件落地窗口\",\n      \"市场配置机会浮现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"摩根士丹利的Mike Wilson写道，未来几周将有几项出清事件上演。\",\n        \"en\": \"Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这应会提供有吸引力的买入机会，因市场预期盈利增长将再上一个台阶。Mike现在加入我们带来更多分析。Mike，早上好。\",\n        \"en\": \"This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.\",\n        \"relative_start\": 5.2,\n        \"relative_end\": 13.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"早上好。这些出清事件是你本周初报告的重点。你指出了三个。今天能和我们分享一下吗？\",\n        \"en\": \"Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?\",\n        \"relative_start\": 13.1,\n        \"relative_end\": 19.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"好的。首先，也许我们在巴西还能获得12%的债券收益。别忘了这一点。\",\n        \"en\": \"Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.\",\n        \"relative_start\": 19.3,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以，我想说的是，市场有其运行方式，人们关注过去的部分原因是事情太多，无法集中注意力。\",\n        \"en\": \"So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，市场会抓住它们所知道的，即盈利仍然相当不错。\",\n        \"en\": \"So, the markets kind of grab onto what they know, which is earnings are still pretty good.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"利率实际上已经下降，更加稳定，所以这不是一个糟糕的环境来考虑增加风险。现在，我们最关注的三个事情，\",\n        \"en\": \"Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,\",\n        \"relative_start\": 35.4,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"不分先后，明显的是中期选举，这总是一个出清事件。我的意思是，历史上，这总是增加风险的好时机。现在，\",\n        \"en\": \"and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"有时可能会再持续一个月左右，但在未来6到12个月，100%确定，回溯到1952年，你会获得正回报，通常还是两位数。\",\n        \"en\": \"sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以，这只是你要记在心里的事情，当事情变得波动时，记住这一点，你应该介入并增加风险。\",\n        \"en\": \"So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 67.3\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"第二点，我认为是关于AI资本回流和资金稀缺性的观点。\",\n        \"en\": \"Number two, I think, is around this idea around AI catbacks and the scarcity of capital.\",\n        \"relative_start\": 67.3,\n        \"relative_end\": 73.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这一点也相当好理解，我认为这些公司处理得当，对吧？他们在股权发行和债务发行之间来回操作。\",\n        \"en\": \"Okay, that one's pretty well understood too, and I think these companies are dealing with it properly, right? So, they're doing the back and forth between equity issuance and debt issuance.\",\n        \"relative_start\": 73.2,\n        \"relative_end\": 80.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Wilson says that over the next six to 12 months after midterm elections, going back to 1952, there is 100% certainty of positive returns, usually double digits.\",\n      \"public_baseline\": \"Multiple public sources (J.P. Morgan Asset Management, Yahoo Finance/Baird, simianx.ai) state the S&P 500 has risen in the 12 months after every midterm election since 1950, averaging roughly 15%.\",\n      \"surprise_gap\": \"Wilson's '100% certainty' framing is rhetorically strong but broadly consistent with the historical record cited publicly; the surprise is the absolutist phrasing rather than a factual contradiction.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Wilson identifies midterm elections as a clearing event and claims 100% certainty of positive 6-12 month returns since 1952, usually double digits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"S&P 500 returns after midterm elections since 1952 positive 12 months\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/\",\n          \"fact\": \"J.P. Morgan Asset Management: S&P 500 positive in 12 months after every midterm election, average ~15%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Morgan Stanley Mike Wilson three clearing events midterm elections note 2022\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2022-11-07/morgan-stanley-s-wilson-says-us-midterms-could-fuel-equity-rally\",\n          \"fact\": \"Bloomberg (Nov 2022): Wilson urged investors to stay bullish ahead of midterms, calling them a clearing event.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Wilson predicted a specific percentage gain or named all three clearing events if the transcript does not.\",\n        \"Do not claim Wilson's historical claim is false; public data broadly supports positive post-midterm returns.\",\n        \"Do not attribute Bloomberg's or the host's views to Wilson.\",\n        \"Do not claim Wilson changed his position without exact prior statements.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Chinese display forms for Mike Wilson are inferred from standard financial-media usage; the retrieved snippets are English-only, so entity confidence is capped at medium.\",\n    \"The transcript is garbled in places ('12% bond in Brazil', 'pastles'); these were not treated as verifiable claims.\",\n    \"Only one of the three clearing events (midterm elections) is clearly identifiable in the transcript; the other two should not be named without further evidence.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"摩根士丹利Mike Wilson称中期选举是出清事件，并称回溯至1952年，中期选举后6到12个月正回报概率100%，通常为两位数。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"中期选举后6到12个月\\n正回报概率100%\\nWilson这次把话说满\",\n          \"title_lines\": [\n            \"中期选举后6到12个月\",\n            \"正回报概率100%\",\n            \"Wilson这次把话说满\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数\",\n            \"public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"摩根士丹利Wilson\\n把中期选举当出清事件\\n波动越大越该加风险\",\n          \"title_lines\": [\n            \"摩根士丹利Wilson\",\n            \"把中期选举当出清事件\",\n            \"波动越大越该加风险\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称中期选举总是出清事件，历史上是增加风险的好时机\",\n            \"transcript: Wilson称市场波动时应介入并增加风险\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"1952年以来100%正回报\\n中期选举后6到12个月\\n这次还能两位数吗\",\n          \"title_lines\": [\n            \"1952年以来100%正回报\",\n            \"中期选举后6到12个月\",\n            \"这次还能两位数吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报100%，通常两位数\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Wilson点破市场惯性\\n盈利仍不错利率趋稳\\n出清事件就是配置窗口\",\n          \"title_lines\": [\n            \"Wilson点破市场惯性\",\n            \"盈利仍不错利率趋稳\",\n            \"出清事件就是配置窗口\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称市场抓住已知的盈利不错，利率已下降更稳定，环境不差适合增加风险\",\n            \"transcript: Wilson称出清事件应提供有吸引力的买入机会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "权威人物+具体数字+强反差",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然敢说100%",
+            "evidence_basis": [
+              "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数",
+              "public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态"
+            ],
+            "title": "摩根士丹利Wilson\n中期选举后6到12个月\n正回报概率100%",
+            "title_lines": [
+              "摩根士丹利Wilson",
+              "中期选举后6到12个月",
+              "正回报概率100%"
+            ],
+            "title_highlights": [
+              "摩根士丹利Wilson",
+              "正回报概率100%"
+            ],
+            "runner_up_titles": [
+              "1952年以来100%正回报\n中期选举后6到12个月\n这次还能两位数吗",
+              "摩根士丹利Wilson\n把中期选举当出清事件\n波动越大越该加风险"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：Wilson把历史概率说满，市场波动时他反而建议增加风险敞口。",
+            "comment_highlights": [
+              "增加风险敞口"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：出清事件是Wilson本周报告的核心线索。",
+                "comment_highlights": [
+                  "出清事件"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：他把出清事件直接定义为有吸引力的配置窗口。",
+                "comment_highlights": [
+                  "配置窗口"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：主持人追问三个事件，Wilson只明确了一个。",
+                "comment_highlights": [
+                  "三个事件"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：巴西债券收益被顺带提及，但并非核心论点。",
+                "comment_highlights": [
+                  "巴西债券收益"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：信息过载时，市场习惯抓住已知的盈利。",
+                "comment_highlights": [
+                  "信息过载"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：盈利仍不错，是Wilson判断风险偏好的基础。",
+                "comment_highlights": [
+                  "盈利仍不错"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：利率趋稳，被他视为增加风险敞口的条件。",
+                "comment_highlights": [
+                  "利率趋稳"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：中期选举被他列为最明显的出清事件。",
+                "comment_highlights": [
+                  "中期选举"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：100%正回报的说法，来自1952年以来的历史回溯。",
+                "comment_highlights": [
+                  "100%正回报"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：市场波动时，他的建议是介入而非回避。",
+                "comment_highlights": [
+                  "介入"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：AI资本回流与资金稀缺性，是第二个关注点。",
+                "comment_highlights": [
+                  "AI资本回流"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：股权与债务发行交替，是企业应对资金稀缺的方式。",
+                "comment_highlights": [
+                  "股权与债务发行"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 80.6,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"source_title\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n    \"show_date\": \"\",\n    \"current_title\": \"摩根士丹利威尔逊：三大事件落地或成市场配置窗口\",\n    \"current_title_lines\": [\n      \"摩根士丹利威尔逊\",\n      \"三大事件落地窗口\",\n      \"市场配置机会浮现\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"摩根士丹利的Mike Wilson写道，未来几周将有几项出清事件上演。\",\n        \"en\": \"Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这应会提供有吸引力的买入机会，因市场预期盈利增长将再上一个台阶。Mike现在加入我们带来更多分析。Mike，早上好。\",\n        \"en\": \"This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.\",\n        \"relative_start\": 5.2,\n        \"relative_end\": 13.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"早上好。这些出清事件是你本周初报告的重点。你指出了三个。今天能和我们分享一下吗？\",\n        \"en\": \"Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?\",\n        \"relative_start\": 13.1,\n        \"relative_end\": 19.3\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"好的。首先，也许我们在巴西还能获得12%的债券收益。别忘了这一点。\",\n        \"en\": \"Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.\",\n        \"relative_start\": 19.3,\n        \"relative_end\": 24.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"所以，我想说的是，市场有其运行方式，人们关注过去的部分原因是事情太多，无法集中注意力。\",\n        \"en\": \"So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.\",\n        \"relative_start\": 24.6,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"因此，市场会抓住它们所知道的，即盈利仍然相当不错。\",\n        \"en\": \"So, the markets kind of grab onto what they know, which is earnings are still pretty good.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"利率实际上已经下降，更加稳定，所以这不是一个糟糕的环境来考虑增加风险。现在，我们最关注的三个事情，\",\n        \"en\": \"Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,\",\n        \"relative_start\": 35.4,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"不分先后，明显的是中期选举，这总是一个出清事件。我的意思是，历史上，这总是增加风险的好时机。现在，\",\n        \"en\": \"and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"有时可能会再持续一个月左右，但在未来6到12个月，100%确定，回溯到1952年，你会获得正回报，通常还是两位数。\",\n        \"en\": \"sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以，这只是你要记在心里的事情，当事情变得波动时，记住这一点，你应该介入并增加风险。\",\n        \"en\": \"So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 67.3\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"第二点，我认为是关于AI资本回流和资金稀缺性的观点。\",\n        \"en\": \"Number two, I think, is around this idea around AI catbacks and the scarcity of capital.\",\n        \"relative_start\": 67.3,\n        \"relative_end\": 73.2\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这一点也相当好理解，我认为这些公司处理得当，对吧？他们在股权发行和债务发行之间来回操作。\",\n        \"en\": \"Okay, that one's pretty well understood too, and I think these companies are dealing with it properly, right? So, they're doing the back and forth between equity issuance and debt issuance.\",\n        \"relative_start\": 73.2,\n        \"relative_end\": 80.6\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Wilson says that over the next six to 12 months after midterm elections, going back to 1952, there is 100% certainty of positive returns, usually double digits.\",\n      \"public_baseline\": \"Multiple public sources (J.P. Morgan Asset Management, Yahoo Finance/Baird, simianx.ai) state the S&P 500 has risen in the 12 months after every midterm election since 1950, averaging roughly 15%.\",\n      \"surprise_gap\": \"Wilson's '100% certainty' framing is rhetorically strong but broadly consistent with the historical record cited publicly; the surprise is the absolutist phrasing rather than a factual contradiction.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Wilson identifies midterm elections as a clearing event and claims 100% certainty of positive 6-12 month returns since 1952, usually double digits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"S&P 500 returns after midterm elections since 1952 positive 12 months\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/\",\n          \"fact\": \"J.P. Morgan Asset Management: S&P 500 positive in 12 months after every midterm election, average ~15%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Morgan Stanley Mike Wilson three clearing events midterm elections note 2022\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2022-11-07/morgan-stanley-s-wilson-says-us-midterms-could-fuel-equity-rally\",\n          \"fact\": \"Bloomberg (Nov 2022): Wilson urged investors to stay bullish ahead of midterms, calling them a clearing event.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Wilson predicted a specific percentage gain or named all three clearing events if the transcript does not.\",\n        \"Do not claim Wilson's historical claim is false; public data broadly supports positive post-midterm returns.\",\n        \"Do not attribute Bloomberg's or the host's views to Wilson.\",\n        \"Do not claim Wilson changed his position without exact prior statements.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Chinese display forms for Mike Wilson are inferred from standard financial-media usage; the retrieved snippets are English-only, so entity confidence is capped at medium.\",\n    \"The transcript is garbled in places ('12% bond in Brazil', 'pastles'); these were not treated as verifiable claims.\",\n    \"Only one of the three clearing events (midterm elections) is clearly identifiable in the transcript; the other two should not be named without further evidence.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"摩根士丹利Mike Wilson称中期选举是出清事件，并称回溯至1952年，中期选举后6到12个月正回报概率100%，通常为两位数。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"中期选举后6到12个月\\n正回报概率100%\\nWilson这次把话说满\",\n          \"title_lines\": [\n            \"中期选举后6到12个月\",\n            \"正回报概率100%\",\n            \"Wilson这次把话说满\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数\",\n            \"public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"摩根士丹利Wilson\\n把中期选举当出清事件\\n波动越大越该加风险\",\n          \"title_lines\": [\n            \"摩根士丹利Wilson\",\n            \"把中期选举当出清事件\",\n            \"波动越大越该加风险\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称中期选举总是出清事件，历史上是增加风险的好时机\",\n            \"transcript: Wilson称市场波动时应介入并增加风险\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"1952年以来100%正回报\\n中期选举后6到12个月\\n这次还能两位数吗\",\n          \"title_lines\": [\n            \"1952年以来100%正回报\",\n            \"中期选举后6到12个月\",\n            \"这次还能两位数吗\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报100%，通常两位数\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"Wilson点破市场惯性\\n盈利仍不错利率趋稳\\n出清事件就是配置窗口\",\n          \"title_lines\": [\n            \"Wilson点破市场惯性\",\n            \"盈利仍不错利率趋稳\",\n            \"出清事件就是配置窗口\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Wilson称市场抓住已知的盈利不错，利率已下降更稳定，环境不差适合增加风险\",\n            \"transcript: Wilson称出清事件应提供有吸引力的买入机会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%\",\n      \"title_lines\": [\n        \"摩根士丹利Wilson\",\n        \"中期选举后6到12个月\",\n        \"正回报概率100%\"\n      ],\n      \"title_highlights\": [\n        \"摩根士丹利Wilson\",\n        \"正回报概率100%\"\n      ],\n      \"comment\": \"KC评论：Wilson把历史概率说满，市场波动时他反而建议增加风险敞口\",\n      \"comment_highlights\": [\n        \"增加风险敞口\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：出清事件是Wilson本周报告的核心线索\",\n          \"comment_highlights\": [\n            \"出清事件\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：他把出清事件直接定义为有吸引力的配置窗口\",\n          \"comment_highlights\": [\n            \"配置窗口\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：主持人追问三个事件，Wilson只明确了一个\",\n          \"comment_highlights\": [\n            \"三个事件\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：巴西债券收益被顺带提及，但并非核心论点\",\n          \"comment_highlights\": [\n            \"巴西债券收益\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：信息过载时，市场习惯抓住已知的盈利\",\n          \"comment_highlights\": [\n            \"信息过载\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：盈利仍不错，是Wilson判断风险偏好的基础\",\n          \"comment_highlights\": [\n            \"盈利仍不错\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：利率趋稳，被他视为增加风险敞口的条件\",\n          \"comment_highlights\": [\n            \"利率趋稳\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：中期选举被他列为最明显的出清事件\",\n          \"comment_highlights\": [\n            \"中期选举\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：100%正回报的说法，来自1952年以来的历史回溯\",\n          \"comment_highlights\": [\n            \"100%正回报\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：市场波动时，他的建议是介入而非回避\",\n          \"comment_highlights\": [\n            \"介入\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：AI资本回流与资金稀缺性，是第二个关注点\",\n          \"comment_highlights\": [\n            \"AI资本回流\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：股权与债务发行交替，是企业应对资金稀缺的方式\",\n          \"comment_highlights\": [\n            \"股权与债务发行\"\n          ]\n        }\n      ],\n      \"formula_id\": \"权威人物+具体数字+强反差\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然敢说100%\",\n      \"evidence_basis\": [\n        \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数\",\n        \"public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态\"\n      ],\n      \"runner_up_titles\": [\n        \"1952年以来100%正回报 中期选举后6到12个月 这次还能两位数吗\",\n        \"摩根士丹利Wilson 把中期选举当出清事件 波动越大越该加风险\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 87,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"tighten_display_lines\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"tighten_display_lines\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "权威人物+具体数字+强反差",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然敢把概率说成100%",
+                "evidence_basis": [
+                  "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数",
+                  "transcript: Wilson称中期选举总是出清事件，历史上是增加风险的好时机",
+                  "public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态"
+                ],
+                "title": "摩根士丹利Wilson\n中期选举后6到12个月\n正回报概率100%",
+                "title_lines": [
+                  "摩根士丹利Wilson",
+                  "中期选举后6到12个月",
+                  "正回报概率100%"
+                ],
+                "title_highlights": [
+                  "摩根士丹利Wilson",
+                  "正回报概率100%"
+                ],
+                "runner_up_titles": [
+                  "1952年以来100%正回报 中期选举后6到12个月 这次还能两位数吗",
+                  "摩根士丹利Wilson 把中期选举当出清事件 波动越大越该加风险"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：Wilson把历史概率说满，市场波动时他反而建议增加风险敞口",
+                "comment_highlights": [
+                  "增加风险敞口"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：出清事件是Wilson本周报告的核心线索",
+                    "comment_highlights": [
+                      "出清事件"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：他把出清事件直接定义为有吸引力的配置窗口",
+                    "comment_highlights": [
+                      "配置窗口"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：主持人追问三个事件，Wilson只明确了一个",
+                    "comment_highlights": [
+                      "三个事件"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：巴西债券收益被顺带提及，但并非核心论点",
+                    "comment_highlights": [
+                      "巴西债券收益"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：信息过载时，市场习惯抓住已知的盈利",
+                    "comment_highlights": [
+                      "信息过载"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：盈利仍不错，是Wilson判断风险偏好的基础",
+                    "comment_highlights": [
+                      "盈利仍不错"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：利率趋稳，被他视为增加风险敞口的条件",
+                    "comment_highlights": [
+                      "利率趋稳"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：中期选举被他列为最明显的出清事件",
+                    "comment_highlights": [
+                      "中期选举"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：100%正回报的说法，来自1952年以来的历史回溯",
+                    "comment_highlights": [
+                      "100%正回报"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：市场波动时，他的建议是介入而非回避",
+                    "comment_highlights": [
+                      "介入"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：AI资本回流与资金稀缺性，是第二个关注点",
+                    "comment_highlights": [
+                      "AI资本回流"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：股权与债务发行交替，是企业应对资金稀缺的方式",
+                    "comment_highlights": [
+                      "股权与债务发行"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%",
+          "title_lines": [
+            "摩根士丹利Wilson",
+            "中期选举后6到12个月",
+            "正回报概率100%"
+          ],
+          "formula_id": "权威人物+具体数字+强反差",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然敢说100%",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 87,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words",
+              "tighten_display_lines"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：Wilson把历史概率说满，市场波动时他反而建议增加风险敞口"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-28T01:13:43.204387+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 80.6,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities",
+          "source_title": "Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities",
+          "show_date": "",
+          "current_title": "摩根士丹利威尔逊：三大事件落地或成市场配置窗口",
+          "current_title_lines": [
+            "摩根士丹利威尔逊",
+            "三大事件落地窗口",
+            "市场配置机会浮现"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "摩根士丹利的Mike Wilson写道，未来几周将有几项出清事件上演。",
+              "en": "Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.",
+              "relative_start": 0.0,
+              "relative_end": 5.2
+            },
+            {
+              "index": 2,
+              "zh": "这应会提供有吸引力的买入机会，因市场预期盈利增长将再上一个台阶。Mike现在加入我们带来更多分析。Mike，早上好。",
+              "en": "This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.",
+              "relative_start": 5.2,
+              "relative_end": 13.1
+            },
+            {
+              "index": 3,
+              "zh": "早上好。这些出清事件是你本周初报告的重点。你指出了三个。今天能和我们分享一下吗？",
+              "en": "Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?",
+              "relative_start": 13.1,
+              "relative_end": 19.3
+            },
+            {
+              "index": 4,
+              "zh": "好的。首先，也许我们在巴西还能获得12%的债券收益。别忘了这一点。",
+              "en": "Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.",
+              "relative_start": 19.3,
+              "relative_end": 24.6
+            },
+            {
+              "index": 5,
+              "zh": "所以，我想说的是，市场有其运行方式，人们关注过去的部分原因是事情太多，无法集中注意力。",
+              "en": "So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.",
+              "relative_start": 24.6,
+              "relative_end": 31.8
+            },
+            {
+              "index": 6,
+              "zh": "因此，市场会抓住它们所知道的，即盈利仍然相当不错。",
+              "en": "So, the markets kind of grab onto what they know, which is earnings are still pretty good.",
+              "relative_start": 31.8,
+              "relative_end": 35.4
+            },
+            {
+              "index": 7,
+              "zh": "利率实际上已经下降，更加稳定，所以这不是一个糟糕的环境来考虑增加风险。现在，我们最关注的三个事情，",
+              "en": "Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,",
+              "relative_start": 35.4,
+              "relative_end": 43.8
+            },
+            {
+              "index": 8,
+              "zh": "不分先后，明显的是中期选举，这总是一个出清事件。我的意思是，历史上，这总是增加风险的好时机。现在，",
+              "en": "and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,",
+              "relative_start": 43.8,
+              "relative_end": 52.0
+            },
+            {
+              "index": 9,
+              "zh": "有时可能会再持续一个月左右，但在未来6到12个月，100%确定，回溯到1952年，你会获得正回报，通常还是两位数。",
+              "en": "sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.",
+              "relative_start": 52.0,
+              "relative_end": 61.0
+            },
+            {
+              "index": 10,
+              "zh": "所以，这只是你要记在心里的事情，当事情变得波动时，记住这一点，你应该介入并增加风险。",
+              "en": "So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.",
+              "relative_start": 61.0,
+              "relative_end": 67.3
+            },
+            {
+              "index": 11,
+              "zh": "第二点，我认为是关于AI资本回流和资金稀缺性的观点。",
+              "en": "Number two, I think, is around this idea around AI catbacks and the scarcity of capital.",
+              "relative_start": 67.3,
+              "relative_end": 73.2
+            },
+            {
+              "index": 12,
+              "zh": "这一点也相当好理解，我认为这些公司处理得当，对吧？他们在股权发行和债务发行之间来回操作。",
+              "en": "Okay, that one's pretty well understood too, and I think these companies are dealing with it properly, right? So, they're doing the back and forth between equity issuance and debt issuance.",
+              "relative_start": 73.2,
+              "relative_end": 80.6
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n  \"source_title\": \"Duration: 5:42 Wilson Pinpoints 'Clearing Events' as Buying Opportunities\",\n  \"current_title\": \"摩根士丹利威尔逊：三大事件落地或成市场配置窗口\",\n  \"source_claims\": [\n    \"Mike Wilson of Morgan Stanley writing several clearing events play out over the next few weeks.\",\n    \"This should provide attractive buying opportunities as the market looks ahead to another leg higher in earnings growth. Mike joins us now for more. Mike, good morning.\",\n    \"Good morning. Those clearing events were the feature of your note to start this week. You identified three of them. Can you share them with us this morning?\",\n    \"Yeah. Well, first of all, maybe we get 12% bond in Brazil too. Don't forget about that.\",\n    \"So, what I would say is, you know, the markets have a way, and part of the reason why the people are kind of looking at pastles. There's so much going on, they can't focus.\",\n    \"So, the markets kind of grab onto what they know, which is earnings are still pretty good.\",\n    \"Rates have actually come down, it's been more steady, so that's not a bad environment to be looking to add risk. Now, the three things that we were most focused on now,\",\n    \"and in no particular order, the obvious ones are the midterm elections, which is always a clearing event. I mean, historically, it's always a good time to be adding risk into that event. Now,\",\n    \"sometimes it could linger another month or so, but over the next six to 12 months, 100% certainty going back to 1952, you make positive returns, and usually double digits.\",\n    \"So, that's just something to keep in the back of your mind, as things get wobbly, keep that in the back of your mind as you should be stepping in and adding risk.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Wilson says that over the next six to 12 months after midterm elections, going back to 1952, there is 100% certainty of positive returns, usually double digits.\",\n      \"public_baseline\": \"Multiple public sources (J.P. Morgan Asset Management, Yahoo Finance/Baird, simianx.ai) state the S&P 500 has risen in the 12 months after every midterm election since 1950, averaging roughly 15%.\",\n      \"surprise_gap\": \"Wilson's '100% certainty' framing is rhetorically strong but broadly consistent with the historical record cited publicly; the surprise is the absolutist phrasing rather than a factual contradiction.\",\n      \"speaker_relation\": \"foreign_expert\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Wilson identifies midterm elections as a clearing event and claims 100% certainty of positive 6-12 month returns since 1952, usually double digits.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"S&P 500 returns after midterm elections since 1952 positive 12 months\",\n          \"url\": \"https://am.jpmorgan.com/us/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/how-do-markets-perform-post-midterms/\",\n          \"fact\": \"J.P. Morgan Asset Management: S&P 500 positive in 12 months after every midterm election, average ~15%.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Morgan Stanley Mike Wilson three clearing events midterm elections note 2022\",\n          \"url\": \"https://www.bloomberg.com/news/articles/2022-11-07/morgan-stanley-s-wilson-says-us-midterms-could-fuel-equity-rally\",\n          \"fact\": \"Bloomberg (Nov 2022): Wilson urged investors to stay bullish ahead of midterms, calling them a clearing event.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Wilson predicted a specific percentage gain or named all three clearing events if the transcript does not.\",\n        \"Do not claim Wilson's historical claim is false; public data broadly supports positive post-midterm returns.\",\n        \"Do not attribute Bloomberg's or the host's views to Wilson.\",\n        \"Do not claim Wilson changed his position without exact prior statements.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Chinese display forms for Mike Wilson are inferred from standard financial-media usage; the retrieved snippets are English-only, so entity confidence is capped at medium.\",\n    \"The transcript is garbled in places ('12% bond in Brazil', 'pastles'); these were not treated as verifiable claims.\",\n    \"Only one of the three clearing events (midterm elections) is clearly identifiable in the transcript; the other two should not be named without further evidence.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%\",\n  \"title_lines\": [\n    \"摩根士丹利Wilson\",\n    \"中期选举后6到12个月\",\n    \"正回报概率100%\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然敢说100%\",\n  \"evidence_basis\": [\n    \"transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数\",\n    \"public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\", \"tighten_display_lines\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "中期选举后真能稳赚两位数？",
+            "evidence_basis": [
+              "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数",
+              "public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态"
+            ],
+            "title": "摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%？",
+            "title_lines": [
+              "摩根士丹利Wilson",
+              "中期选举后6到12个月正回报概率100%",
+              "通常两位数涨幅，这次能兑现吗？"
+            ],
+            "title_highlights": [
+              "正回报概率100%",
+              "通常两位数涨幅，这次能兑现吗？"
+            ],
+            "runner_up_titles": [
+              "摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "摩根士丹利Wilson：中期选举后6到12个月正回报概率100%，通常两位数涨幅，这次能兑现吗？",
+        "title_lines": [
+          "摩根士丹利Wilson",
+          "中期选举后6到12个月正回报概率100%",
+          "通常两位数涨幅，这次能兑现吗？"
+        ],
+        "title_highlights": [
+          "正回报概率100%",
+          "通常两位数涨幅，这次能兑现吗？"
+        ],
+        "comment": "KC评论：Wilson把历史概率说满，市场波动时他反而建议增加风险敞口",
+        "comment_highlights": [
+          "增加风险敞口"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：出清事件是Wilson本周报告的核心线索",
+            "comment_highlights": [
+              "出清事件"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：他把出清事件直接定义为有吸引力的配置窗口",
+            "comment_highlights": [
+              "配置窗口"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：主持人追问三个事件，Wilson只明确了一个",
+            "comment_highlights": [
+              "三个事件"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：巴西债券收益被顺带提及，但并非核心论点",
+            "comment_highlights": [
+              "巴西债券收益"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：信息过载时，市场习惯抓住已知的盈利",
+            "comment_highlights": [
+              "信息过载"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：盈利仍不错，是Wilson判断风险偏好的基础",
+            "comment_highlights": [
+              "盈利仍不错"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：利率趋稳，被他视为增加风险敞口的条件",
+            "comment_highlights": [
+              "利率趋稳"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：中期选举被他列为最明显的出清事件",
+            "comment_highlights": [
+              "中期选举"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：100%正回报的说法，来自1952年以来的历史回溯",
+            "comment_highlights": [
+              "100%正回报"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：市场波动时，他的建议是介入而非回避",
+            "comment_highlights": [
+              "介入"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：AI资本回流与资金稀缺性，是第二个关注点",
+            "comment_highlights": [
+              "AI资本回流"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：股权与债务发行交替，是企业应对资金稀缺的方式",
+            "comment_highlights": [
+              "股权与债务发行"
+            ]
+          }
+        ],
+        "formula_id": "权威人物+具体数字+强反差",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "中期选举后真能稳赚两位数？",
+        "evidence_basis": [
+          "transcript: Wilson称回溯至1952年，中期选举后6到12个月正回报概率100%，通常两位数",
+          "public: 摩根资产管理等公开资料显示中期选举后12个月美股正回报为历史常态"
+        ],
+        "runner_up_titles": [
+          "摩根士丹利Wilson：中期选举后6到12个月，正回报概率100%？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
