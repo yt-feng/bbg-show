@@ -1,0 +1,1166 @@
+{
+  "timestamp_utc": "2026-10-29T01:51:10.214218+00:00",
+  "plan_path": "work/top-videos/08_highlights_from_healey_s_uk_budget_announcement/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Healey",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "John Healey",
+        "preferred_en": "John Healey",
+        "official_zh": "约翰·希利",
+        "common_zh": "贺理安",
+        "title_label": "贺理安",
+        "preferred_zh": "贺理安",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科“财政大臣 (英国)”条目列出“贺理安 John Healey (1960-)”，并称其自2026年7月20日起任财政大臣；仅一个来源，故置信度为medium。"
+      },
+      {
+        "source_text": "UK Budget",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "United Kingdom Budget",
+        "preferred_en": "United Kingdom Budget",
+        "official_zh": "英国预算案",
+        "common_zh": "英国预算案",
+        "title_label": "英国预算案",
+        "preferred_zh": "英国预算案",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "新华网报道使用“预算案”指英国财政大臣公布的预算；中文维基百科“财政大臣 (英国)”条目亦涉及预算相关表述。"
+      },
+      {
+        "source_text": "HM Treasury",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "HM Treasury",
+        "preferred_en": "HM Treasury",
+        "official_zh": "英国财政部",
+        "common_zh": "英国财政部",
+        "title_label": "英国财政部",
+        "preferred_zh": "英国财政部",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "新华网报道称“财政部将于10月30日公布工党上台后的首个预算案”；中国驻芝加哥总领事馆新闻稿使用“英国财政大臣里夫斯”，均指向英国财政部。"
+      },
+      {
+        "source_text": "Rachel Reeves",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Rachel Reeves",
+        "preferred_en": "Rachel Reeves",
+        "official_zh": "蕾切尔·里夫斯",
+        "common_zh": "里夫斯",
+        "title_label": "里夫斯",
+        "preferred_zh": "里夫斯",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "新华网、中国驻芝加哥总领事馆及中文维基百科均使用“蕾切尔·里夫斯”或“里夫斯”指称英国财政大臣。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "fiscal discipline",
+        "clip_indexes": [],
+        "context": "UK budget speech",
+        "sense": "restraint in government spending and borrowing",
+        "preferred_zh": "财政纪律",
+        "title_label": "财政纪律",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "cost of living",
+        "clip_indexes": [],
+        "context": "UK budget speech",
+        "sense": "the level of prices relating to everyday items",
+        "preferred_zh": "生活成本",
+        "title_label": "生活成本",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "National Insurance",
+        "clip_indexes": [],
+        "context": "UK budget",
+        "sense": "UK social security contributions",
+        "preferred_zh": "国民保险",
+        "title_label": "国民保险",
+        "avoid_zh": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "First, by giving Britain some breathing space on the cost of living and the cost of business.",
+        "public_baseline": "Public reporting indicates the 2024 UK Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold, which increases costs for many businesses.",
+        "surprise_gap": "The speaker claims the budget gives Britain breathing space on the cost of business, while public evidence shows a major tax rise on employers that raises business costs.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "words_vs_actions"
+        ],
+        "words_vs_actions": {
+          "supported": true,
+          "spoken_position": "The budget gives Britain breathing space on the cost of business.",
+          "public_action": "The 2024 Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold at which employers start paying.",
+          "independent_source_count": 2,
+          "evidence": [
+            "https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni",
+            "https://www.insurancejournal.com/news/international/2024/10/30/799123.htm"
+          ]
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says the budget gives Britain breathing space on the cost of living and the cost of business."
+          },
+          {
+            "kind": "public",
+            "query": "Rachel Reeves Budget 2024 employer National Insurance increase business reaction",
+            "url": "https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni",
+            "fact": "Chancellor Rachel Reeves announced reforms to employer National Insurance contributions, raising the main rate from 13.8% to 15.0% and lowering the Secondary Threshold."
+          },
+          {
+            "kind": "public",
+            "query": "Rachel Reeves Budget 2024 employer National Insurance increase business reaction",
+            "url": "https://www.insurancejournal.com/news/international/2024/10/30/799123.htm",
+            "fact": "Finance minister Rachel Reeves said she would raise employers' social security contributions to 15% from April."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim the budget lowers business costs overall.",
+          "Do not claim the speaker is Rachel Reeves; the source title references Healey.",
+          "Do not claim the budget is universally welcomed by businesses."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "The source title references 'Healey', and Chinese Wikipedia lists 贺理安 (John Healey) as Chancellor from 2026-07-20, but this is a single source and may be a future or hypothetical s",
+      "The public lookup for Rachel Reeves' Chinese name returned multiple sources, but the clip title references Healey, so Reeves may not be the speaker in this clip.",
+      "The words_vs_actions angle is supported by two independent public sources on the employer NIC rise, but the speaker's identity as Healey is not independently confirmed beyond the s"
+    ],
+    "research_queries": [
+      {
+        "query": "英国财政大臣 里夫斯 中文名 英国财政部",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for UK Chancellor Rachel Reeves and the official Chinese name of HM Treasury, since the source title references 'Healey' and the speaker is Bloomberg covering the UK Budget."
+      },
+      {
+        "query": "Rachel Reeves UK Budget 2024 fiscal headroom OBR forecast",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the factual baseline on the fiscal headroom and OBR growth forecasts in the UK Budget, to test whether the clip's framing of 'fiscal buffer and growth expectations' matches the actual figures."
+      },
+      {
+        "query": "英国 2024 秋季预算案 财政缓冲 增长预期 OBR",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language reporting on the UK Autumn Budget's fiscal headroom and growth forecasts to verify the current title's factual accuracy and established terminology."
+      },
+      {
+        "query": "\"budget for working people\" Rachel Reeves UK Budget 2024",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact quoted claim 'This is a budget for the working people of Britain' and its attribution to the Chancellor in the official Budget speech."
+      },
+      {
+        "query": "Rachel Reeves Budget 2024 employer National Insurance increase business reaction",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether the claim of 'giving Britain breathing space on the cost of business' is contradicted by the widely reported employer NIC rise, a potential words-versus-actions angle."
+      },
+      {
+        "query": "UK Budget 2024 business groups criticism NIC rise cost of business",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Second independently phrased query to test the words-versus-actions angle: whether business groups said the Budget raised the cost of business, contradicting the 'breathing space' claim."
+      },
+      {
+        "query": "Rachel Reeves first 100 days Labour government Budget 10-year plan",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim about 'our first 100 days' and the '10-year plan for Britain' referenced in the Budget speech, to confirm the speaker's stated policy framework."
+      },
+      {
+        "query": "英国预算案 2024 财政纪律 增长 中文报道",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find established Chinese media framing of the UK Budget's 'fiscal discipline' and growth agenda to compare with the clip's current title and claims."
+      },
+      {
+        "query": "OBR UK growth forecast downgrade 2024 Budget Reeves",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether the OBR actually downgraded or upgraded growth forecasts in the Budget, to test the 'growth expectations' framing against the official forecast."
+      },
+      {
+        "query": "英国 预算案 企业 国民保险 上涨 商界 批评",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Chinese-language search on business criticism of the employer National Insurance rise, to corroborate the words-versus-actions contrast in Chinese sources."
+      },
+      {
+        "query": "Bloomberg Highlights From Healey's UK Budget Announcement established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-29T01:51:07.870371+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:22 Highlights From Healey's UK Budget Announcement",
+          "source_title": "Duration: 5:22 Highlights From Healey's UK Budget Announcement",
+          "show_date": "",
+          "current_title": "英国预算案出炉 财政缓冲与增长预期成焦点",
+          "current_title_lines": [
+            "英国预算案出炉",
+            "财政缓冲与增长预期成焦点",
+            "减负与增收并进 市场关注政策信号"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这是一份为英国劳动人民制定的预算案。",
+              "en": "This is a budget for the working people of Britain.",
+              "relative_start": 0.0,
+              "relative_end": 4.0
+            },
+            {
+              "index": 2,
+              "zh": "面向英国大大小小的企业，在全球不确定性交织、压力波及本国民众之际推出。",
+              "en": "For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.",
+              "relative_start": 6.0,
+              "relative_end": 17.0
+            },
+            {
+              "index": 3,
+              "zh": "这份预算以财政纪律为基础，将当下的即时行动与未来的清晰方向相结合。",
+              "en": "A budget built on fiscal discipline which matches immediate action today with clear direction for the future.",
+              "relative_start": 17.0,
+              "relative_end": 25.0
+            },
+            {
+              "index": 4,
+              "zh": "第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+              "en": "First, by giving Britain some breathing space on the cost of living and the cost of business.",
+              "relative_start": 25.0,
+              "relative_end": 31.0
+            },
+            {
+              "index": 5,
+              "zh": "第二，支持英国企业的进取精神，在每个地区释放创新与增长。",
+              "en": "Second, by backing the enterprise of British business to unleash innovation and growth in every postcode",
+              "relative_start": 31.0,
+              "relative_end": 39.0
+            },
+            {
+              "index": 6,
+              "zh": "第三，应对能源、国家安全、公共服务采购方面的重大挑战。",
+              "en": "and third, by tackling the big challenges on energy, on national security, on public service procurement",
+              "relative_start": 39.0,
+              "relative_end": 48.0
+            },
+            {
+              "index": 7,
+              "zh": "以及转型和住房领域。",
+              "en": "and transformation and on housing.",
+              "relative_start": 48.0,
+              "relative_end": 52.0
+            },
+            {
+              "index": 8,
+              "zh": "在这份预算中，我将阐述本届政府采取的新方针。",
+              "en": "In this budget, I will set out the new approach this administration is taking.",
+              "relative_start": 52.0,
+              "relative_end": 59.0
+            },
+            {
+              "index": 9,
+              "zh": "以新首相的愿景为引领，在执政百日中展现。",
+              "en": "Led by the vision of our new Prime Minister, demonstrated in our first 100 days.",
+              "relative_start": 59.0,
+              "relative_end": 66.0
+            },
+            {
+              "index": 10,
+              "zh": "在执政百日中展现，贯穿今日预算、英国十年计划以及明年的支出审查。",
+              "en": "Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.",
+              "relative_start": 66.0,
+              "relative_end": 75.0
+            },
+            {
+              "index": 11,
+              "zh": "引领我们应对当今全球市场波动，为英国未来数年规划新航向，让人民对英国的未来重燃希望。",
+              "en": "To steer us through the global economic storms today, to chart a new course for Britain in the years ahead, to give people fresh hope for Britain's future.",
+              "relative_start": 75.0,
+              "relative_end": 86.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"source_title\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"show_date\": \"\",\n    \"current_title\": \"英国预算案出炉 财政缓冲与增长预期成焦点\",\n    \"current_title_lines\": [\n      \"英国预算案出炉\",\n      \"财政缓冲与增长预期成焦点\",\n      \"减负与增收并进 市场关注政策信号\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这是一份为英国劳动人民制定的预算案。\",\n        \"en\": \"This is a budget for the working people of Britain.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"面向英国大大小小的企业，在全球不确定性交织、压力波及本国民众之际推出。\",\n        \"en\": \"For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这份预算以财政纪律为基础，将当下的即时行动与未来的清晰方向相结合。\",\n        \"en\": \"A budget built on fiscal discipline which matches immediate action today with clear direction for the future.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 25.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n        \"en\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n        \"relative_start\": 25.0,\n        \"relative_end\": 31.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"第二，支持英国企业的进取精神，在每个地区释放创新与增长。\",\n        \"en\": \"Second, by backing the enterprise of British business to unleash innovation and growth in every postcode\",\n        \"relative_start\": 31.0,\n        \"relative_end\": 39.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"第三，应对能源、国家安全、公共服务采购方面的重大挑战。\",\n        \"en\": \"and third, by tackling the big challenges on energy, on national security, on public service procurement\",\n        \"relative_start\": 39.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"以及转型和住房领域。\",\n        \"en\": \"and transformation and on housing.\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"在这份预算中，我将阐述本届政府采取的新方针。\",\n        \"en\": \"In this budget, I will set out the new approach this administration is taking.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 59.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以新首相的愿景为引领，在执政百日中展现。\",\n        \"en\": \"Led by the vision of our new Prime Minister, demonstrated in our first 100 days.\",\n        \"relative_start\": 59.0,\n        \"relative_end\": 66.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"在执政百日中展现，贯穿今日预算、英国十年计划以及明年的支出审查。\",\n        \"en\": \"Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.\",\n        \"relative_start\": 66.0,\n        \"relative_end\": 75.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"引领我们应对当今全球市场波动，为英国未来数年规划新航向，让人民对英国的未来重燃希望。\",\n        \"en\": \"To steer us through the global economic storms today, to chart a new course for Britain in the years ahead, to give people fresh hope for Britain's future.\",\n        \"relative_start\": 75.0,\n        \"relative_end\": 86.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n      \"public_baseline\": \"Public reporting indicates the 2024 UK Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold, which increases costs for many businesses.\",\n      \"surprise_gap\": \"The speaker claims the budget gives Britain breathing space on the cost of business, while public evidence shows a major tax rise on employers that raises business costs.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"The budget gives Britain breathing space on the cost of business.\",\n        \"public_action\": \"The 2024 Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold at which employers start paying.\",\n        \"independent_source_count\": 2,\n        \"evidence\": [\n          \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\"\n        ]\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the budget gives Britain breathing space on the cost of living and the cost of business.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"fact\": \"Chancellor Rachel Reeves announced reforms to employer National Insurance contributions, raising the main rate from 13.8% to 15.0% and lowering the Secondary Threshold.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\",\n          \"fact\": \"Finance minister Rachel Reeves said she would raise employers' social security contributions to 15% from April.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the budget lowers business costs overall.\",\n        \"Do not claim the speaker is Rachel Reeves; the source title references Healey.\",\n        \"Do not claim the budget is universally welcomed by businesses.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source title references 'Healey', and Chinese Wikipedia lists 贺理安 (John Healey) as Chancellor from 2026-07-20, but this is a single source and may be a future or hypothetical s\",\n    \"The public lookup for Rachel Reeves' Chinese name returned multiple sources, but the clip title references Healey, so Reeves may not be the speaker in this clip.\",\n    \"The words_vs_actions angle is supported by two independent public sources on the employer NIC rise, but the speaker's identity as Healey is not independently confirmed beyond the s\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "预算案称要给英国在生活成本和企业经营成本上喘息空间，但公开报道显示雇主国民保险缴费率从13.8%上调至15%并降低起征点，企业成本上升。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "words_vs_actions",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "说给企业喘息空间",
+                "title_lines": [
+                  "说给企业喘息空间",
+                  "雇主缴费率却提到15%",
+                  "这份预算到底减了谁的负"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+                  "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "居然是这样",
+                "title": "英国预算案另一面",
+                "title_lines": [
+                  "英国预算案另一面",
+                  "雇主缴费率13.8%升到15%",
+                  "企业成本压力谁来扛"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%。",
+                  "字幕：预算称给英国在生活成本和企业经营成本上喘息空间。"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "预算案现场直说",
+                "title_lines": [
+                  "预算案现场直说",
+                  "要给企业喘息空间",
+                  "可缴费负担正往上走"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+                  "公开报道：雇主国民保险缴费率上调至15%，企业成本上升。"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 8,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "减负口号背后",
+                "title_lines": [
+                  "减负口号背后",
+                  "企业缴费率反被抬高",
+                  "英国预算信号怎么读"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "字幕：预算称给英国在生活成本和企业经营成本上喘息空间。",
+                  "公开报道：2024年预算将雇主国民保险缴费率从13.8%上调至15%。"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"source_title\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"show_date\": \"\",\n    \"current_title\": \"英国预算案出炉 财政缓冲与增长预期成焦点\",\n    \"current_title_lines\": [\n      \"英国预算案出炉\",\n      \"财政缓冲与增长预期成焦点\",\n      \"减负与增收并进 市场关注政策信号\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这是一份为英国劳动人民制定的预算案。\",\n        \"en\": \"This is a budget for the working people of Britain.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"面向英国大大小小的企业，在全球不确定性交织、压力波及本国民众之际推出。\",\n        \"en\": \"For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这份预算以财政纪律为基础，将当下的即时行动与未来的清晰方向相结合。\",\n        \"en\": \"A budget built on fiscal discipline which matches immediate action today with clear direction for the future.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 25.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n        \"en\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n        \"relative_start\": 25.0,\n        \"relative_end\": 31.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"第二，支持英国企业的进取精神，在每个地区释放创新与增长。\",\n        \"en\": \"Second, by backing the enterprise of British business to unleash innovation and growth in every postcode\",\n        \"relative_start\": 31.0,\n        \"relative_end\": 39.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"第三，应对能源、国家安全、公共服务采购方面的重大挑战。\",\n        \"en\": \"and third, by tackling the big challenges on energy, on national security, on public service procurement\",\n        \"relative_start\": 39.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"以及转型和住房领域。\",\n        \"en\": \"and transformation and on housing.\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"在这份预算中，我将阐述本届政府采取的新方针。\",\n        \"en\": \"In this budget, I will set out the new approach this administration is taking.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 59.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以新首相的愿景为引领，在执政百日中展现。\",\n        \"en\": \"Led by the vision of our new Prime Minister, demonstrated in our first 100 days.\",\n        \"relative_start\": 59.0,\n        \"relative_end\": 66.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"在执政百日中展现，贯穿今日预算、英国十年计划以及明年的支出审查。\",\n        \"en\": \"Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.\",\n        \"relative_start\": 66.0,\n        \"relative_end\": 75.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"引领我们应对当今全球市场波动，为英国未来数年规划新航向，让人民对英国的未来重燃希望。\",\n        \"en\": \"To steer us through the global economic storms today, to chart a new course for Britain in the years ahead, to give people fresh hope for Britain's future.\",\n        \"relative_start\": 75.0,\n        \"relative_end\": 86.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n      \"public_baseline\": \"Public reporting indicates the 2024 UK Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold, which increases costs for many businesses.\",\n      \"surprise_gap\": \"The speaker claims the budget gives Britain breathing space on the cost of business, while public evidence shows a major tax rise on employers that raises business costs.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"The budget gives Britain breathing space on the cost of business.\",\n        \"public_action\": \"The 2024 Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold at which employers start paying.\",\n        \"independent_source_count\": 2,\n        \"evidence\": [\n          \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\"\n        ]\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the budget gives Britain breathing space on the cost of living and the cost of business.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"fact\": \"Chancellor Rachel Reeves announced reforms to employer National Insurance contributions, raising the main rate from 13.8% to 15.0% and lowering the Secondary Threshold.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\",\n          \"fact\": \"Finance minister Rachel Reeves said she would raise employers' social security contributions to 15% from April.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the budget lowers business costs overall.\",\n        \"Do not claim the speaker is Rachel Reeves; the source title references Healey.\",\n        \"Do not claim the budget is universally welcomed by businesses.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source title references 'Healey', and Chinese Wikipedia lists 贺理安 (John Healey) as Chancellor from 2026-07-20, but this is a single source and may be a future or hypothetical s\",\n    \"The public lookup for Rachel Reeves' Chinese name returned multiple sources, but the clip title references Healey, so Reeves may not be the speaker in this clip.\",\n    \"The words_vs_actions angle is supported by two independent public sources on the employer NIC rise, but the speaker's identity as Healey is not independently confirmed beyond the s\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"预算案称要给英国在生活成本和企业经营成本上喘息空间，但公开报道显示雇主国民保险缴费率从13.8%上调至15%并降低起征点，企业成本上升。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"words_vs_actions\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"说给企业喘息空间\",\n          \"title_lines\": [\n            \"说给企业喘息空间\",\n            \"雇主缴费率却提到15%\",\n            \"这份预算到底减了谁的负\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n            \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"英国预算案另一面\",\n          \"title_lines\": [\n            \"英国预算案另一面\",\n            \"雇主缴费率13.8%升到15%\",\n            \"企业成本压力谁来扛\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%。\",\n            \"字幕：预算称给英国在生活成本和企业经营成本上喘息空间。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"预算案现场直说\",\n          \"title_lines\": [\n            \"预算案现场直说\",\n            \"要给企业喘息空间\",\n            \"可缴费负担正往上走\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n            \"公开报道：雇主国民保险缴费率上调至15%，企业成本上升。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"减负口号背后\",\n          \"title_lines\": [\n            \"减负口号背后\",\n            \"企业缴费率反被抬高\",\n            \"英国预算信号怎么读\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：预算称给英国在生活成本和企业经营成本上喘息空间。\",\n            \"公开报道：2024年预算将雇主国民保险缴费率从13.8%上调至15%。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "言行反差",
+            "angle_id": "words_vs_actions",
+            "emotion_pole": "反差质疑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+              "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。"
+            ],
+            "title": "说给企业喘息空间 雇主缴费率却提到15%",
+            "title_lines": [
+              "说给企业喘息空间",
+              "雇主缴费率却提到15%",
+              "这份预算减了谁的负"
+            ],
+            "title_highlights": [
+              "喘息空间",
+              "15%",
+              "减了谁的负"
+            ],
+            "runner_up_titles": [
+              "减负口号背后 企业缴费率反被抬高",
+              "英国预算案另一面 雇主缴费率13.8%升到15%"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：预算称给企业喘息空间，公开报道却显示雇主缴费负担上调，信号值得细读。",
+            "comment_highlights": [
+              "雇主缴费负担上调"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：开场定调为劳动人民，后面要看钱从哪里来。",
+                "comment_highlights": [
+                  "钱从哪里来"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：全球不确定性被摆上台面，企业压力是背景音。",
+                "comment_highlights": [
+                  "企业压力"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：财政纪律与即时行动并列，执行细节才是关键。",
+                "comment_highlights": [
+                  "执行细节"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：生活成本和企业成本被点名，减负承诺由此展开。",
+                "comment_highlights": [
+                  "减负承诺"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：创新与增长靠企业，成本变化直接影响落地。",
+                "comment_highlights": [
+                  "成本变化"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：能源与国家安全并列，预算重心不只在企业。",
+                "comment_highlights": [
+                  "预算重心"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：住房被列入转型议题，后续要看具体安排。",
+                "comment_highlights": [
+                  "住房"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：新方针需要新钱，缴费变化是观察窗口。",
+                "comment_highlights": [
+                  "缴费变化"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：百日执政被当作背书，市场更看长期账本。",
+                "comment_highlights": [
+                  "长期账本"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：预算与十年计划挂钩，企业成本是连接点。",
+                "comment_highlights": [
+                  "企业成本"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：全球波动中求稳，政策信号与成本压力并行。",
+                "comment_highlights": [
+                  "成本压力"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"source_title\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n    \"show_date\": \"\",\n    \"current_title\": \"英国预算案出炉 财政缓冲与增长预期成焦点\",\n    \"current_title_lines\": [\n      \"英国预算案出炉\",\n      \"财政缓冲与增长预期成焦点\",\n      \"减负与增收并进 市场关注政策信号\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这是一份为英国劳动人民制定的预算案。\",\n        \"en\": \"This is a budget for the working people of Britain.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"面向英国大大小小的企业，在全球不确定性交织、压力波及本国民众之际推出。\",\n        \"en\": \"For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 17.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这份预算以财政纪律为基础，将当下的即时行动与未来的清晰方向相结合。\",\n        \"en\": \"A budget built on fiscal discipline which matches immediate action today with clear direction for the future.\",\n        \"relative_start\": 17.0,\n        \"relative_end\": 25.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n        \"en\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n        \"relative_start\": 25.0,\n        \"relative_end\": 31.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"第二，支持英国企业的进取精神，在每个地区释放创新与增长。\",\n        \"en\": \"Second, by backing the enterprise of British business to unleash innovation and growth in every postcode\",\n        \"relative_start\": 31.0,\n        \"relative_end\": 39.0\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"第三，应对能源、国家安全、公共服务采购方面的重大挑战。\",\n        \"en\": \"and third, by tackling the big challenges on energy, on national security, on public service procurement\",\n        \"relative_start\": 39.0,\n        \"relative_end\": 48.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"以及转型和住房领域。\",\n        \"en\": \"and transformation and on housing.\",\n        \"relative_start\": 48.0,\n        \"relative_end\": 52.0\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"在这份预算中，我将阐述本届政府采取的新方针。\",\n        \"en\": \"In this budget, I will set out the new approach this administration is taking.\",\n        \"relative_start\": 52.0,\n        \"relative_end\": 59.0\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"以新首相的愿景为引领，在执政百日中展现。\",\n        \"en\": \"Led by the vision of our new Prime Minister, demonstrated in our first 100 days.\",\n        \"relative_start\": 59.0,\n        \"relative_end\": 66.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"在执政百日中展现，贯穿今日预算、英国十年计划以及明年的支出审查。\",\n        \"en\": \"Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.\",\n        \"relative_start\": 66.0,\n        \"relative_end\": 75.0\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"引领我们应对当今全球市场波动，为英国未来数年规划新航向，让人民对英国的未来重燃希望。\",\n        \"en\": \"To steer us through the global economic storms today, to chart a new course for Britain in the years ahead, to give people fresh hope for Britain's future.\",\n        \"relative_start\": 75.0,\n        \"relative_end\": 86.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n      \"public_baseline\": \"Public reporting indicates the 2024 UK Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold, which increases costs for many businesses.\",\n      \"surprise_gap\": \"The speaker claims the budget gives Britain breathing space on the cost of business, while public evidence shows a major tax rise on employers that raises business costs.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"The budget gives Britain breathing space on the cost of business.\",\n        \"public_action\": \"The 2024 Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold at which employers start paying.\",\n        \"independent_source_count\": 2,\n        \"evidence\": [\n          \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\"\n        ]\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the budget gives Britain breathing space on the cost of living and the cost of business.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"fact\": \"Chancellor Rachel Reeves announced reforms to employer National Insurance contributions, raising the main rate from 13.8% to 15.0% and lowering the Secondary Threshold.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\",\n          \"fact\": \"Finance minister Rachel Reeves said she would raise employers' social security contributions to 15% from April.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the budget lowers business costs overall.\",\n        \"Do not claim the speaker is Rachel Reeves; the source title references Healey.\",\n        \"Do not claim the budget is universally welcomed by businesses.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source title references 'Healey', and Chinese Wikipedia lists 贺理安 (John Healey) as Chancellor from 2026-07-20, but this is a single source and may be a future or hypothetical s\",\n    \"The public lookup for Rachel Reeves' Chinese name returned multiple sources, but the clip title references Healey, so Reeves may not be the speaker in this clip.\",\n    \"The words_vs_actions angle is supported by two independent public sources on the employer NIC rise, but the speaker's identity as Healey is not independently confirmed beyond the s\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"预算案称要给英国在生活成本和企业经营成本上喘息空间，但公开报道显示雇主国民保险缴费率从13.8%上调至15%并降低起征点，企业成本上升。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"words_vs_actions\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"说给企业喘息空间\",\n          \"title_lines\": [\n            \"说给企业喘息空间\",\n            \"雇主缴费率却提到15%\",\n            \"这份预算到底减了谁的负\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n            \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"英国预算案另一面\",\n          \"title_lines\": [\n            \"英国预算案另一面\",\n            \"雇主缴费率13.8%升到15%\",\n            \"企业成本压力谁来扛\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%。\",\n            \"字幕：预算称给英国在生活成本和企业经营成本上喘息空间。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"预算案现场直说\",\n          \"title_lines\": [\n            \"预算案现场直说\",\n            \"要给企业喘息空间\",\n            \"可缴费负担正往上走\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n            \"公开报道：雇主国民保险缴费率上调至15%，企业成本上升。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"减负口号背后\",\n          \"title_lines\": [\n            \"减负口号背后\",\n            \"企业缴费率反被抬高\",\n            \"英国预算信号怎么读\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"字幕：预算称给英国在生活成本和企业经营成本上喘息空间。\",\n            \"公开报道：2024年预算将雇主国民保险缴费率从13.8%上调至15%。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"说给企业喘息空间：雇主缴费率却提到15%，这份预算减了谁的负\",\n      \"title_lines\": [\n        \"说给企业喘息空间\",\n        \"雇主缴费率却提到15%\",\n        \"这份预算减了谁的负\"\n      ],\n      \"title_highlights\": [\n        \"喘息空间\",\n        \"15%\",\n        \"减了谁的负\"\n      ],\n      \"comment\": \"KC评论：预算称给企业喘息空间，公开报道却显示雇主缴费负担上调，信号值得细读\",\n      \"comment_highlights\": [\n        \"雇主缴费负担上调\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：开场定调为劳动人民，后面要看钱从哪里来\",\n          \"comment_highlights\": [\n            \"钱从哪里来\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：全球不确定性被摆上台面，企业压力是背景音\",\n          \"comment_highlights\": [\n            \"企业压力\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：财政纪律与即时行动并列，执行细节才是关键\",\n          \"comment_highlights\": [\n            \"执行细节\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：生活成本和企业成本被点名，减负承诺由此展开\",\n          \"comment_highlights\": [\n            \"减负承诺\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：创新与增长靠企业，成本变化直接影响落地\",\n          \"comment_highlights\": [\n            \"成本变化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：能源与国家安全并列，预算重心不只在企业\",\n          \"comment_highlights\": [\n            \"预算重心\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：住房被列入转型议题，后续要看具体安排\",\n          \"comment_highlights\": [\n            \"住房\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：新方针需要新钱，缴费变化是观察窗口\",\n          \"comment_highlights\": [\n            \"缴费变化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：百日执政被当作背书，市场更看长期账本\",\n          \"comment_highlights\": [\n            \"长期账本\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：预算与十年计划挂钩，企业成本是连接点\",\n          \"comment_highlights\": [\n            \"企业成本\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：全球波动中求稳，政策信号与成本压力并行\",\n          \"comment_highlights\": [\n            \"成本压力\"\n          ]\n        }\n      ],\n      \"formula_id\": \"言行反差\",\n      \"angle_id\": \"words_vs_actions\",\n      \"emotion_pole\": \"反差质疑\",\n      \"viewer_reaction\": \"他说的是真的吗\",\n      \"evidence_basis\": [\n        \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n        \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。\"\n      ],\n      \"runner_up_titles\": [\n        \"减负口号背后 企业缴费率反被抬高\",\n        \"英国预算案另一面 雇主缴费率13.8%升到15%\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 83,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:words_vs_actions\",\n          \"emotion:反差质疑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\",\n          \"make_china_direction_constructive_or_positive\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\",\n      \"make_china_direction_constructive_or_positive\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "言行反差",
+                "angle_id": "words_vs_actions",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "他说的是真的吗",
+                "evidence_basis": [
+                  "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+                  "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。"
+                ],
+                "title": "嘴上说给企业喘息 手里却把缴费率提到15%",
+                "title_lines": [
+                  "嘴上说给企业喘息",
+                  "手里却把缴费率提到15%",
+                  "这份预算减了谁的负"
+                ],
+                "title_highlights": [
+                  "嘴上说给企业喘息",
+                  "缴费率提到15%",
+                  "减了谁的负"
+                ],
+                "runner_up_titles": [
+                  "减负口号背后 企业缴费率反被抬高",
+                  "英国预算案另一面 雇主缴费率13.8%升到15%"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：预算称给企业喘息空间，公开报道却显示雇主缴费负担上调，信号值得细读",
+                "comment_highlights": [
+                  "雇主缴费负担上调"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：开场定调为劳动人民，后面要看钱从哪里来",
+                    "comment_highlights": [
+                      "钱从哪里来"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：全球不确定性被摆上台面，企业压力是背景音",
+                    "comment_highlights": [
+                      "企业压力"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：财政纪律与即时行动并列，执行细节才是关键",
+                    "comment_highlights": [
+                      "执行细节"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：生活成本和企业成本被点名，减负承诺由此展开",
+                    "comment_highlights": [
+                      "减负承诺"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：创新与增长靠企业，成本变化直接影响落地",
+                    "comment_highlights": [
+                      "成本变化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：能源与国家安全并列，预算重心不只在企业",
+                    "comment_highlights": [
+                      "预算重心"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：住房被列入转型议题，后续要看具体安排",
+                    "comment_highlights": [
+                      "住房"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：新方针需要新钱，缴费变化是观察窗口",
+                    "comment_highlights": [
+                      "缴费变化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：百日执政被当作背书，市场更看长期账本",
+                    "comment_highlights": [
+                      "长期账本"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：预算与十年计划挂钩，企业成本是连接点",
+                    "comment_highlights": [
+                      "企业成本"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：全球波动中求稳，政策信号与成本压力并行",
+                    "comment_highlights": [
+                      "成本压力"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "嘴上说给企业喘息：手里却把缴费率提到15%，这份预算减了谁的负",
+          "title_lines": [
+            "嘴上说给企业喘息",
+            "手里却把缴费率提到15%",
+            "这份预算减了谁的负"
+          ],
+          "formula_id": "言行反差",
+          "angle_id": "words_vs_actions",
+          "emotion_pole": "反差质疑",
+          "viewer_reaction": "他说的是真的吗",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 93,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:words_vs_actions",
+              "emotion:反差质疑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_china_direction_constructive_or_positive"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：预算称给企业喘息空间，公开报道却显示雇主缴费负担上调，信号值得细读"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-29T01:51:10.205016+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 5:22 Highlights From Healey's UK Budget Announcement",
+          "source_title": "Duration: 5:22 Highlights From Healey's UK Budget Announcement",
+          "show_date": "",
+          "current_title": "英国预算案出炉 财政缓冲与增长预期成焦点",
+          "current_title_lines": [
+            "英国预算案出炉",
+            "财政缓冲与增长预期成焦点",
+            "减负与增收并进 市场关注政策信号"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这是一份为英国劳动人民制定的预算案。",
+              "en": "This is a budget for the working people of Britain.",
+              "relative_start": 0.0,
+              "relative_end": 4.0
+            },
+            {
+              "index": 2,
+              "zh": "面向英国大大小小的企业，在全球不确定性交织、压力波及本国民众之际推出。",
+              "en": "For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.",
+              "relative_start": 6.0,
+              "relative_end": 17.0
+            },
+            {
+              "index": 3,
+              "zh": "这份预算以财政纪律为基础，将当下的即时行动与未来的清晰方向相结合。",
+              "en": "A budget built on fiscal discipline which matches immediate action today with clear direction for the future.",
+              "relative_start": 17.0,
+              "relative_end": 25.0
+            },
+            {
+              "index": 4,
+              "zh": "第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+              "en": "First, by giving Britain some breathing space on the cost of living and the cost of business.",
+              "relative_start": 25.0,
+              "relative_end": 31.0
+            },
+            {
+              "index": 5,
+              "zh": "第二，支持英国企业的进取精神，在每个地区释放创新与增长。",
+              "en": "Second, by backing the enterprise of British business to unleash innovation and growth in every postcode",
+              "relative_start": 31.0,
+              "relative_end": 39.0
+            },
+            {
+              "index": 6,
+              "zh": "第三，应对能源、国家安全、公共服务采购方面的重大挑战。",
+              "en": "and third, by tackling the big challenges on energy, on national security, on public service procurement",
+              "relative_start": 39.0,
+              "relative_end": 48.0
+            },
+            {
+              "index": 7,
+              "zh": "以及转型和住房领域。",
+              "en": "and transformation and on housing.",
+              "relative_start": 48.0,
+              "relative_end": 52.0
+            },
+            {
+              "index": 8,
+              "zh": "在这份预算中，我将阐述本届政府采取的新方针。",
+              "en": "In this budget, I will set out the new approach this administration is taking.",
+              "relative_start": 52.0,
+              "relative_end": 59.0
+            },
+            {
+              "index": 9,
+              "zh": "以新首相的愿景为引领，在执政百日中展现。",
+              "en": "Led by the vision of our new Prime Minister, demonstrated in our first 100 days.",
+              "relative_start": 59.0,
+              "relative_end": 66.0
+            },
+            {
+              "index": 10,
+              "zh": "在执政百日中展现，贯穿今日预算、英国十年计划以及明年的支出审查。",
+              "en": "Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.",
+              "relative_start": 66.0,
+              "relative_end": 75.0
+            },
+            {
+              "index": 11,
+              "zh": "引领我们应对当今全球市场波动，为英国未来数年规划新航向，让人民对英国的未来重燃希望。",
+              "en": "To steer us through the global economic storms today, to chart a new course for Britain in the years ahead, to give people fresh hope for Britain's future.",
+              "relative_start": 75.0,
+              "relative_end": 86.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n  \"source_title\": \"Duration: 5:22 Highlights From Healey's UK Budget Announcement\",\n  \"current_title\": \"英国预算案出炉 财政缓冲与增长预期成焦点\",\n  \"source_claims\": [\n    \"This is a budget for the working people of Britain.\",\n    \"For British businesses, big and small, delivered at a time when global uncertainties and pressures are swirling worldwide and hitting people here at home.\",\n    \"A budget built on fiscal discipline which matches immediate action today with clear direction for the future.\",\n    \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n    \"Second, by backing the enterprise of British business to unleash innovation and growth in every postcode\",\n    \"and third, by tackling the big challenges on energy, on national security, on public service procurement\",\n    \"and transformation and on housing.\",\n    \"In this budget, I will set out the new approach this administration is taking.\",\n    \"Led by the vision of our new Prime Minister, demonstrated in our first 100 days.\",\n    \"Demonstrated in our first 100 days, carried through today's budget the 10-year plan for Britain and the spending review next year.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"First, by giving Britain some breathing space on the cost of living and the cost of business.\",\n      \"public_baseline\": \"Public reporting indicates the 2024 UK Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold, which increases costs for many businesses.\",\n      \"surprise_gap\": \"The speaker claims the budget gives Britain breathing space on the cost of business, while public evidence shows a major tax rise on employers that raises business costs.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"words_vs_actions\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"The budget gives Britain breathing space on the cost of business.\",\n        \"public_action\": \"The 2024 Budget raised employer National Insurance contributions from 13.8% to 15% and lowered the threshold at which employers start paying.\",\n        \"independent_source_count\": 2,\n        \"evidence\": [\n          \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\"\n        ]\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says the budget gives Britain breathing space on the cost of living and the cost of business.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.policyengine.org/uk/research/autumn-budget-24-employer-ni\",\n          \"fact\": \"Chancellor Rachel Reeves announced reforms to employer National Insurance contributions, raising the main rate from 13.8% to 15.0% and lowering the Secondary Threshold.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Rachel Reeves Budget 2024 employer National Insurance increase business reaction\",\n          \"url\": \"https://www.insurancejournal.com/news/international/2024/10/30/799123.htm\",\n          \"fact\": \"Finance minister Rachel Reeves said she would raise employers' social security contributions to 15% from April.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim the budget lowers business costs overall.\",\n        \"Do not claim the speaker is Rachel Reeves; the source title references Healey.\",\n        \"Do not claim the budget is universally welcomed by businesses.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"The source title references 'Healey', and Chinese Wikipedia lists 贺理安 (John Healey) as Chancellor from 2026-07-20, but this is a single source and may be a future or hypothetical s\",\n    \"The public lookup for Rachel Reeves' Chinese name returned multiple sources, but the clip title references Healey, so Reeves may not be the speaker in this clip.\",\n    \"The words_vs_actions angle is supported by two independent public sources on the employer NIC rise, but the speaker's identity as Healey is not independently confirmed beyond the s\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"嘴上说给企业喘息：手里却把缴费率提到15%，这份预算减了谁的负\",\n  \"title_lines\": [\n    \"嘴上说给企业喘息\",\n    \"手里却把缴费率提到15%\",\n    \"这份预算减了谁的负\"\n  ],\n  \"angle_id\": \"words_vs_actions\",\n  \"emotion_pole\": \"反差质疑\",\n  \"viewer_reaction\": \"他说的是真的吗\",\n  \"evidence_basis\": [\n    \"字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。\",\n    \"公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_china_direction_constructive_or_positive\"]\n\nMandatory clip-specific repair rules:\n- CHINA-RELATED REPAIR: when the transcript contains a concrete Chinese advantage, comparison, or foreign competitor response, the title must present that fact directly and constructively. Do not replace it with a generic market or negotiation summary.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "words_vs_actions",
+            "emotion_pole": "反差质疑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+              "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。"
+            ],
+            "title": "预算案称给企业喘息 雇主缴费率却升至15% 成本压力转向谁",
+            "title_lines": [
+              "预算案称给企业喘息",
+              "雇主缴费率却升至15%",
+              "成本压力转向谁"
+            ],
+            "title_highlights": [
+              "雇主缴费率却升至15%"
+            ],
+            "runner_up_titles": [
+              "说给企业喘息 雇主缴费率却升至15% 这份预算谁承压"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 8,
+              "curiosity_gap": 7,
+              "factual_fidelity": 9,
+              "china_resonance": 6
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "预算案称给企业喘息：雇主缴费率却升至15%，成本压力转向谁",
+        "title_lines": [
+          "预算案称给企业喘息",
+          "雇主缴费率却升至15%",
+          "成本压力转向谁"
+        ],
+        "title_highlights": [
+          "雇主缴费率却升至15%"
+        ],
+        "comment": "KC评论：预算称给企业喘息空间，公开报道却显示雇主缴费负担上调，信号值得细读",
+        "comment_highlights": [
+          "雇主缴费负担上调"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：开场定调为劳动人民，后面要看钱从哪里来",
+            "comment_highlights": [
+              "钱从哪里来"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：全球不确定性被摆上台面，企业压力是背景音",
+            "comment_highlights": [
+              "企业压力"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：财政纪律与即时行动并列，执行细节才是关键",
+            "comment_highlights": [
+              "执行细节"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：生活成本和企业成本被点名，减负承诺由此展开",
+            "comment_highlights": [
+              "减负承诺"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：创新与增长靠企业，成本变化直接影响落地",
+            "comment_highlights": [
+              "成本变化"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：能源与国家安全并列，预算重心不只在企业",
+            "comment_highlights": [
+              "预算重心"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：住房被列入转型议题，后续要看具体安排",
+            "comment_highlights": [
+              "住房"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：新方针需要新钱，缴费变化是观察窗口",
+            "comment_highlights": [
+              "缴费变化"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：百日执政被当作背书，市场更看长期账本",
+            "comment_highlights": [
+              "长期账本"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：预算与十年计划挂钩，企业成本是连接点",
+            "comment_highlights": [
+              "企业成本"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：全球波动中求稳，政策信号与成本压力并行",
+            "comment_highlights": [
+              "成本压力"
+            ]
+          }
+        ],
+        "formula_id": "言行反差",
+        "angle_id": "words_vs_actions",
+        "emotion_pole": "反差质疑",
+        "viewer_reaction": "他说的是真的吗",
+        "evidence_basis": [
+          "字幕：第一，在生活成本和企业经营成本上给英国一些喘息空间。",
+          "公开报道：2024年英国预算将雇主国民保险缴费率从13.8%上调至15%，并降低起征点。"
+        ],
+        "runner_up_titles": [
+          "说给企业喘息 雇主缴费率却升至15% 这份预算谁承压"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 7,
+          "specificity": 8,
+          "curiosity_gap": 7,
+          "factual_fidelity": 9,
+          "china_resonance": 6
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 93,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:words_vs_actions",
+            "emotion:反差质疑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "make_china_direction_constructive_or_positive"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 7,
+            "specificity": 8,
+            "curiosity_gap": 7,
+            "factual_fidelity": 9,
+            "china_resonance": 6
+          }
+        }
+      }
+    }
+  ]
+}
