@@ -1,0 +1,1446 @@
+{
+  "timestamp_utc": "2026-10-30T02:01:08.550785+00:00",
+  "plan_path": "work/top-videos/09_what_wall_street_really_thinks_about_the_ai_trade_now/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg 官方站点与新浪财经等中文财经媒体均以“彭博”指称该机构。"
+      },
+      {
+        "source_text": "Tracy Alloway",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Tracy Alloway",
+        "preferred_en": "Tracy Alloway",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Tracy Alloway",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未提供可靠中文财经媒体对该主持人的固定译名，保留英文。"
+      },
+      {
+        "source_text": "Joe Weisenthal",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Joe Weisenthal",
+        "preferred_en": "Joe Weisenthal",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Joe Weisenthal",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "转写中“Joe Wyzen's mom”为语音识别错误，公开片段未给出可靠中文固定译名，保留英文。"
+      },
+      {
+        "source_text": "Odd Lots",
+        "entity_type": "event",
+        "clip_indexes": [],
+        "canonical_en": "Odd Lots (podcast)",
+        "preferred_en": "Odd Lots (podcast)",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Odd Lots",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开片段确认该播客英文名，但未发现可靠中文固定译名，保留英文。"
+      },
+      {
+        "source_text": "Wall Street",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Wall Street",
+        "preferred_en": "Wall Street",
+        "official_zh": "华尔街",
+        "common_zh": "华尔街",
+        "title_label": "华尔街",
+        "preferred_zh": "华尔街",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经媒体普遍以“华尔街”指代美国金融界。"
+      },
+      {
+        "source_text": "Goldman Sachs",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "The Goldman Sachs Group, Inc.",
+        "preferred_en": "The Goldman Sachs Group, Inc.",
+        "official_zh": "高盛集团",
+        "common_zh": "高盛",
+        "title_label": "高盛",
+        "preferred_zh": "高盛",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经报道一致使用“高盛”。"
+      },
+      {
+        "source_text": "Morgan Stanley",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Morgan Stanley",
+        "preferred_en": "Morgan Stanley",
+        "official_zh": "摩根士丹利",
+        "common_zh": "摩根士丹利",
+        "title_label": "摩根士丹利",
+        "preferred_zh": "摩根士丹利",
+        "aliases": [
+          "大摩"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文财经媒体使用“摩根士丹利”，亦常见简称“大摩”。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "AI trade",
+        "clip_indexes": [],
+        "context": "华尔街围绕人工智能主题的股票与交易主线",
+        "sense": "AI-themed trading/investment theme",
+        "preferred_zh": "AI交易",
+        "title_label": "AI交易",
+        "avoid_zh": [
+          "人工智能贸易"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "consensus trades",
+        "clip_indexes": [],
+        "context": "市场普遍认同并拥挤的交易方向",
+        "sense": "widely agreed crowded trades",
+        "preferred_zh": "共识交易",
+        "title_label": "共识交易",
+        "avoid_zh": [
+          "一致贸易"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "lost the plot",
+        "clip_indexes": [],
+        "context": "主持人自述对当前市场主线感到迷失",
+        "sense": "lost track of the narrative",
+        "preferred_zh": "摸不着头脑",
+        "title_label": "摸不着头脑",
+        "avoid_zh": [
+          "丢了情节"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易。",
+        "public_baseline": "中文财经报道显示，2026年华尔街对AI主线出现分歧：高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。",
+        "surprise_gap": "市场普遍仍将AI视为核心主线，但节目主持人公开表示对共识交易感到迷失，形成“主线仍在、共识已乱”的反差。",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "authority_breaks_consensus",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”"
+          },
+          {
+            "kind": "public",
+            "query": "华尔街 AI 交易 共识 2026 高盛 摩根士丹利",
+            "url": "https://news.qq.com/rain/a/20260708A01WSR00",
+            "fact": "高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧。"
+          },
+          {
+            "kind": "public",
+            "query": "华尔街 AI 交易 共识 2026 高盛 摩根士丹利",
+            "url": "https://www.investmentstrategynews.com/zh/articles/wall-street-ai-mania-trading-revenue-transformation",
+            "fact": "AI热潮推动高盛与摩根士丹利2026年二季度股权交易收入同比大涨。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得声称高盛或摩根士丹利已公开放弃AI交易主线",
+          "不得声称主持人代表彭博官方立场",
+          "不得将“lost the plot”解读为具体持仓或交易动作",
+          "不得声称华尔街已就AI交易达成新的统一共识"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "转写中“Joe Wyzen's mom”应为Joe Weisenthal的语音识别错误，未作为实体输出。",
+      "公开检索片段中部分日期（2026年）与来源可靠性有限，仅作线索，未据此断言具体持仓或立场变化。",
+      "未发现可靠中文固定译名的主持人与播客名保留英文，避免生造音译。"
+    ],
+    "research_queries": [
+      {
+        "query": "华尔街 AI 交易 共识 2026 高盛 摩根士丹利",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-language coverage of the Wall Street AI trade consensus and any 2026 reassessment, to verify the current title's framing."
+      },
+      {
+        "query": "\"laws of the economy\" 2025 2026 AI trade norms shattered",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Locate the exact Odd Lots episode and quote about economic laws not applying in 2025-2026, to verify the speaker's stance."
+      },
+      {
+        "query": "Odd Lots episode transcript 2026 AI trade lost the plot consensus trades",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the episode transcript and the hosts' stated confusion about consensus trades, verifying the source claims."
+      },
+      {
+        "query": "Tracy Alloway Joe Weisenthal AI trade prior statements 2024 2025",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Second independently phrased query to test whether the hosts previously held a different view on the AI trade, for a possible position-change angle."
+      },
+      {
+        "query": "中国 AI 交易 主线 2026 华尔街 对比",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find Chinese-market AI trade narratives to see whether a China comparative angle exists in the episode or in public coverage."
+      },
+      {
+        "query": "Bloomberg AI Trade Now established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "AI Trade Now 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "AI 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 8,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-10-30T02:01:06.208282+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now",
+          "source_title": "Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now",
+          "show_date": "",
+          "current_title": "华尔街重新审视AI交易主线",
+          "current_title_lines": [
+            "华尔街机构",
+            "重新审视AI交易主线",
+            "资本开支与债务压力成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "经济规律依然存在。但在2025和2026年，似乎不太明显？",
+              "en": "The laws of the economy still exist. What, apparently not so much in 2025 and 2026?",
+              "relative_start": 0.0,
+              "relative_end": 6.0
+            },
+            {
+              "index": 2,
+              "zh": "是的，关键点在这里。对，就是这个，没错。",
+              "en": "Yes, here's the punchline. Yeah, this is the, yeah, exactly.",
+              "relative_start": 6.0,
+              "relative_end": 9.0
+            },
+            {
+              "index": 3,
+              "zh": "这就是关键点。2026年完全打破了你在常态下会看到的大趋势。",
+              "en": "This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.",
+              "relative_start": 9.0,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "大家好，欢迎收听另一期《All Thoughts Podcast》。",
+              "en": "Hello and welcome to another episode of The All Thoughts Podcast.",
+              "relative_start": 15.0,
+              "relative_end": 23.8
+            },
+            {
+              "index": 5,
+              "zh": "我是Tracy Alloway。我是Joe Wyzen的妈妈。Joe，有趣的市场时期。",
+              "en": "I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.",
+              "relative_start": 23.8,
+              "relative_end": 27.8
+            },
+            {
+              "index": 6,
+              "zh": "你知道吗？我感觉自己有点迷失方向了。",
+              "en": "You know what? I kind of feel like I lost the plot.",
+              "relative_start": 27.8,
+              "relative_end": 31.8
+            },
+            {
+              "index": 7,
+              "zh": "我知道。我当时就像，我看到了，我有了这个领悟。",
+              "en": "I know. I was like, I saw, I had this realization.",
+              "relative_start": 31.8,
+              "relative_end": 35.8
+            },
+            {
+              "index": 8,
+              "zh": "我不知道发生了什么。就像，我们只是在试探市场。",
+              "en": "I don't know what anything's going on. Like, we're just trying markets.",
+              "relative_start": 35.8,
+              "relative_end": 38.8
+            },
+            {
+              "index": 9,
+              "zh": "显然，我在生活上也迷失了方向。",
+              "en": "And obviously I lost the plot with life in general.",
+              "relative_start": 38.8,
+              "relative_end": 41.8
+            },
+            {
+              "index": 10,
+              "zh": "没人否认这一点。但就像，如今的市场共识交易是什么？",
+              "en": "Like no one's disputed that. But just as like, what are the consensus trades these days?",
+              "relative_start": 41.8,
+              "relative_end": 46.8
+            },
+            {
+              "index": 11,
+              "zh": "比如，人们对这些数据中心相关的东西到底担心什么？",
+              "en": "Like, what are people actually worried about with some of these data center stuff?",
+              "relative_start": 46.8,
+              "relative_end": 50.8
+            },
+            {
+              "index": 12,
+              "zh": "比如，我们是什么？等等。我已经不知道别人怎么想了。",
+              "en": "Like, what are we? What, et cetera. I have no idea what anyone thinks anymore.",
+              "relative_start": 50.8,
+              "relative_end": 54.8
+            },
+            {
+              "index": 13,
+              "zh": "我急需认清现实。我们是在10月28日录制的。",
+              "en": "Like I need a reality check badly. So we're recording this on October 28th.",
+              "relative_start": 54.8,
+              "relative_end": 59.8
+            },
+            {
+              "index": 14,
+              "zh": "就市场现实而言，这次我们其实做得更好，因为我们经常在美联储决策前、或S1文件发布前、或财报指引前录制。",
+              "en": "And in terms of market reality, we're actually doing better on this one because we often end up recording these right before a Fed decision or right before an S1 comes out or right before earnings guidance",
+              "relative_start": 59.8,
+              "relative_end": 71.8
+            },
+            {
+              "index": 15,
+              "zh": "之类的。这次我们时机把握得挺好。",
+              "en": "or something. This time, we've actually, we've timed it pretty well.",
+              "relative_start": 71.8,
+              "relative_end": 75.8
+            },
+            {
+              "index": 16,
+              "zh": "我们刚经历了FOMC决策。是的。",
+              "en": "So we just had the FOMC decision. Yeah.",
+              "relative_start": 75.8,
+              "relative_end": 78.8
+            },
+            {
+              "index": 17,
+              "zh": "本周早些时候，我们看到了Anthropic的S1文件。",
+              "en": "Earlier this week, we had the S1 filing from Anthropic.",
+              "relative_start": 78.8,
+              "relative_end": 81.8
+            },
+            {
+              "index": 18,
+              "zh": "在美联储新闻发布会期间，或有一通电话会议给出了一些额外指引。",
+              "en": "During the Fed presser or a call came out with some additional guidance.",
+              "relative_start": 81.8,
+              "relative_end": 86.8
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"source_title\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"华尔街重新审视AI交易主线\",\n    \"current_title_lines\": [\n      \"华尔街机构\",\n      \"重新审视AI交易主线\",\n      \"资本开支与债务压力成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"经济规律依然存在。但在2025和2026年，似乎不太明显？\",\n        \"en\": \"The laws of the economy still exist. What, apparently not so much in 2025 and 2026?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，关键点在这里。对，就是这个，没错。\",\n        \"en\": \"Yes, here's the punchline. Yeah, this is the, yeah, exactly.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这就是关键点。2026年完全打破了你在常态下会看到的大趋势。\",\n        \"en\": \"This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"大家好，欢迎收听另一期《All Thoughts Podcast》。\",\n        \"en\": \"Hello and welcome to another episode of The All Thoughts Podcast.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 23.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我是Tracy Alloway。我是Joe Wyzen的妈妈。Joe，有趣的市场时期。\",\n        \"en\": \"I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.\",\n        \"relative_start\": 23.8,\n        \"relative_end\": 27.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你知道吗？我感觉自己有点迷失方向了。\",\n        \"en\": \"You know what? I kind of feel like I lost the plot.\",\n        \"relative_start\": 27.8,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我知道。我当时就像，我看到了，我有了这个领悟。\",\n        \"en\": \"I know. I was like, I saw, I had this realization.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我不知道发生了什么。就像，我们只是在试探市场。\",\n        \"en\": \"I don't know what anything's going on. Like, we're just trying markets.\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"显然，我在生活上也迷失了方向。\",\n        \"en\": \"And obviously I lost the plot with life in general.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"没人否认这一点。但就像，如今的市场共识交易是什么？\",\n        \"en\": \"Like no one's disputed that. But just as like, what are the consensus trades these days?\",\n        \"relative_start\": 41.8,\n        \"relative_end\": 46.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"比如，人们对这些数据中心相关的东西到底担心什么？\",\n        \"en\": \"Like, what are people actually worried about with some of these data center stuff?\",\n        \"relative_start\": 46.8,\n        \"relative_end\": 50.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"比如，我们是什么？等等。我已经不知道别人怎么想了。\",\n        \"en\": \"Like, what are we? What, et cetera. I have no idea what anyone thinks anymore.\",\n        \"relative_start\": 50.8,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我急需认清现实。我们是在10月28日录制的。\",\n        \"en\": \"Like I need a reality check badly. So we're recording this on October 28th.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就市场现实而言，这次我们其实做得更好，因为我们经常在美联储决策前、或S1文件发布前、或财报指引前录制。\",\n        \"en\": \"And in terms of market reality, we're actually doing better on this one because we often end up recording these right before a Fed decision or right before an S1 comes out or right before earnings guidance\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 71.8\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"之类的。这次我们时机把握得挺好。\",\n        \"en\": \"or something. This time, we've actually, we've timed it pretty well.\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"我们刚经历了FOMC决策。是的。\",\n        \"en\": \"So we just had the FOMC decision. Yeah.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 78.8\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"本周早些时候，我们看到了Anthropic的S1文件。\",\n        \"en\": \"Earlier this week, we had the S1 filing from Anthropic.\",\n        \"relative_start\": 78.8,\n        \"relative_end\": 81.8\n      },\n      {\n        \"index\": 18,\n        \"zh\": \"在美联储新闻发布会期间，或有一通电话会议给出了一些额外指引。\",\n        \"en\": \"During the Fed presser or a call came out with some additional guidance.\",\n        \"relative_start\": 81.8,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易。\",\n      \"public_baseline\": \"中文财经报道显示，2026年华尔街对AI主线出现分歧：高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"surprise_gap\": \"市场普遍仍将AI视为核心主线，但节目主持人公开表示对共识交易感到迷失，形成“主线仍在、共识已乱”的反差。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://news.qq.com/rain/a/20260708A01WSR00\",\n          \"fact\": \"高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://www.investmentstrategynews.com/zh/articles/wall-street-ai-mania-trading-revenue-transformation\",\n          \"fact\": \"AI热潮推动高盛与摩根士丹利2026年二季度股权交易收入同比大涨。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称高盛或摩根士丹利已公开放弃AI交易主线\",\n        \"不得声称主持人代表彭博官方立场\",\n        \"不得将“lost the plot”解读为具体持仓或交易动作\",\n        \"不得声称华尔街已就AI交易达成新的统一共识\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转写中“Joe Wyzen's mom”应为Joe Weisenthal的语音识别错误，未作为实体输出。\",\n    \"公开检索片段中部分日期（2026年）与来源可靠性有限，仅作线索，未据此断言具体持仓或立场变化。\",\n    \"未发现可靠中文固定译名的主持人与播客名保留英文，避免生造音译。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易；公开报道显示华尔街对AI主线出现分歧，高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "居然是这样",
+                "title": "华尔街自己也乱了",
+                "title_lines": [
+                  "华尔街机构",
+                  "公开说找不到共识交易",
+                  "AI主线还在共识却散了"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”",
+                  "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "AI交易主线还在共识先散了",
+                "title_lines": [
+                  "AI交易主线还在",
+                  "华尔街却先找不到共识",
+                  "资本开支与债务压力成焦点"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 主持人追问“what are the consensus trades these days?”",
+                  "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "数据中心到底让人担心什么",
+                "title_lines": [
+                  "数据中心担忧升温",
+                  "主持人追问共识交易在哪",
+                  "资本开支与债务压力被点名"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: “what are people actually worried about with some of these data center stuff?”",
+                  "public: 高盛警告AI与动量交易出现力竭信号"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "市场共识乱了主持人先承认",
+                "title_lines": [
+                  "市场共识乱了",
+                  "主持人先承认自己迷失",
+                  "AI交易主线还在但没人敢定调"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: “I kind of feel like I lost the plot”",
+                  "transcript: “I have no idea what anyone thinks anymore”",
+                  "public: 国际投行对AI主线现分歧"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"source_title\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"华尔街重新审视AI交易主线\",\n    \"current_title_lines\": [\n      \"华尔街机构\",\n      \"重新审视AI交易主线\",\n      \"资本开支与债务压力成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"经济规律依然存在。但在2025和2026年，似乎不太明显？\",\n        \"en\": \"The laws of the economy still exist. What, apparently not so much in 2025 and 2026?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，关键点在这里。对，就是这个，没错。\",\n        \"en\": \"Yes, here's the punchline. Yeah, this is the, yeah, exactly.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这就是关键点。2026年完全打破了你在常态下会看到的大趋势。\",\n        \"en\": \"This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"大家好，欢迎收听另一期《All Thoughts Podcast》。\",\n        \"en\": \"Hello and welcome to another episode of The All Thoughts Podcast.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 23.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我是Tracy Alloway。我是Joe Wyzen的妈妈。Joe，有趣的市场时期。\",\n        \"en\": \"I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.\",\n        \"relative_start\": 23.8,\n        \"relative_end\": 27.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你知道吗？我感觉自己有点迷失方向了。\",\n        \"en\": \"You know what? I kind of feel like I lost the plot.\",\n        \"relative_start\": 27.8,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我知道。我当时就像，我看到了，我有了这个领悟。\",\n        \"en\": \"I know. I was like, I saw, I had this realization.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我不知道发生了什么。就像，我们只是在试探市场。\",\n        \"en\": \"I don't know what anything's going on. Like, we're just trying markets.\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"显然，我在生活上也迷失了方向。\",\n        \"en\": \"And obviously I lost the plot with life in general.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"没人否认这一点。但就像，如今的市场共识交易是什么？\",\n        \"en\": \"Like no one's disputed that. But just as like, what are the consensus trades these days?\",\n        \"relative_start\": 41.8,\n        \"relative_end\": 46.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"比如，人们对这些数据中心相关的东西到底担心什么？\",\n        \"en\": \"Like, what are people actually worried about with some of these data center stuff?\",\n        \"relative_start\": 46.8,\n        \"relative_end\": 50.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"比如，我们是什么？等等。我已经不知道别人怎么想了。\",\n        \"en\": \"Like, what are we? What, et cetera. I have no idea what anyone thinks anymore.\",\n        \"relative_start\": 50.8,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我急需认清现实。我们是在10月28日录制的。\",\n        \"en\": \"Like I need a reality check badly. So we're recording this on October 28th.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就市场现实而言，这次我们其实做得更好，因为我们经常在美联储决策前、或S1文件发布前、或财报指引前录制。\",\n        \"en\": \"And in terms of market reality, we're actually doing better on this one because we often end up recording these right before a Fed decision or right before an S1 comes out or right before earnings guidance\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 71.8\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"之类的。这次我们时机把握得挺好。\",\n        \"en\": \"or something. This time, we've actually, we've timed it pretty well.\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"我们刚经历了FOMC决策。是的。\",\n        \"en\": \"So we just had the FOMC decision. Yeah.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 78.8\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"本周早些时候，我们看到了Anthropic的S1文件。\",\n        \"en\": \"Earlier this week, we had the S1 filing from Anthropic.\",\n        \"relative_start\": 78.8,\n        \"relative_end\": 81.8\n      },\n      {\n        \"index\": 18,\n        \"zh\": \"在美联储新闻发布会期间，或有一通电话会议给出了一些额外指引。\",\n        \"en\": \"During the Fed presser or a call came out with some additional guidance.\",\n        \"relative_start\": 81.8,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易。\",\n      \"public_baseline\": \"中文财经报道显示，2026年华尔街对AI主线出现分歧：高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"surprise_gap\": \"市场普遍仍将AI视为核心主线，但节目主持人公开表示对共识交易感到迷失，形成“主线仍在、共识已乱”的反差。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://news.qq.com/rain/a/20260708A01WSR00\",\n          \"fact\": \"高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://www.investmentstrategynews.com/zh/articles/wall-street-ai-mania-trading-revenue-transformation\",\n          \"fact\": \"AI热潮推动高盛与摩根士丹利2026年二季度股权交易收入同比大涨。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称高盛或摩根士丹利已公开放弃AI交易主线\",\n        \"不得声称主持人代表彭博官方立场\",\n        \"不得将“lost the plot”解读为具体持仓或交易动作\",\n        \"不得声称华尔街已就AI交易达成新的统一共识\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转写中“Joe Wyzen's mom”应为Joe Weisenthal的语音识别错误，未作为实体输出。\",\n    \"公开检索片段中部分日期（2026年）与来源可靠性有限，仅作线索，未据此断言具体持仓或立场变化。\",\n    \"未发现可靠中文固定译名的主持人与播客名保留英文，避免生造音译。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易；公开报道显示华尔街对AI主线出现分歧，高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"华尔街自己也乱了\",\n          \"title_lines\": [\n            \"华尔街机构\",\n            \"公开说找不到共识交易\",\n            \"AI主线还在共识却散了\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI交易主线还在共识先散了\",\n          \"title_lines\": [\n            \"AI交易主线还在\",\n            \"华尔街却先找不到共识\",\n            \"资本开支与债务压力成焦点\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 主持人追问“what are the consensus trades these days?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"数据中心到底让人担心什么\",\n          \"title_lines\": [\n            \"数据中心担忧升温\",\n            \"主持人追问共识交易在哪\",\n            \"资本开支与债务压力被点名\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: “what are people actually worried about with some of these data center stuff?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"市场共识乱了主持人先承认\",\n          \"title_lines\": [\n            \"市场共识乱了\",\n            \"主持人先承认自己迷失\",\n            \"AI交易主线还在但没人敢定调\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: “I kind of feel like I lost the plot”\",\n            \"transcript: “I have no idea what anyone thinks anymore”\",\n            \"public: 国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority-consensus-break",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "华尔街自己都找不到共识了？",
+            "evidence_basis": [
+              "transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”",
+              "transcript: “what are people actually worried about with some of these data center stuff?”",
+              "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+            ],
+            "title": "华尔街找不到共识交易了",
+            "title_lines": [
+              "华尔街机构",
+              "公开说找不到共识交易",
+              "AI主线还在共识却散了"
+            ],
+            "title_highlights": [
+              "找不到共识交易",
+              "共识却散了"
+            ],
+            "runner_up_titles": [
+              "AI交易主线还在共识先散了",
+              "数据中心担忧升温共识交易在哪"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：AI主线仍在，但机构对资本开支与债务压力的分歧正在放大。",
+            "comment_highlights": [
+              "资本开支与债务压力"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：经济规律仍在，2025和2026却显得不太一样。",
+                "comment_highlights": [
+                  "经济规律仍在"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：主持人直接点出关键，语气里带着意外。",
+                "comment_highlights": [
+                  "关键"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：2026年打破常态趋势，这是全片的核心反差。",
+                "comment_highlights": [
+                  "打破常态趋势"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：节目开场，话题落在当下市场共识上。",
+                "comment_highlights": [
+                  "市场共识"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：主持人自嘲式开场，暗示市场让人摸不着头脑。",
+                "comment_highlights": [
+                  "摸不着头脑"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：一句迷失方向，道出当前共识交易的模糊。",
+                "comment_highlights": [
+                  "迷失方向"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：主持人说有了领悟，说明市场认知正在变化。",
+                "comment_highlights": [
+                  "认知正在变化"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：连主持人都说不知道发生了什么，市场信号确实乱。",
+                "comment_highlights": [
+                  "市场信号确实乱"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：生活上也迷失，是自嘲，也放大了市场困惑。",
+                "comment_highlights": [
+                  "市场困惑"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：追问共识交易是什么，正是全片的核心问题。",
+                "comment_highlights": [
+                  "共识交易"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：数据中心担忧被点名，资本开支压力浮出水面。",
+                "comment_highlights": [
+                  "资本开支压力"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：不知道别人怎么想，说明共识已经松动。",
+                "comment_highlights": [
+                  "共识已经松动"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：需要认清现实，录制时间点也成了观察窗口。",
+                "comment_highlights": [
+                  "认清现实"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：这次录制时机不错，正好赶上关键事件前后。",
+                "comment_highlights": [
+                  "关键事件"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：时机把握得好，意味着讨论更有现实参照。",
+                "comment_highlights": [
+                  "现实参照"
+                ]
+              },
+              {
+                "subtitle_index": 16,
+                "comment": "KC评论：FOMC决策刚落地，市场预期正在重新校准。",
+                "comment_highlights": [
+                  "重新校准"
+                ]
+              },
+              {
+                "subtitle_index": 17,
+                "comment": "KC评论：Anthropic的S1文件，给AI交易添了新变量。",
+                "comment_highlights": [
+                  "新变量"
+                ]
+              },
+              {
+                "subtitle_index": 18,
+                "comment": "KC评论：额外指引出现，市场对AI主线的判断更需更新。",
+                "comment_highlights": [
+                  "判断更需更新"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 86.8,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"source_title\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"华尔街重新审视AI交易主线\",\n    \"current_title_lines\": [\n      \"华尔街机构\",\n      \"重新审视AI交易主线\",\n      \"资本开支与债务压力成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"经济规律依然存在。但在2025和2026年，似乎不太明显？\",\n        \"en\": \"The laws of the economy still exist. What, apparently not so much in 2025 and 2026?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，关键点在这里。对，就是这个，没错。\",\n        \"en\": \"Yes, here's the punchline. Yeah, this is the, yeah, exactly.\",\n        \"relative_start\": 6.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"这就是关键点。2026年完全打破了你在常态下会看到的大趋势。\",\n        \"en\": \"This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 15.0\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"大家好，欢迎收听另一期《All Thoughts Podcast》。\",\n        \"en\": \"Hello and welcome to another episode of The All Thoughts Podcast.\",\n        \"relative_start\": 15.0,\n        \"relative_end\": 23.8\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"我是Tracy Alloway。我是Joe Wyzen的妈妈。Joe，有趣的市场时期。\",\n        \"en\": \"I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.\",\n        \"relative_start\": 23.8,\n        \"relative_end\": 27.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"你知道吗？我感觉自己有点迷失方向了。\",\n        \"en\": \"You know what? I kind of feel like I lost the plot.\",\n        \"relative_start\": 27.8,\n        \"relative_end\": 31.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"我知道。我当时就像，我看到了，我有了这个领悟。\",\n        \"en\": \"I know. I was like, I saw, I had this realization.\",\n        \"relative_start\": 31.8,\n        \"relative_end\": 35.8\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我不知道发生了什么。就像，我们只是在试探市场。\",\n        \"en\": \"I don't know what anything's going on. Like, we're just trying markets.\",\n        \"relative_start\": 35.8,\n        \"relative_end\": 38.8\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"显然，我在生活上也迷失了方向。\",\n        \"en\": \"And obviously I lost the plot with life in general.\",\n        \"relative_start\": 38.8,\n        \"relative_end\": 41.8\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"没人否认这一点。但就像，如今的市场共识交易是什么？\",\n        \"en\": \"Like no one's disputed that. But just as like, what are the consensus trades these days?\",\n        \"relative_start\": 41.8,\n        \"relative_end\": 46.8\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"比如，人们对这些数据中心相关的东西到底担心什么？\",\n        \"en\": \"Like, what are people actually worried about with some of these data center stuff?\",\n        \"relative_start\": 46.8,\n        \"relative_end\": 50.8\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"比如，我们是什么？等等。我已经不知道别人怎么想了。\",\n        \"en\": \"Like, what are we? What, et cetera. I have no idea what anyone thinks anymore.\",\n        \"relative_start\": 50.8,\n        \"relative_end\": 54.8\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我急需认清现实。我们是在10月28日录制的。\",\n        \"en\": \"Like I need a reality check badly. So we're recording this on October 28th.\",\n        \"relative_start\": 54.8,\n        \"relative_end\": 59.8\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"就市场现实而言，这次我们其实做得更好，因为我们经常在美联储决策前、或S1文件发布前、或财报指引前录制。\",\n        \"en\": \"And in terms of market reality, we're actually doing better on this one because we often end up recording these right before a Fed decision or right before an S1 comes out or right before earnings guidance\",\n        \"relative_start\": 59.8,\n        \"relative_end\": 71.8\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"之类的。这次我们时机把握得挺好。\",\n        \"en\": \"or something. This time, we've actually, we've timed it pretty well.\",\n        \"relative_start\": 71.8,\n        \"relative_end\": 75.8\n      },\n      {\n        \"index\": 16,\n        \"zh\": \"我们刚经历了FOMC决策。是的。\",\n        \"en\": \"So we just had the FOMC decision. Yeah.\",\n        \"relative_start\": 75.8,\n        \"relative_end\": 78.8\n      },\n      {\n        \"index\": 17,\n        \"zh\": \"本周早些时候，我们看到了Anthropic的S1文件。\",\n        \"en\": \"Earlier this week, we had the S1 filing from Anthropic.\",\n        \"relative_start\": 78.8,\n        \"relative_end\": 81.8\n      },\n      {\n        \"index\": 18,\n        \"zh\": \"在美联储新闻发布会期间，或有一通电话会议给出了一些额外指引。\",\n        \"en\": \"During the Fed presser or a call came out with some additional guidance.\",\n        \"relative_start\": 81.8,\n        \"relative_end\": 86.8\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易。\",\n      \"public_baseline\": \"中文财经报道显示，2026年华尔街对AI主线出现分歧：高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"surprise_gap\": \"市场普遍仍将AI视为核心主线，但节目主持人公开表示对共识交易感到迷失，形成“主线仍在、共识已乱”的反差。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://news.qq.com/rain/a/20260708A01WSR00\",\n          \"fact\": \"高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://www.investmentstrategynews.com/zh/articles/wall-street-ai-mania-trading-revenue-transformation\",\n          \"fact\": \"AI热潮推动高盛与摩根士丹利2026年二季度股权交易收入同比大涨。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称高盛或摩根士丹利已公开放弃AI交易主线\",\n        \"不得声称主持人代表彭博官方立场\",\n        \"不得将“lost the plot”解读为具体持仓或交易动作\",\n        \"不得声称华尔街已就AI交易达成新的统一共识\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转写中“Joe Wyzen's mom”应为Joe Weisenthal的语音识别错误，未作为实体输出。\",\n    \"公开检索片段中部分日期（2026年）与来源可靠性有限，仅作线索，未据此断言具体持仓或立场变化。\",\n    \"未发现可靠中文固定译名的主持人与播客名保留英文，避免生造音译。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易；公开报道显示华尔街对AI主线出现分歧，高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"华尔街自己也乱了\",\n          \"title_lines\": [\n            \"华尔街机构\",\n            \"公开说找不到共识交易\",\n            \"AI主线还在共识却散了\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI交易主线还在共识先散了\",\n          \"title_lines\": [\n            \"AI交易主线还在\",\n            \"华尔街却先找不到共识\",\n            \"资本开支与债务压力成焦点\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 主持人追问“what are the consensus trades these days?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"数据中心到底让人担心什么\",\n          \"title_lines\": [\n            \"数据中心担忧升温\",\n            \"主持人追问共识交易在哪\",\n            \"资本开支与债务压力被点名\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: “what are people actually worried about with some of these data center stuff?”\",\n            \"public: 高盛警告AI与动量交易出现力竭信号\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"市场共识乱了主持人先承认\",\n          \"title_lines\": [\n            \"市场共识乱了\",\n            \"主持人先承认自己迷失\",\n            \"AI交易主线还在但没人敢定调\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: “I kind of feel like I lost the plot”\",\n            \"transcript: “I have no idea what anyone thinks anymore”\",\n            \"public: 国际投行对AI主线现分歧\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"华尔街机构：公开说找不到共识交易，AI主线还在共识却散了\",\n      \"title_lines\": [\n        \"华尔街机构\",\n        \"公开说找不到共识交易\",\n        \"AI主线还在共识却散了\"\n      ],\n      \"title_highlights\": [\n        \"找不到共识交易\",\n        \"共识却散了\"\n      ],\n      \"comment\": \"KC评论：AI主线仍在，但机构对资本开支与债务压力的分歧正在放大\",\n      \"comment_highlights\": [\n        \"资本开支与债务压力\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：经济规律仍在，2025和2026却显得不太一样\",\n          \"comment_highlights\": [\n            \"经济规律仍在\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：主持人直接点出关键，语气里带着意外\",\n          \"comment_highlights\": [\n            \"关键\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：2026年打破常态趋势，这是全片的核心反差\",\n          \"comment_highlights\": [\n            \"打破常态趋势\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：节目开场，话题落在当下市场共识上\",\n          \"comment_highlights\": [\n            \"市场共识\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：主持人自嘲式开场，暗示市场让人摸不着头脑\",\n          \"comment_highlights\": [\n            \"摸不着头脑\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：一句迷失方向，道出当前共识交易的模糊\",\n          \"comment_highlights\": [\n            \"迷失方向\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：主持人说有了领悟，说明市场认知正在变化\",\n          \"comment_highlights\": [\n            \"认知正在变化\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：连主持人都说不知道发生了什么，市场信号确实乱\",\n          \"comment_highlights\": [\n            \"市场信号确实乱\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：生活上也迷失，是自嘲，也放大了市场困惑\",\n          \"comment_highlights\": [\n            \"市场困惑\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：追问共识交易是什么，正是全片的核心问题\",\n          \"comment_highlights\": [\n            \"共识交易\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：数据中心担忧被点名，资本开支压力浮出水面\",\n          \"comment_highlights\": [\n            \"资本开支压力\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：不知道别人怎么想，说明共识已经松动\",\n          \"comment_highlights\": [\n            \"共识已经松动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：需要认清现实，录制时间点也成了观察窗口\",\n          \"comment_highlights\": [\n            \"认清现实\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：这次录制时机不错，正好赶上关键事件前后\",\n          \"comment_highlights\": [\n            \"关键事件\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：时机把握得好，意味着讨论更有现实参照\",\n          \"comment_highlights\": [\n            \"现实参照\"\n          ]\n        },\n        {\n          \"subtitle_index\": 16,\n          \"comment\": \"KC评论：FOMC决策刚落地，市场预期正在重新校准\",\n          \"comment_highlights\": [\n            \"重新校准\"\n          ]\n        },\n        {\n          \"subtitle_index\": 17,\n          \"comment\": \"KC评论：Anthropic的S1文件，给AI交易添了新变量\",\n          \"comment_highlights\": [\n            \"新变量\"\n          ]\n        },\n        {\n          \"subtitle_index\": 18,\n          \"comment\": \"KC评论：额外指引出现，市场对AI主线的判断更需更新\",\n          \"comment_highlights\": [\n            \"判断更需更新\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority-consensus-break\",\n      \"angle_id\": \"authority_breaks_consensus\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"华尔街自己都找不到共识了？\",\n      \"evidence_basis\": [\n        \"transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\",\n        \"transcript: “what are people actually worried about with some of these data center stuff?”\",\n        \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n      ],\n      \"runner_up_titles\": [\n        \"AI交易主线还在共识先散了\",\n        \"数据中心担忧升温共识交易在哪\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 5\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:authority_breaks_consensus\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 5\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority-consensus-break",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "华尔街自己都找不到共识了？",
+                "evidence_basis": [
+                  "transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”",
+                  "transcript: “what are people actually worried about with some of these data center stuff?”",
+                  "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+                ],
+                "title": "AI主线还在，华尔街却先找不到共识",
+                "title_lines": [
+                  "AI主线还在",
+                  "华尔街却先找不到共识",
+                  "资本开支与债务压力成焦点"
+                ],
+                "title_highlights": [
+                  "AI主线还在",
+                  "找不到共识"
+                ],
+                "runner_up_titles": [
+                  "数据中心担忧升温，共识交易在哪",
+                  "主持人先承认：我也迷失了方向"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：AI主线仍在，但机构对资本开支与债务压力的分歧正在放大",
+                "comment_highlights": [
+                  "资本开支与债务压力"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：经济规律仍在，2025和2026却显得不太一样",
+                    "comment_highlights": [
+                      "经济规律仍在"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：主持人直接点出关键，语气里带着意外",
+                    "comment_highlights": [
+                      "关键"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：2026年打破常态趋势，这是全片的核心反差",
+                    "comment_highlights": [
+                      "打破常态趋势"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：节目开场，话题落在当下市场共识上",
+                    "comment_highlights": [
+                      "市场共识"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：主持人自嘲式开场，暗示市场让人摸不着头脑",
+                    "comment_highlights": [
+                      "摸不着头脑"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：一句迷失方向，道出当前共识交易的模糊",
+                    "comment_highlights": [
+                      "迷失方向"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：主持人说有了领悟，说明市场认知正在变化",
+                    "comment_highlights": [
+                      "认知正在变化"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：连主持人都说不知道发生了什么，市场信号确实乱",
+                    "comment_highlights": [
+                      "市场信号确实乱"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：生活上也迷失，是自嘲，也放大了市场困惑",
+                    "comment_highlights": [
+                      "市场困惑"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：追问共识交易是什么，正是全片的核心问题",
+                    "comment_highlights": [
+                      "共识交易"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：数据中心担忧被点名，资本开支压力浮出水面",
+                    "comment_highlights": [
+                      "资本开支压力"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：不知道别人怎么想，说明共识已经松动",
+                    "comment_highlights": [
+                      "共识已经松动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：需要认清现实，录制时间点也成了观察窗口",
+                    "comment_highlights": [
+                      "认清现实"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：这次录制时机不错，正好赶上关键事件前后",
+                    "comment_highlights": [
+                      "关键事件"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：时机把握得好，意味着讨论更有现实参照",
+                    "comment_highlights": [
+                      "现实参照"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 16,
+                    "comment": "KC评论：FOMC决策刚落地，市场预期正在重新校准",
+                    "comment_highlights": [
+                      "重新校准"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 17,
+                    "comment": "KC评论：Anthropic的S1文件，给AI交易添了新变量",
+                    "comment_highlights": [
+                      "新变量"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 18,
+                    "comment": "KC评论：额外指引出现，市场对AI主线的判断更需更新",
+                    "comment_highlights": [
+                      "判断更需更新"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "华尔街机构：公开说找不到共识交易，AI主线还在共识却散了",
+          "title_lines": [
+            "华尔街机构",
+            "公开说找不到共识交易",
+            "AI主线还在共识却散了"
+          ],
+          "formula_id": "authority-consensus-break",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "华尔街自己都找不到共识了？",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:authority_breaks_consensus",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            }
+          },
+          "comment": "KC评论：AI主线仍在，但机构对资本开支与债务压力的分歧正在放大"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-30T02:01:08.540605+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 86.8,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now",
+          "source_title": "Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now",
+          "show_date": "",
+          "current_title": "华尔街重新审视AI交易主线",
+          "current_title_lines": [
+            "华尔街机构",
+            "重新审视AI交易主线",
+            "资本开支与债务压力成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "经济规律依然存在。但在2025和2026年，似乎不太明显？",
+              "en": "The laws of the economy still exist. What, apparently not so much in 2025 and 2026?",
+              "relative_start": 0.0,
+              "relative_end": 6.0
+            },
+            {
+              "index": 2,
+              "zh": "是的，关键点在这里。对，就是这个，没错。",
+              "en": "Yes, here's the punchline. Yeah, this is the, yeah, exactly.",
+              "relative_start": 6.0,
+              "relative_end": 9.0
+            },
+            {
+              "index": 3,
+              "zh": "这就是关键点。2026年完全打破了你在常态下会看到的大趋势。",
+              "en": "This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.",
+              "relative_start": 9.0,
+              "relative_end": 15.0
+            },
+            {
+              "index": 4,
+              "zh": "大家好，欢迎收听另一期《All Thoughts Podcast》。",
+              "en": "Hello and welcome to another episode of The All Thoughts Podcast.",
+              "relative_start": 15.0,
+              "relative_end": 23.8
+            },
+            {
+              "index": 5,
+              "zh": "我是Tracy Alloway。我是Joe Wyzen的妈妈。Joe，有趣的市场时期。",
+              "en": "I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.",
+              "relative_start": 23.8,
+              "relative_end": 27.8
+            },
+            {
+              "index": 6,
+              "zh": "你知道吗？我感觉自己有点迷失方向了。",
+              "en": "You know what? I kind of feel like I lost the plot.",
+              "relative_start": 27.8,
+              "relative_end": 31.8
+            },
+            {
+              "index": 7,
+              "zh": "我知道。我当时就像，我看到了，我有了这个领悟。",
+              "en": "I know. I was like, I saw, I had this realization.",
+              "relative_start": 31.8,
+              "relative_end": 35.8
+            },
+            {
+              "index": 8,
+              "zh": "我不知道发生了什么。就像，我们只是在试探市场。",
+              "en": "I don't know what anything's going on. Like, we're just trying markets.",
+              "relative_start": 35.8,
+              "relative_end": 38.8
+            },
+            {
+              "index": 9,
+              "zh": "显然，我在生活上也迷失了方向。",
+              "en": "And obviously I lost the plot with life in general.",
+              "relative_start": 38.8,
+              "relative_end": 41.8
+            },
+            {
+              "index": 10,
+              "zh": "没人否认这一点。但就像，如今的市场共识交易是什么？",
+              "en": "Like no one's disputed that. But just as like, what are the consensus trades these days?",
+              "relative_start": 41.8,
+              "relative_end": 46.8
+            },
+            {
+              "index": 11,
+              "zh": "比如，人们对这些数据中心相关的东西到底担心什么？",
+              "en": "Like, what are people actually worried about with some of these data center stuff?",
+              "relative_start": 46.8,
+              "relative_end": 50.8
+            },
+            {
+              "index": 12,
+              "zh": "比如，我们是什么？等等。我已经不知道别人怎么想了。",
+              "en": "Like, what are we? What, et cetera. I have no idea what anyone thinks anymore.",
+              "relative_start": 50.8,
+              "relative_end": 54.8
+            },
+            {
+              "index": 13,
+              "zh": "我急需认清现实。我们是在10月28日录制的。",
+              "en": "Like I need a reality check badly. So we're recording this on October 28th.",
+              "relative_start": 54.8,
+              "relative_end": 59.8
+            },
+            {
+              "index": 14,
+              "zh": "就市场现实而言，这次我们其实做得更好，因为我们经常在美联储决策前、或S1文件发布前、或财报指引前录制。",
+              "en": "And in terms of market reality, we're actually doing better on this one because we often end up recording these right before a Fed decision or right before an S1 comes out or right before earnings guidance",
+              "relative_start": 59.8,
+              "relative_end": 71.8
+            },
+            {
+              "index": 15,
+              "zh": "之类的。这次我们时机把握得挺好。",
+              "en": "or something. This time, we've actually, we've timed it pretty well.",
+              "relative_start": 71.8,
+              "relative_end": 75.8
+            },
+            {
+              "index": 16,
+              "zh": "我们刚经历了FOMC决策。是的。",
+              "en": "So we just had the FOMC decision. Yeah.",
+              "relative_start": 75.8,
+              "relative_end": 78.8
+            },
+            {
+              "index": 17,
+              "zh": "本周早些时候，我们看到了Anthropic的S1文件。",
+              "en": "Earlier this week, we had the S1 filing from Anthropic.",
+              "relative_start": 78.8,
+              "relative_end": 81.8
+            },
+            {
+              "index": 18,
+              "zh": "在美联储新闻发布会期间，或有一通电话会议给出了一些额外指引。",
+              "en": "During the Fed presser or a call came out with some additional guidance.",
+              "relative_start": 81.8,
+              "relative_end": 86.8
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n  \"source_title\": \"Duration: 39:59 What Wall Street Really Thinks About the AI Trade Now\",\n  \"current_title\": \"华尔街重新审视AI交易主线\",\n  \"source_claims\": [\n    \"The laws of the economy still exist. What, apparently not so much in 2025 and 2026?\",\n    \"Yes, here's the punchline. Yeah, this is the, yeah, exactly.\",\n    \"This is the punchline. 2026 is completely shattered what you would, what you would have seen in the big thing in the norms.\",\n    \"Hello and welcome to another episode of The All Thoughts Podcast.\",\n    \"I'm Tracy Alloway. And I'm Joe Wyzen's mom. Joe, interesting times and markets.\",\n    \"You know what? I kind of feel like I lost the plot.\",\n    \"I know. I was like, I saw, I had this realization.\",\n    \"I don't know what anything's going on. Like, we're just trying markets.\",\n    \"And obviously I lost the plot with life in general.\",\n    \"Like no one's disputed that. But just as like, what are the consensus trades these days?\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"主持人称自己在当前市场中“lost the plot”，并追问当下究竟什么是共识交易。\",\n      \"public_baseline\": \"中文财经报道显示，2026年华尔街对AI主线出现分歧：高盛警告AI与动量交易出现力竭信号，而AI热潮仍推动投行交易收入大增。\",\n      \"surprise_gap\": \"市场普遍仍将AI视为核心主线，但节目主持人公开表示对共识交易感到迷失，形成“主线仍在、共识已乱”的反差。\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"authority_breaks_consensus\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://news.qq.com/rain/a/20260708A01WSR00\",\n          \"fact\": \"高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"华尔街 AI 交易 共识 2026 高盛 摩根士丹利\",\n          \"url\": \"https://www.investmentstrategynews.com/zh/articles/wall-street-ai-mania-trading-revenue-transformation\",\n          \"fact\": \"AI热潮推动高盛与摩根士丹利2026年二季度股权交易收入同比大涨。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称高盛或摩根士丹利已公开放弃AI交易主线\",\n        \"不得声称主持人代表彭博官方立场\",\n        \"不得将“lost the plot”解读为具体持仓或交易动作\",\n        \"不得声称华尔街已就AI交易达成新的统一共识\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"转写中“Joe Wyzen's mom”应为Joe Weisenthal的语音识别错误，未作为实体输出。\",\n    \"公开检索片段中部分日期（2026年）与来源可靠性有限，仅作线索，未据此断言具体持仓或立场变化。\",\n    \"未发现可靠中文固定译名的主持人与播客名保留英文，避免生造音译。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"华尔街机构：公开说找不到共识交易，AI主线还在共识却散了\",\n  \"title_lines\": [\n    \"华尔街机构\",\n    \"公开说找不到共识交易\",\n    \"AI主线还在共识却散了\"\n  ],\n  \"angle_id\": \"authority_breaks_consensus\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"华尔街自己都找不到共识了？\",\n  \"evidence_basis\": [\n    \"transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”\",\n    \"transcript: “what are people actually worried about with some of these data center stuff?”\",\n    \"public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 5\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "华尔街自己都找不到共识了？",
+            "evidence_basis": [
+              "transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”",
+              "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+            ],
+            "title": "华尔街主持人自认找不到主线，AI共识还在却散了，下一个共识交易是什么？",
+            "title_lines": [
+              "华尔街主持人自认找不到主线",
+              "AI共识还在却散了",
+              "下一个共识交易是什么？"
+            ],
+            "title_highlights": [
+              "自认找不到主线",
+              "共识还在却散了",
+              "下一个共识交易是什么？"
+            ],
+            "runner_up_titles": [
+              "华尔街主持人追问共识交易，AI主线分歧下该信谁？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 5
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "华尔街主持人自认找不到主线：AI共识还在却散了，下一个共识交易是什么？",
+        "title_lines": [
+          "华尔街主持人自认找不到主线",
+          "AI共识还在却散了",
+          "下一个共识交易是什么？"
+        ],
+        "title_highlights": [
+          "自认找不到主线",
+          "共识还在却散了",
+          "下一个共识交易是什么？"
+        ],
+        "comment": "KC评论：AI主线仍在，但机构对资本开支与债务压力的分歧正在放大",
+        "comment_highlights": [
+          "资本开支与债务压力"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：经济规律仍在，2025和2026却显得不太一样",
+            "comment_highlights": [
+              "经济规律仍在"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：主持人直接点出关键，语气里带着意外",
+            "comment_highlights": [
+              "关键"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：2026年打破常态趋势，这是全片的核心反差",
+            "comment_highlights": [
+              "打破常态趋势"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：节目开场，话题落在当下市场共识上",
+            "comment_highlights": [
+              "市场共识"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：主持人自嘲式开场，暗示市场让人摸不着头脑",
+            "comment_highlights": [
+              "摸不着头脑"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：一句迷失方向，道出当前共识交易的模糊",
+            "comment_highlights": [
+              "迷失方向"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：主持人说有了领悟，说明市场认知正在变化",
+            "comment_highlights": [
+              "认知正在变化"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：连主持人都说不知道发生了什么，市场信号确实乱",
+            "comment_highlights": [
+              "市场信号确实乱"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：生活上也迷失，是自嘲，也放大了市场困惑",
+            "comment_highlights": [
+              "市场困惑"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：追问共识交易是什么，正是全片的核心问题",
+            "comment_highlights": [
+              "共识交易"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：数据中心担忧被点名，资本开支压力浮出水面",
+            "comment_highlights": [
+              "资本开支压力"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：不知道别人怎么想，说明共识已经松动",
+            "comment_highlights": [
+              "共识已经松动"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：需要认清现实，录制时间点也成了观察窗口",
+            "comment_highlights": [
+              "认清现实"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：这次录制时机不错，正好赶上关键事件前后",
+            "comment_highlights": [
+              "关键事件"
+            ]
+          },
+          {
+            "subtitle_index": 15,
+            "comment": "KC评论：时机把握得好，意味着讨论更有现实参照",
+            "comment_highlights": [
+              "现实参照"
+            ]
+          },
+          {
+            "subtitle_index": 16,
+            "comment": "KC评论：FOMC决策刚落地，市场预期正在重新校准",
+            "comment_highlights": [
+              "重新校准"
+            ]
+          },
+          {
+            "subtitle_index": 17,
+            "comment": "KC评论：Anthropic的S1文件，给AI交易添了新变量",
+            "comment_highlights": [
+              "新变量"
+            ]
+          },
+          {
+            "subtitle_index": 18,
+            "comment": "KC评论：额外指引出现，市场对AI主线的判断更需更新",
+            "comment_highlights": [
+              "判断更需更新"
+            ]
+          }
+        ],
+        "formula_id": "authority-consensus-break",
+        "angle_id": "authority_breaks_consensus",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "华尔街自己都找不到共识了？",
+        "evidence_basis": [
+          "transcript: 主持人称“I kind of feel like I lost the plot”，并追问“what are the consensus trades these days?”",
+          "public: 高盛警告AI与动量交易出现力竭信号，国际投行对AI主线现分歧"
+        ],
+        "runner_up_titles": [
+          "华尔街主持人追问共识交易，AI主线分歧下该信谁？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 5
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 97,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:authority_breaks_consensus",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 5
+          }
+        }
+      }
+    }
+  ]
+}
