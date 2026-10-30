@@ -8,9 +8,11 @@ Uses render_overlays_pillow.py instead of Swift, libx264 instead of VideoToolbox
 from __future__ import annotations
 
 import json
+import math
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +43,10 @@ AUDIO_DEDUPE_FILTER = (
 CHUNKED_SUBTITLE_THRESHOLD = 24
 CHUNKED_SUBTITLES_PER_PIECE = 8
 MIN_PIECE_SECONDS = 0.001
+# Seeking a fresh source input for a sub-frame interval can leave ffmpeg's
+# overlay framesync waiting forever. Keep a few frames per seek at normal
+# source frame rates; merge short intervals instead of dropping their overlays.
+MIN_RENDER_PIECE_SECONDS = 0.1
 DISCLAIMER_TEXT = (
     "免责声明：本内容仅作观点与信息分享，不构成投资、保险、理财、股票、基金等建议，"
     "市场有风险，投资需谨慎；亦不构成任何证券或金融工具买卖的出价、征价或招揽。"
@@ -69,6 +75,93 @@ PARAPHRASE_ZH_TERMS = [
     ("个股", "单家公司"),
     ("股", "权益"),
 ]
+
+
+class RenderError(RuntimeError):
+    """A render stage failed or produced an incomplete video."""
+
+
+class RenderTimeoutError(RenderError):
+    """A subprocess did not finish within either bounded attempt."""
+
+
+def stage_timeout(duration: float) -> int:
+    if not math.isfinite(duration) or duration <= 0:
+        raise RenderError(f"Invalid clip duration: {duration}")
+    # Normal cloud renders take about 2-3 times the media duration. Leave room
+    # for slower runners while bounding a stalled ffmpeg invocation.
+    return max(180, math.ceil(120 + duration * 6))
+
+
+def run_render_command(
+    command: list[str],
+    *,
+    stage: str,
+    duration: float,
+    outputs: tuple[Path, ...] = (),
+    timeout: int | None = None,
+    capture_output: bool = False,
+) -> subprocess.CompletedProcess:
+    limit = timeout if timeout is not None else stage_timeout(duration)
+    for attempt in (1, 2):
+        for path in outputs:
+            path.unlink(missing_ok=True)
+        started = time.monotonic()
+        print(f"RENDER_STAGE_START stage={stage} attempt={attempt}/2 timeout={limit}s", flush=True)
+        try:
+            result = subprocess.run(
+                command, check=True, timeout=limit,
+                capture_output=capture_output, text=capture_output,
+            )
+        except subprocess.TimeoutExpired as exc:
+            for path in outputs:
+                path.unlink(missing_ok=True)
+            print(f"RENDER_STAGE_TIMEOUT stage={stage} attempt={attempt}/2", flush=True)
+            if attempt == 2:
+                raise RenderTimeoutError(f"{stage} timed out twice after {limit}s per attempt") from exc
+        except BaseException as exc:
+            for path in outputs:
+                path.unlink(missing_ok=True)
+            print(f"RENDER_STAGE_FAILED stage={stage} error={type(exc).__name__}", flush=True)
+            raise
+        else:
+            print(f"RENDER_STAGE_DONE stage={stage} elapsed={time.monotonic() - started:.1f}s", flush=True)
+            return result
+    raise AssertionError("unreachable render retry state")
+
+
+def validate_video(path: Path, duration: float) -> None:
+    """Require readable audio/video packets and the planned duration before publishing."""
+    stage_timeout(duration)
+    if not path.is_file() or path.stat().st_size == 0:
+        raise RenderError(f"Missing or empty rendered video: {path}")
+    result = run_render_command(
+        [
+            "ffprobe", "-v", "error", "-count_packets",
+            "-show_entries", "format=duration:stream=codec_type,duration,width,height,nb_read_packets",
+            "-of", "json", str(path),
+        ],
+        stage=f"validate {path.name}", duration=duration,
+        timeout=max(60, math.ceil(duration)), capture_output=True,
+    )
+    try:
+        payload = json.loads(result.stdout)
+        streams = payload["streams"]
+        video = next(item for item in streams if item.get("codec_type") == "video")
+        audio = next(item for item in streams if item.get("codec_type") == "audio")
+        if result.stderr.strip():
+            raise ValueError("ffprobe reported unreadable media packets")
+        if (int(video["width"]), int(video["height"])) != (OUT_W, OUT_H):
+            raise ValueError("unexpected video dimensions")
+        tolerance = max(0.5, duration * 0.01)
+        for stream in (video, audio):
+            actual = float(stream.get("duration", payload["format"]["duration"]))
+            if not math.isfinite(actual) or abs(actual - duration) > tolerance:
+                raise ValueError(f"{stream['codec_type']} duration {actual} does not match {duration}")
+            if int(stream["nb_read_packets"]) < 1:
+                raise ValueError(f"no readable {stream['codec_type']} packets")
+    except (ValueError, TypeError, KeyError, StopIteration) as exc:
+        raise RenderError(f"Incomplete rendered video {path.name}: {exc}") from exc
 
 
 def main() -> None:
@@ -111,9 +204,18 @@ def main() -> None:
             continue
         output = args.out_dir / output_name(one_based, clip)
         if output.exists() and not args.force:
-            print(f"[{one_based}/{len(clips)}] Exists, skipping: {output}", flush=True)
-            rendered_count += 1
-            continue
+            try:
+                validate_video(output, duration_of(clip))
+            except RenderTimeoutError:
+                # A slow probe does not prove that an existing published file is bad.
+                raise
+            except (RenderError, subprocess.CalledProcessError) as exc:
+                print(f"[{one_based}/{len(clips)}] Removing incomplete output before rendering: {output} ({exc})", flush=True)
+                output.unlink()
+            else:
+                print(f"[{one_based}/{len(clips)}] Validated existing video, skipping: {output}", flush=True)
+                rendered_count += 1
+                continue
 
         clip_dir = args.work_dir / f"clip_{one_based:02d}"
         clip_dir.mkdir(parents=True, exist_ok=True)
@@ -240,7 +342,12 @@ def render_overlay_images(
 
     batch_path = clip_dir / "overlay_batch.json"
     batch_path.write_text(json.dumps({"jobs": jobs}, ensure_ascii=False, indent=2), encoding="utf-8")
-    subprocess.run([sys.executable, str(renderer), str(batch_path)], check=True)
+    run_render_command(
+        [sys.executable, str(renderer), str(batch_path)],
+        stage=f"PNG overlays {clip_dir.name}", duration=duration_of(clip),
+        outputs=tuple(Path(job["output"]) for job in jobs),
+        timeout=max(120, math.ceil(duration_of(clip) * 2)),
+    )
     return static_png, timed_overlays
 
 
@@ -356,6 +463,28 @@ def render_clip(
     output: Path,
     threads: int,
 ) -> None:
+    temporary_output = output.with_name(f".{output.stem}.rendering{output.suffix}")
+    temporary_output.unlink(missing_ok=True)
+    try:
+        _render_clip_to_file(
+            source=source, clip=clip, static_png=static_png,
+            timed_overlays=timed_overlays, output=temporary_output, threads=threads,
+        )
+        validate_video(temporary_output, duration_of(clip))
+        temporary_output.replace(output)
+    finally:
+        temporary_output.unlink(missing_ok=True)
+
+
+def _render_clip_to_file(
+    *,
+    source: Path,
+    clip: dict[str, Any],
+    static_png: Path,
+    timed_overlays: list[TimedOverlay],
+    output: Path,
+    threads: int,
+) -> None:
     if len(timed_overlays) > CHUNKED_SUBTITLE_THRESHOLD:
         print(
             f"  Using chunked renderer for {len(timed_overlays)} timed overlays",
@@ -379,7 +508,9 @@ def render_clip(
         output=output,
         threads=threads,
     )
-    subprocess.run(command, check=True)
+    run_render_command(
+        command, stage=f"video {output.name}", duration=duration_of(clip), outputs=(output,),
+    )
 
 
 def render_clip_chunked(
@@ -417,7 +548,10 @@ def render_clip_chunked(
             f"{len(piece_overlays)} timed overlays",
             flush=True,
         )
-        subprocess.run(command, check=True)
+        run_render_command(
+            command, stage=f"video {static_png.parent.name} part {idx:04d}",
+            duration=piece_duration, outputs=(segment_path,),
+        )
         segment_paths.append(segment_path)
 
     if not segment_paths:
@@ -432,22 +566,22 @@ def render_clip_chunked(
         encoding="utf-8",
     )
 
-    subprocess.run([
+    run_render_command([
         "ffmpeg",
         "-hide_banner", "-y", "-nostdin", "-loglevel", "error", "-nostats",
         "-f", "concat", "-safe", "0", "-i", str(concat_list),
         "-c", "copy",
         str(concat_video),
-    ], check=True)
+    ], stage=f"concat {static_png.parent.name}", duration=duration, outputs=(concat_video,))
 
-    subprocess.run(build_audio_command(
+    run_render_command(build_audio_command(
         source=source,
         clip=clip,
         duration=duration,
         output=audio_path,
-    ), check=True)
+    ), stage=f"audio {static_png.parent.name}", duration=duration, outputs=(audio_path,))
 
-    subprocess.run([
+    run_render_command([
         "ffmpeg",
         "-hide_banner", "-y", "-nostdin", "-loglevel", "error", "-nostats",
         "-i", str(concat_video),
@@ -459,7 +593,7 @@ def render_clip_chunked(
         "-movflags", "+faststart",
         "-shortest",
         str(output),
-    ], check=True)
+    ], stage=f"mux {static_png.parent.name}", duration=duration, outputs=(output,))
 
 
 def build_render_pieces(
@@ -493,7 +627,18 @@ def build_render_pieces(
 
     if cursor < duration:
         pieces.append((cursor, duration, []))
-    return pieces
+
+    merged: list[tuple[float, float, list[TimedOverlay]]] = []
+    for start, end, group in pieces:
+        if merged and (
+            end - start < MIN_RENDER_PIECE_SECONDS - 1e-9
+            or merged[-1][1] - merged[-1][0] < MIN_RENDER_PIECE_SECONDS - 1e-9
+        ):
+            previous_start, _, previous_overlays = merged.pop()
+            merged.append((previous_start, end, previous_overlays + group))
+        else:
+            merged.append((start, end, group))
+    return merged
 
 
 def build_video_piece_command(

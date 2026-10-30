@@ -316,7 +316,9 @@ jobs:
           PY
 
       - name: Render KC Desktop clips
+        id: render_clips
         if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
+        timeout-minutes: 120
         env:
           PYTHONUNBUFFERED: "1"
           BBG_OVERLAY_FONT_PRESET: ${{ env.FONT_PRESET }}
@@ -331,6 +333,20 @@ jobs:
             --out-dir "$OUTPUT_DIR" \
             --work-dir work/daily/render \
             --threads 2
+
+      - name: Preserve show recovery files after rendering failure
+        if: ${{ (failure() || cancelled()) && steps.render_clips.outcome != 'skipped' && steps.plan_highlights.outputs.has_clips == 'true' }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: show-recovery-${{ env.SHOW_DATE }}-${{ github.run_id }}
+          path: |
+            ${{ env.OUTPUT_DIR }}/
+            work/daily/show.json
+            work/daily/speakers.json
+            work/daily/highlight_plan.json
+            work/daily/source_identity.json
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: Copy metadata
         if: steps.existing_clips.outputs.skip != 'true' && steps.download.outputs.source_ready == 'true' && steps.source_guard_initial.outputs.duplicate != 'true' && steps.source_guard_transcript.outputs.duplicate != 'true' && steps.plan_highlights.outputs.has_clips == 'true'
