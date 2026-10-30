@@ -101,7 +101,7 @@ class ShowRepairTests(unittest.TestCase):
 
         argv = ["render_clips_linux.py", "--source", str(source), "--plan", str(self.work / "highlight_plan.json"),
                 "--out-dir", str(self.output), "--work-dir", str(self.work / "render")]
-        with patch.object(sys, "argv", argv), patch.object(renderer, "render_overlay_images", return_value=(Path("static.png"), [])), patch.object(renderer, "render_clip", side_effect=fake_render) as render:
+        with patch.object(sys, "argv", argv), patch.object(renderer, "validate_video"), patch.object(renderer, "render_overlay_images", return_value=(Path("static.png"), [])), patch.object(renderer, "render_clip", side_effect=fake_render) as render:
             renderer.main()
         render.assert_called_once()
         self.assertEqual(self.old_video.read_bytes(), b"published-video-bytes")
