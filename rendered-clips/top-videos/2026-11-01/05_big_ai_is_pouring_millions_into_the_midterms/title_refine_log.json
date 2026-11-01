@@ -1,0 +1,1397 @@
+{
+  "timestamp_utc": "2026-11-01T01:02:02.802889+00:00",
+  "plan_path": "work/top-videos/05_big_ai_is_pouring_millions_into_the_midterms/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P.",
+        "preferred_en": "Bloomberg L.P.",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Bloomberg's own pages and Chinese-language financial media conventionally render the outlet as 彭博; used here as publisher/speaker, not as an opinion-holding actor."
+      },
+      {
+        "source_text": "OpenAI",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "OpenAI",
+        "preferred_en": "OpenAI",
+        "official_zh": "",
+        "common_zh": "OpenAI",
+        "title_label": "OpenAI",
+        "preferred_zh": "OpenAI",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.csmonitor.com/USA/Politics/2026/1020/anthropic-openai-political-spending-midterms",
+          "https://www.commondreams.org/news/ai-protest"
+        ],
+        "evidence": "Chinese financial media retain the Latin-script brand 'OpenAI'; no established Chinese transliteration is in use."
+      },
+      {
+        "source_text": "Anthropic",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Anthropic",
+        "preferred_en": "Anthropic",
+        "official_zh": "",
+        "common_zh": "Anthropic",
+        "title_label": "Anthropic",
+        "preferred_zh": "Anthropic",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Named in two independent snippets; Chinese media keep the Latin brand, but no Chinese-language source co-occurrence was retrieved."
+      },
+      {
+        "source_text": "Public First Action",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Public First Action",
+        "preferred_en": "Public First Action",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Public First Action",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Only one snippet mentions this Anthropic-aligned group; no established Chinese name found."
+      },
+      {
+        "source_text": "Think Big",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Think Big",
+        "preferred_en": "Think Big",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Think Big",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Single snippet names this pro-AI PAC; no Chinese display form established."
+      },
+      {
+        "source_text": "Alex Bores",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Alex Bores",
+        "preferred_en": "Alex Bores",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Alex Bores",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Only one snippet names the New York state lawmaker; no established Chinese name, so keep English."
+      },
+      {
+        "source_text": "Federal Trade Commission",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Federal Trade Commission",
+        "preferred_en": "Federal Trade Commission",
+        "official_zh": "美国联邦贸易委员会",
+        "common_zh": "美国联邦贸易委员会",
+        "title_label": "美国联邦贸易委员会",
+        "preferred_zh": "美国联邦贸易委员会",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Standard Chinese rendering of the FTC; only one snippet retrieved, so medium."
+      },
+      {
+        "source_text": "Bellevue, Washington",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Bellevue, Washington",
+        "preferred_en": "Bellevue, Washington",
+        "official_zh": "华盛顿州贝尔维尤",
+        "common_zh": "贝尔维尤",
+        "title_label": "贝尔维尤",
+        "preferred_zh": "贝尔维尤",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Two snippets place the OpenAI protest office in Bellevue, Washington; 贝尔维尤 is the standard Chinese rendering."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "midterms",
+        "clip_indexes": [],
+        "context": "US 2026 congressional elections",
+        "sense": "midterm elections",
+        "preferred_zh": "中期选举",
+        "title_label": "中期选举",
+        "avoid_zh": [
+          "中间选举"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "political action committee (PAC) / super PAC",
+        "clip_indexes": [],
+        "context": "US campaign finance",
+        "sense": "independent political spending committee",
+        "preferred_zh": "政治行动委员会",
+        "title_label": "政治行动委员会",
+        "avoid_zh": [
+          "政治委员会"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "data center",
+        "clip_indexes": [],
+        "context": "AI infrastructure buildout",
+        "sense": "large computing facility",
+        "preferred_zh": "数据中心",
+        "title_label": "数据中心",
+        "avoid_zh": [
+          "数据中央"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "populist undercurrent",
+        "clip_indexes": [],
+        "context": "voter mood in midterms",
+        "sense": "anti-elite populist sentiment",
+        "preferred_zh": "民粹暗流",
+        "title_label": "民粹情绪",
+        "avoid_zh": [
+          "人民主义"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "self-regulation",
+        "clip_indexes": [],
+        "context": "AI industry governance",
+        "sense": "industry regulating itself",
+        "preferred_zh": "自我监管",
+        "title_label": "自我监管",
+        "avoid_zh": [
+          "自律管理"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Big AI is pouring millions into the midterms, and voters across party lines are anxious about AI, data centers, and job loss.",
+        "public_baseline": "Public reporting documents AI-industry PAC spending in the 2026 midterms ranging from tens of millions to a claimed $300M+, and polling shows rising bipartisan opposition to nearby data centers.",
+        "surprise_gap": "The Chinese title's '数亿' (hundreds of millions) exceeds the $44M spent through June and the 'tens of millions' framing in most snippets; only one outlet claims $300M+, so the scale is contested rather than settled.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says AI is pouring millions into midterms and cites voter anxiety about AI, data centers, and job loss."
+          },
+          {
+            "kind": "public",
+            "query": "AI political action committee midterms spending millions 2026",
+            "url": "https://www.techechelon.com/post/ai-super-pacs-pour-44-million-into-2026-midterms-as-industry-seeks-to-shape-national-regulation",
+            "fact": "Two largest AI PACs spent at least $44M through end of June from a war chest over $200M."
+          },
+          {
+            "kind": "public",
+            "query": "AI political action committee midterms spending millions 2026",
+            "url": "https://www.techtimes.com/articles/328847/20261009/ai-political-spending-tops-300m-2026-ftc-probes-companies-funding-their-own-lawmakers.htm",
+            "fact": "One outlet claims AI political spending topped $300M in 2026; single-source, treat as lead not proof."
+          },
+          {
+            "kind": "public",
+            "query": "AI data center opposition voters polls anxiety 2026 midterms",
+            "url": "https://votehub.com/2026/10/28/the-data-center-midterm/",
+            "fact": "Support for a nearby data center fell from 43% (2025) to 21% (2026) per Heatmap/Embold poll."
+          },
+          {
+            "kind": "public",
+            "query": "OpenAI office protest demonstration activists",
+            "url": "https://www.commondreams.org/news/ai-protest",
+            "fact": "Student activists protested at OpenAI's DC office; separate Bellevue protest also documented."
+          }
+        ],
+        "forbidden_claims": [
+          "That AI groups have definitively spent '数亿' (hundreds of millions) — only one outlet claims $300M+, others say tens of millions or $44M spent.",
+          "That OpenAI or Anthropic admitted wrongdoing or that the FTC probe found misconduct.",
+          "That the transcript's 'whoever wins AI wins' line is a Bloomberg editorial position.",
+          "That the protests represent a unified national movement."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "Clip 1 transcript is garbled (e.g., 'mimbyism', 'sell your politicians'); do not build claims on unclear fragments.",
+      "The '数亿' in the current Chinese title is not firmly supported; safer to say '数千万美元' or '巨额资金' unless the $300M figure is independently confirmed.",
+      "Bloomberg is the publisher/host, not an opinion-holding actor; attribute claims to the on-screen speakers.",
+      "No China-advantage comparison is substantiated in this clip despite the 'leading China in AI' fragment."
+    ],
+    "research_queries": [
+      {
+        "query": "AI political action committee midterms spending millions 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the documented scale of AI-industry political spending in the 2026 US midterms to test the 'hundreds of millions' claim in the Chinese title"
+      },
+      {
+        "query": "AI data center opposition voters polls anxiety 2026 midterms",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether polling shows cross-party voter anxiety about AI, data centers, and job loss as the transcript claims"
+      },
+      {
+        "query": "OpenAI office protest demonstration activists",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether protests outside OpenAI offices are documented public events"
+      },
+      {
+        "query": "Trump 'whoever wins AI wins' China artificial intelligence quote",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the exact quote and speaker attributing the 'whoever wins AI wins' line and its China framing"
+      },
+      {
+        "query": "Trump 'we're leading China in AI' remarks",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Confirm the exact public statement about US leadership over China in AI and when it was made"
+      },
+      {
+        "query": "美国 人工智能 中期选举 政治行动委员会 投入 数亿",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese-language reporting on AI PAC midterm spending to verify the Chinese title's '数亿' figure and framing"
+      },
+      {
+        "query": "OpenAI 奥特曼 政治捐款 中期选举",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether OpenAI or Sam Altman is documented as funding midterm political activity, testing the implied link"
+      },
+      {
+        "query": "AI regulation self-regulation industry divided US Congress 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish whether AI regulation leadership is genuinely scattered and divided versus self-regulation as claimed"
+      },
+      {
+        "query": "China AI regulation leadership compared United States 2026",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify concrete comparative claims about China's AI governance versus US scattered approach"
+      },
+      {
+        "query": "data center construction pushback United States local opposition 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify documented local pushback against AI data center construction as described in the transcript"
+      },
+      {
+        "query": "Bloomberg Big AI Is Pouring Millions Into established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-11-01T01:02:00.119193+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.9,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs",
+          "source_title": "Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs",
+          "show_date": "",
+          "current_title": "AI政治团体斥资数亿介入中期选举",
+          "current_title_lines": [
+            "AI政治团体",
+            "斥资数亿介入中期选举",
+            "广告支出创纪录引关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "选民们总是关心很多议题，这次关键的中期选举也不例外。",
+              "en": "There's always a lot on the minds of voters, and this critical midterm is no exception.",
+              "relative_start": 0.8,
+              "relative_end": 6.6
+            },
+            {
+              "index": 2,
+              "zh": "但有一个议题跨越党派界限，涉及经济、环境，甚至可能影响人类未来。",
+              "en": "But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.",
+              "relative_start": 6.6,
+              "relative_end": 15.1
+            },
+            {
+              "index": 3,
+              "zh": "我们听到的都是AI将有多大规模。至少目前在美国，增长的是这种邻避情绪和对数据中心建设的抵制。",
+              "en": "All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.",
+              "relative_start": 15.1,
+              "relative_end": 24.1
+            },
+            {
+              "index": 4,
+              "zh": "一次又一次的民调显示，普通民众对AI及其对未来意味着什么充满焦虑，担心失业，担心失去",
+              "en": "Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss",
+              "relative_start": 24.1,
+              "relative_end": 34.6
+            },
+            {
+              "index": 5,
+              "zh": "自主权。还有这些更大的存在性焦虑，关于精英将技术强加给",
+              "en": "of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the",
+              "relative_start": 34.6,
+              "relative_end": 43.4
+            },
+            {
+              "index": 6,
+              "zh": "我们其他人。这与定义此次中期选举的民粹主义暗流相吻合。",
+              "en": "rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.",
+              "relative_start": 43.4,
+              "relative_end": 49.4
+            },
+            {
+              "index": 7,
+              "zh": "这里是OpenAI办公室外。",
+              "en": "This is outside the open AI offices.",
+              "relative_start": 49.4,
+              "relative_end": 52.4
+            },
+            {
+              "index": 8,
+              "zh": "嘿，我想让你去说服你的政客们。",
+              "en": "Hey, I want you going to sell your politicians.",
+              "relative_start": 52.4,
+              "relative_end": 55.5
+            },
+            {
+              "index": 9,
+              "zh": "该议题上的领导力一直分散且分裂。这是自我监管。",
+              "en": "Leadership on the issue has been scattered and divided. This is self-regulation.",
+              "relative_start": 55.5,
+              "relative_end": 59.3
+            },
+            {
+              "index": 10,
+              "zh": "监管雇员。我们在AI领域领先中国，我想继续保持下去，因为谁赢得AI谁就赢得一切。",
+              "en": "Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.",
+              "relative_start": 59.3,
+              "relative_end": 65.6
+            },
+            {
+              "index": 11,
+              "zh": "这是史上最大规模的工业革命。我们只做需要全球各国政府合作的工作，以制定国际标准。",
+              "en": "This is the largest industrial revolution in history. We only do work together called for local cooperation across the world between governments",
+              "relative_start": 65.6,
+              "relative_end": 73.5
+            },
+            {
+              "index": 12,
+              "zh": "人工智能将走向何方？",
+              "en": "to set international standards. Where is AI going to go?",
+              "relative_start": 73.5,
+              "relative_end": 76.6
+            },
+            {
+              "index": 13,
+              "zh": "我不知道。我认为总统和CEO们也并不真正清楚。",
+              "en": "I don't know. I don't think President and CEOs really know.",
+              "relative_start": 76.6,
+              "relative_end": 81.3
+            },
+            {
+              "index": 14,
+              "zh": "目前正有一场关于谁来制定人工智能规则的争斗。这是一场关乎AI行业灵魂的较量。",
+              "en": "There's a fight right now over who writes the rules of AI. It's a battle over the soul of the AI industry.",
+              "relative_start": 81.3,
+              "relative_end": 87.9
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"source_title\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI政治团体斥资数亿介入中期选举\",\n    \"current_title_lines\": [\n      \"AI政治团体\",\n      \"斥资数亿介入中期选举\",\n      \"广告支出创纪录引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"选民们总是关心很多议题，这次关键的中期选举也不例外。\",\n        \"en\": \"There's always a lot on the minds of voters, and this critical midterm is no exception.\",\n        \"relative_start\": 0.8,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但有一个议题跨越党派界限，涉及经济、环境，甚至可能影响人类未来。\",\n        \"en\": \"But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 15.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们听到的都是AI将有多大规模。至少目前在美国，增长的是这种邻避情绪和对数据中心建设的抵制。\",\n        \"en\": \"All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.\",\n        \"relative_start\": 15.1,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"一次又一次的民调显示，普通民众对AI及其对未来意味着什么充满焦虑，担心失业，担心失去\",\n        \"en\": \"Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"自主权。还有这些更大的存在性焦虑，关于精英将技术强加给\",\n        \"en\": \"of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the\",\n        \"relative_start\": 34.6,\n        \"relative_end\": 43.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们其他人。这与定义此次中期选举的民粹主义暗流相吻合。\",\n        \"en\": \"rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.\",\n        \"relative_start\": 43.4,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这里是OpenAI办公室外。\",\n        \"en\": \"This is outside the open AI offices.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 52.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嘿，我想让你去说服你的政客们。\",\n        \"en\": \"Hey, I want you going to sell your politicians.\",\n        \"relative_start\": 52.4,\n        \"relative_end\": 55.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"该议题上的领导力一直分散且分裂。这是自我监管。\",\n        \"en\": \"Leadership on the issue has been scattered and divided. This is self-regulation.\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 59.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"监管雇员。我们在AI领域领先中国，我想继续保持下去，因为谁赢得AI谁就赢得一切。\",\n        \"en\": \"Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.\",\n        \"relative_start\": 59.3,\n        \"relative_end\": 65.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这是史上最大规模的工业革命。我们只做需要全球各国政府合作的工作，以制定国际标准。\",\n        \"en\": \"This is the largest industrial revolution in history. We only do work together called for local cooperation across the world between governments\",\n        \"relative_start\": 65.6,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"人工智能将走向何方？\",\n        \"en\": \"to set international standards. Where is AI going to go?\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 76.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我不知道。我认为总统和CEO们也并不真正清楚。\",\n        \"en\": \"I don't know. I don't think President and CEOs really know.\",\n        \"relative_start\": 76.6,\n        \"relative_end\": 81.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"目前正有一场关于谁来制定人工智能规则的争斗。这是一场关乎AI行业灵魂的较量。\",\n        \"en\": \"There's a fight right now over who writes the rules of AI. It's a battle over the soul of the AI industry.\",\n        \"relative_start\": 81.3,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.csmonitor.com/USA/Politics/2026/1020/anthropic-openai-political-spending-midterms\",\n        \"https://www.commondreams.org/news/ai-protest\"\n      ],\n      \"evidence\": \"Chinese financial media retain the Latin-script brand 'OpenAI'; no established Chinese transliteration is in use.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Big AI is pouring millions into the midterms, and voters across party lines are anxious about AI, data centers, and job loss.\",\n      \"public_baseline\": \"Public reporting documents AI-industry PAC spending in the 2026 midterms ranging from tens of millions to a claimed $300M+, and polling shows rising bipartisan opposition to nearby data centers.\",\n      \"surprise_gap\": \"The Chinese title's '数亿' (hundreds of millions) exceeds the $44M spent through June and the 'tens of millions' framing in most snippets; only one outlet claims $300M+, so the scale is contested rather than settled.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says AI is pouring millions into midterms and cites voter anxiety about AI, data centers, and job loss.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techechelon.com/post/ai-super-pacs-pour-44-million-into-2026-midterms-as-industry-seeks-to-shape-national-regulation\",\n          \"fact\": \"Two largest AI PACs spent at least $44M through end of June from a war chest over $200M.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techtimes.com/articles/328847/20261009/ai-political-spending-tops-300m-2026-ftc-probes-companies-funding-their-own-lawmakers.htm\",\n          \"fact\": \"One outlet claims AI political spending topped $300M in 2026; single-source, treat as lead not proof.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI data center opposition voters polls anxiety 2026 midterms\",\n          \"url\": \"https://votehub.com/2026/10/28/the-data-center-midterm/\",\n          \"fact\": \"Support for a nearby data center fell from 43% (2025) to 21% (2026) per Heatmap/Embold poll.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI office protest demonstration activists\",\n          \"url\": \"https://www.commondreams.org/news/ai-protest\",\n          \"fact\": \"Student activists protested at OpenAI's DC office; separate Bellevue protest also documented.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That AI groups have definitively spent '数亿' (hundreds of millions) — only one outlet claims $300M+, others say tens of millions or $44M spent.\",\n        \"That OpenAI or Anthropic admitted wrongdoing or that the FTC probe found misconduct.\",\n        \"That the transcript's 'whoever wins AI wins' line is a Bloomberg editorial position.\",\n        \"That the protests represent a unified national movement.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip 1 transcript is garbled (e.g., 'mimbyism', 'sell your politicians'); do not build claims on unclear fragments.\",\n    \"The '数亿' in the current Chinese title is not firmly supported; safer to say '数千万美元' or '巨额资金' unless the $300M figure is independently confirmed.\",\n    \"Bloomberg is the publisher/host, not an opinion-holding actor; attribute claims to the on-screen speakers.\",\n    \"No China-advantage comparison is substantiated in this clip despite the 'leading China in AI' fragment.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Bloomberg片段指出AI行业政治团体正投入巨额资金介入中期选举，同时选民对AI、数据中心和失业的焦虑跨越党派，OpenAI办公室外出现抗议，而AI规则制定权归属仍无定论。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "AI巨头砸钱中期选举，选民却在抵制数据中心",
+                "title_lines": [
+                  "AI巨头砸钱中期选举",
+                  "选民却在抵制数据中心",
+                  "规则制定权争夺战开打"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业",
+                  "public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%",
+                  "public: 学生活动人士在OpenAI华盛顿办公室外抗议"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "AI团体数千万美元砸向中期选举，广告支出创纪录",
+                "title_lines": [
+                  "AI团体数千万美元",
+                  "砸向中期选举",
+                  "广告支出创纪录"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: AI政治团体斥资介入中期选举，广告支出创纪录引关注",
+                  "public: 两大AI PAC截至6月至少支出4400万美元，资金池超2亿美元",
+                  "public: 有报道称2026年AI政治支出超3亿美元，但为单一信源，标题采用数千万美元保守表述"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "OpenAI门外抗议，AI规则谁说了算",
+                "title_lines": [
+                  "OpenAI门外抗议",
+                  "AI规则谁说了算",
+                  "总统和CEO也说不清"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: OpenAI办公室外抗议，总统和CEO们并不真正清楚AI走向",
+                  "public: 学生活动人士在OpenAI华盛顿办公室外抗议",
+                  "public: 抗议不代表统一全国运动"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "AI行业砸钱选举，选民焦虑失业与自主权",
+                "title_lines": [
+                  "AI行业砸钱选举",
+                  "选民焦虑失业与自主权",
+                  "规则争夺战关乎行业灵魂"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 选民焦虑AI导致失业和失去自主权，规则争夺关乎行业灵魂",
+                  "public: 民调显示两党对附近数据中心的反对上升",
+                  "public: AI PAC支出数千万美元介入中期选举"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"source_title\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI政治团体斥资数亿介入中期选举\",\n    \"current_title_lines\": [\n      \"AI政治团体\",\n      \"斥资数亿介入中期选举\",\n      \"广告支出创纪录引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"选民们总是关心很多议题，这次关键的中期选举也不例外。\",\n        \"en\": \"There's always a lot on the minds of voters, and this critical midterm is no exception.\",\n        \"relative_start\": 0.8,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但有一个议题跨越党派界限，涉及经济、环境，甚至可能影响人类未来。\",\n        \"en\": \"But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 15.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们听到的都是AI将有多大规模。至少目前在美国，增长的是这种邻避情绪和对数据中心建设的抵制。\",\n        \"en\": \"All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.\",\n        \"relative_start\": 15.1,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"一次又一次的民调显示，普通民众对AI及其对未来意味着什么充满焦虑，担心失业，担心失去\",\n        \"en\": \"Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"自主权。还有这些更大的存在性焦虑，关于精英将技术强加给\",\n        \"en\": \"of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the\",\n        \"relative_start\": 34.6,\n        \"relative_end\": 43.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们其他人。这与定义此次中期选举的民粹主义暗流相吻合。\",\n        \"en\": \"rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.\",\n        \"relative_start\": 43.4,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这里是OpenAI办公室外。\",\n        \"en\": \"This is outside the open AI offices.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 52.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嘿，我想让你去说服你的政客们。\",\n        \"en\": \"Hey, I want you going to sell your politicians.\",\n        \"relative_start\": 52.4,\n        \"relative_end\": 55.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"该议题上的领导力一直分散且分裂。这是自我监管。\",\n        \"en\": \"Leadership on the issue has been scattered and divided. This is self-regulation.\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 59.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"监管雇员。我们在AI领域领先中国，我想继续保持下去，因为谁赢得AI谁就赢得一切。\",\n        \"en\": \"Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.\",\n        \"relative_start\": 59.3,\n        \"relative_end\": 65.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这是史上最大规模的工业革命。我们只做需要全球各国政府合作的工作，以制定国际标准。\",\n        \"en\": \"This is the largest industrial revolution in history. We only do work together called for local cooperation across the world between governments\",\n        \"relative_start\": 65.6,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"人工智能将走向何方？\",\n        \"en\": \"to set international standards. Where is AI going to go?\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 76.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我不知道。我认为总统和CEO们也并不真正清楚。\",\n        \"en\": \"I don't know. I don't think President and CEOs really know.\",\n        \"relative_start\": 76.6,\n        \"relative_end\": 81.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"目前正有一场关于谁来制定人工智能规则的争斗。这是一场关乎AI行业灵魂的较量。\",\n        \"en\": \"There's a fight right now over who writes the rules of AI. It's a battle over the soul of the AI industry.\",\n        \"relative_start\": 81.3,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.csmonitor.com/USA/Politics/2026/1020/anthropic-openai-political-spending-midterms\",\n        \"https://www.commondreams.org/news/ai-protest\"\n      ],\n      \"evidence\": \"Chinese financial media retain the Latin-script brand 'OpenAI'; no established Chinese transliteration is in use.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Big AI is pouring millions into the midterms, and voters across party lines are anxious about AI, data centers, and job loss.\",\n      \"public_baseline\": \"Public reporting documents AI-industry PAC spending in the 2026 midterms ranging from tens of millions to a claimed $300M+, and polling shows rising bipartisan opposition to nearby data centers.\",\n      \"surprise_gap\": \"The Chinese title's '数亿' (hundreds of millions) exceeds the $44M spent through June and the 'tens of millions' framing in most snippets; only one outlet claims $300M+, so the scale is contested rather than settled.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says AI is pouring millions into midterms and cites voter anxiety about AI, data centers, and job loss.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techechelon.com/post/ai-super-pacs-pour-44-million-into-2026-midterms-as-industry-seeks-to-shape-national-regulation\",\n          \"fact\": \"Two largest AI PACs spent at least $44M through end of June from a war chest over $200M.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techtimes.com/articles/328847/20261009/ai-political-spending-tops-300m-2026-ftc-probes-companies-funding-their-own-lawmakers.htm\",\n          \"fact\": \"One outlet claims AI political spending topped $300M in 2026; single-source, treat as lead not proof.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI data center opposition voters polls anxiety 2026 midterms\",\n          \"url\": \"https://votehub.com/2026/10/28/the-data-center-midterm/\",\n          \"fact\": \"Support for a nearby data center fell from 43% (2025) to 21% (2026) per Heatmap/Embold poll.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI office protest demonstration activists\",\n          \"url\": \"https://www.commondreams.org/news/ai-protest\",\n          \"fact\": \"Student activists protested at OpenAI's DC office; separate Bellevue protest also documented.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That AI groups have definitively spent '数亿' (hundreds of millions) — only one outlet claims $300M+, others say tens of millions or $44M spent.\",\n        \"That OpenAI or Anthropic admitted wrongdoing or that the FTC probe found misconduct.\",\n        \"That the transcript's 'whoever wins AI wins' line is a Bloomberg editorial position.\",\n        \"That the protests represent a unified national movement.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip 1 transcript is garbled (e.g., 'mimbyism', 'sell your politicians'); do not build claims on unclear fragments.\",\n    \"The '数亿' in the current Chinese title is not firmly supported; safer to say '数千万美元' or '巨额资金' unless the $300M figure is independently confirmed.\",\n    \"Bloomberg is the publisher/host, not an opinion-holding actor; attribute claims to the on-screen speakers.\",\n    \"No China-advantage comparison is substantiated in this clip despite the 'leading China in AI' fragment.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Bloomberg片段指出AI行业政治团体正投入巨额资金介入中期选举，同时选民对AI、数据中心和失业的焦虑跨越党派，OpenAI办公室外出现抗议，而AI规则制定权归属仍无定论。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI巨头砸钱中期选举，选民却在抵制数据中心\",\n          \"title_lines\": [\n            \"AI巨头砸钱中期选举\",\n            \"选民却在抵制数据中心\",\n            \"规则制定权争夺战开打\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业\",\n            \"public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%\",\n            \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"AI团体数千万美元砸向中期选举，广告支出创纪录\",\n          \"title_lines\": [\n            \"AI团体数千万美元\",\n            \"砸向中期选举\",\n            \"广告支出创纪录\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI政治团体斥资介入中期选举，广告支出创纪录引关注\",\n            \"public: 两大AI PAC截至6月至少支出4400万美元，资金池超2亿美元\",\n            \"public: 有报道称2026年AI政治支出超3亿美元，但为单一信源，标题采用数千万美元保守表述\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"OpenAI门外抗议，AI规则谁说了算\",\n          \"title_lines\": [\n            \"OpenAI门外抗议\",\n            \"AI规则谁说了算\",\n            \"总统和CEO也说不清\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: OpenAI办公室外抗议，总统和CEO们并不真正清楚AI走向\",\n            \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\",\n            \"public: 抗议不代表统一全国运动\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI行业砸钱选举，选民焦虑失业与自主权\",\n          \"title_lines\": [\n            \"AI行业砸钱选举\",\n            \"选民焦虑失业与自主权\",\n            \"规则争夺战关乎行业灵魂\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 选民焦虑AI导致失业和失去自主权，规则争夺关乎行业灵魂\",\n            \"public: 民调显示两党对附近数据中心的反对上升\",\n            \"public: AI PAC支出数千万美元介入中期选举\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业",
+              "public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%",
+              "public: 学生活动人士在OpenAI华盛顿办公室外抗议"
+            ],
+            "title": "AI巨头砸钱中期选举，选民却在抵制数据中心",
+            "title_lines": [
+              "AI巨头砸钱中期选举",
+              "选民却在抵制数据中心",
+              "规则制定权争夺战开打"
+            ],
+            "title_highlights": [
+              "AI巨头砸钱中期选举",
+              "选民却在抵制数据中心"
+            ],
+            "runner_up_titles": [
+              "AI团体数千万美元砸向中期选举，广告支出创纪录",
+              "OpenAI门外抗议，AI规则谁说了算"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：AI行业砸钱选举，选民却更担心数据中心和就业，规则争夺才刚开始。",
+            "comment_highlights": [
+              "规则争夺才刚开始"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：中期选举议题多，AI意外成焦点。",
+                "comment_highlights": [
+                  "AI意外成焦点"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：AI议题跨越党派，影响经济与环境。",
+                "comment_highlights": [
+                  "跨越党派"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：美国数据中心建设遭遇邻避抵制。",
+                "comment_highlights": [
+                  "邻避抵制"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：民调显示民众对AI焦虑上升。",
+                "comment_highlights": [
+                  "焦虑上升"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：存在性焦虑指向精英强加技术。",
+                "comment_highlights": [
+                  "精英强加技术"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：民粹暗流与AI焦虑相互叠加。",
+                "comment_highlights": [
+                  "民粹暗流"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：OpenAI办公室外成为抗议现场。",
+                "comment_highlights": [
+                  "抗议现场"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：活动人士呼吁向政客施压。",
+                "comment_highlights": [
+                  "向政客施压"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：AI领导力分散，自我监管受质疑。",
+                "comment_highlights": [
+                  "自我监管受质疑"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：美国称在AI领域领先中国，想保持优势。",
+                "comment_highlights": [
+                  "领先中国"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：AI被称为史上最大工业革命，需全球合作。",
+                "comment_highlights": [
+                  "全球合作"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：AI走向何方，没人能给出确定答案。",
+                "comment_highlights": [
+                  "确定答案"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：总统和CEO们也不清楚AI方向。",
+                "comment_highlights": [
+                  "不清楚AI方向"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：规则制定权争夺关乎行业灵魂。",
+                "comment_highlights": [
+                  "行业灵魂"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.9,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"source_title\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n    \"show_date\": \"\",\n    \"current_title\": \"AI政治团体斥资数亿介入中期选举\",\n    \"current_title_lines\": [\n      \"AI政治团体\",\n      \"斥资数亿介入中期选举\",\n      \"广告支出创纪录引关注\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"选民们总是关心很多议题，这次关键的中期选举也不例外。\",\n        \"en\": \"There's always a lot on the minds of voters, and this critical midterm is no exception.\",\n        \"relative_start\": 0.8,\n        \"relative_end\": 6.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"但有一个议题跨越党派界限，涉及经济、环境，甚至可能影响人类未来。\",\n        \"en\": \"But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.\",\n        \"relative_start\": 6.6,\n        \"relative_end\": 15.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我们听到的都是AI将有多大规模。至少目前在美国，增长的是这种邻避情绪和对数据中心建设的抵制。\",\n        \"en\": \"All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.\",\n        \"relative_start\": 15.1,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"一次又一次的民调显示，普通民众对AI及其对未来意味着什么充满焦虑，担心失业，担心失去\",\n        \"en\": \"Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 34.6\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"自主权。还有这些更大的存在性焦虑，关于精英将技术强加给\",\n        \"en\": \"of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the\",\n        \"relative_start\": 34.6,\n        \"relative_end\": 43.4\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我们其他人。这与定义此次中期选举的民粹主义暗流相吻合。\",\n        \"en\": \"rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.\",\n        \"relative_start\": 43.4,\n        \"relative_end\": 49.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这里是OpenAI办公室外。\",\n        \"en\": \"This is outside the open AI offices.\",\n        \"relative_start\": 49.4,\n        \"relative_end\": 52.4\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"嘿，我想让你去说服你的政客们。\",\n        \"en\": \"Hey, I want you going to sell your politicians.\",\n        \"relative_start\": 52.4,\n        \"relative_end\": 55.5\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"该议题上的领导力一直分散且分裂。这是自我监管。\",\n        \"en\": \"Leadership on the issue has been scattered and divided. This is self-regulation.\",\n        \"relative_start\": 55.5,\n        \"relative_end\": 59.3\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"监管雇员。我们在AI领域领先中国，我想继续保持下去，因为谁赢得AI谁就赢得一切。\",\n        \"en\": \"Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.\",\n        \"relative_start\": 59.3,\n        \"relative_end\": 65.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这是史上最大规模的工业革命。我们只做需要全球各国政府合作的工作，以制定国际标准。\",\n        \"en\": \"This is the largest industrial revolution in history. We only do work together called for local cooperation across the world between governments\",\n        \"relative_start\": 65.6,\n        \"relative_end\": 73.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"人工智能将走向何方？\",\n        \"en\": \"to set international standards. Where is AI going to go?\",\n        \"relative_start\": 73.5,\n        \"relative_end\": 76.6\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我不知道。我认为总统和CEO们也并不真正清楚。\",\n        \"en\": \"I don't know. I don't think President and CEOs really know.\",\n        \"relative_start\": 76.6,\n        \"relative_end\": 81.3\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"目前正有一场关于谁来制定人工智能规则的争斗。这是一场关乎AI行业灵魂的较量。\",\n        \"en\": \"There's a fight right now over who writes the rules of AI. It's a battle over the soul of the AI industry.\",\n        \"relative_start\": 81.3,\n        \"relative_end\": 87.9\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.csmonitor.com/USA/Politics/2026/1020/anthropic-openai-political-spending-midterms\",\n        \"https://www.commondreams.org/news/ai-protest\"\n      ],\n      \"evidence\": \"Chinese financial media retain the Latin-script brand 'OpenAI'; no established Chinese transliteration is in use.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Big AI is pouring millions into the midterms, and voters across party lines are anxious about AI, data centers, and job loss.\",\n      \"public_baseline\": \"Public reporting documents AI-industry PAC spending in the 2026 midterms ranging from tens of millions to a claimed $300M+, and polling shows rising bipartisan opposition to nearby data centers.\",\n      \"surprise_gap\": \"The Chinese title's '数亿' (hundreds of millions) exceeds the $44M spent through June and the 'tens of millions' framing in most snippets; only one outlet claims $300M+, so the scale is contested rather than settled.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says AI is pouring millions into midterms and cites voter anxiety about AI, data centers, and job loss.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techechelon.com/post/ai-super-pacs-pour-44-million-into-2026-midterms-as-industry-seeks-to-shape-national-regulation\",\n          \"fact\": \"Two largest AI PACs spent at least $44M through end of June from a war chest over $200M.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techtimes.com/articles/328847/20261009/ai-political-spending-tops-300m-2026-ftc-probes-companies-funding-their-own-lawmakers.htm\",\n          \"fact\": \"One outlet claims AI political spending topped $300M in 2026; single-source, treat as lead not proof.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI data center opposition voters polls anxiety 2026 midterms\",\n          \"url\": \"https://votehub.com/2026/10/28/the-data-center-midterm/\",\n          \"fact\": \"Support for a nearby data center fell from 43% (2025) to 21% (2026) per Heatmap/Embold poll.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI office protest demonstration activists\",\n          \"url\": \"https://www.commondreams.org/news/ai-protest\",\n          \"fact\": \"Student activists protested at OpenAI's DC office; separate Bellevue protest also documented.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That AI groups have definitively spent '数亿' (hundreds of millions) — only one outlet claims $300M+, others say tens of millions or $44M spent.\",\n        \"That OpenAI or Anthropic admitted wrongdoing or that the FTC probe found misconduct.\",\n        \"That the transcript's 'whoever wins AI wins' line is a Bloomberg editorial position.\",\n        \"That the protests represent a unified national movement.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip 1 transcript is garbled (e.g., 'mimbyism', 'sell your politicians'); do not build claims on unclear fragments.\",\n    \"The '数亿' in the current Chinese title is not firmly supported; safer to say '数千万美元' or '巨额资金' unless the $300M figure is independently confirmed.\",\n    \"Bloomberg is the publisher/host, not an opinion-holding actor; attribute claims to the on-screen speakers.\",\n    \"No China-advantage comparison is substantiated in this clip despite the 'leading China in AI' fragment.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Bloomberg片段指出AI行业政治团体正投入巨额资金介入中期选举，同时选民对AI、数据中心和失业的焦虑跨越党派，OpenAI办公室外出现抗议，而AI规则制定权归属仍无定论。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI巨头砸钱中期选举，选民却在抵制数据中心\",\n          \"title_lines\": [\n            \"AI巨头砸钱中期选举\",\n            \"选民却在抵制数据中心\",\n            \"规则制定权争夺战开打\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业\",\n            \"public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%\",\n            \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"AI团体数千万美元砸向中期选举，广告支出创纪录\",\n          \"title_lines\": [\n            \"AI团体数千万美元\",\n            \"砸向中期选举\",\n            \"广告支出创纪录\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: AI政治团体斥资介入中期选举，广告支出创纪录引关注\",\n            \"public: 两大AI PAC截至6月至少支出4400万美元，资金池超2亿美元\",\n            \"public: 有报道称2026年AI政治支出超3亿美元，但为单一信源，标题采用数千万美元保守表述\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"OpenAI门外抗议，AI规则谁说了算\",\n          \"title_lines\": [\n            \"OpenAI门外抗议\",\n            \"AI规则谁说了算\",\n            \"总统和CEO也说不清\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: OpenAI办公室外抗议，总统和CEO们并不真正清楚AI走向\",\n            \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\",\n            \"public: 抗议不代表统一全国运动\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI行业砸钱选举，选民焦虑失业与自主权\",\n          \"title_lines\": [\n            \"AI行业砸钱选举\",\n            \"选民焦虑失业与自主权\",\n            \"规则争夺战关乎行业灵魂\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 选民焦虑AI导致失业和失去自主权，规则争夺关乎行业灵魂\",\n            \"public: 民调显示两党对附近数据中心的反对上升\",\n            \"public: AI PAC支出数千万美元介入中期选举\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"AI巨头砸钱中期选举：选民却在抵制数据中心，规则制定权争夺战开打\",\n      \"title_lines\": [\n        \"AI巨头砸钱中期选举\",\n        \"选民却在抵制数据中心\",\n        \"规则制定权争夺战开打\"\n      ],\n      \"title_highlights\": [\n        \"AI巨头砸钱中期选举\",\n        \"选民却在抵制数据中心\"\n      ],\n      \"comment\": \"KC评论：AI行业砸钱选举，选民却更担心数据中心和就业，规则争夺才刚开始\",\n      \"comment_highlights\": [\n        \"规则争夺才刚开始\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：中期选举议题多，AI意外成焦点\",\n          \"comment_highlights\": [\n            \"AI意外成焦点\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：AI议题跨越党派，影响经济与环境\",\n          \"comment_highlights\": [\n            \"跨越党派\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：美国数据中心建设遭遇邻避抵制\",\n          \"comment_highlights\": [\n            \"邻避抵制\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：民调显示民众对AI焦虑上升\",\n          \"comment_highlights\": [\n            \"焦虑上升\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：存在性焦虑指向精英强加技术\",\n          \"comment_highlights\": [\n            \"精英强加技术\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：民粹暗流与AI焦虑相互叠加\",\n          \"comment_highlights\": [\n            \"民粹暗流\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：OpenAI办公室外成为抗议现场\",\n          \"comment_highlights\": [\n            \"抗议现场\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：活动人士呼吁向政客施压\",\n          \"comment_highlights\": [\n            \"向政客施压\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：AI领导力分散，自我监管受质疑\",\n          \"comment_highlights\": [\n            \"自我监管受质疑\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：美国称在AI领域领先中国，想保持优势\",\n          \"comment_highlights\": [\n            \"领先中国\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：AI被称为史上最大工业革命，需全球合作\",\n          \"comment_highlights\": [\n            \"全球合作\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：AI走向何方，没人能给出确定答案\",\n          \"comment_highlights\": [\n            \"确定答案\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：总统和CEO们也不清楚AI方向\",\n          \"comment_highlights\": [\n            \"不清楚AI方向\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：规则制定权争夺关乎行业灵魂\",\n          \"comment_highlights\": [\n            \"行业灵魂\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业\",\n        \"public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%\",\n        \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\"\n      ],\n      \"runner_up_titles\": [\n        \"AI团体数千万美元砸向中期选举，广告支出创纪录\",\n        \"OpenAI门外抗议，AI规则谁说了算\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 8,\n        \"specificity\": 8,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 8,\n          \"specificity\": 8,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业",
+                  "public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%",
+                  "public: 学生活动人士在OpenAI华盛顿办公室外抗议",
+                  "public: 两大AI PAC截至6月至少支出4400万美元，资金池超2亿美元"
+                ],
+                "title": "AI砸钱选举，选民却抵制数据中心",
+                "title_lines": [
+                  "AI砸钱选举",
+                  "选民却抵制数据中心",
+                  "规则争夺战开打"
+                ],
+                "title_highlights": [
+                  "AI砸钱选举",
+                  "选民却抵制数据中心"
+                ],
+                "runner_up_titles": [
+                  "AI团体数千万美元砸向中期选举，广告支出创纪录",
+                  "OpenAI门外抗议，AI规则谁说了算"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：AI行业砸钱选举，选民却更担心数据中心和就业，规则争夺才刚开始",
+                "comment_highlights": [
+                  "规则争夺才刚开始"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：中期选举议题多，AI意外成焦点",
+                    "comment_highlights": [
+                      "AI意外成焦点"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：AI议题跨越党派，影响经济与环境",
+                    "comment_highlights": [
+                      "跨越党派"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：美国数据中心建设遭遇邻避抵制",
+                    "comment_highlights": [
+                      "邻避抵制"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：民调显示民众对AI焦虑上升",
+                    "comment_highlights": [
+                      "焦虑上升"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：存在性焦虑指向精英强加技术",
+                    "comment_highlights": [
+                      "精英强加技术"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：民粹暗流与AI焦虑相互叠加",
+                    "comment_highlights": [
+                      "民粹暗流"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：OpenAI办公室外成为抗议现场",
+                    "comment_highlights": [
+                      "抗议现场"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：活动人士呼吁向政客施压",
+                    "comment_highlights": [
+                      "向政客施压"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：AI领导力分散，自我监管受质疑",
+                    "comment_highlights": [
+                      "自我监管受质疑"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：美国称在AI领域领先中国，想保持优势",
+                    "comment_highlights": [
+                      "领先中国"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：AI被称为史上最大工业革命，需全球合作",
+                    "comment_highlights": [
+                      "全球合作"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：AI走向何方，没人能给出确定答案",
+                    "comment_highlights": [
+                      "确定答案"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：总统和CEO们也不清楚AI方向",
+                    "comment_highlights": [
+                      "不清楚AI方向"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：规则制定权争夺关乎行业灵魂",
+                    "comment_highlights": [
+                      "行业灵魂"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "AI巨头砸钱中期选举：选民却在抵制数据中心，规则制定权争夺战开打",
+          "title_lines": [
+            "AI巨头砸钱中期选举",
+            "选民却在抵制数据中心",
+            "规则制定权争夺战开打"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：AI行业砸钱选举，选民却更担心数据中心和就业，规则争夺才刚开始"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-01T01:02:02.791089+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.9,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs",
+          "source_title": "Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs",
+          "show_date": "",
+          "current_title": "AI政治团体斥资数亿介入中期选举",
+          "current_title_lines": [
+            "AI政治团体",
+            "斥资数亿介入中期选举",
+            "广告支出创纪录引关注"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "选民们总是关心很多议题，这次关键的中期选举也不例外。",
+              "en": "There's always a lot on the minds of voters, and this critical midterm is no exception.",
+              "relative_start": 0.8,
+              "relative_end": 6.6
+            },
+            {
+              "index": 2,
+              "zh": "但有一个议题跨越党派界限，涉及经济、环境，甚至可能影响人类未来。",
+              "en": "But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.",
+              "relative_start": 6.6,
+              "relative_end": 15.1
+            },
+            {
+              "index": 3,
+              "zh": "我们听到的都是AI将有多大规模。至少目前在美国，增长的是这种邻避情绪和对数据中心建设的抵制。",
+              "en": "All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.",
+              "relative_start": 15.1,
+              "relative_end": 24.1
+            },
+            {
+              "index": 4,
+              "zh": "一次又一次的民调显示，普通民众对AI及其对未来意味着什么充满焦虑，担心失业，担心失去",
+              "en": "Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss",
+              "relative_start": 24.1,
+              "relative_end": 34.6
+            },
+            {
+              "index": 5,
+              "zh": "自主权。还有这些更大的存在性焦虑，关于精英将技术强加给",
+              "en": "of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the",
+              "relative_start": 34.6,
+              "relative_end": 43.4
+            },
+            {
+              "index": 6,
+              "zh": "我们其他人。这与定义此次中期选举的民粹主义暗流相吻合。",
+              "en": "rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.",
+              "relative_start": 43.4,
+              "relative_end": 49.4
+            },
+            {
+              "index": 7,
+              "zh": "这里是OpenAI办公室外。",
+              "en": "This is outside the open AI offices.",
+              "relative_start": 49.4,
+              "relative_end": 52.4
+            },
+            {
+              "index": 8,
+              "zh": "嘿，我想让你去说服你的政客们。",
+              "en": "Hey, I want you going to sell your politicians.",
+              "relative_start": 52.4,
+              "relative_end": 55.5
+            },
+            {
+              "index": 9,
+              "zh": "该议题上的领导力一直分散且分裂。这是自我监管。",
+              "en": "Leadership on the issue has been scattered and divided. This is self-regulation.",
+              "relative_start": 55.5,
+              "relative_end": 59.3
+            },
+            {
+              "index": 10,
+              "zh": "监管雇员。我们在AI领域领先中国，我想继续保持下去，因为谁赢得AI谁就赢得一切。",
+              "en": "Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.",
+              "relative_start": 59.3,
+              "relative_end": 65.6
+            },
+            {
+              "index": 11,
+              "zh": "这是史上最大规模的工业革命。我们只做需要全球各国政府合作的工作，以制定国际标准。",
+              "en": "This is the largest industrial revolution in history. We only do work together called for local cooperation across the world between governments",
+              "relative_start": 65.6,
+              "relative_end": 73.5
+            },
+            {
+              "index": 12,
+              "zh": "人工智能将走向何方？",
+              "en": "to set international standards. Where is AI going to go?",
+              "relative_start": 73.5,
+              "relative_end": 76.6
+            },
+            {
+              "index": 13,
+              "zh": "我不知道。我认为总统和CEO们也并不真正清楚。",
+              "en": "I don't know. I don't think President and CEOs really know.",
+              "relative_start": 76.6,
+              "relative_end": 81.3
+            },
+            {
+              "index": 14,
+              "zh": "目前正有一场关于谁来制定人工智能规则的争斗。这是一场关乎AI行业灵魂的较量。",
+              "en": "There's a fight right now over who writes the rules of AI. It's a battle over the soul of the AI industry.",
+              "relative_start": 81.3,
+              "relative_end": 87.9
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n  \"source_title\": \"Duration: 11:20 Big AI Is Pouring Millions Into the Midterms Weekly Docs\",\n  \"current_title\": \"AI政治团体斥资数亿介入中期选举\",\n  \"source_claims\": [\n    \"There's always a lot on the minds of voters, and this critical midterm is no exception.\",\n    \"But one issue is cutting across party lines, touching upon the economy, environment, and possibly the future of humanity.\",\n    \"All we've heard about is how big AI will be. Growing in the United States at least for now is this mimbyism and this pushback to data centers getting constructed.\",\n    \"Pull after pull after pull shows that there's a lot of anxiety among the general population about AI and what it's going to mean for their futures, fear of job loss, fear of a loss\",\n    \"of autonomy. There's these bigger existential anxieties about the elite imposing technologies on the\",\n    \"rest of us. And it's coinciding with this populist undercurrent that is defined these midterms.\",\n    \"This is outside the open AI offices.\",\n    \"Hey, I want you going to sell your politicians.\",\n    \"Leadership on the issue has been scattered and divided. This is self-regulation.\",\n    \"Regulatory employees. We're leading China in AI and that's where I want to keep it going because whoever wins AI wins.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"OpenAI\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"OpenAI\",\n      \"preferred_en\": \"OpenAI\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"OpenAI\",\n      \"title_label\": \"OpenAI\",\n      \"preferred_zh\": \"OpenAI\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://www.csmonitor.com/USA/Politics/2026/1020/anthropic-openai-political-spending-midterms\",\n        \"https://www.commondreams.org/news/ai-protest\"\n      ],\n      \"evidence\": \"Chinese financial media retain the Latin-script brand 'OpenAI'; no established Chinese transliteration is in use.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Big AI is pouring millions into the midterms, and voters across party lines are anxious about AI, data centers, and job loss.\",\n      \"public_baseline\": \"Public reporting documents AI-industry PAC spending in the 2026 midterms ranging from tens of millions to a claimed $300M+, and polling shows rising bipartisan opposition to nearby data centers.\",\n      \"surprise_gap\": \"The Chinese title's '数亿' (hundreds of millions) exceeds the $44M spent through June and the 'tens of millions' framing in most snippets; only one outlet claims $300M+, so the scale is contested rather than settled.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says AI is pouring millions into midterms and cites voter anxiety about AI, data centers, and job loss.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techechelon.com/post/ai-super-pacs-pour-44-million-into-2026-midterms-as-industry-seeks-to-shape-national-regulation\",\n          \"fact\": \"Two largest AI PACs spent at least $44M through end of June from a war chest over $200M.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI political action committee midterms spending millions 2026\",\n          \"url\": \"https://www.techtimes.com/articles/328847/20261009/ai-political-spending-tops-300m-2026-ftc-probes-companies-funding-their-own-lawmakers.htm\",\n          \"fact\": \"One outlet claims AI political spending topped $300M in 2026; single-source, treat as lead not proof.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"AI data center opposition voters polls anxiety 2026 midterms\",\n          \"url\": \"https://votehub.com/2026/10/28/the-data-center-midterm/\",\n          \"fact\": \"Support for a nearby data center fell from 43% (2025) to 21% (2026) per Heatmap/Embold poll.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"OpenAI office protest demonstration activists\",\n          \"url\": \"https://www.commondreams.org/news/ai-protest\",\n          \"fact\": \"Student activists protested at OpenAI's DC office; separate Bellevue protest also documented.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"That AI groups have definitively spent '数亿' (hundreds of millions) — only one outlet claims $300M+, others say tens of millions or $44M spent.\",\n        \"That OpenAI or Anthropic admitted wrongdoing or that the FTC probe found misconduct.\",\n        \"That the transcript's 'whoever wins AI wins' line is a Bloomberg editorial position.\",\n        \"That the protests represent a unified national movement.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"Clip 1 transcript is garbled (e.g., 'mimbyism', 'sell your politicians'); do not build claims on unclear fragments.\",\n    \"The '数亿' in the current Chinese title is not firmly supported; safer to say '数千万美元' or '巨额资金' unless the $300M figure is independently confirmed.\",\n    \"Bloomberg is the publisher/host, not an opinion-holding actor; attribute claims to the on-screen speakers.\",\n    \"No China-advantage comparison is substantiated in this clip despite the 'leading China in AI' fragment.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"AI巨头砸钱中期选举：选民却在抵制数据中心，规则制定权争夺战开打\",\n  \"title_lines\": [\n    \"AI巨头砸钱中期选举\",\n    \"选民却在抵制数据中心\",\n    \"规则制定权争夺战开打\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业\",\n    \"public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%\",\n    \"public: 学生活动人士在OpenAI华盛顿办公室外抗议\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 8,\n    \"novelty\": 8,\n    \"specificity\": 8,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "砸钱造势却遭选民反弹，规则主导权会落到谁手里？",
+            "evidence_basis": [
+              "transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业",
+              "public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%",
+              "public: 学生活动人士在OpenAI华盛顿办公室外抗议"
+            ],
+            "title": "AI团体斥资中期选举，选民对数据中心支持率降至21%，规则主导权会落到谁手里？",
+            "title_lines": [
+              "AI团体斥资中期选举",
+              "选民对数据中心支持率降至21%",
+              "规则主导权会落到谁手里？"
+            ],
+            "title_highlights": [
+              "AI团体斥资中期选举",
+              "支持率降至21%",
+              "规则主导权会落到谁手里？"
+            ],
+            "runner_up_titles": [
+              "AI团体砸钱中期选举，选民对数据中心支持率跌至21%，规则由谁来定？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 8,
+              "specificity": 8,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "AI团体斥资中期选举：选民对数据中心支持率降至21%，规则主导权会落到谁手里？",
+        "title_lines": [
+          "AI团体斥资中期选举",
+          "选民对数据中心支持率降至21%",
+          "规则主导权会落到谁手里？"
+        ],
+        "title_highlights": [
+          "AI团体斥资中期选举",
+          "支持率降至21%",
+          "规则主导权会落到谁手里？"
+        ],
+        "comment": "KC评论：AI行业砸钱选举，选民却更担心数据中心和就业，规则争夺才刚开始",
+        "comment_highlights": [
+          "规则争夺才刚开始"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：中期选举议题多，AI意外成焦点",
+            "comment_highlights": [
+              "AI意外成焦点"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：AI议题跨越党派，影响经济与环境",
+            "comment_highlights": [
+              "跨越党派"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：美国数据中心建设遭遇邻避抵制",
+            "comment_highlights": [
+              "邻避抵制"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：民调显示民众对AI焦虑上升",
+            "comment_highlights": [
+              "焦虑上升"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：存在性焦虑指向精英强加技术",
+            "comment_highlights": [
+              "精英强加技术"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：民粹暗流与AI焦虑相互叠加",
+            "comment_highlights": [
+              "民粹暗流"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：OpenAI办公室外成为抗议现场",
+            "comment_highlights": [
+              "抗议现场"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：活动人士呼吁向政客施压",
+            "comment_highlights": [
+              "向政客施压"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：AI领导力分散，自我监管受质疑",
+            "comment_highlights": [
+              "自我监管受质疑"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：美国称在AI领域领先中国，想保持优势",
+            "comment_highlights": [
+              "领先中国"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：AI被称为史上最大工业革命，需全球合作",
+            "comment_highlights": [
+              "全球合作"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：AI走向何方，没人能给出确定答案",
+            "comment_highlights": [
+              "确定答案"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：总统和CEO们也不清楚AI方向",
+            "comment_highlights": [
+              "不清楚AI方向"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：规则制定权争夺关乎行业灵魂",
+            "comment_highlights": [
+              "行业灵魂"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "砸钱造势却遭选民反弹，规则主导权会落到谁手里？",
+        "evidence_basis": [
+          "transcript: AI政治团体斥资介入中期选举，选民焦虑数据中心与失业",
+          "public: Heatmap/Embold民调显示附近数据中心支持率从43%降至21%",
+          "public: 学生活动人士在OpenAI华盛顿办公室外抗议"
+        ],
+        "runner_up_titles": [
+          "AI团体砸钱中期选举，选民对数据中心支持率跌至21%，规则由谁来定？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 8,
+          "novelty": 8,
+          "specificity": 8,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 8,
+            "novelty": 8,
+            "specificity": 8,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
