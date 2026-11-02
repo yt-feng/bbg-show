@@ -274,6 +274,10 @@ Weekend clips on weekend dates.
 - The primary run is 03:00 `Asia/Shanghai`; a second run at 07:30 retries sources that Bloomberg
   published late. `workflow_dispatch` supports explicit `show_date`, `show_type`, and source URL
   overrides.
+- Weekday catch-up runs at 13:15 and 15:15 select the current Beijing date using
+  `--current-weekday`, so Monday no longer has to wait until Tuesday for its China Show.
+  These runs retain the content-date directory and the existing next-day delivery mapping.
+  A missing current episode fails visibly for the next scheduled attempt to retry.
 - `SHOW_DATE` is the Bloomberg content date, denoted `D`. The resolver writes the source output
   directory as `OUTPUT_DIR=rendered-clips/D`, regardless of whether the selected program is
   China Show or Bloomberg Weekend.
@@ -314,7 +318,11 @@ Show duplicate state is durable:
 Bloomberg Television YouTube backup candidates, and processes candidates in a bounded matrix.
 
 - The normal run is 06:00 `Asia/Shanghai`. `RUN_DATE` is both output date and delivery date,
-  denoted `D`.
+  denoted `D`. A 13:30 backup runs only if that date has no committed MP4, preserving a
+  successful morning batch instead of replacing it with a new selection.
+- Candidate discovery uses direct HTTP and Bloomberg's BRP page. It scans up to six times the
+  requested primary quota (capped at 72), applies the existing semantic content filter, and
+  fills the quota from eligible later candidates. Rejections are saved in the scrape manifest.
 - The source output directory is
   `OUTPUT_DIR=rendered-clips/top-videos/D`.
 - The normal delivery mapping is **Top Videos `D` → delivery date `D`**, for example
@@ -324,9 +332,9 @@ Bloomberg Television YouTube backup candidates, and processes candidates in a bo
   undeclared files, deduplicates successful results, records summaries, commits all usable clips,
   and publishes whenever at least one candidate succeeds.
 - One successful video is a publishable batch: other candidate failures are warnings and do not
-  turn the Action red. The batch fails for video-generation reasons only when every processable
-  candidate fails. A batch in which every candidate is skipped by content or duplicate filters is
-  a successful no-op and may restore the already-published directory during a rerun.
+  turn the Action red. All-filtered batches may restore an already-published directory during a
+  rerun. After committing diagnostics and attempting storage sync, the final delivery check
+  fails if the output directory still has zero MP4s, including an all-filtered empty batch.
 
 Top Videos duplicate state lives in
 `rendered-clips/top-videos/processed_sources.json`. It records successful source identities and
@@ -407,8 +415,7 @@ file is replaced instead of being mistaken for a completed delivery.
 WebDAV availability must not undo a completed video publication. Once at least one verified clip
 has been committed, an immediate WebDAV error is reported as an Action warning and the already
 published Action remains green. The next workflow rerun and the downstream reconciler can fill
-the missing files. Video-generation semantics remain unchanged: Top Videos is green with one or
-more successful clips, and red only when all processable candidates fail.
+the missing files. Top Videos is green with one or more delivered clips; a zero-MP4 batch is red.
 
 The GitHub Actions integration requires exactly these repository secrets:
 
