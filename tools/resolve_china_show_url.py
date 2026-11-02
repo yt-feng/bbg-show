@@ -45,6 +45,13 @@ def default_show_date() -> str:
     return (now_bj.date() - timedelta(days=1)).isoformat()
 
 
+def current_weekday_show_date() -> str:
+    today = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+    if today.weekday() >= 5:
+        raise SystemExit("--current-weekday is only valid Monday through Friday in Asia/Shanghai")
+    return today.isoformat()
+
+
 def resolve_show_type(show_date: str, show_type: str, url: str = "") -> str:
     requested = show_type.strip().lower() or SHOW_AUTO
     if requested not in {SHOW_AUTO, SHOW_CHINA, SHOW_WEEKEND}:
@@ -389,6 +396,7 @@ def append_env(path: Path, values: dict[str, str]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--show-date", default="", help="YYYY-MM-DD. Defaults to yesterday in Asia/Shanghai.")
+    parser.add_argument("--current-weekday", action="store_true", help="Afternoon catch-up: resolve today's China Show in Asia/Shanghai.")
     parser.add_argument(
         "--show-type",
         choices=[SHOW_AUTO, SHOW_CHINA, SHOW_WEEKEND],
@@ -447,10 +455,16 @@ def main() -> None:
 
     explicit_show_date = bool(args.show_date.strip())
     explicit_url = bool(args.url.strip())
+    if args.current_weekday and (explicit_show_date or explicit_url or args.show_type != SHOW_AUTO):
+        raise SystemExit("--current-weekday cannot be combined with explicit show settings")
     fallback_show_date = default_show_date()
+    if args.current_weekday:
+        fallback_show_date = current_weekday_show_date()
     show_date = args.show_date.strip() or fallback_show_date
     show_type = resolve_show_type(show_date, args.show_type, args.url)
     resolution_source = "explicit" if explicit_show_date or explicit_url else "default"
+    if args.current_weekday:
+        resolution_source = "current-weekday"
     backlog_title = ""
     backlog_duration = ""
     skip_show = False

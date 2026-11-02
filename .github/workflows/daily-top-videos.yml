@@ -4,6 +4,8 @@ on:
   schedule:
     # 06:00 Asia/Shanghai = 22:00 UTC on the previous calendar day.
     - cron: "0 22 * * *"
+    # 13:30 Beijing: retry only when the morning batch delivered no video.
+    - cron: "30 5 * * *"
   workflow_dispatch:
     inputs:
       run_date:
@@ -46,8 +48,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  delivery:
+    name: Check whether the backup is needed
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      needed: ${{ steps.check.outputs.needed }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: rendered-clips/top-videos
+      - id: check
+        env:
+          IS_BACKUP: ${{ github.event.schedule == '30 5 * * *' }}
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import os
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          today = datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat()
+          delivered = any((Path("rendered-clips/top-videos") / today).rglob("*.mp4"))
+          skip = os.environ["IS_BACKUP"] == "true" and delivered
+          print("needed=" + ("false" if skip else "true"))
+          PY
+
   scrape:
     name: Scrape Top Videos
+    needs: delivery
+    if: needs.delivery.outputs.needed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     outputs:
@@ -141,6 +171,7 @@ jobs:
         if: env.RECOVER_RUN_ID == ''
         env:
           PYTHONUNBUFFERED: "1"
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BLOOMBERG_PROXY_SUBSCRIPTION_URL: ${{ secrets.BLOOMBERG_PROXY_SUBSCRIPTION_URL }}
         run: |
           mkdir -p work/top-videos
@@ -150,7 +181,8 @@ jobs:
             --youtube-backup-videos "$YOUTUBE_BACKUP_VIDEOS" \
             --processed-sources rendered-clips/top-videos/processed_sources.json \
             --history-root rendered-clips/top-videos \
-            --method auto \
+            --method http \
+            --semantic-prefilter \
             --out work/top-videos/top_videos.json
 
       - name: Read scrape manifest
@@ -574,3 +606,12 @@ jobs:
             --date "$RUN_DATE" \
             --source-dir "$OUTPUT_DIR" \
             --allow-empty
+
+      - name: Require a delivered video
+        run: |
+          CLIP_COUNT=$(find "$OUTPUT_DIR" -type f -name '*.mp4' | wc -l | tr -d ' ')
+          echo "Top Videos ${RUN_DATE}: ${CLIP_COUNT} delivered MP4(s)." >> "$GITHUB_STEP_SUMMARY"
+          if [ "$CLIP_COUNT" -lt 1 ]; then
+            echo "::error::No video delivered. Candidate/filter diagnostics were saved; retry after source updates."
+            exit 1
+          fi

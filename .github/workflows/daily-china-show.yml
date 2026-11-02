@@ -9,6 +9,9 @@ on:
     - cron: "0 19 * * 6,0"
     # Backup run for delayed Bloomberg publishes: 07:30 Asia/Shanghai = 23:30 UTC.
     - cron: "30 23 * * *"
+    # 13:15 and 15:15 Beijing: catch today's weekday episode after publication.
+    - cron: "15 5 * * 1-5"
+    - cron: "15 7 * * 1-5"
   workflow_dispatch:
     inputs:
       show_date:
@@ -72,6 +75,7 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       SHOW_DATE_INPUT: ${{ github.event.inputs.show_date || '' }}
       SHOW_TYPE_INPUT: ${{ github.event.inputs.show_type || 'auto' }}
+      CURRENT_WEEKDAY: ${{ github.event.schedule == '15 5 * * 1-5' || github.event.schedule == '15 7 * * 1-5' }}
       URL_INPUT: ${{ github.event.inputs.url || '' }}
       REPAIR_FAILED_SPEAKERS: ${{ github.event.inputs.repair_failed_speakers || 'false' }}
       MAX_SPEAKERS: ${{ github.event.inputs.max_speakers || '3' }}
@@ -94,7 +98,12 @@ jobs:
       - name: Resolve Bloomberg show URL
         run: |
           mkdir -p work/daily
+          date_args=()
+          if [ "$CURRENT_WEEKDAY" = "true" ]; then
+            date_args+=(--current-weekday)
+          fi
           python tools/resolve_china_show_url.py \
+            "${date_args[@]}" \
             --show-date "$SHOW_DATE_INPUT" \
             --show-type "$SHOW_TYPE_INPUT" \
             --url "$URL_INPUT" \
