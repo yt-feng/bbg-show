@@ -1,4 +1,4 @@
-name: ARK processing regression
+name: Video processing regression
 
 on:
   pull_request:
@@ -6,6 +6,8 @@ on:
       - tools/**
       - tests/**
       - .github/workflows/daily-ark-invest-videos.yml
+      - .github/workflows/daily-china-show.yml
+      - .github/workflows/daily-top-videos.yml
       - .github/workflows/test-ark-processing.yml
   push:
     branches: [main]
@@ -13,6 +15,8 @@ on:
       - tools/**
       - tests/**
       - .github/workflows/daily-ark-invest-videos.yml
+      - .github/workflows/daily-china-show.yml
+      - .github/workflows/daily-top-videos.yml
       - .github/workflows/test-ark-processing.yml
 
 permissions:
@@ -28,8 +32,13 @@ jobs:
           sparse-checkout: |
             tools
             tests
+            .github/workflows
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - name: Verify explicit exclusions and real rendering failures
-        run: python -m unittest tests.test_ark_processing_outcomes tests.test_ark_title_refinement_fallback tests.test_ark_wistia_source tests.test_sensitive_topic_filter
+      - name: Verify delivery recovery, exclusions, and processing failures
+        run: >-
+          python -m unittest tests.test_ark_processing_outcomes tests.test_ark_title_refinement_fallback
+          tests.test_ark_wistia_source tests.test_sensitive_topic_filter
+          tests.test_daily_delivery_recovery tests.test_china_show_resolution
+          tests.test_top_video_youtube_backup tests.test_top_video_source_dedup

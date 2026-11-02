@@ -40,7 +40,7 @@ from top_video_sources import (  # noqa: E402
     load_processed_source_keys,
     source_key,
 )
-from trump_filter import is_trump_related  # noqa: E402
+from trump_filter import excluded_topic_decision, is_trump_related  # noqa: E402
 
 
 DEFAULT_URL = "https://www.bloomberg.com/videos"
@@ -318,6 +318,35 @@ def direct_top_video_slice(
         if len(selected) >= max_videos:
             break
     return selected
+
+
+def select_eligible_candidates(
+    candidates: list[dict[str, str]],
+    max_videos: int,
+    *,
+    use_ai: bool = False,
+) -> tuple[list[dict[str, str]], list[dict[str, Any]]]:
+    """Apply the processor's metadata filter before consuming a delivery slot."""
+    selected: list[dict[str, str]] = []
+    rejected: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in candidates:
+        key = item_source_key(item)
+        if key in seen:
+            continue
+        seen.add(key)
+        decision = excluded_topic_decision(
+            [item.get(field, "") for field in ("url", "title", "slug", "description")],
+            use_ai=use_ai,
+        )
+        if decision.get("exclude"):
+            rejected.append({"url": item.get("url", ""), "title": item.get("title", ""), **decision})
+            log(f"Replacing excluded candidate: {item.get('title')} ({decision.get('reason')})")
+            continue
+        selected.append(item)
+        if len(selected) >= max_videos:
+            break
+    return selected, rejected
 
 
 def extract_links_from_html(
@@ -642,7 +671,7 @@ def scrape(
     processed_source_keys: set[str] | None = None,
 ) -> tuple[str, list[dict[str, str]]]:
     errors: list[str] = []
-    if method in {"auto", "direct"}:
+    if method in {"auto", "http", "direct"}:
         try:
             log(f"Trying direct page fetch: {url}")
             text = fetch_text_direct(url, timeout=90)
@@ -662,7 +691,7 @@ def scrape(
             errors.append(f"direct failed: {exc}")
             log(f"Direct page fetch failed: {exc}")
 
-    if method in {"auto", "brp"}:
+    if method in {"auto", "http", "brp"}:
         brp_url = bloomberg_brp_url(url)
         if brp_url != url:
             try:
@@ -731,7 +760,8 @@ def main() -> None:
     parser.add_argument("--url", default=DEFAULT_URL)
     parser.add_argument("--xpath", default=TOP_VIDEOS_XPATH)
     parser.add_argument("--max-videos", type=int, default=9)
-    parser.add_argument("--method", choices=("auto", "direct", "brp", "proxy", "chrome"), default="auto")
+    parser.add_argument("--method", choices=("auto", "http", "direct", "brp", "proxy", "chrome"), default="auto")
+    parser.add_argument("--semantic-prefilter", action="store_true", help="Screen a larger candidate pool before filling video slots.")
     parser.add_argument("--wait-seconds", type=int, default=8)
     parser.add_argument("--work-dir", type=Path, default=Path("work/top-videos/scrape"))
     parser.add_argument(
@@ -777,11 +807,12 @@ def main() -> None:
     log(f"Loaded {len(processed_keys)} previously successful source identity/identities")
 
     primary_error = ""
+    candidate_limit = min(72, args.max_videos * 6) if args.semantic_prefilter else args.max_videos
     try:
         method, links = scrape(
             args.url,
             args.xpath,
-            args.max_videos,
+            candidate_limit,
             args.method,
             args.wait_seconds,
             args.direct_skip_leading,
@@ -797,7 +828,8 @@ def main() -> None:
         log(f"Bloomberg Top Videos scrape failed; using YouTube backup only: {primary_error}")
 
     links = [item for item in links if item_source_key(item) not in processed_keys]
-    links = links[: args.max_videos]
+    candidate_count = len(links)
+    links, rejected = select_eligible_candidates(links, args.max_videos, use_ai=args.semantic_prefilter)
     primary_count = len(links)
     youtube_links: list[dict[str, str]] = []
     youtube_error = ""
@@ -824,7 +856,7 @@ def main() -> None:
             youtube_error = str(exc)
             log(f"YouTube backup feed unavailable: {youtube_error}")
 
-    if not links and not youtube_feed_available:
+    if not links and not youtube_feed_available and primary_error:
         details = " | ".join(detail for detail in (primary_error, youtube_error) if detail)
         raise SystemExit("No eligible Bloomberg Top Videos found" + (f": {details}" if details else ""))
 
@@ -834,6 +866,8 @@ def main() -> None:
         "scrape_method": method,
         "scraped_at": int(time.time()),
         "primary_count": primary_count,
+        "candidate_count": candidate_count,
+        "prefilter_rejected": rejected,
         "youtube_backup_feed_url": args.youtube_feed_url if args.youtube_backup_videos else "",
         "youtube_backup_requested": args.youtube_backup_videos,
         "youtube_backup_count": len(youtube_links),
