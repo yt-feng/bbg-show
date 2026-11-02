@@ -434,7 +434,7 @@ def evaluate_batch_summary(summary: dict[str, Any]) -> dict[str, Any]:
         flush=True,
     )
     if processable < 1:
-        print("All top videos were skipped by content filters; keeping workflow green.", flush=True)
+        print("No processable candidates remain; checking for previously delivered videos before the final delivery check.", flush=True)
         result["outcome"] = "no_processable_candidates"
         return result
     if succeeded < 1:
