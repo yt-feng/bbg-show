@@ -1,0 +1,1314 @@
+{
+  "timestamp_utc": "2026-11-04T02:11:40.283288+00:00",
+  "plan_path": "work/top-videos/05_who_wants_to_be_president_in_2028/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 12,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Bloomberg",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Bloomberg L.P. / Bloomberg News",
+        "preferred_en": "Bloomberg L.P. / Bloomberg News",
+        "official_zh": "彭博有限合伙企业",
+        "common_zh": "彭博",
+        "title_label": "彭博",
+        "preferred_zh": "彭博",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基百科将 Bloomberg News 列为“彭博新闻社”、Bloomberg L.P. 列为“彭博有限合伙企业”，中文财经媒体通用简称“彭博”。"
+      },
+      {
+        "source_text": "Abdul El-Sayed",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Abdulrahman Mohamed \"Abdul\" El-Sayed",
+        "preferred_en": "Abdulrahman Mohamed \"Abdul\" El-Sayed",
+        "official_zh": "",
+        "common_zh": "阿卜杜勒·埃尔-赛义德",
+        "title_label": "埃尔-赛义德",
+        "preferred_zh": "阿卜杜勒·埃尔-赛义德",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "华尔街日报中文网使用“阿卜杜勒·埃尔-赛义德”；英文来源确认其为密歇根州民主党参议员候选人、初选击败史蒂文斯。中文译名仅见一处可靠来源，故为 medium。"
+      },
+      {
+        "source_text": "Haley Stevens",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Haley Maria Stevens",
+        "preferred_en": "Haley Maria Stevens",
+        "official_zh": "",
+        "common_zh": "海莉·史蒂文斯",
+        "title_label": "史蒂文斯",
+        "preferred_zh": "海莉·史蒂文斯",
+        "aliases": [
+          "黑莉·史蒂文斯"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://cn.wsj.com/articles/how-rep-haley-stevens-turned-on-a-fellow-democratand-became-a-party-pariah-47c904b9",
+          "https://baike.baidu.com/item/黑莉·史蒂文斯/68379379"
+        ],
+        "evidence": "华尔街日报中文网使用“海莉·史蒂文斯”，百度百科使用“黑莉·史蒂文斯”；两者为同一人（密歇根州民主党联邦众议员）。以 WSJ 译法为主，百度译法列为可替换变体。"
+      },
+      {
+        "source_text": "Mike Rogers",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Mike Rogers (Michigan)",
+        "preferred_en": "Mike Rogers (Michigan)",
+        "official_zh": "",
+        "common_zh": "迈克·罗杰斯",
+        "title_label": "罗杰斯",
+        "preferred_zh": "迈克·罗杰斯",
+        "aliases": [
+          "麦克·罗杰斯"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://baike.baidu.com/item/迈克·罗杰斯/68496801",
+          "https://zh.wikipedia.org/zh-cn/麥克·羅傑斯"
+        ],
+        "evidence": "百度百科作“迈克·罗杰斯”（密歇根州前联邦众议员、2026 共和党参议员候选人），中文维基作“麦克·罗杰斯”。注意勿与阿拉巴马州众议员 Mike Rogers（1958 年生）混淆。"
+      },
+      {
+        "source_text": "Michigan",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Michigan",
+        "preferred_en": "Michigan",
+        "official_zh": "密歇根州",
+        "common_zh": "密歇根",
+        "title_label": "密歇根",
+        "preferred_zh": "密歇根",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "多个中文来源一致使用“密歇根州/密歇根”。"
+      },
+      {
+        "source_text": "Democratic Party",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Democratic Party (United States)",
+        "preferred_en": "Democratic Party (United States)",
+        "official_zh": "民主党",
+        "common_zh": "民主党",
+        "title_label": "民主党",
+        "preferred_zh": "民主党",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文媒体通用“民主党”。"
+      },
+      {
+        "source_text": "Republican Party",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Republican Party (United States)",
+        "preferred_en": "Republican Party (United States)",
+        "official_zh": "共和党",
+        "common_zh": "共和党",
+        "title_label": "共和党",
+        "preferred_zh": "共和党",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文媒体通用“共和党”。"
+      },
+      {
+        "source_text": "Businessweek Daily",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Businessweek Daily (Bloomberg podcast)",
+        "preferred_en": "Businessweek Daily (Bloomberg podcast)",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Businessweek Daily",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "未检索到可靠中文官方译名，保留英文。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "midterm elections",
+        "clip_indexes": [],
+        "context": "US politics, 2026 congressional elections",
+        "sense": "US midterm elections held between presidential elections",
+        "preferred_zh": "中期选举",
+        "title_label": "中期选举",
+        "avoid_zh": [
+          "中间选举"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "primary (race)",
+        "clip_indexes": [],
+        "context": "US party nomination contests",
+        "sense": "party primary election to choose a nominee",
+        "preferred_zh": "初选",
+        "title_label": "初选",
+        "avoid_zh": [
+          "预选赛"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "democratic socialist",
+        "clip_indexes": [],
+        "context": "US progressive politics, DSA-aligned candidates",
+        "sense": "candidate aligned with Democratic Socialists of America",
+        "preferred_zh": "民主社会主义者",
+        "title_label": "民主社会主义者",
+        "avoid_zh": [
+          "民主社会党人"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "endorsement",
+        "clip_indexes": [],
+        "context": "US electoral politics",
+        "sense": "public backing of a candidate",
+        "preferred_zh": "背书",
+        "title_label": "背书",
+        "avoid_zh": [
+          "代言"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "Senate nominee",
+        "clip_indexes": [],
+        "context": "US Senate race",
+        "sense": "party's candidate for the US Senate",
+        "preferred_zh": "参议员候选人",
+        "title_label": "参议员候选人",
+        "avoid_zh": [
+          "参议院被提名人"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Haley Stevens endorsed Republican Mike Rogers on the eve of the election, turning on the Democratic Party's Senate nominee Abdul El-Sayed.",
+        "public_baseline": "Multiple major outlets (NBC, ABC, NYT, CNBC, CBS, Guardian, Axios) report that on Sunday, Nov 1, 2026, Democratic Rep. Haley Stevens endorsed Republican Mike Rogers over Democratic nominee Abdul El-Sayed, drawing fierce backlash from Democrats.",
+        "surprise_gap": "A sitting Democratic congresswoman endorsing the Republican Senate candidate days before the election is a striking intra-party reversal; the transcript frames it as a personal drama rather than a national story, while public coverage treats it as a major battleground-race shake-up.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": true,
+          "spoken_position": "Stevens initially did the normal thing and endorsed El-Sayed after losing the primary.",
+          "public_action": "On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed, saying \"I don't belong in Abdul's campaign.\"",
+          "independent_source_count": 5,
+          "evidence": [
+            {
+              "kind": "public",
+              "query": "Haley Stevens endorses Mike Rogers Michigan Senate 2026",
+              "url": "https://www.nbcnews.com/politics/2026-election/haley-stevens-endorses-gop-mike-rogers-michigan-senate-race-el-sayed-rcna606831",
+              "fact": "NBC: Stevens endorsed Rogers on Sunday."
+            },
+            {
+              "kind": "public",
+              "query": "Haley Stevens endorses Mike Rogers Michigan Senate 2026",
+              "url": "https://abcnews.com/Politics/democratic-rep-haley-stevens-endorses-gop-candidate-mike/story?id=137752255",
+              "fact": "ABC: Stevens said \"I don't belong in Abdul's campaign.\""
+            },
+            {
+              "kind": "public",
+              "query": "Haley Stevens endorses Mike Rogers Michigan Senate 2026",
+              "url": "https://www.nytimes.com/2026/11/01/us/elections/stevens-rogers-el-sayed-michigan-senate.html",
+              "fact": "NYT: late endorsement after feud with El-Sayed."
+            },
+            {
+              "kind": "public",
+              "query": "Haley Stevens Mike Rogers endorsement backlash Michigan Democrats",
+              "url": "https://www.theguardian.com/us-news/2026/nov/02/democrats-reaction-haley-steven-mike-rogers",
+              "fact": "Guardian: Democrats call it 'a despicable betrayal'."
+            },
+            {
+              "kind": "public",
+              "query": "Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026",
+              "url": "https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html",
+              "fact": "NYT: Stevens endorsed El-Sayed after losing the August primary, then shifted tone."
+            }
+          ]
+        },
+        "position_change": {
+          "supported": true,
+          "prior_position": "After losing the August 2026 Democratic Senate primary, Stevens endorsed El-Sayed.",
+          "current_position": "On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed.",
+          "independent_source_count": 3,
+          "evidence": [
+            {
+              "kind": "public",
+              "query": "Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026",
+              "url": "https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html",
+              "fact": "Stevens endorsed El-Sayed after the primary, then her tone shifted."
+            },
+            {
+              "kind": "public",
+              "query": "Haley Stevens endorses Mike Rogers Michigan Senate 2026",
+              "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html",
+              "fact": "CNBC: Stevens endorsed Rogers over El-Sayed on Sunday."
+            },
+            {
+              "kind": "public",
+              "query": "Haley Stevens Mike Rogers endorsement backlash Michigan Democrats",
+              "url": "https://www.axios.com/2026/11/01/haley-stevens-democrats-reaction-rogers-el-sayed",
+              "fact": "Axios: stunning reversal in standing for Stevens."
+            }
+          ]
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "El-Sayed beat Stevens in a primary; progressives/democratic socialists defeated moderates in several races."
+          },
+          {
+            "kind": "public",
+            "query": "Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026",
+            "url": "https://www.nytimes.com/live/2026/08/05/us/michigan-election-results-primary",
+            "fact": "El-Sayed edged Stevens to win the Michigan Democratic Senate primary."
+          },
+          {
+            "kind": "public",
+            "query": "Democratic socialist candidates defeated moderate Democrats 2026 primaries",
+            "url": "https://ballotpedia.org/Endorsements_by_Democratic_Socialists_of_America,_2026",
+            "fact": "DSA-endorsed candidates won 61 of 107 primaries in 2026."
+          },
+          {
+            "kind": "public",
+            "query": "Abdul El-Sayed polls Michigan Senate race narrow lead 2026",
+            "url": "https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed",
+            "fact": "Polling aggregator exists for Rogers vs. El-Sayed; transcript says El-Sayed narrowly leading."
+          },
+          {
+            "kind": "public",
+            "query": "Michigan Senate race 2026 El-Sayed Rogers election results",
+            "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-michigan-us-senate.html",
+            "fact": "Live results page for the Nov 3, 2026 race; outcome not confirmed in snippet."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim El-Sayed won or lost the general election; snippets only show live results pages.",
+          "Do not claim Stevens was expelled or formally censured by the party; sources describe backlash, not discipline.",
+          "Do not attribute the endorsement or any opinion to Bloomberg or the host.",
+          "Do not claim the transcript's 'narrow win' prediction was confirmed."
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "The clip's speaker is a Bloomberg interviewer/journalist; Bloomberg is the publisher, not the opinion-holding actor.",
+      "Mike Rogers (Michigan, b. 1963) must not be confused with Rep. Mike Rogers of Alabama (b. 1958), House Armed Services chairman.",
+      "Chinese rendering of El-Sayed appears in only one reliable Chinese source (WSJ Chinese); treat as medium confidence.",
+      "The 'Who Wants to Be President in 2028?' show title has no verified Chinese name; keep English."
+    ],
+    "research_queries": [
+      {
+        "query": "Haley Stevens endorses Mike Rogers Michigan Senate 2026",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether Haley Stevens actually endorsed Republican Mike Rogers on the eve of the election, as the transcript claims."
+      },
+      {
+        "query": "Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the primary result: El-Sayed beating Stevens in the Michigan Democratic Senate primary."
+      },
+      {
+        "query": "Abdul El-Sayed 中文名 密歇根 参议员",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the established Chinese rendering of Abdul El-Sayed's name and his institution/role."
+      },
+      {
+        "query": "Haley Stevens 中文名 众议员 密歇根",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the established Chinese rendering of Haley Stevens and her official role."
+      },
+      {
+        "query": "Mike Rogers 中文名 密歇根 参议员 共和党",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the established Chinese rendering of Mike Rogers and his official role."
+      },
+      {
+        "query": "Democratic socialist candidates defeated moderate Democrats 2026 primaries",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that progressive or democratic socialist candidates beat moderate opponents in multiple 2026 primaries."
+      },
+      {
+        "query": "Haley Stevens Mike Rogers endorsement backlash Michigan Democrats",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Second independent query to check whether Stevens' reported Rogers endorsement and party reaction are documented."
+      },
+      {
+        "query": "Abdul El-Sayed polls Michigan Senate race narrow lead 2026",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the polling claim that El-Sayed was narrowly leading and expected to win narrowly."
+      },
+      {
+        "query": "Michigan Senate race 2026 El-Sayed Rogers election results",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the actual outcome of the Michigan Senate race referenced as imminent in the transcript."
+      },
+      {
+        "query": "Bloomberg Who Wants established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Who Wants 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {},
+  "events": [
+    {
+      "timestamp_utc": "2026-11-04T02:11:35.535730+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily",
+          "source_title": "Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily",
+          "show_date": "",
+          "current_title": "民主党中期选举现代际更替 2028总统人选轮廓渐显",
+          "current_title_lines": [
+            "民主党中期选举现代际更替",
+            "新一代温和派候选人崛起",
+            "2028总统人选轮廓渐显"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我想从民主党开始谈起，因为上个月你确实与该党参议院提名人阿卜杜勒·埃尔-赛义德一起前往密歇根州上半岛，他在初选中击败了史蒂文斯，这是进步派或民主社会主义候选人击败温和派对手的众多初选之一。",
+              "en": "You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in",
+              "relative_start": 0.0,
+              "relative_end": 9.0
+            },
+            {
+              "index": 2,
+              "zh": "这是否正在撕裂民主党？",
+              "en": "one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?",
+              "relative_start": 9.0,
+              "relative_end": 18.2
+            },
+            {
+              "index": 3,
+              "zh": "我认为目前还没有，但选举后可能会。我的意思是，显然，当像这样的候选人站出来支持共和党人时，就像史蒂文斯在密歇根州支持迈克·罗杰斯那样，在选举前夕，这会引发很多火花。这会成为大事。",
+              "en": "I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like",
+              "relative_start": 18.2,
+              "relative_end": 28.2
+            },
+            {
+              "index": 4,
+              "zh": "但这似乎是海莉·史蒂文斯的故事，而不是民主党的故事。",
+              "en": "on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.",
+              "relative_start": 28.2,
+              "relative_end": 32.0
+            },
+            {
+              "index": 5,
+              "zh": "确实如此。这更像是个人的心理剧，而不是全国性的故事。但与此同时，史蒂文斯是那场竞选中民主党中间派的巨大希望。最初，在埃尔-赛义德获胜后，她转过身来做了正常的事，支持了他，但随后她这样失控并转向该党的候选人。我认为这确实触及了一些表面下的怀疑和相互敌意。但话虽如此，我们看到事后党内各方在密歇根州团结起来，至少到目前为止，看起来埃尔-赛义德在许多民调中以微弱优势",
+              "en": "But that seems like it's a Haley Stevens story, not a Democrat.",
+              "relative_start": 32.0,
+              "relative_end": 35.6
+            },
+            {
+              "index": 6,
+              "zh": "民主党的未来是什么？还有共和党，当你审视政治时。这是个好问题。我那种半推半就的回答是，我认为如果你看看...",
+              "en": "It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed",
+              "relative_start": 35.6,
+              "relative_end": 48.4
+            },
+            {
+              "index": 7,
+              "zh": "她赢了之后，转身做了常规的事，支持了他，但随后又这样脱离轨道，转而反对本党候选人。我认为这确实触及了一些",
+              "en": "won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the",
+              "relative_start": 48.4,
+              "relative_end": 58.6
+            },
+            {
+              "index": 8,
+              "zh": "表面之下暗藏着猜疑与相互敌意。但话虽如此，事后我们看到党内各方在密歇根州团结起来，至少到目前为止，看起来",
+              "en": "suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks",
+              "relative_start": 58.6,
+              "relative_end": 69.1
+            },
+            {
+              "index": 9,
+              "zh": "像阿尔-赛义德在多项民调中以微弱优势领先。我从民主党和共和党方面听到的预期是，他可能正朝着险胜的方向迈进，但接下来我们就会见分晓。",
+              "en": "like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next",
+              "relative_start": 69.1,
+              "relative_end": 79.0
+            },
+            {
+              "index": 10,
+              "zh": "几个小时内。民主党的未来是什么？以及共和党的未来，当你审视政治时。这是个好问题。我那种准对冲的回答是，我认为如果你看看",
+              "en": "few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at",
+              "relative_start": 79.0,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"source_title\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"show_date\": \"\",\n    \"current_title\": \"民主党中期选举现代际更替 2028总统人选轮廓渐显\",\n    \"current_title_lines\": [\n      \"民主党中期选举现代际更替\",\n      \"新一代温和派候选人崛起\",\n      \"2028总统人选轮廓渐显\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我想从民主党开始谈起，因为上个月你确实与该党参议院提名人阿卜杜勒·埃尔-赛义德一起前往密歇根州上半岛，他在初选中击败了史蒂文斯，这是进步派或民主社会主义候选人击败温和派对手的众多初选之一。\",\n        \"en\": \"You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这是否正在撕裂民主党？\",\n        \"en\": \"one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为目前还没有，但选举后可能会。我的意思是，显然，当像这样的候选人站出来支持共和党人时，就像史蒂文斯在密歇根州支持迈克·罗杰斯那样，在选举前夕，这会引发很多火花。这会成为大事。\",\n        \"en\": \"I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但这似乎是海莉·史蒂文斯的故事，而不是民主党的故事。\",\n        \"en\": \"on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"确实如此。这更像是个人的心理剧，而不是全国性的故事。但与此同时，史蒂文斯是那场竞选中民主党中间派的巨大希望。最初，在埃尔-赛义德获胜后，她转过身来做了正常的事，支持了他，但随后她这样失控并转向该党的候选人。我认为这确实触及了一些表面下的怀疑和相互敌意。但话虽如此，我们看到事后党内各方在密歇根州团结起来，至少到目前为止，看起来埃尔-赛义德在许多民调中以微弱优势\",\n        \"en\": \"But that seems like it's a Haley Stevens story, not a Democrat.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"民主党的未来是什么？还有共和党，当你审视政治时。这是个好问题。我那种半推半就的回答是，我认为如果你看看...\",\n        \"en\": \"It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她赢了之后，转身做了常规的事，支持了他，但随后又这样脱离轨道，转而反对本党候选人。我认为这确实触及了一些\",\n        \"en\": \"won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"表面之下暗藏着猜疑与相互敌意。但话虽如此，事后我们看到党内各方在密歇根州团结起来，至少到目前为止，看起来\",\n        \"en\": \"suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"像阿尔-赛义德在多项民调中以微弱优势领先。我从民主党和共和党方面听到的预期是，他可能正朝着险胜的方向迈进，但接下来我们就会见分晓。\",\n        \"en\": \"like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next\",\n        \"relative_start\": 69.1,\n        \"relative_end\": 79.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"几个小时内。民主党的未来是什么？以及共和党的未来，当你审视政治时。这是个好问题。我那种准对冲的回答是，我认为如果你看看\",\n        \"en\": \"few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Haley Stevens\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Haley Maria Stevens\",\n      \"preferred_en\": \"Haley Maria Stevens\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"海莉·史蒂文斯\",\n      \"title_label\": \"史蒂文斯\",\n      \"preferred_zh\": \"海莉·史蒂文斯\",\n      \"aliases\": [\n        \"黑莉·史蒂文斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://cn.wsj.com/articles/how-rep-haley-stevens-turned-on-a-fellow-democratand-became-a-party-pariah-47c904b9\",\n        \"https://baike.baidu.com/item/黑莉·史蒂文斯/68379379\"\n      ],\n      \"evidence\": \"华尔街日报中文网使用“海莉·史蒂文斯”，百度百科使用“黑莉·史蒂文斯”；两者为同一人（密歇根州民主党联邦众议员）。以 WSJ 译法为主，百度译法列为可替换变体。\"\n    },\n    {\n      \"source_text\": \"Mike Rogers\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Mike Rogers (Michigan)\",\n      \"preferred_en\": \"Mike Rogers (Michigan)\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"迈克·罗杰斯\",\n      \"title_label\": \"罗杰斯\",\n      \"preferred_zh\": \"迈克·罗杰斯\",\n      \"aliases\": [\n        \"麦克·罗杰斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/迈克·罗杰斯/68496801\",\n        \"https://zh.wikipedia.org/zh-cn/麥克·羅傑斯\"\n      ],\n      \"evidence\": \"百度百科作“迈克·罗杰斯”（密歇根州前联邦众议员、2026 共和党参议员候选人），中文维基作“麦克·罗杰斯”。注意勿与阿拉巴马州众议员 Mike Rogers（1958 年生）混淆。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Haley Stevens endorsed Republican Mike Rogers on the eve of the election, turning on the Democratic Party's Senate nominee Abdul El-Sayed.\",\n      \"public_baseline\": \"Multiple major outlets (NBC, ABC, NYT, CNBC, CBS, Guardian, Axios) report that on Sunday, Nov 1, 2026, Democratic Rep. Haley Stevens endorsed Republican Mike Rogers over Democratic nominee Abdul El-Sayed, drawing fierce backlash from Democrats.\",\n      \"surprise_gap\": \"A sitting Democratic congresswoman endorsing the Republican Senate candidate days before the election is a striking intra-party reversal; the transcript frames it as a personal drama rather than a national story, while public coverage treats it as a major battleground-race shake-up.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"Stevens initially did the normal thing and endorsed El-Sayed after losing the primary.\",\n        \"public_action\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed, saying \\\"I don't belong in Abdul's campaign.\\\"\",\n        \"independent_source_count\": 5,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nbcnews.com/politics/2026-election/haley-stevens-endorses-gop-mike-rogers-michigan-senate-race-el-sayed-rcna606831\",\n            \"fact\": \"NBC: Stevens endorsed Rogers on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://abcnews.com/Politics/democratic-rep-haley-stevens-endorses-gop-candidate-mike/story?id=137752255\",\n            \"fact\": \"ABC: Stevens said \\\"I don't belong in Abdul's campaign.\\\"\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nytimes.com/2026/11/01/us/elections/stevens-rogers-el-sayed-michigan-senate.html\",\n            \"fact\": \"NYT: late endorsement after feud with El-Sayed.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.theguardian.com/us-news/2026/nov/02/democrats-reaction-haley-steven-mike-rogers\",\n            \"fact\": \"Guardian: Democrats call it 'a despicable betrayal'.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"NYT: Stevens endorsed El-Sayed after losing the August primary, then shifted tone.\"\n          }\n        ]\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"After losing the August 2026 Democratic Senate primary, Stevens endorsed El-Sayed.\",\n        \"current_position\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"Stevens endorsed El-Sayed after the primary, then her tone shifted.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html\",\n            \"fact\": \"CNBC: Stevens endorsed Rogers over El-Sayed on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.axios.com/2026/11/01/haley-stevens-democrats-reaction-rogers-el-sayed\",\n            \"fact\": \"Axios: stunning reversal in standing for Stevens.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"El-Sayed beat Stevens in a primary; progressives/democratic socialists defeated moderates in several races.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n          \"url\": \"https://www.nytimes.com/live/2026/08/05/us/michigan-election-results-primary\",\n          \"fact\": \"El-Sayed edged Stevens to win the Michigan Democratic Senate primary.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Democratic socialist candidates defeated moderate Democrats 2026 primaries\",\n          \"url\": \"https://ballotpedia.org/Endorsements_by_Democratic_Socialists_of_America,_2026\",\n          \"fact\": \"DSA-endorsed candidates won 61 of 107 primaries in 2026.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed polls Michigan Senate race narrow lead 2026\",\n          \"url\": \"https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed\",\n          \"fact\": \"Polling aggregator exists for Rogers vs. El-Sayed; transcript says El-Sayed narrowly leading.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michigan Senate race 2026 El-Sayed Rogers election results\",\n          \"url\": \"https://www.nytimes.com/interactive/2026/11/03/us/elections/results-michigan-us-senate.html\",\n          \"fact\": \"Live results page for the Nov 3, 2026 race; outcome not confirmed in snippet.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim El-Sayed won or lost the general election; snippets only show live results pages.\",\n        \"Do not claim Stevens was expelled or formally censured by the party; sources describe backlash, not discipline.\",\n        \"Do not attribute the endorsement or any opinion to Bloomberg or the host.\",\n        \"Do not claim the transcript's 'narrow win' prediction was confirmed.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's speaker is a Bloomberg interviewer/journalist; Bloomberg is the publisher, not the opinion-holding actor.\",\n    \"Mike Rogers (Michigan, b. 1963) must not be confused with Rep. Mike Rogers of Alabama (b. 1958), House Armed Services chairman.\",\n    \"Chinese rendering of El-Sayed appears in only one reliable Chinese source (WSJ Chinese); treat as medium confidence.\",\n    \"The 'Who Wants to Be President in 2028?' show title has no verified Chinese name; keep English.\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "海莉·史蒂文斯在初选输给阿卜杜勒·埃尔-赛义德后先 endorsement 了他，随后在选举前夕转而支持共和党人迈克·罗杰斯；播客讨论这是否撕裂民主党，并提到埃尔-赛义德在民调中微弱领先。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "民主党人倒戈共和党",
+                "title_lines": [
+                  "初选输给进步派",
+                  "转身支持共和党",
+                  "密歇根选情生变"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: Stevens initially endorsed El-Sayed after losing primary, then endorsed Republican Mike Rogers on eve of election",
+                  "public evidence: NBC, ABC, NYT, CNBC report Stevens endorsed Rogers over El-Sayed"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "words_vs_actions",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "先挺本党再挺对手",
+                "title_lines": [
+                  "史蒂文斯先挺本党",
+                  "选前却转向罗杰斯",
+                  "民主党内部炸锅"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: after losing primary, Stevens endorsed El-Sayed, then turned on party's candidate",
+                  "public evidence: ABC quotes Stevens saying 'I don't belong in Abdul's campaign'; Guardian reports Democrats call it 'a despicable betrayal'"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 8,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "居然是这样",
+                "title": "一张 endorsement 搅动参院席位",
+                "title_lines": [
+                  "关键席位争夺",
+                  "党内倒戈搅局",
+                  "民调仅微弱领先"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: El-Sayed winning narrowly in many polls; expectations of narrow win",
+                  "public evidence: RealClearPolling aggregator for Rogers vs. El-Sayed; NYT live results page for Nov 3 race"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 6,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "播客直问民主党是否撕裂",
+                "title_lines": [
+                  "民主党会撕裂吗",
+                  "进步派连赢初选",
+                  "温和派倒戈引火"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "transcript: host asks 'Is this tearing the Democratic party apart?'; guest says not yet but might after elections",
+                  "public evidence: DSA-endorsed candidates won 61 of 107 primaries in 2026 (Ballotpedia)"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 7,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 8,
+                  "china_resonance": 1
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"source_title\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"show_date\": \"\",\n    \"current_title\": \"民主党中期选举现代际更替 2028总统人选轮廓渐显\",\n    \"current_title_lines\": [\n      \"民主党中期选举现代际更替\",\n      \"新一代温和派候选人崛起\",\n      \"2028总统人选轮廓渐显\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我想从民主党开始谈起，因为上个月你确实与该党参议院提名人阿卜杜勒·埃尔-赛义德一起前往密歇根州上半岛，他在初选中击败了史蒂文斯，这是进步派或民主社会主义候选人击败温和派对手的众多初选之一。\",\n        \"en\": \"You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这是否正在撕裂民主党？\",\n        \"en\": \"one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为目前还没有，但选举后可能会。我的意思是，显然，当像这样的候选人站出来支持共和党人时，就像史蒂文斯在密歇根州支持迈克·罗杰斯那样，在选举前夕，这会引发很多火花。这会成为大事。\",\n        \"en\": \"I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但这似乎是海莉·史蒂文斯的故事，而不是民主党的故事。\",\n        \"en\": \"on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"确实如此。这更像是个人的心理剧，而不是全国性的故事。但与此同时，史蒂文斯是那场竞选中民主党中间派的巨大希望。最初，在埃尔-赛义德获胜后，她转过身来做了正常的事，支持了他，但随后她这样失控并转向该党的候选人。我认为这确实触及了一些表面下的怀疑和相互敌意。但话虽如此，我们看到事后党内各方在密歇根州团结起来，至少到目前为止，看起来埃尔-赛义德在许多民调中以微弱优势\",\n        \"en\": \"But that seems like it's a Haley Stevens story, not a Democrat.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"民主党的未来是什么？还有共和党，当你审视政治时。这是个好问题。我那种半推半就的回答是，我认为如果你看看...\",\n        \"en\": \"It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她赢了之后，转身做了常规的事，支持了他，但随后又这样脱离轨道，转而反对本党候选人。我认为这确实触及了一些\",\n        \"en\": \"won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"表面之下暗藏着猜疑与相互敌意。但话虽如此，事后我们看到党内各方在密歇根州团结起来，至少到目前为止，看起来\",\n        \"en\": \"suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"像阿尔-赛义德在多项民调中以微弱优势领先。我从民主党和共和党方面听到的预期是，他可能正朝着险胜的方向迈进，但接下来我们就会见分晓。\",\n        \"en\": \"like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next\",\n        \"relative_start\": 69.1,\n        \"relative_end\": 79.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"几个小时内。民主党的未来是什么？以及共和党的未来，当你审视政治时。这是个好问题。我那种准对冲的回答是，我认为如果你看看\",\n        \"en\": \"few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Haley Stevens\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Haley Maria Stevens\",\n      \"preferred_en\": \"Haley Maria Stevens\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"海莉·史蒂文斯\",\n      \"title_label\": \"史蒂文斯\",\n      \"preferred_zh\": \"海莉·史蒂文斯\",\n      \"aliases\": [\n        \"黑莉·史蒂文斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://cn.wsj.com/articles/how-rep-haley-stevens-turned-on-a-fellow-democratand-became-a-party-pariah-47c904b9\",\n        \"https://baike.baidu.com/item/黑莉·史蒂文斯/68379379\"\n      ],\n      \"evidence\": \"华尔街日报中文网使用“海莉·史蒂文斯”，百度百科使用“黑莉·史蒂文斯”；两者为同一人（密歇根州民主党联邦众议员）。以 WSJ 译法为主，百度译法列为可替换变体。\"\n    },\n    {\n      \"source_text\": \"Mike Rogers\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Mike Rogers (Michigan)\",\n      \"preferred_en\": \"Mike Rogers (Michigan)\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"迈克·罗杰斯\",\n      \"title_label\": \"罗杰斯\",\n      \"preferred_zh\": \"迈克·罗杰斯\",\n      \"aliases\": [\n        \"麦克·罗杰斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/迈克·罗杰斯/68496801\",\n        \"https://zh.wikipedia.org/zh-cn/麥克·羅傑斯\"\n      ],\n      \"evidence\": \"百度百科作“迈克·罗杰斯”（密歇根州前联邦众议员、2026 共和党参议员候选人），中文维基作“麦克·罗杰斯”。注意勿与阿拉巴马州众议员 Mike Rogers（1958 年生）混淆。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Haley Stevens endorsed Republican Mike Rogers on the eve of the election, turning on the Democratic Party's Senate nominee Abdul El-Sayed.\",\n      \"public_baseline\": \"Multiple major outlets (NBC, ABC, NYT, CNBC, CBS, Guardian, Axios) report that on Sunday, Nov 1, 2026, Democratic Rep. Haley Stevens endorsed Republican Mike Rogers over Democratic nominee Abdul El-Sayed, drawing fierce backlash from Democrats.\",\n      \"surprise_gap\": \"A sitting Democratic congresswoman endorsing the Republican Senate candidate days before the election is a striking intra-party reversal; the transcript frames it as a personal drama rather than a national story, while public coverage treats it as a major battleground-race shake-up.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"Stevens initially did the normal thing and endorsed El-Sayed after losing the primary.\",\n        \"public_action\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed, saying \\\"I don't belong in Abdul's campaign.\\\"\",\n        \"independent_source_count\": 5,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nbcnews.com/politics/2026-election/haley-stevens-endorses-gop-mike-rogers-michigan-senate-race-el-sayed-rcna606831\",\n            \"fact\": \"NBC: Stevens endorsed Rogers on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://abcnews.com/Politics/democratic-rep-haley-stevens-endorses-gop-candidate-mike/story?id=137752255\",\n            \"fact\": \"ABC: Stevens said \\\"I don't belong in Abdul's campaign.\\\"\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nytimes.com/2026/11/01/us/elections/stevens-rogers-el-sayed-michigan-senate.html\",\n            \"fact\": \"NYT: late endorsement after feud with El-Sayed.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.theguardian.com/us-news/2026/nov/02/democrats-reaction-haley-steven-mike-rogers\",\n            \"fact\": \"Guardian: Democrats call it 'a despicable betrayal'.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"NYT: Stevens endorsed El-Sayed after losing the August primary, then shifted tone.\"\n          }\n        ]\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"After losing the August 2026 Democratic Senate primary, Stevens endorsed El-Sayed.\",\n        \"current_position\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"Stevens endorsed El-Sayed after the primary, then her tone shifted.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html\",\n            \"fact\": \"CNBC: Stevens endorsed Rogers over El-Sayed on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.axios.com/2026/11/01/haley-stevens-democrats-reaction-rogers-el-sayed\",\n            \"fact\": \"Axios: stunning reversal in standing for Stevens.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"El-Sayed beat Stevens in a primary; progressives/democratic socialists defeated moderates in several races.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n          \"url\": \"https://www.nytimes.com/live/2026/08/05/us/michigan-election-results-primary\",\n          \"fact\": \"El-Sayed edged Stevens to win the Michigan Democratic Senate primary.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Democratic socialist candidates defeated moderate Democrats 2026 primaries\",\n          \"url\": \"https://ballotpedia.org/Endorsements_by_Democratic_Socialists_of_America,_2026\",\n          \"fact\": \"DSA-endorsed candidates won 61 of 107 primaries in 2026.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed polls Michigan Senate race narrow lead 2026\",\n          \"url\": \"https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed\",\n          \"fact\": \"Polling aggregator exists for Rogers vs. El-Sayed; transcript says El-Sayed narrowly leading.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michigan Senate race 2026 El-Sayed Rogers election results\",\n          \"url\": \"https://www.nytimes.com/interactive/2026/11/03/us/elections/results-michigan-us-senate.html\",\n          \"fact\": \"Live results page for the Nov 3, 2026 race; outcome not confirmed in snippet.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim El-Sayed won or lost the general election; snippets only show live results pages.\",\n        \"Do not claim Stevens was expelled or formally censured by the party; sources describe backlash, not discipline.\",\n        \"Do not attribute the endorsement or any opinion to Bloomberg or the host.\",\n        \"Do not claim the transcript's 'narrow win' prediction was confirmed.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's speaker is a Bloomberg interviewer/journalist; Bloomberg is the publisher, not the opinion-holding actor.\",\n    \"Mike Rogers (Michigan, b. 1963) must not be confused with Rep. Mike Rogers of Alabama (b. 1958), House Armed Services chairman.\",\n    \"Chinese rendering of El-Sayed appears in only one reliable Chinese source (WSJ Chinese); treat as medium confidence.\",\n    \"The 'Who Wants to Be President in 2028?' show title has no verified Chinese name; keep English.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"海莉·史蒂文斯在初选输给阿卜杜勒·埃尔-赛义德后先 endorsement 了他，随后在选举前夕转而支持共和党人迈克·罗杰斯；播客讨论这是否撕裂民主党，并提到埃尔-赛义德在民调中微弱领先。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"民主党人倒戈共和党\",\n          \"title_lines\": [\n            \"初选输给进步派\",\n            \"转身支持共和党\",\n            \"密歇根选情生变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Stevens initially endorsed El-Sayed after losing primary, then endorsed Republican Mike Rogers on eve of election\",\n            \"public evidence: NBC, ABC, NYT, CNBC report Stevens endorsed Rogers over El-Sayed\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"words_vs_actions\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"先挺本党再挺对手\",\n          \"title_lines\": [\n            \"史蒂文斯先挺本党\",\n            \"选前却转向罗杰斯\",\n            \"民主党内部炸锅\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: after losing primary, Stevens endorsed El-Sayed, then turned on party's candidate\",\n            \"public evidence: ABC quotes Stevens saying 'I don't belong in Abdul's campaign'; Guardian reports Democrats call it 'a despicable betrayal'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"一张 endorsement 搅动参院席位\",\n          \"title_lines\": [\n            \"关键席位争夺\",\n            \"党内倒戈搅局\",\n            \"民调仅微弱领先\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: El-Sayed winning narrowly in many polls; expectations of narrow win\",\n            \"public evidence: RealClearPolling aggregator for Rogers vs. El-Sayed; NYT live results page for Nov 3 race\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"播客直问民主党是否撕裂\",\n          \"title_lines\": [\n            \"民主党会撕裂吗\",\n            \"进步派连赢初选\",\n            \"温和派倒戈引火\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: host asks 'Is this tearing the Democratic party apart?'; guest says not yet but might after elections\",\n            \"public evidence: DSA-endorsed candidates won 61 of 107 primaries in 2026 (Ballotpedia)\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "transcript: 史蒂文斯初选输给埃尔-赛义德后先支持本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯",
+              "public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯",
+              "transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜"
+            ],
+            "title": "民主党人临阵倒戈共和党",
+            "title_lines": [
+              "初选输给进步派",
+              "转身支持共和党",
+              "密歇根选情生变"
+            ],
+            "title_highlights": [
+              "初选输给进步派",
+              "转身支持共和党"
+            ],
+            "runner_up_titles": [
+              "先挺本党再挺对手",
+              "一张背书搅动参院席位"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：史蒂文斯选前倒戈，民主党内部裂痕公开化，密歇根参院席位争夺添变数。",
+            "comment_highlights": [
+              "选前倒戈",
+              "内部裂痕"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：进步派初选击败温和派，党内路线之争浮出水面。",
+                "comment_highlights": [
+                  "进步派初选击败温和派"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：主持人直问是否撕裂民主党，嘉宾称选举后可能见分晓。",
+                "comment_highlights": [
+                  "是否撕裂民主党"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：史蒂文斯选前背书罗杰斯，被指在关键州引爆党内火花。",
+                "comment_highlights": [
+                  "选前背书罗杰斯"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：嘉宾认为这更像个人心理剧，而非全国性故事。",
+                "comment_highlights": [
+                  "个人心理剧"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：史蒂文斯从中间派希望到倒戈，暴露表面下的猜疑与敌意。",
+                "comment_highlights": [
+                  "中间派希望到倒戈"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：民主党未来走向成焦点，嘉宾以半推半就作答。",
+                "comment_highlights": [
+                  "民主党未来走向"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：史蒂文斯先按常规背书本党，随后脱离轨道转向反对。",
+                "comment_highlights": [
+                  "先按常规背书本党"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：表面猜疑与敌意之下，密歇根党内各方事后仍试图团结。",
+                "comment_highlights": [
+                  "事后仍试图团结"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：埃尔-赛义德民调微弱领先，两党预期其险胜但结果待揭晓。",
+                "comment_highlights": [
+                  "民调微弱领先"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：两党未来走向引追问，嘉宾以对冲式回答留悬念。",
+                "comment_highlights": [
+                  "两党未来走向"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"source_title\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n    \"show_date\": \"\",\n    \"current_title\": \"民主党中期选举现代际更替 2028总统人选轮廓渐显\",\n    \"current_title_lines\": [\n      \"民主党中期选举现代际更替\",\n      \"新一代温和派候选人崛起\",\n      \"2028总统人选轮廓渐显\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我想从民主党开始谈起，因为上个月你确实与该党参议院提名人阿卜杜勒·埃尔-赛义德一起前往密歇根州上半岛，他在初选中击败了史蒂文斯，这是进步派或民主社会主义候选人击败温和派对手的众多初选之一。\",\n        \"en\": \"You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这是否正在撕裂民主党？\",\n        \"en\": \"one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?\",\n        \"relative_start\": 9.0,\n        \"relative_end\": 18.2\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为目前还没有，但选举后可能会。我的意思是，显然，当像这样的候选人站出来支持共和党人时，就像史蒂文斯在密歇根州支持迈克·罗杰斯那样，在选举前夕，这会引发很多火花。这会成为大事。\",\n        \"en\": \"I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like\",\n        \"relative_start\": 18.2,\n        \"relative_end\": 28.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"但这似乎是海莉·史蒂文斯的故事，而不是民主党的故事。\",\n        \"en\": \"on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.\",\n        \"relative_start\": 28.2,\n        \"relative_end\": 32.0\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"确实如此。这更像是个人的心理剧，而不是全国性的故事。但与此同时，史蒂文斯是那场竞选中民主党中间派的巨大希望。最初，在埃尔-赛义德获胜后，她转过身来做了正常的事，支持了他，但随后她这样失控并转向该党的候选人。我认为这确实触及了一些表面下的怀疑和相互敌意。但话虽如此，我们看到事后党内各方在密歇根州团结起来，至少到目前为止，看起来埃尔-赛义德在许多民调中以微弱优势\",\n        \"en\": \"But that seems like it's a Haley Stevens story, not a Democrat.\",\n        \"relative_start\": 32.0,\n        \"relative_end\": 35.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"民主党的未来是什么？还有共和党，当你审视政治时。这是个好问题。我那种半推半就的回答是，我认为如果你看看...\",\n        \"en\": \"It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed\",\n        \"relative_start\": 35.6,\n        \"relative_end\": 48.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"她赢了之后，转身做了常规的事，支持了他，但随后又这样脱离轨道，转而反对本党候选人。我认为这确实触及了一些\",\n        \"en\": \"won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the\",\n        \"relative_start\": 48.4,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"表面之下暗藏着猜疑与相互敌意。但话虽如此，事后我们看到党内各方在密歇根州团结起来，至少到目前为止，看起来\",\n        \"en\": \"suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 69.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"像阿尔-赛义德在多项民调中以微弱优势领先。我从民主党和共和党方面听到的预期是，他可能正朝着险胜的方向迈进，但接下来我们就会见分晓。\",\n        \"en\": \"like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next\",\n        \"relative_start\": 69.1,\n        \"relative_end\": 79.0\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"几个小时内。民主党的未来是什么？以及共和党的未来，当你审视政治时。这是个好问题。我那种准对冲的回答是，我认为如果你看看\",\n        \"en\": \"few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at\",\n        \"relative_start\": 79.0,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Haley Stevens\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Haley Maria Stevens\",\n      \"preferred_en\": \"Haley Maria Stevens\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"海莉·史蒂文斯\",\n      \"title_label\": \"史蒂文斯\",\n      \"preferred_zh\": \"海莉·史蒂文斯\",\n      \"aliases\": [\n        \"黑莉·史蒂文斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://cn.wsj.com/articles/how-rep-haley-stevens-turned-on-a-fellow-democratand-became-a-party-pariah-47c904b9\",\n        \"https://baike.baidu.com/item/黑莉·史蒂文斯/68379379\"\n      ],\n      \"evidence\": \"华尔街日报中文网使用“海莉·史蒂文斯”，百度百科使用“黑莉·史蒂文斯”；两者为同一人（密歇根州民主党联邦众议员）。以 WSJ 译法为主，百度译法列为可替换变体。\"\n    },\n    {\n      \"source_text\": \"Mike Rogers\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Mike Rogers (Michigan)\",\n      \"preferred_en\": \"Mike Rogers (Michigan)\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"迈克·罗杰斯\",\n      \"title_label\": \"罗杰斯\",\n      \"preferred_zh\": \"迈克·罗杰斯\",\n      \"aliases\": [\n        \"麦克·罗杰斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/迈克·罗杰斯/68496801\",\n        \"https://zh.wikipedia.org/zh-cn/麥克·羅傑斯\"\n      ],\n      \"evidence\": \"百度百科作“迈克·罗杰斯”（密歇根州前联邦众议员、2026 共和党参议员候选人），中文维基作“麦克·罗杰斯”。注意勿与阿拉巴马州众议员 Mike Rogers（1958 年生）混淆。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Haley Stevens endorsed Republican Mike Rogers on the eve of the election, turning on the Democratic Party's Senate nominee Abdul El-Sayed.\",\n      \"public_baseline\": \"Multiple major outlets (NBC, ABC, NYT, CNBC, CBS, Guardian, Axios) report that on Sunday, Nov 1, 2026, Democratic Rep. Haley Stevens endorsed Republican Mike Rogers over Democratic nominee Abdul El-Sayed, drawing fierce backlash from Democrats.\",\n      \"surprise_gap\": \"A sitting Democratic congresswoman endorsing the Republican Senate candidate days before the election is a striking intra-party reversal; the transcript frames it as a personal drama rather than a national story, while public coverage treats it as a major battleground-race shake-up.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"Stevens initially did the normal thing and endorsed El-Sayed after losing the primary.\",\n        \"public_action\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed, saying \\\"I don't belong in Abdul's campaign.\\\"\",\n        \"independent_source_count\": 5,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nbcnews.com/politics/2026-election/haley-stevens-endorses-gop-mike-rogers-michigan-senate-race-el-sayed-rcna606831\",\n            \"fact\": \"NBC: Stevens endorsed Rogers on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://abcnews.com/Politics/democratic-rep-haley-stevens-endorses-gop-candidate-mike/story?id=137752255\",\n            \"fact\": \"ABC: Stevens said \\\"I don't belong in Abdul's campaign.\\\"\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nytimes.com/2026/11/01/us/elections/stevens-rogers-el-sayed-michigan-senate.html\",\n            \"fact\": \"NYT: late endorsement after feud with El-Sayed.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.theguardian.com/us-news/2026/nov/02/democrats-reaction-haley-steven-mike-rogers\",\n            \"fact\": \"Guardian: Democrats call it 'a despicable betrayal'.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"NYT: Stevens endorsed El-Sayed after losing the August primary, then shifted tone.\"\n          }\n        ]\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"After losing the August 2026 Democratic Senate primary, Stevens endorsed El-Sayed.\",\n        \"current_position\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"Stevens endorsed El-Sayed after the primary, then her tone shifted.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html\",\n            \"fact\": \"CNBC: Stevens endorsed Rogers over El-Sayed on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.axios.com/2026/11/01/haley-stevens-democrats-reaction-rogers-el-sayed\",\n            \"fact\": \"Axios: stunning reversal in standing for Stevens.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"El-Sayed beat Stevens in a primary; progressives/democratic socialists defeated moderates in several races.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n          \"url\": \"https://www.nytimes.com/live/2026/08/05/us/michigan-election-results-primary\",\n          \"fact\": \"El-Sayed edged Stevens to win the Michigan Democratic Senate primary.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Democratic socialist candidates defeated moderate Democrats 2026 primaries\",\n          \"url\": \"https://ballotpedia.org/Endorsements_by_Democratic_Socialists_of_America,_2026\",\n          \"fact\": \"DSA-endorsed candidates won 61 of 107 primaries in 2026.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed polls Michigan Senate race narrow lead 2026\",\n          \"url\": \"https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed\",\n          \"fact\": \"Polling aggregator exists for Rogers vs. El-Sayed; transcript says El-Sayed narrowly leading.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michigan Senate race 2026 El-Sayed Rogers election results\",\n          \"url\": \"https://www.nytimes.com/interactive/2026/11/03/us/elections/results-michigan-us-senate.html\",\n          \"fact\": \"Live results page for the Nov 3, 2026 race; outcome not confirmed in snippet.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim El-Sayed won or lost the general election; snippets only show live results pages.\",\n        \"Do not claim Stevens was expelled or formally censured by the party; sources describe backlash, not discipline.\",\n        \"Do not attribute the endorsement or any opinion to Bloomberg or the host.\",\n        \"Do not claim the transcript's 'narrow win' prediction was confirmed.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's speaker is a Bloomberg interviewer/journalist; Bloomberg is the publisher, not the opinion-holding actor.\",\n    \"Mike Rogers (Michigan, b. 1963) must not be confused with Rep. Mike Rogers of Alabama (b. 1958), House Armed Services chairman.\",\n    \"Chinese rendering of El-Sayed appears in only one reliable Chinese source (WSJ Chinese); treat as medium confidence.\",\n    \"The 'Who Wants to Be President in 2028?' show title has no verified Chinese name; keep English.\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"海莉·史蒂文斯在初选输给阿卜杜勒·埃尔-赛义德后先 endorsement 了他，随后在选举前夕转而支持共和党人迈克·罗杰斯；播客讨论这是否撕裂民主党，并提到埃尔-赛义德在民调中微弱领先。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"民主党人倒戈共和党\",\n          \"title_lines\": [\n            \"初选输给进步派\",\n            \"转身支持共和党\",\n            \"密歇根选情生变\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: Stevens initially endorsed El-Sayed after losing primary, then endorsed Republican Mike Rogers on eve of election\",\n            \"public evidence: NBC, ABC, NYT, CNBC report Stevens endorsed Rogers over El-Sayed\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"words_vs_actions\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"先挺本党再挺对手\",\n          \"title_lines\": [\n            \"史蒂文斯先挺本党\",\n            \"选前却转向罗杰斯\",\n            \"民主党内部炸锅\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: after losing primary, Stevens endorsed El-Sayed, then turned on party's candidate\",\n            \"public evidence: ABC quotes Stevens saying 'I don't belong in Abdul's campaign'; Guardian reports Democrats call it 'a despicable betrayal'\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"一张 endorsement 搅动参院席位\",\n          \"title_lines\": [\n            \"关键席位争夺\",\n            \"党内倒戈搅局\",\n            \"民调仅微弱领先\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: El-Sayed winning narrowly in many polls; expectations of narrow win\",\n            \"public evidence: RealClearPolling aggregator for Rogers vs. El-Sayed; NYT live results page for Nov 3 race\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 6,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"播客直问民主党是否撕裂\",\n          \"title_lines\": [\n            \"民主党会撕裂吗\",\n            \"进步派连赢初选\",\n            \"温和派倒戈引火\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"transcript: host asks 'Is this tearing the Democratic party apart?'; guest says not yet but might after elections\",\n            \"public evidence: DSA-endorsed candidates won 61 of 107 primaries in 2026 (Ballotpedia)\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 7,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 8,\n            \"china_resonance\": 1\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"初选输给进步派：转身支持共和党，密歇根选情生变\",\n      \"title_lines\": [\n        \"初选输给进步派\",\n        \"转身支持共和党\",\n        \"密歇根选情生变\"\n      ],\n      \"title_highlights\": [\n        \"初选输给进步派\",\n        \"转身支持共和党\"\n      ],\n      \"comment\": \"KC评论：史蒂文斯选前倒戈，民主党内部裂痕公开化，密歇根参院席位争夺添变数\",\n      \"comment_highlights\": [\n        \"选前倒戈\",\n        \"内部裂痕\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：进步派初选击败温和派，党内路线之争浮出水面\",\n          \"comment_highlights\": [\n            \"进步派初选击败温和派\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：主持人直问是否撕裂民主党，嘉宾称选举后可能见分晓\",\n          \"comment_highlights\": [\n            \"是否撕裂民主党\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：史蒂文斯选前背书罗杰斯，被指在关键州引爆党内火花\",\n          \"comment_highlights\": [\n            \"选前背书罗杰斯\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：嘉宾认为这更像个人心理剧，而非全国性故事\",\n          \"comment_highlights\": [\n            \"个人心理剧\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：史蒂文斯从中间派希望到倒戈，暴露表面下的猜疑与敌意\",\n          \"comment_highlights\": [\n            \"中间派希望到倒戈\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：民主党未来走向成焦点，嘉宾以半推半就作答\",\n          \"comment_highlights\": [\n            \"民主党未来走向\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：史蒂文斯先按常规背书本党，随后脱离轨道转向反对\",\n          \"comment_highlights\": [\n            \"先按常规背书本党\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：表面猜疑与敌意之下，密歇根党内各方事后仍试图团结\",\n          \"comment_highlights\": [\n            \"事后仍试图团结\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：埃尔-赛义德民调微弱领先，两党预期其险胜但结果待揭晓\",\n          \"comment_highlights\": [\n            \"民调微弱领先\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：两党未来走向引追问，嘉宾以对冲式回答留悬念\",\n          \"comment_highlights\": [\n            \"两党未来走向\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"transcript: 史蒂文斯初选输给埃尔-赛义德后先支持本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯\",\n        \"public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯\",\n        \"transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜\"\n      ],\n      \"runner_up_titles\": [\n        \"先挺本党再挺对手\",\n        \"一张背书搅动参院席位\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 2\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 2\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "transcript: 史蒂文斯初选输给埃尔-赛义德后先背书本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯",
+                  "public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯",
+                  "transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜"
+                ],
+                "title": "先背书本党，选前却倒戈对手",
+                "title_lines": [
+                  "初选输给进步派",
+                  "先背书本党候选人",
+                  "选前却倒戈对手"
+                ],
+                "title_highlights": [
+                  "先背书本党候选人",
+                  "选前却倒戈对手"
+                ],
+                "runner_up_titles": [
+                  "先挺本党再挺对手",
+                  "一张背书搅动参院席位"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：史蒂文斯选前倒戈罗杰斯，密歇根参院席位争夺添变数，党内裂痕公开化",
+                "comment_highlights": [
+                  "选前倒戈罗杰斯",
+                  "党内裂痕公开化"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：进步派初选击败温和派，党内路线之争浮出水面",
+                    "comment_highlights": [
+                      "进步派初选击败温和派"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：主持人直问是否撕裂民主党，嘉宾称选举后可能见分晓",
+                    "comment_highlights": [
+                      "是否撕裂民主党"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：史蒂文斯选前背书罗杰斯，被指在关键州引爆党内火花",
+                    "comment_highlights": [
+                      "选前背书罗杰斯"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：嘉宾认为这更像个人心理剧，而非全国性故事",
+                    "comment_highlights": [
+                      "个人心理剧"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：史蒂文斯从中间派希望到倒戈，暴露表面下的猜疑与敌意",
+                    "comment_highlights": [
+                      "中间派希望到倒戈"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：民主党未来走向成焦点，嘉宾以半推半就作答",
+                    "comment_highlights": [
+                      "民主党未来走向"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：史蒂文斯先按常规背书本党，随后脱离轨道转向反对",
+                    "comment_highlights": [
+                      "先按常规背书本党"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：表面猜疑与敌意之下，密歇根党内各方事后仍试图团结",
+                    "comment_highlights": [
+                      "事后仍试图团结"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：埃尔-赛义德民调微弱领先，两党预期其险胜但结果待揭晓",
+                    "comment_highlights": [
+                      "民调微弱领先"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：两党未来走向引追问，嘉宾以对冲式回答留悬念",
+                    "comment_highlights": [
+                      "两党未来走向"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "初选输给进步派：转身支持共和党，密歇根选情生变",
+          "title_lines": [
+            "初选输给进步派",
+            "转身支持共和党",
+            "密歇根选情生变"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            }
+          },
+          "comment": "KC评论：史蒂文斯选前倒戈，民主党内部裂痕公开化，密歇根参院席位争夺添变数"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-04T02:11:38.618105+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily",
+          "source_title": "Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily",
+          "show_date": "",
+          "current_title": "民主党中期选举现代际更替 2028总统人选轮廓渐显",
+          "current_title_lines": [
+            "民主党中期选举现代际更替",
+            "新一代温和派候选人崛起",
+            "2028总统人选轮廓渐显"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我想从民主党开始谈起，因为上个月你确实与该党参议院提名人阿卜杜勒·埃尔-赛义德一起前往密歇根州上半岛，他在初选中击败了史蒂文斯，这是进步派或民主社会主义候选人击败温和派对手的众多初选之一。",
+              "en": "You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in",
+              "relative_start": 0.0,
+              "relative_end": 9.0
+            },
+            {
+              "index": 2,
+              "zh": "这是否正在撕裂民主党？",
+              "en": "one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?",
+              "relative_start": 9.0,
+              "relative_end": 18.2
+            },
+            {
+              "index": 3,
+              "zh": "我认为目前还没有，但选举后可能会。我的意思是，显然，当像这样的候选人站出来支持共和党人时，就像史蒂文斯在密歇根州支持迈克·罗杰斯那样，在选举前夕，这会引发很多火花。这会成为大事。",
+              "en": "I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like",
+              "relative_start": 18.2,
+              "relative_end": 28.2
+            },
+            {
+              "index": 4,
+              "zh": "但这似乎是海莉·史蒂文斯的故事，而不是民主党的故事。",
+              "en": "on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.",
+              "relative_start": 28.2,
+              "relative_end": 32.0
+            },
+            {
+              "index": 5,
+              "zh": "确实如此。这更像是个人的心理剧，而不是全国性的故事。但与此同时，史蒂文斯是那场竞选中民主党中间派的巨大希望。最初，在埃尔-赛义德获胜后，她转过身来做了正常的事，支持了他，但随后她这样失控并转向该党的候选人。我认为这确实触及了一些表面下的怀疑和相互敌意。但话虽如此，我们看到事后党内各方在密歇根州团结起来，至少到目前为止，看起来埃尔-赛义德在许多民调中以微弱优势",
+              "en": "But that seems like it's a Haley Stevens story, not a Democrat.",
+              "relative_start": 32.0,
+              "relative_end": 35.6
+            },
+            {
+              "index": 6,
+              "zh": "民主党的未来是什么？还有共和党，当你审视政治时。这是个好问题。我那种半推半就的回答是，我认为如果你看看...",
+              "en": "It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed",
+              "relative_start": 35.6,
+              "relative_end": 48.4
+            },
+            {
+              "index": 7,
+              "zh": "她赢了之后，转身做了常规的事，支持了他，但随后又这样脱离轨道，转而反对本党候选人。我认为这确实触及了一些",
+              "en": "won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the",
+              "relative_start": 48.4,
+              "relative_end": 58.6
+            },
+            {
+              "index": 8,
+              "zh": "表面之下暗藏着猜疑与相互敌意。但话虽如此，事后我们看到党内各方在密歇根州团结起来，至少到目前为止，看起来",
+              "en": "suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks",
+              "relative_start": 58.6,
+              "relative_end": 69.1
+            },
+            {
+              "index": 9,
+              "zh": "像阿尔-赛义德在多项民调中以微弱优势领先。我从民主党和共和党方面听到的预期是，他可能正朝着险胜的方向迈进，但接下来我们就会见分晓。",
+              "en": "like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next",
+              "relative_start": 69.1,
+              "relative_end": 79.0
+            },
+            {
+              "index": 10,
+              "zh": "几个小时内。民主党的未来是什么？以及共和党的未来，当你审视政治时。这是个好问题。我那种准对冲的回答是，我认为如果你看看",
+              "en": "few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at",
+              "relative_start": 79.0,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n  \"source_title\": \"Duration: 10:11 Who Wants to Be President in 2028? Businessweek Daily\",\n  \"current_title\": \"民主党中期选举现代际更替 2028总统人选轮廓渐显\",\n  \"source_claims\": [\n    \"You know, I want to start with the Democrats, because last month, you did travel to Michigan's upper peninsula with the party's Senate nominee, Abdul Al-Sayed, who beat Stevens in\",\n    \"one of a number of primary races where progressives or democratic socialist candidates defeated moderate opponents. Is this Fisher tearing the Democratic party apart?\",\n    \"I don't think it is yet, but it might after the elections. I mean, obviously, when you have a candidate like that come out and endorse the Republican, as Stevens did, Mike Rogers and Michigan like\",\n    \"on the eve of an election, that's going to cause a lot of fireworks. It's going to be a big deal.\",\n    \"But that seems like it's a Haley Stevens story, not a Democrat.\",\n    \"It does. It's more of a personal psyched drama than a national story. But at the same time, Stevens was the Democratic centrist great hope in that race. Initially, after Al-Sayed\",\n    \"won, she kind of turned around and did the normal thing and endorsed him, but then to have her kind of spin out like this and turn on the party's candidate. I think really does get at some of the\",\n    \"suspicion and mutual hostility that's going on beneath the surface. But that being said, we saw on the aftermath all sides of the party come together in Michigan, at least so far, it looks\",\n    \"like Al-Sayed is winning narrowly in a lot of the polls. The expectations I've heard from Democrats and Republicans are that he's probably on track for a narrow win, but we'll find out in the next\",\n    \"few hours. What is the future of the Democratic party? And also the Republican party as you look at politics. It's a good question. And my kind of quasi- hedging answer is, I think if you look at\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Haley Stevens\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Haley Maria Stevens\",\n      \"preferred_en\": \"Haley Maria Stevens\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"海莉·史蒂文斯\",\n      \"title_label\": \"史蒂文斯\",\n      \"preferred_zh\": \"海莉·史蒂文斯\",\n      \"aliases\": [\n        \"黑莉·史蒂文斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://cn.wsj.com/articles/how-rep-haley-stevens-turned-on-a-fellow-democratand-became-a-party-pariah-47c904b9\",\n        \"https://baike.baidu.com/item/黑莉·史蒂文斯/68379379\"\n      ],\n      \"evidence\": \"华尔街日报中文网使用“海莉·史蒂文斯”，百度百科使用“黑莉·史蒂文斯”；两者为同一人（密歇根州民主党联邦众议员）。以 WSJ 译法为主，百度译法列为可替换变体。\"\n    },\n    {\n      \"source_text\": \"Mike Rogers\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Mike Rogers (Michigan)\",\n      \"preferred_en\": \"Mike Rogers (Michigan)\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"迈克·罗杰斯\",\n      \"title_label\": \"罗杰斯\",\n      \"preferred_zh\": \"迈克·罗杰斯\",\n      \"aliases\": [\n        \"麦克·罗杰斯\"\n      ],\n      \"confidence\": \"medium\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/迈克·罗杰斯/68496801\",\n        \"https://zh.wikipedia.org/zh-cn/麥克·羅傑斯\"\n      ],\n      \"evidence\": \"百度百科作“迈克·罗杰斯”（密歇根州前联邦众议员、2026 共和党参议员候选人），中文维基作“麦克·罗杰斯”。注意勿与阿拉巴马州众议员 Mike Rogers（1958 年生）混淆。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Haley Stevens endorsed Republican Mike Rogers on the eve of the election, turning on the Democratic Party's Senate nominee Abdul El-Sayed.\",\n      \"public_baseline\": \"Multiple major outlets (NBC, ABC, NYT, CNBC, CBS, Guardian, Axios) report that on Sunday, Nov 1, 2026, Democratic Rep. Haley Stevens endorsed Republican Mike Rogers over Democratic nominee Abdul El-Sayed, drawing fierce backlash from Democrats.\",\n      \"surprise_gap\": \"A sitting Democratic congresswoman endorsing the Republican Senate candidate days before the election is a striking intra-party reversal; the transcript frames it as a personal drama rather than a national story, while public coverage treats it as a major battleground-race shake-up.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": true,\n        \"spoken_position\": \"Stevens initially did the normal thing and endorsed El-Sayed after losing the primary.\",\n        \"public_action\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed, saying \\\"I don't belong in Abdul's campaign.\\\"\",\n        \"independent_source_count\": 5,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nbcnews.com/politics/2026-election/haley-stevens-endorses-gop-mike-rogers-michigan-senate-race-el-sayed-rcna606831\",\n            \"fact\": \"NBC: Stevens endorsed Rogers on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://abcnews.com/Politics/democratic-rep-haley-stevens-endorses-gop-candidate-mike/story?id=137752255\",\n            \"fact\": \"ABC: Stevens said \\\"I don't belong in Abdul's campaign.\\\"\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.nytimes.com/2026/11/01/us/elections/stevens-rogers-el-sayed-michigan-senate.html\",\n            \"fact\": \"NYT: late endorsement after feud with El-Sayed.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.theguardian.com/us-news/2026/nov/02/democrats-reaction-haley-steven-mike-rogers\",\n            \"fact\": \"Guardian: Democrats call it 'a despicable betrayal'.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"NYT: Stevens endorsed El-Sayed after losing the August primary, then shifted tone.\"\n          }\n        ]\n      },\n      \"position_change\": {\n        \"supported\": true,\n        \"prior_position\": \"After losing the August 2026 Democratic Senate primary, Stevens endorsed El-Sayed.\",\n        \"current_position\": \"On Nov 1, 2026, Stevens endorsed Republican Mike Rogers over El-Sayed.\",\n        \"independent_source_count\": 3,\n        \"evidence\": [\n          {\n            \"kind\": \"public\",\n            \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n            \"url\": \"https://www.nytimes.com/2026/10/31/us/haley-stevens-abdul-el-sayed.html\",\n            \"fact\": \"Stevens endorsed El-Sayed after the primary, then her tone shifted.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens endorses Mike Rogers Michigan Senate 2026\",\n            \"url\": \"https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html\",\n            \"fact\": \"CNBC: Stevens endorsed Rogers over El-Sayed on Sunday.\"\n          },\n          {\n            \"kind\": \"public\",\n            \"query\": \"Haley Stevens Mike Rogers endorsement backlash Michigan Democrats\",\n            \"url\": \"https://www.axios.com/2026/11/01/haley-stevens-democrats-reaction-rogers-el-sayed\",\n            \"fact\": \"Axios: stunning reversal in standing for Stevens.\"\n          }\n        ]\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"El-Sayed beat Stevens in a primary; progressives/democratic socialists defeated moderates in several races.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed Michigan Senate primary defeat Haley Stevens 2026\",\n          \"url\": \"https://www.nytimes.com/live/2026/08/05/us/michigan-election-results-primary\",\n          \"fact\": \"El-Sayed edged Stevens to win the Michigan Democratic Senate primary.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Democratic socialist candidates defeated moderate Democrats 2026 primaries\",\n          \"url\": \"https://ballotpedia.org/Endorsements_by_Democratic_Socialists_of_America,_2026\",\n          \"fact\": \"DSA-endorsed candidates won 61 of 107 primaries in 2026.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Abdul El-Sayed polls Michigan Senate race narrow lead 2026\",\n          \"url\": \"https://www.realclearpolling.com/polls/senate/general/2026/michigan/rogers-vs-el-sayed\",\n          \"fact\": \"Polling aggregator exists for Rogers vs. El-Sayed; transcript says El-Sayed narrowly leading.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Michigan Senate race 2026 El-Sayed Rogers election results\",\n          \"url\": \"https://www.nytimes.com/interactive/2026/11/03/us/elections/results-michigan-us-senate.html\",\n          \"fact\": \"Live results page for the Nov 3, 2026 race; outcome not confirmed in snippet.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim El-Sayed won or lost the general election; snippets only show live results pages.\",\n        \"Do not claim Stevens was expelled or formally censured by the party; sources describe backlash, not discipline.\",\n        \"Do not attribute the endorsement or any opinion to Bloomberg or the host.\",\n        \"Do not claim the transcript's 'narrow win' prediction was confirmed.\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"The clip's speaker is a Bloomberg interviewer/journalist; Bloomberg is the publisher, not the opinion-holding actor.\",\n    \"Mike Rogers (Michigan, b. 1963) must not be confused with Rep. Mike Rogers of Alabama (b. 1958), House Armed Services chairman.\",\n    \"Chinese rendering of El-Sayed appears in only one reliable Chinese source (WSJ Chinese); treat as medium confidence.\",\n    \"The 'Who Wants to Be President in 2028?' show title has no verified Chinese name; keep English.\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"初选输给进步派：转身支持共和党，密歇根选情生变\",\n  \"title_lines\": [\n    \"初选输给进步派\",\n    \"转身支持共和党\",\n    \"密歇根选情生变\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"transcript: 史蒂文斯初选输给埃尔-赛义德后先支持本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯\",\n    \"public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯\",\n    \"transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 2\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然临门转向对手，这票还怎么投",
+            "evidence_basis": [
+              "transcript: 史蒂文斯初选输给埃尔-赛义德后先支持本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯",
+              "public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯",
+              "transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜"
+            ],
+            "title": "民主党人史蒂文斯初选落败后转挺共和党罗杰斯，密歇根参院席位会否易手？",
+            "title_lines": [
+              "民主党人史蒂文斯初选落败",
+              "转身背书共和党人罗杰斯",
+              "密歇根参院席位会否易手？"
+            ],
+            "title_highlights": [
+              "史蒂文斯初选落败",
+              "背书共和党人罗杰斯",
+              "密歇根参院席位会否易手？"
+            ],
+            "runner_up_titles": [
+              "史蒂文斯初选输给进步派后转挺罗杰斯，民主党还能守住密歇根吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 2
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "民主党人史蒂文斯初选落败：转身背书共和党人罗杰斯，密歇根参院席位会否易手？",
+        "title_lines": [
+          "民主党人史蒂文斯初选落败",
+          "转身背书共和党人罗杰斯",
+          "密歇根参院席位会否易手？"
+        ],
+        "title_highlights": [
+          "史蒂文斯初选落败",
+          "背书共和党人罗杰斯",
+          "密歇根参院席位会否易手？"
+        ],
+        "comment": "KC评论：史蒂文斯选前倒戈，民主党内部裂痕公开化，密歇根参院席位争夺添变数",
+        "comment_highlights": [
+          "选前倒戈",
+          "内部裂痕"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：进步派初选击败温和派，党内路线之争浮出水面",
+            "comment_highlights": [
+              "进步派初选击败温和派"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：主持人直问是否撕裂民主党，嘉宾称选举后可能见分晓",
+            "comment_highlights": [
+              "是否撕裂民主党"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：史蒂文斯选前背书罗杰斯，被指在关键州引爆党内火花",
+            "comment_highlights": [
+              "选前背书罗杰斯"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：嘉宾认为这更像个人心理剧，而非全国性故事",
+            "comment_highlights": [
+              "个人心理剧"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：史蒂文斯从中间派希望到倒戈，暴露表面下的猜疑与敌意",
+            "comment_highlights": [
+              "中间派希望到倒戈"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：民主党未来走向成焦点，嘉宾以半推半就作答",
+            "comment_highlights": [
+              "民主党未来走向"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：史蒂文斯先按常规背书本党，随后脱离轨道转向反对",
+            "comment_highlights": [
+              "先按常规背书本党"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：表面猜疑与敌意之下，密歇根党内各方事后仍试图团结",
+            "comment_highlights": [
+              "事后仍试图团结"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：埃尔-赛义德民调微弱领先，两党预期其险胜但结果待揭晓",
+            "comment_highlights": [
+              "民调微弱领先"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：两党未来走向引追问，嘉宾以对冲式回答留悬念",
+            "comment_highlights": [
+              "两党未来走向"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然临门转向对手，这票还怎么投",
+        "evidence_basis": [
+          "transcript: 史蒂文斯初选输给埃尔-赛义德后先支持本党候选人，随后在选举前夕转而支持共和党人迈克·罗杰斯",
+          "public evidence: NBC、ABC、NYT、CNBC 报道史蒂文斯于2026年11月1日背书罗杰斯",
+          "transcript: 埃尔-赛义德在多项民调中微弱领先，预期险胜"
+        ],
+        "runner_up_titles": [
+          "史蒂文斯初选输给进步派后转挺罗杰斯，民主党还能守住密歇根吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 2
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 87,
+          "pass": false,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [
+            "tighten_display_lines",
+            "shorten_full_title"
+          ],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 2
+          }
+        }
+      }
+    }
+  ]
+}
