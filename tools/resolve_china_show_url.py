@@ -40,6 +40,10 @@ PROBE_UA = (
 )
 
 
+class ChinaShowNotPublished(SystemExit):
+    """The series is readable but no episode is published for the date."""
+
+
 def default_show_date() -> str:
     now_bj = datetime.now(ZoneInfo("Asia/Shanghai"))
     return (now_bj.date() - timedelta(days=1)).isoformat()
@@ -139,11 +143,14 @@ def china_episode_urls(content: str, show_date: str) -> list[str]:
 
 def resolve_china_url(show_date: str, timeout: int = 12) -> str:
     """Prefer the official series listing; never guess a neighbouring episode."""
+    series_available = False
     try:
         content = fetch_show_page(CHINA_SERIES_URL, timeout)
     except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
         print(f"China Show series lookup unavailable: {exc}", flush=True)
     else:
+        # An empty response or challenge page cannot prove non-publication.
+        series_available = bool(re.search(r"the-china-show-[a-zA-Z0-9-]+-video", content))
         urls = china_episode_urls(content, show_date)
         if len(urls) == 1:
             print(f"China Show {show_date}: resolved from official series", flush=True)
@@ -153,19 +160,33 @@ def resolve_china_url(show_date: str, timeout: int = 12) -> str:
         print(f"China Show {show_date}: not present in current series listing; checking date URLs", flush=True)
 
     long_url = build_china_url(show_date)
-    year = parse_date(show_date).year
+    day = parse_date(show_date)
+    year = day.year
     short_url = long_url.removesuffix(f"{year}-video") + f"{year % 100:02d}-video"
-    for url in (long_url, short_url):
+    # Recent episodes also use zero-padded days (for example 11-03-2026).
+    padded_url = (
+        f"https://www.bloomberg.com/news/videos/{show_date}/"
+        f"the-china-show-{day.month}-{day.day:02d}-{year}-video"
+    )
+    padded_short_url = padded_url.removesuffix(f"{year}-video") + f"{year % 100:02d}-video"
+    candidates = list(dict.fromkeys((long_url, short_url, padded_url, padded_short_url)))
+    unpublished_candidates = 0
+    for url in candidates:
         try:
             content = fetch_show_page(url, timeout)
         except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
             print(f"China Show candidate {url}: {exc}", flush=True)
+            if re.search(r"\b(?:HTTP(?: Error)?\s+|error:\s*)(?:404|410)\b", str(exc), re.IGNORECASE):
+                unpublished_candidates += 1
             continue
         # HTTP 200 alone can expose only recommendations or a stale player.
         if len(extract_url_bound_asset_ids({"html": content}, url)) == 1:
             return url
         print(f"China Show candidate {url}: no unique video bound to this URL", flush=True)
-    raise SystemExit(f"No verified China Show URL found for {show_date}; retry after publication or provide --url.")
+    message = f"No verified China Show URL found for {show_date}; retry after publication or provide --url."
+    if series_available and unpublished_candidates == len(candidates):
+        raise ChinaShowNotPublished(message)
+    raise SystemExit(message)
 
 
 def parse_date(value: str) -> date:
@@ -209,6 +230,11 @@ def has_rendered_mp4(rendered_root: Path, show_date: str) -> bool:
     if not output_dir.is_dir():
         return False
     return any(output_dir.rglob("*.mp4"))
+
+
+def has_rendered_china_clips(rendered_root: Path, show_date: str) -> bool:
+    # ARK outputs share the date directory but live under ark-invest/.
+    return any(path.is_file() and path.stat().st_size > 0 for path in (rendered_root / show_date).glob("*.mp4"))
 
 
 def probe_weekend_url(show_date: str, timeout: int) -> tuple[bool, str]:
@@ -406,6 +432,10 @@ def main() -> None:
     parser.add_argument("--url", default="", help="Override Bloomberg video URL.")
     parser.add_argument("--china-probe-timeout", type=int, default=12, help="Seconds per China Show metadata request.")
     parser.add_argument(
+        "--allow-unpublished", action="store_true",
+        help="Scheduled polling: record an unpublished episode as pending for a later run.",
+    )
+    parser.add_argument(
         "--weekend-backlog",
         type=Path,
         default=DEFAULT_WEEKEND_BACKLOG,
@@ -469,6 +499,17 @@ def main() -> None:
     backlog_duration = ""
     skip_show = False
     skip_reason = ""
+    show_status = "ready"
+
+    if (
+        show_type == SHOW_CHINA
+        and not explicit_show_date
+        and not explicit_url
+        and has_rendered_china_clips(args.rendered_root, show_date)
+    ):
+        skip_show = True
+        show_status = "already-rendered"
+        skip_reason = f"Rendered clips already exist for {show_date}; skipping duplicate run."
 
     if show_type == SHOW_WEEKEND and not explicit_show_date and not explicit_url:
         processed_shows_path = (
@@ -497,6 +538,7 @@ def main() -> None:
             backlog_duration = backlog_item.get("duration", "")
         else:
             skip_show = True
+            show_status = "no-available-weekend"
             skip_reason = (
                 "No unprocessed available Bloomberg Weekend show was found in the current date, "
                 "configured backlog, or older weekend scan."
@@ -504,8 +546,16 @@ def main() -> None:
 
     if explicit_url:
         url = args.url.strip()
-    elif show_type == SHOW_CHINA:
-        url = resolve_china_url(show_date, args.china_probe_timeout)
+    elif show_type == SHOW_CHINA and not skip_show:
+        try:
+            url = resolve_china_url(show_date, args.china_probe_timeout)
+        except ChinaShowNotPublished as exc:
+            if not args.allow_unpublished:
+                raise
+            url = ""
+            skip_show = True
+            show_status = "pending-publication"
+            skip_reason = f"{exc} No clips were generated; the next scheduled run will check again."
     else:
         url = build_url(show_date, show_type)
     output_dir = f"rendered-clips/{show_date}"
@@ -517,6 +567,7 @@ def main() -> None:
         "OUTPUT_DIR": output_dir,
         "SHOW_RESOLUTION_SOURCE": resolution_source,
         "SKIP_SHOW": "true" if skip_show else "false",
+        "SHOW_STATUS": show_status,
     }
     if backlog_title:
         values["SHOW_BACKLOG_TITLE"] = backlog_title
@@ -531,6 +582,7 @@ def main() -> None:
     print(f"OUTPUT_DIR={output_dir}", flush=True)
     print(f"SHOW_RESOLUTION_SOURCE={resolution_source}", flush=True)
     print(f"SKIP_SHOW={'true' if skip_show else 'false'}", flush=True)
+    print(f"SHOW_STATUS={show_status}", flush=True)
     if backlog_title:
         print(f"SHOW_BACKLOG_TITLE={backlog_title}", flush=True)
     if backlog_duration:
