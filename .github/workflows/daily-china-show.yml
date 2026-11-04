@@ -136,7 +136,7 @@ jobs:
           elif [ "${SKIP_SHOW:-false}" = "true" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "${SHOW_SKIP_REASON:-No Bloomberg show selected; skipping.}"
-          elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
+          elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 1 -type f -name '*.mp4' -size +0c -print -quit)" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Rendered clips already exist in $OUTPUT_DIR; skipping duplicate run."
           else
