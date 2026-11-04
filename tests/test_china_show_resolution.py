@@ -123,6 +123,36 @@ class ChinaShowResolutionTests(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, DAY):
                 resolver.resolve_china_url(DAY)
 
+    def test_series_missing_episode_checks_zero_padded_day_slug(self) -> None:
+        padded = "https://www.bloomberg.com/news/videos/2026-11-04/the-china-show-11-04-2026-video"
+        with patch.object(
+            resolver, "fetch_show_page",
+            side_effect=["", RuntimeError("HTTP 404"), RuntimeError("HTTP 404"), episode_page(padded)],
+        ) as fetch:
+            self.assertEqual(resolver.resolve_china_url("2026-11-04"), padded)
+        self.assertEqual(fetch.call_args_list[-1], call(padded, 12))
+
+    def test_missing_episode_requires_readable_series_and_all_candidates_missing(self) -> None:
+        listing = f'<a href="{NEXT_URL}">Next episode</a>'
+        with patch.object(resolver, "fetch_show_page", side_effect=[listing, RuntimeError("HTTP 404"), RuntimeError("HTTP 410")]):
+            with self.assertRaises(resolver.ChinaShowNotPublished):
+                resolver.resolve_china_url(DAY)
+        for responses in [
+            [RuntimeError("HTTP 503"), RuntimeError("HTTP 404"), RuntimeError("HTTP 404")],
+            ["", RuntimeError("HTTP 404"), RuntimeError("HTTP 404")],
+            ["", RuntimeError("HTTP 404"), RuntimeError("HTTP 503")],
+            ["", episode_page(NEXT_URL), RuntimeError("HTTP 404")],
+        ]:
+            with self.subTest(responses=responses), patch.object(resolver, "fetch_show_page", side_effect=responses):
+                try:
+                    resolver.resolve_china_url(DAY)
+                except resolver.ChinaShowNotPublished:
+                    self.fail("An unavailable or stale source must remain an error")
+                except SystemExit:
+                    pass
+                else:
+                    self.fail("An unavailable or stale source must remain an error")
+
     def run_main(self, arguments: list[str]) -> dict[str, str]:
         with tempfile.TemporaryDirectory() as directory:
             metadata = Path(directory) / "show.json"
@@ -145,6 +175,78 @@ class ChinaShowResolutionTests(unittest.TestCase):
         self.assertEqual(result["SHOW_URL"], SHORT_URL)
         self.assertEqual(result["OUTPUT_DIR"], "rendered-clips/2026-10-26")
         fetch.assert_called_once_with(resolver.CHINA_SERIES_URL, 7)
+
+    def test_scheduled_unpublished_episode_writes_pending_metadata_without_old_show(self) -> None:
+        # Reproduce November 4: healthy series lists November 3, all four day
+        # and year variants return 404. A later scheduled run must try again.
+        for timing in [[], ["--current-weekday"]]:
+            with (
+                self.subTest(timing=timing),
+                patch.object(resolver, "default_show_date", return_value="2026-11-04"),
+                patch.object(resolver, "current_weekday_show_date", return_value="2026-11-04"),
+                patch.object(resolver, "has_rendered_china_clips", return_value=False),
+                patch.object(resolver, "fetch_show_page", side_effect=[f'<a href="{SHORT_URL}">Old episode</a>'] + [RuntimeError("curl: (22) The requested URL returned error: 404")] * 4),
+            ):
+                result = self.run_main([*timing, "--allow-unpublished"])
+            self.assertEqual(result["SHOW_DATE"], "2026-11-04")
+            self.assertEqual(result["SHOW_URL"], "")
+            self.assertEqual(result["SKIP_SHOW"], "true")
+            self.assertEqual(result["SHOW_STATUS"], "pending-publication")
+            self.assertIn("No clips were generated", result["SHOW_SKIP_REASON"])
+
+    def test_manual_unpublished_episode_still_fails(self) -> None:
+        listing = f'<a href="{NEXT_URL}">Next episode</a>'
+        with patch.object(resolver, "fetch_show_page", side_effect=[listing, RuntimeError("HTTP 404"), RuntimeError("HTTP 404")]):
+            with self.assertRaises(resolver.ChinaShowNotPublished):
+                self.run_main(["--show-date", DAY])
+
+    def test_allow_unpublished_does_not_hide_outages_or_ambiguous_episodes(self) -> None:
+        for responses in [
+            [RuntimeError("HTTP 503"), RuntimeError("HTTP 404"), RuntimeError("HTTP 404")],
+            [f'<a href="{LONG_URL}">One</a><a href="{SHORT_URL}">Two</a>'],
+            ["", episode_page(NEXT_URL), RuntimeError("HTTP 404")],
+        ]:
+            with self.subTest(responses=responses), patch.object(resolver, "fetch_show_page", side_effect=responses):
+                with self.assertRaises(SystemExit):
+                    self.run_main(["--show-date", DAY, "--allow-unpublished"])
+
+    def test_automatic_duplicate_does_not_need_remote_episode_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            clips = Path(directory) / DAY
+            clips.mkdir()
+            (clips / "delivered.mp4").write_bytes(b"rendered")
+            with (
+                patch.object(resolver, "default_show_date", return_value=DAY),
+                patch.object(resolver, "fetch_show_page", side_effect=AssertionError("must not fetch")),
+            ):
+                result = self.run_main(["--rendered-root", directory])
+        self.assertEqual(result["SHOW_STATUS"], "already-rendered")
+        self.assertEqual(result["SKIP_SHOW"], "true")
+
+    def test_explicit_repair_still_resolves_source_when_clips_exist(self) -> None:
+        with (
+            patch.object(resolver, "has_rendered_china_clips", return_value=True),
+            patch.object(resolver, "fetch_show_page", return_value=f'<a href="{SHORT_URL}">Episode</a>') as fetch,
+        ):
+            result = self.run_main(["--show-date", DAY])
+        self.assertEqual(result["SKIP_SHOW"], "false")
+        self.assertEqual(result["SHOW_URL"], SHORT_URL)
+        fetch.assert_called_once()
+
+    def test_ark_clips_and_empty_partial_files_do_not_skip_china_resolution(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            clips = Path(directory) / DAY
+            ark = clips / "ark-invest"
+            ark.mkdir(parents=True)
+            (ark / "delivered.mp4").write_bytes(b"ARK video")
+            (clips / "partial.mp4").touch()
+            with (
+                patch.object(resolver, "default_show_date", return_value=DAY),
+                patch.object(resolver, "fetch_show_page", return_value=f'<a href="{SHORT_URL}">Episode</a>') as fetch,
+            ):
+                result = self.run_main(["--rendered-root", directory])
+        self.assertEqual(result["SKIP_SHOW"], "false")
+        fetch.assert_called_once()
 
     def test_weekend_explicit_date_keeps_existing_url_without_china_lookup(self) -> None:
         with patch.object(resolver, "fetch_show_page", side_effect=AssertionError("must not fetch")):

@@ -25,6 +25,26 @@ def candidate(index):
 
 
 class DailyDeliveryRecoveryTests(unittest.TestCase):
+    def test_show_workflow_only_skips_nonempty_published_show_clips(self):
+        workflow = (ROOT / ".github/workflows/daily-china-show.yml").read_text()
+        step = workflow.split("- name: Check existing rendered show clips", 1)[1].split("\n      - name:", 1)[0]
+        script = textwrap.dedent(step.split("run: |\n", 1)[1])
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "output"
+            ark = output / "ark-invest"
+            ark.mkdir(parents=True)
+            (ark / "delivered.mp4").write_bytes(b"ARK video")
+            (output / "partial.mp4").touch()
+            result_file = Path(tmp) / "result"
+            env = {**os.environ, "REPAIR_FAILED_SPEAKERS": "false", "SKIP_SHOW": "false",
+                   "OUTPUT_DIR": str(output), "GITHUB_OUTPUT": str(result_file)}
+            subprocess.run(["bash", "-e", "-c", script], env=env, capture_output=True, text=True, check=True)
+            self.assertEqual(result_file.read_text(), "skip=false\n")
+            result_file.unlink()
+            (output / "delivered.mp4").write_bytes(b"China Show video")
+            subprocess.run(["bash", "-e", "-c", script], env=env, capture_output=True, text=True, check=True)
+            self.assertEqual(result_file.read_text(), "skip=true\n")
+
     def test_scheduled_backup_preserves_existing_delivery_and_manual_recovery_still_runs(self):
         workflow = (ROOT / ".github/workflows/daily-top-videos.yml").read_text()
         script = textwrap.dedent(re.search(r'python - <<\'PY\' >> "\$GITHUB_OUTPUT"\n(.*?)\n          PY', workflow, re.S).group(1))

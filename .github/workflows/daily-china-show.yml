@@ -76,6 +76,7 @@ jobs:
       SHOW_DATE_INPUT: ${{ github.event.inputs.show_date || '' }}
       SHOW_TYPE_INPUT: ${{ github.event.inputs.show_type || 'auto' }}
       CURRENT_WEEKDAY: ${{ github.event.schedule == '15 5 * * 1-5' || github.event.schedule == '15 7 * * 1-5' }}
+      IS_SCHEDULED: ${{ github.event_name == 'schedule' }}
       URL_INPUT: ${{ github.event.inputs.url || '' }}
       REPAIR_FAILED_SPEAKERS: ${{ github.event.inputs.repair_failed_speakers || 'false' }}
       MAX_SPEAKERS: ${{ github.event.inputs.max_speakers || '3' }}
@@ -102,6 +103,9 @@ jobs:
           if [ "$CURRENT_WEEKDAY" = "true" ]; then
             date_args+=(--current-weekday)
           fi
+          if [ "$IS_SCHEDULED" = "true" ]; then
+            date_args+=(--allow-unpublished)
+          fi
           python tools/resolve_china_show_url.py \
             "${date_args[@]}" \
             --show-date "$SHOW_DATE_INPUT" \
@@ -110,6 +114,16 @@ jobs:
             --weekend-processed-shows "$WEEKEND_PROCESSED_SHOWS" \
             --github-env "$GITHUB_ENV" \
             --metadata work/daily/show.json
+
+      - name: Summarize show availability
+        run: |
+          {
+            echo "## Bloomberg ${SHOW_DATE}"
+            echo "Status: ${SHOW_STATUS}"
+            if [ -n "${SHOW_SKIP_REASON:-}" ]; then
+              echo "${SHOW_SKIP_REASON}"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check existing rendered show clips
         id: existing_clips
@@ -122,7 +136,7 @@ jobs:
           elif [ "${SKIP_SHOW:-false}" = "true" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "${SHOW_SKIP_REASON:-No Bloomberg show selected; skipping.}"
-          elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 2 -type f -name '*.mp4' -print -quit)" ]; then
+          elif [ -d "$OUTPUT_DIR" ] && [ -n "$(find "$OUTPUT_DIR" -maxdepth 1 -type f -name '*.mp4' -size +0c -print -quit)" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Rendered clips already exist in $OUTPUT_DIR; skipping duplicate run."
           else
