@@ -1,0 +1,1261 @@
+{
+  "timestamp_utc": "2026-11-14T02:13:21.048563+00:00",
+  "plan_path": "work/top-videos/01_spacex_starship_launches_on_flight_test/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "SpaceX",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "SpaceX",
+        "preferred_en": "SpaceX",
+        "official_zh": "太空探索技术公司",
+        "common_zh": "SpaceX",
+        "title_label": "SpaceX",
+        "preferred_zh": "SpaceX",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://zh.wikipedia.org/zh-hans/SpaceX",
+          "https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581"
+        ],
+        "evidence": "中文维基与百度百科均以“SpaceX”为常用名，正式名为太空探索技术公司。"
+      },
+      {
+        "source_text": "Starship",
+        "entity_type": "other",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "SpaceX Starship",
+        "preferred_en": "SpaceX Starship",
+        "official_zh": "星舰",
+        "common_zh": "星舰",
+        "title_label": "星舰",
+        "preferred_zh": "星舰",
+        "aliases": [
+          "星舟"
+        ],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581",
+          "https://zh.wikipedia.org/wiki/SpaceX%E6%98%9F%E8%89%A6"
+        ],
+        "evidence": "百度百科与中文维基均以“星舰”为主条目名，“星舟”为别译。"
+      },
+      {
+        "source_text": "Super Heavy booster",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Super Heavy",
+        "preferred_en": "Super Heavy",
+        "official_zh": "超重型助推器",
+        "common_zh": "超重型助推器",
+        "title_label": "超重型助推器",
+        "preferred_zh": "超重型助推器",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基称第一级助推器为“超级重型/超重型”，百度百科称“超重”运载火箭。"
+      },
+      {
+        "source_text": "chopsticks",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "Mechazilla chopstick arms",
+        "preferred_en": "Mechazilla chopstick arms",
+        "official_zh": "",
+        "common_zh": "筷子夹火箭",
+        "title_label": "筷子夹火箭",
+        "preferred_zh": "筷子夹火箭",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "36氪与搜狐报道均使用“筷子夹火箭”描述发射塔机械臂捕获助推器。"
+      },
+      {
+        "source_text": "max Q",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "max Q (maximum aerodynamic pressure)",
+        "preferred_en": "max Q (maximum aerodynamic pressure)",
+        "official_zh": "最大动压",
+        "common_zh": "最大动压",
+        "title_label": "最大动压",
+        "preferred_zh": "最大动压",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文航天报道常用“最大动压”，但本次检索仅一条直接支持。"
+      },
+      {
+        "source_text": "stage separation",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "stage separation",
+        "preferred_en": "stage separation",
+        "official_zh": "级间分离",
+        "common_zh": "一二级分离",
+        "title_label": "一二级分离",
+        "preferred_zh": "一二级分离",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基与百度百科均使用“一、二级分离/级间分离”。"
+      },
+      {
+        "source_text": "Texas",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Texas",
+        "preferred_en": "Texas",
+        "official_zh": "得克萨斯州",
+        "common_zh": "得州",
+        "title_label": "得州",
+        "preferred_zh": "得州",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文维基与百度百科均提及得克萨斯州博卡奇卡发射场。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "reusability",
+        "clip_indexes": [],
+        "context": "rocket flight test",
+        "sense": "ability of rocket stages to be recovered and flown again",
+        "preferred_zh": "可重复使用性",
+        "title_label": "可复用性",
+        "avoid_zh": [
+          "可回收性"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "booster catch",
+        "clip_indexes": [],
+        "context": "tower capture of first stage",
+        "sense": "catching the Super Heavy booster with launch tower arms",
+        "preferred_zh": "助推器捕获",
+        "title_label": "筷子夹火箭",
+        "avoid_zh": [
+          "助推器回收夹"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "nominal",
+        "clip_indexes": [],
+        "context": "launch telemetry status",
+        "sense": "all parameters within expected range",
+        "preferred_zh": "正常",
+        "title_label": "状态正常",
+        "avoid_zh": [
+          "标称"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "发射约6分30秒后，SpaceX尝试用发射塔的“筷子”机械臂捕获第一级超重型助推器。",
+        "public_baseline": "公开报道显示，2024年10月13日星舰第五次试飞中，SpaceX首次成功用发射塔机械臂捕获超重型助推器。",
+        "surprise_gap": "",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "解说称约6分30秒尝试用“筷子”捕获第一级助推器。"
+          },
+          {
+            "kind": "public",
+            "query": "SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月",
+            "url": "https://www.36kr.com/p/2991000554236936",
+            "fact": "36氪报道2024年10月13日星舰第五次试飞首次成功“筷子夹火箭”。"
+          },
+          {
+            "kind": "public",
+            "query": "SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月",
+            "url": "https://zh.wikipedia.org/zh-hans/SpaceX第五次星艦軌道試飛任務",
+            "fact": "中文维基记载IFT-5于2024年10月13日进行。"
+          }
+        ],
+        "forbidden_claims": [
+          "声称本次试飞是星舰首次入轨",
+          "声称助推器捕获失败",
+          "声称中国已实现同类塔架捕获"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "notes": [
+      "公开检索片段中关于中国可复用火箭（朱雀三号等）的结果日期为2026年，超出本批次语境，未用于对比结论。",
+      "max Q、nominal等术语中文对应为行业惯例，直接权威来源有限，置信度标为medium。"
+    ],
+    "research_queries": [
+      {
+        "query": "SpaceX 星舰 中文名 Starship 官方中文名称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "确认 Starship 与 Super Heavy 助推器的规范中文译名（星舰/超重型助推器）"
+      },
+      {
+        "query": "SpaceX Starship Flight Test booster catch chopsticks Mechazilla",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实本次试飞是否确实以发射塔机械臂（chopsticks）捕获一级助推器为核心目标"
+      },
+      {
+        "query": "SpaceX Starship flight test 2024 booster caught tower success",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实助推器被塔臂捕获是否已实际发生、发生在哪次飞行，判断Bloomberg描述是预告还是已实现"
+      },
+      {
+        "query": "SpaceX Starship 33 Raptor engines Super Heavy booster max Q stage separation timeline",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实33台猛禽发动机、最大动压、约2分30秒级间分离等时间节点是否准确"
+      },
+      {
+        "query": "SpaceX Starship reusability 23 hours turnaround orbit Texas return",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实'23小时后返回德州发射场'这一说法是否属实，还是转述中的误读"
+      },
+      {
+        "query": "SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "用中文权威报道交叉验证捕获助推器的时间与结果"
+      },
+      {
+        "query": "中国 可重复使用火箭 朱雀三号 长征十号 回收 试验 进展",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实中国可复用火箭（如朱雀三号、长征十号系列）回收试验的真实进展，用于对比"
+      },
+      {
+        "query": "蓝箭航天 朱雀三号 垂直回收 10公里 试验 成功",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实中国民营火箭垂直起降回收试验的具体时间与高度，作为可复用性对比事实"
+      },
+      {
+        "query": "SpaceX Starship official website reusability fully reusable launch system",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实SpaceX官方对星舰完全可复用定位的表述，判断'验证可复用性'标题是否准确"
+      },
+      {
+        "query": "Bloomberg SpaceX Starship Launches established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "SpaceX Starship Launches 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "星舰刚升空：23小时后返场，同一座塔的机械臂能接住吗？",
+      "title_lines": [
+        "星舰刚升空",
+        "23小时后返场",
+        "同一座塔的机械臂能接住吗？"
+      ],
+      "formula_id": "surprise_reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "刚升空的火箭23小时后要回到同一座塔，机械臂真能接住吗",
+      "evidence_basis": [
+        "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+        "解说称23小时后返回同一发射台",
+        "解说称33台发动机都正常"
+      ],
+      "runner_up_titles": [
+        "星舰升空后要返场，同一座塔的机械臂能接住吗？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 9,
+        "specificity": 8,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 4
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 4
+        }
+      },
+      "comment": "KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-11-14T02:13:17.282805+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability",
+          "source_title": "Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability",
+          "show_date": "",
+          "current_title": "SpaceX星舰试飞验证可复用性",
+          "current_title_lines": [
+            "SpaceX星舰",
+            "第十五次试飞验证可复用性",
+            "助推器与飞船尝试同塔回收"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "7、6、5、4、3、2、1。",
+              "en": "7, 6, 5, 4, 3, 2, 1.",
+              "relative_start": 0.0,
+              "relative_end": 6.4
+            },
+            {
+              "index": 2,
+              "zh": "现在开始倒数，火箭刚刚升空，已飞离发射塔，埃德。",
+              "en": "And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.",
+              "relative_start": 14.4,
+              "relative_end": 20.9
+            },
+            {
+              "index": 3,
+              "zh": "给我们详细解说一下。33台发动机都正常，",
+              "en": "Give us the play-by-play. That's a lot of, but 33 range in both are everything,",
+              "relative_start": 20.9,
+              "relative_end": 29.6
+            },
+            {
+              "index": 4,
+              "zh": "接下来90秒内一切正常。",
+              "en": "nominal in the next 90 seconds.",
+              "relative_start": 29.6,
+              "relative_end": 33.7
+            },
+            {
+              "index": 5,
+              "zh": "这就是它们承受最大气动压力的时刻。",
+              "en": "That's the moment where they're under the maximum aerodynamic pressure.",
+              "relative_start": 39.7,
+              "relative_end": 43.8
+            },
+            {
+              "index": 6,
+              "zh": "眼尖的观众在电视上能看到那个最大动压点。",
+              "en": "You see that max Q for the eagle-eyed of you looking on TV.",
+              "relative_start": 43.8,
+              "relative_end": 48.5
+            },
+            {
+              "index": 7,
+              "zh": "这是空气阻力最大的地方。然后星舰系统的两部分将进行级间分离。",
+              "en": "It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system",
+              "relative_start": 48.5,
+              "relative_end": 57.1
+            },
+            {
+              "index": 8,
+              "zh": "大约在2分30秒时。真正的演示是在6分30秒左右的第一部分。",
+              "en": "at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.",
+              "relative_start": 57.2,
+              "relative_end": 63.6
+            },
+            {
+              "index": 9,
+              "zh": "我们观察的重点是，他们尝试用发射塔的机械臂夹住助推器第一级，就在它刚升空的同一座塔上。",
+              "en": "When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.",
+              "relative_start": 64.2,
+              "relative_end": 75.6
+            },
+            {
+              "index": 10,
+              "zh": "然后在23小时后，乔，在绕地球飞行并经过德克萨斯沙漠上空一条有趣的轨迹走廊后，返回同一发射台。",
+              "en": "And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.",
+              "relative_start": 75.6,
+              "relative_end": 87.3
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"source_title\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"show_date\": \"\",\n    \"current_title\": \"SpaceX星舰试飞验证可复用性\",\n    \"current_title_lines\": [\n      \"SpaceX星舰\",\n      \"第十五次试飞验证可复用性\",\n      \"助推器与飞船尝试同塔回收\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"7、6、5、4、3、2、1。\",\n        \"en\": \"7, 6, 5, 4, 3, 2, 1.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在开始倒数，火箭刚刚升空，已飞离发射塔，埃德。\",\n        \"en\": \"And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.\",\n        \"relative_start\": 14.4,\n        \"relative_end\": 20.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"给我们详细解说一下。33台发动机都正常，\",\n        \"en\": \"Give us the play-by-play. That's a lot of, but 33 range in both are everything,\",\n        \"relative_start\": 20.9,\n        \"relative_end\": 29.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"接下来90秒内一切正常。\",\n        \"en\": \"nominal in the next 90 seconds.\",\n        \"relative_start\": 29.6,\n        \"relative_end\": 33.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这就是它们承受最大气动压力的时刻。\",\n        \"en\": \"That's the moment where they're under the maximum aerodynamic pressure.\",\n        \"relative_start\": 39.7,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"眼尖的观众在电视上能看到那个最大动压点。\",\n        \"en\": \"You see that max Q for the eagle-eyed of you looking on TV.\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是空气阻力最大的地方。然后星舰系统的两部分将进行级间分离。\",\n        \"en\": \"It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 57.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"大约在2分30秒时。真正的演示是在6分30秒左右的第一部分。\",\n        \"en\": \"at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们观察的重点是，他们尝试用发射塔的机械臂夹住助推器第一级，就在它刚升空的同一座塔上。\",\n        \"en\": \"When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.\",\n        \"relative_start\": 64.2,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"然后在23小时后，乔，在绕地球飞行并经过德克萨斯沙漠上空一条有趣的轨迹走廊后，返回同一发射台。\",\n        \"en\": \"And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.\",\n        \"relative_start\": 75.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"SpaceX\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX\",\n      \"preferred_en\": \"SpaceX\",\n      \"official_zh\": \"太空探索技术公司\",\n      \"common_zh\": \"SpaceX\",\n      \"title_label\": \"SpaceX\",\n      \"preferred_zh\": \"SpaceX\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/SpaceX\",\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\"\n      ],\n      \"evidence\": \"中文维基与百度百科均以“SpaceX”为常用名，正式名为太空探索技术公司。\"\n    },\n    {\n      \"source_text\": \"Starship\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX Starship\",\n      \"preferred_en\": \"SpaceX Starship\",\n      \"official_zh\": \"星舰\",\n      \"common_zh\": \"星舰\",\n      \"title_label\": \"星舰\",\n      \"preferred_zh\": \"星舰\",\n      \"aliases\": [\n        \"星舟\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\",\n        \"https://zh.wikipedia.org/wiki/SpaceX%E6%98%9F%E8%89%A6\"\n      ],\n      \"evidence\": \"百度百科与中文维基均以“星舰”为主条目名，“星舟”为别译。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"发射约6分30秒后，SpaceX尝试用发射塔的“筷子”机械臂捕获第一级超重型助推器。\",\n      \"public_baseline\": \"公开报道显示，2024年10月13日星舰第五次试飞中，SpaceX首次成功用发射塔机械臂捕获超重型助推器。\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"解说称约6分30秒尝试用“筷子”捕获第一级助推器。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://www.36kr.com/p/2991000554236936\",\n          \"fact\": \"36氪报道2024年10月13日星舰第五次试飞首次成功“筷子夹火箭”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://zh.wikipedia.org/zh-hans/SpaceX第五次星艦軌道試飛任務\",\n          \"fact\": \"中文维基记载IFT-5于2024年10月13日进行。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"声称本次试飞是星舰首次入轨\",\n        \"声称助推器捕获失败\",\n        \"声称中国已实现同类塔架捕获\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中关于中国可复用火箭（朱雀三号等）的结果日期为2026年，超出本批次语境，未用于对比结论。\",\n    \"max Q、nominal等术语中文对应为行业惯例，直接权威来源有限，置信度标为medium。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "SpaceX星舰第十五次试飞中，解说提到约6分30秒时尝试用发射塔机械臂（筷子）捕获第一级助推器，并在约23小时后返回同一发射台。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "火箭刚升空就返场，同一座塔要接住自己",
+                "title_lines": [
+                  "火箭刚升空",
+                  "23小时后返场",
+                  "同一座塔要接住它"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+                  "解说称23小时后返回同一发射台"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "33台发动机全开，6分30秒后机械臂接一级",
+                "title_lines": [
+                  "33台发动机全开",
+                  "6分30秒后",
+                  "机械臂接一级"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "解说称33台发动机都正常",
+                  "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "SpaceX直播解说：真正的演示在6分30秒",
+                "title_lines": [
+                  "SpaceX直播解说",
+                  "真正的演示",
+                  "在6分30秒"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "解说称真正的演示是在6分30秒左右的第一部分",
+                  "解说来自SpaceX发射直播"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "最大动压点刚过，星舰就要级间分离",
+                "title_lines": [
+                  "最大动压点刚过",
+                  "空气阻力最大",
+                  "星舰就要级间分离"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "解说称最大动压点是空气阻力最大的地方",
+                  "解说称随后星舰系统两部分将进行级间分离"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"source_title\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"show_date\": \"\",\n    \"current_title\": \"SpaceX星舰试飞验证可复用性\",\n    \"current_title_lines\": [\n      \"SpaceX星舰\",\n      \"第十五次试飞验证可复用性\",\n      \"助推器与飞船尝试同塔回收\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"7、6、5、4、3、2、1。\",\n        \"en\": \"7, 6, 5, 4, 3, 2, 1.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在开始倒数，火箭刚刚升空，已飞离发射塔，埃德。\",\n        \"en\": \"And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.\",\n        \"relative_start\": 14.4,\n        \"relative_end\": 20.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"给我们详细解说一下。33台发动机都正常，\",\n        \"en\": \"Give us the play-by-play. That's a lot of, but 33 range in both are everything,\",\n        \"relative_start\": 20.9,\n        \"relative_end\": 29.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"接下来90秒内一切正常。\",\n        \"en\": \"nominal in the next 90 seconds.\",\n        \"relative_start\": 29.6,\n        \"relative_end\": 33.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这就是它们承受最大气动压力的时刻。\",\n        \"en\": \"That's the moment where they're under the maximum aerodynamic pressure.\",\n        \"relative_start\": 39.7,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"眼尖的观众在电视上能看到那个最大动压点。\",\n        \"en\": \"You see that max Q for the eagle-eyed of you looking on TV.\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是空气阻力最大的地方。然后星舰系统的两部分将进行级间分离。\",\n        \"en\": \"It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 57.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"大约在2分30秒时。真正的演示是在6分30秒左右的第一部分。\",\n        \"en\": \"at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们观察的重点是，他们尝试用发射塔的机械臂夹住助推器第一级，就在它刚升空的同一座塔上。\",\n        \"en\": \"When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.\",\n        \"relative_start\": 64.2,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"然后在23小时后，乔，在绕地球飞行并经过德克萨斯沙漠上空一条有趣的轨迹走廊后，返回同一发射台。\",\n        \"en\": \"And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.\",\n        \"relative_start\": 75.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"SpaceX\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX\",\n      \"preferred_en\": \"SpaceX\",\n      \"official_zh\": \"太空探索技术公司\",\n      \"common_zh\": \"SpaceX\",\n      \"title_label\": \"SpaceX\",\n      \"preferred_zh\": \"SpaceX\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/SpaceX\",\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\"\n      ],\n      \"evidence\": \"中文维基与百度百科均以“SpaceX”为常用名，正式名为太空探索技术公司。\"\n    },\n    {\n      \"source_text\": \"Starship\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX Starship\",\n      \"preferred_en\": \"SpaceX Starship\",\n      \"official_zh\": \"星舰\",\n      \"common_zh\": \"星舰\",\n      \"title_label\": \"星舰\",\n      \"preferred_zh\": \"星舰\",\n      \"aliases\": [\n        \"星舟\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\",\n        \"https://zh.wikipedia.org/wiki/SpaceX%E6%98%9F%E8%89%A6\"\n      ],\n      \"evidence\": \"百度百科与中文维基均以“星舰”为主条目名，“星舟”为别译。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"发射约6分30秒后，SpaceX尝试用发射塔的“筷子”机械臂捕获第一级超重型助推器。\",\n      \"public_baseline\": \"公开报道显示，2024年10月13日星舰第五次试飞中，SpaceX首次成功用发射塔机械臂捕获超重型助推器。\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"解说称约6分30秒尝试用“筷子”捕获第一级助推器。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://www.36kr.com/p/2991000554236936\",\n          \"fact\": \"36氪报道2024年10月13日星舰第五次试飞首次成功“筷子夹火箭”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://zh.wikipedia.org/zh-hans/SpaceX第五次星艦軌道試飛任務\",\n          \"fact\": \"中文维基记载IFT-5于2024年10月13日进行。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"声称本次试飞是星舰首次入轨\",\n        \"声称助推器捕获失败\",\n        \"声称中国已实现同类塔架捕获\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中关于中国可复用火箭（朱雀三号等）的结果日期为2026年，超出本批次语境，未用于对比结论。\",\n    \"max Q、nominal等术语中文对应为行业惯例，直接权威来源有限，置信度标为medium。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"SpaceX星舰第十五次试飞中，解说提到约6分30秒时尝试用发射塔机械臂（筷子）捕获第一级助推器，并在约23小时后返回同一发射台。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"火箭刚升空就返场，同一座塔要接住自己\",\n          \"title_lines\": [\n            \"火箭刚升空\",\n            \"23小时后返场\",\n            \"同一座塔要接住它\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\",\n            \"解说称23小时后返回同一发射台\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"33台发动机全开，6分30秒后机械臂接一级\",\n          \"title_lines\": [\n            \"33台发动机全开\",\n            \"6分30秒后\",\n            \"机械臂接一级\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称33台发动机都正常\",\n            \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"SpaceX直播解说：真正的演示在6分30秒\",\n          \"title_lines\": [\n            \"SpaceX直播解说\",\n            \"真正的演示\",\n            \"在6分30秒\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称真正的演示是在6分30秒左右的第一部分\",\n            \"解说来自SpaceX发射直播\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"最大动压点刚过，星舰就要级间分离\",\n          \"title_lines\": [\n            \"最大动压点刚过\",\n            \"空气阻力最大\",\n            \"星舰就要级间分离\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称最大动压点是空气阻力最大的地方\",\n            \"解说称随后星舰系统两部分将进行级间分离\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise_reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然同一座塔要接住刚升空的火箭",
+            "evidence_basis": [
+              "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+              "解说称23小时后返回同一发射台",
+              "解说称33台发动机都正常"
+            ],
+            "title": "火箭刚升空，23小时后同一座塔要接住它",
+            "title_lines": [
+              "火箭刚升空",
+              "23小时后返场",
+              "同一座塔要接住它"
+            ],
+            "title_highlights": [
+              "火箭刚升空",
+              "23小时后返场",
+              "同一座塔要接住它"
+            ],
+            "runner_up_titles": [
+              "33台发动机全开，6分30秒后机械臂接一级",
+              "最大动压点刚过，星舰就要级间分离"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住。",
+            "comment_highlights": [
+              "同一座塔"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：倒数结束，真正考验从升空那一刻才开始。",
+                "comment_highlights": [
+                  "真正考验"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：火箭刚离塔，返场回收的悬念已经埋下。",
+                "comment_highlights": [
+                  "返场回收"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：33台发动机同时正常，是后续回收动作的前提。",
+                "comment_highlights": [
+                  "33台发动机"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：前90秒平稳，才有后面机械臂接一级的戏码。",
+                "comment_highlights": [
+                  "机械臂接一级"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：最大气动压力点，是箭体结构最吃劲的一关。",
+                "comment_highlights": [
+                  "最大气动压力点"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：电视画面里的最大动压点，就是空气阻力峰值。",
+                "comment_highlights": [
+                  "最大动压点"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：阻力峰值刚过，星舰两部分就要准备级间分离。",
+                "comment_highlights": [
+                  "级间分离"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：6分30秒才是重头戏，前面都是铺垫。",
+                "comment_highlights": [
+                  "6分30秒"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：用发射塔机械臂夹住一级，是这次试飞的核心动作。",
+                "comment_highlights": [
+                  "机械臂夹住一级"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：绕地球飞一圈后回到同一发射台，回收难度再上一档。",
+                "comment_highlights": [
+                  "同一发射台"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.3,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"source_title\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n    \"show_date\": \"\",\n    \"current_title\": \"SpaceX星舰试飞验证可复用性\",\n    \"current_title_lines\": [\n      \"SpaceX星舰\",\n      \"第十五次试飞验证可复用性\",\n      \"助推器与飞船尝试同塔回收\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"7、6、5、4、3、2、1。\",\n        \"en\": \"7, 6, 5, 4, 3, 2, 1.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 6.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在开始倒数，火箭刚刚升空，已飞离发射塔，埃德。\",\n        \"en\": \"And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.\",\n        \"relative_start\": 14.4,\n        \"relative_end\": 20.9\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"给我们详细解说一下。33台发动机都正常，\",\n        \"en\": \"Give us the play-by-play. That's a lot of, but 33 range in both are everything,\",\n        \"relative_start\": 20.9,\n        \"relative_end\": 29.6\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"接下来90秒内一切正常。\",\n        \"en\": \"nominal in the next 90 seconds.\",\n        \"relative_start\": 29.6,\n        \"relative_end\": 33.7\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"这就是它们承受最大气动压力的时刻。\",\n        \"en\": \"That's the moment where they're under the maximum aerodynamic pressure.\",\n        \"relative_start\": 39.7,\n        \"relative_end\": 43.8\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"眼尖的观众在电视上能看到那个最大动压点。\",\n        \"en\": \"You see that max Q for the eagle-eyed of you looking on TV.\",\n        \"relative_start\": 43.8,\n        \"relative_end\": 48.5\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"这是空气阻力最大的地方。然后星舰系统的两部分将进行级间分离。\",\n        \"en\": \"It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system\",\n        \"relative_start\": 48.5,\n        \"relative_end\": 57.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"大约在2分30秒时。真正的演示是在6分30秒左右的第一部分。\",\n        \"en\": \"at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.\",\n        \"relative_start\": 57.2,\n        \"relative_end\": 63.6\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们观察的重点是，他们尝试用发射塔的机械臂夹住助推器第一级，就在它刚升空的同一座塔上。\",\n        \"en\": \"When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.\",\n        \"relative_start\": 64.2,\n        \"relative_end\": 75.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"然后在23小时后，乔，在绕地球飞行并经过德克萨斯沙漠上空一条有趣的轨迹走廊后，返回同一发射台。\",\n        \"en\": \"And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.\",\n        \"relative_start\": 75.6,\n        \"relative_end\": 87.3\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"SpaceX\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX\",\n      \"preferred_en\": \"SpaceX\",\n      \"official_zh\": \"太空探索技术公司\",\n      \"common_zh\": \"SpaceX\",\n      \"title_label\": \"SpaceX\",\n      \"preferred_zh\": \"SpaceX\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/SpaceX\",\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\"\n      ],\n      \"evidence\": \"中文维基与百度百科均以“SpaceX”为常用名，正式名为太空探索技术公司。\"\n    },\n    {\n      \"source_text\": \"Starship\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX Starship\",\n      \"preferred_en\": \"SpaceX Starship\",\n      \"official_zh\": \"星舰\",\n      \"common_zh\": \"星舰\",\n      \"title_label\": \"星舰\",\n      \"preferred_zh\": \"星舰\",\n      \"aliases\": [\n        \"星舟\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\",\n        \"https://zh.wikipedia.org/wiki/SpaceX%E6%98%9F%E8%89%A6\"\n      ],\n      \"evidence\": \"百度百科与中文维基均以“星舰”为主条目名，“星舟”为别译。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"发射约6分30秒后，SpaceX尝试用发射塔的“筷子”机械臂捕获第一级超重型助推器。\",\n      \"public_baseline\": \"公开报道显示，2024年10月13日星舰第五次试飞中，SpaceX首次成功用发射塔机械臂捕获超重型助推器。\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"解说称约6分30秒尝试用“筷子”捕获第一级助推器。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://www.36kr.com/p/2991000554236936\",\n          \"fact\": \"36氪报道2024年10月13日星舰第五次试飞首次成功“筷子夹火箭”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://zh.wikipedia.org/zh-hans/SpaceX第五次星艦軌道試飛任務\",\n          \"fact\": \"中文维基记载IFT-5于2024年10月13日进行。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"声称本次试飞是星舰首次入轨\",\n        \"声称助推器捕获失败\",\n        \"声称中国已实现同类塔架捕获\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中关于中国可复用火箭（朱雀三号等）的结果日期为2026年，超出本批次语境，未用于对比结论。\",\n    \"max Q、nominal等术语中文对应为行业惯例，直接权威来源有限，置信度标为medium。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"SpaceX星舰第十五次试飞中，解说提到约6分30秒时尝试用发射塔机械臂（筷子）捕获第一级助推器，并在约23小时后返回同一发射台。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"火箭刚升空就返场，同一座塔要接住自己\",\n          \"title_lines\": [\n            \"火箭刚升空\",\n            \"23小时后返场\",\n            \"同一座塔要接住它\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\",\n            \"解说称23小时后返回同一发射台\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 9,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"33台发动机全开，6分30秒后机械臂接一级\",\n          \"title_lines\": [\n            \"33台发动机全开\",\n            \"6分30秒后\",\n            \"机械臂接一级\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称33台发动机都正常\",\n            \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"SpaceX直播解说：真正的演示在6分30秒\",\n          \"title_lines\": [\n            \"SpaceX直播解说\",\n            \"真正的演示\",\n            \"在6分30秒\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称真正的演示是在6分30秒左右的第一部分\",\n            \"解说来自SpaceX发射直播\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"最大动压点刚过，星舰就要级间分离\",\n          \"title_lines\": [\n            \"最大动压点刚过\",\n            \"空气阻力最大\",\n            \"星舰就要级间分离\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"解说称最大动压点是空气阻力最大的地方\",\n            \"解说称随后星舰系统两部分将进行级间分离\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"火箭刚升空：23小时后返场，同一座塔要接住它\",\n      \"title_lines\": [\n        \"火箭刚升空\",\n        \"23小时后返场\",\n        \"同一座塔要接住它\"\n      ],\n      \"title_highlights\": [\n        \"火箭刚升空\",\n        \"23小时后返场\",\n        \"同一座塔要接住它\"\n      ],\n      \"comment\": \"KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住\",\n      \"comment_highlights\": [\n        \"同一座塔\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：倒数结束，真正考验从升空那一刻才开始\",\n          \"comment_highlights\": [\n            \"真正考验\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：火箭刚离塔，返场回收的悬念已经埋下\",\n          \"comment_highlights\": [\n            \"返场回收\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：33台发动机同时正常，是后续回收动作的前提\",\n          \"comment_highlights\": [\n            \"33台发动机\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：前90秒平稳，才有后面机械臂接一级的戏码\",\n          \"comment_highlights\": [\n            \"机械臂接一级\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：最大气动压力点，是箭体结构最吃劲的一关\",\n          \"comment_highlights\": [\n            \"最大气动压力点\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：电视画面里的最大动压点，就是空气阻力峰值\",\n          \"comment_highlights\": [\n            \"最大动压点\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：阻力峰值刚过，星舰两部分就要准备级间分离\",\n          \"comment_highlights\": [\n            \"级间分离\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：6分30秒才是重头戏，前面都是铺垫\",\n          \"comment_highlights\": [\n            \"6分30秒\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：用发射塔机械臂夹住一级，是这次试飞的核心动作\",\n          \"comment_highlights\": [\n            \"机械臂夹住一级\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：绕地球飞一圈后回到同一发射台，回收难度再上一档\",\n          \"comment_highlights\": [\n            \"同一发射台\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise_reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然同一座塔要接住刚升空的火箭\",\n      \"evidence_basis\": [\n        \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\",\n        \"解说称23小时后返回同一发射台\",\n        \"解说称33台发动机都正常\"\n      ],\n      \"runner_up_titles\": [\n        \"33台发动机全开，6分30秒后机械臂接一级\",\n        \"最大动压点刚过，星舰就要级间分离\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 9,\n        \"specificity\": 8,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 4\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 9,\n          \"specificity\": 8,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 4\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise_reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然刚升空的火箭要回到同一座塔被接住",
+                "evidence_basis": [
+                  "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+                  "解说称23小时后返回同一发射台",
+                  "解说称33台发动机都正常"
+                ],
+                "title": "刚升空就返场：同一座塔要接住它",
+                "title_lines": [
+                  "刚升空就返场",
+                  "23小时后",
+                  "同一座塔要接住它"
+                ],
+                "title_highlights": [
+                  "刚升空就返场",
+                  "同一座塔"
+                ],
+                "runner_up_titles": [
+                  "33台发动机全开，6分30秒后机械臂接一级",
+                  "最大动压点刚过，星舰就要级间分离"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 9,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住",
+                "comment_highlights": [
+                  "同一座塔"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：倒数结束，真正考验从升空那一刻才开始",
+                    "comment_highlights": [
+                      "真正考验"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：火箭刚离塔，返场回收的悬念已经埋下",
+                    "comment_highlights": [
+                      "返场回收"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：33台发动机同时正常，是后续回收动作的前提",
+                    "comment_highlights": [
+                      "33台发动机"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：前90秒平稳，才有后面机械臂接一级的戏码",
+                    "comment_highlights": [
+                      "机械臂接一级"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：最大气动压力点，是箭体结构最吃劲的一关",
+                    "comment_highlights": [
+                      "最大气动压力点"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：电视画面里的最大动压点，就是空气阻力峰值",
+                    "comment_highlights": [
+                      "最大动压点"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：阻力峰值刚过，星舰两部分就要准备级间分离",
+                    "comment_highlights": [
+                      "级间分离"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：6分30秒才是重头戏，前面都是铺垫",
+                    "comment_highlights": [
+                      "6分30秒"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：用发射塔机械臂夹住一级，是这次试飞的核心动作",
+                    "comment_highlights": [
+                      "机械臂夹住一级"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：绕地球飞一圈后回到同一发射台，回收难度再上一档",
+                    "comment_highlights": [
+                      "同一发射台"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "火箭刚升空：23小时后返场，同一座塔要接住它",
+          "title_lines": [
+            "火箭刚升空",
+            "23小时后返场",
+            "同一座塔要接住它"
+          ],
+          "formula_id": "surprise_reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然同一座塔要接住刚升空的火箭",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 4
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            }
+          },
+          "comment": "KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-14T02:13:19.867377+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.3,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability",
+          "source_title": "Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability",
+          "show_date": "",
+          "current_title": "SpaceX星舰试飞验证可复用性",
+          "current_title_lines": [
+            "SpaceX星舰",
+            "第十五次试飞验证可复用性",
+            "助推器与飞船尝试同塔回收"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "7、6、5、4、3、2、1。",
+              "en": "7, 6, 5, 4, 3, 2, 1.",
+              "relative_start": 0.0,
+              "relative_end": 6.4
+            },
+            {
+              "index": 2,
+              "zh": "现在开始倒数，火箭刚刚升空，已飞离发射塔，埃德。",
+              "en": "And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.",
+              "relative_start": 14.4,
+              "relative_end": 20.9
+            },
+            {
+              "index": 3,
+              "zh": "给我们详细解说一下。33台发动机都正常，",
+              "en": "Give us the play-by-play. That's a lot of, but 33 range in both are everything,",
+              "relative_start": 20.9,
+              "relative_end": 29.6
+            },
+            {
+              "index": 4,
+              "zh": "接下来90秒内一切正常。",
+              "en": "nominal in the next 90 seconds.",
+              "relative_start": 29.6,
+              "relative_end": 33.7
+            },
+            {
+              "index": 5,
+              "zh": "这就是它们承受最大气动压力的时刻。",
+              "en": "That's the moment where they're under the maximum aerodynamic pressure.",
+              "relative_start": 39.7,
+              "relative_end": 43.8
+            },
+            {
+              "index": 6,
+              "zh": "眼尖的观众在电视上能看到那个最大动压点。",
+              "en": "You see that max Q for the eagle-eyed of you looking on TV.",
+              "relative_start": 43.8,
+              "relative_end": 48.5
+            },
+            {
+              "index": 7,
+              "zh": "这是空气阻力最大的地方。然后星舰系统的两部分将进行级间分离。",
+              "en": "It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system",
+              "relative_start": 48.5,
+              "relative_end": 57.1
+            },
+            {
+              "index": 8,
+              "zh": "大约在2分30秒时。真正的演示是在6分30秒左右的第一部分。",
+              "en": "at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.",
+              "relative_start": 57.2,
+              "relative_end": 63.6
+            },
+            {
+              "index": 9,
+              "zh": "我们观察的重点是，他们尝试用发射塔的机械臂夹住助推器第一级，就在它刚升空的同一座塔上。",
+              "en": "When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.",
+              "relative_start": 64.2,
+              "relative_end": 75.6
+            },
+            {
+              "index": 10,
+              "zh": "然后在23小时后，乔，在绕地球飞行并经过德克萨斯沙漠上空一条有趣的轨迹走廊后，返回同一发射台。",
+              "en": "And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.",
+              "relative_start": 75.6,
+              "relative_end": 87.3
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n  \"source_title\": \"Duration: 7:55 SpaceX Starship Launches on Flight Test of Reusability\",\n  \"current_title\": \"SpaceX星舰试飞验证可复用性\",\n  \"source_claims\": [\n    \"7, 6, 5, 4, 3, 2, 1.\",\n    \"And we're now counting up with liftoff of the rocket just now clearing the tower, Ed.\",\n    \"Give us the play-by-play. That's a lot of, but 33 range in both are everything,\",\n    \"nominal in the next 90 seconds.\",\n    \"That's the moment where they're under the maximum aerodynamic pressure.\",\n    \"You see that max Q for the eagle-eyed of you looking on TV.\",\n    \"It's where the air resistance is graded. And then we'll get stage separation of those two parts of the Starship system\",\n    \"at around the two-minute and 30 mark. The real demonstration is about six minutes and 30 seconds in part one.\",\n    \"When the whole point of why we're observing this, they try and catch the booster, the first stage, at the same tower it just lifted on off from what they call the chopsticks.\",\n    \"And then in 23 hours time, Joe, after orbiting the earth and bringing a very interesting trajectory and corridor over the Texas desert back to that same launch pad.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"SpaceX\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX\",\n      \"preferred_en\": \"SpaceX\",\n      \"official_zh\": \"太空探索技术公司\",\n      \"common_zh\": \"SpaceX\",\n      \"title_label\": \"SpaceX\",\n      \"preferred_zh\": \"SpaceX\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-hans/SpaceX\",\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\"\n      ],\n      \"evidence\": \"中文维基与百度百科均以“SpaceX”为常用名，正式名为太空探索技术公司。\"\n    },\n    {\n      \"source_text\": \"Starship\",\n      \"entity_type\": \"other\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"SpaceX Starship\",\n      \"preferred_en\": \"SpaceX Starship\",\n      \"official_zh\": \"星舰\",\n      \"common_zh\": \"星舰\",\n      \"title_label\": \"星舰\",\n      \"preferred_zh\": \"星舰\",\n      \"aliases\": [\n        \"星舟\"\n      ],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/%E6%98%9F%E8%88%B0/56191581\",\n        \"https://zh.wikipedia.org/wiki/SpaceX%E6%98%9F%E8%89%A6\"\n      ],\n      \"evidence\": \"百度百科与中文维基均以“星舰”为主条目名，“星舟”为别译。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"发射约6分30秒后，SpaceX尝试用发射塔的“筷子”机械臂捕获第一级超重型助推器。\",\n      \"public_baseline\": \"公开报道显示，2024年10月13日星舰第五次试飞中，SpaceX首次成功用发射塔机械臂捕获超重型助推器。\",\n      \"surprise_gap\": \"\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"解说称约6分30秒尝试用“筷子”捕获第一级助推器。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://www.36kr.com/p/2991000554236936\",\n          \"fact\": \"36氪报道2024年10月13日星舰第五次试飞首次成功“筷子夹火箭”。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"SpaceX 星舰 第五次试飞 筷子夹火箭 成功 2024年10月\",\n          \"url\": \"https://zh.wikipedia.org/zh-hans/SpaceX第五次星艦軌道試飛任務\",\n          \"fact\": \"中文维基记载IFT-5于2024年10月13日进行。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"声称本次试飞是星舰首次入轨\",\n        \"声称助推器捕获失败\",\n        \"声称中国已实现同类塔架捕获\"\n      ],\n      \"confidence\": \"high\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中关于中国可复用火箭（朱雀三号等）的结果日期为2026年，超出本批次语境，未用于对比结论。\",\n    \"max Q、nominal等术语中文对应为行业惯例，直接权威来源有限，置信度标为medium。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"火箭刚升空：23小时后返场，同一座塔要接住它\",\n  \"title_lines\": [\n    \"火箭刚升空\",\n    \"23小时后返场\",\n    \"同一座塔要接住它\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然同一座塔要接住刚升空的火箭\",\n  \"evidence_basis\": [\n    \"解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器\",\n    \"解说称23小时后返回同一发射台\",\n    \"解说称33台发动机都正常\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 9,\n    \"specificity\": 8,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 4\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "刚升空的火箭23小时后要回到同一座塔，机械臂真能接住吗",
+            "evidence_basis": [
+              "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+              "解说称23小时后返回同一发射台",
+              "解说称33台发动机都正常"
+            ],
+            "title": "星舰刚升空，23小时后返场，同一座塔的机械臂能接住吗？",
+            "title_lines": [
+              "星舰刚升空",
+              "23小时后返场",
+              "同一座塔的机械臂能接住吗？"
+            ],
+            "title_highlights": [
+              "星舰刚升空",
+              "23小时后返场",
+              "同一座塔的机械臂能接住吗？"
+            ],
+            "runner_up_titles": [
+              "星舰升空后要返场，同一座塔的机械臂能接住吗？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 9,
+              "specificity": 8,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "星舰刚升空：23小时后返场，同一座塔的机械臂能接住吗？",
+        "title_lines": [
+          "星舰刚升空",
+          "23小时后返场",
+          "同一座塔的机械臂能接住吗？"
+        ],
+        "title_highlights": [
+          "星舰刚升空",
+          "23小时后返场",
+          "同一座塔的机械臂能接住吗？"
+        ],
+        "comment": "KC评论：看点不在升空，而在返场后能否被同一座塔稳稳接住",
+        "comment_highlights": [
+          "同一座塔"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：倒数结束，真正考验从升空那一刻才开始",
+            "comment_highlights": [
+              "真正考验"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：火箭刚离塔，返场回收的悬念已经埋下",
+            "comment_highlights": [
+              "返场回收"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：33台发动机同时正常，是后续回收动作的前提",
+            "comment_highlights": [
+              "33台发动机"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：前90秒平稳，才有后面机械臂接一级的戏码",
+            "comment_highlights": [
+              "机械臂接一级"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：最大气动压力点，是箭体结构最吃劲的一关",
+            "comment_highlights": [
+              "最大气动压力点"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：电视画面里的最大动压点，就是空气阻力峰值",
+            "comment_highlights": [
+              "最大动压点"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：阻力峰值刚过，星舰两部分就要准备级间分离",
+            "comment_highlights": [
+              "级间分离"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：6分30秒才是重头戏，前面都是铺垫",
+            "comment_highlights": [
+              "6分30秒"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：用发射塔机械臂夹住一级，是这次试飞的核心动作",
+            "comment_highlights": [
+              "机械臂夹住一级"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：绕地球飞一圈后回到同一发射台，回收难度再上一档",
+            "comment_highlights": [
+              "同一发射台"
+            ]
+          }
+        ],
+        "formula_id": "surprise_reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "刚升空的火箭23小时后要回到同一座塔，机械臂真能接住吗",
+        "evidence_basis": [
+          "解说称约6分30秒尝试用发射塔机械臂捕获第一级助推器",
+          "解说称23小时后返回同一发射台",
+          "解说称33台发动机都正常"
+        ],
+        "runner_up_titles": [
+          "星舰升空后要返场，同一座塔的机械臂能接住吗？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 9,
+          "specificity": 8,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 4
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 9,
+            "specificity": 8,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 4
+          }
+        }
+      }
+    }
+  ]
+}
