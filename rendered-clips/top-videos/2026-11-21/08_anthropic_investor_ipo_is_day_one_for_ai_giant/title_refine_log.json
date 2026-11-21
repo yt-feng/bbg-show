@@ -1,0 +1,1272 @@
+{
+  "timestamp_utc": "2026-11-21T03:19:07.260950+00:00",
+  "plan_path": "work/top-videos/08_anthropic_investor_ipo_is_day_one_for_ai_giant/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 4,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Anthropic",
+        "entity_type": "company",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Anthropic",
+        "preferred_en": "Anthropic",
+        "official_zh": "",
+        "common_zh": "Anthropic",
+        "title_label": "Anthropic",
+        "preferred_zh": "Anthropic",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 4,
+        "evidence_urls": [
+          "https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml",
+          "https://www.sohu.com/a/1103780619_122994617",
+          "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6",
+          "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html"
+        ],
+        "evidence": "中文财经媒体（新浪财经、搜狐）与英文媒体（AP、CNBC）均以“Anthropic”原名指称该公司，无通行中文译名。"
+      },
+      {
+        "source_text": "Nasdaq",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "Nasdaq",
+        "preferred_en": "Nasdaq",
+        "official_zh": "纳斯达克",
+        "common_zh": "纳斯达克",
+        "title_label": "纳斯达克",
+        "preferred_zh": "纳斯达克",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "新浪财经、搜狐均使用“纳斯达克”指称该交易所；MarketsWiki确认Griggs任职于Nasdaq。"
+      },
+      {
+        "source_text": "Nelson Griggs",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Nelson Griggs",
+        "preferred_en": "Nelson Griggs",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Nelson Griggs",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://www.marketswiki.com/wiki/Nelson_Griggs",
+          "https://www.youtube.com/watch?v=HXmYVgJ-_Oo"
+        ],
+        "evidence": "MarketsWiki与Bloomberg Talks视频均确认其为纳斯达克总裁，但未找到可靠中文媒体通用译名，故保留英文。"
+      },
+      {
+        "source_text": "Dario",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Dario Amodei",
+        "preferred_en": "Dario Amodei",
+        "official_zh": "",
+        "common_zh": "达里奥·阿莫代伊",
+        "title_label": "Dario Amodei",
+        "preferred_zh": "达里奥·阿莫代伊",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "转录仅称“Dario”，公开检索片段未提供其中文通用译名证据，故保留英文。"
+      },
+      {
+        "source_text": "Pauline Yang",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Pauline Yang",
+        "preferred_en": "Pauline Yang",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "Pauline Yang",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未提供该人物身份或中文译名证据。"
+      },
+      {
+        "source_text": "IPO",
+        "entity_type": "event",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Initial Public Offering",
+        "preferred_en": "Initial Public Offering",
+        "official_zh": "首次公开发行",
+        "common_zh": "IPO",
+        "title_label": "IPO",
+        "preferred_zh": "IPO",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 3,
+        "evidence_urls": [
+          "https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml",
+          "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6",
+          "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html"
+        ],
+        "evidence": "中英文媒体均以“IPO”作为通用简称，正式中文为“首次公开发行”。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "indicated opening price",
+        "clip_indexes": [],
+        "context": "IPO首日交易前的指示开盘价",
+        "sense": "上市首日开盘前的参考/指示价格",
+        "preferred_zh": "指示开盘价",
+        "title_label": "指示开盘价",
+        "avoid_zh": [
+          "暗示开盘价"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "premium",
+        "clip_indexes": [],
+        "context": "指示开盘价相对发行价的溢价",
+        "sense": "价格高于基准价的幅度",
+        "preferred_zh": "溢价",
+        "title_label": "溢价",
+        "avoid_zh": [
+          "保险费"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "run-rate revenue",
+        "clip_indexes": [],
+        "context": "AI公司年化营收指标",
+        "sense": "按当前速度折算的年化收入",
+        "preferred_zh": "年化营收",
+        "title_label": "年化营收",
+        "avoid_zh": [
+          "运行率收入"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "compute",
+        "clip_indexes": [],
+        "context": "AI训练与推理所需算力",
+        "sense": "算力资源",
+        "preferred_zh": "算力",
+        "title_label": "算力",
+        "avoid_zh": [
+          "计算"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "diffusion",
+        "clip_indexes": [],
+        "context": "AI技术扩散的时间节奏",
+        "sense": "技术扩散",
+        "preferred_zh": "技术扩散",
+        "title_label": "技术扩散",
+        "avoid_zh": [
+          "漫反射"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "“the largest raise in capitalism”以及IPO定价83美元、指示开盘价108美元、约30%溢价",
+        "public_baseline": "公开报道确认Anthropic IPO定价83美元/股，募资约813亿美元，为史上最大IPO，超过SpaceX此前约750亿美元纪录；首日收盘较发行价高约17%。",
+        "surprise_gap": "嘉宾称“资本主义史上最大融资”，公开报道支持“史上最大IPO”但募资规模约813亿美元而非无限大；指示开盘价108美元对应约30%溢价，但收盘实际约97美元（约17%溢价），开盘溢价与首日实际表现存在差距。",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "concrete_stakes",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "嘉宾称这是“资本主义史上最大融资”，并称这是“第一天”。"
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "IPO定价83美元，指示开盘价108美元，约30%溢价。"
+          },
+          {
+            "kind": "public",
+            "query": "Anthropic IPO 定价 83美元 开盘 108美元 估值",
+            "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml",
+            "fact": "定价83美元，高于70-78美元区间，估值约1.5万亿美元，代码ANT。"
+          },
+          {
+            "kind": "public",
+            "query": "Anthropic largest IPO raise in capitalism 2025",
+            "url": "https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6",
+            "fact": "募资约810亿美元，为史上最大IPO，超过SpaceX约750亿美元纪录。"
+          },
+          {
+            "kind": "public",
+            "query": "Anthropic largest IPO raise in capitalism 2025",
+            "url": "https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai",
+            "fact": "首日收盘较发行价高约17%，股价约97美元。"
+          },
+          {
+            "kind": "public",
+            "query": "Nelson Griggs Nasdaq president first trade window 11:30",
+            "url": "https://www.youtube.com/watch?v=HXmYVgJ-_Oo",
+            "fact": "Griggs称首笔交易窗口约11:30至12:00，初始指示价约102-103美元。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得声称Anthropic首日实际开盘价为108美元（该数字为指示开盘价）",
+          "不得声称首日收盘溢价30%（实际约17%）",
+          "不得将“资本主义史上最大融资”改写为已核实的绝对事实而不注明为嘉宾说法",
+          "不得声称亚马逊、谷歌持股比例或双重股权结构等未在转录中出现的细节",
+          "不得声称Anthropic已实现盈利"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [
+      "公开检索片段中的日期（2026年11月）与部分营收/估值数字在不同来源间存在差异（如1.5万亿 vs 1.09万亿市值、810亿 vs 945亿募资），标题引用时应标注来源并避免绝对化。",
+      "Dario与Pauline Yang缺乏可靠中文通用译名证据，标题中保留英文。",
+      "转录中“anthropic indicated to open at 108 dollars”为指示开盘价，非实际成交价。"
+    ],
+    "research_queries": [
+      {
+        "query": "Anthropic IPO 定价 83美元 开盘 108美元 估值",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实Anthropic IPO发行价83美元、指示开盘价108美元及约30%溢价是否属实"
+      },
+      {
+        "query": "Anthropic largest IPO raise in capitalism 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实嘉宾所称'资本主义史上最大融资'是否与公开报道一致，判断该说法是否夸大"
+      },
+      {
+        "query": "Nelson Griggs Nasdaq president first trade window 11:30",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实纳斯达克总裁Nelson Griggs姓名职务及首笔交易时间窗口说法"
+      },
+      {
+        "query": "Dario Amodei compute timing diffusion AI scaling remarks",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实Dario Amodei关于算力与扩散时机难以把握的公开表态"
+      },
+      {
+        "query": "Anthropic valuation revenue run rate 2025 IPO",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实Anthropic营收与估值公开数据，判断'首日'叙事与基本面的差距"
+      },
+      {
+        "query": "Anthropic biotech robotics focus areas announcement",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实Anthropic是否公开将生物科技与机器人列为重点方向"
+      },
+      {
+        "query": "Anthropic 中文名 人工智能公司 介绍",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "确认Anthropic在中文媒体的通用译名与机构定位"
+      },
+      {
+        "query": "Anthropic IPO 2025 filing S-1 public offering",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实Anthropic是否真有IPO申报或上市动作，排查标题与事实是否错配"
+      },
+      {
+        "query": "Bloomberg Anthropic Investor established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Anthropic Investor 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "IPO Is 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%？",
+      "title_lines": [
+        "史上最大IPO",
+        "指示开盘溢价30%",
+        "收盘溢价只剩17%？"
+      ],
+      "formula_id": "surprise-reversal",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "强疑惑",
+      "viewer_reaction": "他说的是真的吗",
+      "evidence_basis": [
+        "transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天",
+        "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+        "public: 首日收盘约97美元，较发行价高约17%",
+        "public: 募资约810亿美元，为史上最大IPO"
+      ],
+      "runner_up_titles": [
+        "Anthropic IPO：指示开盘溢价30%，收盘溢价为何只剩17%？"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 9,
+        "factual_fidelity": 9,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:强疑惑",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-11-21T03:19:04.117215+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology",
+          "source_title": "Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology",
+          "show_date": "",
+          "current_title": "Anthropic上市首日估值溢价引关注",
+          "current_title_lines": [
+            "Anthropic登陆公开市场",
+            "AI巨头首日估值溢价",
+            "增长预期与算力成本成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "重要的一天。我的意思是，这不该由我来说，你们感觉如何？",
+              "en": "Big day. I mean, that's not for me to say how does it feel for you guys?",
+              "relative_start": 0.0,
+              "relative_end": 4.6
+            },
+            {
+              "index": 2,
+              "zh": "非常激动。我认为这是资本主义史上最大规模的融资，是一个激动人心的里程碑，但这确实是第一天。团队",
+              "en": "It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,",
+              "relative_start": 5.4,
+              "relative_end": 16.8
+            },
+            {
+              "index": 3,
+              "zh": "将此视为一次融资活动，真正为了继续构建他们自己的旅程。所以这无疑是一个重要里程碑，但还有更多要建设和即将到来的，我们非常",
+              "en": "views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly",
+              "relative_start": 16.8,
+              "relative_end": 28.4
+            },
+            {
+              "index": 4,
+              "zh": "兴奋。我们有另一个头条，Anthropic 指示开盘价为每股108美元，每股108美元。当然，他们IPO定价为83美元，如果我快速心算一下，",
+              "en": "excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,",
+              "relative_start": 28.4,
+              "relative_end": 40.2
+            },
+            {
+              "index": 5,
+              "zh": "基于指示开盘价大约有30%的溢价。我们将拭目以待。我们刚刚听到纳斯达克总裁纳尔逊·格里格斯说东部时间11:30到中午。那是我们可以预期",
+              "en": "is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect",
+              "relative_start": 40.2,
+              "relative_end": 50.9
+            },
+            {
+              "index": 6,
+              "zh": "首笔交易的时间窗口。也许我们会幸运。在彭博科技频道进行。有趣的是，你说，Pauline Yang 最终。所以这是第一天。你对",
+              "en": "the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to",
+              "relative_start": 50.9,
+              "relative_end": 61.0
+            },
+            {
+              "index": 7,
+              "zh": "清晰的未来有多少可见度？无论是基于你的估值模型还是收入增长？这是你必须花很多时间思考的事情。我们确实如此。我认为，",
+              "en": "a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,",
+              "relative_start": 61.0,
+              "relative_end": 71.6
+            },
+            {
+              "index": 8,
+              "zh": "Dario 谈了很多关于为什么在计算方面非常困难的原因，是因为很难正确把握扩散的时机，对吧？但同时，我认为",
+              "en": "Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,",
+              "relative_start": 71.6,
+              "relative_end": 81.4
+            },
+            {
+              "index": 9,
+              "zh": "我们知道，无论是明年还是五年后，AI 带来的转型将继续并且只会变得更大。随着他们专注于生物技术和机器人等领域，",
+              "en": "we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,",
+              "relative_start": 81.4,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"source_title\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic上市首日估值溢价引关注\",\n    \"current_title_lines\": [\n      \"Anthropic登陆公开市场\",\n      \"AI巨头首日估值溢价\",\n      \"增长预期与算力成本成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"重要的一天。我的意思是，这不该由我来说，你们感觉如何？\",\n        \"en\": \"Big day. I mean, that's not for me to say how does it feel for you guys?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"非常激动。我认为这是资本主义史上最大规模的融资，是一个激动人心的里程碑，但这确实是第一天。团队\",\n        \"en\": \"It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 16.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"将此视为一次融资活动，真正为了继续构建他们自己的旅程。所以这无疑是一个重要里程碑，但还有更多要建设和即将到来的，我们非常\",\n        \"en\": \"views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly\",\n        \"relative_start\": 16.8,\n        \"relative_end\": 28.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"兴奋。我们有另一个头条，Anthropic 指示开盘价为每股108美元，每股108美元。当然，他们IPO定价为83美元，如果我快速心算一下，\",\n        \"en\": \"excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,\",\n        \"relative_start\": 28.4,\n        \"relative_end\": 40.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"基于指示开盘价大约有30%的溢价。我们将拭目以待。我们刚刚听到纳斯达克总裁纳尔逊·格里格斯说东部时间11:30到中午。那是我们可以预期\",\n        \"en\": \"is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect\",\n        \"relative_start\": 40.2,\n        \"relative_end\": 50.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"首笔交易的时间窗口。也许我们会幸运。在彭博科技频道进行。有趣的是，你说，Pauline Yang 最终。所以这是第一天。你对\",\n        \"en\": \"the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to\",\n        \"relative_start\": 50.9,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"清晰的未来有多少可见度？无论是基于你的估值模型还是收入增长？这是你必须花很多时间思考的事情。我们确实如此。我认为，\",\n        \"en\": \"a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Dario 谈了很多关于为什么在计算方面非常困难的原因，是因为很难正确把握扩散的时机，对吧？但同时，我认为\",\n        \"en\": \"Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道，无论是明年还是五年后，AI 带来的转型将继续并且只会变得更大。随着他们专注于生物技术和机器人等领域，\",\n        \"en\": \"we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://www.sohu.com/a/1103780619_122994617\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中文财经媒体（新浪财经、搜狐）与英文媒体（AP、CNBC）均以“Anthropic”原名指称该公司，无通行中文译名。\"\n    },\n    {\n      \"source_text\": \"IPO\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Initial Public Offering\",\n      \"preferred_en\": \"Initial Public Offering\",\n      \"official_zh\": \"首次公开发行\",\n      \"common_zh\": \"IPO\",\n      \"title_label\": \"IPO\",\n      \"preferred_zh\": \"IPO\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中英文媒体均以“IPO”作为通用简称，正式中文为“首次公开发行”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"“the largest raise in capitalism”以及IPO定价83美元、指示开盘价108美元、约30%溢价\",\n      \"public_baseline\": \"公开报道确认Anthropic IPO定价83美元/股，募资约813亿美元，为史上最大IPO，超过SpaceX此前约750亿美元纪录；首日收盘较发行价高约17%。\",\n      \"surprise_gap\": \"嘉宾称“资本主义史上最大融资”，公开报道支持“史上最大IPO”但募资规模约813亿美元而非无限大；指示开盘价108美元对应约30%溢价，但收盘实际约97美元（约17%溢价），开盘溢价与首日实际表现存在差距。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称这是“资本主义史上最大融资”，并称这是“第一天”。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"IPO定价83美元，指示开盘价108美元，约30%溢价。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic IPO 定价 83美元 开盘 108美元 估值\",\n          \"url\": \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n          \"fact\": \"定价83美元，高于70-78美元区间，估值约1.5万亿美元，代码ANT。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n          \"fact\": \"募资约810亿美元，为史上最大IPO，超过SpaceX约750亿美元纪录。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai\",\n          \"fact\": \"首日收盘较发行价高约17%，股价约97美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nelson Griggs Nasdaq president first trade window 11:30\",\n          \"url\": \"https://www.youtube.com/watch?v=HXmYVgJ-_Oo\",\n          \"fact\": \"Griggs称首笔交易窗口约11:30至12:00，初始指示价约102-103美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称Anthropic首日实际开盘价为108美元（该数字为指示开盘价）\",\n        \"不得声称首日收盘溢价30%（实际约17%）\",\n        \"不得将“资本主义史上最大融资”改写为已核实的绝对事实而不注明为嘉宾说法\",\n        \"不得声称亚马逊、谷歌持股比例或双重股权结构等未在转录中出现的细节\",\n        \"不得声称Anthropic已实现盈利\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中的日期（2026年11月）与部分营收/估值数字在不同来源间存在差异（如1.5万亿 vs 1.09万亿市值、810亿 vs 945亿募资），标题引用时应标注来源并避免绝对化。\",\n    \"Dario与Pauline Yang缺乏可靠中文通用译名证据，标题中保留英文。\",\n    \"转录中“anthropic indicated to open at 108 dollars”为指示开盘价，非实际成交价。\"\n  ]\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "Anthropic IPO定价83美元，指示开盘价108美元，约30%溢价；嘉宾称这是资本主义史上最大融资，也是第一天；公开报道显示首日收盘约97美元，较发行价高约17%，募资约810亿美元，为史上最大IPO。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "83美元定价 108美元指示开盘 30%溢价背后",
+                "title_lines": [
+                  "Anthropic IPO定价83美元",
+                  "指示开盘108美元",
+                  "30%溢价只是第一天"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+                  "public: 首日收盘约97美元，较发行价高约17%"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "史上最大融资 首日溢价30% 收盘却只有17%",
+                "title_lines": [
+                  "嘉宾称史上最大融资",
+                  "指示开盘溢价30%",
+                  "首日收盘溢价仅17%"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 嘉宾称这是资本主义史上最大融资",
+                  "public: 首日收盘较发行价高约17%"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "纳斯达克总裁给出首笔交易窗口 11:30到中午",
+                "title_lines": [
+                  "纳斯达克总裁确认",
+                  "首笔交易窗口11:30到中午",
+                  "Anthropic首日交易倒计时"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 纳斯达克总裁Nelson Griggs称首笔交易窗口东部时间11:30到中午",
+                  "public: Griggs称首笔交易窗口约11:30至12:00"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "惊喜",
+                "viewer_reaction": "居然是这样",
+                "title": "AI巨头首日 108美元指示开盘 团队却说只是第一天",
+                "title_lines": [
+                  "Anthropic指示开盘108美元",
+                  "团队称这只是第一天",
+                  "更多建设还在后面"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: 指示开盘价108美元，团队称这是第一天，还有更多要建设",
+                  "public: 定价83美元，估值约1.5万亿美元"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 2
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"source_title\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic上市首日估值溢价引关注\",\n    \"current_title_lines\": [\n      \"Anthropic登陆公开市场\",\n      \"AI巨头首日估值溢价\",\n      \"增长预期与算力成本成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"重要的一天。我的意思是，这不该由我来说，你们感觉如何？\",\n        \"en\": \"Big day. I mean, that's not for me to say how does it feel for you guys?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"非常激动。我认为这是资本主义史上最大规模的融资，是一个激动人心的里程碑，但这确实是第一天。团队\",\n        \"en\": \"It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 16.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"将此视为一次融资活动，真正为了继续构建他们自己的旅程。所以这无疑是一个重要里程碑，但还有更多要建设和即将到来的，我们非常\",\n        \"en\": \"views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly\",\n        \"relative_start\": 16.8,\n        \"relative_end\": 28.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"兴奋。我们有另一个头条，Anthropic 指示开盘价为每股108美元，每股108美元。当然，他们IPO定价为83美元，如果我快速心算一下，\",\n        \"en\": \"excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,\",\n        \"relative_start\": 28.4,\n        \"relative_end\": 40.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"基于指示开盘价大约有30%的溢价。我们将拭目以待。我们刚刚听到纳斯达克总裁纳尔逊·格里格斯说东部时间11:30到中午。那是我们可以预期\",\n        \"en\": \"is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect\",\n        \"relative_start\": 40.2,\n        \"relative_end\": 50.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"首笔交易的时间窗口。也许我们会幸运。在彭博科技频道进行。有趣的是，你说，Pauline Yang 最终。所以这是第一天。你对\",\n        \"en\": \"the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to\",\n        \"relative_start\": 50.9,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"清晰的未来有多少可见度？无论是基于你的估值模型还是收入增长？这是你必须花很多时间思考的事情。我们确实如此。我认为，\",\n        \"en\": \"a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Dario 谈了很多关于为什么在计算方面非常困难的原因，是因为很难正确把握扩散的时机，对吧？但同时，我认为\",\n        \"en\": \"Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道，无论是明年还是五年后，AI 带来的转型将继续并且只会变得更大。随着他们专注于生物技术和机器人等领域，\",\n        \"en\": \"we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://www.sohu.com/a/1103780619_122994617\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中文财经媒体（新浪财经、搜狐）与英文媒体（AP、CNBC）均以“Anthropic”原名指称该公司，无通行中文译名。\"\n    },\n    {\n      \"source_text\": \"IPO\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Initial Public Offering\",\n      \"preferred_en\": \"Initial Public Offering\",\n      \"official_zh\": \"首次公开发行\",\n      \"common_zh\": \"IPO\",\n      \"title_label\": \"IPO\",\n      \"preferred_zh\": \"IPO\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中英文媒体均以“IPO”作为通用简称，正式中文为“首次公开发行”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"“the largest raise in capitalism”以及IPO定价83美元、指示开盘价108美元、约30%溢价\",\n      \"public_baseline\": \"公开报道确认Anthropic IPO定价83美元/股，募资约813亿美元，为史上最大IPO，超过SpaceX此前约750亿美元纪录；首日收盘较发行价高约17%。\",\n      \"surprise_gap\": \"嘉宾称“资本主义史上最大融资”，公开报道支持“史上最大IPO”但募资规模约813亿美元而非无限大；指示开盘价108美元对应约30%溢价，但收盘实际约97美元（约17%溢价），开盘溢价与首日实际表现存在差距。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称这是“资本主义史上最大融资”，并称这是“第一天”。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"IPO定价83美元，指示开盘价108美元，约30%溢价。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic IPO 定价 83美元 开盘 108美元 估值\",\n          \"url\": \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n          \"fact\": \"定价83美元，高于70-78美元区间，估值约1.5万亿美元，代码ANT。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n          \"fact\": \"募资约810亿美元，为史上最大IPO，超过SpaceX约750亿美元纪录。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai\",\n          \"fact\": \"首日收盘较发行价高约17%，股价约97美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nelson Griggs Nasdaq president first trade window 11:30\",\n          \"url\": \"https://www.youtube.com/watch?v=HXmYVgJ-_Oo\",\n          \"fact\": \"Griggs称首笔交易窗口约11:30至12:00，初始指示价约102-103美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称Anthropic首日实际开盘价为108美元（该数字为指示开盘价）\",\n        \"不得声称首日收盘溢价30%（实际约17%）\",\n        \"不得将“资本主义史上最大融资”改写为已核实的绝对事实而不注明为嘉宾说法\",\n        \"不得声称亚马逊、谷歌持股比例或双重股权结构等未在转录中出现的细节\",\n        \"不得声称Anthropic已实现盈利\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中的日期（2026年11月）与部分营收/估值数字在不同来源间存在差异（如1.5万亿 vs 1.09万亿市值、810亿 vs 945亿募资），标题引用时应标注来源并避免绝对化。\",\n    \"Dario与Pauline Yang缺乏可靠中文通用译名证据，标题中保留英文。\",\n    \"转录中“anthropic indicated to open at 108 dollars”为指示开盘价，非实际成交价。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Anthropic IPO定价83美元，指示开盘价108美元，约30%溢价；嘉宾称这是资本主义史上最大融资，也是第一天；公开报道显示首日收盘约97美元，较发行价高约17%，募资约810亿美元，为史上最大IPO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"83美元定价 108美元指示开盘 30%溢价背后\",\n          \"title_lines\": [\n            \"Anthropic IPO定价83美元\",\n            \"指示开盘108美元\",\n            \"30%溢价只是第一天\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: IPO定价83美元，指示开盘价108美元，约30%溢价\",\n            \"public: 首日收盘约97美元，较发行价高约17%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"史上最大融资 首日溢价30% 收盘却只有17%\",\n          \"title_lines\": [\n            \"嘉宾称史上最大融资\",\n            \"指示开盘溢价30%\",\n            \"首日收盘溢价仅17%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称这是资本主义史上最大融资\",\n            \"public: 首日收盘较发行价高约17%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"纳斯达克总裁给出首笔交易窗口 11:30到中午\",\n          \"title_lines\": [\n            \"纳斯达克总裁确认\",\n            \"首笔交易窗口11:30到中午\",\n            \"Anthropic首日交易倒计时\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 纳斯达克总裁Nelson Griggs称首笔交易窗口东部时间11:30到中午\",\n            \"public: Griggs称首笔交易窗口约11:30至12:00\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI巨头首日 108美元指示开盘 团队却说只是第一天\",\n          \"title_lines\": [\n            \"Anthropic指示开盘108美元\",\n            \"团队称这只是第一天\",\n            \"更多建设还在后面\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 指示开盘价108美元，团队称这是第一天，还有更多要建设\",\n            \"public: 定价83美元，估值约1.5万亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "surprise-reversal",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天",
+              "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+              "public: 首日收盘约97美元，较发行价高约17%",
+              "public: 募资约810亿美元，为史上最大IPO"
+            ],
+            "title": "史上最大IPO 指示开盘溢价30% 收盘只剩17%",
+            "title_lines": [
+              "史上最大IPO",
+              "指示开盘溢价30%",
+              "收盘溢价只剩17%"
+            ],
+            "title_highlights": [
+              "史上最大IPO",
+              "30%",
+              "17%"
+            ],
+            "runner_up_titles": [
+              "83美元定价 108美元指示开盘 30%溢价背后",
+              "AI巨头首日 108美元指示开盘 团队却说只是第一天"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点。",
+            "comment_highlights": [
+              "溢价差距"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：开场一句重要的一天，把首日气氛先拉满。",
+                "comment_highlights": [
+                  "重要的一天"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：嘉宾把这次募资称为资本主义史上最大规模。",
+                "comment_highlights": [
+                  "史上最大规模"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：融资只是起点，团队强调后面还有更多要建。",
+                "comment_highlights": [
+                  "更多要建"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：定价83美元，指示开盘108美元，差距立刻出现。",
+                "comment_highlights": [
+                  "108美元"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：按指示开盘算约30%溢价，但还要等首笔成交。",
+                "comment_highlights": [
+                  "30%溢价"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：首笔交易窗口被点名，首日节奏进入倒计时。",
+                "comment_highlights": [
+                  "首笔交易窗口"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：估值模型和收入增长，是嘉宾绕不开的两道题。",
+                "comment_highlights": [
+                  "收入增长"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：算力扩散的时机难把握，这是AI扩张的现实约束。",
+                "comment_highlights": [
+                  "算力扩散"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：生物技术和机器人，被点名为下一阶段方向。",
+                "comment_highlights": [
+                  "生物技术和机器人"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 90.0,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"source_title\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n    \"show_date\": \"\",\n    \"current_title\": \"Anthropic上市首日估值溢价引关注\",\n    \"current_title_lines\": [\n      \"Anthropic登陆公开市场\",\n      \"AI巨头首日估值溢价\",\n      \"增长预期与算力成本成焦点\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"重要的一天。我的意思是，这不该由我来说，你们感觉如何？\",\n        \"en\": \"Big day. I mean, that's not for me to say how does it feel for you guys?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.6\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"非常激动。我认为这是资本主义史上最大规模的融资，是一个激动人心的里程碑，但这确实是第一天。团队\",\n        \"en\": \"It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,\",\n        \"relative_start\": 5.4,\n        \"relative_end\": 16.8\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"将此视为一次融资活动，真正为了继续构建他们自己的旅程。所以这无疑是一个重要里程碑，但还有更多要建设和即将到来的，我们非常\",\n        \"en\": \"views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly\",\n        \"relative_start\": 16.8,\n        \"relative_end\": 28.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"兴奋。我们有另一个头条，Anthropic 指示开盘价为每股108美元，每股108美元。当然，他们IPO定价为83美元，如果我快速心算一下，\",\n        \"en\": \"excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,\",\n        \"relative_start\": 28.4,\n        \"relative_end\": 40.2\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"基于指示开盘价大约有30%的溢价。我们将拭目以待。我们刚刚听到纳斯达克总裁纳尔逊·格里格斯说东部时间11:30到中午。那是我们可以预期\",\n        \"en\": \"is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect\",\n        \"relative_start\": 40.2,\n        \"relative_end\": 50.9\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"首笔交易的时间窗口。也许我们会幸运。在彭博科技频道进行。有趣的是，你说，Pauline Yang 最终。所以这是第一天。你对\",\n        \"en\": \"the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to\",\n        \"relative_start\": 50.9,\n        \"relative_end\": 61.0\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"清晰的未来有多少可见度？无论是基于你的估值模型还是收入增长？这是你必须花很多时间思考的事情。我们确实如此。我认为，\",\n        \"en\": \"a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,\",\n        \"relative_start\": 61.0,\n        \"relative_end\": 71.6\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"Dario 谈了很多关于为什么在计算方面非常困难的原因，是因为很难正确把握扩散的时机，对吧？但同时，我认为\",\n        \"en\": \"Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,\",\n        \"relative_start\": 71.6,\n        \"relative_end\": 81.4\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我们知道，无论是明年还是五年后，AI 带来的转型将继续并且只会变得更大。随着他们专注于生物技术和机器人等领域，\",\n        \"en\": \"we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,\",\n        \"relative_start\": 81.4,\n        \"relative_end\": 90.0\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://www.sohu.com/a/1103780619_122994617\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中文财经媒体（新浪财经、搜狐）与英文媒体（AP、CNBC）均以“Anthropic”原名指称该公司，无通行中文译名。\"\n    },\n    {\n      \"source_text\": \"IPO\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Initial Public Offering\",\n      \"preferred_en\": \"Initial Public Offering\",\n      \"official_zh\": \"首次公开发行\",\n      \"common_zh\": \"IPO\",\n      \"title_label\": \"IPO\",\n      \"preferred_zh\": \"IPO\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中英文媒体均以“IPO”作为通用简称，正式中文为“首次公开发行”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"“the largest raise in capitalism”以及IPO定价83美元、指示开盘价108美元、约30%溢价\",\n      \"public_baseline\": \"公开报道确认Anthropic IPO定价83美元/股，募资约813亿美元，为史上最大IPO，超过SpaceX此前约750亿美元纪录；首日收盘较发行价高约17%。\",\n      \"surprise_gap\": \"嘉宾称“资本主义史上最大融资”，公开报道支持“史上最大IPO”但募资规模约813亿美元而非无限大；指示开盘价108美元对应约30%溢价，但收盘实际约97美元（约17%溢价），开盘溢价与首日实际表现存在差距。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称这是“资本主义史上最大融资”，并称这是“第一天”。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"IPO定价83美元，指示开盘价108美元，约30%溢价。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic IPO 定价 83美元 开盘 108美元 估值\",\n          \"url\": \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n          \"fact\": \"定价83美元，高于70-78美元区间，估值约1.5万亿美元，代码ANT。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n          \"fact\": \"募资约810亿美元，为史上最大IPO，超过SpaceX约750亿美元纪录。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai\",\n          \"fact\": \"首日收盘较发行价高约17%，股价约97美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nelson Griggs Nasdaq president first trade window 11:30\",\n          \"url\": \"https://www.youtube.com/watch?v=HXmYVgJ-_Oo\",\n          \"fact\": \"Griggs称首笔交易窗口约11:30至12:00，初始指示价约102-103美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称Anthropic首日实际开盘价为108美元（该数字为指示开盘价）\",\n        \"不得声称首日收盘溢价30%（实际约17%）\",\n        \"不得将“资本主义史上最大融资”改写为已核实的绝对事实而不注明为嘉宾说法\",\n        \"不得声称亚马逊、谷歌持股比例或双重股权结构等未在转录中出现的细节\",\n        \"不得声称Anthropic已实现盈利\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中的日期（2026年11月）与部分营收/估值数字在不同来源间存在差异（如1.5万亿 vs 1.09万亿市值、810亿 vs 945亿募资），标题引用时应标注来源并避免绝对化。\",\n    \"Dario与Pauline Yang缺乏可靠中文通用译名证据，标题中保留英文。\",\n    \"转录中“anthropic indicated to open at 108 dollars”为指示开盘价，非实际成交价。\"\n  ]\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"Anthropic IPO定价83美元，指示开盘价108美元，约30%溢价；嘉宾称这是资本主义史上最大融资，也是第一天；公开报道显示首日收盘约97美元，较发行价高约17%，募资约810亿美元，为史上最大IPO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"83美元定价 108美元指示开盘 30%溢价背后\",\n          \"title_lines\": [\n            \"Anthropic IPO定价83美元\",\n            \"指示开盘108美元\",\n            \"30%溢价只是第一天\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: IPO定价83美元，指示开盘价108美元，约30%溢价\",\n            \"public: 首日收盘约97美元，较发行价高约17%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"史上最大融资 首日溢价30% 收盘却只有17%\",\n          \"title_lines\": [\n            \"嘉宾称史上最大融资\",\n            \"指示开盘溢价30%\",\n            \"首日收盘溢价仅17%\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 嘉宾称这是资本主义史上最大融资\",\n            \"public: 首日收盘较发行价高约17%\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"纳斯达克总裁给出首笔交易窗口 11:30到中午\",\n          \"title_lines\": [\n            \"纳斯达克总裁确认\",\n            \"首笔交易窗口11:30到中午\",\n            \"Anthropic首日交易倒计时\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 纳斯达克总裁Nelson Griggs称首笔交易窗口东部时间11:30到中午\",\n            \"public: Griggs称首笔交易窗口约11:30至12:00\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"惊喜\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"AI巨头首日 108美元指示开盘 团队却说只是第一天\",\n          \"title_lines\": [\n            \"Anthropic指示开盘108美元\",\n            \"团队称这只是第一天\",\n            \"更多建设还在后面\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: 指示开盘价108美元，团队称这是第一天，还有更多要建设\",\n            \"public: 定价83美元，估值约1.5万亿美元\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 2\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%\",\n      \"title_lines\": [\n        \"史上最大IPO\",\n        \"指示开盘溢价30%\",\n        \"收盘溢价只剩17%\"\n      ],\n      \"title_highlights\": [\n        \"史上最大IPO\",\n        \"30%\",\n        \"17%\"\n      ],\n      \"comment\": \"KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点\",\n      \"comment_highlights\": [\n        \"溢价差距\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：开场一句重要的一天，把首日气氛先拉满\",\n          \"comment_highlights\": [\n            \"重要的一天\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：嘉宾把这次募资称为资本主义史上最大规模\",\n          \"comment_highlights\": [\n            \"史上最大规模\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：融资只是起点，团队强调后面还有更多要建\",\n          \"comment_highlights\": [\n            \"更多要建\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：定价83美元，指示开盘108美元，差距立刻出现\",\n          \"comment_highlights\": [\n            \"108美元\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：按指示开盘算约30%溢价，但还要等首笔成交\",\n          \"comment_highlights\": [\n            \"30%溢价\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：首笔交易窗口被点名，首日节奏进入倒计时\",\n          \"comment_highlights\": [\n            \"首笔交易窗口\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：估值模型和收入增长，是嘉宾绕不开的两道题\",\n          \"comment_highlights\": [\n            \"收入增长\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：算力扩散的时机难把握，这是AI扩张的现实约束\",\n          \"comment_highlights\": [\n            \"算力扩散\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：生物技术和机器人，被点名为下一阶段方向\",\n          \"comment_highlights\": [\n            \"生物技术和机器人\"\n          ]\n        }\n      ],\n      \"formula_id\": \"surprise-reversal\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"他说的是真的吗\",\n      \"evidence_basis\": [\n        \"transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天\",\n        \"transcript: IPO定价83美元，指示开盘价108美元，约30%溢价\",\n        \"public: 首日收盘约97美元，较发行价高约17%\",\n        \"public: 募资约810亿美元，为史上最大IPO\"\n      ],\n      \"runner_up_titles\": [\n        \"83美元定价 108美元指示开盘 30%溢价背后\",\n        \"AI巨头首日 108美元指示开盘 团队却说只是第一天\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 9,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 9,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "surprise-reversal",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "evidence_basis": [
+                  "transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天",
+                  "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+                  "public: 首日收盘约97美元，较发行价高约17%",
+                  "public: 募资约810亿美元，为史上最大IPO"
+                ],
+                "title": "史上最大IPO 指示开盘溢价30% 收盘却只剩17%",
+                "title_lines": [
+                  "史上最大IPO",
+                  "指示开盘溢价30%",
+                  "收盘却只剩17%"
+                ],
+                "title_highlights": [
+                  "史上最大IPO",
+                  "30%",
+                  "17%"
+                ],
+                "runner_up_titles": [
+                  "83美元定价 108美元指示开盘 30%溢价背后",
+                  "AI巨头首日 108美元指示开盘 团队却说只是第一天"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点",
+                "comment_highlights": [
+                  "溢价差距"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：开场一句重要的一天，把首日气氛先拉满",
+                    "comment_highlights": [
+                      "重要的一天"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：嘉宾把这次募资称为资本主义史上最大规模",
+                    "comment_highlights": [
+                      "史上最大规模"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：融资只是起点，团队强调后面还有更多要建",
+                    "comment_highlights": [
+                      "更多要建"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：定价83美元，指示开盘108美元，差距立刻出现",
+                    "comment_highlights": [
+                      "108美元"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：按指示开盘算约30%溢价，但还要等首笔成交",
+                    "comment_highlights": [
+                      "30%溢价"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：首笔交易窗口被点名，首日节奏进入倒计时",
+                    "comment_highlights": [
+                      "首笔交易窗口"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：估值模型和收入增长，是嘉宾绕不开的两道题",
+                    "comment_highlights": [
+                      "收入增长"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：算力扩散的时机难把握，这是AI扩张的现实约束",
+                    "comment_highlights": [
+                      "算力扩散"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：生物技术和机器人，被点名为下一阶段方向",
+                    "comment_highlights": [
+                      "生物技术和机器人"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%",
+          "title_lines": [
+            "史上最大IPO",
+            "指示开盘溢价30%",
+            "收盘溢价只剩17%"
+          ],
+          "formula_id": "surprise-reversal",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "他说的是真的吗",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-21T03:19:06.271648+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 90.0,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology",
+          "source_title": "Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology",
+          "show_date": "",
+          "current_title": "Anthropic上市首日估值溢价引关注",
+          "current_title_lines": [
+            "Anthropic登陆公开市场",
+            "AI巨头首日估值溢价",
+            "增长预期与算力成本成焦点"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "重要的一天。我的意思是，这不该由我来说，你们感觉如何？",
+              "en": "Big day. I mean, that's not for me to say how does it feel for you guys?",
+              "relative_start": 0.0,
+              "relative_end": 4.6
+            },
+            {
+              "index": 2,
+              "zh": "非常激动。我认为这是资本主义史上最大规模的融资，是一个激动人心的里程碑，但这确实是第一天。团队",
+              "en": "It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,",
+              "relative_start": 5.4,
+              "relative_end": 16.8
+            },
+            {
+              "index": 3,
+              "zh": "将此视为一次融资活动，真正为了继续构建他们自己的旅程。所以这无疑是一个重要里程碑，但还有更多要建设和即将到来的，我们非常",
+              "en": "views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly",
+              "relative_start": 16.8,
+              "relative_end": 28.4
+            },
+            {
+              "index": 4,
+              "zh": "兴奋。我们有另一个头条，Anthropic 指示开盘价为每股108美元，每股108美元。当然，他们IPO定价为83美元，如果我快速心算一下，",
+              "en": "excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,",
+              "relative_start": 28.4,
+              "relative_end": 40.2
+            },
+            {
+              "index": 5,
+              "zh": "基于指示开盘价大约有30%的溢价。我们将拭目以待。我们刚刚听到纳斯达克总裁纳尔逊·格里格斯说东部时间11:30到中午。那是我们可以预期",
+              "en": "is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect",
+              "relative_start": 40.2,
+              "relative_end": 50.9
+            },
+            {
+              "index": 6,
+              "zh": "首笔交易的时间窗口。也许我们会幸运。在彭博科技频道进行。有趣的是，你说，Pauline Yang 最终。所以这是第一天。你对",
+              "en": "the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to",
+              "relative_start": 50.9,
+              "relative_end": 61.0
+            },
+            {
+              "index": 7,
+              "zh": "清晰的未来有多少可见度？无论是基于你的估值模型还是收入增长？这是你必须花很多时间思考的事情。我们确实如此。我认为，",
+              "en": "a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,",
+              "relative_start": 61.0,
+              "relative_end": 71.6
+            },
+            {
+              "index": 8,
+              "zh": "Dario 谈了很多关于为什么在计算方面非常困难的原因，是因为很难正确把握扩散的时机，对吧？但同时，我认为",
+              "en": "Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,",
+              "relative_start": 71.6,
+              "relative_end": 81.4
+            },
+            {
+              "index": 9,
+              "zh": "我们知道，无论是明年还是五年后，AI 带来的转型将继续并且只会变得更大。随着他们专注于生物技术和机器人等领域，",
+              "en": "we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,",
+              "relative_start": 81.4,
+              "relative_end": 90.0
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n  \"source_title\": \"Duration: 18:54 Anthropic Investor: IPO Is ‘Day One’ for AI Giant Technology\",\n  \"current_title\": \"Anthropic上市首日估值溢价引关注\",\n  \"source_claims\": [\n    \"Big day. I mean, that's not for me to say how does it feel for you guys?\",\n    \"It's really exciting. I think the fact that it is the largest raise in capitalism is such an exciting milestone, but I think that this is truly day one. And I think that the team, you know,\",\n    \"views this as a fundraising event really to continue to build their own journey. And so this is an important milestone for sure, but there's so much more to build and to come that we're incredibly\",\n    \"excited about. We have another headline andthropic indicated to open at 108 dollars a share, 108 dollars a share. Of course, they priced this IPO at 83 dollars, which if I do a quick map in my head,\",\n    \"is about a 30% premium based on that indicated opening. And we'll wait and see. We just had Nelson Griggs, the president of the Nasdaq say 1130 Eastern to midday. That's the window when we can expect\",\n    \"the first trade. Maybe we'll get lucky. Do it here on Bloomberg Tech. What's so interesting? You're saying, Pauline Yang over the ultimate. So this is day one. How much line of sight do you have to\",\n    \"a clear future? Whether you base that on your model for evaluation or revenue growth? That is something that you must spend a lot of time thinking about them. We do. And I think that, you know,\",\n    \"Dario's talked a lot about what, you know, the reason why it's very difficult on the compute side is that it's really hard to get the timing of diffusion correct, right? But I think at the same time,\",\n    \"we know that whether it's next year or five years from now, the transformation that AI is going to continue and only going to get bigger. And as they focus on areas like biotech and robotics,\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Anthropic\",\n      \"entity_type\": \"company\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Anthropic\",\n      \"preferred_en\": \"Anthropic\",\n      \"official_zh\": \"\",\n      \"common_zh\": \"Anthropic\",\n      \"title_label\": \"Anthropic\",\n      \"preferred_zh\": \"Anthropic\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 4,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://www.sohu.com/a/1103780619_122994617\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中文财经媒体（新浪财经、搜狐）与英文媒体（AP、CNBC）均以“Anthropic”原名指称该公司，无通行中文译名。\"\n    },\n    {\n      \"source_text\": \"IPO\",\n      \"entity_type\": \"event\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Initial Public Offering\",\n      \"preferred_en\": \"Initial Public Offering\",\n      \"official_zh\": \"首次公开发行\",\n      \"common_zh\": \"IPO\",\n      \"title_label\": \"IPO\",\n      \"preferred_zh\": \"IPO\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 3,\n      \"evidence_urls\": [\n        \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n        \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n        \"https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html\"\n      ],\n      \"evidence\": \"中英文媒体均以“IPO”作为通用简称，正式中文为“首次公开发行”。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"“the largest raise in capitalism”以及IPO定价83美元、指示开盘价108美元、约30%溢价\",\n      \"public_baseline\": \"公开报道确认Anthropic IPO定价83美元/股，募资约813亿美元，为史上最大IPO，超过SpaceX此前约750亿美元纪录；首日收盘较发行价高约17%。\",\n      \"surprise_gap\": \"嘉宾称“资本主义史上最大融资”，公开报道支持“史上最大IPO”但募资规模约813亿美元而非无限大；指示开盘价108美元对应约30%溢价，但收盘实际约97美元（约17%溢价），开盘溢价与首日实际表现存在差距。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"concrete_stakes\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"嘉宾称这是“资本主义史上最大融资”，并称这是“第一天”。\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"IPO定价83美元，指示开盘价108美元，约30%溢价。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic IPO 定价 83美元 开盘 108美元 估值\",\n          \"url\": \"https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfiwp1143682.shtml\",\n          \"fact\": \"定价83美元，高于70-78美元区间，估值约1.5万亿美元，代码ANT。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6\",\n          \"fact\": \"募资约810亿美元，为史上最大IPO，超过SpaceX约750亿美元纪录。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Anthropic largest IPO raise in capitalism 2025\",\n          \"url\": \"https://www.theguardian.com/technology/2026/nov/20/anthropic-ipo-historic-stock-market-debut-key-takeaways-what-next-for-ai\",\n          \"fact\": \"首日收盘较发行价高约17%，股价约97美元。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nelson Griggs Nasdaq president first trade window 11:30\",\n          \"url\": \"https://www.youtube.com/watch?v=HXmYVgJ-_Oo\",\n          \"fact\": \"Griggs称首笔交易窗口约11:30至12:00，初始指示价约102-103美元。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得声称Anthropic首日实际开盘价为108美元（该数字为指示开盘价）\",\n        \"不得声称首日收盘溢价30%（实际约17%）\",\n        \"不得将“资本主义史上最大融资”改写为已核实的绝对事实而不注明为嘉宾说法\",\n        \"不得声称亚马逊、谷歌持股比例或双重股权结构等未在转录中出现的细节\",\n        \"不得声称Anthropic已实现盈利\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": [\n    \"公开检索片段中的日期（2026年11月）与部分营收/估值数字在不同来源间存在差异（如1.5万亿 vs 1.09万亿市值、810亿 vs 945亿募资），标题引用时应标注来源并避免绝对化。\",\n    \"Dario与Pauline Yang缺乏可靠中文通用译名证据，标题中保留英文。\",\n    \"转录中“anthropic indicated to open at 108 dollars”为指示开盘价，非实际成交价。\"\n  ]\n}\n\nCurrent rejected title:\n{\n  \"title\": \"史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%\",\n  \"title_lines\": [\n    \"史上最大IPO\",\n    \"指示开盘溢价30%\",\n    \"收盘溢价只剩17%\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"强疑惑\",\n  \"viewer_reaction\": \"他说的是真的吗\",\n  \"evidence_basis\": [\n    \"transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天\",\n    \"transcript: IPO定价83美元，指示开盘价108美元，约30%溢价\",\n    \"public: 首日收盘约97美元，较发行价高约17%\",\n    \"public: 募资约810亿美元，为史上最大IPO\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 9,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 3\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天",
+              "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+              "public: 首日收盘约97美元，较发行价高约17%",
+              "public: 募资约810亿美元，为史上最大IPO"
+            ],
+            "title": "史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%？",
+            "title_lines": [
+              "史上最大IPO",
+              "指示开盘溢价30%",
+              "收盘溢价只剩17%？"
+            ],
+            "title_highlights": [
+              "史上最大IPO",
+              "指示开盘溢价30%",
+              "收盘溢价只剩17%？"
+            ],
+            "runner_up_titles": [
+              "Anthropic IPO：指示开盘溢价30%，收盘溢价为何只剩17%？"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 9,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "史上最大IPO：指示开盘溢价30%，收盘溢价只剩17%？",
+        "title_lines": [
+          "史上最大IPO",
+          "指示开盘溢价30%",
+          "收盘溢价只剩17%？"
+        ],
+        "title_highlights": [
+          "史上最大IPO",
+          "指示开盘溢价30%",
+          "收盘溢价只剩17%？"
+        ],
+        "comment": "KC评论：指示开盘与首日收盘的溢价差距，才是这场IPO真正的看点",
+        "comment_highlights": [
+          "溢价差距"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：开场一句重要的一天，把首日气氛先拉满",
+            "comment_highlights": [
+              "重要的一天"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：嘉宾把这次募资称为资本主义史上最大规模",
+            "comment_highlights": [
+              "史上最大规模"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：融资只是起点，团队强调后面还有更多要建",
+            "comment_highlights": [
+              "更多要建"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：定价83美元，指示开盘108美元，差距立刻出现",
+            "comment_highlights": [
+              "108美元"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：按指示开盘算约30%溢价，但还要等首笔成交",
+            "comment_highlights": [
+              "30%溢价"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：首笔交易窗口被点名，首日节奏进入倒计时",
+            "comment_highlights": [
+              "首笔交易窗口"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：估值模型和收入增长，是嘉宾绕不开的两道题",
+            "comment_highlights": [
+              "收入增长"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：算力扩散的时机难把握，这是AI扩张的现实约束",
+            "comment_highlights": [
+              "算力扩散"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：生物技术和机器人，被点名为下一阶段方向",
+            "comment_highlights": [
+              "生物技术和机器人"
+            ]
+          }
+        ],
+        "formula_id": "surprise-reversal",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "强疑惑",
+        "viewer_reaction": "他说的是真的吗",
+        "evidence_basis": [
+          "transcript: 嘉宾称这是资本主义史上最大融资，并称这是第一天",
+          "transcript: IPO定价83美元，指示开盘价108美元，约30%溢价",
+          "public: 首日收盘约97美元，较发行价高约17%",
+          "public: 募资约810亿美元，为史上最大IPO"
+        ],
+        "runner_up_titles": [
+          "Anthropic IPO：指示开盘溢价30%，收盘溢价为何只剩17%？"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 9,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:强疑惑",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 9,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          }
+        }
+      }
+    }
+  ]
+}
