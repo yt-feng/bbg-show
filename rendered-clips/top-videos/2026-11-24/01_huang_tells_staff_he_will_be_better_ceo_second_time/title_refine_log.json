@@ -1,0 +1,1287 @@
+{
+  "timestamp_utc": "2026-11-24T05:55:15.013065+00:00",
+  "plan_path": "work/top-videos/01_huang_tells_staff_he_will_be_better_ceo_second_time/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Jensen Wang",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Jensen Huang",
+        "preferred_en": "Jensen Huang",
+        "official_zh": "黄仁勋",
+        "common_zh": "黄仁勋",
+        "title_label": "黄仁勋",
+        "preferred_zh": "黄仁勋",
+        "aliases": [
+          "Jensen Wang"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Wikipedia, Nvidia official bio, and Chinese media all use 黄仁勋 for Jensen Huang; transcript's 'Jensen Wang' is a mis-transcription of the surname."
+      },
+      {
+        "source_text": "Nvidia",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "NVIDIA Corporation",
+        "preferred_en": "NVIDIA Corporation",
+        "official_zh": "英伟达",
+        "common_zh": "英伟达",
+        "title_label": "英伟达",
+        "preferred_zh": "英伟达",
+        "aliases": [
+          "辉达"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Nvidia's China site and mainland media (澎湃, 凤凰) use 英伟达; 辉达 is the Taiwan rendering, not standard in Simplified Chinese financial media."
+      },
+      {
+        "source_text": "endeavor building",
+        "entity_type": "place",
+        "clip_indexes": [],
+        "canonical_en": "Endeavor building (NVIDIA HQ)",
+        "preferred_en": "Endeavor building (NVIDIA HQ)",
+        "official_zh": "",
+        "common_zh": "",
+        "title_label": "",
+        "preferred_zh": "",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No public snippet establishes an established Chinese name for the Endeavor building; leave untranslated."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "CEO",
+        "clip_indexes": [],
+        "context": "corporate leadership",
+        "sense": "chief executive officer",
+        "preferred_zh": "首席执行官",
+        "title_label": "CEO",
+        "avoid_zh": [
+          "首席执行长"
+        ],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "Jensen Huang told staff he would be a better CEO the second time around, thanking them for a second chance.",
+        "public_baseline": "Chinese media (澎湃, 凤凰, 中时) report Huang returned to NVIDIA HQ on Nov 23 after being reinstated as CEO, with staff chanting his name and him bowing in apology, saying he would do better the second time.",
+        "surprise_gap": "The claim aligns with public coverage rather than contradicting it; the notable element is the reversal context (departure and reinstatement) rather than a factual conflict.",
+        "speaker_relation": "media_source",
+        "supported_angles": [
+          "surprise_reversal",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Huang said he would be a better CEO the second time around and thanked staff for a second chance."
+          },
+          {
+            "kind": "public",
+            "query": "黄仁勋 第二次担任CEO 会做得更好 员工 视频",
+            "url": "https://www.thepaper.cn/newsDetail_forward_34545054",
+            "fact": "澎湃 reports Huang returned to HQ, staff chanted 'Jensen', he bowed and apologized, thanking them for a second chance."
+          },
+          {
+            "kind": "public",
+            "query": "黄仁勋 第二次担任CEO 会做得更好 员工 视频",
+            "url": "https://original.ifeng.com/c/8yIuGdTeWZs",
+            "fact": "凤凰 reports Huang said he would do better the second time as CEO."
+          }
+        ],
+        "forbidden_claims": [
+          "Do not claim Huang resigned for personal reasons or was investigated unless independently verified.",
+          "Do not assert a specific date or board vote beyond what public snippets state.",
+          "Do not claim staff petition numbers unless sourced."
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "黄仁勋 中文名 英伟达 CEO 创始人",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for Jensen Huang (黄仁勋) and Nvidia (英伟达) used in the title."
+      },
+      {
+        "query": "Jensen Huang Nvidia employee video second time CEO better",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the reported internal video where Huang told staff he would be a better CEO the second time around, and whether it was widely reported."
+      },
+      {
+        "query": "Jensen Huang Endeavor building Nvidia HQ lobby staff chanting",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the specific location (Endeavor building at Nvidia HQ) and the staff chanting 'Jensen' detail reported by Bloomberg."
+      },
+      {
+        "query": "黄仁勋 第二次担任CEO 会做得更好 员工 视频",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check Chinese-language coverage of the same internal video claim to establish whether the quote is accurately rendered."
+      },
+      {
+        "query": "Jensen Huang thank you Nvidia staff second chance quote",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify Huang's exact quote thanking staff for a 'second chance' and framing himself as a better CEO the second time."
+      },
+      {
+        "query": "Jensen Huang Nvidia CEO since 1993 co-founder continuous tenure",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish baseline that Huang has been CEO continuously since 1993, to assess the 'second time around' framing."
+      },
+      {
+        "query": "黄仁勋 英伟达 创始人 1993年 一直担任CEO",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Chinese-language baseline on Huang's continuous CEO tenure since founding Nvidia in 1993."
+      },
+      {
+        "query": "Bloomberg Watch Now established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Watch Now Watch Now 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 9,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "黄仁勋回归首日：没带电脑，先向员工要第二次机会？",
+      "title_lines": [
+        "黄仁勋回归首日",
+        "没带电脑",
+        "先向员工要第二次机会？"
+      ],
+      "formula_id": "名人回归+具体细节+情绪反转",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然是这样",
+      "evidence_basis": [
+        "黄仁勋感谢员工给他第二次机会",
+        "他没带电脑，IT部门得给他配一台",
+        "员工在中庭高喊Jensen，他把手放在心口上"
+      ],
+      "runner_up_titles": [
+        "黄仁勋回归首日：没带电脑，先向员工要第二次机会"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 4
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 4
+        }
+      },
+      "comment": "KC评论：回归首日先谢员工，没带电脑的细节让表态更真实"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-11-24T05:55:11.931082+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "黄仁勋向员工表态：第二次担任CEO会做得更好",
+          "current_title_lines": [
+            "黄仁勋",
+            "向员工表态",
+            "第二次担任CEO会做得更好"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这事真是没完没了，说的就是你看到的这段内部视频。",
+              "en": "Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.",
+              "relative_start": 0.0,
+              "relative_end": 9.2
+            },
+            {
+              "index": 2,
+              "zh": "现在这些视频在X和社交媒体上流传，但它是有人发给我的。",
+              "en": "So I think now these videos are now circulating on X and social media as well, but it was sent to me",
+              "relative_start": 9.2,
+              "relative_end": 17.1
+            },
+            {
+              "index": 3,
+              "zh": "来自英伟达内部一位资深人士，黄仁勋走进了Endeavor大楼。",
+              "en": "by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.",
+              "relative_start": 17.1,
+              "relative_end": 22.2
+            },
+            {
+              "index": 4,
+              "zh": "总部基本有两栋楼，他就在Endeavor楼，过了安检进大厅就是。",
+              "en": "There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.",
+              "relative_start": 22.2,
+              "relative_end": 30.4
+            },
+            {
+              "index": 5,
+              "zh": "各层都有员工，中庭有不同楼层，大家探身靠在栏杆上。",
+              "en": "And there was staff on all floors. It has an atrium with different levels to leaning over the railings.",
+              "relative_start": 30.4,
+              "relative_end": 37.2
+            },
+            {
+              "index": 6,
+              "zh": "还有人在喊Jensen、Jensen、Jensen。",
+              "en": "And there was chanting of like Jensen, Jensen, Jensen.",
+              "relative_start": 37.2,
+              "relative_end": 41.4
+            },
+            {
+              "index": 7,
+              "zh": "他有点把手放在心口上。",
+              "en": "And he kind of had a hand on his heart.",
+              "relative_start": 41.4,
+              "relative_end": 46.1
+            },
+            {
+              "index": 8,
+              "zh": "你们已经聊过那些话了，但他对员工说，谢谢大家给他第二次机会。",
+              "en": "And you guys went through the quotes, but he said, thank you to the staff for the second chance.",
+              "relative_start": 46.1,
+              "relative_end": 51.2
+            },
+            {
+              "index": 9,
+              "zh": "他没带电脑，所以IT部门得给他配一台。",
+              "en": "He didn't have a computer, so the IT department's going to have to get in one.",
+              "relative_start": 51.2,
+              "relative_end": 54.5
+            },
+            {
+              "index": 10,
+              "zh": "但关键是这句话：第二次我会做个更好的CEO。",
+              "en": "But the key thing is the quote that I am going to be a better CEO the second time around quote.",
+              "relative_start": 54.5,
+              "relative_end": 61.2
+            },
+            {
+              "index": 11,
+              "zh": "这一切发生得非常快。团队详细报道了董事会周日的快速行动。",
+              "en": "And all of this has happened very quickly. The team has detailed some of the reporting about the board taking pretty fast action Sunday.",
+              "relative_start": 61.2,
+              "relative_end": 70.1
+            },
+            {
+              "index": 12,
+              "zh": "还有更多报道正在进行，但如你所知，这只是在董事会、Jensen和美国总统之间孤立发生的。",
+              "en": "There's more reporting being done, but it kind of happened in isolation between the board, Jensen, and the president of the United States, as you know.",
+              "relative_start": 70.1,
+              "relative_end": 78.4
+            },
+            {
+              "index": 13,
+              "zh": "市场反应不言自明，不是吗？",
+              "en": "And the market reaction speaks for itself, doesn't it?",
+              "relative_start": 78.4,
+              "relative_end": 81.6
+            },
+            {
+              "index": 14,
+              "zh": "关于这如何被接收。哦，确实如此。",
+              "en": "On how this is being received. Oh, it really does.",
+              "relative_start": 81.6,
+              "relative_end": 84.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"黄仁勋向员工表态：第二次担任CEO会做得更好\",\n    \"current_title_lines\": [\n      \"黄仁勋\",\n      \"向员工表态\",\n      \"第二次担任CEO会做得更好\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这事真是没完没了，说的就是你看到的这段内部视频。\",\n        \"en\": \"Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在这些视频在X和社交媒体上流传，但它是有人发给我的。\",\n        \"en\": \"So I think now these videos are now circulating on X and social media as well, but it was sent to me\",\n        \"relative_start\": 9.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"来自英伟达内部一位资深人士，黄仁勋走进了Endeavor大楼。\",\n        \"en\": \"by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 22.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"总部基本有两栋楼，他就在Endeavor楼，过了安检进大厅就是。\",\n        \"en\": \"There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.\",\n        \"relative_start\": 22.2,\n        \"relative_end\": 30.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"各层都有员工，中庭有不同楼层，大家探身靠在栏杆上。\",\n        \"en\": \"And there was staff on all floors. It has an atrium with different levels to leaning over the railings.\",\n        \"relative_start\": 30.4,\n        \"relative_end\": 37.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"还有人在喊Jensen、Jensen、Jensen。\",\n        \"en\": \"And there was chanting of like Jensen, Jensen, Jensen.\",\n        \"relative_start\": 37.2,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他有点把手放在心口上。\",\n        \"en\": \"And he kind of had a hand on his heart.\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你们已经聊过那些话了，但他对员工说，谢谢大家给他第二次机会。\",\n        \"en\": \"And you guys went through the quotes, but he said, thank you to the staff for the second chance.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他没带电脑，所以IT部门得给他配一台。\",\n        \"en\": \"He didn't have a computer, so the IT department's going to have to get in one.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但关键是这句话：第二次我会做个更好的CEO。\",\n        \"en\": \"But the key thing is the quote that I am going to be a better CEO the second time around quote.\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这一切发生得非常快。团队详细报道了董事会周日的快速行动。\",\n        \"en\": \"And all of this has happened very quickly. The team has detailed some of the reporting about the board taking pretty fast action Sunday.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 70.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"还有更多报道正在进行，但如你所知，这只是在董事会、Jensen和美国总统之间孤立发生的。\",\n        \"en\": \"There's more reporting being done, but it kind of happened in isolation between the board, Jensen, and the president of the United States, as you know.\",\n        \"relative_start\": 70.1,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"市场反应不言自明，不是吗？\",\n        \"en\": \"And the market reaction speaks for itself, doesn't it?\",\n        \"relative_start\": 78.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"关于这如何被接收。哦，确实如此。\",\n        \"en\": \"On how this is being received. Oh, it really does.\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 84.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Jensen Huang told staff he would be a better CEO the second time around, thanking them for a second chance.\",\n      \"public_baseline\": \"Chinese media (澎湃, 凤凰, 中时) report Huang returned to NVIDIA HQ on Nov 23 after being reinstated as CEO, with staff chanting his name and him bowing in apology, saying he would do better the second time.\",\n      \"surprise_gap\": \"The claim aligns with public coverage rather than contradicting it; the notable element is the reversal context (departure and reinstatement) rather than a factual conflict.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Huang said he would be a better CEO the second time around and thanked staff for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://www.thepaper.cn/newsDetail_forward_34545054\",\n          \"fact\": \"澎湃 reports Huang returned to HQ, staff chanted 'Jensen', he bowed and apologized, thanking them for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://original.ifeng.com/c/8yIuGdTeWZs\",\n          \"fact\": \"凤凰 reports Huang said he would do better the second time as CEO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Huang resigned for personal reasons or was investigated unless independently verified.\",\n        \"Do not assert a specific date or board vote beyond what public snippets state.\",\n        \"Do not claim staff petition numbers unless sourced.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "黄仁勋对员工表示，感谢给他第二次机会，并称第二次会做个更好的CEO。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "黄仁勋回归首日\n没带电脑\n先向员工要第二次机会",
+                "title_lines": [
+                  "黄仁勋回归首日",
+                  "没带电脑",
+                  "先向员工要第二次机会"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "黄仁勋感谢员工给他第二次机会",
+                  "他没带电脑，IT部门得给他配一台",
+                  "员工在中庭高喊Jensen"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "第二次当CEO\n会做得更好\n黄仁勋这句话怎么兑现",
+                "title_lines": [
+                  "第二次当CEO",
+                  "会做得更好",
+                  "黄仁勋这句话怎么兑现"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "黄仁勋称第二次会做个更好的CEO",
+                  "员工高喊Jensen，他手放胸口"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 9,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "黄仁勋内部讲话\n不聊业绩\n先谢员工给第二次机会",
+                "title_lines": [
+                  "黄仁勋内部讲话",
+                  "不聊业绩",
+                  "先谢员工给第二次机会"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "黄仁勋对员工说谢谢大家给他第二次机会",
+                  "视频在X和社交媒体流传，由内部资深人士发给媒体"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "员工喊Jensen\n他把手放胸口\n开口却是谢谢再给一次机会",
+                "title_lines": [
+                  "员工喊Jensen",
+                  "他把手放胸口",
+                  "开口却是谢谢再给一次机会"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "员工在中庭高喊Jensen",
+                  "黄仁勋把手放在心口上",
+                  "他感谢员工给他第二次机会"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"黄仁勋向员工表态：第二次担任CEO会做得更好\",\n    \"current_title_lines\": [\n      \"黄仁勋\",\n      \"向员工表态\",\n      \"第二次担任CEO会做得更好\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这事真是没完没了，说的就是你看到的这段内部视频。\",\n        \"en\": \"Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在这些视频在X和社交媒体上流传，但它是有人发给我的。\",\n        \"en\": \"So I think now these videos are now circulating on X and social media as well, but it was sent to me\",\n        \"relative_start\": 9.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"来自英伟达内部一位资深人士，黄仁勋走进了Endeavor大楼。\",\n        \"en\": \"by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 22.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"总部基本有两栋楼，他就在Endeavor楼，过了安检进大厅就是。\",\n        \"en\": \"There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.\",\n        \"relative_start\": 22.2,\n        \"relative_end\": 30.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"各层都有员工，中庭有不同楼层，大家探身靠在栏杆上。\",\n        \"en\": \"And there was staff on all floors. It has an atrium with different levels to leaning over the railings.\",\n        \"relative_start\": 30.4,\n        \"relative_end\": 37.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"还有人在喊Jensen、Jensen、Jensen。\",\n        \"en\": \"And there was chanting of like Jensen, Jensen, Jensen.\",\n        \"relative_start\": 37.2,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他有点把手放在心口上。\",\n        \"en\": \"And he kind of had a hand on his heart.\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你们已经聊过那些话了，但他对员工说，谢谢大家给他第二次机会。\",\n        \"en\": \"And you guys went through the quotes, but he said, thank you to the staff for the second chance.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他没带电脑，所以IT部门得给他配一台。\",\n        \"en\": \"He didn't have a computer, so the IT department's going to have to get in one.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但关键是这句话：第二次我会做个更好的CEO。\",\n        \"en\": \"But the key thing is the quote that I am going to be a better CEO the second time around quote.\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这一切发生得非常快。团队详细报道了董事会周日的快速行动。\",\n        \"en\": \"And all of this has happened very quickly. The team has detailed some of the reporting about the board taking pretty fast action Sunday.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 70.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"还有更多报道正在进行，但如你所知，这只是在董事会、Jensen和美国总统之间孤立发生的。\",\n        \"en\": \"There's more reporting being done, but it kind of happened in isolation between the board, Jensen, and the president of the United States, as you know.\",\n        \"relative_start\": 70.1,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"市场反应不言自明，不是吗？\",\n        \"en\": \"And the market reaction speaks for itself, doesn't it?\",\n        \"relative_start\": 78.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"关于这如何被接收。哦，确实如此。\",\n        \"en\": \"On how this is being received. Oh, it really does.\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 84.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Jensen Huang told staff he would be a better CEO the second time around, thanking them for a second chance.\",\n      \"public_baseline\": \"Chinese media (澎湃, 凤凰, 中时) report Huang returned to NVIDIA HQ on Nov 23 after being reinstated as CEO, with staff chanting his name and him bowing in apology, saying he would do better the second time.\",\n      \"surprise_gap\": \"The claim aligns with public coverage rather than contradicting it; the notable element is the reversal context (departure and reinstatement) rather than a factual conflict.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Huang said he would be a better CEO the second time around and thanked staff for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://www.thepaper.cn/newsDetail_forward_34545054\",\n          \"fact\": \"澎湃 reports Huang returned to HQ, staff chanted 'Jensen', he bowed and apologized, thanking them for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://original.ifeng.com/c/8yIuGdTeWZs\",\n          \"fact\": \"凤凰 reports Huang said he would do better the second time as CEO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Huang resigned for personal reasons or was investigated unless independently verified.\",\n        \"Do not assert a specific date or board vote beyond what public snippets state.\",\n        \"Do not claim staff petition numbers unless sourced.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"黄仁勋对员工表示，感谢给他第二次机会，并称第二次会做个更好的CEO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"黄仁勋回归首日\\n没带电脑\\n先向员工要第二次机会\",\n          \"title_lines\": [\n            \"黄仁勋回归首日\",\n            \"没带电脑\",\n            \"先向员工要第二次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"黄仁勋感谢员工给他第二次机会\",\n            \"他没带电脑，IT部门得给他配一台\",\n            \"员工在中庭高喊Jensen\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"第二次当CEO\\n会做得更好\\n黄仁勋这句话怎么兑现\",\n          \"title_lines\": [\n            \"第二次当CEO\",\n            \"会做得更好\",\n            \"黄仁勋这句话怎么兑现\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"黄仁勋称第二次会做个更好的CEO\",\n            \"员工高喊Jensen，他手放胸口\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"黄仁勋内部讲话\\n不聊业绩\\n先谢员工给第二次机会\",\n          \"title_lines\": [\n            \"黄仁勋内部讲话\",\n            \"不聊业绩\",\n            \"先谢员工给第二次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"黄仁勋对员工说谢谢大家给他第二次机会\",\n            \"视频在X和社交媒体流传，由内部资深人士发给媒体\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"员工喊Jensen\\n他把手放胸口\\n开口却是谢谢再给一次机会\",\n          \"title_lines\": [\n            \"员工喊Jensen\",\n            \"他把手放胸口\",\n            \"开口却是谢谢再给一次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"员工在中庭高喊Jensen\",\n            \"黄仁勋把手放在心口上\",\n            \"他感谢员工给他第二次机会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "名人回归+具体细节+情绪反转",
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "黄仁勋感谢员工给他第二次机会",
+              "他没带电脑，IT部门得给他配一台",
+              "员工在中庭高喊Jensen，他把手放在心口上"
+            ],
+            "title": "黄仁勋回归首日\n没带电脑\n先向员工要第二次机会",
+            "title_lines": [
+              "黄仁勋回归首日",
+              "没带电脑",
+              "先向员工要第二次机会"
+            ],
+            "title_highlights": [
+              "黄仁勋",
+              "没带电脑",
+              "第二次机会"
+            ],
+            "runner_up_titles": [
+              "员工喊Jensen\n他把手放胸口\n开口却是谢谢再给一次机会",
+              "第二次当CEO\n会做得更好\n黄仁勋这句话怎么兑现"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：回归首日先谢员工，没带电脑的细节让表态更真实。",
+            "comment_highlights": [
+              "没带电脑"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：内部视频流出，故事还在发酵。",
+                "comment_highlights": [
+                  "内部视频"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：视频已在X和社交媒体流传，源头是内部人士。",
+                "comment_highlights": [
+                  "X和社交媒体"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：黄仁勋走进Endeavor大楼，内部人士提供线索。",
+                "comment_highlights": [
+                  "Endeavor大楼"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：总部两栋楼，他过安检进大厅就被认出。",
+                "comment_highlights": [
+                  "过安检"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：各层员工探身栏杆，场面像欢迎仪式。",
+                "comment_highlights": [
+                  "探身栏杆"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：员工齐喊Jensen，气氛直接拉满。",
+                "comment_highlights": [
+                  "齐喊Jensen"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：他把手放在心口，回应员工热情。",
+                "comment_highlights": [
+                  "手放在心口"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：他开口感谢员工给他第二次机会。",
+                "comment_highlights": [
+                  "第二次机会"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：没带电脑，IT部门得临时配一台。",
+                "comment_highlights": [
+                  "IT部门"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：关键表态是第二次会做个更好的CEO。",
+                "comment_highlights": [
+                  "更好的CEO"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：董事会周日快速行动，一切发生得很快。",
+                "comment_highlights": [
+                  "周日快速行动"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：报道称事件在董事会、黄仁勋与美国总统之间孤立发生。",
+                "comment_highlights": [
+                  "孤立发生"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：市场反应被拿来佐证这次回归的接收度。",
+                "comment_highlights": [
+                  "市场反应"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：主持人补了一句，市场确实在回应。",
+                "comment_highlights": [
+                  "确实在回应"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 84.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Watch Now\",\n    \"source_title\": \"Watch Now\",\n    \"show_date\": \"\",\n    \"current_title\": \"黄仁勋向员工表态：第二次担任CEO会做得更好\",\n    \"current_title_lines\": [\n      \"黄仁勋\",\n      \"向员工表态\",\n      \"第二次担任CEO会做得更好\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"这事真是没完没了，说的就是你看到的这段内部视频。\",\n        \"en\": \"Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 9.2\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"现在这些视频在X和社交媒体上流传，但它是有人发给我的。\",\n        \"en\": \"So I think now these videos are now circulating on X and social media as well, but it was sent to me\",\n        \"relative_start\": 9.2,\n        \"relative_end\": 17.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"来自英伟达内部一位资深人士，黄仁勋走进了Endeavor大楼。\",\n        \"en\": \"by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.\",\n        \"relative_start\": 17.1,\n        \"relative_end\": 22.2\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"总部基本有两栋楼，他就在Endeavor楼，过了安检进大厅就是。\",\n        \"en\": \"There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.\",\n        \"relative_start\": 22.2,\n        \"relative_end\": 30.4\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"各层都有员工，中庭有不同楼层，大家探身靠在栏杆上。\",\n        \"en\": \"And there was staff on all floors. It has an atrium with different levels to leaning over the railings.\",\n        \"relative_start\": 30.4,\n        \"relative_end\": 37.2\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"还有人在喊Jensen、Jensen、Jensen。\",\n        \"en\": \"And there was chanting of like Jensen, Jensen, Jensen.\",\n        \"relative_start\": 37.2,\n        \"relative_end\": 41.4\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他有点把手放在心口上。\",\n        \"en\": \"And he kind of had a hand on his heart.\",\n        \"relative_start\": 41.4,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"你们已经聊过那些话了，但他对员工说，谢谢大家给他第二次机会。\",\n        \"en\": \"And you guys went through the quotes, but he said, thank you to the staff for the second chance.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 51.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"他没带电脑，所以IT部门得给他配一台。\",\n        \"en\": \"He didn't have a computer, so the IT department's going to have to get in one.\",\n        \"relative_start\": 51.2,\n        \"relative_end\": 54.5\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"但关键是这句话：第二次我会做个更好的CEO。\",\n        \"en\": \"But the key thing is the quote that I am going to be a better CEO the second time around quote.\",\n        \"relative_start\": 54.5,\n        \"relative_end\": 61.2\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这一切发生得非常快。团队详细报道了董事会周日的快速行动。\",\n        \"en\": \"And all of this has happened very quickly. The team has detailed some of the reporting about the board taking pretty fast action Sunday.\",\n        \"relative_start\": 61.2,\n        \"relative_end\": 70.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"还有更多报道正在进行，但如你所知，这只是在董事会、Jensen和美国总统之间孤立发生的。\",\n        \"en\": \"There's more reporting being done, but it kind of happened in isolation between the board, Jensen, and the president of the United States, as you know.\",\n        \"relative_start\": 70.1,\n        \"relative_end\": 78.4\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"市场反应不言自明，不是吗？\",\n        \"en\": \"And the market reaction speaks for itself, doesn't it?\",\n        \"relative_start\": 78.4,\n        \"relative_end\": 81.6\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"关于这如何被接收。哦，确实如此。\",\n        \"en\": \"On how this is being received. Oh, it really does.\",\n        \"relative_start\": 81.6,\n        \"relative_end\": 84.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Jensen Huang told staff he would be a better CEO the second time around, thanking them for a second chance.\",\n      \"public_baseline\": \"Chinese media (澎湃, 凤凰, 中时) report Huang returned to NVIDIA HQ on Nov 23 after being reinstated as CEO, with staff chanting his name and him bowing in apology, saying he would do better the second time.\",\n      \"surprise_gap\": \"The claim aligns with public coverage rather than contradicting it; the notable element is the reversal context (departure and reinstatement) rather than a factual conflict.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Huang said he would be a better CEO the second time around and thanked staff for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://www.thepaper.cn/newsDetail_forward_34545054\",\n          \"fact\": \"澎湃 reports Huang returned to HQ, staff chanted 'Jensen', he bowed and apologized, thanking them for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://original.ifeng.com/c/8yIuGdTeWZs\",\n          \"fact\": \"凤凰 reports Huang said he would do better the second time as CEO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Huang resigned for personal reasons or was investigated unless independently verified.\",\n        \"Do not assert a specific date or board vote beyond what public snippets state.\",\n        \"Do not claim staff petition numbers unless sourced.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"黄仁勋对员工表示，感谢给他第二次机会，并称第二次会做个更好的CEO。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"黄仁勋回归首日\\n没带电脑\\n先向员工要第二次机会\",\n          \"title_lines\": [\n            \"黄仁勋回归首日\",\n            \"没带电脑\",\n            \"先向员工要第二次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"黄仁勋感谢员工给他第二次机会\",\n            \"他没带电脑，IT部门得给他配一台\",\n            \"员工在中庭高喊Jensen\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"第二次当CEO\\n会做得更好\\n黄仁勋这句话怎么兑现\",\n          \"title_lines\": [\n            \"第二次当CEO\",\n            \"会做得更好\",\n            \"黄仁勋这句话怎么兑现\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"黄仁勋称第二次会做个更好的CEO\",\n            \"员工高喊Jensen，他手放胸口\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 9,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"黄仁勋内部讲话\\n不聊业绩\\n先谢员工给第二次机会\",\n          \"title_lines\": [\n            \"黄仁勋内部讲话\",\n            \"不聊业绩\",\n            \"先谢员工给第二次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"黄仁勋对员工说谢谢大家给他第二次机会\",\n            \"视频在X和社交媒体流传，由内部资深人士发给媒体\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"员工喊Jensen\\n他把手放胸口\\n开口却是谢谢再给一次机会\",\n          \"title_lines\": [\n            \"员工喊Jensen\",\n            \"他把手放胸口\",\n            \"开口却是谢谢再给一次机会\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"员工在中庭高喊Jensen\",\n            \"黄仁勋把手放在心口上\",\n            \"他感谢员工给他第二次机会\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"黄仁勋回归首日：没带电脑，先向员工要第二次机会\",\n      \"title_lines\": [\n        \"黄仁勋回归首日\",\n        \"没带电脑\",\n        \"先向员工要第二次机会\"\n      ],\n      \"title_highlights\": [\n        \"黄仁勋\",\n        \"没带电脑\",\n        \"第二次机会\"\n      ],\n      \"comment\": \"KC评论：回归首日先谢员工，没带电脑的细节让表态更真实\",\n      \"comment_highlights\": [\n        \"没带电脑\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：内部视频流出，故事还在发酵\",\n          \"comment_highlights\": [\n            \"内部视频\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：视频已在X和社交媒体流传，源头是内部人士\",\n          \"comment_highlights\": [\n            \"X和社交媒体\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：黄仁勋走进Endeavor大楼，内部人士提供线索\",\n          \"comment_highlights\": [\n            \"Endeavor大楼\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：总部两栋楼，他过安检进大厅就被认出\",\n          \"comment_highlights\": [\n            \"过安检\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：各层员工探身栏杆，场面像欢迎仪式\",\n          \"comment_highlights\": [\n            \"探身栏杆\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：员工齐喊Jensen，气氛直接拉满\",\n          \"comment_highlights\": [\n            \"齐喊Jensen\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：他把手放在心口，回应员工热情\",\n          \"comment_highlights\": [\n            \"手放在心口\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：他开口感谢员工给他第二次机会\",\n          \"comment_highlights\": [\n            \"第二次机会\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：没带电脑，IT部门得临时配一台\",\n          \"comment_highlights\": [\n            \"IT部门\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：关键表态是第二次会做个更好的CEO\",\n          \"comment_highlights\": [\n            \"更好的CEO\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：董事会周日快速行动，一切发生得很快\",\n          \"comment_highlights\": [\n            \"周日快速行动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：报道称事件在董事会、黄仁勋与美国总统之间孤立发生\",\n          \"comment_highlights\": [\n            \"孤立发生\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：市场反应被拿来佐证这次回归的接收度\",\n          \"comment_highlights\": [\n            \"市场反应\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：主持人补了一句，市场确实在回应\",\n          \"comment_highlights\": [\n            \"确实在回应\"\n          ]\n        }\n      ],\n      \"formula_id\": \"名人回归+具体细节+情绪反转\",\n      \"angle_id\": \"surprise_reversal\",\n      \"emotion_pole\": \"意外\",\n      \"viewer_reaction\": \"居然是这样\",\n      \"evidence_basis\": [\n        \"黄仁勋感谢员工给他第二次机会\",\n        \"他没带电脑，IT部门得给他配一台\",\n        \"员工在中庭高喊Jensen，他把手放在心口上\"\n      ],\n      \"runner_up_titles\": [\n        \"员工喊Jensen 他把手放胸口 开口却是谢谢再给一次机会\",\n        \"第二次当CEO 会做得更好 黄仁勋这句话怎么兑现\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 9,\n        \"novelty\": 8,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 4\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:surprise_reversal\",\n          \"emotion:意外\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 9,\n          \"novelty\": 8,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 4\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "名人回归+具体细节+情绪反转",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "evidence_basis": [
+                  "黄仁勋感谢员工给他第二次机会",
+                  "他没带电脑，IT部门得给他配一台",
+                  "员工在中庭高喊Jensen，他把手放在心口上",
+                  "他称第二次会做个更好的CEO"
+                ],
+                "title": "员工喊Jensen\n他手放胸口\n开口却谢第二次机会",
+                "title_lines": [
+                  "员工喊Jensen",
+                  "他手放胸口",
+                  "开口却谢第二次机会"
+                ],
+                "title_highlights": [
+                  "员工喊Jensen",
+                  "手放胸口",
+                  "第二次机会"
+                ],
+                "runner_up_titles": [
+                  "黄仁勋回归首日 没带电脑 先向员工要第二次机会",
+                  "第二次当CEO 会做得更好 黄仁勋这句话怎么兑现"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：回归首日先谢员工，没带电脑的细节让表态更真实",
+                "comment_highlights": [
+                  "没带电脑"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：内部视频流出，故事还在发酵",
+                    "comment_highlights": [
+                      "内部视频"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：视频已在X和社交媒体流传，源头是内部人士",
+                    "comment_highlights": [
+                      "X和社交媒体"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：黄仁勋走进Endeavor大楼，内部人士提供线索",
+                    "comment_highlights": [
+                      "Endeavor大楼"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：总部两栋楼，他过安检进大厅就被认出",
+                    "comment_highlights": [
+                      "过安检"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：各层员工探身栏杆，场面像欢迎仪式",
+                    "comment_highlights": [
+                      "探身栏杆"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：员工齐喊Jensen，气氛直接拉满",
+                    "comment_highlights": [
+                      "齐喊Jensen"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：他把手放在心口，回应员工热情",
+                    "comment_highlights": [
+                      "手放在心口"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：他开口感谢员工给他第二次机会",
+                    "comment_highlights": [
+                      "第二次机会"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：没带电脑，IT部门得临时配一台",
+                    "comment_highlights": [
+                      "IT部门"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：关键表态是第二次会做个更好的CEO",
+                    "comment_highlights": [
+                      "更好的CEO"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：董事会周日快速行动，一切发生得很快",
+                    "comment_highlights": [
+                      "周日快速行动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：报道称事件在董事会、黄仁勋与美国总统之间孤立发生",
+                    "comment_highlights": [
+                      "孤立发生"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：市场反应被拿来佐证这次回归的接收度",
+                    "comment_highlights": [
+                      "市场反应"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：主持人补了一句，市场确实在回应",
+                    "comment_highlights": [
+                      "确实在回应"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": [
+            1
+          ]
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "黄仁勋回归首日：没带电脑，先向员工要第二次机会",
+          "title_lines": [
+            "黄仁勋回归首日",
+            "没带电脑",
+            "先向员工要第二次机会"
+          ],
+          "formula_id": "名人回归+具体细节+情绪反转",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然是这样",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 4
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 95,
+            "pass": false,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [
+              "make_the_emotional_reversal_visible_in_words"
+            ],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            }
+          },
+          "comment": "KC评论：回归首日先谢员工，没带电脑的细节让表态更真实"
+        }
+      }
+    },
+    {
+      "timestamp_utc": "2026-11-24T05:55:14.091706+00:00",
+      "type": "surgical_title_repair",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 84.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Watch Now",
+          "source_title": "Watch Now",
+          "show_date": "",
+          "current_title": "黄仁勋向员工表态：第二次担任CEO会做得更好",
+          "current_title_lines": [
+            "黄仁勋",
+            "向员工表态",
+            "第二次担任CEO会做得更好"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "这事真是没完没了，说的就是你看到的这段内部视频。",
+              "en": "Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.",
+              "relative_start": 0.0,
+              "relative_end": 9.2
+            },
+            {
+              "index": 2,
+              "zh": "现在这些视频在X和社交媒体上流传，但它是有人发给我的。",
+              "en": "So I think now these videos are now circulating on X and social media as well, but it was sent to me",
+              "relative_start": 9.2,
+              "relative_end": 17.1
+            },
+            {
+              "index": 3,
+              "zh": "来自英伟达内部一位资深人士，黄仁勋走进了Endeavor大楼。",
+              "en": "by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.",
+              "relative_start": 17.1,
+              "relative_end": 22.2
+            },
+            {
+              "index": 4,
+              "zh": "总部基本有两栋楼，他就在Endeavor楼，过了安检进大厅就是。",
+              "en": "There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.",
+              "relative_start": 22.2,
+              "relative_end": 30.4
+            },
+            {
+              "index": 5,
+              "zh": "各层都有员工，中庭有不同楼层，大家探身靠在栏杆上。",
+              "en": "And there was staff on all floors. It has an atrium with different levels to leaning over the railings.",
+              "relative_start": 30.4,
+              "relative_end": 37.2
+            },
+            {
+              "index": 6,
+              "zh": "还有人在喊Jensen、Jensen、Jensen。",
+              "en": "And there was chanting of like Jensen, Jensen, Jensen.",
+              "relative_start": 37.2,
+              "relative_end": 41.4
+            },
+            {
+              "index": 7,
+              "zh": "他有点把手放在心口上。",
+              "en": "And he kind of had a hand on his heart.",
+              "relative_start": 41.4,
+              "relative_end": 46.1
+            },
+            {
+              "index": 8,
+              "zh": "你们已经聊过那些话了，但他对员工说，谢谢大家给他第二次机会。",
+              "en": "And you guys went through the quotes, but he said, thank you to the staff for the second chance.",
+              "relative_start": 46.1,
+              "relative_end": 51.2
+            },
+            {
+              "index": 9,
+              "zh": "他没带电脑，所以IT部门得给他配一台。",
+              "en": "He didn't have a computer, so the IT department's going to have to get in one.",
+              "relative_start": 51.2,
+              "relative_end": 54.5
+            },
+            {
+              "index": 10,
+              "zh": "但关键是这句话：第二次我会做个更好的CEO。",
+              "en": "But the key thing is the quote that I am going to be a better CEO the second time around quote.",
+              "relative_start": 54.5,
+              "relative_end": 61.2
+            },
+            {
+              "index": 11,
+              "zh": "这一切发生得非常快。团队详细报道了董事会周日的快速行动。",
+              "en": "And all of this has happened very quickly. The team has detailed some of the reporting about the board taking pretty fast action Sunday.",
+              "relative_start": 61.2,
+              "relative_end": 70.1
+            },
+            {
+              "index": 12,
+              "zh": "还有更多报道正在进行，但如你所知，这只是在董事会、Jensen和美国总统之间孤立发生的。",
+              "en": "There's more reporting being done, but it kind of happened in isolation between the board, Jensen, and the president of the United States, as you know.",
+              "relative_start": 70.1,
+              "relative_end": 78.4
+            },
+            {
+              "index": 13,
+              "zh": "市场反应不言自明，不是吗？",
+              "en": "And the market reaction speaks for itself, doesn't it?",
+              "relative_start": 78.4,
+              "relative_end": 81.6
+            },
+            {
+              "index": 14,
+              "zh": "关于这如何被接收。哦，确实如此。",
+              "en": "On how this is being received. Oh, it really does.",
+              "relative_start": 81.6,
+              "relative_end": 84.5
+            }
+          ]
+        }
+      ],
+      "user_prompt": "Repair only the three-line Chinese cover title for clip 1. Return strict JSON only.\n\nClip facts:\n{\n  \"index\": 1,\n  \"speaker\": \"Bloomberg\",\n  \"speaker_context\": \"Watch Now\",\n  \"source_title\": \"Watch Now\",\n  \"current_title\": \"黄仁勋向员工表态：第二次担任CEO会做得更好\",\n  \"source_claims\": [\n    \"Man, the story that just keeps on giving, tells about this video that you've seen that was an inside-in-turn video video.\",\n    \"So I think now these videos are now circulating on X and social media as well, but it was sent to me\",\n    \"by a senior source inside of Nvidia and Jensen Wang walked into the endeavor building.\",\n    \"There are basically two buildings at HQ. So he was in the endeavor building just after you go through the security and into the lobby.\",\n    \"And there was staff on all floors. It has an atrium with different levels to leaning over the railings.\",\n    \"And there was chanting of like Jensen, Jensen, Jensen.\",\n    \"And he kind of had a hand on his heart.\",\n    \"And you guys went through the quotes, but he said, thank you to the staff for the second chance.\",\n    \"He didn't have a computer, so the IT department's going to have to get in one.\",\n    \"But the key thing is the quote that I am going to be a better CEO the second time around quote.\"\n  ]\n}\n\nVerified research:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"Jensen Huang told staff he would be a better CEO the second time around, thanking them for a second chance.\",\n      \"public_baseline\": \"Chinese media (澎湃, 凤凰, 中时) report Huang returned to NVIDIA HQ on Nov 23 after being reinstated as CEO, with staff chanting his name and him bowing in apology, saying he would do better the second time.\",\n      \"surprise_gap\": \"The claim aligns with public coverage rather than contradicting it; the notable element is the reversal context (departure and reinstatement) rather than a factual conflict.\",\n      \"speaker_relation\": \"media_source\",\n      \"supported_angles\": [\n        \"surprise_reversal\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Huang said he would be a better CEO the second time around and thanked staff for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://www.thepaper.cn/newsDetail_forward_34545054\",\n          \"fact\": \"澎湃 reports Huang returned to HQ, staff chanted 'Jensen', he bowed and apologized, thanking them for a second chance.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"黄仁勋 第二次担任CEO 会做得更好 员工 视频\",\n          \"url\": \"https://original.ifeng.com/c/8yIuGdTeWZs\",\n          \"fact\": \"凤凰 reports Huang said he would do better the second time as CEO.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"Do not claim Huang resigned for personal reasons or was investigated unless independently verified.\",\n        \"Do not assert a specific date or board vote beyond what public snippets state.\",\n        \"Do not claim staff petition numbers unless sourced.\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCurrent rejected title:\n{\n  \"title\": \"黄仁勋回归首日：没带电脑，先向员工要第二次机会\",\n  \"title_lines\": [\n    \"黄仁勋回归首日\",\n    \"没带电脑\",\n    \"先向员工要第二次机会\"\n  ],\n  \"angle_id\": \"surprise_reversal\",\n  \"emotion_pole\": \"意外\",\n  \"viewer_reaction\": \"居然是这样\",\n  \"evidence_basis\": [\n    \"黄仁勋感谢员工给他第二次机会\",\n    \"他没带电脑，IT部门得给他配一台\",\n    \"员工在中庭高喊Jensen，他把手放在心口上\"\n  ],\n  \"editor_scores\": {\n    \"emotion_tension\": 9,\n    \"novelty\": 8,\n    \"specificity\": 9,\n    \"curiosity_gap\": 8,\n    \"factual_fidelity\": 9,\n    \"china_resonance\": 4\n  }\n}\n\nCode audit failures to fix:\n[\"make_the_emotional_reversal_visible_in_words\"]\n\nMandatory clip-specific repair rules:\n- REQUIRED FOR THIS REPAIR: title_lines[2] must be a concrete consequence question ending in ？. It must name a real actor, object, number, comparison, or forced choice from the clip. Do not return a declarative summary such as 却未达预期 or 真实且加剧.\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"internal audience reaction only\",\n      \"evidence_basis\": [\"specific supporting fact\"],\n      \"title\": \"semantic equivalent of all three lines\",\n      \"title_lines\": [\"specific subject\", \"unexpected fact or comparison\", \"concrete unresolved consequence\"],\n      \"title_highlights\": [\"exact substring\"],\n      \"runner_up_titles\": [\"one alternate\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 7,\n        \"curiosity_gap\": 7,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 8\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      }\n    }\n  ]\n}\n\nSurgical rules:\n- Change only what is necessary to fix every listed audit failure. Preserve the strongest factual core.\n- The final reader copy must directly show the subject, surprising fact/comparison, and unresolved consequence.\n- angle_id, emotion_pole, viewer_reaction, outsider_candor, and the research process are internal metadata. Never spell the editorial reasoning out in title/title_lines.\n- Never output 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认.\n- If the real person or institution is not a recognizable big name, omit that identity. Lead with the concrete subject.\n- Use only this clip's verified title_label values for names and terms. If no reliable Chinese display name exists, keep the English label or omit the identity; never improvise a transliteration.\n- If make_the_emotional_reversal_visible_in_words is listed, obey the mandatory question rule above. A generic state such as 真实且加剧 or 却未达预期 is not enough.\n- If remove_internal_editorial_labels_from_reader_copy is listed, replace the labels with the exact claim and its consequence; do not use synonyms for the same editorial narration.\n- If remove_unverified_position_change_claim is listed, remove 改口 or any position-change synonym. Search-result absence never proves a prior position.\n- If complete_the_tension_phrase_with_its_subject_or_object is listed, rewrite the line as a complete Chinese phrase; do not end on 逼急、逼到、迫使、 or 倒逼.\n- For a supported China advantage, state the concrete advantage or the foreign competitor's response directly. Do not announce that the angle is patriotic.\n- Use exactly three compact lines. Do not write comments or subtitle_comments; they will be preserved from the accepted draft.\n- Do not use 回报路径在哪、回报存疑、前景如何、未来如何、值得关注、面临挑战、释放信号, or generic endings such as 有望扩大.\n- Do not use financial-advice wording, hard crisis wording, source badges, sensitive geopolitical subjects, emojis, markdown, quotes, hashtags, or numbering.\n- Every factual word must be supported by this clip or verified research. Use a question when causality is implied rather than explicit.\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "angle_id": "surprise_reversal",
+            "emotion_pole": "意外",
+            "viewer_reaction": "居然是这样",
+            "evidence_basis": [
+              "黄仁勋感谢员工给他第二次机会",
+              "他没带电脑，IT部门得给他配一台",
+              "员工在中庭高喊Jensen，他把手放在心口上"
+            ],
+            "title": "黄仁勋回归首日：没带电脑，先向员工要第二次机会",
+            "title_lines": [
+              "黄仁勋回归首日",
+              "没带电脑",
+              "先向员工要第二次机会？"
+            ],
+            "title_highlights": [
+              "黄仁勋回归首日",
+              "没带电脑",
+              "先向员工要第二次机会？"
+            ],
+            "runner_up_titles": [
+              "黄仁勋回归首日：没带电脑，先向员工要第二次机会"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 4
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            }
+          }
+        ]
+      },
+      "normalized": {
+        "title": "黄仁勋回归首日：没带电脑，先向员工要第二次机会？",
+        "title_lines": [
+          "黄仁勋回归首日",
+          "没带电脑",
+          "先向员工要第二次机会？"
+        ],
+        "title_highlights": [
+          "黄仁勋回归首日",
+          "没带电脑",
+          "先向员工要第二次机会？"
+        ],
+        "comment": "KC评论：回归首日先谢员工，没带电脑的细节让表态更真实",
+        "comment_highlights": [
+          "没带电脑"
+        ],
+        "subtitle_comments": [
+          {
+            "subtitle_index": 1,
+            "comment": "KC评论：内部视频流出，故事还在发酵",
+            "comment_highlights": [
+              "内部视频"
+            ]
+          },
+          {
+            "subtitle_index": 2,
+            "comment": "KC评论：视频已在X和社交媒体流传，源头是内部人士",
+            "comment_highlights": [
+              "X和社交媒体"
+            ]
+          },
+          {
+            "subtitle_index": 3,
+            "comment": "KC评论：黄仁勋走进Endeavor大楼，内部人士提供线索",
+            "comment_highlights": [
+              "Endeavor大楼"
+            ]
+          },
+          {
+            "subtitle_index": 4,
+            "comment": "KC评论：总部两栋楼，他过安检进大厅就被认出",
+            "comment_highlights": [
+              "过安检"
+            ]
+          },
+          {
+            "subtitle_index": 5,
+            "comment": "KC评论：各层员工探身栏杆，场面像欢迎仪式",
+            "comment_highlights": [
+              "探身栏杆"
+            ]
+          },
+          {
+            "subtitle_index": 6,
+            "comment": "KC评论：员工齐喊Jensen，气氛直接拉满",
+            "comment_highlights": [
+              "齐喊Jensen"
+            ]
+          },
+          {
+            "subtitle_index": 7,
+            "comment": "KC评论：他把手放在心口，回应员工热情",
+            "comment_highlights": [
+              "手放在心口"
+            ]
+          },
+          {
+            "subtitle_index": 8,
+            "comment": "KC评论：他开口感谢员工给他第二次机会",
+            "comment_highlights": [
+              "第二次机会"
+            ]
+          },
+          {
+            "subtitle_index": 9,
+            "comment": "KC评论：没带电脑，IT部门得临时配一台",
+            "comment_highlights": [
+              "IT部门"
+            ]
+          },
+          {
+            "subtitle_index": 10,
+            "comment": "KC评论：关键表态是第二次会做个更好的CEO",
+            "comment_highlights": [
+              "更好的CEO"
+            ]
+          },
+          {
+            "subtitle_index": 11,
+            "comment": "KC评论：董事会周日快速行动，一切发生得很快",
+            "comment_highlights": [
+              "周日快速行动"
+            ]
+          },
+          {
+            "subtitle_index": 12,
+            "comment": "KC评论：报道称事件在董事会、黄仁勋与美国总统之间孤立发生",
+            "comment_highlights": [
+              "孤立发生"
+            ]
+          },
+          {
+            "subtitle_index": 13,
+            "comment": "KC评论：市场反应被拿来佐证这次回归的接收度",
+            "comment_highlights": [
+              "市场反应"
+            ]
+          },
+          {
+            "subtitle_index": 14,
+            "comment": "KC评论：主持人补了一句，市场确实在回应",
+            "comment_highlights": [
+              "确实在回应"
+            ]
+          }
+        ],
+        "formula_id": "名人回归+具体细节+情绪反转",
+        "angle_id": "surprise_reversal",
+        "emotion_pole": "意外",
+        "viewer_reaction": "居然是这样",
+        "evidence_basis": [
+          "黄仁勋感谢员工给他第二次机会",
+          "他没带电脑，IT部门得给他配一台",
+          "员工在中庭高喊Jensen，他把手放在心口上"
+        ],
+        "runner_up_titles": [
+          "黄仁勋回归首日：没带电脑，先向员工要第二次机会"
+        ],
+        "editor_scores": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 4
+        },
+        "quality_check": {
+          "has_recognizable_anchor": true,
+          "has_specific_fact": true,
+          "has_single_emotion_pole": true,
+          "has_novelty_or_surprise": true,
+          "has_curiosity_gap": true,
+          "is_factually_supported": true,
+          "passes_china_frame": true,
+          "passes_wording_guard": true
+        },
+        "title_quality_audit": {
+          "score": 100,
+          "pass": true,
+          "strengths": [
+            "has_authority_anchor",
+            "has_specific_fact",
+            "has_hook_tension",
+            "angle:surprise_reversal",
+            "emotion:意外",
+            "high_emotion_tension",
+            "has_novelty",
+            "has_curiosity_gap",
+            "factually_grounded"
+          ],
+          "fixes": [],
+          "semantic_thresholds": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 4
+          }
+        }
+      }
+    }
+  ]
+}
