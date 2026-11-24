@@ -1,0 +1,843 @@
+{
+  "timestamp_utc": "2026-11-24T16:24:45.995028+00:00",
+  "plan_path": "work/top-videos/09_what_senator_mccormick_wants_to_hear_from_jensen_huang/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 2,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "Senator McCormick",
+        "entity_type": "person",
+        "clip_indexes": [],
+        "canonical_en": "Dave McCormick",
+        "preferred_en": "Dave McCormick",
+        "official_zh": "戴夫·麦考密克",
+        "common_zh": "麦考密克",
+        "title_label": "麦考密克",
+        "preferred_zh": "麦考密克",
+        "aliases": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "公开检索片段未直接出现参议员 McCormick 的中文译名；仅确认参议院银行委员会听证会语境，译名需另行核实。"
+      },
+      {
+        "source_text": "Jensen Huang",
+        "entity_type": "person",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Jen-Hsun \"Jensen\" Huang",
+        "preferred_en": "Jen-Hsun \"Jensen\" Huang",
+        "official_zh": "黄仁勋",
+        "common_zh": "黄仁勋",
+        "title_label": "黄仁勋",
+        "preferred_zh": "黄仁勋",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://baike.baidu.com/item/黄仁勋/6343558",
+          "https://www.nvidia.cn/newsroom/bios/jensen-huang/"
+        ],
+        "evidence": "百度百科、英伟达官网中文页及多家中文媒体均以“黄仁勋”指称 Jensen Huang。"
+      },
+      {
+        "source_text": "Nvidia",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "NVIDIA Corporation",
+        "preferred_en": "NVIDIA Corporation",
+        "official_zh": "英伟达公司",
+        "common_zh": "英伟达",
+        "title_label": "英伟达",
+        "preferred_zh": "英伟达",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "英伟达官网中文站及多家中文媒体使用“英伟达”；台湾媒体亦用“辉达”，但简体财经媒体通用“英伟达”。"
+      },
+      {
+        "source_text": "Senate Banking Committee",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "United States Senate Committee on Banking, Housing, and Urban Affairs",
+        "preferred_en": "United States Senate Committee on Banking, Housing, and Urban Affairs",
+        "official_zh": "美国参议院银行、住房和城市事务委员会",
+        "common_zh": "参议院银行委员会",
+        "title_label": "参议院银行委员会",
+        "preferred_zh": "参议院银行委员会",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "多家中文媒体一致使用“参议院银行委员会”指称该机构。"
+      },
+      {
+        "source_text": "Department of Commerce",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "United States Department of Commerce",
+        "preferred_en": "United States Department of Commerce",
+        "official_zh": "美国商务部",
+        "common_zh": "美国商务部",
+        "title_label": "美国商务部",
+        "preferred_zh": "美国商务部",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "中文媒体在相关报道中以“美国商务部/商务部长卢特尼克”指称该机构。"
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "commerce rules",
+        "clip_indexes": [],
+        "context": "US export control policy on advanced chips",
+        "sense": "Department of Commerce export-control regulations",
+        "preferred_zh": "商务部出口管制规定",
+        "title_label": "出口管制",
+        "avoid_zh": [
+          "商业规则"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "remote access",
+        "clip_indexes": [],
+        "context": "chips reaching Chinese users via remote computing access",
+        "sense": "access to overseas data centers/compute remotely rather than physical export",
+        "preferred_zh": "远程访问",
+        "title_label": "远程访问",
+        "avoid_zh": [
+          "远程接入芯片"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "参议员麦考密克称黄仁勋相关指控“极其严重”，并要在银行委员会听证会上追问三件事：是否违法、国家安全是否因这段关系受损（对方是否中国间谍）、商务部规定是否被规避使最先进芯片经远程访问等途径流入中国。",
+        "public_baseline": "公开报道显示参议院银行委员会正就黄仁勋与一名被指中国间谍的女性关系及 Megaspeed 芯片转运风险安排听证；黄仁勋已同意出席，具体日期未定。",
+        "surprise_gap": "公开语境聚焦听证安排与国家安全审查，而本片段中参议员直接列出“是否违法/是否间谍/是否规避出口管制”三项质询，措辞比一般程序性报道更直接。",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor",
+          "concrete_stakes"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "参议员称指控极其严重，将追问是否违法、国家安全是否受损、商务部规定是否被规避。"
+          },
+          {
+            "kind": "public",
+            "query": "参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会",
+            "url": "https://www.swissinfo.ch/chi/%E7%BE%8E%E5%8F%82%E8%AE%AE%E5%91%98%E8%A6%81%E6%B1%82%E9%BB%84%E4%BB%81%E5%8B%8B%E5%87%BA%E5%B8%AD%E5%9B%BD%E4%BC%9A%E5%90%AC%E8%AF%81%E4%BC%9A/92375664",
+            "fact": "参议院银行委员会要求黄仁勋就疑似中国女间谍关系作证。"
+          },
+          {
+            "kind": "public",
+            "query": "参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会",
+            "url": "https://www.hkcna.hk/cn/content/s6af6deace4b04d9df119e39a.html",
+            "fact": "参议院银行委员会主席斯科特致信黄仁勋与商务部长卢特尼克要求作证；司法部尚未就间谍指控下结论。"
+          }
+        ],
+        "forbidden_claims": [
+          "不得称黄仁勋已被认定违法或已被证实为间谍",
+          "不得称麦考密克已确认黄仁勋有罪",
+          "不得称听证会已举行或已有结论",
+          "不得把参议员个人质询表述为委员会正式结论"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "确认参议员 McCormick 的中文译名（麦考密克）及参议院银行委员会听证会这一机构名称"
+      },
+      {
+        "query": "Senator Dave McCormick Senate Banking Committee Nvidia Jensen Huang hearing",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实 McCormick 全名、所属委员会（Banking Committee）与黄仁勋出席听证的事实"
+      },
+      {
+        "query": "Jensen Huang Chinese name 黄仁勋 Nvidia CEO",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "确认黄仁勋的标准中文名与英伟达公司中文名"
+      },
+      {
+        "query": "McCormick Nvidia hearing 'were any laws broken' national security Chinese spy",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实麦考密克在听证中提出的三项质询（是否违法、国家安全、是否中国间谍）的原话与立场"
+      },
+      {
+        "query": "Nvidia H20 chips China export controls Commerce Department rules circumvented",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实美国商务部出口管制规则及英伟达先进芯片对华出口受限的公开基线"
+      },
+      {
+        "query": "Nvidia China remote access advanced chips smuggling allegations 2025",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实是否存在关于通过远程访问或其他方式让中国获得先进芯片的公开指控"
+      },
+      {
+        "query": "黄仁勋 英伟达 中国 出口管制 听证 回应",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "查找黄仁勋或英伟达对出口管制与听证质询的公开回应，判断是否存在言行反差"
+      },
+      {
+        "query": "Nvidia statement export controls compliance China Commerce Department",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实英伟达官方关于遵守美国出口管制规则的公开声明"
+      },
+      {
+        "query": "McCormick Nvidia 'greatest most innovative companies' tragedy remarks",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实麦考密克称英伟达为史上最具创新公司之一并称事件为悲剧的原话"
+      },
+      {
+        "query": "英伟达 中国 特供芯片 H20 出口 禁令 2025 商务部",
+        "purpose": "china_comparison",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实英伟达为中国市场设计特供芯片及美方禁令的具体事实，支撑芯片出口对比"
+      },
+      {
+        "query": "Senate Banking Committee jurisdiction Nvidia hearing national security chips",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "核实参议院银行委员会对国家安全与出口管制议题的管辖范围，确认听证背景"
+      },
+      {
+        "query": "黄仁勋 麦考密克 参议员 质询 芯片 安全 中文报道",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "通过中文报道交叉核实人名、机构名与质询内容的准确中文表述"
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "黄仁勋被三问：是否违法？是否间谍？，芯片管制被绕过？",
+      "title_lines": [
+        "黄仁勋被三问",
+        "是否违法？是否间谍？",
+        "芯片管制被绕过？"
+      ],
+      "formula_id": "authority-three-questions",
+      "angle_id": "authority_breaks_consensus",
+      "emotion_pole": "强疑惑",
+      "viewer_reaction": "他说的是真的吗",
+      "evidence_basis": [
+        "参议员称将追问是否违法、国家安全是否受损、商务部规定是否被规避。",
+        "参议员称要追问与这名女子的关系是否危及国家安全，她实际上是否是中国间谍。",
+        "参议员称要追问商务部规定是否被规避，使最先进芯片经远程访问或其他方式落入中国手中。",
+        "公开报道显示参议院银行委员会要求黄仁勋作证，司法部尚未就间谍指控下结论。"
+      ],
+      "runner_up_titles": [
+        "最先进芯片流向中国？",
+        "黄仁勋被问是否中国间谍"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 7,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 6
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:authority_breaks_consensus",
+          "emotion:强疑惑",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 7,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 6
+        }
+      },
+      "comment": "KC评论：听证会尚未举行，三项质询已把芯片管制推到台前"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-11-24T16:24:44.596735+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 87.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang",
+          "source_title": "Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang",
+          "show_date": "",
+          "current_title": "美参议员质询英伟达CEO 关注芯片出口与安全",
+          "current_title_lines": [
+            "美参议员质询英伟达CEO",
+            "芯片出口与安全议题",
+            "三项关键问题待回应"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "总统似乎在上周末向董事会提供了某种保证。",
+              "en": "The president appears to have given some form of guarantee to the board over the weekend.",
+              "relative_start": 0.0,
+              "relative_end": 4.4
+            },
+            {
+              "index": 2,
+              "zh": "这个案子结了吗？远未结束。",
+              "en": "Is this case closed? Well, by no means is it closed.",
+              "relative_start": 4.4,
+              "relative_end": 9.5
+            },
+            {
+              "index": 3,
+              "zh": "我的意思是，首先不得不说，这真是一场悲剧。我们曾拥有世界上历史上最伟大、最具创新性的公司之一。",
+              "en": "I mean, let me start by saying, really, what a tragedy. We had one of the greatest, most innovative companies in the history of the world.",
+              "relative_start": 9.5,
+              "relative_end": 16.4
+            },
+            {
+              "index": 4,
+              "zh": "Jensen是一位极其成功的企业家，但这些指控和罪名极其严重。",
+              "en": "Jensen has been an incredibly successful entrepreneur, but these allegations and charges are incredibly serious.",
+              "relative_start": 16.4,
+              "relative_end": 24.1
+            },
+            {
+              "index": 5,
+              "zh": "无论Jensen是否担任CEO，我都有同样的疑问。",
+              "en": "And I have the same questions whether Jensen is the CEO or not the CEO.",
+              "relative_start": 24.1,
+              "relative_end": 29.6
+            },
+            {
+              "index": 6,
+              "zh": "当他来到银行委员会时，我想知道三件事。",
+              "en": "And when he comes before the bank committee, there's three things that I want to know.",
+              "relative_start": 29.6,
+              "relative_end": 33.8
+            },
+            {
+              "index": 7,
+              "zh": "第一，是否违反了任何法律？",
+              "en": "Number one, were any laws broken?",
+              "relative_start": 33.8,
+              "relative_end": 36.9
+            },
+            {
+              "index": 8,
+              "zh": "第二，与这名女子的关系是否危及了国家安全？",
+              "en": "Number two was national security compromised by this relationship with this woman.",
+              "relative_start": 36.9,
+              "relative_end": 43.2
+            },
+            {
+              "index": 9,
+              "zh": "她实际上是中国间谍吗？第三，是否绕过了商务部规则，通过这些",
+              "en": "Was she, in fact, a Chinese spy? And third, were the commerce rules, the Department of Commerce rules, circumvented to get these",
+              "relative_start": 43.2,
+              "relative_end": 51.6
+            },
+            {
+              "index": 10,
+              "zh": "最先进的芯片通过远程访问或其他方式落入中国手中。",
+              "en": "most advanced chips in the hands of the Chinese through remote access or through other means.",
+              "relative_start": 51.6,
+              "relative_end": 58.6
+            },
+            {
+              "index": 11,
+              "zh": "这些对我们国家安全是真正严峻的问题。与中国的AI竞赛我们必须赢，而赢的一部分就是确保",
+              "en": "And those are really serious questions to our national security. This AI race with China is one we need to win, and part of winning is making sure that",
+              "relative_start": 58.6,
+              "relative_end": 67.5
+            },
+            {
+              "index": 12,
+              "zh": "这些最先进的芯片，是美国的真正优势，不能落入中国人手中。",
+              "en": "these most advanced chips, which is a real advantage for America, aren't in the hands of the Chinese.",
+              "relative_start": 67.5,
+              "relative_end": 72.0
+            },
+            {
+              "index": 13,
+              "zh": "我还要说一点，这也绝对印证了我和参议院其他一些成员一直在说的，我们需要更多立法来限制",
+              "en": "I'll say one more word, which is this also absolutely reinforces what I and a number of other members of the Senate have been saying, which is we need more legislation to restrict",
+              "relative_start": 72.0,
+              "relative_end": 85.0
+            },
+            {
+              "index": 14,
+              "zh": "这些最先进芯片的出口。",
+              "en": "the export of these most advanced chips.",
+              "relative_start": 85.0,
+              "relative_end": 87.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang\",\n    \"source_title\": \"Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang\",\n    \"show_date\": \"\",\n    \"current_title\": \"美参议员质询英伟达CEO 关注芯片出口与安全\",\n    \"current_title_lines\": [\n      \"美参议员质询英伟达CEO\",\n      \"芯片出口与安全议题\",\n      \"三项关键问题待回应\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"总统似乎在上周末向董事会提供了某种保证。\",\n        \"en\": \"The president appears to have given some form of guarantee to the board over the weekend.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个案子结了吗？远未结束。\",\n        \"en\": \"Is this case closed? Well, by no means is it closed.\",\n        \"relative_start\": 4.4,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我的意思是，首先不得不说，这真是一场悲剧。我们曾拥有世界上历史上最伟大、最具创新性的公司之一。\",\n        \"en\": \"I mean, let me start by saying, really, what a tragedy. We had one of the greatest, most innovative companies in the history of the world.\",\n        \"relative_start\": 9.5,\n        \"relative_end\": 16.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"Jensen是一位极其成功的企业家，但这些指控和罪名极其严重。\",\n        \"en\": \"Jensen has been an incredibly successful entrepreneur, but these allegations and charges are incredibly serious.\",\n        \"relative_start\": 16.4,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"无论Jensen是否担任CEO，我都有同样的疑问。\",\n        \"en\": \"And I have the same questions whether Jensen is the CEO or not the CEO.\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 29.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"当他来到银行委员会时，我想知道三件事。\",\n        \"en\": \"And when he comes before the bank committee, there's three things that I want to know.\",\n        \"relative_start\": 29.6,\n        \"relative_end\": 33.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"第一，是否违反了任何法律？\",\n        \"en\": \"Number one, were any laws broken?\",\n        \"relative_start\": 33.8,\n        \"relative_end\": 36.9\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"第二，与这名女子的关系是否危及了国家安全？\",\n        \"en\": \"Number two was national security compromised by this relationship with this woman.\",\n        \"relative_start\": 36.9,\n        \"relative_end\": 43.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"她实际上是中国间谍吗？第三，是否绕过了商务部规则，通过这些\",\n        \"en\": \"Was she, in fact, a Chinese spy? And third, were the commerce rules, the Department of Commerce rules, circumvented to get these\",\n        \"relative_start\": 43.2,\n        \"relative_end\": 51.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"最先进的芯片通过远程访问或其他方式落入中国手中。\",\n        \"en\": \"most advanced chips in the hands of the Chinese through remote access or through other means.\",\n        \"relative_start\": 51.6,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这些对我们国家安全是真正严峻的问题。与中国的AI竞赛我们必须赢，而赢的一部分就是确保\",\n        \"en\": \"And those are really serious questions to our national security. This AI race with China is one we need to win, and part of winning is making sure that\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 67.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这些最先进的芯片，是美国的真正优势，不能落入中国人手中。\",\n        \"en\": \"these most advanced chips, which is a real advantage for America, aren't in the hands of the Chinese.\",\n        \"relative_start\": 67.5,\n        \"relative_end\": 72.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我还要说一点，这也绝对印证了我和参议院其他一些成员一直在说的，我们需要更多立法来限制\",\n        \"en\": \"I'll say one more word, which is this also absolutely reinforces what I and a number of other members of the Senate have been saying, which is we need more legislation to restrict\",\n        \"relative_start\": 72.0,\n        \"relative_end\": 85.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"这些最先进芯片的出口。\",\n        \"en\": \"the export of these most advanced chips.\",\n        \"relative_start\": 85.0,\n        \"relative_end\": 87.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Jensen Huang\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Jen-Hsun \\\"Jensen\\\" Huang\",\n      \"preferred_en\": \"Jen-Hsun \\\"Jensen\\\" Huang\",\n      \"official_zh\": \"黄仁勋\",\n      \"common_zh\": \"黄仁勋\",\n      \"title_label\": \"黄仁勋\",\n      \"preferred_zh\": \"黄仁勋\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/黄仁勋/6343558\",\n        \"https://www.nvidia.cn/newsroom/bios/jensen-huang/\"\n      ],\n      \"evidence\": \"百度百科、英伟达官网中文页及多家中文媒体均以“黄仁勋”指称 Jensen Huang。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"参议员麦考密克称黄仁勋相关指控“极其严重”，并要在银行委员会听证会上追问三件事：是否违法、国家安全是否因这段关系受损（对方是否中国间谍）、商务部规定是否被规避使最先进芯片经远程访问等途径流入中国。\",\n      \"public_baseline\": \"公开报道显示参议院银行委员会正就黄仁勋与一名被指中国间谍的女性关系及 Megaspeed 芯片转运风险安排听证；黄仁勋已同意出席，具体日期未定。\",\n      \"surprise_gap\": \"公开语境聚焦听证安排与国家安全审查，而本片段中参议员直接列出“是否违法/是否间谍/是否规避出口管制”三项质询，措辞比一般程序性报道更直接。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"参议员称指控极其严重，将追问是否违法、国家安全是否受损、商务部规定是否被规避。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会\",\n          \"url\": \"https://www.swissinfo.ch/chi/%E7%BE%8E%E5%8F%82%E8%AE%AE%E5%91%98%E8%A6%81%E6%B1%82%E9%BB%84%E4%BB%81%E5%8B%8B%E5%87%BA%E5%B8%AD%E5%9B%BD%E4%BC%9A%E5%90%AC%E8%AF%81%E4%BC%9A/92375664\",\n          \"fact\": \"参议院银行委员会要求黄仁勋就疑似中国女间谍关系作证。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会\",\n          \"url\": \"https://www.hkcna.hk/cn/content/s6af6deace4b04d9df119e39a.html\",\n          \"fact\": \"参议院银行委员会主席斯科特致信黄仁勋与商务部长卢特尼克要求作证；司法部尚未就间谍指控下结论。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称黄仁勋已被认定违法或已被证实为间谍\",\n        \"不得称麦考密克已确认黄仁勋有罪\",\n        \"不得称听证会已举行或已有结论\",\n        \"不得把参议员个人质询表述为委员会正式结论\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "参议员麦考密克称黄仁勋相关指控极其严重，将在银行委员会听证会上追问三件事：是否违法、国家安全是否因这段关系受损（对方是否中国间谍）、商务部规定是否被规避使最先进芯片经远程访问等途径流入中国。",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "美参议员三问黄仁勋",
+                "title_lines": [
+                  "黄仁勋被三问",
+                  "是否违法？是否间谍？",
+                  "芯片管制被绕过？"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "参议员称将追问是否违法、国家安全是否受损、商务部规定是否被规避。",
+                  "公开报道显示参议院银行委员会要求黄仁勋作证。"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "最先进芯片流向中国？",
+                "title_lines": [
+                  "最先进芯片",
+                  "被指经远程访问流入中国",
+                  "参议员要黄仁勋说清楚"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "参议员称要追问商务部规定是否被规避，使最先进芯片经远程访问或其他方式落入中国手中。",
+                  "参议员称这些芯片是美国的真正优势，不能落入中国人手中。"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 7
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "美参议员直指黄仁勋",
+                "title_lines": [
+                  "美参议员直指黄仁勋",
+                  "指控极其严重",
+                  "三问待回应"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "参议员称这些指控和罪名极其严重。",
+                  "参议员称无论黄仁勋是否担任CEO，他都有同样的疑问。"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 5
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "反差质疑",
+                "viewer_reaction": "居然是这样",
+                "title": "黄仁勋被问是否中国间谍",
+                "title_lines": [
+                  "黄仁勋被问",
+                  "对方是否中国间谍",
+                  "国家安全受威胁？"
+                ],
+                "factual_mode": "question",
+                "evidence_basis": [
+                  "参议员称要追问与这名女子的关系是否危及国家安全，她实际上是否是中国间谍。",
+                  "参议员称这些对国家安全是真正严峻的问题。"
+                ],
+                "scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 6
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 87.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang\",\n    \"source_title\": \"Duration: 8:06 What Senator McCormick Wants to Hear From Nvidia CEO Jensen Huang\",\n    \"show_date\": \"\",\n    \"current_title\": \"美参议员质询英伟达CEO 关注芯片出口与安全\",\n    \"current_title_lines\": [\n      \"美参议员质询英伟达CEO\",\n      \"芯片出口与安全议题\",\n      \"三项关键问题待回应\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"总统似乎在上周末向董事会提供了某种保证。\",\n        \"en\": \"The president appears to have given some form of guarantee to the board over the weekend.\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 4.4\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"这个案子结了吗？远未结束。\",\n        \"en\": \"Is this case closed? Well, by no means is it closed.\",\n        \"relative_start\": 4.4,\n        \"relative_end\": 9.5\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我的意思是，首先不得不说，这真是一场悲剧。我们曾拥有世界上历史上最伟大、最具创新性的公司之一。\",\n        \"en\": \"I mean, let me start by saying, really, what a tragedy. We had one of the greatest, most innovative companies in the history of the world.\",\n        \"relative_start\": 9.5,\n        \"relative_end\": 16.4\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"Jensen是一位极其成功的企业家，但这些指控和罪名极其严重。\",\n        \"en\": \"Jensen has been an incredibly successful entrepreneur, but these allegations and charges are incredibly serious.\",\n        \"relative_start\": 16.4,\n        \"relative_end\": 24.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"无论Jensen是否担任CEO，我都有同样的疑问。\",\n        \"en\": \"And I have the same questions whether Jensen is the CEO or not the CEO.\",\n        \"relative_start\": 24.1,\n        \"relative_end\": 29.6\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"当他来到银行委员会时，我想知道三件事。\",\n        \"en\": \"And when he comes before the bank committee, there's three things that I want to know.\",\n        \"relative_start\": 29.6,\n        \"relative_end\": 33.8\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"第一，是否违反了任何法律？\",\n        \"en\": \"Number one, were any laws broken?\",\n        \"relative_start\": 33.8,\n        \"relative_end\": 36.9\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"第二，与这名女子的关系是否危及了国家安全？\",\n        \"en\": \"Number two was national security compromised by this relationship with this woman.\",\n        \"relative_start\": 36.9,\n        \"relative_end\": 43.2\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"她实际上是中国间谍吗？第三，是否绕过了商务部规则，通过这些\",\n        \"en\": \"Was she, in fact, a Chinese spy? And third, were the commerce rules, the Department of Commerce rules, circumvented to get these\",\n        \"relative_start\": 43.2,\n        \"relative_end\": 51.6\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"最先进的芯片通过远程访问或其他方式落入中国手中。\",\n        \"en\": \"most advanced chips in the hands of the Chinese through remote access or through other means.\",\n        \"relative_start\": 51.6,\n        \"relative_end\": 58.6\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"这些对我们国家安全是真正严峻的问题。与中国的AI竞赛我们必须赢，而赢的一部分就是确保\",\n        \"en\": \"And those are really serious questions to our national security. This AI race with China is one we need to win, and part of winning is making sure that\",\n        \"relative_start\": 58.6,\n        \"relative_end\": 67.5\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"这些最先进的芯片，是美国的真正优势，不能落入中国人手中。\",\n        \"en\": \"these most advanced chips, which is a real advantage for America, aren't in the hands of the Chinese.\",\n        \"relative_start\": 67.5,\n        \"relative_end\": 72.0\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"我还要说一点，这也绝对印证了我和参议院其他一些成员一直在说的，我们需要更多立法来限制\",\n        \"en\": \"I'll say one more word, which is this also absolutely reinforces what I and a number of other members of the Senate have been saying, which is we need more legislation to restrict\",\n        \"relative_start\": 72.0,\n        \"relative_end\": 85.0\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"这些最先进芯片的出口。\",\n        \"en\": \"the export of these most advanced chips.\",\n        \"relative_start\": 85.0,\n        \"relative_end\": 87.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"Jensen Huang\",\n      \"entity_type\": \"person\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Jen-Hsun \\\"Jensen\\\" Huang\",\n      \"preferred_en\": \"Jen-Hsun \\\"Jensen\\\" Huang\",\n      \"official_zh\": \"黄仁勋\",\n      \"common_zh\": \"黄仁勋\",\n      \"title_label\": \"黄仁勋\",\n      \"preferred_zh\": \"黄仁勋\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://baike.baidu.com/item/黄仁勋/6343558\",\n        \"https://www.nvidia.cn/newsroom/bios/jensen-huang/\"\n      ],\n      \"evidence\": \"百度百科、英伟达官网中文页及多家中文媒体均以“黄仁勋”指称 Jensen Huang。\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"参议员麦考密克称黄仁勋相关指控“极其严重”，并要在银行委员会听证会上追问三件事：是否违法、国家安全是否因这段关系受损（对方是否中国间谍）、商务部规定是否被规避使最先进芯片经远程访问等途径流入中国。\",\n      \"public_baseline\": \"公开报道显示参议院银行委员会正就黄仁勋与一名被指中国间谍的女性关系及 Megaspeed 芯片转运风险安排听证；黄仁勋已同意出席，具体日期未定。\",\n      \"surprise_gap\": \"公开语境聚焦听证安排与国家安全审查，而本片段中参议员直接列出“是否违法/是否间谍/是否规避出口管制”三项质询，措辞比一般程序性报道更直接。\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"concrete_stakes\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"参议员称指控极其严重，将追问是否违法、国家安全是否受损、商务部规定是否被规避。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会\",\n          \"url\": \"https://www.swissinfo.ch/chi/%E7%BE%8E%E5%8F%82%E8%AE%AE%E5%91%98%E8%A6%81%E6%B1%82%E9%BB%84%E4%BB%81%E5%8B%8B%E5%87%BA%E5%B8%AD%E5%9B%BD%E4%BC%9A%E5%90%AC%E8%AF%81%E4%BC%9A/92375664\",\n          \"fact\": \"参议院银行委员会要求黄仁勋就疑似中国女间谍关系作证。\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"参议员麦考密克 英伟达 黄仁勋 银行委员会 听证会\",\n          \"url\": \"https://www.hkcna.hk/cn/content/s6af6deace4b04d9df119e39a.html\",\n          \"fact\": \"参议院银行委员会主席斯科特致信黄仁勋与商务部长卢特尼克要求作证；司法部尚未就间谍指控下结论。\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"不得称黄仁勋已被认定违法或已被证实为间谍\",\n        \"不得称麦考密克已确认黄仁勋有罪\",\n        \"不得称听证会已举行或已有结论\",\n        \"不得把参议员个人质询表述为委员会正式结论\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"参议员麦考密克称黄仁勋相关指控极其严重，将在银行委员会听证会上追问三件事：是否违法、国家安全是否因这段关系受损（对方是否中国间谍）、商务部规定是否被规避使最先进芯片经远程访问等途径流入中国。\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"美参议员三问黄仁勋\",\n          \"title_lines\": [\n            \"黄仁勋被三问\",\n            \"是否违法？是否间谍？\",\n            \"芯片管制被绕过？\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"参议员称将追问是否违法、国家安全是否受损、商务部规定是否被规避。\",\n            \"公开报道显示参议院银行委员会要求黄仁勋作证。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"最先进芯片流向中国？\",\n          \"title_lines\": [\n            \"最先进芯片\",\n            \"被指经远程访问流入中国\",\n            \"参议员要黄仁勋说清楚\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"参议员称要追问商务部规定是否被规避，使最先进芯片经远程访问或其他方式落入中国手中。\",\n            \"参议员称这些芯片是美国的真正优势，不能落入中国人手中。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 7\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"美参议员直指黄仁勋\",\n          \"title_lines\": [\n            \"美参议员直指黄仁勋\",\n            \"指控极其严重\",\n            \"三问待回应\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"参议员称这些指控和罪名极其严重。\",\n            \"参议员称无论黄仁勋是否担任CEO，他都有同样的疑问。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 5\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"反差质疑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"黄仁勋被问是否中国间谍\",\n          \"title_lines\": [\n            \"黄仁勋被问\",\n            \"对方是否中国间谍\",\n            \"国家安全受威胁？\"\n          ],\n          \"factual_mode\": \"question\",\n          \"evidence_basis\": [\n            \"参议员称要追问与这名女子的关系是否危及国家安全，她实际上是否是中国间谍。\",\n            \"参议员称这些对国家安全是真正严峻的问题。\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 9,\n            \"novelty\": 8,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 6\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority-three-questions",
+            "angle_id": "authority_breaks_consensus",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "他说的是真的吗",
+            "evidence_basis": [
+              "参议员称将追问是否违法、国家安全是否受损、商务部规定是否被规避。",
+              "参议员称要追问与这名女子的关系是否危及国家安全，她实际上是否是中国间谍。",
+              "参议员称要追问商务部规定是否被规避，使最先进芯片经远程访问或其他方式落入中国手中。",
+              "公开报道显示参议院银行委员会要求黄仁勋作证，司法部尚未就间谍指控下结论。"
+            ],
+            "title": "美参议员三问黄仁勋",
+            "title_lines": [
+              "黄仁勋被三问",
+              "是否违法？是否间谍？",
+              "芯片管制被绕过？"
+            ],
+            "title_highlights": [
+              "黄仁勋被三问",
+              "芯片管制被绕过"
+            ],
+            "runner_up_titles": [
+              "最先进芯片流向中国？",
+              "黄仁勋被问是否中国间谍"
+            ],
+            "editor_scores": {
+              "emotion_tension": 9,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 6
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：听证会尚未举行，三项质询已把芯片管制推到台前。",
+            "comment_highlights": [
+              "三项质询"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：总统层面的保证先出现，说明事件已非普通商业纠纷。",
+                "comment_highlights": [
+                  "总统层面的保证"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：参议员明确说案子远未结束，后续听证才是焦点。",
+                "comment_highlights": [
+                  "远未结束"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：先肯定公司历史地位，再谈指控，语气反差明显。",
+                "comment_highlights": [
+                  "语气反差"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：企业家成功与指控严重被并列，质询基调由此定下。",
+                "comment_highlights": [
+                  "质询基调"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：无论是否担任CEO都要问，指向制度层面的审查。",
+                "comment_highlights": [
+                  "制度层面的审查"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：三件事提前亮出，听证会尚未举行已有清晰清单。",
+                "comment_highlights": [
+                  "清晰清单"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：第一问直指是否违法，属于法律层面的核心质询。",
+                "comment_highlights": [
+                  "法律层面"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：第二问把私人关系与国家安全挂钩，敏感度陡升。",
+                "comment_highlights": [
+                  "国家安全挂钩"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：间谍疑问与商务部规则并列，质询范围进一步扩大。",
+                "comment_highlights": [
+                  "质询范围"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：远程访问成为芯片流向的疑点，技术细节被摆上台面。",
+                "comment_highlights": [
+                  "远程访问"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：参议员把AI竞赛与国家安全绑定，质询逻辑更完整。",
+                "comment_highlights": [
+                  "AI竞赛"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：最先进芯片被定义为美国优势，出口限制主张随之强化。",
+                "comment_highlights": [
+                  "美国优势"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：参议员借事件推动更多立法，政策信号值得关注。",
+                "comment_highlights": [
+                  "更多立法"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：出口限制主张落到具体芯片，后续立法动向是观察点。",
+                "comment_highlights": [
+                  "出口限制主张"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "黄仁勋被三问：是否违法？是否间谍？，芯片管制被绕过？",
+          "title_lines": [
+            "黄仁勋被三问",
+            "是否违法？是否间谍？",
+            "芯片管制被绕过？"
+          ],
+          "formula_id": "authority-three-questions",
+          "angle_id": "authority_breaks_consensus",
+          "emotion_pole": "强疑惑",
+          "viewer_reaction": "他说的是真的吗",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 7,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 6
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:authority_breaks_consensus",
+              "emotion:强疑惑",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 6
+            }
+          },
+          "comment": "KC评论：听证会尚未举行，三项质询已把芯片管制推到台前"
+        }
+      }
+    }
+  ]
+}

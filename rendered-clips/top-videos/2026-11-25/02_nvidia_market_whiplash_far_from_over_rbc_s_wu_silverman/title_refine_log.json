@@ -1,0 +1,1051 @@
+{
+  "timestamp_utc": "2026-11-24T16:16:03.777818+00:00",
+  "plan_path": "work/top-videos/02_nvidia_market_whiplash_far_from_over_rbc_s_wu_silverman/highlight_plan.json",
+  "style": "factual clickbait for China finance audience",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "research_version": "tavily-entity-facts-v4",
+  "data_driven_lessons": {
+    "source": "KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis",
+    "winning_patterns": [
+      "机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗",
+      "大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角",
+      "具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗",
+      "反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费",
+      "中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架",
+      "外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里",
+      "让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里",
+      "大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑",
+      "涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突"
+    ],
+    "avoid_patterns": [
+      "过长的新闻句，尤其是 24 字以上还塞多个从句",
+      "只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力",
+      "美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱",
+      "纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突",
+      "经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词",
+      "把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现",
+      "陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听",
+      "把 Bloomberg LP 等来源或公司法律后缀误当成采访对象",
+      "没有公开证据却暗示嘉宾撒谎、操纵或言行不一"
+    ]
+  },
+  "quality_min_score": 78,
+  "public_lookup_count": 3,
+  "entity_translation_guide": {
+    "research_version": "tavily-entity-facts-v4",
+    "entities": [
+      {
+        "source_text": "RBC",
+        "entity_type": "organization",
+        "clip_indexes": [
+          1
+        ],
+        "canonical_en": "Royal Bank of Canada (RBC Capital Markets)",
+        "preferred_en": "Royal Bank of Canada (RBC Capital Markets)",
+        "official_zh": "加拿大皇家银行",
+        "common_zh": "加拿大皇家银行",
+        "title_label": "RBC",
+        "preferred_zh": "加拿大皇家银行",
+        "aliases": [],
+        "confidence": "high",
+        "verified_source_count": 2,
+        "evidence_urls": [
+          "https://zh.wikipedia.org/zh-cn/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C",
+          "https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C",
+          "https://wiki.mbalib.com/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%93%B6%E8%A1%8C"
+        ],
+        "evidence": "Wikipedia and MBA智库百科 both give 加拿大皇家银行 for Royal Bank of Canada; Wikipedia notes RBC Capital Markets as its investment-banking arm. RBC is the established short form used in Chinese financial media."
+      },
+      {
+        "source_text": "RBC Capital Markets",
+        "entity_type": "organization",
+        "clip_indexes": [],
+        "canonical_en": "RBC Capital Markets",
+        "preferred_en": "RBC Capital Markets",
+        "official_zh": "RBC资本市场",
+        "common_zh": "RBC资本市场",
+        "title_label": "RBC",
+        "preferred_zh": "RBC资本市场",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "Wikipedia lists the investment-banking unit as RBC资本市场; Tavily company profile confirms RBC Capital Markets is part of Royal Bank of Canada. Title label kept as RBC since the clip's speaker is RBC's markets strategist."
+      },
+      {
+        "source_text": "VIX",
+        "entity_type": "other",
+        "clip_indexes": [],
+        "canonical_en": "CBOE Volatility Index",
+        "preferred_en": "CBOE Volatility Index",
+        "official_zh": "芝加哥期权交易所波动率指数",
+        "common_zh": "VIX恐慌指数",
+        "title_label": "VIX",
+        "preferred_zh": "VIX恐慌指数",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No public snippet in this batch directly defines VIX; label kept in English as the standard market shorthand. Chinese media commonly use VIX or VIX恐慌指数."
+      },
+      {
+        "source_text": "Nvidia",
+        "entity_type": "company",
+        "clip_indexes": [],
+        "canonical_en": "Nvidia Corporation",
+        "preferred_en": "Nvidia Corporation",
+        "official_zh": "英伟达",
+        "common_zh": "英伟达",
+        "title_label": "英伟达",
+        "preferred_zh": "英伟达",
+        "aliases": [],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": [],
+        "evidence": "No Chinese-language snippet in this batch confirms the display form; 英伟达 is the widely used Chinese media name but not directly evidenced here, so confidence is medium."
+      }
+    ],
+    "terms": [
+      {
+        "source_term": "whiplash",
+        "clip_indexes": [],
+        "context": "market volatility commentary",
+        "sense": "sharp back-and-forth market swings",
+        "preferred_zh": "剧烈震荡",
+        "title_label": "市场剧烈震荡",
+        "avoid_zh": [
+          "鞭打"
+        ],
+        "confidence": "medium",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "clearing event",
+        "clip_indexes": [],
+        "context": "market strategy",
+        "sense": "an event that resolves uncertainty and clears the market",
+        "preferred_zh": "出清事件",
+        "title_label": "出清事件",
+        "avoid_zh": [
+          "清算事件"
+        ],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      },
+      {
+        "source_term": "psychological level of 20",
+        "clip_indexes": [],
+        "context": "VIX threshold",
+        "sense": "VIX level of 20 treated as a sentiment marker",
+        "preferred_zh": "20点心理关口",
+        "title_label": "20点心理关口",
+        "avoid_zh": [],
+        "confidence": "low",
+        "verified_source_count": 0,
+        "evidence_urls": []
+      }
+    ],
+    "clip_research": [
+      {
+        "index": 1,
+        "source_claim": "RBC says the market whiplash is far from over, VIX remains inflated above the psychological 20 level, and this is not a clearing event; Nvidia congressional testimony in early December is a key upcoming catalyst.",
+        "public_baseline": "RBC GAM and RBC Wealth Management 2024 outlooks describe restored positive real yields and attractive sovereign-bond value, i.e., a constructive rather than alarmist framing.",
+        "surprise_gap": "The on-air stance emphasizes unresolved volatility and rejects the 'clearing event' framing, which is more cautious than RBC's published 2024 outlook tone.",
+        "speaker_relation": "foreign_institution",
+        "supported_angles": [
+          "outsider_candor",
+          "authority_breaks_consensus"
+        ],
+        "words_vs_actions": {
+          "supported": false,
+          "spoken_position": "",
+          "public_action": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "position_change": {
+          "supported": false,
+          "prior_position": "",
+          "current_position": "",
+          "independent_source_count": 0,
+          "evidence": []
+        },
+        "china_advantage": {
+          "supported": false,
+          "comparison": "",
+          "evidence": []
+        },
+        "evidence": [
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "VIX still 'pretty inflated' at 26-27 handle, above psychological 20."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Speaker says this is not a clearing event; news flow far from over."
+          },
+          {
+            "kind": "transcript",
+            "query": "",
+            "url": "",
+            "fact": "Early December congressional testimony from Nvidia cited as upcoming catalyst."
+          },
+          {
+            "kind": "public",
+            "query": "Nvidia congressional testimony December 2024",
+            "url": "https://thehill.com/homenews/senate/6238064-nvidia-ceo-ai-hearing-december/",
+            "fact": "Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3."
+          },
+          {
+            "kind": "public",
+            "query": "Nvidia congressional testimony December 2024",
+            "url": "https://www.engadget.com/2325655/nvidia-jensen-huang-will-testify-publlicly-before-senators-on-december-3/",
+            "fact": "Jensen Huang to testify publicly before senators on December 3."
+          },
+          {
+            "kind": "public",
+            "query": "RBC 市场波动 尚未结束 2024 展望",
+            "url": "https://www.rbcgam.com/documents/en/articles/market-outlook-summer-2024.pdf",
+            "fact": "RBC GAM Summer 2024 outlook sees attractive sovereign-bond value with yields near two-decade highs."
+          }
+        ],
+        "forbidden_claims": [
+          "RBC predicted a market crash",
+          "RBC changed its official outlook to bearish",
+          "Nvidia testimony was cancelled or confirmed to be about specific allegations",
+          "VIX was at 20 exactly"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "notes": [],
+    "research_queries": [
+      {
+        "query": "RBC Capital Markets 加拿大皇家银行 中文名称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the established Chinese name for RBC (Royal Bank of Canada) and its capital markets arm."
+      },
+      {
+        "query": "David RBC Capital Markets equity strategist VIX 2024",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Identify the RBC strategist named David speaking about VIX and market whiplash."
+      },
+      {
+        "query": "VIX index level November 2024 26 27 above 20",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Check whether VIX was in the 26-27 range and above the 20 psychological level at the time, establishing the factual baseline."
+      },
+      {
+        "query": "Nvidia congressional testimony December 2024",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the claim that Nvidia was scheduled for congressional testimony in early December."
+      },
+      {
+        "query": "RBC 市场波动 尚未结束 2024 展望",
+        "purpose": "speaker_stance",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Find RBC's published market outlook to confirm the 'whiplash far from over' stance and whether it matches public positioning."
+      },
+      {
+        "query": "RBC Capital Markets 2024 market outlook VIX volatility forecast",
+        "purpose": "public_position",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Locate RBC's official outlook statements on volatility to compare with the on-air claim."
+      },
+      {
+        "query": "Nvidia 英伟达 国会 听证 2024年12月",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the Chinese name for Nvidia and the specific congressional testimony event referenced."
+      },
+      {
+        "query": "VIX 恐慌指数 20 心理关口 历史均值",
+        "purpose": "consensus",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Establish the public baseline that VIX 20 is treated as a psychological threshold and historical context."
+      },
+      {
+        "query": "Bloomberg Over established Chinese name title official",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the person's commonly used Chinese name and institution."
+      },
+      {
+        "query": "Bloomberg established Chinese name financial media",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify whether a reliable common Chinese display name exists."
+      },
+      {
+        "query": "Over 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      },
+      {
+        "query": "RBC 官方中文名 常用简称",
+        "purpose": "entity_name",
+        "clip_indexes": [
+          1
+        ],
+        "why": "Verify the canonical and commonly displayed Chinese name."
+      }
+    ],
+    "search_usage": {
+      "tavily_queries": 1,
+      "tavily_credits": 1,
+      "fallback_queries": 11,
+      "tavily_budget": 1
+    }
+  },
+  "refined_titles": {
+    "1": {
+      "title": "以为波动结束了？：VIX还在26-27，12月英伟达证词在前",
+      "title_lines": [
+        "以为波动结束了？",
+        "VIX还在26-27",
+        "12月英伟达证词在前"
+      ],
+      "formula_id": "authority_number_tension",
+      "angle_id": "surprise_reversal",
+      "emotion_pole": "意外",
+      "viewer_reaction": "居然还没回到20关口，12月还有英伟达证词要盯",
+      "evidence_basis": [
+        "transcript: VIX had a sharp wall to the shock and has come in, it's still pretty inflated",
+        "transcript: 26, 27 handle is substantially above psychological level of 20",
+        "transcript: this is not a clearing event; news flow far from over",
+        "transcript: early December Nvidia congressional testimony cited as upcoming catalyst",
+        "research: Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3"
+      ],
+      "runner_up_titles": [
+        "别急着问出清 RBC直接说不是 波动还要继续扛",
+        "VIX回落了 但26-27仍偏高 20关口没回去"
+      ],
+      "editor_scores": {
+        "emotion_tension": 9,
+        "novelty": 8,
+        "specificity": 9,
+        "curiosity_gap": 8,
+        "factual_fidelity": 9,
+        "china_resonance": 3
+      },
+      "quality_check": {
+        "has_recognizable_anchor": true,
+        "has_specific_fact": true,
+        "has_single_emotion_pole": true,
+        "has_novelty_or_surprise": true,
+        "has_curiosity_gap": true,
+        "is_factually_supported": true,
+        "passes_china_frame": true,
+        "passes_wording_guard": true
+      },
+      "title_quality_audit": {
+        "score": 100,
+        "pass": true,
+        "strengths": [
+          "has_authority_anchor",
+          "has_specific_fact",
+          "has_hook_tension",
+          "angle:surprise_reversal",
+          "emotion:意外",
+          "high_emotion_tension",
+          "has_novelty",
+          "has_curiosity_gap",
+          "factually_grounded"
+        ],
+        "fixes": [],
+        "semantic_thresholds": {
+          "emotion_tension": 9,
+          "novelty": 8,
+          "specificity": 9,
+          "curiosity_gap": 8,
+          "factual_fidelity": 9,
+          "china_resonance": 3
+        }
+      },
+      "comment": "KC评论：VIX仍高于20心理关口，12月3日英伟达国会证词是下一个观察点"
+    }
+  },
+  "events": [
+    {
+      "timestamp_utc": "2026-11-24T16:16:02.649304+00:00",
+      "indexes": [
+        1
+      ],
+      "briefs": [
+        {
+          "index": 1,
+          "duration_seconds": 88.5,
+          "speaker": "Bloomberg",
+          "speaker_context": "Duration: 2:03 RBC Says Market Whiplash Far From Over",
+          "source_title": "Duration: 2:03 RBC Says Market Whiplash Far From Over",
+          "show_date": "",
+          "current_title": "RBC：市场波动尚未结束",
+          "current_title_lines": [
+            "RBC",
+            "市场波动尚未结束",
+            "12月英伟达证词或再掀波澜"
+          ],
+          "current_comment": "",
+          "subtitles": [
+            {
+              "index": 1,
+              "zh": "我们学到了什么？现在处于什么位置？接下来会怎样，David？",
+              "en": "What do we learn? Where are we? Where does it take us next, David?",
+              "relative_start": 0.0,
+              "relative_end": 5.0
+            },
+            {
+              "index": 2,
+              "zh": "是的，确实有很多波动。",
+              "en": "Yeah, certainly a lot of whiplash.",
+              "relative_start": 5.0,
+              "relative_end": 10.1
+            },
+            {
+              "index": 3,
+              "zh": "我认为重要的一点是，尽管VIX明显因冲击而大幅上升后有所回落，但仍处于较高水平。",
+              "en": "And I think one thing that's important to realize is even though VIX obviously had a sharp wall to the shock and has come in, it's still pretty inflated.",
+              "relative_start": 10.1,
+              "relative_end": 20.1
+            },
+            {
+              "index": 4,
+              "zh": "你知道，26、27的水平从历史来看仍显著高于20这一心理关口。",
+              "en": "You know, 26, 27 handle when you look historically is still kind of substantially above that psychological level of 20.",
+              "relative_start": 20.1,
+              "relative_end": 27.1
+            },
+            {
+              "index": 5,
+              "zh": "此外，我昨天经常被问到的一个问题是，这是否是一个出清事件？",
+              "en": "Beyond that, you know, I think a question I got yesterday a lot was, is this a clearing event?",
+              "relative_start": 27.1,
+              "relative_end": 33.1
+            },
+            {
+              "index": 6,
+              "zh": "我认为市场参与者真的很喜欢问事情是否是出清事件。",
+              "en": "I think investors really like to ask if things are clearing events.",
+              "relative_start": 33.1,
+              "relative_end": 36.1
+            },
+            {
+              "index": 7,
+              "zh": "他们也不断问及中期选举。你知道，简短的回答是不幸的是，不是。",
+              "en": "They kept asking that about mid terms as well. You know, the short answer is unfortunately no.",
+              "relative_start": 36.1,
+              "relative_end": 41.1
+            },
+            {
+              "index": 8,
+              "zh": "我认为我们正关注12月初，届时英伟达将会有国会证词。",
+              "en": "I think we're looking ahead to early December, where there's going to be congressional testimony from Nvidia.",
+              "relative_start": 41.1,
+              "relative_end": 46.1
+            },
+            {
+              "index": 9,
+              "zh": "我认为不幸的是，这一消息流还远未结束。",
+              "en": "I think this news flow is unfortunately far from over.",
+              "relative_start": 46.1,
+              "relative_end": 49.1
+            },
+            {
+              "index": 10,
+              "zh": "所以我们只能应对这种波动。",
+              "en": "So we're just going to have to deal with the whiplash instead.",
+              "relative_start": 49.1,
+              "relative_end": 53.1
+            },
+            {
+              "index": 11,
+              "zh": "那么VIX现在是否处于合理价位？",
+              "en": "So is this about the right price for the VIX then?",
+              "relative_start": 53.1,
+              "relative_end": 56.1
+            },
+            {
+              "index": 12,
+              "zh": "是的，你看，我认为观察VIX时，即使回溯到英伟达黄仁勋所有那些疯狂新闻之前。",
+              "en": "Yeah, you know, look, I think one thing when you look at the VIX is even rewind past all this crazy news of Jensen Huang in Nvidia.",
+              "relative_start": 56.1,
+              "relative_end": 68.5
+            },
+            {
+              "index": 13,
+              "zh": "确实有很多担忧，因为相对于我们看到的利率波动，VIX一直反应不大。",
+              "en": "There were really a lot of concerns because the VIX had not been very reactive guide to what we had been seeing in terms of rates volatility.",
+              "relative_start": 68.5,
+              "relative_end": 75.5
+            },
+            {
+              "index": 14,
+              "zh": "所以，即使超越中期选举，当你看MOVE与VIX时，有很多关于是否会正常化的问题。",
+              "en": "So, you know, even kind of beyond the mid terms, there was a lot of questions about whether we were going to get normalization when you looked at move versus VIX.",
+              "relative_start": 75.5,
+              "relative_end": 83.5
+            },
+            {
+              "index": 15,
+              "zh": "我记得在节目中谈到过，我们在MOVE与VIX方面有些尖锐。",
+              "en": "You know, I remember being on the show and talking about how we were sort of screaming in terms of the move versus VIX.",
+              "relative_start": 83.5,
+              "relative_end": 88.5
+            }
+          ]
+        }
+      ],
+      "candidate_system_prompt": "You are a Chinese viral-title angle architect. Return strict JSON only. Do not write a safe summary. Generate competing, fact-grounded emotional angles for each clip. Each candidate must make a viewer feel one strong reaction instead of mild interest. Use the research guide as a hard boundary: unsupported surprise, dishonesty, holdings, public actions, and national comparisons are forbidden. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "candidate_user_prompt": "Create four genuinely different title candidates for every clip.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"source_title\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"show_date\": \"\",\n    \"current_title\": \"RBC：市场波动尚未结束\",\n    \"current_title_lines\": [\n      \"RBC\",\n      \"市场波动尚未结束\",\n      \"12月英伟达证词或再掀波澜\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们学到了什么？现在处于什么位置？接下来会怎样，David？\",\n        \"en\": \"What do we learn? Where are we? Where does it take us next, David?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，确实有很多波动。\",\n        \"en\": \"Yeah, certainly a lot of whiplash.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为重要的一点是，尽管VIX明显因冲击而大幅上升后有所回落，但仍处于较高水平。\",\n        \"en\": \"And I think one thing that's important to realize is even though VIX obviously had a sharp wall to the shock and has come in, it's still pretty inflated.\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你知道，26、27的水平从历史来看仍显著高于20这一心理关口。\",\n        \"en\": \"You know, 26, 27 handle when you look historically is still kind of substantially above that psychological level of 20.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 27.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"此外，我昨天经常被问到的一个问题是，这是否是一个出清事件？\",\n        \"en\": \"Beyond that, you know, I think a question I got yesterday a lot was, is this a clearing event?\",\n        \"relative_start\": 27.1,\n        \"relative_end\": 33.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我认为市场参与者真的很喜欢问事情是否是出清事件。\",\n        \"en\": \"I think investors really like to ask if things are clearing events.\",\n        \"relative_start\": 33.1,\n        \"relative_end\": 36.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们也不断问及中期选举。你知道，简短的回答是不幸的是，不是。\",\n        \"en\": \"They kept asking that about mid terms as well. You know, the short answer is unfortunately no.\",\n        \"relative_start\": 36.1,\n        \"relative_end\": 41.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为我们正关注12月初，届时英伟达将会有国会证词。\",\n        \"en\": \"I think we're looking ahead to early December, where there's going to be congressional testimony from Nvidia.\",\n        \"relative_start\": 41.1,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为不幸的是，这一消息流还远未结束。\",\n        \"en\": \"I think this news flow is unfortunately far from over.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 49.1\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以我们只能应对这种波动。\",\n        \"en\": \"So we're just going to have to deal with the whiplash instead.\",\n        \"relative_start\": 49.1,\n        \"relative_end\": 53.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么VIX现在是否处于合理价位？\",\n        \"en\": \"So is this about the right price for the VIX then?\",\n        \"relative_start\": 53.1,\n        \"relative_end\": 56.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"是的，你看，我认为观察VIX时，即使回溯到英伟达黄仁勋所有那些疯狂新闻之前。\",\n        \"en\": \"Yeah, you know, look, I think one thing when you look at the VIX is even rewind past all this crazy news of Jensen Huang in Nvidia.\",\n        \"relative_start\": 56.1,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"确实有很多担忧，因为相对于我们看到的利率波动，VIX一直反应不大。\",\n        \"en\": \"There were really a lot of concerns because the VIX had not been very reactive guide to what we had been seeing in terms of rates volatility.\",\n        \"relative_start\": 68.5,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"所以，即使超越中期选举，当你看MOVE与VIX时，有很多关于是否会正常化的问题。\",\n        \"en\": \"So, you know, even kind of beyond the mid terms, there was a lot of questions about whether we were going to get normalization when you looked at move versus VIX.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 83.5\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我记得在节目中谈到过，我们在MOVE与VIX方面有些尖锐。\",\n        \"en\": \"You know, I remember being on the show and talking about how we were sort of screaming in terms of the move versus VIX.\",\n        \"relative_start\": 83.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"preferred_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"official_zh\": \"加拿大皇家银行\",\n      \"common_zh\": \"加拿大皇家银行\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"加拿大皇家银行\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-cn/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://wiki.mbalib.com/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%93%B6%E8%A1%8C\"\n      ],\n      \"evidence\": \"Wikipedia and MBA智库百科 both give 加拿大皇家银行 for Royal Bank of Canada; Wikipedia notes RBC Capital Markets as its investment-banking arm. RBC is the established short form used in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"RBC says the market whiplash is far from over, VIX remains inflated above the psychological 20 level, and this is not a clearing event; Nvidia congressional testimony in early December is a key upcoming catalyst.\",\n      \"public_baseline\": \"RBC GAM and RBC Wealth Management 2024 outlooks describe restored positive real yields and attractive sovereign-bond value, i.e., a constructive rather than alarmist framing.\",\n      \"surprise_gap\": \"The on-air stance emphasizes unresolved volatility and rejects the 'clearing event' framing, which is more cautious than RBC's published 2024 outlook tone.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"VIX still 'pretty inflated' at 26-27 handle, above psychological 20.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says this is not a clearing event; news flow far from over.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Early December congressional testimony from Nvidia cited as upcoming catalyst.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://thehill.com/homenews/senate/6238064-nvidia-ceo-ai-hearing-december/\",\n          \"fact\": \"Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://www.engadget.com/2325655/nvidia-jensen-huang-will-testify-publlicly-before-senators-on-december-3/\",\n          \"fact\": \"Jensen Huang to testify publicly before senators on December 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC 市场波动 尚未结束 2024 展望\",\n          \"url\": \"https://www.rbcgam.com/documents/en/articles/market-outlook-summer-2024.pdf\",\n          \"fact\": \"RBC GAM Summer 2024 outlook sees attractive sovereign-bond value with yields near two-decade highs.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"RBC predicted a market crash\",\n        \"RBC changed its official outlook to bearish\",\n        \"Nvidia testimony was cancelled or confirmed to be about specific allegations\",\n        \"VIX was at 20 exactly\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"the exact transcript fact every candidate preserves\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n          \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n          \"viewer_reaction\": \"居然是这样|终于有人说了|他说的是真的吗|原来中国强在这里\",\n          \"title\": \"完整中文标题\",\n          \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n          \"factual_mode\": \"statement|question\",\n          \"evidence_basis\": [\"transcript fact or public evidence reference\"],\n          \"scores\": {\n            \"emotion_tension\": 0,\n            \"novelty\": 0,\n            \"specificity\": 0,\n            \"curiosity_gap\": 0,\n            \"factual_fidelity\": 0,\n            \"china_resonance\": 0\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nOperating rule: 二极管法则\n- A candidate is usable only if one emotion pole is unmistakable and emotion_tension is at least 8/10.\n- The six permitted poles are: unexpected reversal, pleasant surprise, strong doubt, finally-someone-said-it candor, verified words-versus-actions contrast, and fact-based pride in a Chinese comparative advantage.\n- Do not split the emotion across several mild ideas. Pick one pole and push it to the factual limit.\n- A question mark is not emotion. \"前景如何\", \"回报路径在哪\", \"能否实现\", \"面临哪些挑战\", \"回报存疑\", and \"释放什么信号\" score at most 4 unless they contain a concrete contradiction or consequence.\n\nAngle rules:\n- surprise_reversal: state the familiar baseline, then expose the source claim that reverses it. Do not turn a baseline contrast into \"改口\" unless research.position_change.supported is true with at least two independent sources.\n- outsider_candor: use only when a foreign institution/expert says something unusually direct. Keep the identity contrast in evidence_basis and viewer_reaction, then realize it in final copy by placing the specific surprising claim against its consequence. Never literally output 外资策略师、外资首席、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话, or 西方机构承认.\n- words_vs_actions: use only when research.words_vs_actions.supported is true and independent_source_count is at least 2. Show the two exact sides in question form. Never directly call anyone a liar.\n- china_advantage: use only when research.china_advantage.supported is true. Put the concrete Chinese advantage or the foreign competitor's forced response in the foreground. The emotional direction must favor China.\n- authority_breaks_consensus: the authority must be recognizable to a China audience, or be labeled by a meaningful role. Do not lead with an obscure romanized name.\n- concrete_stakes: expose a specific number, forced choice, consequence, or who gains/loses. Generic importance is not a stake.\n\nWriting rules:\n- Style: factual clickbait for China finance audience\n- Produce exactly four candidates per clip and use at least three different angle_id values when the evidence permits.\n- Each candidate has exactly three short title lines. Think cover blocks, not a newspaper sentence.\n- Ideal line lengths are 3-10, 4-12, and 5-14 Chinese characters. Full title is ideally 10-24 Chinese characters.\n- The title must reveal enough familiar context to create a small information gap, then withhold the explanation supplied by the video.\n- Prefer concrete verbs and consequences: 逼急、藏不住、说透、砍半. Use only when facts support them. \"改口\" requires research.position_change.supported with two independent sources; words-versus-actions phrases require research.words_vs_actions.supported with two independent sources.\n- Do not mechanically copy examples or proper nouns from instructions. Derive every noun, number, actor, and comparison from this clip and its evidence card.\n- angle_id, emotion_pole, and viewer_reaction are private editorial metadata. Never copy their wording into title or title_lines.\n- Final cover structure should be [specific subject] / [unexpected fact or comparison] / [concrete unresolved consequence], not [speaker category] / [editorial label] / [topic].\n- If a person or institution is genuinely recognizable, use its verified proper name. If it is not recognizable, omit the identity and lead with the subject and fact; do not replace it with generic labels such as 外资策略师 or 海外专家.\n- For names and technical terms, use only the current clip's verified title_label. Never use official_zh/legal company names as cover copy, and never invent a Chinese transliteration when title_label is empty or English.\n- Bloomberg/Bloomberg LP/彭博社 is a source label, not the expert or actor. Company legal suffixes do not belong in a title.\n- For China-related clips, never attack China or imply national decline. Favor confidence, competence, policy room, industrial strength, cost advantage, talent, resilience, and competitors being forced to respond.\n- If the clip is negative about China and no constructive factual angle exists, use a neutral mechanism question instead of nationalist or doom framing.\n- Forbidden title words: 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Forbidden hard-negative wording: 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not use sensitive geopolitical or military subjects, emojis, markdown, quotation marks, hashtags, or numbered prefixes.\n- If evidence cannot support four dramatic factual claims, vary the framing and use strong questions; never fabricate the missing drama.\n",
+      "candidate_raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "fact_anchor": "RBC表示市场波动远未结束，VIX在26-27仍高于20心理关口，这不是出清事件，12月初英伟达国会证词是下一个催化剂",
+            "candidates": [
+              {
+                "candidate_id": "c1",
+                "angle_id": "concrete_stakes",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "居然是这样",
+                "title": "波动没完\nVIX仍在26上方\n12月还有英伟达证词",
+                "title_lines": [
+                  "波动没完",
+                  "VIX仍在26上方",
+                  "12月还有英伟达证词"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: VIX still pretty inflated at 26-27 handle, above psychological 20",
+                  "transcript: this is not a clearing event; news flow far from over",
+                  "transcript: early December Nvidia congressional testimony cited as upcoming catalyst"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 4
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c2",
+                "angle_id": "outsider_candor",
+                "emotion_pole": "终于有人说",
+                "viewer_reaction": "终于有人说了",
+                "title": "别急着问出清\nRBC直接说不是\n波动还要继续扛",
+                "title_lines": [
+                  "别急着问出清",
+                  "RBC直接说不是",
+                  "波动还要继续扛"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: question of clearing event, short answer unfortunately no",
+                  "transcript: we're just going to have to deal with the whiplash instead",
+                  "speaker is RBC, a foreign institution"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c3",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然是这样",
+                "title": "VIX回落了\n但26-27仍偏高\n20关口没回去",
+                "title_lines": [
+                  "VIX回落了",
+                  "但26-27仍偏高",
+                  "20关口没回去"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: VIX had a sharp wall to the shock and has come in, it's still pretty inflated",
+                  "transcript: 26, 27 handle is substantially above psychological level of 20"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 9,
+                  "curiosity_gap": 7,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              },
+              {
+                "candidate_id": "c4",
+                "angle_id": "authority_breaks_consensus",
+                "emotion_pole": "强疑惑",
+                "viewer_reaction": "他说的是真的吗",
+                "title": "RBC看波动\n还没到出清\n12月英伟达证词在前",
+                "title_lines": [
+                  "RBC看波动",
+                  "还没到出清",
+                  "12月英伟达证词在前"
+                ],
+                "factual_mode": "statement",
+                "evidence_basis": [
+                  "transcript: RBC says market whiplash far from over",
+                  "transcript: not a clearing event",
+                  "transcript: early December Nvidia congressional testimony"
+                ],
+                "scores": {
+                  "emotion_tension": 8,
+                  "novelty": 7,
+                  "specificity": 8,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "fatal_issue": ""
+              }
+            ]
+          }
+        ]
+      },
+      "judge_system_prompt": "You are the chief Chinese short-video title editor and tournament judge. Return strict JSON only. Select or rewrite the strongest candidate for thumb-stop and completion. A neutral summary is a failure. At the same time, transcript fidelity and verified research boundaries are absolute. Use high-arousal surprise, curiosity, candor, contrast, or China-positive pride without empty sensationalism. Never directly accuse a person or institution of lying. Wording guard for all Chinese output:\n- Do not use hard crisis/doom financial wording such as 经济危机、金融危机、债务危机、流动性危机、危机、崩盘、崩溃、完了、没救、惨了、萧条、衰退.\n- Prefer neutral market-language alternatives: 流动性变化、信贷变化、债务压力、政策信号、需求变化、信心修复、估值重估、周期压力、结构调整、市场波动、边际变化.\n- For China-related clips, do not frame China, Chinese companies, Chinese assets, Chinese consumers, or Chinese policy as hopeless, collapsing, being mocked, or fundamentally bad.\n- If the source is negative about China-related macro/markets, keep the fact but soften the Chinese wording: talk about pressure, policy response, demand repair, liquidity change, confidence repair, valuation reset, or structural adjustment.\n- Never directly use 房价/房價/住房价格/住宅价格/房屋价格/楼市价格 in Chinese output. Preserve the source direction, number, and unit, but paraphrase by context: use 地产市场上行/调整/趋稳/修复 for direction, 居住成本/住房可负担性/置业负担 for affordability, 地产估值 for valuation, and 住宅成交水平 for absolute levels. Do not evade this rule with another blunt housing-price synonym.\n- Titles must be sharp but not doom-heavy. Never put 经济危机/金融危机/债务危机/危机 in title, title_lines, title_highlights, comment, or subtitle_comments.\n- Title fields must not use financial-advice or product-sale wording such as 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出. Rephrase with neutral market wording such as 资管、配置、权益资产、市场、产品、财富配置、保障、观点.",
+      "judge_user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"source_title\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"show_date\": \"\",\n    \"current_title\": \"RBC：市场波动尚未结束\",\n    \"current_title_lines\": [\n      \"RBC\",\n      \"市场波动尚未结束\",\n      \"12月英伟达证词或再掀波澜\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们学到了什么？现在处于什么位置？接下来会怎样，David？\",\n        \"en\": \"What do we learn? Where are we? Where does it take us next, David?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，确实有很多波动。\",\n        \"en\": \"Yeah, certainly a lot of whiplash.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为重要的一点是，尽管VIX明显因冲击而大幅上升后有所回落，但仍处于较高水平。\",\n        \"en\": \"And I think one thing that's important to realize is even though VIX obviously had a sharp wall to the shock and has come in, it's still pretty inflated.\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你知道，26、27的水平从历史来看仍显著高于20这一心理关口。\",\n        \"en\": \"You know, 26, 27 handle when you look historically is still kind of substantially above that psychological level of 20.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 27.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"此外，我昨天经常被问到的一个问题是，这是否是一个出清事件？\",\n        \"en\": \"Beyond that, you know, I think a question I got yesterday a lot was, is this a clearing event?\",\n        \"relative_start\": 27.1,\n        \"relative_end\": 33.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我认为市场参与者真的很喜欢问事情是否是出清事件。\",\n        \"en\": \"I think investors really like to ask if things are clearing events.\",\n        \"relative_start\": 33.1,\n        \"relative_end\": 36.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们也不断问及中期选举。你知道，简短的回答是不幸的是，不是。\",\n        \"en\": \"They kept asking that about mid terms as well. You know, the short answer is unfortunately no.\",\n        \"relative_start\": 36.1,\n        \"relative_end\": 41.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为我们正关注12月初，届时英伟达将会有国会证词。\",\n        \"en\": \"I think we're looking ahead to early December, where there's going to be congressional testimony from Nvidia.\",\n        \"relative_start\": 41.1,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为不幸的是，这一消息流还远未结束。\",\n        \"en\": \"I think this news flow is unfortunately far from over.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 49.1\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以我们只能应对这种波动。\",\n        \"en\": \"So we're just going to have to deal with the whiplash instead.\",\n        \"relative_start\": 49.1,\n        \"relative_end\": 53.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么VIX现在是否处于合理价位？\",\n        \"en\": \"So is this about the right price for the VIX then?\",\n        \"relative_start\": 53.1,\n        \"relative_end\": 56.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"是的，你看，我认为观察VIX时，即使回溯到英伟达黄仁勋所有那些疯狂新闻之前。\",\n        \"en\": \"Yeah, you know, look, I think one thing when you look at the VIX is even rewind past all this crazy news of Jensen Huang in Nvidia.\",\n        \"relative_start\": 56.1,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"确实有很多担忧，因为相对于我们看到的利率波动，VIX一直反应不大。\",\n        \"en\": \"There were really a lot of concerns because the VIX had not been very reactive guide to what we had been seeing in terms of rates volatility.\",\n        \"relative_start\": 68.5,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"所以，即使超越中期选举，当你看MOVE与VIX时，有很多关于是否会正常化的问题。\",\n        \"en\": \"So, you know, even kind of beyond the mid terms, there was a lot of questions about whether we were going to get normalization when you looked at move versus VIX.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 83.5\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我记得在节目中谈到过，我们在MOVE与VIX方面有些尖锐。\",\n        \"en\": \"You know, I remember being on the show and talking about how we were sort of screaming in terms of the move versus VIX.\",\n        \"relative_start\": 83.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"preferred_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"official_zh\": \"加拿大皇家银行\",\n      \"common_zh\": \"加拿大皇家银行\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"加拿大皇家银行\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-cn/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://wiki.mbalib.com/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%93%B6%E8%A1%8C\"\n      ],\n      \"evidence\": \"Wikipedia and MBA智库百科 both give 加拿大皇家银行 for Royal Bank of Canada; Wikipedia notes RBC Capital Markets as its investment-banking arm. RBC is the established short form used in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"RBC says the market whiplash is far from over, VIX remains inflated above the psychological 20 level, and this is not a clearing event; Nvidia congressional testimony in early December is a key upcoming catalyst.\",\n      \"public_baseline\": \"RBC GAM and RBC Wealth Management 2024 outlooks describe restored positive real yields and attractive sovereign-bond value, i.e., a constructive rather than alarmist framing.\",\n      \"surprise_gap\": \"The on-air stance emphasizes unresolved volatility and rejects the 'clearing event' framing, which is more cautious than RBC's published 2024 outlook tone.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"VIX still 'pretty inflated' at 26-27 handle, above psychological 20.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says this is not a clearing event; news flow far from over.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Early December congressional testimony from Nvidia cited as upcoming catalyst.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://thehill.com/homenews/senate/6238064-nvidia-ceo-ai-hearing-december/\",\n          \"fact\": \"Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://www.engadget.com/2325655/nvidia-jensen-huang-will-testify-publlicly-before-senators-on-december-3/\",\n          \"fact\": \"Jensen Huang to testify publicly before senators on December 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC 市场波动 尚未结束 2024 展望\",\n          \"url\": \"https://www.rbcgam.com/documents/en/articles/market-outlook-summer-2024.pdf\",\n          \"fact\": \"RBC GAM Summer 2024 outlook sees attractive sovereign-bond value with yields near two-decade highs.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"RBC predicted a market crash\",\n        \"RBC changed its official outlook to bearish\",\n        \"Nvidia testimony was cancelled or confirmed to be about specific allegations\",\n        \"VIX was at 20 exactly\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"RBC表示市场波动远未结束，VIX在26-27仍高于20心理关口，这不是出清事件，12月初英伟达国会证词是下一个催化剂\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"波动没完\\nVIX仍在26上方\\n12月还有英伟达证词\",\n          \"title_lines\": [\n            \"波动没完\",\n            \"VIX仍在26上方\",\n            \"12月还有英伟达证词\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: VIX still pretty inflated at 26-27 handle, above psychological 20\",\n            \"transcript: this is not a clearing event; news flow far from over\",\n            \"transcript: early December Nvidia congressional testimony cited as upcoming catalyst\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"别急着问出清\\nRBC直接说不是\\n波动还要继续扛\",\n          \"title_lines\": [\n            \"别急着问出清\",\n            \"RBC直接说不是\",\n            \"波动还要继续扛\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: question of clearing event, short answer unfortunately no\",\n            \"transcript: we're just going to have to deal with the whiplash instead\",\n            \"speaker is RBC, a foreign institution\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"VIX回落了\\n但26-27仍偏高\\n20关口没回去\",\n          \"title_lines\": [\n            \"VIX回落了\",\n            \"但26-27仍偏高\",\n            \"20关口没回去\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: VIX had a sharp wall to the shock and has come in, it's still pretty inflated\",\n            \"transcript: 26, 27 handle is substantially above psychological level of 20\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"RBC看波动\\n还没到出清\\n12月英伟达证词在前\",\n          \"title_lines\": [\n            \"RBC看波动\",\n            \"还没到出清\",\n            \"12月英伟达证词在前\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: RBC says market whiplash far from over\",\n            \"transcript: not a clearing event\",\n            \"transcript: early December Nvidia congressional testimony\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+      "raw_result": {
+        "clips": [
+          {
+            "index": 1,
+            "formula_id": "authority_number_tension",
+            "angle_id": "concrete_stakes",
+            "emotion_pole": "强疑惑",
+            "viewer_reaction": "居然还没回到20关口",
+            "evidence_basis": [
+              "transcript: VIX still pretty inflated at 26-27 handle, above psychological 20",
+              "transcript: this is not a clearing event; news flow far from over",
+              "transcript: early December Nvidia congressional testimony cited as upcoming catalyst",
+              "research: Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3"
+            ],
+            "title": "VIX回落了\n26-27仍偏高\n12月还有英伟达证词",
+            "title_lines": [
+              "VIX回落了",
+              "26-27仍偏高",
+              "12月还有英伟达证词"
+            ],
+            "title_highlights": [
+              "VIX回落了",
+              "26-27仍偏高",
+              "英伟达证词"
+            ],
+            "runner_up_titles": [
+              "别急着问出清\nRBC直接说不是\n波动还要继续扛",
+              "RBC看波动\n还没到出清\n12月英伟达证词在前"
+            ],
+            "editor_scores": {
+              "emotion_tension": 8,
+              "novelty": 7,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            },
+            "quality_check": {
+              "has_recognizable_anchor": true,
+              "has_specific_fact": true,
+              "has_single_emotion_pole": true,
+              "has_novelty_or_surprise": true,
+              "has_curiosity_gap": true,
+              "is_factually_supported": true,
+              "passes_china_frame": true,
+              "passes_wording_guard": true
+            },
+            "comment": "KC评论：VIX仍高于20心理关口，12月3日英伟达国会证词是下一个观察点。",
+            "comment_highlights": [
+              "20心理关口",
+              "12月3日"
+            ],
+            "subtitle_comments": [
+              {
+                "subtitle_index": 1,
+                "comment": "KC评论：开场先问学到了什么，定调复盘而非预测。",
+                "comment_highlights": [
+                  "复盘"
+                ]
+              },
+              {
+                "subtitle_index": 2,
+                "comment": "KC评论：嘉宾承认波动剧烈，为后续谨慎判断铺垫。",
+                "comment_highlights": [
+                  "波动剧烈"
+                ]
+              },
+              {
+                "subtitle_index": 3,
+                "comment": "KC评论：VIX冲高后回落，但仍处偏高区间。",
+                "comment_highlights": [
+                  "偏高区间"
+                ]
+              },
+              {
+                "subtitle_index": 4,
+                "comment": "KC评论：26-27仍显著高于20这一心理关口。",
+                "comment_highlights": [
+                  "26-27",
+                  "20"
+                ]
+              },
+              {
+                "subtitle_index": 5,
+                "comment": "KC评论：市场最关心的是这轮波动是否已出清。",
+                "comment_highlights": [
+                  "出清"
+                ]
+              },
+              {
+                "subtitle_index": 6,
+                "comment": "KC评论：投资者习惯用出清框架判断转折点。",
+                "comment_highlights": [
+                  "出清框架"
+                ]
+              },
+              {
+                "subtitle_index": 7,
+                "comment": "KC评论：嘉宾直接否定出清，短期压力仍在。",
+                "comment_highlights": [
+                  "否定出清"
+                ]
+              },
+              {
+                "subtitle_index": 8,
+                "comment": "KC评论：12月初英伟达国会证词是明确催化剂。",
+                "comment_highlights": [
+                  "英伟达国会证词"
+                ]
+              },
+              {
+                "subtitle_index": 9,
+                "comment": "KC评论：消息流远未结束，波动可能延续。",
+                "comment_highlights": [
+                  "消息流"
+                ]
+              },
+              {
+                "subtitle_index": 10,
+                "comment": "KC评论：结论是只能继续应对波动，而非等待出清。",
+                "comment_highlights": [
+                  "应对波动"
+                ]
+              },
+              {
+                "subtitle_index": 11,
+                "comment": "KC评论：主持人追问VIX当前价位是否合理。",
+                "comment_highlights": [
+                  "VIX价位"
+                ]
+              },
+              {
+                "subtitle_index": 12,
+                "comment": "KC评论：嘉宾回溯英伟达相关新闻前的VIX状态。",
+                "comment_highlights": [
+                  "英伟达"
+                ]
+              },
+              {
+                "subtitle_index": 13,
+                "comment": "KC评论：此前VIX对利率波动反应不足，引发担忧。",
+                "comment_highlights": [
+                  "利率波动"
+                ]
+              },
+              {
+                "subtitle_index": 14,
+                "comment": "KC评论：MOVE与VIX是否正常化是中期关注点。",
+                "comment_highlights": [
+                  "MOVE与VIX"
+                ]
+              },
+              {
+                "subtitle_index": 15,
+                "comment": "KC评论：嘉宾回忆此前已提示MOVE与VIX的尖锐背离。",
+                "comment_highlights": [
+                  "尖锐背离"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "repair_events": [
+        {
+          "indexes": [
+            1
+          ],
+          "user_prompt": "Run a title tournament for these Chinese vertical short-video clips.\n\nInput clips:\n[\n  {\n    \"index\": 1,\n    \"duration_seconds\": 88.5,\n    \"speaker\": \"Bloomberg\",\n    \"speaker_context\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"source_title\": \"Duration: 2:03 RBC Says Market Whiplash Far From Over\",\n    \"show_date\": \"\",\n    \"current_title\": \"RBC：市场波动尚未结束\",\n    \"current_title_lines\": [\n      \"RBC\",\n      \"市场波动尚未结束\",\n      \"12月英伟达证词或再掀波澜\"\n    ],\n    \"current_comment\": \"\",\n    \"subtitles\": [\n      {\n        \"index\": 1,\n        \"zh\": \"我们学到了什么？现在处于什么位置？接下来会怎样，David？\",\n        \"en\": \"What do we learn? Where are we? Where does it take us next, David?\",\n        \"relative_start\": 0.0,\n        \"relative_end\": 5.0\n      },\n      {\n        \"index\": 2,\n        \"zh\": \"是的，确实有很多波动。\",\n        \"en\": \"Yeah, certainly a lot of whiplash.\",\n        \"relative_start\": 5.0,\n        \"relative_end\": 10.1\n      },\n      {\n        \"index\": 3,\n        \"zh\": \"我认为重要的一点是，尽管VIX明显因冲击而大幅上升后有所回落，但仍处于较高水平。\",\n        \"en\": \"And I think one thing that's important to realize is even though VIX obviously had a sharp wall to the shock and has come in, it's still pretty inflated.\",\n        \"relative_start\": 10.1,\n        \"relative_end\": 20.1\n      },\n      {\n        \"index\": 4,\n        \"zh\": \"你知道，26、27的水平从历史来看仍显著高于20这一心理关口。\",\n        \"en\": \"You know, 26, 27 handle when you look historically is still kind of substantially above that psychological level of 20.\",\n        \"relative_start\": 20.1,\n        \"relative_end\": 27.1\n      },\n      {\n        \"index\": 5,\n        \"zh\": \"此外，我昨天经常被问到的一个问题是，这是否是一个出清事件？\",\n        \"en\": \"Beyond that, you know, I think a question I got yesterday a lot was, is this a clearing event?\",\n        \"relative_start\": 27.1,\n        \"relative_end\": 33.1\n      },\n      {\n        \"index\": 6,\n        \"zh\": \"我认为市场参与者真的很喜欢问事情是否是出清事件。\",\n        \"en\": \"I think investors really like to ask if things are clearing events.\",\n        \"relative_start\": 33.1,\n        \"relative_end\": 36.1\n      },\n      {\n        \"index\": 7,\n        \"zh\": \"他们也不断问及中期选举。你知道，简短的回答是不幸的是，不是。\",\n        \"en\": \"They kept asking that about mid terms as well. You know, the short answer is unfortunately no.\",\n        \"relative_start\": 36.1,\n        \"relative_end\": 41.1\n      },\n      {\n        \"index\": 8,\n        \"zh\": \"我认为我们正关注12月初，届时英伟达将会有国会证词。\",\n        \"en\": \"I think we're looking ahead to early December, where there's going to be congressional testimony from Nvidia.\",\n        \"relative_start\": 41.1,\n        \"relative_end\": 46.1\n      },\n      {\n        \"index\": 9,\n        \"zh\": \"我认为不幸的是，这一消息流还远未结束。\",\n        \"en\": \"I think this news flow is unfortunately far from over.\",\n        \"relative_start\": 46.1,\n        \"relative_end\": 49.1\n      },\n      {\n        \"index\": 10,\n        \"zh\": \"所以我们只能应对这种波动。\",\n        \"en\": \"So we're just going to have to deal with the whiplash instead.\",\n        \"relative_start\": 49.1,\n        \"relative_end\": 53.1\n      },\n      {\n        \"index\": 11,\n        \"zh\": \"那么VIX现在是否处于合理价位？\",\n        \"en\": \"So is this about the right price for the VIX then?\",\n        \"relative_start\": 53.1,\n        \"relative_end\": 56.1\n      },\n      {\n        \"index\": 12,\n        \"zh\": \"是的，你看，我认为观察VIX时，即使回溯到英伟达黄仁勋所有那些疯狂新闻之前。\",\n        \"en\": \"Yeah, you know, look, I think one thing when you look at the VIX is even rewind past all this crazy news of Jensen Huang in Nvidia.\",\n        \"relative_start\": 56.1,\n        \"relative_end\": 68.5\n      },\n      {\n        \"index\": 13,\n        \"zh\": \"确实有很多担忧，因为相对于我们看到的利率波动，VIX一直反应不大。\",\n        \"en\": \"There were really a lot of concerns because the VIX had not been very reactive guide to what we had been seeing in terms of rates volatility.\",\n        \"relative_start\": 68.5,\n        \"relative_end\": 75.5\n      },\n      {\n        \"index\": 14,\n        \"zh\": \"所以，即使超越中期选举，当你看MOVE与VIX时，有很多关于是否会正常化的问题。\",\n        \"en\": \"So, you know, even kind of beyond the mid terms, there was a lot of questions about whether we were going to get normalization when you looked at move versus VIX.\",\n        \"relative_start\": 75.5,\n        \"relative_end\": 83.5\n      },\n      {\n        \"index\": 15,\n        \"zh\": \"我记得在节目中谈到过，我们在MOVE与VIX方面有些尖锐。\",\n        \"en\": \"You know, I remember being on the show and talking about how we were sort of screaming in terms of the move versus VIX.\",\n        \"relative_start\": 83.5,\n        \"relative_end\": 88.5\n      }\n    ]\n  }\n]\n\nVerified research guide:\n{\n  \"research_version\": \"tavily-entity-facts-v4\",\n  \"entities\": [\n    {\n      \"source_text\": \"RBC\",\n      \"entity_type\": \"organization\",\n      \"clip_indexes\": [\n        1\n      ],\n      \"canonical_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"preferred_en\": \"Royal Bank of Canada (RBC Capital Markets)\",\n      \"official_zh\": \"加拿大皇家银行\",\n      \"common_zh\": \"加拿大皇家银行\",\n      \"title_label\": \"RBC\",\n      \"preferred_zh\": \"加拿大皇家银行\",\n      \"aliases\": [],\n      \"confidence\": \"high\",\n      \"verified_source_count\": 2,\n      \"evidence_urls\": [\n        \"https://zh.wikipedia.org/zh-cn/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%8A%80%E8%A1%8C\",\n        \"https://wiki.mbalib.com/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%9A%87%E5%AE%B6%E9%93%B6%E8%A1%8C\"\n      ],\n      \"evidence\": \"Wikipedia and MBA智库百科 both give 加拿大皇家银行 for Royal Bank of Canada; Wikipedia notes RBC Capital Markets as its investment-banking arm. RBC is the established short form used in Chinese financial media.\"\n    }\n  ],\n  \"terms\": [],\n  \"clip_research\": [\n    {\n      \"index\": 1,\n      \"source_claim\": \"RBC says the market whiplash is far from over, VIX remains inflated above the psychological 20 level, and this is not a clearing event; Nvidia congressional testimony in early December is a key upcoming catalyst.\",\n      \"public_baseline\": \"RBC GAM and RBC Wealth Management 2024 outlooks describe restored positive real yields and attractive sovereign-bond value, i.e., a constructive rather than alarmist framing.\",\n      \"surprise_gap\": \"The on-air stance emphasizes unresolved volatility and rejects the 'clearing event' framing, which is more cautious than RBC's published 2024 outlook tone.\",\n      \"speaker_relation\": \"foreign_institution\",\n      \"supported_angles\": [\n        \"outsider_candor\",\n        \"authority_breaks_consensus\"\n      ],\n      \"words_vs_actions\": {\n        \"supported\": false,\n        \"spoken_position\": \"\",\n        \"public_action\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"position_change\": {\n        \"supported\": false,\n        \"prior_position\": \"\",\n        \"current_position\": \"\",\n        \"independent_source_count\": 0,\n        \"evidence\": []\n      },\n      \"china_advantage\": {\n        \"supported\": false,\n        \"comparison\": \"\",\n        \"evidence\": []\n      },\n      \"evidence\": [\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"VIX still 'pretty inflated' at 26-27 handle, above psychological 20.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Speaker says this is not a clearing event; news flow far from over.\"\n        },\n        {\n          \"kind\": \"transcript\",\n          \"query\": \"\",\n          \"url\": \"\",\n          \"fact\": \"Early December congressional testimony from Nvidia cited as upcoming catalyst.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://thehill.com/homenews/senate/6238064-nvidia-ceo-ai-hearing-december/\",\n          \"fact\": \"Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"Nvidia congressional testimony December 2024\",\n          \"url\": \"https://www.engadget.com/2325655/nvidia-jensen-huang-will-testify-publlicly-before-senators-on-december-3/\",\n          \"fact\": \"Jensen Huang to testify publicly before senators on December 3.\"\n        },\n        {\n          \"kind\": \"public\",\n          \"query\": \"RBC 市场波动 尚未结束 2024 展望\",\n          \"url\": \"https://www.rbcgam.com/documents/en/articles/market-outlook-summer-2024.pdf\",\n          \"fact\": \"RBC GAM Summer 2024 outlook sees attractive sovereign-bond value with yields near two-decade highs.\"\n        }\n      ],\n      \"forbidden_claims\": [\n        \"RBC predicted a market crash\",\n        \"RBC changed its official outlook to bearish\",\n        \"Nvidia testimony was cancelled or confirmed to be about specific allegations\",\n        \"VIX was at 20 exactly\"\n      ],\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"notes\": []\n}\n\nCandidate pool from the angle architect:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"fact_anchor\": \"RBC表示市场波动远未结束，VIX在26-27仍高于20心理关口，这不是出清事件，12月初英伟达国会证词是下一个催化剂\",\n      \"candidates\": [\n        {\n          \"candidate_id\": \"c1\",\n          \"angle_id\": \"concrete_stakes\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"波动没完\\nVIX仍在26上方\\n12月还有英伟达证词\",\n          \"title_lines\": [\n            \"波动没完\",\n            \"VIX仍在26上方\",\n            \"12月还有英伟达证词\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: VIX still pretty inflated at 26-27 handle, above psychological 20\",\n            \"transcript: this is not a clearing event; news flow far from over\",\n            \"transcript: early December Nvidia congressional testimony cited as upcoming catalyst\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 4\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c2\",\n          \"angle_id\": \"outsider_candor\",\n          \"emotion_pole\": \"终于有人说\",\n          \"viewer_reaction\": \"终于有人说了\",\n          \"title\": \"别急着问出清\\nRBC直接说不是\\n波动还要继续扛\",\n          \"title_lines\": [\n            \"别急着问出清\",\n            \"RBC直接说不是\",\n            \"波动还要继续扛\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: question of clearing event, short answer unfortunately no\",\n            \"transcript: we're just going to have to deal with the whiplash instead\",\n            \"speaker is RBC, a foreign institution\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c3\",\n          \"angle_id\": \"surprise_reversal\",\n          \"emotion_pole\": \"意外\",\n          \"viewer_reaction\": \"居然是这样\",\n          \"title\": \"VIX回落了\\n但26-27仍偏高\\n20关口没回去\",\n          \"title_lines\": [\n            \"VIX回落了\",\n            \"但26-27仍偏高\",\n            \"20关口没回去\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: VIX had a sharp wall to the shock and has come in, it's still pretty inflated\",\n            \"transcript: 26, 27 handle is substantially above psychological level of 20\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 9,\n            \"curiosity_gap\": 7,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        },\n        {\n          \"candidate_id\": \"c4\",\n          \"angle_id\": \"authority_breaks_consensus\",\n          \"emotion_pole\": \"强疑惑\",\n          \"viewer_reaction\": \"他说的是真的吗\",\n          \"title\": \"RBC看波动\\n还没到出清\\n12月英伟达证词在前\",\n          \"title_lines\": [\n            \"RBC看波动\",\n            \"还没到出清\",\n            \"12月英伟达证词在前\"\n          ],\n          \"factual_mode\": \"statement\",\n          \"evidence_basis\": [\n            \"transcript: RBC says market whiplash far from over\",\n            \"transcript: not a clearing event\",\n            \"transcript: early December Nvidia congressional testimony\"\n          ],\n          \"scores\": {\n            \"emotion_tension\": 8,\n            \"novelty\": 7,\n            \"specificity\": 8,\n            \"curiosity_gap\": 8,\n            \"factual_fidelity\": 9,\n            \"china_resonance\": 3\n          },\n          \"fatal_issue\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\nPrevious finals failed the code audit. Repair every listed problem and return a stronger final:\n{\n  \"previous_finals\": {\n    \"1\": {\n      \"title\": \"VIX回落了：26-27仍偏高，12月还有英伟达证词\",\n      \"title_lines\": [\n        \"VIX回落了\",\n        \"26-27仍偏高\",\n        \"12月还有英伟达证词\"\n      ],\n      \"title_highlights\": [\n        \"VIX回落了\",\n        \"26-27仍偏高\",\n        \"英伟达证词\"\n      ],\n      \"comment\": \"KC评论：VIX仍高于20心理关口，12月3日英伟达国会证词是下一个观察点\",\n      \"comment_highlights\": [\n        \"20心理关口\",\n        \"12月3日\"\n      ],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：开场先问学到了什么，定调复盘而非预测\",\n          \"comment_highlights\": [\n            \"复盘\"\n          ]\n        },\n        {\n          \"subtitle_index\": 2,\n          \"comment\": \"KC评论：嘉宾承认波动剧烈，为后续谨慎判断铺垫\",\n          \"comment_highlights\": [\n            \"波动剧烈\"\n          ]\n        },\n        {\n          \"subtitle_index\": 3,\n          \"comment\": \"KC评论：VIX冲高后回落，但仍处偏高区间\",\n          \"comment_highlights\": [\n            \"偏高区间\"\n          ]\n        },\n        {\n          \"subtitle_index\": 4,\n          \"comment\": \"KC评论：26-27仍显著高于20这一心理关口\",\n          \"comment_highlights\": [\n            \"26-27\",\n            \"20\"\n          ]\n        },\n        {\n          \"subtitle_index\": 5,\n          \"comment\": \"KC评论：市场最关心的是这轮波动是否已出清\",\n          \"comment_highlights\": [\n            \"出清\"\n          ]\n        },\n        {\n          \"subtitle_index\": 6,\n          \"comment\": \"KC评论：市场参与者习惯用出清框架判断转折点\",\n          \"comment_highlights\": [\n            \"出清框架\"\n          ]\n        },\n        {\n          \"subtitle_index\": 7,\n          \"comment\": \"KC评论：嘉宾直接否定出清，短期压力仍在\",\n          \"comment_highlights\": [\n            \"否定出清\"\n          ]\n        },\n        {\n          \"subtitle_index\": 8,\n          \"comment\": \"KC评论：12月初英伟达国会证词是明确催化剂\",\n          \"comment_highlights\": [\n            \"英伟达国会证词\"\n          ]\n        },\n        {\n          \"subtitle_index\": 9,\n          \"comment\": \"KC评论：消息流远未结束，波动可能延续\",\n          \"comment_highlights\": [\n            \"消息流\"\n          ]\n        },\n        {\n          \"subtitle_index\": 10,\n          \"comment\": \"KC评论：结论是只能继续应对波动，而非等待出清\",\n          \"comment_highlights\": [\n            \"应对波动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 11,\n          \"comment\": \"KC评论：主持人追问VIX当前价位是否合理\",\n          \"comment_highlights\": [\n            \"主持人追问VIX\"\n          ]\n        },\n        {\n          \"subtitle_index\": 12,\n          \"comment\": \"KC评论：嘉宾回溯英伟达相关新闻前的VIX状态\",\n          \"comment_highlights\": [\n            \"英伟达\"\n          ]\n        },\n        {\n          \"subtitle_index\": 13,\n          \"comment\": \"KC评论：此前VIX对利率波动反应不足，引发担忧\",\n          \"comment_highlights\": [\n            \"利率波动\"\n          ]\n        },\n        {\n          \"subtitle_index\": 14,\n          \"comment\": \"KC评论：MOVE与VIX是否正常化是中期关注点\",\n          \"comment_highlights\": [\n            \"MOVE与VIX\"\n          ]\n        },\n        {\n          \"subtitle_index\": 15,\n          \"comment\": \"KC评论：嘉宾回忆此前已提示MOVE与VIX的尖锐背离\",\n          \"comment_highlights\": [\n            \"尖锐背离\"\n          ]\n        }\n      ],\n      \"formula_id\": \"authority_number_tension\",\n      \"angle_id\": \"concrete_stakes\",\n      \"emotion_pole\": \"强疑惑\",\n      \"viewer_reaction\": \"居然还没回到20关口\",\n      \"evidence_basis\": [\n        \"transcript: VIX still pretty inflated at 26-27 handle, above psychological 20\",\n        \"transcript: this is not a clearing event; news flow far from over\",\n        \"transcript: early December Nvidia congressional testimony cited as upcoming catalyst\",\n        \"research: Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3\"\n      ],\n      \"runner_up_titles\": [\n        \"别急着问出清 RBC直接说不是 波动还要继续扛\",\n        \"RBC看波动 还没到出清 12月英伟达证词在前\"\n      ],\n      \"editor_scores\": {\n        \"emotion_tension\": 8,\n        \"novelty\": 7,\n        \"specificity\": 9,\n        \"curiosity_gap\": 8,\n        \"factual_fidelity\": 9,\n        \"china_resonance\": 3\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"title_quality_audit\": {\n        \"score\": 95,\n        \"pass\": false,\n        \"strengths\": [\n          \"has_authority_anchor\",\n          \"has_specific_fact\",\n          \"angle:concrete_stakes\",\n          \"emotion:强疑惑\",\n          \"high_emotion_tension\",\n          \"has_novelty\",\n          \"has_curiosity_gap\",\n          \"factually_grounded\"\n        ],\n        \"fixes\": [\n          \"make_the_emotional_reversal_visible_in_words\"\n        ],\n        \"semantic_thresholds\": {\n          \"emotion_tension\": 8,\n          \"novelty\": 7,\n          \"specificity\": 9,\n          \"curiosity_gap\": 8,\n          \"factual_fidelity\": 9,\n          \"china_resonance\": 3\n        }\n      }\n    }\n  },\n  \"required_fixes\": {\n    \"1\": [\n      \"make_the_emotional_reversal_visible_in_words\"\n    ]\n  }\n}\n\nReturn JSON:\n{\n  \"clips\": [\n    {\n      \"index\": 1,\n      \"formula_id\": \"legacy-compatible short label\",\n      \"angle_id\": \"surprise_reversal|outsider_candor|words_vs_actions|china_advantage|concrete_stakes|authority_breaks_consensus\",\n      \"emotion_pole\": \"意外|惊喜|强疑惑|终于有人说|反差质疑|民族自豪\",\n      \"viewer_reaction\": \"the one immediate audience reaction\",\n      \"evidence_basis\": [\"specific transcript or research fact\"],\n      \"title\": \"完整中文标题\",\n      \"title_lines\": [\"第一行\", \"第二行\", \"第三行\"],\n      \"title_highlights\": [\"关键词1\", \"关键词2\"],\n      \"runner_up_titles\": [\"候选标题1\", \"候选标题2\"],\n      \"editor_scores\": {\n        \"emotion_tension\": 0,\n        \"novelty\": 0,\n        \"specificity\": 0,\n        \"curiosity_gap\": 0,\n        \"factual_fidelity\": 0,\n        \"china_resonance\": 0\n      },\n      \"quality_check\": {\n        \"has_recognizable_anchor\": true,\n        \"has_specific_fact\": true,\n        \"has_single_emotion_pole\": true,\n        \"has_novelty_or_surprise\": true,\n        \"has_curiosity_gap\": true,\n        \"is_factually_supported\": true,\n        \"passes_china_frame\": true,\n        \"passes_wording_guard\": true\n      },\n      \"comment\": \"KC评论：一句话解释为什么值得关注\",\n      \"comment_highlights\": [\"关键词1\"],\n      \"subtitle_comments\": [\n        {\n          \"subtitle_index\": 1,\n          \"comment\": \"KC评论：基于这句字幕的短评\",\n          \"comment_highlights\": [\"关键词1\"]\n        }\n      ]\n    }\n  ]\n}\n\nTournament procedure, perform in this order:\n1. Evidence veto: reject candidates that use a name, number, consensus, public action, comparison, or accusation not supported by that clip's transcript/research card.\n2. China direction veto: for China-related clips, reject any candidate whose emotional target is China, Chinese people, Chinese companies, or China's future. Comparative pride is allowed only when supported.\n3. Neutrality veto: reject flat summaries and generic questions. A question mark alone does not create tension.\n4. Meta-copy veto: reject titles that expose the editor's reasoning with labels such as 外资策略师、外资首席、海外专家、西方策略师、罕见直言、外媒点破、终于有人说、只有外资敢说、大实话、 or 西方机构承认. The viewer should feel the effect from the facts, not be told how to feel.\n5. Audience test: complete exactly one sentence: \"看完标题，观众第一反应是____\". If the answer is merely \"我知道发生了什么\", reject it.\n6. Score survivors from 0-10. Final requires emotion_tension >= 8, novelty >= 7, specificity >= 7, curiosity_gap >= 7, factual_fidelity >= 9. For China clips, china_resonance >= 8.\n7. Select the winner or combine only two candidates. If no candidate passes, write one new title, then score it honestly.\n8. Before returning, verify every quality_check field. If any is false, rewrite once. Never return a known failure.\n\nEditorial interpretation:\n- 二极管 means one high-activation pole, not random anger: 意外, 惊喜, 强疑惑, 终于有人说, 有证据的言行反差, or 民族自豪.\n- 新鲜感 requires a baseline plus a reversal. \"外资谈中国\" is ordinary; \"外资在普遍悲观时罕见给出积极判断\" is a usable reversal only if public_baseline supports it.\n- 大实话 comes from who said what and why that identity makes the candor surprising. Do not paste \"大实话\" onto a routine forecast.\n- 大实话、终于有人说、反差质疑 and 民族自豪 describe the intended viewer response internally. Do not print those labels or their editorial scaffolding in the title. Express them through the specific fact, comparison, and consequence.\n- The desired effect of a possible falsehood angle is factual suspicion, not a verdict. Only when words_vs_actions is verified may you use a question such as \"嘴上X，手里却Y？\".\n- \"改口\" means the same actor demonstrably held a different prior position. It requires research.position_change.supported and at least two independent sources. Never infer a change from search-result absence, lack of prior coverage, or a vague reputation.\n- 民族自豪 comes from a concrete comparison: cost, technology, talent, supply chain, demand, speed, resilience, or a foreign competitor's forced adjustment. Do not use empty slogans.\n- Familiar authority helps. Use a verified proper name only when the audience is likely to recognize it. Otherwise lead with the concrete subject; generic editorial identities such as 外资策略师、海外专家 or 西方策略师 are not final copy.\n- Bloomberg/Bloomberg LP/彭博社 is normally the source, never the guest. Do not output 彭博有限合伙企业.\n- Use only verified title_label values from this clip's entity/term card. Do not expand a familiar short name into a formal full name, and do not borrow an entity from another clip.\n\nTitle and display rules:\n- Style: factual clickbait for China finance audience\n- Use exactly three non-empty title lines, each a punchy cover block. Ideal lengths: 3-10, 4-12, 5-14 Chinese characters.\n- Full title should be short and sharp, ideally 10-24 Chinese characters.\n- Keep only one core conflict. Do not pack background, claim, caveat, and conclusion into one line.\n- Highlights must be exact substrings of joined title_lines and emphasize the actor, number, reversal, China advantage, or tension.\n- Do not use flat endings such as 回报路径在哪、回报存疑、前景如何、未来如何、有待观察、仍不明朗、面临挑战、带来机遇、释放信号、关键分叉在哪、有望扩大. Turn the caveat into a concrete unresolved action or contradiction.\n- Every line must be a complete Chinese phrase. Do not leave a transitive tension verb such as 逼急、逼到、迫使 or 倒逼 without its subject or object.\n- Do not use source badges, emojis, markdown, quotation marks, hashtags, or numbering.\n- Title fields must not contain 资产管理、投资、股票、基金、理财、保险、投顾、荐股、买入、卖出.\n- Never use 经济危机、金融危机、债务危机、危机、崩盘、崩溃、完了、没救、惨了.\n- Do not mention sensitive geopolitical or military topics.\n\nKC comment rules:\n- comment starts with KC评论： and adds context, consequence, or the next fact to watch in 16-34 Chinese characters. Do not repeat the title.\n- subtitle_comments contains one item for every input subtitle index, grounded in that exact subtitle rather than a generic clip slogan.\n- Each subtitle comment starts with KC评论： and is ideally 10-24 Chinese characters after the prefix, with a complete ending.\n- Adjacent subtitle comments must vary between evidence, implication, tension, consequence, and context.\n- All highlight strings must be exact substrings of their corresponding title/comment.\n\nData lessons:\n{\n  \"source\": \"KC桌面-视频号动态数据明细.csv, 114 rows, July 2026 local analysis\",\n  \"winning_patterns\": [\n    \"机构/人物权威 + 具体数字/资产 + 强问题，例如 高盛王逸：4-5万亿城市更新会拖住楼市吗\",\n    \"大机构/名人 + 被逼/陷阱/真相/转向 等张力词，例如 野村辜朝明：日本央行被逼到墙角\",\n    \"具体数据 + 政策动作疑问，例如 6月PMI释放积极信号，政府会加码吗\",\n    \"反常识判断 + 下一步条件，例如 低估值可能是价值陷阱，需等待政策转向消费\",\n    \"中国相关议题更容易获得点击，但表达要落在政策、需求、信心、估值、产业升级这些正向框架\",\n    \"外资或海外权威给出对中国更积极的判断时，反差本身就是主标题，不要埋在摘要里\",\n    \"让观众产生单一强反应：居然如此、终于有人说、他说的是真的吗、原来中国优势在这里\",\n    \"大实话角度来自表达者身份与观点反差；言行反差角度必须有公开动作或披露支撑\",\n    \"涉及中国比较优势时，优先把外国企业被迫调整、海外权威改口或中国优势被低估写成冲突\"\n  ],\n  \"avoid_patterns\": [\n    \"过长的新闻句，尤其是 24 字以上还塞多个从句\",\n    \"只有 策略/机会/影响/前瞻/市场/风险 这类泛词，没有具体对象或张力\",\n    \"美国宏观泛标题如果没有美联储/鲍威尔等强锚点，点击明显弱\",\n    \"纯描述式标题，例如 某市场短期风险与长期催化剂，缺少问题和冲突\",\n    \"经济危机/金融危机/崩盘/崩溃 这类过硬负面财经词\",\n    \"把事实换成疑问号但没有反差，例如 回报路径在哪、未来如何、能否实现\",\n    \"陌生英文人名或机构全称占据第一行，却没有告诉观众这个人为什么值得听\",\n    \"把 Bloomberg LP 等来源或公司法律后缀误当成采访对象\",\n    \"没有公开证据却暗示嘉宾撒谎、操纵或言行不一\"\n  ]\n}\n",
+          "raw_result": {
+            "clips": [
+              {
+                "index": 1,
+                "formula_id": "authority_number_tension",
+                "angle_id": "surprise_reversal",
+                "emotion_pole": "意外",
+                "viewer_reaction": "居然还没回到20关口，12月还有英伟达证词要盯",
+                "evidence_basis": [
+                  "transcript: VIX had a sharp wall to the shock and has come in, it's still pretty inflated",
+                  "transcript: 26, 27 handle is substantially above psychological level of 20",
+                  "transcript: this is not a clearing event; news flow far from over",
+                  "transcript: early December Nvidia congressional testimony cited as upcoming catalyst",
+                  "research: Senate Banking panel set Nvidia CEO Jensen Huang testimony for Dec. 3"
+                ],
+                "title": "以为波动结束了？VIX还在26-27，12月英伟达证词在前",
+                "title_lines": [
+                  "以为波动结束了？",
+                  "VIX还在26-27",
+                  "12月英伟达证词在前"
+                ],
+                "title_highlights": [
+                  "以为波动结束了？",
+                  "VIX还在26-27",
+                  "英伟达证词"
+                ],
+                "runner_up_titles": [
+                  "别急着问出清 RBC直接说不是 波动还要继续扛",
+                  "VIX回落了 但26-27仍偏高 20关口没回去"
+                ],
+                "editor_scores": {
+                  "emotion_tension": 9,
+                  "novelty": 8,
+                  "specificity": 9,
+                  "curiosity_gap": 8,
+                  "factual_fidelity": 9,
+                  "china_resonance": 3
+                },
+                "quality_check": {
+                  "has_recognizable_anchor": true,
+                  "has_specific_fact": true,
+                  "has_single_emotion_pole": true,
+                  "has_novelty_or_surprise": true,
+                  "has_curiosity_gap": true,
+                  "is_factually_supported": true,
+                  "passes_china_frame": true,
+                  "passes_wording_guard": true
+                },
+                "comment": "KC评论：VIX仍高于20心理关口，12月3日英伟达国会证词是下一个观察点",
+                "comment_highlights": [
+                  "20心理关口",
+                  "12月3日"
+                ],
+                "subtitle_comments": [
+                  {
+                    "subtitle_index": 1,
+                    "comment": "KC评论：开场先问学到了什么，定调复盘而非预测",
+                    "comment_highlights": [
+                      "复盘"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 2,
+                    "comment": "KC评论：嘉宾承认波动剧烈，为后续谨慎判断铺垫",
+                    "comment_highlights": [
+                      "波动剧烈"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 3,
+                    "comment": "KC评论：VIX冲高后回落，但仍处偏高区间",
+                    "comment_highlights": [
+                      "偏高区间"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 4,
+                    "comment": "KC评论：26-27仍显著高于20这一心理关口",
+                    "comment_highlights": [
+                      "26-27",
+                      "20"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 5,
+                    "comment": "KC评论：市场最关心的是这轮波动是否已出清",
+                    "comment_highlights": [
+                      "出清"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 6,
+                    "comment": "KC评论：市场参与者习惯用出清框架判断转折点",
+                    "comment_highlights": [
+                      "出清框架"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 7,
+                    "comment": "KC评论：嘉宾直接否定出清，短期压力仍在",
+                    "comment_highlights": [
+                      "否定出清"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 8,
+                    "comment": "KC评论：12月初英伟达国会证词是明确催化剂",
+                    "comment_highlights": [
+                      "英伟达国会证词"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 9,
+                    "comment": "KC评论：消息流远未结束，波动可能延续",
+                    "comment_highlights": [
+                      "消息流"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 10,
+                    "comment": "KC评论：结论是只能继续应对波动，而非等待出清",
+                    "comment_highlights": [
+                      "应对波动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 11,
+                    "comment": "KC评论：主持人追问VIX当前价位是否合理",
+                    "comment_highlights": [
+                      "主持人追问VIX"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 12,
+                    "comment": "KC评论：嘉宾回溯英伟达相关新闻前的VIX状态",
+                    "comment_highlights": [
+                      "英伟达"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 13,
+                    "comment": "KC评论：此前VIX对利率波动反应不足，引发担忧",
+                    "comment_highlights": [
+                      "利率波动"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 14,
+                    "comment": "KC评论：MOVE与VIX是否正常化是中期关注点",
+                    "comment_highlights": [
+                      "MOVE与VIX"
+                    ]
+                  },
+                  {
+                    "subtitle_index": 15,
+                    "comment": "KC评论：嘉宾回忆此前已提示MOVE与VIX的尖锐背离",
+                    "comment_highlights": [
+                      "尖锐背离"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "remaining_failed_indexes": []
+        }
+      ],
+      "parsed_indexes": [
+        1
+      ],
+      "normalized": {
+        "1": {
+          "title": "以为波动结束了？：VIX还在26-27，12月英伟达证词在前",
+          "title_lines": [
+            "以为波动结束了？",
+            "VIX还在26-27",
+            "12月英伟达证词在前"
+          ],
+          "formula_id": "authority_number_tension",
+          "angle_id": "surprise_reversal",
+          "emotion_pole": "意外",
+          "viewer_reaction": "居然还没回到20关口，12月还有英伟达证词要盯",
+          "editor_scores": {
+            "emotion_tension": 9,
+            "novelty": 8,
+            "specificity": 9,
+            "curiosity_gap": 8,
+            "factual_fidelity": 9,
+            "china_resonance": 3
+          },
+          "quality_check": {
+            "has_recognizable_anchor": true,
+            "has_specific_fact": true,
+            "has_single_emotion_pole": true,
+            "has_novelty_or_surprise": true,
+            "has_curiosity_gap": true,
+            "is_factually_supported": true,
+            "passes_china_frame": true,
+            "passes_wording_guard": true
+          },
+          "title_quality_audit": {
+            "score": 100,
+            "pass": true,
+            "strengths": [
+              "has_authority_anchor",
+              "has_specific_fact",
+              "has_hook_tension",
+              "angle:surprise_reversal",
+              "emotion:意外",
+              "high_emotion_tension",
+              "has_novelty",
+              "has_curiosity_gap",
+              "factually_grounded"
+            ],
+            "fixes": [],
+            "semantic_thresholds": {
+              "emotion_tension": 9,
+              "novelty": 8,
+              "specificity": 9,
+              "curiosity_gap": 8,
+              "factual_fidelity": 9,
+              "china_resonance": 3
+            }
+          },
+          "comment": "KC评论：VIX仍高于20心理关口，12月3日英伟达国会证词是下一个观察点"
+        }
+      }
+    }
+  ]
+}
