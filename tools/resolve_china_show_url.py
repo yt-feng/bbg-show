@@ -9,7 +9,7 @@ import json
 import os
 import re
 import subprocess
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
@@ -30,6 +30,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_WEEKEND_BACKLOG = REPO_ROOT / "tools" / "bloomberg_weekend_backlog.json"
 DEFAULT_RENDERED_ROOT = REPO_ROOT / "rendered-clips"
 CHINA_SERIES_URL = "https://www.bloomberg.com/btv/series/the-china-show"
+AFTERNOON_SCHEDULE_HOURS = {"15 5 * * 1-5": 5, "15 7 * * 1-5": 7}
 UUID_RE = re.compile(
     r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
 )
@@ -54,6 +55,22 @@ def current_weekday_show_date() -> str:
     if today.weekday() >= 5:
         raise SystemExit("--current-weekday is only valid Monday through Friday in Asia/Shanghai")
     return today.isoformat()
+
+
+def scheduled_weekday_show_date(schedule: str, run_created_at: str) -> str:
+    hour = AFTERNOON_SCHEDULE_HOURS.get(schedule)
+    if hour is None:
+        raise SystemExit("Unrecognized China Show afternoon schedule")
+    try:
+        created = datetime.strptime(run_created_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except ValueError:
+        raise SystemExit("Invalid GitHub workflow creation time") from None
+    slot = created.replace(hour=hour, minute=15, second=0)
+    if slot > created:
+        slot -= timedelta(days=1)
+    while slot.weekday() >= 5:
+        slot -= timedelta(days=1)
+    return slot.astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat()
 
 
 def resolve_show_type(show_date: str, show_type: str, url: str = "") -> str:
@@ -423,6 +440,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--show-date", default="", help="YYYY-MM-DD. Defaults to yesterday in Asia/Shanghai.")
     parser.add_argument("--current-weekday", action="store_true", help="Afternoon catch-up: resolve today's China Show in Asia/Shanghai.")
+    parser.add_argument("--weekday-schedule", default="", help="GitHub cron for an afternoon catch-up.")
+    parser.add_argument("--run-created-at", default="", help="UTC creation time of the original scheduled GitHub run.")
     parser.add_argument(
         "--show-type",
         choices=[SHOW_AUTO, SHOW_CHINA, SHOW_WEEKEND],
@@ -487,9 +506,14 @@ def main() -> None:
     explicit_url = bool(args.url.strip())
     if args.current_weekday and (explicit_show_date or explicit_url or args.show_type != SHOW_AUTO):
         raise SystemExit("--current-weekday cannot be combined with explicit show settings")
-    fallback_show_date = default_show_date()
-    if args.current_weekday:
+    if args.weekday_schedule or args.run_created_at:
+        if not (args.current_weekday and args.weekday_schedule and args.run_created_at):
+            parser.error("Scheduled weekday selection requires the afternoon cron and the run creation time")
+        fallback_show_date = scheduled_weekday_show_date(args.weekday_schedule, args.run_created_at)
+    elif args.current_weekday:
         fallback_show_date = current_weekday_show_date()
+    else:
+        fallback_show_date = default_show_date()
     show_date = args.show_date.strip() or fallback_show_date
     show_type = resolve_show_type(show_date, args.show_type, args.url)
     resolution_source = "explicit" if explicit_show_date or explicit_url else "default"

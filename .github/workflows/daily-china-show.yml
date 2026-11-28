@@ -60,6 +60,7 @@ on:
         default: noto-serif-sc
 
 permissions:
+  actions: read
   contents: write
 
 concurrency:
@@ -76,6 +77,7 @@ jobs:
       SHOW_DATE_INPUT: ${{ github.event.inputs.show_date || '' }}
       SHOW_TYPE_INPUT: ${{ github.event.inputs.show_type || 'auto' }}
       CURRENT_WEEKDAY: ${{ github.event.schedule == '15 5 * * 1-5' || github.event.schedule == '15 7 * * 1-5' }}
+      SCHEDULE_CRON: ${{ github.event.schedule || '' }}
       IS_SCHEDULED: ${{ github.event_name == 'schedule' }}
       URL_INPUT: ${{ github.event.inputs.url || '' }}
       REPAIR_FAILED_SPEAKERS: ${{ github.event.inputs.repair_failed_speakers || 'false' }}
@@ -97,11 +99,22 @@ jobs:
           python-version: "3.11"
 
       - name: Resolve Bloomberg show URL
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p work/daily
           date_args=()
           if [ "$CURRENT_WEEKDAY" = "true" ]; then
-            date_args+=(--current-weekday)
+            for attempt in 1 2 3; do
+              if run_created_at="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" --jq .created_at)"; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                exit 1
+              fi
+              sleep "$((attempt * 2))"
+            done
+            date_args+=(--current-weekday --weekday-schedule "$SCHEDULE_CRON" --run-created-at "$run_created_at")
           fi
           if [ "$IS_SCHEDULED" = "true" ]; then
             date_args+=(--allow-unpublished)

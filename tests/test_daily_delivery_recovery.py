@@ -141,6 +141,31 @@ class DailyDeliveryRecoveryTests(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, "not published"):
                 self.run_resolver(["--current-weekday"])
 
+    def test_delayed_friday_catch_up_uses_friday_and_reuses_existing_clips(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rendered = Path(tmp)
+            friday = rendered / "2026-11-27"
+            friday.mkdir()
+            (friday / "clip.mp4").write_bytes(b"existing")
+            with patch.object(resolver, "resolve_china_url") as lookup:
+                result = self.run_resolver([
+                    "--current-weekday", "--weekday-schedule", "15 7 * * 1-5",
+                    "--run-created-at", "2026-11-27T17:27:51Z", "--rendered-root", str(rendered),
+                ])
+            lookup.assert_not_called()
+        self.assertEqual(result["SHOW_DATE"], "2026-11-27")
+        self.assertEqual(result["SHOW_TYPE"], "china")
+        self.assertEqual(result["SHOW_STATUS"], "already-rendered")
+
+    def test_scheduled_weekday_before_and_at_the_monday_slot(self):
+        for created, expected in [
+            ("2026-11-28T02:30:00Z", "2026-11-27"),
+            ("2026-11-30T05:14:59Z", "2026-11-27"),
+            ("2026-11-30T05:15:00Z", "2026-11-30"),
+        ]:
+            with self.subTest(created=created):
+                self.assertEqual(resolver.scheduled_weekday_show_date("15 5 * * 1-5", created), expected)
+
     def test_current_weekday_does_not_override_manual_settings(self):
         with self.assertRaisesRegex(SystemExit, "explicit show settings"):
             self.run_resolver(["--current-weekday", "--show-date", "2026-10-30"])
